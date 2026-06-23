@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technology · JusticeX.ai</title>
+<meta name="description" content="JusticeX.ai architecture — symmetric processing, citation-grounded outputs, a cryptographic audit ledger, and role-gated connectors.">
+<link rel="stylesheet" href="css/site.css?v=2026-05-20b">
+</head>
+<body>
+<div data-partial="nav"></div>
+
+<section class="hero" data-screen-label="04 Technology · Hero">
+  <div class="hero-inner">
+    <div class="eyebrow on-dark"><span class="num">Technology</span> <span class="rule"></span> Counsel-grade architecture</div>
+    <h1 class="h-display" style="margin-top:24px;color:var(--jx-paper);max-width:1080px">A six-layer reference architecture. One canonical record. Zero asymmetry.</h1>
+    <p class="lead on-dark" style="margin-top:28px;max-width:780px">Dispute resolution only works when all parties trust the process — the same is true for an objective AI tool. Trust is a runtime property here, not a policy. Symmetric processing, citation-grounded outputs, a cryptographic audit ledger, and a deterministic neutrality auditor are built into the stack itself.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-gold" href="#architecture">Walk the architecture <span class="arrow">→</span></a>
+      <a class="btn btn-ghost-dark" href="#security">Security &amp; compliance</a>
+    </div>
+  </div>
+</section>
+
+<!-- ARCHITECTURE -->
+<section class="section paper" id="architecture">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="num">01</span> <span class="rule"></span> Six-layer reference architecture</div>
+      <h2 class="h1" style="margin-top:24px">From intake to agreement,<br>one stack of record.</h2>
+      <p class="lead" style="margin-top:20px;max-width:760px">Every layer is independently auditable. Every layer writes to the SPOC. Models are swappable; the architecture isn't.</p>
+    </div>
+
+    <div class="arch-stack">
+      <div class="arch-row">
+        <div class="arch-label"><div class="layer-num">L6</div><div class="layer-name">Experience</div></div>
+        <div class="arch-body"><strong>Mediator Console · Counsel Portal · Consumer Web.</strong> Three surfaces, one SPOC. Role-based access, signed sessions, full keyboard support.</div>
+        <div class="arch-tags"><span class="tag">React</span><span class="tag">WCAG 2.2 AA</span></div>
+      </div>
+      <div class="arch-row">
+        <div class="arch-label"><div class="layer-num">L5</div><div class="layer-name">Orchestration</div></div>
+        <div class="arch-body"><strong>7-stage pipeline runner.</strong> Deterministic state machine over Plan · Intake · Redact · Summarize · Gap Analysis · Resolution · Memorandum. Checkpoints emit signed certificates.</div>
+        <div class="arch-tags"><span class="tag">State machine</span><span class="tag">RBAC</span></div>
+      </div>
+      <div class="arch-row">
+        <div class="arch-label"><div class="layer-num">L4</div><div class="layer-name">Reasoning</div></div>
+        <div class="arch-body"><strong>Model layer.</strong> Citation-grounded retrieval; symmetric prompt construction; per-party processing in isolated contexts. No model output ships without a source anchor.</div>
+        <div class="arch-tags"><span class="tag">BYOK</span><span class="tag">Model-agnostic</span></div>
+      </div>
+      <div class="arch-row">
+        <div class="arch-label"><div class="layer-num">L3</div><div class="layer-name">SPOC</div></div>
+        <div class="arch-body"><strong>Single Point of Consistency.</strong> One canonical case object. Every output reconciles to it. Versioned, immutable history, cryptographically chained.</div>
+        <div class="arch-tags"><span class="tag">Append-only</span><span class="tag">SHA-256 chain</span></div>
+      </div>
+      <div class="arch-row">
+        <div class="arch-label"><div class="layer-num">L2</div><div class="layer-name">Trust</div></div>
+        <div class="arch-body"><strong>Deterministic neutrality auditor.</strong> Verifies symmetry on every output before it's surfaced. Verifies privilege boundaries. Failures block, don't paper over.</div>
+        <div class="arch-tags"><span class="tag">Deterministic</span><span class="tag">Block-on-fail</span></div>
+      </div>
+      <div class="arch-row">
+        <div class="arch-label"><div class="layer-num">L1</div><div class="layer-name">Platform</div></div>
+        <div class="arch-body"><strong>Tenant-isolated infrastructure.</strong> Per-tenant encryption keys (BYOK supported). Region-pinned storage. Subprocessors are published; counsel can pin a list.</div>
+        <div class="arch-tags"><span class="tag">SOC 2 Type II</span><span class="tag">ISO 27001</span><span class="tag">GDPR</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THREE PILLARS -->
+<section class="section navy" id="ethics">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow on-dark"><span class="num">02</span> <span class="rule"></span> Responsible AI · By construction</div>
+      <h2 class="h1 on-dark" style="margin-top:24px;color:var(--jx-paper)">Symmetric.<br>Citation-grounded.<br>Auditable.</h2>
+      <p class="lead on-dark" style="margin-top:20px;max-width:760px">Three runtime properties — not three checkboxes. If any of them fails, the matter doesn't advance.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px">
+      <div class="card navy" style="padding:36px">
+        <div class="serif" style="font-size:48px;color:var(--jx-gold-500)">≡</div>
+        <hr class="rule-block" style="margin:18px 0">
+        <h3 class="h3" style="color:var(--jx-paper);font-family:var(--font-display)">Symmetric processing</h3>
+        <p class="body on-dark" style="margin-top:14px">Both parties receive identical prompts, scoring rubrics, and access. A deterministic auditor verifies symmetry on every output before it surfaces. No "AI helps the prepared side more."</p>
+      </div>
+      <div class="card navy" style="padding:36px">
+        <div class="serif" style="font-size:48px;color:var(--jx-gold-500)">¶</div>
+        <hr class="rule-block" style="margin:18px 0">
+        <h3 class="h3" style="color:var(--jx-paper);font-family:var(--font-display)">Citation-grounded</h3>
+        <p class="body on-dark" style="margin-top:14px">No paraphrase without an anchor. Every claim in every deliverable links back to intake, statute, or prior comparable matter. If retrieval fails, the model abstains rather than hallucinates.</p>
+      </div>
+      <div class="card navy" style="padding:36px">
+        <div class="serif" style="font-size:48px;color:var(--jx-gold-500)">§</div>
+        <hr class="rule-block" style="margin:18px 0">
+        <h3 class="h3" style="color:var(--jx-paper);font-family:var(--font-display)">Counsel-grade audit trail</h3>
+        <p class="body on-dark" style="margin-top:14px">Every prompt, every output, every sign-off is hash-chained. Exportable as JSON or PDF. Defensible under counsel review and admissible under standard evidence rules.</p>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:48px">
+      <div class="callout-label">Principle</div>
+      <div class="callout-quote">"AI proposes, you dispose."</div>
+      <div class="callout-body">Mediators hold the final say at three checkpoints per matter. The platform does not draft settlement language that the mediator hasn't reviewed; it does not release redaction sets the mediator hasn't approved; it does not score claims the mediator can't override.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECURITY -->
+<section class="section paper" id="security">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="num">03</span> <span class="rule"></span> Security &amp; Privacy</div>
+      <h2 class="h1" style="margin-top:24px">Privilege is a runtime component.<br>Not a policy.</h2>
+    </div>
+    <div class="sec-grid">
+      <div class="sec-card">
+        <div class="sec-num">01</div>
+        <h4 class="h4">Tenant isolation</h4>
+        <p class="body" style="margin-top:10px">Per-tenant keys. Region-pinned storage. No cross-tenant retrieval, ever. Subprocessors are listed and counsel can pin them.</p>
+      </div>
+      <div class="sec-card">
+        <div class="sec-num">02</div>
+        <h4 class="h4">BYOK encryption</h4>
+        <p class="body" style="margin-top:10px">Bring-your-own-key option for firms with KMS already in place. AES-256 at rest; TLS 1.3 in transit; envelope encryption on documents.</p>
+      </div>
+      <div class="sec-card">
+        <div class="sec-num">03</div>
+        <h4 class="h4">Privilege boundary</h4>
+        <p class="body" style="margin-top:10px">Per-party context isolation enforced at the retrieval layer. The model cannot see Party B's documents while reasoning about Party A's claims.</p>
+      </div>
+      <div class="sec-card">
+        <div class="sec-num">04</div>
+        <h4 class="h4">No vendor training</h4>
+        <p class="body" style="margin-top:10px">Matter data never trains third-party models. Internal model improvements use opt-in, anonymized, mediator-reviewed telemetry only.</p>
+      </div>
+      <div class="sec-card">
+        <div class="sec-num">05</div>
+        <h4 class="h4">Right to delete</h4>
+        <p class="body" style="margin-top:10px">Parties may request matter deletion at any time. SPOC is purged; audit hashes retained for the statutory minimum, then expunged.</p>
+      </div>
+      <div class="sec-card">
+        <div class="sec-num">06</div>
+        <h4 class="h4">Disclosure standard</h4>
+        <p class="body" style="margin-top:10px">Parties are told an AI tool is in use, what it does, and what it cannot do. Plain-language disclosure, jurisdiction-aware, signed before intake opens.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLIANCE -->
+<section class="section navy" id="compliance">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow on-dark"><span class="num">04</span> <span class="rule"></span> Compliance posture</div>
+      <h2 class="h1 on-dark" style="margin-top:24px;color:var(--jx-paper)">Where we are, plainly stated.</h2>
+      <p class="lead on-dark" style="margin-top:20px;max-width:760px">Phase-based language only. We don't claim certifications we haven't earned. Pre-release functionality is labeled "Launching" or "Future."</p>
+    </div>
+
+    <div class="compliance-grid">
+      <div class="comp-row"><div class="comp-name">SOC 2 Type II</div><div class="comp-state state-now">Currently · Audit in progress</div><div class="comp-note">Type I evidence collected; Type II window opens Q3 2026.</div></div>
+      <div class="comp-row"><div class="comp-name">ISO 27001</div><div class="comp-state state-launch">Launching · 2026</div><div class="comp-note">ISMS scoped; statement of applicability drafted with Phase 1 design partners.</div></div>
+      <div class="comp-row"><div class="comp-name">GDPR · EU-US DPF</div><div class="comp-state state-now">Currently</div><div class="comp-note">DPA template available; EU subprocessors listed; data residency on request.</div></div>
+      <div class="comp-row"><div class="comp-name">HIPAA</div><div class="comp-state state-future">Future · Phase 2</div><div class="comp-note">In scope when medical-bill dispute vertical (#10) launches.</div></div>
+      <div class="comp-row"><div class="comp-name">NIST AI RMF</div><div class="comp-state state-now">Currently · Govern + Map</div><div class="comp-note">Risk register maintained; Measure + Manage functions roll out Phase 2.</div></div>
+      <div class="comp-row"><div class="comp-name">State Bar disclosure</div><div class="comp-state state-now">Currently · NY · CA · UT · TX</div><div class="comp-note">Jurisdiction-specific AI-disclosure language; updated as state rules evolve.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- INTEGRATIONS -->
+<section class="section paper">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="num">05</span> <span class="rule"></span> Integrations &amp; surface</div>
+      <h2 class="h1" style="margin-top:24px">It fits the practice<br>you already run.</h2>
+      <p class="lead" style="margin-top:20px;max-width:760px">JusticeX.ai is the case-of-record. Connectors are <strong>role-gated</strong> — public resources for everyone, licensed attorney-grade research only in the attorney path via your own account — and each third-party tool is vetted before it's offered. Where it integrates, it pushes — not pulls — to keep the record authoritative.</p>
+    </div>
+    <div class="int-grid">
+      <div class="int-card"><div class="int-tag">Practice mgmt</div><div class="int-name">Clio · MyCase · PracticePanther</div><div class="int-state">Currently · matter sync, billable events</div></div>
+      <div class="int-card"><div class="int-tag">Docs</div><div class="int-name">Google Drive · Dropbox · SharePoint</div><div class="int-state">Currently · ingest, citation-anchor</div></div>
+      <div class="int-card"><div class="int-tag">eSign</div><div class="int-name">DocuSign · Adobe Sign</div><div class="int-state">Currently · Memorandum of Understanding</div></div>
+      <div class="int-card"><div class="int-tag">Court filing</div><div class="int-name">Tyler · Odyssey eFile</div><div class="int-state">Launching · NY · 2026</div></div>
+      <div class="int-card"><div class="int-tag">Identity</div><div class="int-name">Okta · Azure AD · Google SSO</div><div class="int-state">Currently · SAML 2.0 · OIDC</div></div>
+      <div class="int-card"><div class="int-tag">Marketplaces</div><div class="int-name">Shopify · eBay · Etsy SDK</div><div class="int-state">Future · Phase 2 embed</div></div>
+      <div class="int-card"><div class="int-tag">Legal precedent</div><div class="int-name">CourtListener · Free Law Project</div><div class="int-state">Currently · public · all roles · reference only</div></div>
+      <div class="int-card"><div class="int-tag">Attorney research</div><div class="int-name">Westlaw · Harvey · Everlaw</div><div class="int-state">Attorney path · your own account</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-block">
+  <div class="wrap">
+    <div class="eyebrow on-dark"><span class="num">06</span> <span class="rule"></span> Trust packet</div>
+    <h2 class="h1" style="color:var(--jx-paper);margin-top:24px">Counsel review · Security review · DPA.</h2>
+    <p class="lead on-dark" style="margin-top:18px;max-width:680px">A packet for your security and legal team: architecture diagram, subprocessor list, DPA template, neutrality-audit methodology, and pen-test summary.</p>
+    <div class="ctas" style="margin-top:32px">
+      <a class="btn btn-gold" href="contact.html?path=counsel">Request the trust packet <span class="arrow">→</span></a>
+      <a class="btn btn-ghost-dark" href="solutions.html">See the pipeline <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<div data-partial="footer"></div>
+<script src="js/partials.js?v=2026-05-20b"></script>
+<script src="js/site.js?v=2026-05-20d"></script>
+</body>
+</html>

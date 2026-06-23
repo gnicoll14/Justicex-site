@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JusticeX.ai · Objective Comparison for Dispute Resolution</title>
+<meta name="description" content="JusticeX.ai brings objective, symmetric, citation-grounded comparison to dispute resolution — compressing preparation from weeks to days. Coming Summer 2026.">
+<link rel="stylesheet" href="css/site.css?v=2026-05-20b">
+</head>
+<body>
+
+<!-- ============== NAV (injected by js/partials.js — same hamburger nav as every other page) ============== -->
+<div data-partial="nav"></div>
+
+<!-- ============== HERO ============== -->
+<section class="hero tall" data-screen-label="01 Home · Hero">
+  <div class="hero-inner">
+    <div class="hero-split">
+      <div>
+        <div class="hero-status"><span class="pulse"></span>The JusticeX.ai Platform · Coming Summer 2026</div>
+        <h1 class="h-display">Resolve disputes on the <em style="font-style:normal;color:var(--jx-gold-500)">facts</em>, not the fight.</h1>
+        <p class="lead on-dark">JusticeX.ai compresses dispute preparation from weeks to days. A seven-stage pipeline runs intake, redaction, symmetric analysis, objective strength comparison, gap analysis, and an agreed resolution — neutrally, auditably, and at a fraction of the cost of court. It informs; the parties decide.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-gold" href="contact.html?path=demo">Request Early Access <span class="arrow">→</span></a>
+          <a class="btn btn-ghost-dark" href="mediator-console.html">▶ Tour the live console</a>
+        </div>
+      </div>
+      <!-- Right side: pipeline isometric -->
+      <div>
+        <div class="hero-pipeline">
+          <div class="hp-frame">
+            <div class="hp-header">
+              <div class="hp-dots"><span></span><span></span><span></span></div>
+              <div class="hp-title">Matter · NY-DIV-2026-0184</div>
+              <div class="hp-status"><span class="hp-dot"></span>Running</div>
+            </div>
+            <div class="hp-body">
+              <div class="hp-stage done">
+                <div class="hp-stage-n">01</div>
+                <div class="hp-stage-info"><div class="hp-stage-name">Strategic Planning</div><div class="hp-stage-meta">Scope locked · 14 issues</div></div>
+                <div class="hp-check">✓</div>
+              </div>
+              <div class="hp-stage done">
+                <div class="hp-stage-n">02</div>
+                <div class="hp-stage-info"><div class="hp-stage-name">Intake</div><div class="hp-stage-meta">73 artifacts · 98% OCR</div></div>
+                <div class="hp-check">✓</div>
+              </div>
+              <div class="hp-stage done">
+                <div class="hp-stage-n">03</div>
+                <div class="hp-stage-info"><div class="hp-stage-name">Redact</div><div class="hp-stage-meta">142 redactions · counsel-signed</div></div>
+                <div class="hp-check">✓</div>
+              </div>
+              <div class="hp-stage active">
+                <div class="hp-stage-n">04</div>
+                <div class="hp-stage-info"><div class="hp-stage-name">Symmetric Summarization</div><div class="hp-stage-meta">Party A 87% · Party B 82%</div></div>
+                <div class="hp-spinner"></div>
+              </div>
+              <div class="hp-stage">
+                <div class="hp-stage-n">05</div>
+                <div class="hp-stage-info"><div class="hp-stage-name">Gap Analysis &amp; Alignment</div><div class="hp-stage-meta">Queued</div></div>
+              </div>
+              <div class="hp-stage">
+                <div class="hp-stage-n">06</div>
+                <div class="hp-stage-info"><div class="hp-stage-name">Resolution</div><div class="hp-stage-meta">Queued</div></div>
+              </div>
+              <div class="hp-stage">
+                <div class="hp-stage-n">07</div>
+                <div class="hp-stage-info"><div class="hp-stage-name">Memorandum of Understanding</div><div class="hp-stage-meta">Queued</div></div>
+              </div>
+            </div>
+            <div class="hp-foot">
+              <span class="kbd">canonical-case-object · v1</span>
+              <span>3 checkpoints · 0 overrides</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-trust">
+      <span class="hero-trust-item">Symmetric processing</span>
+      <span class="hero-trust-item">Citation-grounded outputs</span>
+      <span class="hero-trust-item">Counsel-grade audit trail</span>
+      <span class="hero-trust-item">AES-256 + TLS 1.3</span>
+      <span class="hero-trust-item">ABA-aligned</span>
+    </div>
+  </div>
+</section>
+
+<style>
+.hero-pipeline { position: relative; }
+.hp-frame { background: var(--jx-navy-700); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; box-shadow: 0 30px 60px rgba(0,0,0,0.4); overflow: hidden; }
+.hp-header { display: flex; align-items: center; gap: 14px; padding: 14px 18px; background: var(--jx-navy-900); border-bottom: 1px solid rgba(255,255,255,0.08); }
+.hp-dots { display: flex; gap: 6px; }
+.hp-dots span { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.18); }
+.hp-title { font: 500 13px var(--font-mono); color: var(--jx-teal-100); letter-spacing: 0.04em; }
+.hp-status { margin-left: auto; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--jx-teal-400); display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
+.hp-status .hp-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--jx-teal-500); box-shadow: 0 0 0 3px rgba(240, 153, 123, 0.3); animation: breath 2.4s ease-in-out infinite; }
+.hp-body { padding: 8px 0; }
+.hp-stage { display: grid; grid-template-columns: 40px 1fr auto; align-items: center; gap: 14px; padding: 12px 18px; border-bottom: 1px solid rgba(255,255,255,0.04); transition: background var(--dur-base) var(--ease-standard); }
+.hp-stage:last-child { border-bottom: 0; }
+.hp-stage .hp-stage-n { font-family: var(--font-display); font-size: 18px; color: var(--jx-slate-300); font-weight: 500; }
+.hp-stage .hp-stage-name { font-size: 14px; color: var(--jx-paper); font-weight: 500; }
+.hp-stage .hp-stage-meta { font-size: 11px; color: var(--jx-slate-300); margin-top: 2px; }
+.hp-stage.done .hp-stage-n { color: var(--jx-gold-500); }
+.hp-stage.done .hp-check { color: var(--jx-teal-400); font-size: 14px; font-weight: 700; }
+.hp-stage.active { background: rgba(240, 153, 123, 0.1); }
+.hp-stage.active .hp-stage-n { color: var(--jx-teal-400); }
+.hp-spinner { width: 14px; height: 14px; border: 2px solid rgba(240, 153, 123, 0.25); border-top-color: var(--jx-teal-400); border-radius: 50%; animation: spin 1.1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.hp-foot { display: flex; justify-content: space-between; padding: 12px 18px; background: var(--jx-navy-900); font-size: 11px; color: var(--jx-slate-300); border-top: 1px solid rgba(255,255,255,0.08); }
+</style>
+
+<!-- ============== FRAMEWORK BAND ============== -->
+<section class="section framework-band" data-screen-label="01 Home · Framework">
+  <div class="wrap">
+    <div class="fw-grid">
+      <div class="fw-copy">
+        <div class="eyebrow on-dark"><span class="num">01</span> <span class="rule"></span> The Framework</div>
+        <h2 class="h1 on-dark" style="margin-top:24px;color:var(--jx-paper)">Truth. Fairness. Efficiency. <em style="font-style:normal;color:var(--jx-gold-500)">One framework</em> that runs the matter.</h2>
+        <p class="lead on-dark" style="margin-top:24px">Seven stages organized around a single canonical case object. Three values enforced as runtime properties, not policies. The Framework is the picture every deliverable, every audit, and every joint session reconciles back to.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;margin-top:40px;border-top:1px solid rgba(255,255,255,0.12);border-bottom:1px solid rgba(255,255,255,0.12)">
+          <div style="padding:20px 16px 20px 0;border-right:1px solid rgba(255,255,255,0.12)">
+            <div class="label" style="color:var(--jx-gold-500)">Truth</div>
+            <div class="caption" style="color:var(--jx-teal-100);margin-top:6px">Every claim sourced</div>
+          </div>
+          <div style="padding:20px 16px;border-right:1px solid rgba(255,255,255,0.12)">
+            <div class="label" style="color:var(--jx-gold-500)">Fairness</div>
+            <div class="caption" style="color:var(--jx-teal-100);margin-top:6px">Both parties symmetric</div>
+          </div>
+          <div style="padding:20px 0 20px 16px">
+            <div class="label" style="color:var(--jx-gold-500)">Efficiency</div>
+            <div class="caption" style="color:var(--jx-teal-100);margin-top:6px">Days, not weeks</div>
+          </div>
+        </div>
+      </div>
+      <figure class="fw-art">
+        <button class="fw-video-trigger" id="frameworkVideoTrigger" type="button" aria-label="Play the JusticeX.ai Framework video">
+          <img src="assets/framework-hero.png" alt="The JusticeX.ai Framework — seven stages organized around Truth, Fairness, and Efficiency">
+          <span class="fw-play" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+          </span>
+        </button>
+        <figcaption><span class="mono">FIG. 01 ·</span> The JusticeX.ai Framework · <span style="color:var(--jx-gold-500)">Watch the overview</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PROBLEM ============== -->
+<section class="section paper">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="num">02</span> <span class="rule"></span> The Throughput Problem</div>
+      <h2 class="h1" style="margin-top: 24px;">Mediation today is slow,<br>asymmetric, and hard to scale.</h2>
+      <p class="lead" style="margin-top: 24px;">Mediators and counsel spend most of their billable hours on document handling instead of the judgment work clients actually pay for. Both sides arrive with uneven preparation, different framings of the same facts, and no neutral basis for comparison. Settlements break later because terms are vague, payments are infeasible, or someone hid an asset.</p>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="stat-num">~65<sup>%*</sup></div>
+        <span class="rule"></span>
+        <div class="stat-label">Of pre-mediation hours go to document logistics, not analysis.</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">$8K<sup>+*</sup></div>
+        <span class="rule"></span>
+        <div class="stat-label">Average preventable cost per mid-size commercial mediation from rework.</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">3–6<sup style="font-size:0.35em">wk*</sup></div>
+        <span class="rule"></span>
+        <div class="stat-label">Typical lag from intake to first joint session — momentum decays.</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" style="font-size:42px;line-height:1.1;letter-spacing:-0.01em">Asymm.</div>
+        <span class="rule"></span>
+        <div class="stat-label">Prep quality between parties drives outcomes more than the underlying facts.</div>
+      </div>
+    </div>
+    <p class="caption" style="margin-top:24px;font-style:italic;color:var(--jx-slate-500);max-width:880px">* Initial JusticeX.ai practitioner-research estimates; figures will be refined against design-partner matters during Phase 1.</p>
+  </div>
+</section>
+
+<style>
+.framework-band { background: var(--jx-navy-800); color: var(--jx-paper); position: relative; overflow: hidden; }
+.framework-band::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 50% 60% at 78% 50%, rgba(184,137,45,0.10), transparent 65%),
+    radial-gradient(ellipse 40% 50% at 20% 30%, rgba(240, 153, 123, 0.10), transparent 60%);
+}
+.framework-band .wrap { position: relative; }
+.fw-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 64px; align-items: center; }
+.fw-art { position: relative; padding: 0; margin: 0; }
+.fw-art::before {
+  content: ''; position: absolute; inset: -24px;
+  background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(184,137,45,0.12), transparent 65%);
+  filter: blur(20px); z-index: 0;
+}
+.fw-art img {
+  position: relative; z-index: 1;
+  width: 100%; height: auto;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.45), 0 0 0 1px rgba(184,137,45,0.18);
+}
+.fw-art figcaption {
+  position: relative; z-index: 1;
+  margin-top: 18px;
+  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--jx-teal-100); font-weight: 600;
+  text-align: center;
+}
+.fw-art figcaption .mono { color: var(--jx-gold-500); font-family: var(--font-mono); letter-spacing: 0.1em; margin-right: 6px; }
+@media (max-width: 1024px) { .fw-grid { grid-template-columns: 1fr; gap: 40px; } }
+</style>
+
+<!-- ============== PLATFORM TABS — reference pattern adapted ============== -->
+<section class="section white">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="num">03</span> <span class="rule"></span> The JusticeX.ai Platform</div>
+      <h2 class="h1" style="margin-top: 24px;">One neutral intelligence.<br>Seven auditable stages. Zero context-switching.</h2>
+      <p class="lead" style="margin-top: 24px;">JusticeX.ai runs the matter end-to-end on a single canonical case object. Stage 1 scopes what the dispute actually needs. Stages 2–6 prepare and compare both parties symmetrically — same prompts, same models, same depth. Stage 7 assembles an audit-traceable Memorandum of Understanding the parties agree to.</p>
+    </div>
+
+    <div class="feature-tabs" data-tabs>
+      <div class="tablist" role="tablist">
+        <button class="tab" aria-selected="true" role="tab"><span class="tab-num">01</span>Symmetric Processing</button>
+        <button class="tab" aria-selected="false" role="tab"><span class="tab-num">02</span>Citation-Grounded</button>
+        <button class="tab" aria-selected="false" role="tab"><span class="tab-num">03</span>Human-in-the-Loop</button>
+        <button class="tab" aria-selected="false" role="tab"><span class="tab-num">04</span>Audit-Traceable</button>
+      </div>
+
+      <div class="tabpanels">
+        <!-- Panel 1 -->
+        <div class="tabpanel active" role="tabpanel">
+          <div>
+            <div class="eyebrow"><span class="num">Principle 01</span></div>
+            <h3 class="h2" style="margin-top: 20px;">Both sides arrive equal.</h3>
+            <p class="body-lg" style="margin-top: 18px;">All party submissions run through the same pipeline, the same prompts, and the same models — simultaneously. A deterministic neutrality auditor signs every comparison output. The prep-quality advantage that decides most settlements is engineered out at the architectural level.</p>
+            <ul class="checklist" style="margin-top: 24px;">
+              <li>Issue extraction builds a case-specific tree per party with identical depth.</li>
+              <li>Timeline construction tags disputed vs. undisputed events on both sides.</li>
+              <li>Symmetry assertion passes on 100% of comparison reports before parties see them.</li>
+            </ul>
+          </div>
+          <div class="tabpanel-art">
+            <div class="symmetry-diagram">
+              <div class="sd-party">
+                <div class="sd-tag">Party A</div>
+                <div class="sd-doc"><span class="sd-bar"></span><span class="sd-bar w70"></span><span class="sd-bar w85"></span><span class="sd-bar"></span><span class="sd-bar w60"></span></div>
+                <div class="sd-doc"><span class="sd-bar w85"></span><span class="sd-bar"></span><span class="sd-bar w70"></span></div>
+              </div>
+              <div class="sd-center">
+                <div class="sd-pipe-mark">SYMMETRIC<br>PIPELINE</div>
+              </div>
+              <div class="sd-party">
+                <div class="sd-tag">Party B</div>
+                <div class="sd-doc"><span class="sd-bar"></span><span class="sd-bar w85"></span><span class="sd-bar w70"></span><span class="sd-bar"></span></div>
+                <div class="sd-doc"><span class="sd-bar w60"></span><span class="sd-bar"></span><span class="sd-bar w85"></span><span class="sd-bar w70"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2 -->
+        <div class="tabpanel" role="tabpanel">
+          <div>
+            <div class="eyebrow"><span class="num">Principle 02</span></div>
+            <h3 class="h2" style="margin-top: 20px;">Every claim points to a verbatim source.</h3>
+            <p class="body-lg" style="margin-top: 18px;">Retrieval-augmented generation across the parties' own submissions means no claim, score, or recommendation can be made without a corresponding citation. Counsel reviews the output and the source in a side-by-side diff before it ever leaves the matter.</p>
+            <ul class="checklist" style="margin-top: 24px;">
+              <li>≥95% of claims tied to a source citation across pilot matters.</li>
+              <li>Inline citation IDs persist through summarization, rating, and resolution.</li>
+              <li>Confidence band published with every score — no false precision.</li>
+            </ul>
+          </div>
+          <div class="tabpanel-art">
+            <div class="cite-mock">
+              <div class="cm-line"><span class="cm-text">Plaintiff's earnings declined 38% in Q3 following the contract breach</span><span class="cm-cite mono">¹</span></div>
+              <div class="cm-line"><span class="cm-text">Defendant maintained that delivery delays were force-majeure-eligible</span><span class="cm-cite mono">²</span></div>
+              <div class="cm-line"><span class="cm-text">Both parties acknowledged the original SOW dated 2024-03-12</span><span class="cm-cite mono">³</span></div>
+              <div class="cm-divider"></div>
+              <div class="cm-source mono"><span class="cm-num">¹</span> party-a/financials/q3-statement.pdf · p. 4, ¶2</div>
+              <div class="cm-source mono"><span class="cm-num">²</span> party-b/response-brief.docx · ¶17</div>
+              <div class="cm-source mono"><span class="cm-num">³</span> shared/exhibits/sow-2024-03-12.pdf · p. 1</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 3 -->
+        <div class="tabpanel" role="tabpanel">
+          <div>
+            <div class="eyebrow"><span class="num">Principle 03</span></div>
+            <h3 class="h2" style="margin-top: 20px;">AI proposes. You dispose.</h3>
+            <p class="body-lg" style="margin-top: 18px;">Mediators and counsel hold the final say at three checkpoints: post-redaction, post-rating, and pre-resolution. Each gate produces a counsel-signed certificate. The platform is a tool of record; the practitioner is the decision-maker.</p>
+            <ul class="checklist" style="margin-top: 24px;">
+              <li>Post-redaction: side-by-side diff before any analysis runs.</li>
+              <li>Post-rating: claim-level override with rationale capture.</li>
+              <li>Pre-resolution: final gap-analysis &amp; agreement review before joint session.</li>
+            </ul>
+          </div>
+          <div class="tabpanel-art">
+            <div class="cp-mock">
+              <div class="cp-card">
+                <div class="cp-tag">Checkpoint 1 · Post-redaction</div>
+                <div class="cp-title">Approve what was removed</div>
+                <div class="cp-meta">142 redactions · 8 documents · 38 privilege matches</div>
+                <div class="cp-actions"><span class="cp-btn-primary">Sign off</span><span class="cp-btn-ghost">Review diff</span></div>
+              </div>
+              <div class="cp-card cp-pending">
+                <div class="cp-tag">Checkpoint 2 · Post-rating</div>
+                <div class="cp-title">Confirm scoring rationale</div>
+                <div class="cp-meta">Awaiting Stage 5 completion</div>
+              </div>
+              <div class="cp-card cp-pending">
+                <div class="cp-tag">Checkpoint 3 · Pre-resolution</div>
+                <div class="cp-title">Approve framework</div>
+                <div class="cp-meta">Awaiting gap analysis</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 4 -->
+        <div class="tabpanel" role="tabpanel">
+          <div>
+            <div class="eyebrow"><span class="num">Principle 04</span></div>
+            <h3 class="h2" style="margin-top: 20px;">Defensible under counsel review.</h3>
+            <p class="body-lg" style="margin-top: 18px;">Every model call, prompt, output, and override is logged. A cryptographic audit ledger captures the full decision trail. Default-clause provenance traces back to court-vetted templates with appellate-review history. Settlements hold because the record holds.</p>
+            <ul class="checklist" style="margin-top: 24px;">
+              <li>Hash-chained event log, exportable in counsel-review format.</li>
+              <li>Deterministic neutrality auditor — replays produce identical results.</li>
+              <li>SOC 2 Type II in flight; ABA Model Rules 1.1 / 1.6 / 5.3 alignment.</li>
+            </ul>
+          </div>
+          <div class="tabpanel-art">
+            <div class="ledger-mock mono">
+              <div class="lm-row"><span class="lm-time">14:02:11</span><span class="lm-event">redaction.applied</span><span class="lm-hash">0x9af3c…</span></div>
+              <div class="lm-row"><span class="lm-time">14:02:14</span><span class="lm-event">counsel.signature</span><span class="lm-hash">0xa01ce…</span></div>
+              <div class="lm-row"><span class="lm-time">14:04:22</span><span class="lm-event">stage.4.complete</span><span class="lm-hash">0x82d7e…</span></div>
+              <div class="lm-row lm-emph"><span class="lm-time">14:04:23</span><span class="lm-event">symmetry.assertion</span><span class="lm-hash">PASS</span></div>
+              <div class="lm-row"><span class="lm-time">14:05:08</span><span class="lm-event">claim.rated</span><span class="lm-hash">0x4f9b1…</span></div>
+              <div class="lm-row"><span class="lm-time">14:05:11</span><span class="lm-event">citation.linked</span><span class="lm-hash">0xc223d…</span></div>
+              <div class="lm-row"><span class="lm-time">14:06:00</span><span class="lm-event">override.captured</span><span class="lm-hash">0x7e1a2…</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Symmetry diagram */
+.symmetry-diagram { display: grid; grid-template-columns: 1fr 80px 1fr; gap: 16px; padding: 32px; height: 100%; background: var(--jx-navy-800); color: var(--jx-paper); }
+.sd-party { display: flex; flex-direction: column; gap: 12px; }
+.sd-tag { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--jx-gold-400); font-weight: 600; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.sd-doc { background: rgba(255,255,255,0.05); padding: 12px; border-radius: 4px; display: flex; flex-direction: column; gap: 6px; border: 1px solid rgba(255,255,255,0.06); }
+.sd-bar { height: 4px; background: var(--jx-teal-400); border-radius: 2px; width: 100%; opacity: 0.7; }
+.sd-bar.w70 { width: 70%; } .sd-bar.w85 { width: 85%; } .sd-bar.w60 { width: 60%; }
+.sd-center { display: flex; align-items: center; justify-content: center; position: relative; }
+.sd-center::before { content: ''; position: absolute; left: 50%; top: 10%; bottom: 10%; width: 1px; background: linear-gradient(to bottom, transparent, var(--jx-gold-500), transparent); }
+.sd-pipe-mark { font-family: var(--font-body); font-size: 10px; letter-spacing: 0.18em; color: var(--jx-gold-400); writing-mode: vertical-rl; transform: rotate(180deg); font-weight: 600; text-align: center; line-height: 1.4; }
+
+/* Citation mock */
+.cite-mock { padding: 32px; height: 100%; background: var(--jx-white); display: flex; flex-direction: column; gap: 14px; }
+.cm-line { font-family: var(--font-display); font-size: 15px; line-height: 1.55; color: var(--jx-navy-800); }
+.cm-line .cm-cite { color: var(--jx-teal-500); font-weight: 600; vertical-align: super; font-size: 10px; padding-left: 2px; }
+.cm-divider { height: 1px; background: var(--jx-stone-200); margin: 8px 0; }
+.cm-source { font-size: 11px; color: var(--jx-slate-500); line-height: 1.5; }
+.cm-source .cm-num { color: var(--jx-teal-500); font-weight: 600; margin-right: 4px; }
+
+/* Checkpoint mock */
+.cp-mock { padding: 24px; height: 100%; background: var(--jx-navy-800); display: flex; flex-direction: column; gap: 12px; }
+.cp-card { background: var(--jx-navy-700); border-radius: 6px; padding: 18px; border: 1px solid rgba(255,255,255,0.08); border-left: 2px solid var(--jx-gold-500); }
+.cp-card.cp-pending { opacity: 0.55; border-left-color: rgba(255,255,255,0.2); }
+.cp-tag { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--jx-gold-400); font-weight: 600; }
+.cp-title { font-family: var(--font-display); font-size: 16px; color: var(--jx-paper); margin-top: 4px; }
+.cp-meta { font-size: 12px; color: var(--jx-teal-100); margin-top: 6px; }
+.cp-actions { display: flex; gap: 8px; margin-top: 12px; }
+.cp-btn-primary { background: var(--jx-gold-500); color: var(--jx-navy-800); padding: 6px 12px; border-radius: 3px; font-size: 11px; font-weight: 600; letter-spacing: 0.05em; }
+.cp-btn-ghost { color: var(--jx-teal-100); padding: 6px 12px; font-size: 11px; font-weight: 600; border: 1px solid rgba(255,255,255,0.18); border-radius: 3px; }
+
+/* Ledger mock */
+.ledger-mock { padding: 24px; height: 100%; background: var(--jx-navy-900); color: var(--jx-teal-100); display: flex; flex-direction: column; gap: 6px; font-size: 12px; }
+.lm-row { display: grid; grid-template-columns: 80px 1fr auto; gap: 16px; padding: 8px 12px; background: rgba(255,255,255,0.03); border-radius: 3px; border: 1px solid rgba(255,255,255,0.04); }
+.lm-row.lm-emph { background: rgba(240, 153, 123, 0.18); border-color: rgba(240, 153, 123, 0.4); }
+.lm-row.lm-emph .lm-hash { color: var(--jx-teal-400); font-weight: 600; }
+.lm-time { color: var(--jx-slate-300); }
+.lm-event { color: var(--jx-paper); }
+.lm-hash { color: var(--jx-gold-400); }
+</style>
+
+<!-- ============== PIPELINE — 7 STAGES ============== -->
+<section class="section paper">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="num">04</span> <span class="rule"></span> The Seven-Stage Pipeline</div>
+      <h2 class="h1" style="margin-top: 24px;">From intake to agreement, on one canonical case object.</h2>
+    </div>
+
+    <div class="pipeline">
+      <div class="pipeline-stage"><div class="n">01</div><div class="name">Plan</div><div class="desc">Scope &amp; path selection</div></div>
+      <div class="pipeline-stage"><div class="n">02</div><div class="name">Intake</div><div class="desc">Evidence + quality flags</div></div>
+      <div class="pipeline-stage"><div class="n">03</div><div class="name">Redact</div><div class="desc">Privilege &amp; PII</div></div>
+      <div class="pipeline-stage"><div class="n">04</div><div class="name">Summarize</div><div class="desc">Symmetric briefs</div></div>
+      <div class="pipeline-stage"><div class="n">05</div><div class="name">Gap Analysis</div><div class="desc">Alignment &amp; strength</div></div>
+      <div class="pipeline-stage"><div class="n">06</div><div class="name">Resolution</div><div class="desc">Objective options</div></div>
+      <div class="pipeline-stage"><div class="n">07</div><div class="name">Memorandum</div><div class="desc">Of Understanding</div></div>
+    </div>
+
+    <div style="margin-top: 32px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; padding: 20px 24px; background: var(--jx-white); border: 1px solid var(--jx-stone-200); border-radius: 6px;">
+      <span class="label" style="color: var(--jx-gold-600);">3 human-in-the-loop checkpoints</span>
+      <span style="color: var(--jx-stone-300);">·</span>
+      <span class="body" style="font-size: 14px;">Post-redaction · Post-rating · Pre-resolution. AI proposes; you dispose.</span>
+      <a href="solutions.html" class="btn-link" style="margin-left: auto;">See the full pipeline <span>→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== OUTCOMES ============== -->
+<section class="section navy">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow on-dark"><span class="num">05</span> <span class="rule"></span> Outcomes</div>
+      <h2 class="h1 on-dark" style="margin-top: 24px;color:var(--jx-paper);">Three numbers that show the work.</h2>
+    </div>
+
+    <div class="stat-grid three">
+      <div class="stat">
+        <div class="stat-num">60–80<sup>%</sup></div>
+        <span class="rule"></span>
+        <div class="stat-label">Reduction in pre-mediation prep time. From intake to mediation-ready brief in days, not weeks.</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">3–5<sup>×</sup></div>
+        <span class="rule"></span>
+        <div class="stat-label">Faster gap-to-agreement across the pilot mediation cohort. Same calendar, more cases.</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">100<sup>%</sup></div>
+        <span class="rule"></span>
+        <div class="stat-label">Audit-traceable decision record. Every model output points to a verbatim source in the parties' submissions.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== THREE AUDIENCES ============== -->
+<section class="section paper">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="num">06</span> <span class="rule"></span> Three Audiences</div>
+      <h2 class="h1" style="margin-top: 24px;">Built for the people who run mediation.<br>Open to the people who need it.</h2>
+    </div>
+
+    <div class="audience-grid">
+      <a class="aud" href="markets.html#mediators">
+        <span class="aud-tag">For Mediators</span>
+        <h3>Same skills.<br>More cases.</h3>
+        <p>The JusticeX assistant does the prep, so you can do the work that wins clients. Position briefs, objective strength comparison, and a gap-analysis map waiting before the first joint session.</p>
+        <span class="aud-cta">Apply to the design-partner cohort <span class="arr">→</span></span>
+      </a>
+      <a class="aud" href="markets.html#counsel">
+        <span class="aud-tag">For Counsel</span>
+        <h3>Mediation that holds up<br>under counsel review.</h3>
+        <p>A platform engineered for the standard you'd demand. Three sign-off gates per matter. Refer with confidence; earn from referrals you used to lose.</p>
+        <span class="aud-cta">Apply to the referring-partner program <span class="arr">→</span></span>
+      </a>
+      <a class="aud" href="markets.html#consumers">
+        <span class="aud-tag">For Consumers</span>
+        <h3>Resolve the dispute.<br>Get on with your life.</h3>
+        <p>Days, not months. Hundreds, not thousands. Same rules for both sides. A court-ready settlement at the end — written by both parties through one neutral process.</p>
+        <span class="aud-cta">Join the beta waitlist <span class="arr">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== ORCHESTRATION / FLEXIBLE PATHS ============== -->
+<section class="section white">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="rule"></span> One process, three flexible paths</div>
+      <h2 class="h1" style="margin-top:24px;">Use it on your own, hand off, or bring all three in.</h2>
+      <p class="lead" style="margin-top:24px;max-width:820px">Individuals, mediators, and attorneys work one shared process — each where they're strongest. The <strong>JusticeX assistant (powered by Claude)</strong> coordinates the workflow and keeps everyone in sync. You choose who leads — in total, by matter, or by step — and can change it any time, with everyone notified. It runs the process; it never interprets law or picks a side.</p>
+    </div>
+    <div class="audience-grid">
+      <div class="aud" style="cursor:default">
+        <span class="aud-tag">Individual · sweet spot</span>
+        <h3>Data &amp; interests.</h3>
+        <p>Data gathering, interests, documents, and own-side completeness.</p>
+      </div>
+      <div class="aud" style="cursor:default">
+        <span class="aud-tag">Mediator · sweet spot</span>
+        <h3>Facilitation.</h3>
+        <p>Facilitation and reconciliation — moving both sides toward an agreed view.</p>
+      </div>
+      <div class="aud" style="cursor:default">
+        <span class="aud-tag">Attorney · sweet spot</span>
+        <h3>Legal judgment.</h3>
+        <p>Legal interpretation, guidance, and representation — owned by your licensed counsel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== ROADMAP ============== -->
+<section class="section white">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="num">07</span> <span class="rule"></span> Roadmap</div>
+      <h2 class="h1" style="margin-top: 24px;">Where we are. Where we're going. What you can do today.</h2>
+    </div>
+
+    <div class="roadmap">
+      <div class="roadmap-row">
+        <div class="phase">Phase 1</div>
+        <div class="window"><strong style="color:var(--jx-navy-800)">Mediator pilots</strong><br><span style="font-size:13px">Top 6 dispute types · 200 matters · 12 months</span></div>
+        <div class="status"><span class="chip chip-active"><span class="hp-dot" style="width:6px;height:6px;border-radius:50%;background:var(--jx-teal-500);box-shadow:0 0 0 3px rgba(240, 153, 123, 0.3)"></span>Active now</span></div>
+        <div class="participate">Apply to the design-partner cohort. Five mediator partners.</div>
+      </div>
+      <div class="roadmap-row">
+        <div class="phase">Phase 2</div>
+        <div class="window"><strong style="color:var(--jx-navy-800)">Public beta · self-service portal</strong><br><span style="font-size:13px">Full top-10 dispute coverage</span></div>
+        <div class="status"><span class="chip chip-launching">Launching Summer 2026</span></div>
+        <div class="participate">Join the beta waitlist. Early-adopter pricing locked at signup.</div>
+      </div>
+      <div class="roadmap-row">
+        <div class="phase">Phase 3</div>
+        <div class="window"><strong style="color:var(--jx-navy-800)">Counsel-referral channel</strong><br><span style="font-size:13px">SOC 2 Type II · counsel review portal</span></div>
+        <div class="status"><span class="chip chip-onboarding">Onboarding founding firms</span></div>
+        <div class="participate">Apply to the referring-partner program. Charter rates locked for life.</div>
+      </div>
+      <div class="roadmap-row">
+        <div class="phase">Phase 4</div>
+        <div class="window"><strong style="color:var(--jx-navy-800)">End-to-end autonomous case management</strong><br><span style="font-size:13px">International jurisdictions · regulated industries</span></div>
+        <div class="status"><span class="chip chip-roadmap">On the roadmap</span></div>
+        <div class="participate">Subscribe to the JusticeX.ai Brief for milestone updates.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== TRUST BAR ============== -->
+<section class="section tight paper">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom: 32px;">
+      <div class="eyebrow"><span class="num">08</span> <span class="rule"></span> Trust Bar</div>
+      <h2 class="h2" style="margin-top: 18px;">Built to the standard counsel will demand.</h2>
+    </div>
+    <div class="trust-bar">
+      <div class="ti"><div class="ti-label">Encryption at rest</div><div class="ti-name">AES-256</div></div>
+      <div class="ti"><div class="ti-label">In transit</div><div class="ti-name">TLS 1.3</div></div>
+      <div class="ti"><div class="ti-label">Audit</div><div class="ti-name">SOC 2 Type II<sup style="font-size:0.5em;color:var(--jx-gold-500)"> in flight</sup></div></div>
+      <div class="ti"><div class="ti-label">Ethics</div><div class="ti-name">ABA Model Rules</div></div>
+      <div class="ti"><div class="ti-label">Health data</div><div class="ti-name">HIPAA BAA-ready</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FINAL CTA ============== -->
+<section class="cta-block">
+  <div class="wrap">
+    <div class="eyebrow on-dark"><span class="num">09</span> <span class="rule"></span> The Window</div>
+    <h2 class="h-display" style="margin-top: 24px;color:var(--jx-paper)">Mediation is the dominant resolution channel for the <em style="font-style:normal;color:var(--jx-gold-500)">~95%</em> of civil disputes that settle before trial.</h2>
+    <p class="lead" style="color:var(--jx-teal-100);margin-top:24px;max-width:720px">The technology is ready. The audience is asking for it. JusticeX.ai is the platform built for the moment.</p>
+    <div style="margin-top:32px;padding:20px 24px;background:rgba(255,255,255,0.04);border-left:2px solid var(--jx-gold-500);max-width:780px">
+      <div class="label" style="color:var(--jx-gold-400);margin-bottom:8px">$25–30B defensible US SAM</div>
+      <p class="body" style="color:var(--jx-teal-100);margin:0;font-size:14px;line-height:1.6">$8.8B global ADR services (Market.us 2025, 6.6% CAGR to $14.3B by 2032) · $15.2B US online legal services (IBISWorld 2025) · $5–8B US small/mid law-firm referral &amp; platform-tech channel (ABA / Clio Legal Trends 2025). Three channels, one platform: mediator pilots first, counsel referrals second, consumer DIY at scale.</p>
+    </div>
+    <div class="ctas">
+      <a class="btn btn-gold" href="contact.html?path=demo">Request Early Access <span class="arrow">→</span></a>
+      <a class="btn btn-ghost-dark" href="contact.html?path=counsel">Refer a Client</a>
+      <a class="btn btn-ghost-dark" href="contact.html?path=waitlist">Join Beta Waitlist</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">JusticeX<span class="dot" style="color:var(--jx-gold-500)">.</span><span class="ai">ai</span></div>
+        <div class="footer-tag">Truth. Fairness. Efficiency.<br>Objective comparison for dispute resolution — coming Summer 2026.</div>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="solutions.html">Pipeline</a></li>
+          <li><a href="solutions.html#deliverables">Deliverables</a></li>
+          <li><a href="about.html#roadmap">Roadmap</a></li>
+          <li><a href="solutions.html">Pricing · Phase 2</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Markets</h5>
+        <ul>
+          <li><a href="markets.html#mediators">For Mediators</a></li>
+          <li><a href="markets.html#counsel">For Counsel</a></li>
+          <li><a href="markets.html#consumers">For Consumers</a></li>
+          <li><a href="markets.html#catalog">Dispute Catalog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Trust</h5>
+        <ul>
+          <li><a href="technology.html#security">Security</a></li>
+          <li><a href="technology.html#compliance">Compliance</a></li>
+          <li><a href="technology.html#ethics">Responsible AI</a></li>
+          <li><a href="contact.html?path=counsel">Subprocessors</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="about.html#team">Team</a></li>
+          <li><a href="about.html#news">News Room</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="legal">© 2026 JusticeX.ai · hello@justicex.ai · JusticeX.ai is a software platform — not a law firm or mediator. It provides objective comparison only; information here is not legal advice. The platform is in active development; some capabilities are pre-release.</div>
+      <div class="social"><a href="contact.html">Contact</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/partials.js?v=2026-05-20b"></script>
+<script src="js/site.js?v=2026-05-20d"></script>
+</body>
+</html>

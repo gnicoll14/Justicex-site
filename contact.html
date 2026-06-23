@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact · JusticeX.ai</title>
+<meta name="description" content="Request early access, refer a client, or join the JusticeX.ai beta waitlist. Objective comparison for dispute resolution — coming Summer 2026.">
+<link rel="stylesheet" href="css/site.css?v=2026-05-20b">
+</head>
+<body>
+<div data-partial="nav"></div>
+
+<section class="hero" data-screen-label="06 Contact · Hero" style="padding:80px 0 64px">
+  <div class="hero-inner">
+    <div class="eyebrow on-dark"><span class="num">Contact</span> <span class="rule"></span> Three paths in</div>
+    <h1 class="h-display" style="margin-top:24px;color:var(--jx-paper);max-width:920px">Tell us how you'd like to work together.</h1>
+    <p class="lead on-dark" style="margin-top:24px;max-width:680px">Pick the path that fits. Each one routes to a different team and triggers a different downstream workflow.</p>
+  </div>
+</section>
+
+<!-- AUDIENCE ROUTER -->
+<section class="section paper" style="padding:72px 0">
+  <div class="wrap">
+    <div data-audience-router style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+      <button class="aud-pick active" data-audience="mediator" type="button">
+        <div class="aud-pick-tag">For Mediators</div>
+        <div class="aud-pick-title">I'm a mediator</div>
+        <div class="aud-pick-body">Apply to the design-partner cohort. 30-minute discovery call. Walk away with a workflow audit, throughput projection, and pilot proposal.</div>
+        <div class="aud-pick-cta">Book discovery call <span style="color:var(--jx-gold-500)">→</span></div>
+      </button>
+      <button class="aud-pick" data-audience="counsel" type="button">
+        <div class="aud-pick-tag">For Counsel</div>
+        <div class="aud-pick-title">I'm counsel</div>
+        <div class="aud-pick-body">Apply to the referring-partner program. SOC 2 packet, ABA opinion letter, and a counsel review portal demo.</div>
+        <div class="aud-pick-cta">Apply to refer <span style="color:var(--jx-gold-500)">→</span></div>
+      </button>
+      <button class="aud-pick" data-audience="consumer" type="button">
+        <div class="aud-pick-tag">For Consumers</div>
+        <div class="aud-pick-title">I have a dispute</div>
+        <div class="aud-pick-body">Join the beta waitlist. Free 5-minute case-fit assessment at launch. Early-adopter pricing locked at signup.</div>
+        <div class="aud-pick-cta">Join waitlist <span style="color:var(--jx-gold-500)">→</span></div>
+      </button>
+    </div>
+  </div>
+</section>
+
+<style>
+.aud-pick { text-align: left; background: var(--jx-white); border: 1px solid var(--jx-stone-200); border-radius: 8px; padding: 28px; cursor: pointer; transition: all var(--dur-base) var(--ease-standard); display: flex; flex-direction: column; gap: 14px; font-family: var(--font-body); }
+.aud-pick:hover { border-color: var(--jx-gold-500); transform: translateY(-1px); box-shadow: var(--shadow-2); }
+.aud-pick.active { border-color: var(--jx-navy-800); background: var(--jx-navy-800); color: var(--jx-paper); border-width: 2px; padding: 27px; }
+.aud-pick .aud-pick-tag { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600; color: var(--jx-gold-500); }
+.aud-pick .aud-pick-title { font-family: var(--font-display); font-size: 26px; font-weight: 500; color: var(--jx-navy-800); line-height: 1.2; }
+.aud-pick.active .aud-pick-title { color: var(--jx-paper); }
+.aud-pick .aud-pick-body { font-size: 14px; line-height: 1.6; color: var(--jx-slate-500); }
+.aud-pick.active .aud-pick-body { color: var(--jx-teal-100); }
+.aud-pick .aud-pick-cta { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--jx-stone-200); font-weight: 600; font-size: 14px; color: var(--jx-navy-800); display: flex; gap: 8px; align-items: center; }
+.aud-pick.active .aud-pick-cta { border-top-color: rgba(255,255,255,0.15); color: var(--jx-paper); }
+
+[data-form] { display: none; }
+[data-form].active { display: block; }
+.confirmation { display: none; background: rgba(240, 153, 123, 0.08); border: 1px solid rgba(240, 153, 123, 0.3); border-radius: 6px; padding: 24px 28px; }
+.confirmation .confirm-tag { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--jx-teal-600); font-weight: 600; }
+.confirmation .confirm-title { font-family: var(--font-display); font-size: 24px; color: var(--jx-navy-800); margin-top: 8px; line-height: 1.3; }
+.confirmation .confirm-body { font-size: 14px; line-height: 1.6; color: var(--jx-slate-500); margin-top: 12px; }
+</style>
+
+<!-- FORMS -->
+<section class="section paper" style="padding-top:0">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:start">
+      <!-- LEFT: forms -->
+      <div>
+        <!-- MEDIATOR FORM -->
+        <form class="form-card active" data-form="mediator" name="jx-mediator" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="jx-mediator">
+          <p hidden aria-hidden="true"><label>Leave this blank: <input name="bot-field"></label></p>
+          <div class="form-fields">
+            <div class="eyebrow"><span class="num">Mediator</span> <span class="rule"></span> Book a discovery call</div>
+            <h2 class="h2" style="margin-top:18px;font-family:var(--font-display)">Apply to the design-partner cohort.</h2>
+            <p class="body" style="margin-top:12px">Five mediator partners · 200 matters · 12 months · zero upfront fees · revenue share on closed matters · monthly co-design sessions with engineering.</p>
+
+            <div style="margin-top:32px">
+              <div class="field-row">
+                <div class="field"><label>Full name *</label><input type="text" required placeholder="Hon. Jane Mediator" name="full-name"></div>
+                <div class="field"><label>Practice name &amp; city *</label><input type="text" required placeholder="Mediator Group, NYC" name="practice"></div>
+              </div>
+              <div class="field-row">
+                <div class="field"><label>Years in mediation</label><input type="number" min="0" max="60" placeholder="12" name="years"></div>
+                <div class="field"><label>Annual matter volume</label><select name="matter-volume"><option>0–25</option><option>26–75</option><option>76–150</option><option>150+</option></select></div>
+              </div>
+              <div class="field"><label>Primary dispute types *</label><select multiple size="5" required name="dispute-types"><option>Divorce &amp; Marital Dissolution</option><option>Child Custody &amp; Parenting Plans</option><option>Landlord–Tenant</option><option>Small Claims &amp; Consumer</option><option>Neighbor &amp; HOA</option><option>Workplace Harassment</option><option>Freelancer Payment</option><option>Business Partnership</option><option>E-Commerce Marketplace</option><option>Medical Bill &amp; Provider</option></select><div class="microcopy">Hold ⌘/Ctrl to select multiple.</div></div>
+              <div class="field-row">
+                <div class="field"><label>Email *</label><input type="email" required placeholder="you@firm.com" name="email"></div>
+                <div class="field"><label>Direct phone</label><input type="tel" placeholder="(212) 555-0148" name="phone"></div>
+              </div>
+              <div class="field"><label>Earliest availability for a 30-min call</label><input type="date" name="availability"></div>
+              <button class="btn btn-navy" type="submit" style="width:100%;justify-content:center;margin-top:8px">Schedule My Discovery Call <span class="arrow">→</span></button>
+              <p class="microcopy" style="margin-top:14px">By submitting you agree to our privacy policy. We respond within one business day.</p>
+            </div>
+          </div>
+          <div class="confirmation">
+            <div class="confirm-tag">Received</div>
+            <div class="confirm-title">Thanks. You'll get a calendar link within one business day.</div>
+            <div class="confirm-body">In the meantime, we'll send the design-partner one-pager and a sample mediation brief produced by the pipeline.</div>
+          </div>
+        </form>
+
+        <!-- COUNSEL FORM -->
+        <form class="form-card" data-form="counsel" name="jx-counsel" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="jx-counsel">
+          <p hidden aria-hidden="true"><label>Leave this blank: <input name="bot-field"></label></p>
+          <div class="form-fields">
+            <div class="eyebrow"><span class="num">Counsel</span> <span class="rule"></span> Apply to refer</div>
+            <h2 class="h2" style="margin-top:18px;font-family:var(--font-display)">Apply to the Referring Partner Program.</h2>
+            <p class="body" style="margin-top:12px">$2,500/yr subscription or 15% per-referral fee · CME/CLE-eligible mediation course quarterly · charter rates locked for the life of the program.</p>
+
+            <div style="margin-top:32px">
+              <div class="field-row">
+                <div class="field"><label>Full name *</label><input type="text" required placeholder="Jordan Counsel, Esq." name="full-name"></div>
+                <div class="field"><label>Bar number *</label><input type="text" required placeholder="NY-1234567" name="bar-number"></div>
+              </div>
+              <div class="field-row">
+                <div class="field"><label>Firm name *</label><input type="text" required name="firm"></div>
+                <div class="field"><label>AmLaw / size band</label><select name="firm-size"><option>Solo</option><option>2–10</option><option>11–50</option><option>51–200</option><option>AmLaw 200</option><option>AmLaw 100</option></select></div>
+              </div>
+              <div class="field"><label>Primary jurisdictions</label><input type="text" placeholder="NY, NJ, CT" name="jurisdictions"></div>
+              <div class="field"><label>Practice areas *</label><select multiple size="4" required name="practice-areas"><option>Family</option><option>Real Estate</option><option>Employment</option><option>Commercial</option><option>Consumer</option><option>Health</option><option>IP / Tech</option></select></div>
+              <div class="field-row">
+                <div class="field"><label>Annual referrable matters</label><select name="referrable-matters"><option>1–10</option><option>11–25</option><option>26–75</option><option>75+</option></select></div>
+                <div class="field"><label>Preferred plan</label><select name="plan"><option>Subscription</option><option>Per-referral</option><option>Undecided</option></select></div>
+              </div>
+              <div class="field-row">
+                <div class="field"><label>Email *</label><input type="email" required name="email"></div>
+                <div class="field"><label>Direct phone</label><input type="tel" name="phone"></div>
+              </div>
+              <div class="field"><label>Ethics-committee review window <span style="text-transform:none;letter-spacing:0;font-weight:400;color:var(--jx-slate-500)">(optional)</span></label><input type="text" placeholder="e.g., 4–6 week review" name="ethics-window"></div>
+              <button class="btn btn-navy" type="submit" style="width:100%;justify-content:center;margin-top:8px">Send My Application <span class="arrow">→</span></button>
+              <p class="microcopy" style="margin-top:14px">Reviewed in confidence on your ethics committee's timeline.</p>
+            </div>
+          </div>
+          <div class="confirmation">
+            <div class="confirm-tag">Received</div>
+            <div class="confirm-title">The trust packet is on its way.</div>
+            <div class="confirm-body">SOC 2 readiness report, ABA opinion-letter draft, sample matter audit trail. A member of the partnerships team will follow up to schedule the counsel review portal demo.</div>
+          </div>
+        </form>
+
+        <!-- CONSUMER FORM -->
+        <form class="form-card" data-form="consumer" name="jx-consumer" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="jx-consumer">
+          <p hidden aria-hidden="true"><label>Leave this blank: <input name="bot-field"></label></p>
+          <div class="form-fields">
+            <div class="eyebrow"><span class="num">Consumer</span> <span class="rule"></span> Beta Waitlist</div>
+            <h2 class="h2" style="margin-top:18px;font-family:var(--font-display)">Reserve your spot.</h2>
+            <p class="body" style="margin-top:12px">Beta opens Summer 2026. You'll get early access, locked-in adopter pricing, and a free 5-minute case-fit assessment when it launches.</p>
+
+            <div style="margin-top:32px">
+              <div class="field-row">
+                <div class="field"><label>First name *</label><input type="text" required name="first-name"></div>
+                <div class="field"><label>State of residence *</label><select required name="state"><option value="">Select…</option><option>New York</option><option>California</option><option>Utah</option><option>Texas</option><option>Florida</option><option>Other</option></select></div>
+              </div>
+              <div class="field"><label>Email *</label><input type="email" required placeholder="you@email.com" name="email"><div class="microcopy">We will not sell or share your email. Unsubscribe in one click. Privacy policy at /privacy.</div></div>
+              <div class="field"><label>Dispute type</label><select name="dispute-type"><option>Divorce &amp; Marital Dissolution</option><option>Child Custody &amp; Parenting Plans</option><option>Landlord–Tenant</option><option>Small Claims &amp; Consumer</option><option>Neighbor &amp; HOA</option><option>Workplace Harassment</option><option>Freelancer Payment</option><option>Business Partnership</option><option>E-Commerce Marketplace</option><option>Medical Bill &amp; Provider</option><option>Not listed</option></select></div>
+              <div class="field"><label>Anything you'd like the team to know <span style="text-transform:none;letter-spacing:0;font-weight:400;color:var(--jx-slate-500)">(optional)</span></label><textarea rows="4" placeholder="Describe the situation in your own words." name="notes"></textarea></div>
+              <button class="btn btn-navy" type="submit" style="width:100%;justify-content:center;margin-top:8px">Reserve My Spot <span class="arrow">→</span></button>
+            </div>
+          </div>
+          <div class="confirmation">
+            <div class="confirm-tag">You're on the list</div>
+            <div class="confirm-title">Beta opens Summer 2026.</div>
+            <div class="confirm-body">You'll get early access and locked-in adopter pricing. Until then, watch your inbox for the JusticeX.ai Brief — our monthly read on what's changing in AI dispute resolution.</div>
+          </div>
+        </form>
+      </div>
+
+      <!-- RIGHT: direct channels -->
+      <aside>
+        <div class="card" style="padding:32px;background:var(--jx-stone-100)">
+          <div class="eyebrow"><span class="num">Direct</span> <span class="rule"></span> Channels</div>
+          <h3 class="h3" style="margin-top:16px">Or email us directly.</h3>
+          <div style="margin-top:24px;display:flex;flex-direction:column;gap:20px">
+            <div>
+              <a href="mailto:hello@justicex.ai" class="serif" style="font-size:18px;color:var(--jx-navy-800)">hello@justicex.ai</a>
+              <div class="caption">General inquiries, partnerships outside the three core paths</div>
+            </div>
+            <div>
+              <a href="mailto:partners@justicex.ai" class="serif" style="font-size:18px;color:var(--jx-navy-800)">partners@justicex.ai</a>
+              <div class="caption">Mediator design partners, ADR centers, court-rostered programs</div>
+            </div>
+            <div>
+              <a href="mailto:counsel@justicex.ai" class="serif" style="font-size:18px;color:var(--jx-navy-800)">counsel@justicex.ai</a>
+              <div class="caption">Referring-partner program, ethics-committee review, CLE coordination</div>
+            </div>
+            <div>
+              <a href="mailto:trust@justicex.ai" class="serif" style="font-size:18px;color:var(--jx-navy-800)">trust@justicex.ai</a>
+              <div class="caption">Security packet, compliance attestations, vendor reviews</div>
+            </div>
+            <div>
+              <a href="mailto:press@justicex.ai" class="serif" style="font-size:18px;color:var(--jx-navy-800)">press@justicex.ai</a>
+              <div class="caption">Press, analyst briefings, speaking &amp; podcast inquiries</div>
+            </div>
+            <div>
+              <span class="serif" style="font-size:18px;color:var(--jx-slate-500)">careers@justicex.ai</span>
+              <div class="caption">Active at General Availability — engineering, mediator success, counsel-liaison roles</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card navy" style="padding:32px;margin-top:20px">
+          <div class="eyebrow on-dark"><span class="num">Office</span> <span class="rule"></span> NYC · Remote-first</div>
+          <h3 class="h3" style="color:var(--jx-paper);margin-top:16px">New York-headquartered.</h3>
+          <p class="body on-dark" style="margin-top:14px">JusticeX.ai is a remote-first company. Mailing and legal address publish at General Availability; secure document delivery available on request via trust@justicex.ai.</p>
+        </div>
+      </aside>
+    </div>
+
+    <p class="caption" style="margin-top:48px;max-width:880px;color:var(--jx-slate-500);padding-top:24px;border-top:1px solid var(--jx-stone-200)">
+      <strong style="color:var(--jx-navy-800)">Disclaimers.</strong> JusticeX.ai is a logic and communication tool, not a law firm. Information on this site does not constitute legal advice. The platform is in active development; some capabilities are pre-release. Demos prior to General Availability are guided by JusticeX.ai staff.
+    </p>
+  </div>
+</section>
+
+<div data-partial="footer"></div>
+<script src="js/partials.js?v=2026-05-20b"></script>
+<script src="js/site.js?v=2026-05-20d"></script>
+</body>
+</html>

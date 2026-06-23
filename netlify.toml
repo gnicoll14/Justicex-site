@@ -1,0 +1,15 @@
+# Netlify configuration — JusticeX.ai static marketing site
+[build]
+  publish = "."
+  command = ""
+
+# Don't deploy backups or source bundles
+[build.processing]
+  skip_processing = false
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

@@ -1,0 +1,280 @@
+/* ============================================================
+   JusticeX.ai Design System — Colors & Type
+   Brand: Truth · Fairness · Efficiency
+   ============================================================ */
+
+/* -------- Fonts ----------
+   Display serif: Source Serif 4 (replaces deck's Georgia)
+   Body sans: Source Sans 3 (replaces deck's Calibri)
+   Mono: JetBrains Mono (citations, code, IDs)
+   NOTE: Originals (Calibri, Georgia) are MS-Office defaults
+   without web licenses. Swap these in if licensed copies exist.
+-------- */
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ===== Core brand palette =====
+     LOCKED brand standards v1.1 (JusticeX-ai_Brand_Standards.pdf):
+     Navy #042C53 · Coral Dark #D85A30 · Coral Light #F0997B · Slate #5F5E5A · White #FFFFFF
+     Coral Dark is the accent on white surfaces (the X, CTAs, eyebrows).
+     Coral Light is the accent on navy surfaces (the X on dark, headline highlights).
+     ===== */
+  --jx-navy-900:       #021A33;   /* deepest — letterboxing, hero bg */
+  --jx-navy-800:       #042C53;   /* NAVY — primary brand surface */
+  --jx-navy-700:       #0A3866;   /* raised surface on navy */
+  --jx-navy-600:       #154572;   /* card on navy */
+  --jx-navy-500:       #2A5582;   /* hairline / divider on navy */
+
+  /* Coral Dark — accent on WHITE (the X, CTAs, eyebrow labels) */
+  --jx-coral-600:       #B04722;   /* press */
+  --jx-coral-500:       #D85A30;   /* CORAL DARK — primary accent on white */
+  --jx-coral-400:       #E27C58;   /* hover */
+  --jx-coral-100:       #FAECE7;   /* coral tint backgrounds */
+
+  /* Coral Light — accent on NAVY (the X on dark, headline highlights) */
+  --jx-coralLt-600:     #D67E5F;   /* press on dark */
+  --jx-coralLt-500:     #F0997B;   /* CORAL LIGHT — accent on navy */
+  --jx-coralLt-400:     #F4B097;   /* hover on dark */
+  --jx-coralLt-100:     #FCD7C7;   /* pale coral — supporting text on navy */
+
+  --jx-slate-700:      #3A3937;   /* deep slate */
+  --jx-slate-500:      #5F5E5A;   /* SLATE — body copy on light, captions, .ai suffix */
+  --jx-slate-300:      #9CA0A7;   /* muted text on navy */
+  --jx-slate-100:      #D9DEE7;   /* very pale slate */
+
+  /* Neutrals (light surfaces) */
+  --jx-white:          #FFFFFF;   /* PRIMARY content surface */
+  --jx-paper:          #F4F6FA;   /* MIST — subtle alt surface (was Paper) */
+  --jx-stone-100:      #E6F1FB;   /* navy tint — soft fill */
+  --jx-stone-200:      #D1DEEE;
+  --jx-stone-300:      #B5C5DC;
+  --jx-ink-700:        #1A1A1A;
+  --jx-ink-900:        var(--jx-navy-800);
+
+  /* Semantic */
+  --jx-success:        #1D9E75;   /* settled-green */
+  --jx-warning:        #D85A30;   /* uses coral — same family as the accent */
+  --jx-danger:         #C73E3E;   /* objection red */
+  --jx-info:           var(--jx-navy-700);
+
+  /* Back-compat aliases (legacy tokens → new brand)
+     OLD: --jx-gold-* (Audit Gold) → coral dark (the accent on white)
+     OLD: --jx-teal-* (Resolution Teal) → coral light (the accent on navy)
+     OLD: --jx-cyan-* (legacy cyan) → coral light
+     Keeping aliases so existing CSS classes / pages continue to work
+     without a full rewrite. New code should reference --jx-coral-* and --jx-coralLt-*. */
+  --jx-gold-600:       var(--jx-coral-600);
+  --jx-gold-500:       var(--jx-coral-500);
+  --jx-gold-400:       var(--jx-coral-400);
+  --jx-gold-100:       var(--jx-coral-100);
+
+  --jx-teal-600:       var(--jx-coralLt-600);
+  --jx-teal-500:       var(--jx-coralLt-500);
+  --jx-teal-400:       var(--jx-coralLt-400);
+  /* IMPORTANT: --jx-teal-100 was used as "supporting text on navy" in the old palette.
+     Mapping it to coral tint would make body text on dark surfaces look pink.
+     We re-route it to a soft white-on-navy (slate-on-navy) per brand standard. */
+  --jx-teal-100:       #B6C0D0;   /* muted text on navy — soft slate, NOT coral */
+
+  --jx-cyan-500:       var(--jx-coralLt-500);
+  --jx-cyan-300:       var(--jx-coralLt-400);
+  --jx-cyan-100:       #B6C0D0;
+
+  /* ===== Semantic surface tokens ===== */
+  --bg-dark:           var(--jx-navy-800);
+  --bg-dark-raised:    var(--jx-navy-700);
+  --bg-dark-card:      var(--jx-navy-600);
+  --bg-light:          var(--jx-paper);
+  --bg-light-raised:   var(--jx-white);
+  --bg-light-card:     var(--jx-stone-100);
+
+  --fg-on-dark:        var(--jx-white);
+  --fg-on-dark-muted:  var(--jx-slate-300);
+  --fg-on-dark-soft:   var(--jx-teal-100);
+  --fg-on-light:       var(--jx-navy-800);
+  --fg-on-light-muted: var(--jx-slate-500);
+
+  --accent:            var(--jx-gold-500);
+  --accent-soft:       var(--jx-gold-100);
+  --signal:            var(--jx-teal-500);
+
+  --hairline-dark:     var(--jx-navy-500);
+  --hairline-light:    var(--jx-stone-200);
+  --rule-accent:       var(--jx-gold-500);
+
+  /* ===== Type families ===== */
+  --font-display:      'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --font-body:         'Source Sans 3', 'Calibri', system-ui, -apple-system, Segoe UI, sans-serif;
+  --font-mono:         'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+
+  /* ===== Type scale (modular, 1.25) ===== */
+  --fs-eyebrow:        11px;   /* 0.6875rem — wide-tracked labels */
+  --fs-micro:          12px;
+  --fs-caption:        13px;
+  --fs-body:           15px;
+  --fs-body-lg:        17px;
+  --fs-lead:           20px;
+  --fs-h4:             22px;
+  --fs-h3:             28px;
+  --fs-h2:             40px;
+  --fs-h1:             56px;
+  --fs-display:        88px;   /* big stat / hero numbers */
+
+  /* ===== Letter spacing ===== */
+  --ls-eyebrow:        0.22em;
+  --ls-label:          0.08em;
+  --ls-tight:          -0.01em;
+  --ls-display:        -0.02em;
+
+  /* ===== Line height ===== */
+  --lh-tight:          1.05;
+  --lh-display:        1.1;
+  --lh-heading:        1.2;
+  --lh-body:           1.5;
+  --lh-loose:          1.65;
+
+  /* ===== Spacing scale (4px base) ===== */
+  --space-1:           4px;
+  --space-2:           8px;
+  --space-3:           12px;
+  --space-4:           16px;
+  --space-5:           20px;
+  --space-6:           24px;
+  --space-8:           32px;
+  --space-10:          40px;
+  --space-12:          48px;
+  --space-16:          64px;
+  --space-20:          80px;
+  --space-24:          96px;
+
+  /* ===== Radii ===== */
+  --r-none:            0;
+  --r-xs:              2px;
+  --r-sm:              4px;
+  --r-md:              6px;
+  --r-lg:              10px;
+  --r-xl:              16px;
+  --r-pill:            999px;
+
+  /* ===== Shadows / elevation ===== */
+  --shadow-1:          0 1px 2px rgba(4, 44, 83, 0.06), 0 1px 1px rgba(4, 44, 83, 0.04);
+  --shadow-2:          0 4px 12px rgba(4, 44, 83, 0.08), 0 1px 2px rgba(4, 44, 83, 0.06);
+  --shadow-3:          0 12px 28px rgba(4, 44, 83, 0.12), 0 4px 8px rgba(4, 44, 83, 0.06);
+  /* Brand glow — coral (replaces legacy gold + cyan glows) */
+  --shadow-gold:       0 0 0 1px rgba(216, 90, 48, 0.35), 0 10px 30px rgba(216, 90, 48, 0.18);
+  --shadow-cyan:       0 0 0 1px rgba(240, 153, 123, 0.4), 0 6px 24px rgba(240, 153, 123, 0.22);
+  --shadow-coral:      0 0 0 1px rgba(216, 90, 48, 0.35), 0 10px 30px rgba(216, 90, 48, 0.18);
+  --shadow-coral-soft: 0 0 0 1px rgba(240, 153, 123, 0.4), 0 6px 24px rgba(240, 153, 123, 0.22);
+  --inset-hairline:    inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+
+  /* ===== Motion ===== */
+  --ease-standard:     cubic-bezier(0.2, 0.6, 0.2, 1);
+  --ease-emphasis:     cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-instant:       80ms;
+  --dur-fast:          140ms;
+  --dur-base:          220ms;
+  --dur-slow:          400ms;
+}
+
+/* ============================================================
+   Semantic type styles — apply via class on the element.
+   ============================================================ */
+
+.jx-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.jx-h1, h1.jx {
+  font-family: var(--font-display);
+  font-size: var(--fs-h1);
+  font-weight: 500;
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-display);
+  color: inherit;
+}
+
+.jx-h2, h2.jx {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: 500;
+  line-height: var(--lh-heading);
+  letter-spacing: var(--ls-tight);
+}
+
+.jx-h3, h3.jx {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: 500;
+  line-height: var(--lh-heading);
+}
+
+.jx-h4, h4.jx {
+  font-family: var(--font-body);
+  font-size: var(--fs-h4);
+  font-weight: 600;
+  line-height: var(--lh-heading);
+  letter-spacing: var(--ls-tight);
+}
+
+.jx-display-number {
+  font-family: var(--font-display);
+  font-size: var(--fs-display);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--accent);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.jx-lead {
+  font-family: var(--font-body);
+  font-size: var(--fs-lead);
+  font-weight: 400;
+  line-height: var(--lh-loose);
+}
+
+.jx-body, p.jx {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: 400;
+  line-height: var(--lh-body);
+}
+
+.jx-body-lg {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-body);
+}
+
+.jx-caption {
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  line-height: 1.45;
+  color: var(--fg-on-light-muted);
+}
+
+.jx-label {
+  font-family: var(--font-body);
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+}
+
+.jx-mono, code.jx, kbd.jx {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  font-feature-settings: 'liga' 0;
+}
+
+.jx-rule {
+  border: 0;
+  border-top: 1px solid var(--rule-accent);
+  width: 48px;
+  margin: 0;
+}
