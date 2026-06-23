@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JusticeX — Marketplace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
+<style>
+:root{--navy:#042C53;--navy-deep:#021A33;--navy2:#154572;--navy3:#2A5582;--paper:#E6F1FB;--surface:#FFFFFF;--ink:#1A1A1A;--muted:#5F5E5A;--faint:#9CA0A7;--hair:#D1DEEE;--accent:#D85A30;--accent-d:#B04722;--accent-soft:#FAECE7;--success:#1D9E75;--success-s:#E7F4EF;--warn:#C9962F;--warn-s:#FBF3E0;--radius:14px;--radius-sm:10px;}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',Calibri,system-ui,sans-serif;font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;}
+a{color:inherit}
+.appbar{background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 26px;}
+.brand{display:flex;align-items:center;}.bmark{height:23px;width:23px;border-radius:5px;margin-right:9px;}
+.wordmark{font-family:'Source Serif 4',serif;font-weight:600;font-size:22px;}.wordmark .x{color:var(--accent);}
+.tagline{font-size:11.5px;letter-spacing:2.4px;text-transform:uppercase;color:#9FB6D2;margin-left:12px;}
+.backlink{color:#C9D8EA;text-decoration:none;font-size:13px;display:inline-flex;align-items:center;gap:6px;}
+.backlink:hover{color:#fff;}
+.rolebar{background:var(--navy-deep);color:#fff;display:flex;align-items:center;gap:14px;padding:9px 26px;font-size:12.5px;flex-wrap:wrap;}
+.rolebar .lab{color:#7E9AB9;}
+.roleseg{display:inline-flex;background:#0C2A47;border:1px solid #1E3F61;border-radius:9px;padding:3px;}
+.roleseg button{border:none;background:none;color:#9FB6D2;font-family:inherit;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:7px;cursor:pointer;display:flex;align-items:center;gap:6px;}
+.roleseg button.on{background:var(--accent);color:#08213A;}
+.hero{background:linear-gradient(180deg,#0A335A,#062644);color:#fff;padding:26px 26px 30px;}
+.hero .wrap{max-width:1180px;margin:0 auto;}
+.hero h1{font-family:'Source Serif 4',serif;font-weight:600;font-size:27px;margin:0 0 7px;}
+.hero p{margin:0;color:#C7D7E8;font-size:14px;max-width:780px;}
+.hero .pills{display:flex;gap:9px;margin-top:14px;flex-wrap:wrap;}
+.hero .pill{background:#0E3A63;border:1px solid #205084;color:#CFE0F1;font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;display:flex;align-items:center;gap:6px;}
+.hero .pill i{color:var(--accent);}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px;}
+.layout{display:grid;grid-template-columns:1fr 312px;gap:22px;margin:22px auto 70px;}
+@media(max-width:900px){.layout{grid-template-columns:1fr}}
+.tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:16px;}
+.tab{border:1px solid var(--hair);background:var(--surface);color:var(--navy2);font-family:inherit;font-weight:600;font-size:12.5px;padding:7px 13px;border-radius:999px;cursor:pointer;display:flex;align-items:center;gap:6px;}
+.tab.on{background:var(--navy);border-color:var(--navy);color:#fff;}
+.tab .ct{font-size:10.5px;opacity:.7;}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:620px){.grid{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);padding:16px 17px;box-shadow:0 1px 2px rgba(20,30,46,.04);display:flex;flex-direction:column;position:relative;}
+.card.locked{opacity:.62;}
+.card .top{display:flex;align-items:flex-start;gap:11px;margin-bottom:9px;}
+.ic{width:38px;height:38px;border-radius:10px;background:var(--paper);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:20px;flex:none;}
+.ic.fin{background:#EAF5EF;color:#1c7a55;} .ic.court{background:#EEF0FB;color:#3a449a;} .ic.pm{background:#FBEFE9;color:var(--accent-d);} .ic.pub{background:#EAF2FB;color:var(--navy2);} .ic.exec{background:#F2EEFA;color:#6A4B9C;}
+.ic.logoic{background:#fff;border:1px solid var(--hair);} .ic img{width:26px;height:26px;border-radius:6px;object-fit:contain;}
+.card h3{font-family:'Source Serif 4',serif;font-weight:600;font-size:16px;color:var(--navy);margin:0;line-height:1.25;}
+.card .grp{font-size:11px;color:var(--faint);font-weight:700;text-transform:uppercase;letter-spacing:.4px;margin-top:2px;}
+.mcp{font-size:9.5px;font-weight:700;padding:2px 6px;border-radius:5px;background:var(--success-s);color:#1c6b4a;margin-left:6px;vertical-align:middle;text-transform:none;letter-spacing:0;}
+.card .desc{font-size:12.5px;color:var(--muted);margin:0 0 12px;flex:1;}
+.badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:11px;}
+.bdg{font-size:10.5px;font-weight:700;padding:3px 8px;border-radius:999px;display:inline-flex;align-items:center;gap:4px;}
+.bdg.priv{background:#EEF4FA;color:var(--navy2);} .bdg.role{background:#F3F1EC;color:#6b6151;} .bdg.cap{background:var(--warn-s);color:#8a6516;}
+.modeseg{display:flex;gap:4px;background:#F1F5FA;border:1px solid var(--hair);border-radius:9px;padding:3px;margin-bottom:11px;}
+.modeseg .ms{flex:1;border:none;background:none;font-family:inherit;font-size:11px;font-weight:700;color:var(--muted);padding:6px 6px;border-radius:6px;cursor:pointer;line-height:1.15;text-align:center;}
+.modeseg .ms small{display:block;font-weight:600;color:var(--faint);font-size:10px;margin-top:1px;}
+.modeseg .ms.on{background:#fff;color:var(--navy);box-shadow:0 1px 2px rgba(20,30,46,.12);}
+.modeseg .ms.on small{color:var(--accent-d);}
+.foot{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--hair);padding-top:11px;margin-top:auto;}
+.price{font-size:13px;color:var(--navy);font-weight:700;} .price small{display:block;font-weight:400;color:var(--faint);font-size:10.5px;}
+.price.free{color:var(--success);}
+.act{border:1px solid var(--accent);background:var(--accent);color:#fff;font-family:inherit;font-weight:700;font-size:12.5px;padding:7px 13px;border-radius:9px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;}
+.act:hover{background:var(--accent-d);border-color:var(--accent-d);}
+.act.ghost{background:var(--surface);color:var(--navy);border-color:var(--hair);}
+.act.added{background:var(--success-s);color:#1c6b4a;border-color:#bfe3d2;}
+.act.on{background:var(--success);border-color:var(--success);color:#fff;cursor:default;}
+.act.lock{background:#F1F3F6;color:var(--faint);border-color:var(--hair);cursor:not-allowed;}
+.cart{position:sticky;top:18px;align-self:start;background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);box-shadow:0 2px 6px rgba(20,30,46,.06);overflow:hidden;}
+.cart .ch{background:var(--navy);color:#fff;padding:13px 16px;font-family:'Source Serif 4',serif;font-weight:600;font-size:15px;display:flex;align-items:center;gap:8px;}
+.cart .cb{padding:14px 16px;}
+.cart .empty{color:var(--muted);font-size:12.5px;text-align:center;padding:14px 4px;}
+.ci{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;padding:9px 0;border-bottom:1px dashed var(--hair);font-size:12.5px;}
+.ci:last-child{border-bottom:none;}
+.ci .nm{font-weight:600;color:var(--navy);} .ci .nm small{display:block;font-weight:400;color:var(--faint);font-size:10.5px;}
+.ci .rm{color:var(--accent-d);cursor:pointer;font-size:11px;background:none;border:none;font-family:inherit;}
+.ci .pr{font-weight:700;color:var(--navy);white-space:nowrap;font-variant-numeric:tabular-nums;}
+.sum{display:flex;justify-content:space-between;align-items:baseline;padding:12px 0 4px;font-size:13px;}
+.sum b{font-size:18px;color:var(--navy);font-family:'Source Serif 4',serif;}
+.sumnote{font-size:10.5px;color:var(--faint);margin-bottom:11px;}
+.cbtn{width:100%;border:1px solid var(--accent);background:var(--accent);color:#fff;font-family:inherit;font-weight:700;font-size:13.5px;padding:11px;border-radius:10px;cursor:pointer;}
+.cbtn:hover{background:var(--accent-d);} .cbtn:disabled{background:#E7C7BA;border-color:#E7C7BA;cursor:not-allowed;}
+.gate-note{display:flex;gap:7px;font-size:11px;color:var(--muted);margin-top:11px;line-height:1.4;}
+.gate-note i{color:var(--success);font-size:14px;margin-top:1px;}
+.scrim{position:fixed;inset:0;background:rgba(6,18,34,.55);display:none;align-items:center;justify-content:center;z-index:60;padding:20px;}
+.scrim.show{display:flex;}
+.modal{background:#fff;border-radius:16px;max-width:460px;width:100%;overflow:hidden;box-shadow:0 18px 50px rgba(6,18,34,.4);}
+.modal .mh{background:var(--navy);color:#fff;padding:16px 20px;font-family:'Source Serif 4',serif;font-weight:600;font-size:17px;}
+.modal .mb{padding:18px 20px;}
+.step{display:flex;gap:11px;align-items:flex-start;padding:9px 0;}
+.step .si{width:24px;height:24px;border-radius:50%;background:var(--paper);color:var(--navy3);display:flex;align-items:center;justify-content:center;font-size:14px;flex:none;}
+.step.done .si{background:var(--success);color:#fff;} .step.active .si{background:var(--accent);color:#fff;}
+.step .st b{font-size:13.5px;color:var(--navy);} .step .st div{font-size:12px;color:var(--muted);}
+.mfoot{padding:14px 20px;border-top:1px solid var(--hair);display:flex;gap:9px;justify-content:flex-end;}
+.disc{max-width:1180px;margin:0 auto 40px;padding:13px 22px;display:flex;justify-content:space-between;gap:14px;font-size:11.5px;color:var(--muted);border-top:1px solid var(--hair);flex-wrap:wrap;}
+.disc .tfe b{color:var(--navy);} .disc a{color:var(--accent-d);}
+</style>
+</head>
+<body>
+<div class="appbar">
+  <div class="brand"><img class="bmark" src="https://justicex.ai/assets/brand-mark.png" alt=""/><span class="wordmark">Justice<span class="x">X</span></span><span class="tagline">Marketplace</span></div>
+  <a class="backlink" href="dashboard.html"><i class="ti ti-arrow-left"></i> Back to dashboard</a>
+</div>
+
+<div class="rolebar"><span class="lab">Catalog for</span>
+  <div class="roleseg">
+    <button data-r="individual" onclick="setRole('individual')"><i class="ti ti-user"></i> Individual</button>
+    <button data-r="mediator" class="on" onclick="setRole('mediator')"><i class="ti ti-scale"></i> Mediator</button>
+    <button data-r="attorney" onclick="setRole('attorney')"><i class="ti ti-briefcase"></i> Attorney</button>
+  </div>
+  <span class="lab" style="margin-left:auto">You see only what fits your role — licensed tools appear in the attorney path.</span>
+</div>
+
+<div class="hero"><div class="wrap">
+  <h1>Add capabilities with a click</h1>
+  <p>JusticeX is your core platform. Turn on the tools you need from the menu below. For most tools you choose how to add them — let <b>JusticeX provide it</b>, or <b>connect an account you already own</b> for a flat fee. Either way, enabling a tool fires the consent and redaction checks automatically.</p>
+  <div class="pills">
+    <span class="pill"><i class="ti ti-bolt"></i> One-click enable</span>
+    <span class="pill"><i class="ti ti-arrows-exchange"></i> We provide it · or connect your own</span>
+    <span class="pill"><i class="ti ti-shield-lock"></i> Privacy gate fires on enable</span>
+    <span class="pill"><i class="ti ti-adjustments-check"></i> Role-gated catalog</span>
+  </div>
+</div></div>
+
+<div class="wrap">
+<div class="layout">
+  <div>
+    <div class="tabs" id="tabs"></div>
+    <div class="grid" id="grid"></div>
+  </div>
+  <aside class="cart">
+    <div class="ch"><i class="ti ti-shopping-bag"></i> Your plan</div>
+    <div class="cb">
+      <div id="cartItems"></div>
+      <div class="sum"><span>Add-ons / month</span><b id="cartTotal">$0</b></div>
+      <div class="sumnote">Demo pricing. Metered tools (per use) appear on your invoice with caps you set.</div>
+      <button class="cbtn" id="confirmBtn" disabled onclick="openConfirm()">Review &amp; enable</button>
+      <div class="gate-note"><i class="ti ti-lock-check"></i><span>Enabling any tool runs its consent, redaction, and role checks before it goes live — the click can't skip the privacy fence.</span></div>
+    </div>
+  </aside>
+</div>
+</div>
+
+<div class="disc">
+  <div><b style="color:var(--navy)">JusticeX is a software platform — not a law firm or mediator.</b> Marketplace pricing shown is illustrative for this demo. Public &amp; third-party tools are vetted, not endorsed; licensed tools require your own account. <a href="disclaimer.html">How tools are vetted</a>.</div>
+  <div class="tfe"><b>Truth</b> · <b>Fairness</b> · <b>Efficiency</b></div>
+</div>
+
+<div class="scrim" id="scrim">
+  <div class="modal">
+    <div class="mh" id="modalTitle">Enable your tools</div>
+    <div class="mb" id="modalBody"></div>
+    <div class="mfoot" id="modalFoot"></div>
+  </div>
+</div>
+
+<script>
+var ROLE='mediator';
+var GROUPS=[
+ {id:'all',name:'All',icon:'ti-apps'},
+ {id:'public',name:'Public & free',icon:'ti-scale-outline'},
+ {id:'court',name:'Court data',icon:'ti-gavel'},
+ {id:'intake',name:'Intake & e-sign',icon:'ti-file-import'},
+ {id:'pm',name:'Practice management',icon:'ti-briefcase'},
+ {id:'financial',name:'Financial',icon:'ti-coin'},
+ {id:'notary',logo:'proof.com',name:'Notarization',icon:'ti-writing-sign'},
+ {id:'premium',name:'Attorney research',icon:'ti-books'}
+];
+// each connector has 1-2 modes. kind: included | addon | metered | cyo | byo
+function M(kind,amount,unit){return {kind:kind,amount:amount,unit:unit};}
+var CONN=[
+ {id:'courtlistener',logo:'courtlistener.com',name:'CourtListener',grp:'public',gi:'pub',icon:'ti-scale',mcp:1,roles:['individual','mediator','attorney'],desc:'Public legal precedent, source-verified for the [verify] layer. Reference only — never interpreted.',priv:'No matter data leaves',modes:[M('included')]},
+ {id:'courtroom5',logo:'courtroom5.com',name:'Courtroom5',grp:'public',gi:'pub',icon:'ti-help-circle',mcp:1,roles:['individual','mediator','attorney'],desc:'Self-represented-litigant guidance and next-step help. Access-to-justice channel.',modes:[M('included')]},
+ {id:'trellis',logo:'trellis.law',name:'Trellis',grp:'court',gi:'court',icon:'ti-building-bank',mcp:1,roles:['individual','mediator','attorney'],desc:'State trial-court records — comparable matters for objective strength. Reference only, no prediction.',priv:'Reference only',modes:[M('addon',29,'/mo'),M('cyo',15,'/mo')]},
+ {id:'nyscef',name:'NYSCEF e-filing',grp:'court',gi:'court',icon:'ti-file-upload',roles:['attorney'],desc:'New York State court e-filing and docket access for the attorney / documentation-prep path.',modes:[M('addon',19,'/mo'),M('cyo',9,'/mo')]},
+ {id:'intakedocs',name:'Box · Drive · Microsoft 365',grp:'intake',gi:'pub',icon:'ti-files',roles:['individual','mediator','attorney'],desc:'Bring party documents in from where they already live. Every file still passes the Redaction Service.',priv:'Redacted before analysis',modes:[M('included')]},
+ {id:'docusign',logo:'docusign.com',name:'DocuSign',grp:'intake',gi:'exec',icon:'ti-signature',mcp:1,roles:['individual','mediator','attorney'],desc:'Send the Memorandum of Understanding or an engagement out for signature — executed agreement back.',modes:[M('metered',3,'/envelope'),M('cyo',9,'/mo')]},
+ {id:'clio',logo:'clio.com',name:'Clio',grp:'pm',gi:'pm',icon:'ti-briefcase',roles:['mediator','attorney'],desc:'Two-way sync with your practice-management system: seed Intake from a matter, write the comparison package and deadlines back.',priv:'Redacted in · package out',modes:[M('cyo',39,'/mo')]},
+ {id:'mycase',logo:'mycase.com',name:'MyCase',grp:'pm',gi:'pm',icon:'ti-folder',roles:['mediator','attorney'],desc:'Practice-management sync for solo and small firms — matters, contacts, deadlines.',modes:[M('cyo',39,'/mo')]},
+ {id:'practicepanther',logo:'practicepanther.com',name:'PracticePanther',grp:'pm',gi:'pm',icon:'ti-folders',roles:['mediator','attorney'],desc:'Automation-first practice-management sync for high-volume matter types.',modes:[M('cyo',39,'/mo')]},
+ {id:'quickbooks',logo:'quickbooks.intuit.com',name:'QuickBooks',grp:'financial',gi:'fin',icon:'ti-calculator',mcp:1,roles:['individual','mediator','attorney'],desc:'Pull business financials for a business-interest valuation — supports the net-of-tax model.',priv:'Consent + redaction',modes:[M('cyo',19,'/mo')]},
+ {id:'plaid',logo:'plaid.com',name:'Plaid',grp:'financial',gi:'fin',icon:'ti-building-bank',roles:['individual','mediator','attorney'],desc:'Verify assets and income directly for financial completeness. Consent-based, with a usage cap you set.',priv:'Consent + redaction',cap:'Cap you set',modes:[M('metered',4,'/verification')]},
+ {id:'notary',name:'Proof · DocuSign Notary',grp:'notary',gi:'exec',icon:'ti-writing-sign',roles:['individual','mediator','attorney'],desc:'Remote online notarization for affidavits and witness statements in the documentation-prep flow.',priv:'Identity + consent',modes:[M('metered',25,'/notarization'),M('cyo',9,'/mo')]},
+ {id:'westlaw',logo:'thomsonreuters.com',name:'Westlaw · CoCounsel',grp:'premium',gi:'court',icon:'ti-books',roles:['attorney'],desc:'Attorney-grade legal research and AI. Connect your own license — JusticeX never resells it.',modes:[M('byo',25,'/seat/mo')]},
+ {id:'harvey',logo:'harvey.ai',name:'Harvey',grp:'premium',gi:'court',icon:'ti-sparkles',roles:['attorney'],desc:'Legal AI for the attorney path, under your own seat. Never shown to a self-represented user.',modes:[M('byo',25,'/seat/mo')]},
+ {id:'everlaw',logo:'everlaw.com',name:'Everlaw',grp:'premium',gi:'court',icon:'ti-search',roles:['attorney'],desc:'Litigation discovery and analysis — attorney path only, bring your own credential.',modes:[M('byo',25,'/seat/mo')]}
+];
+var TAB='all';
+var sel={};       // id -> mode index chosen
+var plan={};      // id -> true (in plan)
+var enabled={};   // id -> true (live)
+
+function modeIdx(c){ return sel[c.id]||0; }
+function modeOf(c){ return c.modes[modeIdx(c)]; }
+function modeName(kind){ return kind==='cyo'?'Connect your own':kind==='byo'?'Your license':kind==='included'?'Included':'JusticeX provides'; }
+function modeShort(kind){ return kind==='cyo'?'Connect your own':kind==='byo'?'Your license':'We provide it'; }
+function priceStr(m){
+  if(m.kind==='included') return 'Included';
+  if(m.kind==='metered') return '$'+m.amount+' '+m.unit;
+  return '$'+m.amount+m.unit;
+}
+function isMonthly(m){ return m.kind==='addon'||m.kind==='cyo'||m.kind==='byo'; }
+
+function visible(){ return CONN.filter(function(c){return c.roles.indexOf(ROLE)>=0 || c.grp==='premium';}); }
+function setRole(r){ ROLE=r; TAB='all'; document.querySelectorAll('.roleseg button').forEach(function(b){b.classList.toggle('on',b.dataset.r===r);}); renderAll(); }
+function setTab(t){ TAB=t; renderAll(); }
+function roleLabel(c){ return c.roles.length===3?'All roles':c.roles.map(function(r){return r.charAt(0).toUpperCase()+r.slice(1);}).join(' · '); }
+function groupName(id){var g=GROUPS.filter(function(x){return x.id===id;})[0];return g?g.name:id;}
+
+function renderTabs(){
+  document.getElementById('tabs').innerHTML=GROUPS.map(function(g){
+    var n=g.id==='all'?visible().length:visible().filter(function(c){return c.grp===g.id;}).length;
+    if(g.id!=='all'&&n===0) return '';
+    return '<button class="tab '+(TAB===g.id?'on':'')+'" onclick="setTab(\''+g.id+'\')"><i class="ti '+g.icon+'"></i> '+g.name+' <span class="ct">'+n+'</span></button>';
+  }).join('');
+}
+function pickMode(id,i){ sel[id]=i; renderAll(); }
+
+function cardHTML(c){
+  var inRole=c.roles.indexOf(ROLE)>=0;
+  var locked=!inRole;
+  var m=modeOf(c);
+  var badges='';
+  if(c.priv) badges+='<span class="bdg priv"><i class="ti ti-shield-check"></i>'+c.priv+'</span>';
+  badges+='<span class="bdg role"><i class="ti ti-user-check"></i>'+roleLabel(c)+'</span>';
+  if(c.cap) badges+='<span class="bdg cap"><i class="ti ti-gauge"></i>'+c.cap+'</span>';
+  // mode toggle (only when 2 modes)
+  var toggle='';
+  if(c.modes.length>1){
+    toggle='<div class="modeseg">'+c.modes.map(function(mm,i){
+      return '<button class="ms '+(i===modeIdx(c)?'on':'')+'" onclick="pickMode(\''+c.id+'\','+i+')">'+modeShort(mm.kind)+'<small>'+priceStr(mm)+'</small></button>';
+    }).join('')+'</div>';
+  }
+  // action
+  var act;
+  if(locked){ act='<button class="act lock"><i class="ti ti-lock"></i> Attorney path</button>'; }
+  else if(enabled[c.id]){ act='<button class="act on"><i class="ti ti-check"></i> Enabled</button>'; }
+  else if(m.kind==='included'){ act='<button class="act" onclick="enableNow(\''+c.id+'\')"><i class="ti ti-bolt"></i> Enable</button>'; }
+  else if(m.kind==='byo'){ act='<button class="act ghost" onclick="enableNow(\''+c.id+'\')"><i class="ti ti-key"></i> Connect license</button>'; }
+  else {
+    var added=plan[c.id];
+    var lbl=m.kind==='cyo'?'<i class="ti ti-plug"></i> Connect &amp; add':'<i class="ti ti-plus"></i> Add to plan';
+    act='<button class="act '+(added?'added':'')+'" onclick="togglePlan(\''+c.id+'\')">'+(added?'<i class="ti ti-check"></i> Added':lbl)+'</button>';
+  }
+  var priceCls=m.kind==='included'?'price free':'price';
+  var priceSub=c.modes.length>1?modeShort(m.kind):(m.kind==='byo'?'no resale':m.kind==='included'?'in your plan':m.kind==='cyo'?'your account':'metered');
+  var priceHTML='<span class="'+priceCls+'">'+(m.kind==='included'?'Included':priceStr(m))+'<small>'+priceSub+'</small></span>';
+  return '<div class="card '+(locked?'locked':'')+'">'+
+    '<div class="top"><div class="ic '+(c.logo?'logoic':c.gi)+'">'+(c.logo?'<img src="https://www.google.com/s2/favicons?domain='+c.logo+'&sz=64" alt="" onerror="this.style.display=\'none\'">':'<i class="ti '+c.icon+'"></i>')+'</div>'+
+    '<div><h3>'+c.name+(c.mcp?'<span class="mcp">MCP</span>':'')+'</h3><div class="grp">'+groupName(c.grp)+'</div></div></div>'+
+    '<p class="desc">'+c.desc+'</p>'+
+    '<div class="badges">'+badges+'</div>'+toggle+
+    '<div class="foot">'+priceHTML+act+'</div></div>';
+}
+function renderGrid(){
+  var list=visible().filter(function(c){return TAB==='all'||c.grp===TAB;});
+  document.getElementById('grid').innerHTML=list.map(cardHTML).join('');
+}
+function byId(id){return CONN.filter(function(c){return c.id===id;})[0];}
+function togglePlan(id){ if(plan[id]) delete plan[id]; else plan[id]=true; renderAll(); }
+
+function renderCart(){
+  var ids=Object.keys(plan);
+  var box=document.getElementById('cartItems');
+  if(ids.length===0){ box.innerHTML='<div class="empty">No add-ons selected yet. Pick tools from the menu — included tools are already on.</div>'; }
+  else{
+    box.innerHTML=ids.map(function(id){var c=byId(id);var m=modeOf(c);
+      return '<div class="ci"><div class="nm">'+c.name+'<small>'+modeName(m.kind)+(isMonthly(m)?' · monthly':' · metered')+'</small><button class="rm" onclick="togglePlan(\''+id+'\')">remove</button></div><div class="pr">'+priceStr(m)+'</div></div>';
+    }).join('');
+  }
+  var monthly=ids.reduce(function(s,id){var m=modeOf(byId(id));return s+(isMonthly(m)?m.amount:0);},0);
+  document.getElementById('cartTotal').textContent='$'+monthly;
+  document.getElementById('confirmBtn').disabled=ids.length===0;
+}
+
+var confirmIds=[];
+function enableNow(id){ openConfirm([id]); }
+function openConfirm(ids){
+  confirmIds = ids || Object.keys(plan);
+  if(confirmIds.length===0) return;
+  var names=confirmIds.map(function(id){return byId(id).name;}).join(', ');
+  var kinds=confirmIds.map(function(id){return modeOf(byId(id)).kind;});
+  var needData=confirmIds.some(function(id){return byId(id).priv;});
+  var anyOwn=kinds.some(function(k){return k==='cyo'||k==='byo';});
+  var anyProvided=kinds.some(function(k){return k==='addon'||k==='metered';});
+  var steps=[{t:'Confirm selection',d:names}];
+  if(anyOwn) steps.push({t:'Connect your own account',d:'Sign in with your own provider — JusticeX stores no master credentials, and you can revoke any time.'});
+  if(anyProvided) steps.push({t:'Authorize access',d:'JusticeX provisions the tool and you grant one-click access.'});
+  if(needData) steps.push({t:'Privacy gate',d:'Consent recorded and the Redaction Service armed — matter data is de-identified before any analysis.'});
+  steps.push({t:'Role & fence check',d:'Access bound to your role on the matter ACL. Opposing-side contact is never auto-shared.'});
+  steps.push({t:'Switch on',d:'Tool goes live on your matters.'});
+  document.getElementById('modalTitle').textContent='Enable: '+names;
+  document.getElementById('modalBody').innerHTML=steps.map(function(s,i){
+    return '<div class="step" data-i="'+i+'"><div class="si">'+(i+1)+'</div><div class="st"><b>'+s.t+'</b><div>'+s.d+'</div></div></div>';
+  }).join('');
+  document.getElementById('modalFoot').innerHTML='<button class="act ghost" onclick="closeModal()">Cancel</button><button class="act" id="runBtn" onclick="runGate()"><i class="ti ti-bolt"></i> Enable now</button>';
+  document.getElementById('scrim').classList.add('show');
+}
+function runGate(){
+  var steps=document.querySelectorAll('#modalBody .step');
+  document.getElementById('runBtn').outerHTML='<button class="act" disabled>Enabling…</button>';
+  var i=0;
+  var iv=setInterval(function(){
+    if(i>0){ steps[i-1].classList.remove('active'); steps[i-1].classList.add('done'); steps[i-1].querySelector('.si').innerHTML='<i class="ti ti-check"></i>'; }
+    if(i<steps.length){ steps[i].classList.add('active'); i++; }
+    else{ clearInterval(iv); finishGate(); }
+  },500);
+}
+function finishGate(){
+  confirmIds.forEach(function(id){ enabled[id]=true; delete plan[id]; });
+  document.getElementById('modalTitle').textContent='Enabled';
+  document.getElementById('modalBody').innerHTML='<div style="text-align:center;padding:8px 0 4px"><div style="width:54px;height:54px;border-radius:50%;background:var(--success-s);color:var(--success);display:flex;align-items:center;justify-content:center;font-size:30px;margin:0 auto 12px"><i class="ti ti-check"></i></div><b style="color:var(--navy);font-size:16px;font-family:\'Source Serif 4\',serif">You\'re connected.</b><p style="color:var(--muted);font-size:13px;margin:7px 0 0">The tools are live on your matters, with consent recorded and the privacy gate active. Manage or revoke any tool from the dashboard at any time.</p></div>';
+  document.getElementById('modalFoot').innerHTML='<button class="act" onclick="closeModal()">Done</button>';
+}
+function closeModal(){ document.getElementById('scrim').classList.remove('show'); renderAll(); }
+
+function renderAll(){ renderTabs(); renderGrid(); renderCart(); }
+document.getElementById('scrim').addEventListener('click',function(e){ if(e.target===this) closeModal(); });
+renderAll();
+</script>
+</body>
+</html>

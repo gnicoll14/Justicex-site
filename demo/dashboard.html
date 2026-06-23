@@ -161,7 +161,7 @@ body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',Calibr
 </div>
 
 <div class="ctools">
-  <div class="ctheadrow"><i class="ti ti-plug-connected"></i><b>Connected tools</b><span class="ctsub">The JusticeX assistant uses these per role — public resources for everyone, licensed tools for the attorney path only. <a href="disclaimer.html">How tools are vetted</a></span></div>
+  <div class="ctheadrow"><i class="ti ti-plug-connected"></i><b>Connected tools</b><span class="ctsub">The JusticeX assistant uses these per role — public resources for everyone, licensed tools for the attorney path only. <a href="disclaimer.html">How tools are vetted</a> · <a href="marketplace.html" style="color:var(--accent-d);font-weight:700">Browse the marketplace →</a></span></div>
   <div class="ctgrid">
     <div class="ctcell t1"><div class="ctt">Public &amp; free · everyone</div>
       <div class="ctchips"><span class="ctchip on">CourtListener <i class="ti ti-check"></i></span><span class="ctchip">Courtroom5</span><span class="ctchip">Descrybe</span></div>
@@ -308,7 +308,24 @@ body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',Calibr
       <select id="nmLead"><option>Individual</option><option selected>Mediator</option><option>Attorney</option></select>
       <div style="font-size:11px;color:var(--muted);margin-top:4px">You can change the lead later — for the whole matter or a single step. Everyone is notified.</div>
     </div>
-    <a class="btn primary" id="nmGo" href="plan.html" style="width:100%;justify-content:center;margin-top:4px">Continue <i class="ti ti-arrow-right"></i></a>
+    <div style="margin-top:11px;padding-top:11px;border-top:1px solid var(--hair)">
+      <label>Participants &amp; contacts</label>
+      <div style="font-size:11px;color:var(--muted);margin:2px 0 9px">The JusticeX assistant uses these to coordinate the matter and notify everyone of hand-offs. Contact details are kept <b>separate</b> from the matter's redacted analysis.</div>
+      <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;color:var(--navy2);margin-bottom:5px">Other party</div>
+      <input placeholder="Full name" style="width:100%;padding:8px 10px;border:1px solid var(--hair);border-radius:8px;font-family:inherit;font-size:13px">
+      <div style="display:flex;gap:8px;margin-top:6px">
+        <input type="email" placeholder="Email" style="flex:1;min-width:0;padding:8px 10px;border:1px solid var(--hair);border-radius:8px;font-family:inherit;font-size:13px">
+        <input type="tel" placeholder="Phone" style="flex:1;min-width:0;padding:8px 10px;border:1px solid var(--hair);border-radius:8px;font-family:inherit;font-size:13px">
+      </div>
+      <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;color:var(--navy2);margin:11px 0 5px">Mediator / attorney <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted)">— if involved</span></div>
+      <input placeholder="Name" style="width:100%;padding:8px 10px;border:1px solid var(--hair);border-radius:8px;font-family:inherit;font-size:13px">
+      <div style="display:flex;gap:8px;margin-top:6px">
+        <input type="email" placeholder="Email" style="flex:1;min-width:0;padding:8px 10px;border:1px solid var(--hair);border-radius:8px;font-family:inherit;font-size:13px">
+        <input type="tel" placeholder="Phone" style="flex:1;min-width:0;padding:8px 10px;border:1px solid var(--hair);border-radius:8px;font-family:inherit;font-size:13px">
+      </div>
+      <label class="optck" style="margin-top:9px;font-size:12px"><input type="checkbox" checked> Each invited participant confirms their own details and consent to be contacted</label>
+    </div>
+    <a class="btn primary" id="nmGo" href="plan.html" style="width:100%;justify-content:center;margin-top:10px">Continue <i class="ti ti-arrow-right"></i></a>
   </div>
 </div>
 
