@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JusticeX — Account</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
+<style>
+:root{--navy:#042C53;--navy-deep:#021A33;--navy2:#154572;--navy3:#2A5582;--paper:#E6F1FB;--surface:#FFFFFF;--ink:#1A1A1A;--muted:#5F5E5A;--faint:#9CA0A7;--hair:#D1DEEE;--accent:#D85A30;--accent-d:#B04722;--accent-soft:#FAECE7;--success:#1D9E75;--success-s:#E7F4EF;--a:#2A5582;--b:#D67E5F;--radius:14px;--radius-sm:10px;}
+*{box-sizing:border-box} html,body{margin:0}
+body{background:var(--paper); color:var(--ink); font-family:'Source Sans 3',Calibri,system-ui,sans-serif; font-size:15px; line-height:1.6;-webkit-font-smoothing:antialiased;}
+.appbar{background:var(--navy); color:#fff; display:flex; align-items:center; justify-content:space-between; padding:14px 26px;}
+.brand{display:flex; align-items:center;}
+.bmark{height:23px; width:23px; border-radius:5px; margin-right:9px;}
+.wordmark{font-family:'Source Serif 4',serif; font-weight:600; font-size:22px;} .wordmark .x{color:var(--accent);}
+.tagline{font-size:11.5px; letter-spacing:2.4px; text-transform:uppercase; color:#9FB6D2; margin-left:12px;}
+.secure{font-size:11.5px; color:#C9D8EA; display:flex; align-items:center; gap:6px;} .secure i{color:#7FB6A6;}
+.flow{background:var(--navy-deep); color:#fff; display:flex; align-items:center; gap:10px; padding:9px 26px; font-size:12.5px;}
+.flow .f{display:flex; align-items:center; gap:7px; color:#7E9AB9;}
+.flow .f.on{color:#fff; font-weight:600;} .flow .f.on .d{background:var(--accent);}
+.flow .d{width:7px;height:7px;border-radius:50%;background:#3C5775;}
+.flow .ar{color:#3C5775;}
+.wrap{max-width:520px; margin:34px auto 60px; padding:0 22px;}
+.intro{text-align:center; margin-bottom:18px;}
+.intro h1{font-family:'Source Serif 4',serif; font-weight:600; font-size:26px; color:var(--navy); margin:0 0 6px;}
+.intro p{color:var(--muted); margin:0; font-size:14px;}
+.card{background:var(--surface); border:1px solid var(--hair); border-radius:var(--radius); padding:22px 24px 24px; box-shadow:0 2px 6px rgba(20,30,46,.06);}
+.seg{display:flex; background:#EFF4FA; border:1px solid var(--hair); border-radius:10px; padding:3px; margin-bottom:20px;}
+.seg button{flex:1; border:none; background:none; font-family:inherit; font-size:13.5px; font-weight:700; padding:8px 0; border-radius:8px; cursor:pointer; color:var(--muted);}
+.seg button.on{background:var(--navy); color:#fff;}
+.field{margin-bottom:13px;} .row2{display:flex; gap:12px;} .row2 .field{flex:1;}
+.field label{display:block; font-size:12px; font-weight:600; color:var(--navy2); margin-bottom:4px;}
+.field input{width:100%; padding:9px 12px; border:1px solid var(--hair); border-radius:8px; font-size:14px; font-family:inherit; background:#FBFDFF; color:var(--ink);}
+.field input:focus{outline:none; border-color:var(--navy3); box-shadow:0 0 0 3px rgba(42,85,130,.12);}
+.rolelab{font-size:12px; font-weight:600; color:var(--navy2); margin:4px 0 7px;}
+.roles{display:flex; gap:9px; margin-bottom:6px;}
+.role{flex:1; border:1px solid var(--hair); border-radius:10px; padding:11px 10px; cursor:pointer; text-align:center; background:#FBFDFF; transition:.12s;}
+.role i{font-size:20px; color:var(--navy3); display:block; margin-bottom:4px;}
+.role b{font-size:13px; color:var(--navy); display:block;}
+.role span{font-size:11px; color:var(--muted); display:block; margin-top:2px; line-height:1.35;}
+.role.on{border-color:var(--accent); background:var(--accent-soft); box-shadow:0 0 0 2px rgba(216,90,48,.18);}
+.role.on i{color:var(--accent-d);}
+.once{display:flex; gap:9px; align-items:flex-start; background:var(--success-s); border:1px solid #C6E0CF; border-radius:var(--radius-sm); padding:10px 13px; margin:16px 0 14px; font-size:12.5px; color:#1E5A3C;}
+.once i{color:var(--success); font-size:17px; margin-top:1px;} .once b{color:#13402A;}
+.consent{display:flex; gap:9px; align-items:flex-start; font-size:12px; color:var(--muted); margin:0 0 9px;}
+.consent input{margin-top:3px;} .consent a{color:var(--accent-d); font-weight:600;} .consent b{color:var(--navy);}
+.ack{border:1px solid var(--hair); background:#FBFDFF; border-radius:var(--radius-sm); padding:13px 15px 5px; margin:6px 0 16px;}
+.ack .acktitle{font-size:12px; font-weight:700; color:var(--navy); margin-bottom:9px; display:flex; align-items:center; gap:6px;} .ack .acktitle i{color:var(--accent-d);}
+.cta{width:100%; border:none; background:var(--accent); color:#fff; font-family:inherit; font-weight:700; font-size:15px; padding:12px; border-radius:10px; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px; text-decoration:none;}
+.cta:hover{background:var(--accent-d);}
+.muted-link{display:block; text-align:center; margin-top:13px; font-size:12.5px; color:var(--muted);} .muted-link a{color:var(--navy2); font-weight:600; cursor:pointer;}
+.hide{display:none;}
+.disc{max-width:520px; margin:18px auto 0; padding:0 22px; color:var(--muted); font-size:11.5px; line-height:1.6; display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap;}
+.disc a{color:var(--accent-d); font-weight:700;} .disc .tfe b{color:var(--navy);}
+</style>
+</head>
+<body>
+<div class="appbar">
+  <div class="brand"><img class="bmark" src="https://justicex.ai/assets/brand-mark.png" alt=""/><span class="wordmark">Justice<span class="x">X</span></span><span class="tagline">Objective comparison</span></div>
+  <div class="secure"><i class="ti ti-lock"></i> Secure account</div>
+</div>
+<div class="flow">
+  <span class="f on"><span class="d"></span> Account</span>
+  <span class="ar">→</span>
+  <span class="f"><span class="d"></span> Your matter · 7 steps (Plan → Memorandum of Understanding)</span>
+</div>
+
+<div class="wrap">
+  <div class="intro">
+    <h1 id="ttl">Create your account</h1>
+    <p id="sub">Enter your details once. They carry into every matter.</p>
+  </div>
+
+  <div class="card">
+    <div class="seg">
+      <button id="tabNew" class="on" onclick="mode('new')">Create account</button>
+      <button id="tabIn" onclick="mode('in')">Sign in</button>
+    </div>
+
+    <!-- CREATE -->
+    <div id="paneNew">
+      <div class="row2">
+        <div class="field"><label>First name</label><input type="text" placeholder="Dana"></div>
+        <div class="field"><label>Last name</label><input type="text" placeholder="Whitfield"></div>
+      </div>
+      <div class="field"><label>Email</label><input type="email" placeholder="you@email.com"></div>
+      <div class="row2">
+        <div class="field"><label>Mobile</label><input id="phone" type="tel" inputmode="numeric" placeholder="(516) 884-2551" oninput="fmtPhone(this)"></div>
+        <div class="field"><label>Create password</label><input type="password" placeholder="••••••••"></div>
+      </div>
+
+      <div class="rolelab">I'm using JusticeX as a…</div>
+      <div class="roles">
+        <div class="role on" data-r="individual" onclick="pick(this)"><i class="ti ti-user"></i><b>Individual</b><span>Track my own matter</span></div>
+        <div class="role" data-r="mediator" onclick="pick(this)"><i class="ti ti-scale"></i><b>Mediator</b><span>Manage matters across clients</span></div>
+        <div class="role" data-r="attorney" onclick="pick(this)"><i class="ti ti-briefcase"></i><b>Attorney</b><span>Represent a client's side</span></div>
+      </div>
+
+      <div class="once"><i class="ti ti-shield-check"></i><div><b>Entered once.</b> Your contact details and role are captured here and carried into every matter — you won't re-enter them inside the 7-step process.</div></div>
+
+      <div class="ack">
+        <div class="acktitle"><i class="ti ti-checkbox"></i> Before you continue — please acknowledge each:</div>
+        <label class="consent"><input type="checkbox"> <span><b>AI can be imperfect.</b> JusticeX's analysis is automated and may contain errors or omissions; I will independently review it, and it is not legal advice.</span></label>
+        <label class="consent"><input type="checkbox"> <span><b>Not a substitute for counsel.</b> JusticeX is software — not a law firm, mediator, or arbitrator. For legal advice I will rely on my own attorney or a qualified neutral.</span></label>
+        <label class="consent"><input type="checkbox"> <span><b>My data, my responsibility.</b> No system is perfectly secure; I'm responsible for the sensitivity of what I upload, and I agree to the <a href="disclaimer.html">Legal &amp; UPL Disclaimer</a>, <a href="trust.html#privacy">Privacy Policy</a>, and <a href="trust.html#infosec">Information Security Policy</a>.</span></label>
+      </div>
+
+      <a class="cta" id="ctaNew" href="dashboard.html">Create account &amp; continue <i class="ti ti-arrow-right"></i></a>
+      <div class="muted-link">Already have an account? <a onclick="mode('in')">Sign in</a></div>
+    </div>
+
+    <!-- SIGN IN -->
+    <div id="paneIn" class="hide">
+      <div class="field"><label>Email</label><input type="email" placeholder="you@email.com"></div>
+      <div class="field"><label>Password</label><input type="password" placeholder="••••••••"></div>
+      <div class="muted-link" style="text-align:right;margin:0 0 16px"><a>Forgot password?</a></div>
+      <a class="cta" id="ctaIn" href="dashboard.html">Sign in <i class="ti ti-arrow-right"></i></a>
+      <div class="muted-link">New to JusticeX? <a onclick="mode('new')">Create an account</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="disc">
+  <div><b style="color:var(--navy)">JusticeX is a software platform — not a law firm or mediator.</b> Objective, mathematical comparison only; no legal advice. <a href="disclaimer.html">Full legal &amp; UPL disclaimer</a>. Synthetic demo — no real person.</div>
+  <div class="tfe"><b>Truth</b> · <b>Fairness</b> · <b>Efficiency</b></div>
+</div>
+
+<script>
+var selRole = 'individual';
+function setCtas(){
+  var url = 'dashboard.html?role=' + selRole;
+  document.getElementById('ctaNew').setAttribute('href', url);
+  document.getElementById('ctaIn').setAttribute('href', url);
+}
+function mode(m){
+  var isNew = m==='new';
+  document.getElementById('paneNew').classList.toggle('hide', !isNew);
+  document.getElementById('paneIn').classList.toggle('hide', isNew);
+  document.getElementById('tabNew').classList.toggle('on', isNew);
+  document.getElementById('tabIn').classList.toggle('on', !isNew);
+  document.getElementById('ttl').textContent = isNew ? 'Create your account' : 'Welcome back';
+  document.getElementById('sub').textContent = isNew ? 'Enter your details once. They carry into every matter.' : 'Sign in to your matters.';
+}
+function pick(el){ document.querySelectorAll('.role').forEach(function(r){r.classList.remove('on')}); el.classList.add('on'); selRole = el.getAttribute('data-r'); setCtas(); }
+function fmtPhone(el){
+  var d = el.value.replace(/\D/g,'').slice(0,10);
+  var out = d;
+  if(d.length > 6) out = '(' + d.slice(0,3) + ') ' + d.slice(3,6) + '-' + d.slice(6);
+  else if(d.length > 3) out = '(' + d.slice(0,3) + ') ' + d.slice(3);
+  else if(d.length > 0) out = '(' + d;
+  el.value = out;
+}
+// preselect role from the link (?role=mediator|attorney|individual)
+(function(){
+  var m = (location.search.match(/role=(individual|mediator|attorney)/)||[])[1];
+  if(m){ var el=document.querySelector('.role[data-r="'+m+'"]'); if(el) pick(el); }
+  else setCtas();
+})();
+</script>
+</body>
+</html>

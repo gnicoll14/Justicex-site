@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JusticeX — Summarize (Whitfield)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
+<style>
+:root{--navy:#042C53;--navy-deep:#021A33;--navy2:#154572;--navy3:#2A5582;--paper:#E6F1FB;--surface:#FFFFFF;--ink:#1A1A1A;--muted:#5F5E5A;--faint:#9CA0A7;--hair:#D1DEEE;--accent:#D85A30;--accent-d:#B04722;--accent-soft:#FAECE7;--success:#1D9E75;--success-s:#E7F4EF;--a:#2A5582;--a-soft:#E6F1FB;--a-ink:#154572;--b:#D67E5F;--b-soft:#FAECE7;--b-ink:#B04722;--gray:#EEF1F5;--radius:14px;--radius-sm:10px;}
+*{box-sizing:border-box} html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',Calibri,system-ui,sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.app{max-width:1140px;margin:0 auto;padding:0 22px 60px;}
+.appbar{background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 26px;}
+.brand{display:flex;align-items:center;} .bmark{height:23px;width:23px;border-radius:5px;margin-right:9px;}
+.wordmark{font-family:'Source Serif 4',serif;font-weight:600;font-size:22px;} .wordmark .x{color:var(--accent);}
+.tagline{font-size:11.5px;letter-spacing:2.4px;text-transform:uppercase;color:#9FB6D2;margin-left:12px;}
+.matterchip{font-size:13px;color:#C9D8EA;} .matterchip b{color:#fff;font-weight:600;}
+.neutralpill{font-size:11px;color:#08213A;background:var(--accent);padding:4px 11px;border-radius:999px;font-weight:600;margin-left:10px;}
+.stages{background:var(--navy-deep);color:#fff;display:flex;align-items:center;padding:9px 22px;flex-wrap:wrap;gap:2px;}
+.stage{display:flex;align-items:center;gap:7px;font-size:12px;color:#7E9AB9;white-space:nowrap;text-decoration:none;}
+a.stage:hover{color:#fff;} .stage .dot{width:7px;height:7px;border-radius:50%;background:#3C5775;}
+.stage.done{color:#B9CBDD;} .stage.done .dot{background:#5C7CA0;}
+.stage.active{color:#fff;font-weight:600;} .stage.active .dot{background:var(--accent);box-shadow:0 0 0 4px rgba(216,90,48,.22);}
+.sep{width:14px;height:1px;background:#27486B;margin:0 7px;}
+.crumb{font-size:12px;color:var(--muted);margin:18px 0 2px;display:flex;align-items:center;gap:7px;} .crumb b{color:var(--navy);}
+.panel{background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);padding:24px 26px 28px;margin-top:8px;box-shadow:0 1px 2px rgba(20,30,46,.04);}
+h1{font-family:'Source Serif 4',serif;font-weight:500;font-size:26px;margin:0 0 4px;display:flex;align-items:center;gap:11px;flex-wrap:wrap;}
+h1 .st{font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--navy2);background:#EAF1FB;border:1px solid #CFE0F4;padding:3px 10px;border-radius:999px;}
+.lede{color:var(--muted);margin:0 0 18px;max-width:82ch;}
+.sec{font-size:12px;letter-spacing:.5px;text-transform:uppercase;color:var(--faint);font-weight:600;margin:24px 0 12px;display:flex;align-items:center;gap:8px;}
+.sec .add{margin-left:auto;font-size:12px;font-weight:600;color:var(--navy2);text-transform:none;letter-spacing:0;cursor:pointer;display:inline-flex;align-items:center;gap:5px;border:1px dashed #B9CBE2;border-radius:7px;padding:3px 10px;background:none;font-family:inherit;}
+.sec .add:hover{background:#F3F7FD;}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;} @media(max-width:820px){.kpis{grid-template-columns:repeat(2,1fr)}}
+.kpi{border:1px solid var(--hair);border-radius:var(--radius-sm);padding:13px 15px;background:#FBFDFF;}
+.kpi .l{font-size:11px;letter-spacing:.3px;text-transform:uppercase;color:var(--faint);font-weight:600;}
+.kpi .v{font-size:23px;font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums;margin-top:1px;} .kpi .s{font-size:12px;color:var(--muted);}
+.kpi.warn .v{color:var(--accent-d);} .kpi.ok .v{color:var(--success);}
+.meterwrap{margin:14px 0 4px;} .meterlab{display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:4px;} .meterlab b{color:var(--navy);}
+.meter{height:12px;background:#E6F1FB;border:1px solid var(--hair);border-radius:999px;overflow:hidden;} .meter .fill{height:100%;background:var(--success);}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:4px;}
+th{background:#E2EAF4;color:var(--navy2);text-align:left;padding:8px 11px;font-size:10.5px;text-transform:uppercase;letter-spacing:.4px;font-weight:700;}
+th.r,td.r{text-align:right;font-variant-numeric:tabular-nums;}
+td{padding:9px 11px;border-bottom:1px solid #E8EEF6;vertical-align:top;} tbody tr:last-child td{border-bottom:none;}
+tr.sub td{background:#F1F6FC;font-weight:700;} tr.grand td{background:var(--navy);color:#fff;font-weight:700;}
+tr.cat td{background:#F4F8FD;color:var(--navy2);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.4px;}
+.statepill{font-size:10.5px;padding:3px 9px;border-radius:999px;font-weight:600;white-space:nowrap;display:inline-flex;align-items:center;gap:4px;}
+.statepill.ok{background:var(--success-s);color:var(--success);} .statepill.cont{background:var(--accent-soft);color:var(--accent-d);} .statepill.wait{background:#FBF3E6;color:#A06A1E;} .statepill.info{background:#EAF1FB;color:var(--navy2);}
+.var-pos{color:var(--accent-d);font-weight:700;} .var-zero{color:var(--success);font-weight:700;}
+.agreedin{width:96px;padding:5px 8px;border:1px solid #CDDDF3;border-radius:7px;font-size:13px;text-align:right;font-family:inherit;font-variant-numeric:tabular-nums;background:#FBFDFF;}
+.flag{display:flex;gap:10px;align-items:flex-start;background:var(--accent-soft);border:1px solid #F1CDBE;border-radius:var(--radius-sm);padding:11px 14px;margin-top:10px;} .flag i{color:var(--accent-d);font-size:19px;margin-top:1px;} .flag .ft{font-weight:600;font-size:13.5px;} .flag .fd{font-size:12.5px;color:var(--muted);}
+.plain{font-size:13px;color:var(--ink);background:#FBFDFF;border-left:3px solid var(--navy3);padding:9px 13px;border-radius:0 8px 8px 0;margin-top:10px;} .plain b{color:var(--navy);}
+.lawpill{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:var(--navy2);background:#EAF1FB;border:1px solid #CFE0F4;padding:5px 11px;border-radius:8px;}
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;} @media(max-width:820px){.cards3{grid-template-columns:1fr}}
+.tcard{border:1px solid var(--hair);border-radius:var(--radius-sm);padding:15px 17px;display:flex;flex-direction:column;gap:8px;}
+.tcard h3{margin:0;font-size:15px;font-weight:700;color:var(--navy);display:flex;align-items:center;gap:8px;}
+.tcard .kv{font-size:12.5px;color:var(--muted);} .tcard .kv b{color:var(--ink);}
+.tcard .open{margin-top:auto;font-size:13px;font-weight:600;color:#fff;background:var(--navy);border:none;border-radius:8px;padding:8px 13px;text-decoration:none;display:inline-flex;align-items:center;gap:7px;justify-content:center;}
+.tcard .open:hover{background:var(--navy2);}
+.dash{display:grid;grid-template-columns:1.1fr 1fr;gap:16px;} @media(max-width:820px){.dash{grid-template-columns:1fr}}
+.dbox{border:1px solid var(--hair);border-radius:var(--radius-sm);padding:16px 18px;}
+.dbox h4{margin:0 0 10px;font-size:13px;font-weight:700;color:var(--navy);}
+.donutwrap{display:flex;align-items:center;gap:18px;}
+.donut{width:130px;height:130px;border-radius:50%;flex:none;-webkit-mask:radial-gradient(circle 40px at center,transparent 98%,#000 100%);mask:radial-gradient(circle 40px at center,transparent 98%,#000 100%);}
+.leg{font-size:12.5px;} .leg div{display:flex;align-items:center;gap:8px;margin-bottom:6px;} .leg .sw{width:11px;height:11px;border-radius:3px;}
+.barrow{display:flex;align-items:center;gap:10px;margin-bottom:9px;font-size:12.5px;} .barrow .nm{width:120px;flex:none;} .barrow .track{flex:1;height:18px;background:#EEF3F9;border-radius:5px;overflow:hidden;} .barrow .fill{height:100%;border-radius:5px;} .barrow .v{width:96px;text-align:right;font-variant-numeric:tabular-nums;flex:none;}
+.splitbar{display:flex;height:30px;border-radius:8px;overflow:hidden;border:1px solid var(--hair);} .splitbar .pa{background:var(--a);} .splitbar .pb{background:var(--b);} .splitbar div{display:flex;align-items:center;justify-content:center;color:#fff;font-size:12.5px;font-weight:600;}
+details{border:1px solid var(--hair);border-radius:var(--radius-sm);margin-bottom:10px;background:#FBFDFF;} details[open]{background:#fff;}
+summary{cursor:pointer;padding:12px 15px;font-weight:600;color:var(--navy);display:flex;align-items:center;gap:10px;list-style:none;} summary::-webkit-details-marker{display:none;}
+summary .chev{margin-left:auto;color:var(--faint);transition:transform .15s;} details[open] summary .chev{transform:rotate(90deg);}
+summary .mini{font-weight:400;color:var(--muted);font-size:12.5px;}
+.ddbody{padding:0 15px 14px;font-size:13px;}
+.signgrid{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;} .sg{display:flex;align-items:center;gap:7px;font-size:12.5px;border:1px solid var(--hair);border-radius:999px;padding:4px 12px;} .dot{width:8px;height:8px;border-radius:50%;} .dot.ok{background:var(--success);} .dot.pend{background:#A06A1E;}
+.docgrid{display:flex;gap:12px;flex-wrap:wrap;} .doc{display:flex;align-items:center;gap:11px;border:1px solid var(--hair);border-radius:var(--radius-sm);padding:13px 16px;min-width:215px;cursor:pointer;background:var(--surface);} .doc:hover{border-color:var(--navy3);} .doc i{font-size:22px;color:var(--navy);} .doc .t{font-weight:600;font-size:13.5px;} .doc .d{font-size:11.5px;color:var(--muted);}
+.reports{display:flex;gap:12px;flex-wrap:wrap;} .rep{display:flex;align-items:center;gap:13px;border:1px solid var(--hair);border-radius:var(--radius-sm);padding:13px 16px;min-width:250px;cursor:pointer;background:var(--surface);} .rep:hover{border-color:var(--navy3);box-shadow:0 1px 4px rgba(20,30,46,.08);} .rep .rt{font-weight:600;font-size:14px;} .rep .rs{font-size:11.5px;color:var(--muted);}
+.framing{display:flex;gap:11px;align-items:flex-start;max-width:86ch;margin-top:18px;} .framing i{color:var(--accent);font-size:22px;} .framing p{margin:0;font-size:13px;color:var(--muted);} .framing b{color:var(--navy);font-weight:600;}
+.signoffbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:16px;background:#F6F9FD;border:1px solid var(--hair);border-radius:var(--radius-sm);padding:13px 18px;} .signoffbar .s{font-size:13px;color:var(--muted);} .signoffbar .s b{color:var(--navy);}
+.audit{font-size:11.5px;color:var(--faint);margin-top:14px;line-height:1.7;border-top:1px dashed var(--hair);padding-top:10px;}
+.navbar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:22px;border-top:1px solid var(--hair);padding-top:16px;}
+.navbar .saved{font-size:12.5px;color:var(--success);display:flex;align-items:center;gap:6px;}
+.btn{font-size:13.5px;font-weight:600;border:1px solid var(--hair);background:var(--surface);color:var(--ink);border-radius:9px;padding:10px 18px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;text-decoration:none;}
+.btn.primary{background:var(--navy);color:#fff;border-color:var(--navy);} .btn.accent{background:var(--accent);color:#fff;border-color:var(--accent);} .btn:disabled,.btn.disabled{background:#EEF1F5;color:#9AA3B0;border-color:#DDE2EA;cursor:not-allowed;}
+.disc{font-size:11.5px;color:var(--faint);margin-top:18px;line-height:1.7;border-top:1px solid var(--hair);padding-top:12px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;} .disc .tfe b{color:var(--navy);}
+
+/* JX-WAVE1-CSS */
+.metricwrap{background:#EEF3FA;border-bottom:1px solid #D1DEEE;}
+.metricbar{display:flex;gap:26px;align-items:center;flex-wrap:wrap;padding:9px 26px;}
+.metricbar .mtile{display:flex;flex-direction:column;gap:3px;min-width:118px;}
+.metricbar .mtile.sym{min-width:188px;}
+.metricbar .mlabel{font-size:9.5px;letter-spacing:.4px;text-transform:uppercase;font-weight:700;color:#5F5E5A;}
+.metricbar .symnote{color:#9CA0A7;font-weight:600;text-transform:none;letter-spacing:0;}
+.metricbar .mbarwrap{height:7px;border-radius:999px;background:#DCE6F2;overflow:hidden;width:150px;}
+.metricbar .mbarwrap.sm{width:92px;height:6px;display:inline-block;vertical-align:middle;}
+.metricbar .mbar{height:100%;background:#042C53;border-radius:999px;}
+.metricbar .mbar.a{background:#2A5582;} .metricbar .mbar.b{background:#D67E5F;}
+.metricbar .mval{font-size:12px;font-weight:700;color:#042C53;font-variant-numeric:tabular-nums;}
+.metricbar .mval.big{font-size:17px;} .metricbar .mval .of{color:#9CA0A7;font-size:12px;font-weight:600;}
+.metricbar .symrow{display:flex;align-items:center;gap:7px;}
+.metricbar .sl{font-size:9px;font-weight:800;width:13px;height:13px;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;color:#fff;}
+.metricbar .sl.a{background:#2A5582;} .metricbar .sl.b{background:#D67E5F;}
+.metricbar .sv{font-size:11px;font-weight:700;color:#1A1A1A;font-variant-numeric:tabular-nums;width:18px;}
+.stages .ptag{font-size:8px;letter-spacing:.4px;text-transform:uppercase;font-weight:800;margin-left:6px;padding:1px 5px;border-radius:999px;vertical-align:middle;}
+.stages .ptag.each{background:rgba(216,90,48,.22);color:#F0B49B;}
+.stages .ptag.both{background:rgba(122,160,200,.20);color:#B7CBE2;}
+.disc .disclink{color:#B04722;font-weight:700;text-decoration:underline;}
+
+/* JX-WAVE1B-CSS */
+.stages{align-items:flex-start !important; gap:24px !important;}
+.stages .stagegroup{display:flex; flex-direction:column; gap:5px;}
+.stages .stagegroup .sgrow{display:flex; align-items:center; gap:4px; flex-wrap:wrap;}
+.stages .stagegroup .glabel{font-size:8.5px; letter-spacing:.6px; text-transform:uppercase; font-weight:800; text-align:center; padding-top:4px; border-top:2px solid;}
+.stages .stagegroup.each .glabel{color:#F0B49B; border-color:rgba(216,90,48,.55);}
+.stages .stagegroup.both .glabel{color:#B7CBE2; border-color:rgba(122,160,200,.5);}
+.stages .stnum{opacity:.62; font-weight:700; margin-right:1px;}
+
+/* JX-WAVE1C-CSS — single-line stage strip */
+.stages{flex-wrap:nowrap !important; gap:20px !important; overflow-x:auto;}
+.stages .stagegroup .sgrow{flex-wrap:nowrap; gap:11px;}
+.stages .sep{display:none !important;}
+.stages .stage{font-size:11.5px !important; white-space:nowrap;}
+.stages .stagegroup .glabel{font-size:8px;}
+
+/* JX-WAVE1D-CSS — equal-spaced 7-column stage grid */
+.stages.stagesgrid{display:grid !important; grid-template-columns:repeat(7,1fr) !important;
+  align-items:center !important; row-gap:7px !important; column-gap:6px !important;
+  padding:11px 30px 9px !important; overflow:visible !important; flex-wrap:initial !important;}
+.stages.stagesgrid .stage{grid-row:1; justify-self:center; white-space:nowrap; font-size:11.5px !important;}
+.stages.stagesgrid .glabel{grid-row:2; padding-top:5px; border-top:2px solid; text-align:center;
+  font-size:8.5px; letter-spacing:.5px; text-transform:uppercase; font-weight:800;}
+.stages.stagesgrid .glabel.each{grid-column:1 / span 2; color:#F0B49B; border-color:rgba(216,90,48,.55);}
+.stages.stagesgrid .glabel.both{grid-column:3 / span 5; color:#B7CBE2; border-color:rgba(122,160,200,.5);}
+.stages.stagesgrid .sep{display:none;}
+
+/* JX-WAVE1E-CSS — grouped metric bar */
+.metricbar{gap:22px !important; align-items:center !important;}
+.metricbar .mgroup{display:flex; flex-direction:column; gap:5px;}
+.metricbar .mgcap{font-size:8.5px; letter-spacing:.5px; text-transform:uppercase; font-weight:800;}
+.metricbar .mgcap.each{color:#B04722;} .metricbar .mgcap.both{color:#2A5582;}
+.metricbar .mgrow{display:flex; gap:22px; align-items:center; flex-wrap:wrap;}
+.metricbar .mdiv{width:1px; align-self:stretch; background:#D1DEEE; margin:0 2px;}
+.metricbar .sv{width:auto !important; min-width:16px;}
+
+/* JX-WAVE1F-CSS — stacked A-over-B comparison */
+.metricbar .mtile.sym{min-width:158px;}
+.metricbar .mtile.sym .symrow{gap:8px;}
+.metricbar .mtile.sym .mbarwrap.sm{width:110px; height:7px;}
+.metricbar .mtile.sym .sv{min-width:30px; text-align:right;}
+</style>
+</head>
+<body>
+<div class="appbar"><div class="brand"><img class="bmark" src="https://justicex.ai/assets/brand-mark.png" alt=""/><span class="wordmark">Justice<span class="x">X</span></span><span class="tagline">Objective comparison</span></div><div><span class="matterchip"><b>Whitfield</b> · Nassau County, New York · Divorce &amp; custody</span><span class="neutralpill">Neutral · synthetic demo</span></div></div>
+<div class="stages stagesgrid"><a class="stage done" href="plan.html"><span class="dot"></span> <span class="stnum">1.</span> Plan</a><a class="stage done" href="intake.html"><span class="dot"></span> <span class="stnum">2.</span> Intake</a><a class="stage done" href="redact.html"><span class="dot"></span> <span class="stnum">3.</span> Redact</a><span class="stage active"><span class="dot"></span> <span class="stnum">4.</span> Summarize</span><a class="stage" href="gap-analysis.html"><span class="dot"></span> <span class="stnum">5.</span> Gap Analysis</a><a class="stage" href="resolution.html"><span class="dot"></span> <span class="stnum">6.</span> Resolution</a><a class="stage" href="memorandum.html"><span class="dot"></span> <span class="stnum">7.</span> Memorandum</a><div class="glabel each">Each Party — Separate</div><div class="glabel both">Both Parties — Together</div></div><div class="metricwrap"><div class="metricbar"><div class="mgroup"><div class="mgcap each">Each party</div><div class="mgrow"><div class="mtile sym"><div class="mlabel">Matter completeness</div><div class="symrow"><span class="sl a">A</span><div class="mbarwrap sm"><div class="mbar a" style="width:86%"></div></div><span class="sv">86%</span></div><div class="symrow r2"><span class="sl b">B</span><div class="mbarwrap sm"><div class="mbar b" style="width:81%"></div></div><span class="sv">81%</span></div></div><div class="mtile sym"><div class="mlabel">Matter strength <a href="strength-comparison.html" style="color:#B04722;font-weight:700;text-decoration:none;font-size:9px;text-transform:none;letter-spacing:0">compare ›</a></div><div class="symrow"><span class="sl a">A</span><div class="mbarwrap sm"><div class="mbar a" style="width:72%"></div></div><span class="sv">72</span></div><div class="symrow r2"><span class="sl b">B</span><div class="mbarwrap sm"><div class="mbar b" style="width:68%"></div></div><span class="sv">68</span></div></div></div></div><div class="mdiv"></div><div class="mgroup"><div class="mgcap both">Both parties</div><div class="mgrow"><div class="mtile"><div class="mlabel">Alignment</div><div style="display:flex;align-items:center;gap:8px"><div class="mbarwrap"><div class="mbar" style="width:64%"></div></div><div class="mval">64%</div></div></div><div class="mtile"><div class="mlabel">Topics resolved</div><div class="mval big">5<span class="of">/8</span></div></div></div></div></div></div>
+<div class="app">
+  <div class="crumb"><i class="ti ti-file-text"></i> Pipeline · Stage 4 of 7 · <b>Summarize</b></div>
+  <div class="panel">
+    <h1>Summarize <span class="st">Stage 4 · Each viewpoint + variance</span></h1>
+    <p class="lede">Each party's figures, side by side, with the difference shown in dollars and percent. Where the two agree, the agreed value fills in automatically; where they differ, enter the agreed number. This is a working step — the parties agree a starting point and sign off before moving on.</p>
+    <div class="kpis">
+      <div class="kpi"><div class="l">Line items</div><div class="v">7</div><div class="s">Finances</div></div>
+      <div class="kpi ok"><div class="l">Already agree</div><div class="v" id="kAgree">5</div><div class="s">no variance</div></div>
+      <div class="kpi warn"><div class="l">Differ</div><div class="v" id="kDiff">2</div><div class="s">need an agreed value</div></div>
+      <div class="kpi"><div class="l">Net estate (agreed)</div><div class="v" id="kNet" style="font-size:18px">$620,000</div><div class="s">gross, before tax</div></div>
+    </div>
+
+    <div class="sec"><i class="ti ti-cash"></i> Finances &amp; property — asserted values &amp; variance</div>
+    <table id="finT"><thead><tr><th>Item</th><th class="r">Party A</th><th class="r">Party B</th><th class="r">$ variance</th><th class="r">% variance</th><th class="r">Agreed</th></tr></thead><tbody>
+    </tbody>
+    <tfoot><tr class="grand"><td>Net marital estate (gross)</td><td class="r" id="ta">—</td><td class="r" id="tb">—</td><td class="r"></td><td class="r"></td><td class="r" id="tag">—</td></tr></tfoot>
+    </table>
+    <div class="plain"><b>Same idea applies to Support and Children.</b> Support compares each party's income (the variance is the bonus question); Children compares the proposed overnight split. Each is agreed here as the starting point for Resolution.</div>
+
+    <div class="sec"><i class="ti ti-businessplan"></i> Support — income picture</div>
+    <table><thead><tr><th>Item</th><th class="r">Party A</th><th class="r">Party B</th><th class="r">$ variance</th><th>Note</th></tr></thead><tbody>
+      <tr><td>Annual income</td><td class="r">$70,000</td><td class="r">$160,000</td><td class="r">—</td><td>Agreed; bonus inclusion is the open question</td></tr>
+    </tbody></table>
+
+    <div class="signoffbar"><div class="s" id="soText"><b>2 items</b> still differ — enter an agreed value for each to sign off the starting point</div><button class="btn accent" id="soBtn" disabled><i class="ti ti-check"></i> Sign off the agreed starting point</button></div>
+    <div class="sec"><i class="ti ti-files"></i> Reports available</div>
+    <div class="reports">
+      <div class="rep"><span class="thumb"><svg width="56" height="40" viewBox="0 0 58 42"><rect x="0" y="0" width="58" height="42" rx="5" fill="#EAF1FB" stroke="#CFE0F4"/><rect x="6" y="6" width="20" height="13" rx="2" fill="#fff" stroke="#CFE0F4"/><rect x="9" y="14" width="3" height="3" fill="#2A5582"/><rect x="14" y="11" width="3" height="6" fill="#2A5582"/><rect x="19" y="9" width="3" height="8" fill="#D85A30"/><rect x="30" y="6" width="22" height="13" rx="2" fill="#fff" stroke="#CFE0F4"/><circle cx="41" cy="12.5" r="5" fill="none" stroke="#2A5582" stroke-width="2.4"/><path d="M41 7.5 A5 5 0 0 1 45.5 11" fill="none" stroke="#D85A30" stroke-width="2.4"/><rect x="6" y="23" width="46" height="5" rx="2" fill="#fff" stroke="#CFE0F4"/><rect x="6" y="23" width="30" height="5" rx="2" fill="#1D9E75"/><rect x="6" y="31" width="46" height="5" rx="2" fill="#fff" stroke="#CFE0F4"/><rect x="6" y="31" width="18" height="5" rx="2" fill="#2A5582"/></svg></span><div><div class="rt">Summary Report</div><div class="rs">A one-glance dashboard of this step</div></div></div>
+      <div class="rep"><span class="thumb"><svg width="56" height="40" viewBox="0 0 58 42"><rect x="8" y="0" width="42" height="42" rx="4" fill="#fff" stroke="#CFE0F4"/><rect x="13" y="6" width="20" height="4" rx="1.5" fill="#042C53"/><rect x="13" y="14" width="32" height="2.4" rx="1.2" fill="#9CA0A7"/><rect x="13" y="19" width="32" height="2.4" rx="1.2" fill="#9CA0A7"/><rect x="13" y="24" width="24" height="2.4" rx="1.2" fill="#9CA0A7"/><rect x="13" y="31" width="32" height="7" rx="1.5" fill="#EAF1FB" stroke="#CFE0F4"/><line x1="29" y1="31" x2="29" y2="38" stroke="#CFE0F4"/><rect x="14" y="32.6" width="6" height="2" fill="#D85A30"/></svg></span><div><div class="rt">Detailed Report</div><div class="rs">Full inputs → process → references → outputs, with the audit chain</div></div></div>
+    </div>
+    <div class="framing"><i class="ti ti-info-circle"></i><p><b>A neutral working step.</b> JusticeX shows each party's figures and the variance; the parties agree the numbers. It does not weigh them or recommend a result.</p></div>
+    <div class="navbar"><a class="btn" href="redact.html"><i class="ti ti-arrow-left"></i> Back</a><span class="saved"><i class="ti ti-device-floppy"></i> Saved automatically · every change is logged</span><a class="btn primary" href="strength-comparison.html">Next · Strength comparison <i class="ti ti-arrow-right"></i></a></div>
+    <div class="disc" data-x="JX-disc-upl"><div><b>JusticeX is a software platform — not a law firm or mediator.</b> It provides objective, mathematical comparison (and optional public legal precedent) for reference only — no legal advice, interpretation, or argument guidance; the two parties reach their own agreed view. <a class="disclink" href="disclaimer.html">Full legal &amp; UPL disclaimer</a>. Synthetic demo — no real person, figure, or document.</div><div class="tfe"><b>Truth</b> · <b>Fairness</b> · <b>Efficiency</b></div></div>
+  </div>
+</div>
+<script>
+var rows=[
+ {n:"Family home (value)",a:700000,b:640000},
+ {n:"Mortgage",a:-400000,b:-400000},
+ {n:"401(k)",a:180000,b:180000},
+ {n:"IRA",a:90000,b:90000},
+ {n:"Bank & cash",a:40000,b:40000},
+ {n:"Vehicles (2)",a:55000,b:55000},
+ {n:"Loans & cards",a:-45000,b:-45000}
+];
+function money(n){var s=n<0?"-":"";return s+"$"+Math.abs(Math.round(n)).toLocaleString("en-US");}
+function build(){
+ var tb=document.querySelector("#finT tbody");tb.innerHTML="";
+ rows.forEach(function(r,i){
+  if(r.agreed===undefined) r.agreed = (r.a===r.b)? r.a : "";
+  var v=r.b-r.a; var pct=r.a!==0? (v/Math.abs(r.a)*100):0;
+  var diff=r.a!==r.b;
+  var vcell = diff? '<span class="var-pos">'+money(v)+'</span>' : '<span class="var-zero">$0</span>';
+  var pcell = diff? '<span class="var-pos">'+pct.toFixed(1)+'%</span>' : '<span class="var-zero">0%</span>';
+  var ag = diff? '<input class="agreedin" data-i="'+i+'" value="'+(r.agreed===""?"":money(r.agreed))+'" placeholder="enter">' : money(r.agreed);
+  var tr=document.createElement("tr");
+  tr.innerHTML='<td>'+r.n+'</td><td class="r">'+money(r.a)+'</td><td class="r">'+money(r.b)+'</td><td class="r">'+vcell+'</td><td class="r">'+pcell+'</td><td class="r">'+ag+'</td>';
+  tb.appendChild(tr);
+ });
+ document.querySelectorAll(".agreedin").forEach(function(el){el.addEventListener("input",function(e){
+   var i=+e.target.dataset.i; var val=parseFloat(e.target.value.replace(/[^0-9.\-]/g,""));
+   rows[i].agreed = isNaN(val)? "" : val; recompute();
+ });});
+ recompute();
+}
+function recompute(){
+ var ta=0,tb2=0,tag=0,diff=0,agreedCount=0,allAgreed=true;
+ rows.forEach(function(r){ ta+=r.a; tb2+=r.b; if(r.a!==r.b){diff++; if(r.agreed===""||r.agreed===undefined){allAgreed=false;} else {tag+=r.agreed;}} else {tag+=r.agreed;} });
+ document.getElementById("ta").textContent=money(ta);
+ document.getElementById("tb").textContent=money(tb2);
+ document.getElementById("tag").textContent= allAgreed? money(tag) : "pending";
+ document.getElementById("kDiff").textContent=diff;
+ document.getElementById("kAgree").textContent=rows.length-diff;
+ document.getElementById("kNet").textContent= allAgreed? money(tag) : "pending";
+ var btn=document.getElementById("soBtn"), t=document.getElementById("soText");
+ if(allAgreed){btn.disabled=false; t.innerHTML="All items have an agreed value — ready to sign off the starting point";}
+ else {btn.disabled=true; var open=0; rows.forEach(function(r){if(r.a!==r.b&&(r.agreed===""||r.agreed===undefined))open++;}); t.innerHTML="<b>"+open+" item"+(open>1?"s":"")+"</b> still need an agreed value to sign off the starting point";}
+}
+build();
+</script>
+</body>
+</html>

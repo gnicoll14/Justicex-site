@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JusticeX — Documentation Prep · Attorney Grievance (synthetic)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
+<style>
+:root{--navy:#042C53;--navy-deep:#021A33;--navy2:#154572;--navy3:#2A5582;--paper:#E6F1FB;--surface:#FFFFFF;--ink:#1A1A1A;--muted:#5F5E5A;--faint:#9CA0A7;--hair:#D1DEEE;--accent:#D85A30;--accent-d:#B04722;--accent-soft:#FAECE7;--success:#1D9E75;--success-s:#E7F4EF;--warn:#C9962F;--warn-s:#FBF3E0;--blue-soft:#EFF4FA;--radius:14px;--radius-sm:10px;}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',Calibri,system-ui,sans-serif;font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;}
+.appbar{background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 26px;}
+.brand{display:flex;align-items:center;}.bmark{height:23px;width:23px;border-radius:5px;margin-right:9px;}
+.wordmark{font-family:'Source Serif 4',serif;font-weight:600;font-size:22px;}.wordmark .x{color:var(--accent);}
+.cat{font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:#08213A;background:#9FC6E8;padding:3px 9px;border-radius:999px;margin-left:12px;font-weight:700;}
+.matterchip{font-size:13px;color:#C9D8EA;}.matterchip b{color:#fff;}
+.neutralpill{font-size:11px;color:#08213A;background:var(--accent);padding:4px 11px;border-radius:999px;font-weight:600;margin-left:10px;}
+.stages{background:var(--navy-deep);color:#fff;display:grid;grid-template-columns:repeat(7,1fr);align-items:center;column-gap:6px;row-gap:6px;padding:11px 30px 9px;}
+.stages .stage{display:flex;align-items:center;gap:7px;font-size:11px;color:#7E9AB9;white-space:nowrap;justify-self:center;}
+.stages .dot{width:7px;height:7px;border-radius:50%;background:#3C5775;}
+.stages .stage.done{color:#B9CBDD;} .stages .stage.done .dot{background:#5C7CA0;}
+.stages .stage.active{color:#fff;font-weight:600;} .stages .stage.active .dot{background:var(--accent);box-shadow:0 0 0 4px rgba(216,90,48,.22);}
+.stages .stnum{opacity:.6;font-weight:700;margin-right:1px;}
+.stages .cap{grid-column:1 / span 7;text-align:center;font-size:8.5px;letter-spacing:.5px;text-transform:uppercase;font-weight:800;color:#9FB6D2;border-top:1px solid #21405f;padding-top:6px;margin-top:2px;}
+.app{max-width:1140px;margin:20px auto 60px;padding:0 22px;}
+.gate{display:flex;align-items:center;gap:11px;border-radius:var(--radius-sm);padding:11px 15px;font-size:13px;margin-bottom:12px;}
+.gate.elig{background:var(--success-s);border:1px solid #C6E0CF;color:#1E5A3C;} .gate.elig i{font-size:19px;color:var(--success);} .gate.elig b{color:#13402A;}
+.gate.attn{background:var(--blue-soft);border:1px solid #D9E6F4;color:var(--navy2);} .gate.attn i{font-size:18px;color:var(--navy3);} .gate.attn b{color:var(--navy);}
+.gate .req{margin-left:auto;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;background:#fff;padding:3px 9px;border-radius:999px;}
+.gate.elig .req{color:#1c6b4a;border:1px solid #C6E0CF;} .gate.attn .req{color:var(--navy2);border:1px solid #D9E6F4;}
+.routed{font-size:11.5px;color:var(--muted);margin:-4px 0 14px;}
+h1{font-family:'Source Serif 4',serif;font-weight:500;font-size:24px;margin:0 0 4px;}
+.lede{color:var(--muted);margin:0 0 14px;max-width:84ch;}
+.framing{font-size:12.5px;background:var(--accent-soft);border:1px solid #F1CDBE;border-radius:8px;padding:10px 14px;margin:0 0 16px;display:flex;gap:9px;align-items:flex-start;}.framing i{color:var(--accent-d);font-size:17px;margin-top:1px;}.framing b{color:var(--accent-d);}
+.stats{display:flex;gap:14px;margin-bottom:18px;flex-wrap:wrap;}
+.stat{flex:1;min-width:150px;background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);padding:14px 16px;box-shadow:0 1px 2px rgba(20,30,46,.04);}
+.stat .k{font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:var(--faint);font-weight:700;}
+.stat .v{font-family:'Source Serif 4',serif;font-weight:700;font-size:24px;color:var(--navy);margin-top:3px;}
+.stat .s{font-size:12px;color:var(--muted);margin-top:1px;}
+.sec{font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:var(--faint);font-weight:700;margin:22px 0 10px;display:flex;align-items:center;gap:8px;}
+.tbl{background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 2px rgba(20,30,46,.04);}
+.elh,.elr{display:grid;grid-template-columns:2fr 1.3fr 1.4fr 1.6fr;gap:14px;padding:11px 16px;align-items:center;}
+.elh{background:var(--blue-soft);font-size:10.5px;text-transform:uppercase;letter-spacing:.4px;color:var(--navy2);font-weight:700;}
+.elr{border-top:1px solid var(--hair);font-size:13px;}.elr:hover{background:#FBFDFF;}
+.elname{font-weight:700;color:var(--navy);} .elname small{display:block;font-weight:400;color:var(--muted);font-size:11px;margin-top:2px;}
+.srow{display:flex;align-items:center;gap:8px;}
+.bar{height:8px;border-radius:999px;background:#DCE6F2;overflow:hidden;flex:1;}.bar i{display:block;height:100%;border-radius:999px;}
+.bar i.st{background:var(--success);}.bar i.mo{background:var(--navy3);}.bar i.mi{background:var(--warn);}
+.rate{font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.3px;white-space:nowrap;}
+.rate.st{color:#1c6b4a;}.rate.mo{color:var(--navy2);}.rate.mi{color:#8a6516;}
+.exlink{font-size:11.5px;color:var(--navy2);font-weight:600;}
+.gap{font-size:12px;color:var(--muted);}.gap.ok{color:#1c6b4a;}.gap b{color:var(--accent-d);}
+.two{display:grid;grid-template-columns:1.3fr 1fr;gap:18px;}@media(max-width:880px){.two{grid-template-columns:1fr;}}
+.card{background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);box-shadow:0 1px 2px rgba(20,30,46,.04);overflow:hidden;}
+.exh,.exr{display:grid;grid-template-columns:46px 1.7fr 1.1fr 74px;gap:10px;padding:9px 15px;align-items:center;font-size:12.5px;}
+.exh{background:var(--blue-soft);font-size:10px;text-transform:uppercase;letter-spacing:.3px;color:var(--navy2);font-weight:700;}
+.exr{border-top:1px solid var(--hair);} .extag{font-weight:800;color:var(--navy);}
+.pill2{font-size:10px;font-weight:700;padding:2px 8px;border-radius:999px;white-space:nowrap;}
+.pill2.on{background:var(--success-s);color:#1c6b4a;}.pill2.no{background:var(--warn-s);color:#8a6516;}
+.frm{display:flex;align-items:center;gap:9px;padding:10px 15px;border-top:1px solid var(--hair);font-size:13px;}
+.frm:first-child{border-top:none;} .frm i.di{font-size:17px;} .frm .nm{font-weight:600;color:var(--navy);flex:1;} .frm .nm small{display:block;font-weight:400;color:var(--muted);font-size:11px;}
+.frm .st{font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:999px;}
+.st.draft{background:var(--blue-soft);color:var(--navy2);}.st.todo{background:var(--warn-s);color:#8a6516;}.st.done{background:var(--success-s);color:#1c6b4a;}
+/* procedural loop */
+.loop{display:flex;gap:0;background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 2px rgba(20,30,46,.04);}
+.loop .step{flex:1;padding:12px 14px;border-right:1px solid var(--hair);font-size:12px;}
+.loop .step:last-child{border-right:none;}
+.loop .s1{font-size:9.5px;text-transform:uppercase;letter-spacing:.4px;font-weight:800;color:var(--faint);}
+.loop .s2{color:var(--navy);font-weight:600;margin-top:3px;}
+.loop .step.done .s1{color:#1c6b4a;} .loop .step.cur{background:var(--accent-soft);} .loop .step.cur .s1{color:var(--accent-d);}
+.loop .step .ic{font-size:13px;}
+.handoff{display:flex;align-items:center;gap:14px;background:var(--navy);color:#fff;border-radius:var(--radius);padding:16px 20px;margin-top:18px;flex-wrap:wrap;}
+.handoff .wm{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#08213A;background:#E4B36B;padding:4px 10px;border-radius:6px;}
+.handoff .tx{font-size:13px;color:#C9D8EA;flex:1;min-width:240px;}.handoff .tx b{color:#fff;}
+.handoff .btn{background:var(--accent);color:#fff;border:none;font-family:inherit;font-weight:700;font-size:13.5px;padding:10px 16px;border-radius:9px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;text-decoration:none;}
+.disc{margin-top:18px;color:var(--muted);font-size:11.5px;border-top:1px solid var(--hair);padding-top:12px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;}.disc a{color:var(--accent-d);font-weight:700;}.disc .tfe b{color:var(--navy);}
+@media(max-width:880px){.elh{display:none;}.elr{grid-template-columns:1fr 1fr;}.loop{flex-wrap:wrap;}.loop .step{min-width:46%;}}
+</style>
+</head>
+<body>
+<div class="appbar"><div class="brand"><img class="bmark" src="https://justicex.ai/assets/brand-mark.png" alt=""/><span class="wordmark">Justice<span class="x">X</span></span><span class="cat">Documentation Preparation</span></div>
+  <div><span class="matterchip"><b>Park</b> · Attorney grievance · NYS Attorney Grievance Committee</span><span class="neutralpill">Synthetic demo</span></div></div>
+
+<div class="stages">
+  <span class="stage done"><span class="dot"></span><span class="stnum">1.</span> Plan</span>
+  <span class="stage done"><span class="dot"></span><span class="stnum">2.</span> Eligibility &amp; Forum</span>
+  <span class="stage done"><span class="dot"></span><span class="stnum">3.</span> Intake</span>
+  <span class="stage done"><span class="dot"></span><span class="stnum">4.</span> Redact</span>
+  <span class="stage active"><span class="dot"></span><span class="stnum">5.</span> Strength &amp; Readiness</span>
+  <span class="stage"><span class="dot"></span><span class="stnum">6.</span> Complaint Assembly</span>
+  <span class="stage"><span class="dot"></span><span class="stnum">7.</span> Submit &amp; Track</span>
+  <span class="cap">One party · objective documentation preparation · attorney-in-the-loop</span>
+</div>
+
+<div class="app">
+  <div style="font-size:12px;color:var(--muted);margin:0 0 12px"><a href="dashboard.html?role=individual" style="color:var(--navy2);text-decoration:none;font-weight:600"><i class="ti ti-arrow-left"></i> Dashboard</a> › <b style="color:var(--navy)">Documentation prep · Grievance</b></div>
+  <div class="gate elig"><i class="ti ti-route"></i><div><b>Eligible:</b> the matter alleges Rules of Professional Conduct breaches. <b>Forum:</b> the regional Grievance Committee for the relevant judicial district (routed by the attorney's location).</div><span class="req">Eligible ✓</span></div>
+  <div class="routed">Routed out automatically if it were really a <b>fee dispute</b> (→ fee-dispute-resolution program), a request to <b>overturn a ruling</b> (→ not this forum), or a <b>malpractice / money-damages</b> claim (→ separate counsel).</div>
+  <div class="gate attn"><i class="ti ti-user-check"></i><div><b>Attorney involvement — optional.</b> A grievance is reporting an attorney's conduct, so a named attorney is not required to proceed (lower UPL exposure than a court petition). You can prepare and submit on your own; adding an attorney to review first is offered and recommended.</div><span class="req">Optional</span></div>
+
+  <h1>Strength &amp; readiness — by alleged violation</h1>
+  <p class="lede">An objective read of how well-supported each alleged Rules-of-Professional-Conduct violation is, from the completeness and quality of the record — with what to obtain next. This organizes the complaint for your attorney; it does not judge the merits or whether the committee will act.</p>
+  <div class="framing"><i class="ti ti-info-circle"></i><p><b>Documentation preparation only — not legal advice.</b> JusticeX screens forum/eligibility objectively, assembles the complaint, maps evidence to the rules, and flags completeness. It does not interpret the rules, predict the committee's decision, or advise whether to file. Your attorney decides; every output is a draft for attorney review.</p></div>
+
+  <div class="stats">
+    <div class="stat"><div class="k">Overall readiness</div><div class="v">80%</div><div class="s">record completeness</div></div>
+    <div class="stat"><div class="k">Allegations supported</div><div class="v">6 <span style="font-size:14px;color:var(--faint)">/ 6</span></div><div class="s">2 need more record</div></div>
+    <div class="stat"><div class="k">Appendices on hand</div><div class="v">8 <span style="font-size:14px;color:var(--faint)">/ 8</span></div><div class="s">copies, not originals</div></div>
+    <div class="stat"><div class="k">Complaint package</div><div class="v">Drafted</div><div class="s">complaint + chronology</div></div>
+  </div>
+
+  <div class="sec"><i class="ti ti-list-check"></i> Alleged violations (NY Rules of Professional Conduct)</div>
+  <div class="tbl">
+    <div class="elh"><span>Alleged violation · rule</span><span>Readiness</span><span>Supporting appendices</span><span>Gap / next step</span></div>
+    <div class="elr"><div class="elname">Mishandling of client funds / property<small>RPC 1.15</small></div><div class="srow"><div class="bar"><i class="mi" style="width:55%"></i></div><span class="rate mi">Mixed</span></div><div class="exlink">A · A-2</div><div class="gap"><b>Obtain:</b> complete account/ledger records</div></div>
+    <div class="elr"><div class="elname">Failure to communicate<small>RPC 1.4</small></div><div class="srow"><div class="bar"><i class="st" style="width:84%"></i></div><span class="rate st">Strong</span></div><div class="exlink">B-1 · B-2</div><div class="gap ok">Correspondence gaps documented</div></div>
+    <div class="elr"><div class="elname">Neglect / lack of diligence<small>RPC 1.3</small></div><div class="srow"><div class="bar"><i class="mo" style="width:64%"></i></div><span class="rate mo">Moderate</span></div><div class="exlink">B</div><div class="gap"><b>Add:</b> a clean dated timeline of missed steps</div></div>
+    <div class="elr"><div class="elname">Concurrent conflict of interest<small>RPC 1.7</small></div><div class="srow"><div class="bar"><i class="st" style="width:82%"></i></div><span class="rate st">Strong</span></div><div class="exlink">A · A-4</div><div class="gap ok">Conflicting interests documented</div></div>
+    <div class="elr"><div class="elname">Former-client conflict / side-switching<small>RPC 1.9</small></div><div class="srow"><div class="bar"><i class="mo" style="width:60%"></i></div><span class="rate mo">Moderate</span></div><div class="exlink">A-3</div><div class="gap"><b>Add:</b> proof of the prior representation</div></div>
+    <div class="elr"><div class="elname">Lawyer as material witness<small>RPC 3.7</small></div><div class="srow"><div class="bar"><i class="mo" style="width:58%"></i></div><span class="rate mo">Moderate</span></div><div class="exlink">B-4</div><div class="gap">Ripe only if the lawyer appears in the matter</div></div>
+  </div>
+
+  <div class="sec"><i class="ti ti-files"></i> Evidence → rule mapping &amp; complaint assembly</div>
+  <div class="two">
+    <div class="card">
+      <div class="exh"><span>App.</span><span>Document (type)</span><span>Supports</span><span>Status</span></div>
+      <div class="exr"><span class="extag">A</span><span>Engagement / retainer</span><span>Conflict · funds</span><span class="pill2 on">Copy</span></div>
+      <div class="exr"><span class="extag">A-2</span><span>Billing / account records</span><span>Funds</span><span class="pill2 no">Partial</span></div>
+      <div class="exr"><span class="extag">A-3</span><span>Prior-representation record</span><span>Former-client</span><span class="pill2 on">Copy</span></div>
+      <div class="exr"><span class="extag">A-4</span><span>Conflicting-interest record</span><span>Conflict</span><span class="pill2 on">Copy</span></div>
+      <div class="exr"><span class="extag">B-1</span><span>Correspondence set 1</span><span>Communication</span><span class="pill2 on">Copy</span></div>
+      <div class="exr"><span class="extag">B-2</span><span>Correspondence set 2</span><span>Communication</span><span class="pill2 on">Copy</span></div>
+      <div class="exr"><span class="extag">B-4</span><span>Lawyer-involvement record</span><span>Lawyer-as-witness</span><span class="pill2 on">Copy</span></div>
+    </div>
+    <div class="card">
+      <div class="frm"><i class="ti ti-file-text di" style="color:var(--navy3)"></i><div class="nm">Written Complaint <small>signed letter / official form</small></div><span class="st draft">Drafted</span></div>
+      <div class="frm"><i class="ti ti-file-text di" style="color:var(--navy3)"></i><div class="nm">Case Overview &amp; Chronology <small>factual memorandum</small></div><span class="st draft">Drafted</span></div>
+      <div class="frm"><i class="ti ti-folders di" style="color:var(--success)"></i><div class="nm">Appendices — series A &amp; B <small>copies, not originals</small></div><span class="st done">Indexed</span></div>
+      <div class="frm"><i class="ti ti-mail di" style="color:var(--warn)"></i><div class="nm">Cover &amp; mailing <small>certified, return receipt</small></div><span class="st todo">To send</span></div>
+    </div>
+  </div>
+
+  <div class="sec"><i class="ti ti-timeline-event"></i> Process tracker</div>
+  <div class="loop">
+    <div class="step done"><div class="s1"><i class="ti ti-check ic"></i> Done</div><div class="s2">Complaint prepared</div></div>
+    <div class="step cur"><div class="s1"><i class="ti ti-loader ic"></i> Now</div><div class="s2">Committee eligibility review</div></div>
+    <div class="step"><div class="s1">Next</div><div class="s2">Forwarded to attorney for response</div></div>
+    <div class="step"><div class="s1">Then</div><div class="s2">Your reply</div></div>
+    <div class="step"><div class="s1">After</div><div class="s2">Confidential investigation</div></div>
+  </div>
+
+  <div class="handoff"><span class="wm">Draft — review before you file</span><div class="tx"><b>Ready to review.</b> Anyone may file a grievance — no attorney or special standing required. Your complaint, chronology, and indexed appendices are assembled; you can submit them yourself, or (recommended) have an attorney review first. JusticeX does not submit, and does not advise whether to.</div><a class="btn" href="#"><i class="ti ti-send"></i> Optional: send to an attorney</a></div>
+
+  <div class="disc"><div><b style="color:var(--navy)">JusticeX is a software platform — not a law firm.</b> Objective documentation preparation only; not legal advice; not a substitute for your attorney. <a href="disclaimer.html">Full legal &amp; UPL disclaimer</a>. Synthetic demo — fictional matter, no real person.</div><div class="tfe"><b>Truth</b> · <b>Fairness</b> · <b>Efficiency</b></div></div>
+</div>
+</body>
+</html>

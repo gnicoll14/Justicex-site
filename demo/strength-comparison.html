@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JusticeX — Strength &amp; Completeness Comparison (Whitfield)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
+<style>
+:root{--navy:#042C53;--navy-deep:#021A33;--navy2:#154572;--navy3:#2A5582;--paper:#E6F1FB;--surface:#FFFFFF;--ink:#1A1A1A;--muted:#5F5E5A;--faint:#9CA0A7;--hair:#D1DEEE;--accent:#D85A30;--accent-d:#B04722;--accent-soft:#FAECE7;--success:#1D9E75;--success-s:#E7F4EF;--warn:#C9962F;--warn-s:#FBF3E0;--a:#2A5582;--a-soft:#E6F1FB;--b:#D67E5F;--b-soft:#FAECE7;--radius:14px;--radius-sm:10px;}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',Calibri,system-ui,sans-serif;font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;}
+.appbar{background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 26px;}
+.brand{display:flex;align-items:center;}.bmark{height:23px;width:23px;border-radius:5px;margin-right:9px;}
+.wordmark{font-family:'Source Serif 4',serif;font-weight:600;font-size:22px;}.wordmark .x{color:var(--accent);}
+.tagline{font-size:11.5px;letter-spacing:2.4px;text-transform:uppercase;color:#9FB6D2;margin-left:12px;}
+.matterchip{font-size:13px;color:#C9D8EA;}.matterchip b{color:#fff;}
+.neutralpill{font-size:11px;color:#08213A;background:var(--accent);padding:4px 11px;border-radius:999px;font-weight:600;margin-left:10px;}
+.app{max-width:1120px;margin:22px auto 60px;padding:0 22px;}
+.crumb{font-size:12px;color:var(--muted);margin:0 0 8px;}.crumb b{color:var(--navy);}.crumb a{color:var(--navy2);text-decoration:none;}
+.availbar{display:flex;gap:9px;align-items:center;background:#EFF4FA;border:1px solid #D9E6F4;border-radius:8px;padding:8px 13px;font-size:12.5px;color:var(--navy2);margin:0 0 14px;}.availbar i{color:var(--navy3);}
+h1{font-family:'Source Serif 4',serif;font-weight:500;font-size:25px;margin:0 0 4px;}
+.lede{color:var(--muted);margin:0 0 14px;max-width:84ch;}
+.framing{font-size:12.5px;background:var(--accent-soft);border:1px solid #F1CDBE;border-radius:8px;padding:10px 14px;margin:0 0 16px;display:flex;gap:9px;align-items:flex-start;}.framing i{color:var(--accent-d);font-size:17px;margin-top:1px;}.framing b{color:var(--accent-d);}
+.sl{font-size:9.5px;font-weight:800;width:15px;height:15px;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;color:#fff;}.sl.a{background:var(--a);}.sl.b{background:var(--b);}
+.bar{height:8px;border-radius:999px;background:#DCE6F2;overflow:hidden;}.bar i{display:block;height:100%;border-radius:999px;}.bar i.a{background:var(--a);}.bar i.b{background:var(--b);}
+.vv{font-variant-numeric:tabular-nums;font-weight:700;color:var(--navy);min-width:26px;text-align:right;}
+/* two totals */
+.totals{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:8px;}
+.tot{background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);padding:15px 18px;}
+.tot .k{font-size:11px;text-transform:uppercase;letter-spacing:.4px;font-weight:700;}
+.tot.strength .k{color:var(--accent-d);} .tot.completeness .k{color:var(--navy3);}
+.tot .sub{font-size:12px;color:var(--muted);margin:1px 0 9px;}
+.tot .row{display:flex;align-items:center;gap:9px;margin-top:7px;}.tot .row .bar{flex:1;}
+.legend{font-size:12px;color:var(--muted);margin:6px 0 16px;}.legend b{color:var(--navy);}
+.sec{font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:var(--faint);font-weight:700;margin:10px 0 10px;display:flex;align-items:center;gap:8px;}
+.precbar{display:flex;align-items:center;gap:10px;background:#F4F8FD;border:1px solid #D9E6F4;border-radius:var(--radius-sm);padding:11px 15px;margin-bottom:16px;font-size:13px;color:var(--navy2);}
+.precbar .toggle{margin-left:auto;}
+.toggle{position:relative;width:42px;height:23px;border-radius:999px;background:#C9D8EA;cursor:pointer;transition:.15s;border:none;}
+.toggle.on{background:var(--success);}.toggle .k{position:absolute;top:2px;left:2px;width:19px;height:19px;border-radius:50%;background:#fff;transition:.15s;}.toggle.on .k{left:21px;}
+.comp{background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden;}
+.chead,.crow{display:grid;grid-template-columns:1.25fr 1.25fr 1.25fr 2.1fr;gap:16px;padding:11px 18px;align-items:start;}
+.chead{background:#EFF4FA;font-size:10.5px;text-transform:uppercase;letter-spacing:.4px;color:var(--navy2);font-weight:700;}
+.chead .sh{color:var(--accent-d);} .chead .ch{color:var(--navy3);}
+.crow{border-top:1px solid var(--hair);font-size:13px;}
+.cname{font-weight:700;color:var(--navy);font-size:13.5px;}.cname small{display:block;font-weight:400;color:var(--muted);font-size:11.5px;margin-top:2px;}
+.ab .r{display:flex;align-items:center;gap:7px;font-size:12px;margin-bottom:5px;}.ab .r .bar{flex:1;}
+.fb .ttl{font-size:10px;text-transform:uppercase;letter-spacing:.4px;font-weight:700;color:var(--navy3);margin-bottom:3px;}
+.fb .pt{display:flex;gap:7px;margin-bottom:4px;}.fb .pt i{font-size:14px;margin-top:1px;}
+.fb .pt.ok i{color:var(--success);}.fb .pt.gap i{color:var(--accent-d);}.fb .pt b{color:var(--navy);}
+.precedent{margin-top:6px;font-size:11.5px;background:#F4F8FD;border:1px solid #D9E6F4;border-radius:8px;padding:7px 10px;color:var(--navy2);display:none;}.precedent.show{display:block;}.precedent i{color:var(--navy3);}
+.navbar{display:flex;justify-content:space-between;align-items:center;margin-top:20px;gap:10px;flex-wrap:wrap;}
+.btn{border:1px solid var(--hair);background:var(--surface);color:var(--navy);font-family:inherit;font-weight:600;font-size:13.5px;padding:9px 16px;border-radius:9px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:7px;}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff;}.btn.primary:hover{background:var(--accent-d);}
+.saved{font-size:12px;color:var(--muted);}
+.disc{margin-top:18px;color:var(--muted);font-size:11.5px;border-top:1px solid var(--hair);padding-top:12px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;}.disc a{color:var(--accent-d);font-weight:700;}.disc .tfe b{color:var(--navy);}
+@media(max-width:860px){.totals{grid-template-columns:1fr;}.chead{display:none;}.crow{grid-template-columns:1fr;gap:10px;}}
+</style>
+</head>
+<body>
+<div class="appbar"><div class="brand"><img class="bmark" src="https://justicex.ai/assets/brand-mark.png" alt=""/><span class="wordmark">Justice<span class="x">X</span></span><span class="tagline">Objective comparison</span></div><div><span class="matterchip"><b>Whitfield</b> · Nassau County, New York · Divorce &amp; custody</span><span class="neutralpill">Neutral · synthetic demo</span></div></div>
+
+<div class="app">
+  <div class="crumb"><a href="dashboard.html?role=mediator">Dashboard</a> › <b>Strength &amp; completeness comparison</b></div>
+  <div class="availbar"><i class="ti ti-eye"></i> This comparison updates live and is available at <b>every step</b> — open it any time from the <b>Matter strength</b> tile at the top of any screen, so there are no surprises.</div>
+  <h1>Strength &amp; completeness comparison</h1>
+  <p class="lede">Two objective measures, side by side, for each party — overall and by component. <b>Strength</b> is the objective merit of a position; <b>completeness</b> is how much of the needed evidence is in. They are scored the same way for both sides.</p>
+  <div class="framing"><i class="ti ti-info-circle"></i><p><b>This informs your decisions; it does not make them.</b> The feedback is about evidence completeness and quality — not legal strategy. JusticeX does not interpret law, predict outcomes, or recommend arguments. You and your counsel decide; the parties reach their own agreed view.</p></div>
+
+  <div class="totals">
+    <div class="tot strength"><div class="k">Overall objective strength</div><div class="sub">Merit of each position · 0–100 · sum of the components below</div>
+      <div class="row"><span class="sl a">A</span><div class="bar"><i class="a" style="width:72%"></i></div><span class="vv">72</span></div>
+      <div class="row"><span class="sl b">B</span><div class="bar"><i class="b" style="width:68%"></i></div><span class="vv">68</span></div></div>
+    <div class="tot completeness"><div class="k">Overall completeness</div><div class="sub">Share of needed evidence provided · 0–100%</div>
+      <div class="row"><span class="sl a">A</span><div class="bar"><i class="a" style="width:86%"></i></div><span class="vv">86%</span></div>
+      <div class="row"><span class="sl b">B</span><div class="bar"><i class="b" style="width:81%"></i></div><span class="vv">81%</span></div></div>
+  </div>
+  <div class="legend">Both metrics are shown for every component below. <b>Completeness</b> is what the evidence-quality notes explain — close those gaps and strength follows.</div>
+
+  <div class="precbar"><i class="ti ti-gavel" style="color:var(--navy3)"></i> <div><b style="color:var(--navy)">Public legal precedent — optional reference.</b> Show cited statutes &amp; public case law alongside each component, for your consideration only. JusticeX never interprets it or suggests how a court would rule.</div>
+    <button id="precToggle" class="toggle" onclick="togglePrec()"><span class="k"></span></button></div>
+
+  <div class="sec"><i class="ti ti-list-details"></i> By component</div>
+  <div class="comp">
+    <div class="chead"><span>Component</span><span class="sh">Strength (A / B)</span><span class="ch">Completeness (A / B)</span><span>Completeness &amp; quality notes</span></div>
+
+    <div class="crow">
+      <div class="cname">Asset &amp; property disclosure<small>Marital estate, accounts, real property</small></div>
+      <div class="ab"><div class="r"><span class="sl a">A</span><div class="bar"><i class="a" style="width:88%"></i></div><span class="vv">88</span></div><div class="r"><span class="sl b">B</span><div class="bar"><i class="b" style="width:64%"></i></div><span class="vv">64</span></div></div>
+      <div class="ab"><div class="r"><span class="sl a">A</span><div class="bar"><i class="a" style="width:95%"></i></div><span class="vv">95%</span></div><div class="r"><span class="sl b">B</span><div class="bar"><i class="b" style="width:60%"></i></div><span class="vv">60%</span></div></div>
+      <div class="fb"><div class="ttl">Completeness &amp; quality</div>
+        <div class="pt ok"><i class="ti ti-circle-check"></i><div><b>Party A:</b> all six accounts and both properties documented and reconciled.</div></div>
+        <div class="pt gap"><i class="ti ti-alert-circle"></i><div><b>Party B:</b> two brokerage accounts disclosed without statements — values unverified. Adding them lifts both completeness and strength.</div></div>
+        <div class="precedent"><i class="ti ti-gavel"></i> Reference: DRL §236(B)(4) requires full financial disclosure (Statement of Net Worth). Public source, for context only.</div>
+      </div></div>
+
+    <div class="crow">
+      <div class="cname">Income documentation<small>Wages, self-employment, benefits</small></div>
+      <div class="ab"><div class="r"><span class="sl a">A</span><div class="bar"><i class="a" style="width:70%"></i></div><span class="vv">70</span></div><div class="r"><span class="sl b">B</span><div class="bar"><i class="b" style="width:82%"></i></div><span class="vv">82</span></div></div>
+      <div class="ab"><div class="r"><span class="sl a">A</span><div class="bar"><i class="a" style="width:72%"></i></div><span class="vv">72%</span></div><div class="r"><span class="sl b">B</span><div class="bar"><i class="b" style="width:90%"></i></div><span class="vv">90%</span></div></div>
+      <div class="fb"><div class="ttl">Completeness &amp; quality</div>
+        <div class="pt gap"><i class="ti ti-alert-circle"></i><div><b>Party A:</b> most recent pay stub and one year of returns missing — recency reduces completeness.</div></div>
+        <div class="pt ok"><i class="ti ti-circle-check"></i><div><b>Party B:</b> W-2s, three years of returns, and current stubs all present.</div></div>
+        <div class="precedent"><i class="ti ti-gavel"></i> Reference: CSSA (DRL §240(1-b)) defines income inputs for support. Public source, for context only.</div>
+      </div></div>
+
+    <div class="crow">
+      <div class="cname">Parenting plan &amp; custody<small>Schedule, decision-making, best interests</small></div>
+      <div class="ab"><div class="r"><span class="sl a">A</span><div class="bar"><i class="a" style="width:66%"></i></div><span class="vv">66</span></div><div class="r"><span class="sl b">B</span><div class="bar"><i class="b" style="width:69%"></i></div><span class="vv">69</span></div></div>
+      <div class="ab"><div class="r"><span class="sl a">A</span><div class="bar"><i class="a" style="width:80%"></i></div><span class="vv">80%</span></div><div class="r"><span class="sl b">B</span><div class="bar"><i class="b" style="width:82%"></i></div><span class="vv">82%</span></div></div>
+      <div class="fb"><div class="ttl">Completeness &amp; quality</div>
+        <div class="pt ok"><i class="ti ti-circle-check"></i><div><b>Both parties:</b> proposed schedules and caregiving history are well documented and closely matched.</div></div>
+        <div class="pt gap"><i class="ti ti-alert-circle"></i><div><b>Open item:</b> religious-upbringing decision is unaddressed by both — completing it lifts both.</div></div>
+        <div class="precedent"><i class="ti ti-gavel"></i> Reference: DRL §240(1)(a) "best interests" factors. Public source, for context only.</div>
+      </div></div>
+
+    <div class="crow">
+      <div class="cname">Maintenance basis<small>Spousal support inputs &amp; duration</small></div>
+      <div class="ab"><div class="r"><span class="sl a">A</span><div class="bar"><i class="a" style="width:61%"></i></div><span class="vv">61</span></div><div class="r"><span class="sl b">B</span><div class="bar"><i class="b" style="width:58%"></i></div><span class="vv">58</span></div></div>
+      <div class="ab"><div class="r"><span class="sl a">A</span><div class="bar"><i class="a" style="width:55%"></i></div><span class="vv">55%</span></div><div class="r"><span class="sl b">B</span><div class="bar"><i class="b" style="width:52%"></i></div><span class="vv">52%</span></div></div>
+      <div class="fb"><div class="ttl">Completeness &amp; quality</div>
+        <div class="pt gap"><i class="ti ti-alert-circle"></i><div><b>Both parties:</b> the income figures feeding the guideline are not yet reconciled — the largest single completeness gap.</div></div>
+        <div class="precedent"><i class="ti ti-gavel"></i> Reference: DRL §236(B)(5-a) maintenance guideline (capped payor income). Public source, for context only.</div>
+      </div></div>
+
+  </div>
+
+  <div class="navbar"><a class="btn" href="summarize.html"><i class="ti ti-arrow-left"></i> Back · Summarize</a><span class="saved"><i class="ti ti-device-floppy"></i> Saved automatically · every change is logged</span><a class="btn primary" href="gap-analysis.html">Next · Gap Analysis <i class="ti ti-arrow-right"></i></a></div>
+
+  <div class="disc"><div><b style="color:var(--navy)">JusticeX is a software platform — not a law firm or mediator.</b> Objective, mathematical comparison only; the parties reach their own agreed view. <a href="disclaimer.html">Full legal &amp; UPL disclaimer</a>. Synthetic demo — no real person.</div><div class="tfe"><b>Truth</b> · <b>Fairness</b> · <b>Efficiency</b></div></div>
+</div>
+<script>
+function togglePrec(){var t=document.getElementById('precToggle');t.classList.toggle('on');var on=t.classList.contains('on');document.querySelectorAll('.precedent').forEach(function(p){p.classList.toggle('show',on);});}
+</script>
+</body>
+</html>

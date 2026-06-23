@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JusticeX — Documentation Prep · Guardianship (synthetic)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
+<style>
+:root{--navy:#042C53;--navy-deep:#021A33;--navy2:#154572;--navy3:#2A5582;--paper:#E6F1FB;--surface:#FFFFFF;--ink:#1A1A1A;--muted:#5F5E5A;--faint:#9CA0A7;--hair:#D1DEEE;--accent:#D85A30;--accent-d:#B04722;--accent-soft:#FAECE7;--success:#1D9E75;--success-s:#E7F4EF;--warn:#C9962F;--warn-s:#FBF3E0;--blue-soft:#EFF4FA;--radius:14px;--radius-sm:10px;}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',Calibri,system-ui,sans-serif;font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;}
+.appbar{background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 26px;}
+.brand{display:flex;align-items:center;}.bmark{height:23px;width:23px;border-radius:5px;margin-right:9px;}
+.wordmark{font-family:'Source Serif 4',serif;font-weight:600;font-size:22px;}.wordmark .x{color:var(--accent);}
+.cat{font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:#08213A;background:#9FC6E8;padding:3px 9px;border-radius:999px;margin-left:12px;font-weight:700;}
+.matterchip{font-size:13px;color:#C9D8EA;}.matterchip b{color:#fff;}
+.neutralpill{font-size:11px;color:#08213A;background:var(--accent);padding:4px 11px;border-radius:999px;font-weight:600;margin-left:10px;}
+/* one-sided pipeline */
+.stages{background:var(--navy-deep);color:#fff;display:grid;grid-template-columns:repeat(7,1fr);align-items:center;column-gap:6px;row-gap:6px;padding:11px 30px 9px;}
+.stages .stage{display:flex;align-items:center;gap:7px;font-size:11.5px;color:#7E9AB9;white-space:nowrap;justify-self:center;}
+.stages .dot{width:7px;height:7px;border-radius:50%;background:#3C5775;}
+.stages .stage.done{color:#B9CBDD;} .stages .stage.done .dot{background:#5C7CA0;}
+.stages .stage.active{color:#fff;font-weight:600;} .stages .stage.active .dot{background:var(--accent);box-shadow:0 0 0 4px rgba(216,90,48,.22);}
+.stages .stnum{opacity:.6;font-weight:700;margin-right:1px;}
+.stages .cap{grid-column:1 / span 7;text-align:center;font-size:8.5px;letter-spacing:.5px;text-transform:uppercase;font-weight:800;color:#9FB6D2;border-top:1px solid #21405f;padding-top:6px;margin-top:2px;}
+.app{max-width:1140px;margin:20px auto 60px;padding:0 22px;}
+/* attorney gate */
+.gate{display:flex;align-items:center;gap:11px;background:var(--success-s);border:1px solid #C6E0CF;border-radius:var(--radius-sm);padding:11px 15px;font-size:13px;color:#1E5A3C;margin-bottom:14px;}
+.gate i{font-size:19px;color:var(--success);}
+.gate b{color:#13402A;} .gate .req{margin-left:auto;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:#1c6b4a;background:#fff;border:1px solid #C6E0CF;padding:3px 9px;border-radius:999px;}
+h1{font-family:'Source Serif 4',serif;font-weight:500;font-size:24px;margin:0 0 4px;}
+.lede{color:var(--muted);margin:0 0 14px;max-width:84ch;}
+.framing{font-size:12.5px;background:var(--accent-soft);border:1px solid #F1CDBE;border-radius:8px;padding:10px 14px;margin:0 0 16px;display:flex;gap:9px;align-items:flex-start;}.framing i{color:var(--accent-d);font-size:17px;margin-top:1px;}.framing b{color:var(--accent-d);}
+.stats{display:flex;gap:14px;margin-bottom:18px;flex-wrap:wrap;}
+.stat{flex:1;min-width:150px;background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);padding:14px 16px;box-shadow:0 1px 2px rgba(20,30,46,.04);}
+.stat .k{font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:var(--faint);font-weight:700;}
+.stat .v{font-family:'Source Serif 4',serif;font-weight:700;font-size:24px;color:var(--navy);margin-top:3px;}
+.stat .s{font-size:12px;color:var(--muted);margin-top:1px;}
+.sec{font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:var(--faint);font-weight:700;margin:22px 0 10px;display:flex;align-items:center;gap:8px;}
+/* element table */
+.tbl{background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 2px rgba(20,30,46,.04);}
+.elh,.elr{display:grid;grid-template-columns:2fr 1.3fr 1.5fr 1.6fr;gap:14px;padding:11px 16px;align-items:center;}
+.elh{background:var(--blue-soft);font-size:10.5px;text-transform:uppercase;letter-spacing:.4px;color:var(--navy2);font-weight:700;}
+.elr{border-top:1px solid var(--hair);font-size:13px;}
+.elr:hover{background:#FBFDFF;}
+.elname{font-weight:700;color:var(--navy);} .elname small{display:block;font-weight:400;color:var(--muted);font-size:11px;margin-top:2px;}
+.srow{display:flex;align-items:center;gap:8px;}
+.bar{height:8px;border-radius:999px;background:#DCE6F2;overflow:hidden;flex:1;}.bar i{display:block;height:100%;border-radius:999px;}
+.bar i.st{background:var(--success);}.bar i.mo{background:var(--navy3);}.bar i.mi{background:var(--warn);}
+.rate{font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.3px;white-space:nowrap;}
+.rate.st{color:#1c6b4a;}.rate.mo{color:var(--navy2);}.rate.mi{color:#8a6516;}
+.exlink{font-size:11.5px;color:var(--navy2);font-weight:600;}
+.gap{font-size:12px;color:var(--muted);}.gap.ok{color:#1c6b4a;}.gap b{color:var(--accent-d);}
+/* exhibit + forms */
+.two{display:grid;grid-template-columns:1.3fr 1fr;gap:18px;}@media(max-width:880px){.two{grid-template-columns:1fr;}}
+.card{background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);box-shadow:0 1px 2px rgba(20,30,46,.04);overflow:hidden;}
+.exh,.exr{display:grid;grid-template-columns:34px 1.7fr 1.2fr 74px;gap:10px;padding:9px 15px;align-items:center;font-size:12.5px;}
+.exh{background:var(--blue-soft);font-size:10px;text-transform:uppercase;letter-spacing:.3px;color:var(--navy2);font-weight:700;}
+.exr{border-top:1px solid var(--hair);} .extag{font-weight:800;color:var(--navy);}
+.pill2{font-size:10px;font-weight:700;padding:2px 8px;border-radius:999px;white-space:nowrap;}
+.pill2.on{background:var(--success-s);color:#1c6b4a;}.pill2.no{background:var(--warn-s);color:#8a6516;}
+.frm{display:flex;align-items:center;gap:9px;padding:10px 15px;border-top:1px solid var(--hair);font-size:13px;}
+.frm:first-child{border-top:none;} .frm i.di{font-size:17px;} .frm .nm{font-weight:600;color:var(--navy);flex:1;} .frm .nm small{display:block;font-weight:400;color:var(--muted);font-size:11px;}
+.frm .st{font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:999px;}
+.st.draft{background:var(--blue-soft);color:var(--navy2);}.st.todo{background:var(--warn-s);color:#8a6516;}.st.done{background:var(--success-s);color:#1c6b4a;}
+/* handoff */
+.handoff{display:flex;align-items:center;gap:14px;background:var(--navy);color:#fff;border-radius:var(--radius);padding:16px 20px;margin-top:18px;flex-wrap:wrap;}
+.handoff .wm{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#08213A;background:#E4B36B;padding:4px 10px;border-radius:6px;}
+.handoff .tx{font-size:13px;color:#C9D8EA;flex:1;min-width:240px;}.handoff .tx b{color:#fff;}
+.handoff .btn{background:var(--accent);color:#fff;border:none;font-family:inherit;font-weight:700;font-size:13.5px;padding:10px 16px;border-radius:9px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;text-decoration:none;}
+.disc{margin-top:18px;color:var(--muted);font-size:11.5px;border-top:1px solid var(--hair);padding-top:12px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;}.disc a{color:var(--accent-d);font-weight:700;}.disc .tfe b{color:var(--navy);}
+@media(max-width:880px){.elh{display:none;}.elr{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
+<div class="appbar"><div class="brand"><img class="bmark" src="https://justicex.ai/assets/brand-mark.png" alt=""/><span class="wordmark">Justice<span class="x">X</span></span><span class="cat">Documentation Preparation</span></div>
+  <div><span class="matterchip"><b>Hartley</b> · Albany County, New York · Guardianship (Article 81)</span><span class="neutralpill">Synthetic demo</span></div></div>
+
+<div class="stages">
+  <span class="stage done"><span class="dot"></span><span class="stnum">1.</span> Plan</span>
+  <span class="stage done"><span class="dot"></span><span class="stnum">2.</span> Intake</span>
+  <span class="stage done"><span class="dot"></span><span class="stnum">3.</span> Redact</span>
+  <span class="stage done"><span class="dot"></span><span class="stnum">4.</span> Summarize</span>
+  <span class="stage active"><span class="dot"></span><span class="stnum">5.</span> Strength &amp; Readiness</span>
+  <span class="stage"><span class="dot"></span><span class="stnum">6.</span> Document Assembly</span>
+  <span class="stage"><span class="dot"></span><span class="stnum">7.</span> Attorney Review &amp; Package</span>
+  <span class="cap">One party · objective documentation preparation · attorney-in-the-loop</span>
+</div>
+
+<div class="app">
+  <div style="font-size:12px;color:var(--muted);margin:0 0 12px"><a href="dashboard.html?role=attorney" style="color:var(--navy2);text-decoration:none;font-weight:600"><i class="ti ti-arrow-left"></i> Dashboard</a> › <b style="color:var(--navy)">Documentation prep · Guardianship</b></div>
+  <div class="gate"><i class="ti ti-gavel"></i><div><b>Attorney of record:</b> R. Mendez, Esq. · NY Bar #0000000 · verified · added at intake. This matter type requires a named attorney to proceed.</div><span class="req">Required ✓</span></div>
+
+  <h1>Strength &amp; readiness — by element</h1>
+  <p class="lede">An objective read of how well-supported each legal element is, from the completeness and quality of the evidence on file — with what to obtain next. This organizes the matter for your attorney; it does not weigh the merits or advise whether to file.</p>
+  <div class="framing"><i class="ti ti-info-circle"></i><p><b>Documentation preparation only — not legal advice.</b> JusticeX assembles, organizes, maps evidence to elements, and flags completeness. It does not interpret law, select a theory, predict outcomes, or recommend whether or how to proceed. Your attorney decides; every output is a draft for attorney review.</p></div>
+
+  <div class="stats">
+    <div class="stat"><div class="k">Overall readiness</div><div class="v">78%</div><div class="s">evidence completeness</div></div>
+    <div class="stat"><div class="k">Elements supported</div><div class="v">8 <span style="font-size:14px;color:var(--faint)">/ 10</span></div><div class="s">2 need more</div></div>
+    <div class="stat"><div class="k">Exhibits on hand</div><div class="v">7 <span style="font-size:14px;color:var(--faint)">/ 9</span></div><div class="s">1 pending · 1 to obtain</div></div>
+    <div class="stat"><div class="k">Forms drafted</div><div class="v">2 <span style="font-size:14px;color:var(--faint)">/ 4</span></div><div class="s">2 to add</div></div>
+  </div>
+
+  <div class="sec"><i class="ti ti-list-check"></i> Legal elements (MHL Article 81)</div>
+  <div class="tbl">
+    <div class="elh"><span>Element · authority</span><span>Readiness</span><span>Supporting exhibits</span><span>Gap / next step</span></div>
+
+    <div class="elr"><div class="elname">Incapacity — present<small>MHL §81.02</small></div>
+      <div class="srow"><div class="bar"><i class="st" style="width:85%"></i></div><span class="rate st">Strong</span></div>
+      <div class="exlink">A · A-1 · A-2</div><div class="gap"><b>Obtain:</b> current capacity statement (Ex. I) — requested</div></div>
+
+    <div class="elr"><div class="elname">Likelihood of harm<small>MHL §81.02(b)</small></div>
+      <div class="srow"><div class="bar"><i class="st" style="width:82%"></i></div><span class="rate st">Strong</span></div>
+      <div class="exlink">A-2 · D</div><div class="gap ok">Well supported</div></div>
+
+    <div class="elr"><div class="elname">Least-restrictive alternative<small>MHL §81.03</small></div>
+      <div class="srow"><div class="bar"><i class="mo" style="width:62%"></i></div><span class="rate mo">Moderate</span></div>
+      <div class="exlink">B</div><div class="gap"><b>Add:</b> why existing instruments are insufficient</div></div>
+
+    <div class="elr"><div class="elname">Proposed guardian — fitness<small>MHL §81.19</small></div>
+      <div class="srow"><div class="bar"><i class="mo" style="width:60%"></i></div><span class="rate mo">Moderate</span></div>
+      <div class="exlink">F</div><div class="gap"><b>Add:</b> standby consent on file</div></div>
+
+    <div class="elr"><div class="elname">Venue / jurisdiction<small>MHL §81.04</small></div>
+      <div class="srow"><div class="bar"><i class="st" style="width:90%"></i></div><span class="rate st">Confirmed</span></div>
+      <div class="exlink">residence</div><div class="gap ok">Confirmed</div></div>
+
+    <div class="elr"><div class="elname">Tailored powers / scope<small>MHL §81.20–§81.22</small></div>
+      <div class="srow"><div class="bar"><i class="mo" style="width:64%"></i></div><span class="rate mo">Moderate</span></div>
+      <div class="exlink">needs list</div><div class="gap"><b>Finalize:</b> the specific powers requested</div></div>
+
+    <div class="elr"><div class="elname">Financial exploitation <small>GOL §5-1510 (if pled)</small></div>
+      <div class="srow"><div class="bar"><i class="mo" style="width:58%"></i></div><span class="rate mi">Mixed</span></div>
+      <div class="exlink">B-1 · E</div><div class="gap"><b>Withheld:</b> accountings — compellable in the proceeding</div></div>
+
+    <div class="elr"><div class="elname">Failure to account<small>GOL §5-1510 (if pled)</small></div>
+      <div class="srow"><div class="bar"><i class="st" style="width:80%"></i></div><span class="rate st">Strong</span></div>
+      <div class="exlink">E</div><div class="gap ok">Demand + non-response on file</div></div>
+
+    <div class="elr"><div class="elname">Isolation / control<small>supports §81.02 (if pled)</small></div>
+      <div class="srow"><div class="bar"><i class="mo" style="width:55%"></i></div><span class="rate mo">Moderate</span></div>
+      <div class="exlink">F · G</div><div class="gap">Some points rest on relayed accounts</div></div>
+
+    <div class="elr"><div class="elname">Procedural readiness<small>MHL §81.07 / §81.08</small></div>
+      <div class="srow"><div class="bar"><i class="mo" style="width:66%"></i></div><span class="rate mo">Advancing</span></div>
+      <div class="exlink">petition · OSC</div><div class="gap"><b>Finish:</b> notice, RJI, service list</div></div>
+  </div>
+
+  <div class="sec"><i class="ti ti-files"></i> Evidence → element mapping &amp; document assembly</div>
+  <div class="two">
+    <div class="card">
+      <div class="exh"><span>Ex.</span><span>Document (type)</span><span>Supports</span><span>Status</span></div>
+      <div class="exr"><span class="extag">A</span><span>Brain imaging report</span><span>Incapacity</span><span class="pill2 on">On hand</span></div>
+      <div class="exr"><span class="extag">A-1</span><span>Specialist records</span><span>Incapacity · harm</span><span class="pill2 on">On hand</span></div>
+      <div class="exr"><span class="extag">A-2</span><span>Primary-care records</span><span>Incapacity · harm</span><span class="pill2 on">On hand</span></div>
+      <div class="exr"><span class="extag">B</span><span>Estate instruments</span><span>Least-restrictive</span><span class="pill2 on">On hand</span></div>
+      <div class="exr"><span class="extag">B-1</span><span>Trust (full)</span><span>Financial</span><span class="pill2 no">Withheld</span></div>
+      <div class="exr"><span class="extag">E</span><span>Demand + delivery proof</span><span>Failure to account</span><span class="pill2 on">On hand</span></div>
+      <div class="exr"><span class="extag">F</span><span>Witness statements</span><span>Fitness · isolation</span><span class="pill2 on">On hand</span></div>
+      <div class="exr"><span class="extag">I</span><span>Current capacity statement</span><span>Incapacity</span><span class="pill2 no">Pending</span></div>
+    </div>
+    <div class="card">
+      <div class="frm"><i class="ti ti-file-text di" style="color:var(--navy3)"></i><div class="nm">Verified Petition <small>MHL §81.08</small></div><span class="st draft">Drafted</span></div>
+      <div class="frm"><i class="ti ti-file-text di" style="color:var(--navy3)"></i><div class="nm">Order to Show Cause <small>judge signs / sets hearing</small></div><span class="st draft">Skeleton</span></div>
+      <div class="frm"><i class="ti ti-file-plus di" style="color:var(--warn)"></i><div class="nm">Notice of Proceeding <small>§81.07 notice</small></div><span class="st todo">To add</span></div>
+      <div class="frm"><i class="ti ti-file-plus di" style="color:var(--warn)"></i><div class="nm">Request for Judicial Intervention <small>UCS-840</small></div><span class="st todo">To add</span></div>
+      <div class="frm"><i class="ti ti-folders di" style="color:var(--success)"></i><div class="nm">Exhibits A–I <small>indexed &amp; tabbed</small></div><span class="st done">Indexed</span></div>
+    </div>
+  </div>
+
+  <div class="handoff"><span class="wm">Draft — for attorney review</span><div class="tx"><b>Hand off to R. Mendez, Esq.</b> The package, the element-readiness summary, and the evidence map go to your attorney to review, revise, and decide next steps. JusticeX does not file, and does not advise whether to.</div><a class="btn" href="#"><i class="ti ti-send"></i> Send to attorney for review</a></div>
+
+  <div class="disc"><div><b style="color:var(--navy)">JusticeX is a software platform — not a law firm.</b> Objective documentation preparation only; not legal advice; not a substitute for your attorney. <a href="disclaimer.html">Full legal &amp; UPL disclaimer</a>. Synthetic demo — fictional matter, no real person.</div><div class="tfe"><b>Truth</b> · <b>Fairness</b> · <b>Efficiency</b></div></div>
+</div>
+</body>
+</html>
