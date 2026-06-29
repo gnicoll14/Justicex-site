@@ -82,6 +82,8 @@
       <span class="hero-trust-item">Citation-grounded outputs</span>
       <span class="hero-trust-item">Counsel-grade audit trail</span>
       <span class="hero-trust-item">AES-256 + TLS 1.3</span>
+      <span class="hero-trust-item">Tenant-isolated &amp; sandboxed</span>
+      <span class="hero-trust-item">Never used to train public AI models</span>
       <span class="hero-trust-item">ABA-aligned</span>
     </div>
   </div>
@@ -402,15 +404,16 @@
       <h2 class="h1" style="margin-top: 24px;">From intake to agreement, on one canonical case object.</h2>
     </div>
 
-    <div class="pipeline">
-      <div class="pipeline-stage"><div class="n">01</div><div class="name">Plan</div><div class="desc">Scope &amp; path selection</div></div>
-      <div class="pipeline-stage"><div class="n">02</div><div class="name">Intake</div><div class="desc">Evidence + quality flags</div></div>
-      <div class="pipeline-stage"><div class="n">03</div><div class="name">Redact</div><div class="desc">Privilege &amp; PII</div></div>
-      <div class="pipeline-stage"><div class="n">04</div><div class="name">Summarize</div><div class="desc">Symmetric briefs</div></div>
-      <div class="pipeline-stage"><div class="n">05</div><div class="name">Gap Analysis</div><div class="desc">Alignment &amp; strength</div></div>
-      <div class="pipeline-stage"><div class="n">06</div><div class="name">Resolution</div><div class="desc">Objective options</div></div>
-      <div class="pipeline-stage"><div class="n">07</div><div class="name">Memorandum</div><div class="desc">Of Understanding</div></div>
+    <div class="pipeline" id="jxPipeline">
+      <div class="pipeline-stage is-active" role="button" tabindex="0" data-jxstage="0" onclick="jxStage(0)" onkeypress="if(event.key==='Enter'||event.key===' ')jxStage(0)"><div class="n">01</div><div class="name">Plan</div><div class="desc">Scope &amp; path selection</div></div>
+      <div class="pipeline-stage" role="button" tabindex="0" data-jxstage="1" onclick="jxStage(1)" onkeypress="if(event.key==='Enter'||event.key===' ')jxStage(1)"><div class="n">02</div><div class="name">Intake</div><div class="desc">Evidence + quality flags</div></div>
+      <div class="pipeline-stage" role="button" tabindex="0" data-jxstage="2" onclick="jxStage(2)" onkeypress="if(event.key==='Enter'||event.key===' ')jxStage(2)"><div class="n">03</div><div class="name">Redact</div><div class="desc">Privilege &amp; PII</div></div>
+      <div class="pipeline-stage" role="button" tabindex="0" data-jxstage="3" onclick="jxStage(3)" onkeypress="if(event.key==='Enter'||event.key===' ')jxStage(3)"><div class="n">04</div><div class="name">Summarize</div><div class="desc">Symmetric briefs</div></div>
+      <div class="pipeline-stage" role="button" tabindex="0" data-jxstage="4" onclick="jxStage(4)" onkeypress="if(event.key==='Enter'||event.key===' ')jxStage(4)"><div class="n">05</div><div class="name">Gap Analysis</div><div class="desc">Alignment &amp; strength</div></div>
+      <div class="pipeline-stage" role="button" tabindex="0" data-jxstage="5" onclick="jxStage(5)" onkeypress="if(event.key==='Enter'||event.key===' ')jxStage(5)"><div class="n">06</div><div class="name">Resolution</div><div class="desc">Objective options</div></div>
+      <div class="pipeline-stage" role="button" tabindex="0" data-jxstage="6" onclick="jxStage(6)" onkeypress="if(event.key==='Enter'||event.key===' ')jxStage(6)"><div class="n">07</div><div class="name">Memorandum</div><div class="desc">Of Understanding</div></div>
     </div>
+    <div class="pipeline-detail" id="jxStageDetail" aria-live="polite"></div>
 
     <div style="margin-top: 32px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; padding: 20px 24px; background: var(--jx-white); border: 1px solid var(--jx-stone-200); border-radius: 6px;">
       <span class="label" style="color: var(--jx-gold-600);">3 human-in-the-loop checkpoints</span>
@@ -418,7 +421,40 @@
       <span class="body" style="font-size: 14px;">Post-redaction · Post-rating · Pre-resolution. AI proposes; you dispose.</span>
       <a href="solutions.html" class="btn-link" style="margin-left: auto;">See the full pipeline <span>→</span></a>
     </div>
+    <p class="caption" style="margin-top:14px;color:var(--jx-slate-500)">Select a stage to see what it does.</p>
   </div>
+
+  <style>
+  #jxPipeline .pipeline-stage{cursor:pointer;transition:border-color .2s,box-shadow .2s,transform .2s;}
+  #jxPipeline .pipeline-stage:hover{border-color:var(--jx-gold-500);transform:translateY(-2px);}
+  #jxPipeline .pipeline-stage.is-active{border-color:var(--jx-gold-500);box-shadow:0 0 0 1px var(--jx-gold-500),0 12px 24px rgba(0,0,0,.06);}
+  .pipeline-detail{margin-top:20px;background:var(--jx-white);border:1px solid var(--jx-stone-200);border-left:3px solid var(--jx-gold-500);border-radius:6px;padding:22px 26px;}
+  .pipeline-detail .pd-tag{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--jx-gold-600);font-weight:700;}
+  .pipeline-detail .pd-name{font-family:var(--font-display);font-size:20px;color:var(--jx-navy-800);margin:6px 0 8px;}
+  .pipeline-detail .pd-text{font-size:15px;line-height:1.6;color:var(--jx-slate-600);margin:0;}
+  .pipeline-detail .pd-ck{display:inline-block;margin-top:10px;font-size:12px;font-weight:600;color:#1c6b4a;}
+  </style>
+  <script>
+  (function(){
+    var S=[
+      {n:'01 · Plan',t:'Scope the matter, classify the dispute type and jurisdiction, and select the path. Sets what the matter actually needs before any analysis runs.'},
+      {n:'02 · Intake',t:'Multi-format ingestion — forms, documents, voice, photos — with completeness and quality flags on what each side provides.'},
+      {n:'03 · Redact',t:'Automated PII and privilege detection.',ck:'Checkpoint 1 — counsel signs off on what was removed before anything is analyzed.'},
+      {n:'04 · Summarize',t:'Identical prompts, models, and depth for both parties — symmetric position briefs, built the same way on each side.'},
+      {n:'05 · Gap Analysis',t:'Calibrated, symmetric comparison — completeness, objective strength, and points of convergence and divergence.',ck:'Checkpoint 2 — review the comparison before resolution.'},
+      {n:'06 · Resolution',t:'An objective view of options and where the parties converge — symmetric, with no recommendation. The platform informs; the parties decide.'},
+      {n:'07 · Memorandum',t:'Assembles the agreed Memorandum of Understanding for review and e-signature.',ck:'Checkpoint 3 — final review before the joint session.'}
+    ];
+    window.jxStage=function(i){
+      var d=document.getElementById('jxStageDetail'); if(!d) return;
+      var s=S[i];
+      d.innerHTML='<div class="pd-tag">Stage</div><div class="pd-name">'+s.n+'</div><p class="pd-text">'+s.t+'</p>'+(s.ck?'<div class="pd-ck">✓ '+s.ck+'</div>':'');
+      var els=document.querySelectorAll('#jxPipeline .pipeline-stage');
+      for(var k=0;k<els.length;k++){ els[k].classList.toggle('is-active', els[k].getAttribute('data-jxstage')===String(i)); }
+    };
+    jxStage(0);
+  })();
+  </script>
 </section>
 
 <!-- ============== OUTCOMES ============== -->
@@ -447,6 +483,61 @@
       </div>
     </div>
   </div>
+</section>
+
+<!-- ============== ROI / TIME-SAVED CALCULATOR ============== -->
+<section class="section white" id="roi">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="rule"></span> Estimate your time saved</div>
+      <h2 class="h1" style="margin-top:24px;">See the prep hours JusticeX.ai could give back.</h2>
+      <p class="lead" style="margin-top:24px;max-width:820px">Set the volume to your practice. The estimate uses JusticeX.ai's target 60–80% reduction in pre-mediation prep time — illustrative figures, to be validated against design-partner matters, not a guarantee.</p>
+    </div>
+    <div class="roi-calc">
+      <div class="roi-controls">
+        <label class="roi-label" for="roiMatters">Matters per month</label>
+        <input id="roiMatters" type="range" min="1" max="100" value="20" oninput="jxRoi()">
+        <div class="roi-val"><span id="roiMattersV">20</span> matters / month</div>
+        <label class="roi-label" for="roiHours" style="margin-top:18px">Avg. prep hours per matter today</label>
+        <input id="roiHours" type="range" min="2" max="40" value="12" oninput="jxRoi()">
+        <div class="roi-val"><span id="roiHoursV">12</span> hours / matter</div>
+      </div>
+      <div class="roi-out">
+        <div class="roi-out-k">Estimated prep hours saved</div>
+        <div class="roi-out-v"><span id="roiHrs">—</span><span class="roi-unit"> hrs / month</span></div>
+        <div class="roi-out-sub"><span id="roiYr">—</span> hours a year back to the judgment work clients pay for.</div>
+        <div class="roi-range">At a 60–80% prep reduction: <span id="roiLo">—</span>–<span id="roiHi">—</span> hrs/month.</div>
+      </div>
+    </div>
+    <p class="caption" style="margin-top:18px;font-style:italic;color:var(--jx-slate-500);max-width:880px">Illustrative only — based on JusticeX.ai's target prep-time reduction; actual results vary by matter and will be validated with design partners. Not a performance guarantee.</p>
+  </div>
+  <style>
+  .roi-calc{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:8px;}
+  @media(max-width:820px){.roi-calc{grid-template-columns:1fr;}}
+  .roi-controls{background:var(--jx-white);border:1px solid var(--jx-stone-200);border-radius:8px;padding:24px 26px;}
+  .roi-label{display:block;font-size:12px;letter-spacing:.04em;text-transform:uppercase;font-weight:700;color:var(--jx-slate-600);}
+  .roi-controls input[type=range]{width:100%;margin-top:10px;accent-color:var(--jx-gold-500);}
+  .roi-val{font-family:var(--font-display);font-size:18px;color:var(--jx-navy-800);margin-top:6px;}
+  .roi-out{background:var(--jx-navy-800);color:var(--jx-paper);border-radius:8px;padding:28px 30px;display:flex;flex-direction:column;justify-content:center;}
+  .roi-out-k{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--jx-gold-400);font-weight:700;}
+  .roi-out-v{font-family:var(--font-display);font-size:54px;line-height:1.05;color:var(--jx-paper);margin-top:8px;}
+  .roi-out-v .roi-unit{font-size:18px;color:var(--jx-teal-100);}
+  .roi-out-sub{color:var(--jx-teal-100);margin-top:10px;font-size:14px;}
+  .roi-range{color:var(--jx-slate-300);margin-top:6px;font-size:12px;}
+  </style>
+  <script>
+  function jxRoi(){
+    var m=+document.getElementById('roiMatters').value, h=+document.getElementById('roiHours').value;
+    document.getElementById('roiMattersV').textContent=m;
+    document.getElementById('roiHoursV').textContent=h;
+    var mid=Math.round(m*h*0.7), lo=Math.round(m*h*0.6), hi=Math.round(m*h*0.8);
+    document.getElementById('roiHrs').textContent=mid.toLocaleString();
+    document.getElementById('roiYr').textContent=(mid*12).toLocaleString();
+    document.getElementById('roiLo').textContent=lo.toLocaleString();
+    document.getElementById('roiHi').textContent=hi.toLocaleString();
+  }
+  jxRoi();
+  </script>
 </section>
 
 <!-- ============== THREE AUDIENCES ============== -->
@@ -562,6 +653,27 @@
   </div>
 </section>
 
+<!-- ============== INTEGRATIONS / ECOSYSTEM ============== -->
+<section class="section paper" id="integrations">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="rule"></span> Fits your stack</div>
+      <h2 class="h1" style="margin-top:24px;">Works with the tools your practice already runs.</h2>
+      <p class="lead" style="margin-top:24px;max-width:820px">JusticeX.ai connects to practice-management, document, court-data, and financial systems through a role-gated connector layer. Connectors are enabled by you, and every intake still passes redaction and the checkpoints — they never bypass de-identification.</p>
+    </div>
+    <div class="integ-grid">
+      <span class="integ-chip">Clio</span><span class="integ-chip">MyCase</span><span class="integ-chip">PracticePanther</span><span class="integ-chip">Smokeball</span>
+      <span class="integ-chip">Google Drive</span><span class="integ-chip">Box</span><span class="integ-chip">Microsoft 365</span><span class="integ-chip">DocuSign</span>
+      <span class="integ-chip">CourtListener</span><span class="integ-chip">QuickBooks</span><span class="integ-chip">Plaid</span>
+    </div>
+    <p class="caption" style="margin-top:16px;color:var(--jx-slate-500)">Connector availability rolls out by phase; names shown are integration targets on the roadmap, not all live today.</p>
+  </div>
+  <style>
+  .integ-grid{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px;}
+  .integ-chip{font-family:var(--font-display);font-size:15px;font-weight:600;color:var(--jx-navy-800);background:var(--jx-white);border:1px solid var(--jx-stone-200);border-radius:999px;padding:10px 18px;}
+  </style>
+</section>
+
 <!-- ============== FINAL CTA ============== -->
 <section class="cta-block">
   <div class="wrap">
@@ -574,6 +686,7 @@
     </div>
     <div class="ctas">
       <a class="btn btn-gold" href="contact.html?path=demo">Request Early Access <span class="arrow">→</span></a>
+      <a class="btn btn-ghost-dark" href="contact.html?path=pilot">Start a parallel-test pilot</a>
       <a class="btn btn-ghost-dark" href="contact.html?path=counsel">Refer a Client</a>
       <a class="btn btn-ghost-dark" href="contact.html?path=waitlist">Join Beta Waitlist</a>
     </div>
@@ -612,6 +725,9 @@
           <li><a href="technology.html#security">Security</a></li>
           <li><a href="technology.html#compliance">Compliance</a></li>
           <li><a href="technology.html#ethics">Responsible AI</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
           <li><a href="contact.html?path=counsel">Subprocessors</a></li>
         </ul>
       </div>
