@@ -21,7 +21,7 @@
 <!-- AUDIENCE ROUTER -->
 <section class="section paper" style="padding:72px 0">
   <div class="wrap">
-    <div data-audience-router style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+    <div data-audience-router style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px">
       <button class="aud-pick active" data-audience="mediator" type="button">
         <div class="aud-pick-tag">For Mediators</div>
         <div class="aud-pick-title">I'm a mediator</div>
@@ -39,6 +39,12 @@
         <div class="aud-pick-title">I have a dispute</div>
         <div class="aud-pick-body">Join the beta waitlist. Free 5-minute case-fit assessment at launch. Early-adopter pricing locked at signup.</div>
         <div class="aud-pick-cta">Join waitlist <span style="color:var(--jx-gold-500)">→</span></div>
+      </button>
+      <button class="aud-pick" data-audience="pilot" type="button">
+        <div class="aud-pick-tag">For Firms &amp; Enterprises</div>
+        <div class="aud-pick-title">Run a parallel-test pilot</div>
+        <div class="aud-pick-body">Bench-test on up to 10 closed, de-identified matters — compare completeness, objective strength, and cycle-time. Set up in three quick steps.</div>
+        <div class="aud-pick-cta">Start the pilot <span style="color:var(--jx-gold-500)">→</span></div>
       </button>
     </div>
   </div>
@@ -62,6 +68,16 @@
 .confirmation .confirm-tag { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--jx-teal-600); font-weight: 600; }
 .confirmation .confirm-title { font-family: var(--font-display); font-size: 24px; color: var(--jx-navy-800); margin-top: 8px; line-height: 1.3; }
 .confirmation .confirm-body { font-size: 14px; line-height: 1.6; color: var(--jx-slate-500); margin-top: 12px; }
+/* multi-step pilot form */
+.ms-step { display: none; }
+.ms-step.active { display: block; }
+.ms-nav { display: flex; justify-content: space-between; gap: 12px; margin-top: 20px; align-items: center; }
+.ms-prog { display: flex; gap: 8px; }
+.ms-prog .ms-dot { flex: 1; height: 4px; border-radius: 2px; background: var(--jx-stone-200); transition: background var(--dur-base) var(--ease-standard); }
+.ms-prog .ms-dot.on { background: var(--jx-gold-500); }
+.ms-back { background: transparent; border: 1px solid var(--jx-stone-300); color: var(--jx-navy-800); }
+.jx-privacy-badge { display: flex; gap: 10px; align-items: flex-start; margin-top: 18px; padding: 12px 14px; background: rgba(240,153,123,0.08); border: 1px solid rgba(240,153,123,0.3); border-radius: 6px; font-size: 12.5px; line-height: 1.5; color: var(--jx-slate-600); }
+.jx-privacy-badge .jx-lock { font-size: 14px; line-height: 1.4; }
 </style>
 
 <!-- FORMS -->
@@ -171,6 +187,46 @@
             <div class="confirm-body">You'll get early access and locked-in adopter pricing. Until then, watch your inbox for the JusticeX.ai Brief — our monthly read on what's changing in AI dispute resolution.</div>
           </div>
         </form>
+
+        <!-- PILOT FORM (multi-step) -->
+        <form class="form-card" data-form="pilot" name="jx-pilot" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="pilotForm">
+          <input type="hidden" name="form-name" value="jx-pilot">
+          <p hidden aria-hidden="true"><label>Leave this blank: <input name="bot-field"></label></p>
+          <div class="form-fields">
+            <div class="eyebrow"><span class="num">Pilot</span> <span class="rule"></span> Parallel-test pilot</div>
+            <h2 class="h2" style="margin-top:18px;font-family:var(--font-display)">Bench-test JusticeX.ai on your own closed matters.</h2>
+            <p class="body" style="margin-top:12px">Run up to 10 <strong>closed, de-identified</strong> matters through the seven-stage pipeline and compare completeness, objective-strength symmetry, and cycle-time against how they actually ran. We compare process quality — never settlement outcomes. Three quick steps.</p>
+
+            <div class="ms-prog" id="msProg" style="margin-top:24px"></div>
+
+            <div class="ms-step active" data-step="0" style="margin-top:18px">
+              <div class="field"><label>Which best describes you? *</label>
+                <select name="segment" required><option value="">Select…</option><option>Law firm</option><option>Mediation practice</option><option>Corporate legal department</option><option>Insurance carrier</option><option>Other</option></select></div>
+              <div class="ms-nav"><span></span><button type="button" class="btn btn-navy ms-next">Next <span class="arrow">→</span></button></div>
+            </div>
+
+            <div class="ms-step" data-step="1" style="margin-top:18px">
+              <div class="field"><label>Monthly dispute volume *</label>
+                <select name="volume" required><option value="">Select…</option><option>1–10</option><option>11–25</option><option>26–75</option><option>75+</option></select></div>
+              <div class="ms-nav"><button type="button" class="btn ms-back">← Back</button><button type="button" class="btn btn-navy ms-next">Next <span class="arrow">→</span></button></div>
+            </div>
+
+            <div class="ms-step" data-step="2" style="margin-top:18px">
+              <div class="field-row">
+                <div class="field"><label>Full name *</label><input type="text" required name="full-name" placeholder="Jane Doe"></div>
+                <div class="field"><label>Work email *</label><input type="email" required name="email" placeholder="you@firm.com"></div>
+              </div>
+              <div class="field"><label>Firm / organization <span style="text-transform:none;letter-spacing:0;font-weight:400;color:var(--jx-slate-500)">(optional)</span></label><input type="text" name="organization"></div>
+              <div class="jx-privacy-badge"><span class="jx-lock">🔒</span><span>Your data is sandboxed, tenant-isolated, and never used to train public AI models. Pilot matters are de-identified or synthetic — no real PII required.</span></div>
+              <div class="ms-nav"><button type="button" class="btn ms-back">← Back</button><button type="submit" class="btn btn-navy">Generate secure workspace link <span class="arrow">→</span></button></div>
+            </div>
+          </div>
+          <div class="confirmation">
+            <div class="confirm-tag">Pilot requested</div>
+            <div class="confirm-title">We'll send your secure pilot workspace link within one business day.</div>
+            <div class="confirm-body">You'll get setup steps for loading up to 10 closed, de-identified matters, de-identification guidance, and a short readout template — completeness · objective strength · cycle-time. We compare process quality, never settlement outcomes.</div>
+          </div>
+        </form>
       </div>
 
       <!-- RIGHT: direct channels -->
@@ -221,6 +277,19 @@
 </section>
 
 <div data-partial="footer"></div>
+<script>
+(function(){
+  var form=document.getElementById('pilotForm'); if(!form) return;
+  var steps=[].slice.call(form.querySelectorAll('.ms-step'));
+  var prog=document.getElementById('msProg'); var cur=0;
+  function dots(){ var h=''; for(var i=0;i<steps.length;i++){ h+='<span class="ms-dot'+(i<=cur?' on':'')+'"></span>'; } if(prog) prog.innerHTML=h; }
+  function show(i){ for(var k=0;k<steps.length;k++){ steps[k].classList.toggle('active', k===i); } cur=i; dots(); }
+  function valid(i){ var req=steps[i].querySelectorAll('input[required],select[required]'); for(var j=0;j<req.length;j++){ if(!req[j].value){ if(req[j].reportValidity) req[j].reportValidity(); return false; } } return true; }
+  [].slice.call(form.querySelectorAll('.ms-next')).forEach(function(b){ b.addEventListener('click',function(){ if(valid(cur) && cur<steps.length-1) show(cur+1); }); });
+  [].slice.call(form.querySelectorAll('.ms-back')).forEach(function(b){ b.addEventListener('click',function(){ if(cur>0) show(cur-1); }); });
+  show(0);
+})();
+</script>
 <script src="js/partials.js?v=2026-05-20b"></script>
 <script src="js/site.js?v=2026-05-20d"></script>
 </body>
