@@ -135,7 +135,10 @@
                 <div class="field"><label>Email *</label><input type="email" required placeholder="you@firm.com" name="email"></div>
                 <div class="field"><label>Direct phone</label><input type="tel" placeholder="(212) 555-0148" name="phone"></div>
               </div>
-              <div class="field"><label>Earliest availability for a 30-min call</label><input type="date" name="availability"></div>
+              <div class="field"><label>Book your 30-min discovery call</label>
+                <button type="button" class="btn btn-navy" data-cal-namespace="discovery" data-cal-link="justicex/discovery" data-cal-config='{"layout":"month_view"}' style="width:100%;justify-content:center">Pick a time on the calendar <span class="arrow">→</span></button>
+                <div class="microcopy">Opens a live calendar — choose any open slot. You can also submit this form and we'll follow up.</div>
+              </div>
               <button class="btn btn-navy" type="submit" style="width:100%;justify-content:center;margin-top:8px">Schedule My Discovery Call <span class="arrow">→</span></button>
               <p class="microcopy" style="margin-top:14px">By submitting you agree to our privacy policy. We respond within one business day.</p>
             </div>
@@ -273,6 +276,7 @@
               </div>
               <div class="field"><label>Firm / organization <span style="text-transform:none;letter-spacing:0;font-weight:400;color:var(--jx-slate-500)">(optional)</span></label><input type="text" name="organization"></div>
               <div class="jx-privacy-badge"><span class="jx-lock">🔒</span><span>Your data is sandboxed, tenant-isolated, and never used to train public AI models. Pilot matters are de-identified or synthetic — no real PII required.</span></div>
+              <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--jx-stone-200);font-size:13px;color:var(--jx-slate-500)">Prefer to talk first? <button type="button" data-cal-namespace="discovery" data-cal-link="justicex/discovery" data-cal-config='{"layout":"month_view"}' style="border:none;background:none;padding:0;cursor:pointer;color:var(--jx-navy-800);font-weight:600;font-family:inherit;font-size:13px">Book a discovery call →</button></div>
               <div class="ms-nav"><button type="button" class="btn ms-back">← Back</button><button type="submit" class="btn btn-navy">Generate secure workspace link <span class="arrow">→</span></button></div>
             </div>
           </div>
@@ -346,6 +350,12 @@
   if(qm){ var mv=+qm, sel=form.querySelector('select[name=volume]'); if(sel && !isNaN(mv)){ sel.value = mv<=10?'1–10' : mv<=25?'11–25' : mv<=75?'26–75' : '75+'; } }
   show(0);
 })();
+</script>
+<!-- Cal.com embed (popup) for the discovery / parallel-test pilot booking -->
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  Cal("init", "discovery", { origin: "https://cal.com" });
+  Cal.ns.discovery("ui", { hideEventTypeDetails: false, layout: "month_view" });
 </script>
 <script src="js/partials.js?v=2026-05-20b"></script>
 <script src="js/site.js?v=2026-05-20d"></script>
