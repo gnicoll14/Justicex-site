@@ -4,3 +4,5 @@ node_modules/
 *.zip
 _backups/
 uploads/*.docx
+.fuse_hidden*
+_draft-contracts-marketing.html
