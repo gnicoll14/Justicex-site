@@ -22,6 +22,7 @@
       <a href="contact.html">Contact</a>
     </div>
     <div class="nav-actions">
+      <a href="contact.html?path=pilot" class="nav-cta-pilot">Start Pilot</a>
       <a href="mediator-console.html" class="nav-secondary" style="display:inline-flex;align-items:center;gap:6px"><span style="color:var(--jx-gold-500);font-size:10px">▶</span> Live console</a>
       <a href="contact.html?path=demo" class="nav-cta">Request Early Access</a>
     </div>
@@ -97,4 +98,19 @@
       document.body.classList.remove('nav-open');
     }));
   }
+  // Sticky-nav scroll state + slide-in "Start Pilot" micro-CTA
+  (function(){
+    const nav = document.querySelector('.site-nav');
+    if (!nav) return;
+    const st = document.createElement('style');
+    st.textContent = '.nav-cta-pilot{display:none;}'
+      + '.site-nav{transition:background .25s ease, box-shadow .25s ease;}'
+      + '.site-nav.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.28);background:rgba(4,20,40,.85);}'
+      + '.site-nav.scrolled .nav-cta-pilot{display:inline-flex;align-items:center;gap:6px;background:var(--jx-gold-500);color:#021A33;font-weight:700;font-size:13px;padding:8px 14px;border-radius:6px;text-decoration:none;animation:jxPilotIn .3s ease;}'
+      + '@keyframes jxPilotIn{from{opacity:0;transform:translateX(10px);}to{opacity:1;transform:none;}}';
+    document.head.appendChild(st);
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 520);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  })();
 })();

@@ -84,6 +84,12 @@
 .chip-check:hover { border-color: var(--jx-gold-500); }
 .chip-check input { accent-color: var(--jx-gold-500); margin: 0; }
 .chip-check:has(input:checked) { border-color: var(--jx-gold-500); background: rgba(240,153,123,0.10); font-weight: 600; }
+/* secure-sandbox visual */
+.sandbox-viz { margin: 18px 0 4px; }
+.sv-zone { border: 2px dashed var(--jx-stone-300); border-radius: 10px; padding: 20px 22px; background: #FBFDFF; text-align: center; }
+.sv-ic { font-size: 22px; line-height: 1; }
+.sv-t { font-family: var(--font-display); font-size: 16px; color: var(--jx-navy-800); margin-top: 6px; }
+.sv-d { font-size: 12.5px; color: var(--jx-slate-500); margin: 6px auto 0; max-width: 520px; line-height: 1.5; }
 </style>
 
 <!-- FORMS -->
@@ -110,7 +116,21 @@
                 <div class="field"><label>Years in mediation</label><input type="number" min="0" max="60" placeholder="12" name="years"></div>
                 <div class="field"><label>Annual matter volume</label><select name="matter-volume"><option>0–25</option><option>26–75</option><option>76–150</option><option>150+</option></select></div>
               </div>
-              <div class="field"><label>Primary dispute types *</label><select multiple size="5" required name="dispute-types"><option>Divorce &amp; Marital Dissolution</option><option>Child Custody &amp; Parenting Plans</option><option>Landlord–Tenant</option><option>Small Claims &amp; Consumer</option><option>Neighbor &amp; HOA</option><option>Workplace Harassment</option><option>Freelancer Payment</option><option>Business Partnership</option><option>E-Commerce Marketplace</option><option>Medical Bill &amp; Provider</option></select><div class="microcopy">Hold ⌘/Ctrl to select multiple.</div></div>
+              <div class="field"><label>Primary dispute types *</label>
+                <div class="chip-group">
+                  <label class="chip-check"><input type="checkbox" name="dispute-types" value="Divorce & Marital Dissolution">Divorce &amp; Marital Dissolution</label>
+                  <label class="chip-check"><input type="checkbox" name="dispute-types" value="Child Custody & Parenting Plans">Child Custody &amp; Parenting</label>
+                  <label class="chip-check"><input type="checkbox" name="dispute-types" value="Landlord–Tenant">Landlord–Tenant</label>
+                  <label class="chip-check"><input type="checkbox" name="dispute-types" value="Small Claims & Consumer">Small Claims &amp; Consumer</label>
+                  <label class="chip-check"><input type="checkbox" name="dispute-types" value="Neighbor & HOA">Neighbor &amp; HOA</label>
+                  <label class="chip-check"><input type="checkbox" name="dispute-types" value="Workplace Harassment">Workplace</label>
+                  <label class="chip-check"><input type="checkbox" name="dispute-types" value="Freelancer Payment">Freelancer Payment</label>
+                  <label class="chip-check"><input type="checkbox" name="dispute-types" value="Business Partnership">Business Partnership</label>
+                  <label class="chip-check"><input type="checkbox" name="dispute-types" value="E-Commerce Marketplace">E-Commerce</label>
+                  <label class="chip-check"><input type="checkbox" name="dispute-types" value="Medical Bill & Provider">Medical Bill</label>
+                </div>
+                <div class="microcopy">Tap all that apply.</div>
+              </div>
               <div class="field-row">
                 <div class="field"><label>Email *</label><input type="email" required placeholder="you@firm.com" name="email"></div>
                 <div class="field"><label>Direct phone</label><input type="tel" placeholder="(212) 555-0148" name="phone"></div>
@@ -227,6 +247,10 @@
             <div class="eyebrow"><span class="num">Pilot</span> <span class="rule"></span> Parallel-test pilot</div>
             <h2 class="h2" style="margin-top:18px;font-family:var(--font-display)">Bench-test JusticeX.ai on your own closed matters.</h2>
             <p class="body" style="margin-top:12px">Run up to 10 <strong>closed, de-identified</strong> matters through the seven-stage pipeline and compare completeness, objective-strength symmetry, and cycle-time against how they actually ran. We compare process quality — never settlement outcomes. Three quick steps.</p>
+
+            <div class="sandbox-viz">
+              <div class="sv-zone"><div class="sv-ic">🔒</div><div class="sv-t">Secure document sandbox</div><div class="sv-d">No files are accepted until your tenant keys are cryptographically signed and your isolated sandbox is provisioned. De-identified or synthetic matters only — no real PII required.</div></div>
+            </div>
 
             <div class="ms-prog" id="msProg" style="margin-top:24px"></div>
 

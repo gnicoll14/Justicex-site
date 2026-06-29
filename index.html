@@ -26,9 +26,9 @@
           <a class="btn btn-ghost-dark" href="demo/">▶ Tour the platform — free, no sign-up</a>
         </div>
         <div class="hero-microbadges">
-          <span class="hmb">AES-256 + TLS 1.3</span>
-          <span class="hmb">Tenant-isolated &amp; sandboxed</span>
-          <span class="hmb">Never used to train public AI models</span>
+          <a class="hmb" href="technology.html#compliance">AES-256 + TLS 1.3</a>
+          <a class="hmb" href="technology.html#compliance">Tenant-isolated &amp; sandboxed</a>
+          <a class="hmb" href="technology.html#compliance">Never used to train public AI models</a>
         </div>
       </div>
       <!-- Right side: pipeline isometric -->
@@ -118,8 +118,28 @@
 @keyframes spin { to { transform: rotate(360deg); } }
 .hp-foot { display: flex; justify-content: space-between; padding: 12px 18px; background: var(--jx-navy-900); font-size: 11px; color: var(--jx-slate-300); border-top: 1px solid rgba(255,255,255,0.08); }
 .hero-microbadges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
-.hero-microbadges .hmb { font-size: 11px; letter-spacing: 0.04em; font-weight: 600; color: var(--jx-teal-100); background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 999px; padding: 5px 11px; }
+.hero-microbadges .hmb { font-size: 11px; letter-spacing: 0.04em; font-weight: 600; color: var(--jx-teal-100); background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 999px; padding: 5px 11px; text-decoration: none; cursor: pointer; transition: background .2s, border-color .2s, color .2s; }
+.hero-microbadges .hmb:hover { background: rgba(255,255,255,0.12); border-color: var(--jx-gold-500); color: var(--jx-paper); }
 </style>
+<script>
+(function(){
+  var body=document.querySelector('.hp-body'); if(!body) return;
+  var S=[['01','Plan','Scope locked · 14 issues'],['02','Intake','73 artifacts · 98% OCR'],['03','Redact','142 redactions · counsel-signed'],['04','Summarize','Party A 87% · Party B 82%'],['05','Gap Analysis','Alignment 64%'],['06','Resolution','3 options mapped'],['07','Memorandum','Assembling MOU']];
+  var run=3;
+  function render(){
+    var h='';
+    for(var i=0;i<S.length;i++){
+      var cls=i<run?'hp-stage done':(i===run?'hp-stage active':'hp-stage');
+      var right=i<run?'<div class="hp-check">✓</div>':(i===run?'<div class="hp-spinner"></div>':'');
+      var meta=i>run?'Queued':S[i][2];
+      h+='<div class="'+cls+'"><div class="hp-stage-n">'+S[i][0]+'</div><div class="hp-stage-info"><div class="hp-stage-name">'+S[i][1]+'</div><div class="hp-stage-meta">'+meta+'</div></div>'+right+'</div>';
+    }
+    body.innerHTML=h;
+  }
+  render();
+  setInterval(function(){ run++; if(run>S.length-1) run=3; render(); }, 2600);
+})();
+</script>
 
 <!-- ============== FRAMEWORK BAND ============== -->
 <section class="section framework-band" data-screen-label="01 Home · Framework">
@@ -441,6 +461,7 @@
   .pipeline-detail .pd-name{font-family:var(--font-display);font-size:20px;color:var(--jx-navy-800);margin:6px 0 8px;}
   .pipeline-detail .pd-text{font-size:15px;line-height:1.6;color:var(--jx-slate-600);margin:0;}
   .pipeline-detail .pd-ck{display:inline-block;margin-top:10px;font-size:12px;font-weight:600;color:#1c6b4a;}
+  @keyframes jxFade{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:none;}}
   </style>
   <script>
   (function(){
@@ -457,6 +478,7 @@
       var d=document.getElementById('jxStageDetail'); if(!d) return;
       var s=S[i];
       d.innerHTML='<div class="pd-tag">Stage</div><div class="pd-name">'+s.n+'</div><p class="pd-text">'+s.t+'</p>'+(s.ck?'<div class="pd-ck">✓ '+s.ck+'</div>':'');
+      d.style.animation='none'; void d.offsetWidth; d.style.animation='jxFade .25s ease';
       var els=document.querySelectorAll('#jxPipeline .pipeline-stage');
       for(var k=0;k<els.length;k++){ els[k].classList.toggle('is-active', els[k].getAttribute('data-jxstage')===String(i)); }
     };
@@ -515,9 +537,9 @@
         <div class="roi-out-v"><span id="roiHrs">—</span><span class="roi-unit"> hrs / month</span></div>
         <div class="roi-out-sub"><span id="roiYr">—</span> hours a year back to the judgment work clients pay for.</div>
         <div class="roi-range">At a 60–80% prep reduction: <span id="roiLo">—</span>–<span id="roiHi">—</span> hrs/month.</div>
+        <a class="btn btn-gold" id="roiCta" href="contact.html?path=pilot" style="margin-top:20px;align-self:flex-start">Run a parallel-test pilot <span class="arrow">→</span></a>
       </div>
     </div>
-    <div style="margin-top:20px"><a class="btn btn-gold" id="roiCta" href="contact.html?path=pilot">Run a parallel-test pilot <span class="arrow">→</span></a></div>
     <p class="caption" style="margin-top:18px;font-style:italic;color:var(--jx-slate-500);max-width:880px">Illustrative only — based on JusticeX.ai's target prep-time reduction; actual results vary by matter and will be validated with design partners. Not a performance guarantee.</p>
   </div>
   <style>

@@ -17,9 +17,20 @@
     <p class="lead on-dark" style="margin-top:28px;max-width:780px">Seven structured stages. Three human-in-the-loop checkpoints. One canonical record — the Single Point of Consistency — that every output reconciles to. AI proposes, you dispose.</p>
     <div class="hero-ctas">
       <a class="btn btn-gold" href="#pipeline">Walk the pipeline <span class="arrow">→</span></a>
+      <a class="btn btn-ghost-dark" href="contact.html?path=pilot">Start a parallel-test pilot</a>
       <a class="btn btn-ghost-dark" href="#deliverables">See deliverables</a>
     </div>
+    <div class="hero-microbadges">
+      <a class="hmb" href="technology.html#compliance">AES-256 + TLS 1.3</a>
+      <a class="hmb" href="technology.html#compliance">Tenant-isolated &amp; sandboxed</a>
+      <a class="hmb" href="technology.html#compliance">Never used to train public AI models</a>
+    </div>
   </div>
+  <style>
+  .hero-microbadges{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
+  .hero-microbadges .hmb{font-size:11px;letter-spacing:.04em;font-weight:600;color:var(--jx-teal-100);background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:999px;padding:5px 11px;text-decoration:none;transition:background .2s,border-color .2s,color .2s;}
+  .hero-microbadges .hmb:hover{background:rgba(255,255,255,0.12);border-color:var(--jx-gold-500);color:var(--jx-paper);}
+  </style>
 </section>
 
 <!-- PIPELINE -->
@@ -96,6 +107,33 @@
       </article>
     </div>
   </div>
+  <style>
+  .del-card .del-thumb{width:42px;height:42px;border-radius:9px;background:var(--jx-navy-800);display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+  .del-card .del-thumb svg{width:22px;height:22px;stroke:var(--jx-gold-400);fill:none;stroke-width:1.6;}
+  .del-card .del-speed{list-style:none;display:inline-flex;align-items:center;gap:5px;background:rgba(28,107,74,0.12);color:#1c6b4a;border:1px solid rgba(28,107,74,0.28);border-radius:999px;padding:3px 11px;font-size:12px;font-weight:700;margin-bottom:8px;}
+  .del-card .del-speed strong{color:#1c6b4a;}
+  </style>
+  <script>
+  (function(){
+    var icons={
+      D1:'<path d="M7 3h7l4 4v14H7z"/><path d="M9 8h3M9 12h7M9 16h7"/>',
+      D2:'<path d="M5 21V10M12 21V4M19 21v-8"/>',
+      D3:'<circle cx="6" cy="6" r="2"/><circle cx="18" cy="9" r="2"/><circle cx="9" cy="18" r="2"/><path d="M8 7l8 1.5M9.5 16.5L17 10"/>',
+      D4:'<path d="M7 3h10v18H7z"/><path d="M10 13l2 2 4-4"/>',
+      D5:'<path d="M9 12a3 3 0 0 1 3-3h1M15 12a3 3 0 0 1-3 3h-1"/><path d="M8 9.5h2M14 14.5h2"/>',
+      D6:'<path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="M9 12l2 2 4-4"/>'
+    };
+    [].slice.call(document.querySelectorAll('.del-card')).forEach(function(c){
+      var numEl=c.querySelector('.del-num'); if(!numEl) return;
+      var key=(numEl.textContent||'').trim(); if(!icons[key]) return;
+      var t=document.createElement('div'); t.className='del-thumb';
+      t.innerHTML='<svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">'+icons[key]+'</svg>';
+      c.insertBefore(t, c.firstChild);
+      var lis=[].slice.call(c.querySelectorAll('.del-meta li'));
+      lis.forEach(function(x){ if(/\bmin\b|Live|Per output/i.test(x.textContent)) x.classList.add('del-speed'); });
+    });
+  })();
+  </script>
 </section>
 
 <!-- OUTCOMES -->
