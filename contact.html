@@ -78,6 +78,12 @@
 .ms-back { background: transparent; border: 1px solid var(--jx-stone-300); color: var(--jx-navy-800); }
 .jx-privacy-badge { display: flex; gap: 10px; align-items: flex-start; margin-top: 18px; padding: 12px 14px; background: rgba(240,153,123,0.08); border: 1px solid rgba(240,153,123,0.3); border-radius: 6px; font-size: 12.5px; line-height: 1.5; color: var(--jx-slate-600); }
 .jx-privacy-badge .jx-lock { font-size: 14px; line-height: 1.4; }
+/* clickable chips */
+.chip-group { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.chip-check { display: inline-flex; align-items: center; gap: 7px; border: 1px solid var(--jx-stone-300); border-radius: 999px; padding: 7px 13px; font-size: 13px; cursor: pointer; color: var(--jx-navy-800); background: var(--jx-white); transition: border-color var(--dur-base) var(--ease-standard), background var(--dur-base) var(--ease-standard); }
+.chip-check:hover { border-color: var(--jx-gold-500); }
+.chip-check input { accent-color: var(--jx-gold-500); margin: 0; }
+.chip-check:has(input:checked) { border-color: var(--jx-gold-500); background: rgba(240,153,123,0.10); font-weight: 600; }
 </style>
 
 <!-- FORMS -->
@@ -140,7 +146,18 @@
                 <div class="field"><label>AmLaw / size band</label><select name="firm-size"><option>Solo</option><option>2–10</option><option>11–50</option><option>51–200</option><option>AmLaw 200</option><option>AmLaw 100</option></select></div>
               </div>
               <div class="field"><label>Primary jurisdictions</label><input type="text" placeholder="NY, NJ, CT" name="jurisdictions"></div>
-              <div class="field"><label>Practice areas *</label><select multiple size="4" required name="practice-areas"><option>Family</option><option>Real Estate</option><option>Employment</option><option>Commercial</option><option>Consumer</option><option>Health</option><option>IP / Tech</option></select></div>
+              <div class="field"><label>Practice areas *</label>
+                <div class="chip-group">
+                  <label class="chip-check"><input type="checkbox" name="practice-areas" value="Family">Family</label>
+                  <label class="chip-check"><input type="checkbox" name="practice-areas" value="Real Estate">Real Estate</label>
+                  <label class="chip-check"><input type="checkbox" name="practice-areas" value="Employment">Employment</label>
+                  <label class="chip-check"><input type="checkbox" name="practice-areas" value="Commercial">Commercial</label>
+                  <label class="chip-check"><input type="checkbox" name="practice-areas" value="Consumer">Consumer</label>
+                  <label class="chip-check"><input type="checkbox" name="practice-areas" value="Health">Health</label>
+                  <label class="chip-check"><input type="checkbox" name="practice-areas" value="IP / Tech">IP / Tech</label>
+                </div>
+                <div class="microcopy">Tap all that apply.</div>
+              </div>
               <div class="field-row">
                 <div class="field"><label>Annual referrable matters</label><select name="referrable-matters"><option>1–10</option><option>11–25</option><option>26–75</option><option>75+</option></select></div>
                 <div class="field"><label>How you'd use JusticeX</label><select name="plan"><option>Refer clients (no-fee)</option><option>Use the platform for my matters</option><option>Both</option><option>Undecided</option></select></div>
@@ -176,7 +193,21 @@
                 <div class="field"><label>State of residence *</label><select required name="state"><option value="">Select…</option><option>New York</option><option>California</option><option>Utah</option><option>Texas</option><option>Florida</option><option>Other</option></select></div>
               </div>
               <div class="field"><label>Email *</label><input type="email" required placeholder="you@email.com" name="email"><div class="microcopy">We will not sell or share your email. Unsubscribe in one click. Privacy policy at /privacy.</div></div>
-              <div class="field"><label>Dispute type</label><select name="dispute-type"><option>Divorce &amp; Marital Dissolution</option><option>Child Custody &amp; Parenting Plans</option><option>Landlord–Tenant</option><option>Small Claims &amp; Consumer</option><option>Neighbor &amp; HOA</option><option>Workplace Harassment</option><option>Freelancer Payment</option><option>Business Partnership</option><option>E-Commerce Marketplace</option><option>Medical Bill &amp; Provider</option><option>Not listed</option></select></div>
+              <div class="field"><label>Dispute type</label>
+                <div class="chip-group">
+                  <label class="chip-check"><input type="radio" name="dispute-type" value="Divorce & Marital Dissolution">Divorce &amp; Marital Dissolution</label>
+                  <label class="chip-check"><input type="radio" name="dispute-type" value="Child Custody & Parenting Plans">Child Custody &amp; Parenting</label>
+                  <label class="chip-check"><input type="radio" name="dispute-type" value="Landlord–Tenant">Landlord–Tenant</label>
+                  <label class="chip-check"><input type="radio" name="dispute-type" value="Small Claims & Consumer">Small Claims &amp; Consumer</label>
+                  <label class="chip-check"><input type="radio" name="dispute-type" value="Neighbor & HOA">Neighbor &amp; HOA</label>
+                  <label class="chip-check"><input type="radio" name="dispute-type" value="Workplace Harassment">Workplace</label>
+                  <label class="chip-check"><input type="radio" name="dispute-type" value="Freelancer Payment">Freelancer Payment</label>
+                  <label class="chip-check"><input type="radio" name="dispute-type" value="Business Partnership">Business Partnership</label>
+                  <label class="chip-check"><input type="radio" name="dispute-type" value="E-Commerce Marketplace">E-Commerce</label>
+                  <label class="chip-check"><input type="radio" name="dispute-type" value="Medical Bill & Provider">Medical Bill</label>
+                  <label class="chip-check"><input type="radio" name="dispute-type" value="Not listed">Not listed</label>
+                </div>
+              </div>
               <div class="field"><label>Anything you'd like the team to know <span style="text-transform:none;letter-spacing:0;font-weight:400;color:var(--jx-slate-500)">(optional)</span></label><textarea rows="4" placeholder="Describe the situation in your own words." name="notes"></textarea></div>
               <button class="btn btn-navy" type="submit" style="width:100%;justify-content:center;margin-top:8px">Reserve My Spot <span class="arrow">→</span></button>
             </div>
@@ -287,6 +318,8 @@
   function valid(i){ var req=steps[i].querySelectorAll('input[required],select[required]'); for(var j=0;j<req.length;j++){ if(!req[j].value){ if(req[j].reportValidity) req[j].reportValidity(); return false; } } return true; }
   [].slice.call(form.querySelectorAll('.ms-next')).forEach(function(b){ b.addEventListener('click',function(){ if(valid(cur) && cur<steps.length-1) show(cur+1); }); });
   [].slice.call(form.querySelectorAll('.ms-back')).forEach(function(b){ b.addEventListener('click',function(){ if(cur>0) show(cur-1); }); });
+  var qm=new URLSearchParams(location.search).get('m');
+  if(qm){ var mv=+qm, sel=form.querySelector('select[name=volume]'); if(sel && !isNaN(mv)){ sel.value = mv<=10?'1–10' : mv<=25?'11–25' : mv<=75?'26–75' : '75+'; } }
   show(0);
 })();
 </script>
