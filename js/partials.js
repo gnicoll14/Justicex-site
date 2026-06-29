@@ -53,6 +53,7 @@
         <li><a href="technology.html#ethics">Responsible AI</a></li>
         <li><a href="disclaimer.html">Disclaimer</a></li>
         <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
       </ul></div>
       <div><h5>Company</h5><ul>
         <li><a href="about.html">About</a></li>
