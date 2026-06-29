@@ -43,9 +43,9 @@
         <li><a href="solutions.html">Pricing · Phase 2</a></li>
       </ul></div>
       <div><h5>Markets</h5><ul>
-        <li><a href="markets.html#mediators">For Mediators</a></li>
-        <li><a href="markets.html#counsel">For Counsel</a></li>
-        <li><a href="markets.html#consumers">For Consumers</a></li>
+        <li><a href="markets.html#markets">Markets</a></li>
+        <li><a href="markets.html#paths">Delivery paths</a></li>
+        <li><a href="markets.html#channels">Channels &amp; partners</a></li>
         <li><a href="markets.html#catalog">Dispute Catalog</a></li>
       </ul></div>
       <div><h5>Trust</h5><ul>

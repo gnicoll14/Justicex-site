@@ -39,7 +39,7 @@
     // honor ?path= query
     const params = new URLSearchParams(window.location.search);
     const want = params.get('path');
-    const map = { 'mediator-pilot': 'mediator', 'demo': 'mediator', 'counsel': 'counsel', 'waitlist': 'consumer', 'consumer': 'consumer', 'pilot': 'pilot' };
+    const map = { 'mediator-pilot': 'mediator', 'demo': 'mediator', 'counsel': 'counsel', 'waitlist': 'consumer', 'consumer': 'consumer', 'pilot': 'pilot', 'financial': 'financial', 'cpa': 'financial' };
     if (want && map[want]) {
       const target = router.querySelector(`[data-audience="${map[want]}"]`);
       if (target) target.click();

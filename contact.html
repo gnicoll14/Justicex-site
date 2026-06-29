@@ -46,6 +46,12 @@
         <div class="aud-pick-body">Bench-test on up to 10 closed, de-identified matters — compare completeness, objective strength, and cycle-time. Set up in three quick steps.</div>
         <div class="aud-pick-cta">Start the pilot <span style="color:var(--jx-gold-500)">→</span></div>
       </button>
+      <button class="aud-pick" data-audience="financial" type="button">
+        <div class="aud-pick-tag">Financial / Tax Pros</div>
+        <div class="aud-pick-title">I'm a financial/tax pro</div>
+        <div class="aud-pick-body">CPAs and financial/tax professionals own the financial and tax-modeling steps — neutral or per-party — and track the matters you refer or advise from a role dashboard.</div>
+        <div class="aud-pick-cta">Join as a financial/tax pro <span style="color:var(--jx-gold-500)">→</span></div>
+      </button>
     </div>
   </div>
 </section>
@@ -284,6 +290,52 @@
             <div class="confirm-tag">Pilot requested</div>
             <div class="confirm-title">We'll send your secure pilot workspace link within one business day.</div>
             <div class="confirm-body">You'll get setup steps for loading up to 10 closed, de-identified matters, de-identification guidance, and a short readout template — completeness · objective strength · cycle-time. We compare process quality, never settlement outcomes.</div>
+          </div>
+        </form>
+
+        <form class="form-card" data-form="financial" name="jx-financial" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="jx-financial">
+          <p hidden aria-hidden="true"><label>Leave this blank: <input name="bot-field"></label></p>
+          <div class="form-fields">
+            <div class="eyebrow"><span class="num">Financial / Tax</span> <span class="rule"></span> Join the network</div>
+            <h2 class="h2" style="margin-top:18px;font-family:var(--font-display)">Join as a financial or tax professional.</h2>
+            <p class="body" style="margin-top:12px">CPAs and financial/tax professionals run the financial and tax-modeling steps — net-of-tax, present value, reconcile-to-net-estate — neutral or per-party. A role dashboard tracks the matters you refer or advise. A credential is not required.</p>
+
+            <div style="margin-top:32px">
+              <div class="field-row">
+                <div class="field"><label>Full name *</label><input type="text" required placeholder="Taylor Numbers, CPA" name="full-name"></div>
+                <div class="field"><label>Credential</label><select name="credential"><option>CPA</option><option>EA (Enrolled Agent)</option><option>CFP</option><option>CDFA</option><option>Forensic accountant</option><option>Business valuator</option><option>Other / none</option></select></div>
+              </div>
+              <div class="field-row">
+                <div class="field"><label>Firm / practice name</label><input type="text" name="firm"></div>
+                <div class="field"><label>Primary jurisdictions</label><input type="text" placeholder="NY, NJ, CT" name="jurisdictions"></div>
+              </div>
+              <div class="field"><label>Focus areas *</label>
+                <div class="chip-group">
+                  <label class="chip-check"><input type="checkbox" name="focus-areas" value="Divorce / family financial">Divorce / family financial</label>
+                  <label class="chip-check"><input type="checkbox" name="focus-areas" value="Tax modeling">Tax modeling</label>
+                  <label class="chip-check"><input type="checkbox" name="focus-areas" value="Business valuation">Business valuation</label>
+                  <label class="chip-check"><input type="checkbox" name="focus-areas" value="Forensic">Forensic</label>
+                  <label class="chip-check"><input type="checkbox" name="focus-areas" value="Estate / trust">Estate / trust</label>
+                </div>
+                <div class="microcopy">Tap all that apply.</div>
+              </div>
+              <div class="field-row">
+                <div class="field"><label>How you'd use JusticeX</label><select name="plan"><option>Refer clients</option><option>Run the financial/tax steps on matters</option><option>Both</option><option>Undecided</option></select></div>
+                <div class="field"><label>Role preference</label><select name="role-pref"><option>Neutral (both parties)</option><option>Per-party</option><option>Either</option></select></div>
+              </div>
+              <div class="field-row">
+                <div class="field"><label>Email *</label><input type="email" required name="email"></div>
+                <div class="field"><label>Direct phone</label><input type="tel" name="phone"></div>
+              </div>
+              <button class="btn btn-navy" type="submit" style="width:100%;justify-content:center;margin-top:8px">Join the network <span class="arrow">→</span></button>
+              <p class="microcopy" style="margin-top:14px">Independent professional — JusticeX never sets, splits, or marks up your fees.</p>
+            </div>
+          </div>
+          <div class="confirmation">
+            <div class="confirm-tag">Received</div>
+            <div class="confirm-title">Welcome — we'll be in touch.</div>
+            <div class="confirm-body">A member of the team will follow up about the financial/tax steps, the role dashboard, and how referrals and matter assignment work.</div>
           </div>
         </form>
       </div>
