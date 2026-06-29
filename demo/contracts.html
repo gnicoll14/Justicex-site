@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JusticeX — Contracts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
+<style>
+:root{--navy:#042C53;--navy2:#154572;--navy3:#2A5582;--paper:#E6F1FB;--surface:#fff;--ink:#1A1A1A;--muted:#5F5E5A;--faint:#9CA0A7;--hair:#D1DEEE;--accent:#D85A30;--accent-d:#B04722;--accent-soft:#FAECE7;--ok:#1D9E75;--ok-s:#E7F4EF;--radius:14px;}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',system-ui,sans-serif;font-size:15px;line-height:1.6;}
+.appbar{background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 26px;}
+.brand{display:flex;align-items:center;}.bmark{height:23px;width:23px;border-radius:5px;margin-right:9px;}
+.wordmark{font-family:'Source Serif 4',serif;font-weight:600;font-size:22px;}.wordmark .x{color:var(--accent);}
+.tagline{font-size:11.5px;letter-spacing:2.4px;text-transform:uppercase;color:#9FB6D2;margin-left:12px;}
+.back{font-size:12.5px;color:#C9D8EA;text-decoration:none;}.back:hover{color:#fff;}
+.app{max-width:880px;margin:0 auto;padding:0 22px 60px;}
+.flag{display:flex;gap:9px;align-items:flex-start;background:#FBF6E8;border:1px solid #E9D9AE;color:#7A5B12;border-radius:11px;padding:11px 14px;margin:18px 0 8px;font-size:12.5px;}
+.flag i{font-size:18px;margin-top:1px;}
+.ctxbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;background:#F7FAFE;border:1px solid var(--hair);border-radius:11px;padding:11px 14px;margin-bottom:6px;}
+.ctxlbl{font-size:11px;letter-spacing:.3px;text-transform:uppercase;font-weight:700;color:var(--navy2);}
+.ctxseg{display:flex;gap:6px;flex-wrap:wrap;}
+.ctxseg button{font-size:12.5px;font-weight:600;color:var(--navy2);background:#fff;border:1.5px solid var(--hair);border-radius:8px;padding:7px 12px;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:6px;}
+.ctxseg button.on{background:var(--navy);border-color:var(--navy);color:#fff;}.ctxseg button.on .ti{color:var(--accent);}
+.ctxhint{font-size:12px;color:var(--muted);}
+.sortbar{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin:0 0 2px;}
+.sortbar .ctxseg button{padding:6px 11px;font-size:12px;}
+.filterbar{background:#F7FAFE;border:1px solid var(--hair);border-radius:11px;padding:10px 14px;margin-bottom:6px;display:flex;flex-direction:column;gap:8px;}
+.frow{display:flex;gap:10px;align-items:flex-start;flex-wrap:wrap;}
+.frow .ctxlbl{min-width:92px;padding-top:5px;}
+.chiprow{display:flex;gap:6px;flex-wrap:wrap;flex:1;}
+.chip{font-size:11.5px;font-weight:600;color:var(--navy2);background:#fff;border:1.5px solid var(--hair);border-radius:999px;padding:4px 11px;cursor:pointer;font-family:inherit;}
+.chip.on{background:var(--navy);border-color:var(--navy);color:#fff;}
+.chip.soon{opacity:.55;}
+.fhint{font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:6px;}.fhint i{color:var(--accent-d);font-size:14px;}
+.fclear{font-size:11.5px;color:var(--accent-d);font-weight:700;background:none;border:none;cursor:pointer;padding:0;}
+.empty{border:1px dashed var(--hair);border-radius:11px;padding:22px;text-align:center;color:var(--muted);font-size:13px;}
+.crumb{font-size:12px;color:var(--muted);margin:14px 0 2px;display:flex;align-items:center;gap:7px;}.crumb b{color:var(--navy);}
+.panel{background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);padding:24px 26px 26px;margin-top:8px;box-shadow:0 1px 2px rgba(20,30,46,.04);}
+h1{font-family:'Source Serif 4',serif;font-weight:500;font-size:26px;margin:0 0 4px;}
+.lede{color:var(--muted);margin:0 0 18px;max-width:68ch;}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.card{border:1px solid var(--hair);border-radius:11px;padding:13px 15px;background:#FBFDFF;cursor:pointer;transition:border-color .12s,box-shadow .12s;}
+.card:hover{border-color:#B9CFEA;box-shadow:0 2px 8px rgba(20,30,46,.06);}
+.card h3{font-family:'Source Serif 4',serif;font-weight:600;font-size:15.5px;color:var(--navy);margin:0 0 2px;}
+.card .d{font-size:12.5px;color:var(--muted);}
+.card .prov{font-size:10.5px;color:var(--faint);margin-top:7px;display:flex;align-items:center;gap:5px;flex-wrap:wrap;}
+.pill{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:700;border-radius:5px;padding:1px 6px;}
+.pill.free{color:#13694a;background:var(--ok-s);border:1px solid #BDE6D4;}
+.pill.conn{color:#0b4d8a;background:#E6F1FB;border:1px solid #BBD4EE;}
+.pill.req{color:#7A5B12;background:#FBF6E8;border:1px solid #E9D9AE;}
+.grpHd{font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--accent-d);margin:16px 2px 8px;}
+.grpHd:first-child{margin-top:2px;}
+.hide{display:none;}
+.field{margin-bottom:12px;}
+.field label{display:block;font-size:11px;letter-spacing:.3px;text-transform:uppercase;font-weight:700;color:var(--navy2);margin-bottom:4px;}
+.field input,.field textarea{width:100%;border:1px solid #CDDDF3;border-radius:8px;padding:9px 11px;font-size:14px;font-family:inherit;background:#fff;}
+.field textarea{min-height:54px;resize:vertical;}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.sec{font-family:'Source Serif 4',serif;font-weight:600;font-size:13px;color:var(--navy);text-transform:uppercase;letter-spacing:.5px;margin:20px 0 9px;padding-bottom:5px;border-bottom:1px solid #EEF3F8;display:flex;align-items:center;gap:7px;}
+.sec .n{display:inline-flex;width:19px;height:19px;border-radius:50%;background:#EAF1FB;color:var(--navy);font-size:10.5px;font-weight:800;align-items:center;justify-content:center;}
+.clausebox{border:1.5px solid var(--accent-soft);background:#FFFCFA;border-radius:12px;padding:16px 18px;}
+.clausebox.on{border-color:#E7C6B5;}
+.seg{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px;}
+.seg button{font-size:12.5px;font-weight:600;color:var(--navy2);background:#fff;border:1.5px solid var(--hair);border-radius:9px;padding:8px 13px;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:6px;}
+.seg button.on{background:var(--navy);border-color:var(--navy);color:#fff;}.seg button.on .ti{color:var(--accent);}
+.reqbanner{display:flex;gap:8px;align-items:center;font-size:12.5px;font-weight:700;color:#7A5B12;background:#FBF6E8;border:1px solid #E9D9AE;border-radius:9px;padding:9px 12px;margin-bottom:11px;}
+.reqbanner i{font-size:16px;}
+.orgnote{display:flex;gap:7px;align-items:flex-start;font-size:11.5px;color:var(--navy2);background:#EFF4FA;border:1px solid #D8E4F2;border-radius:8px;padding:8px 11px;margin-bottom:11px;}
+.orgnote i{color:var(--accent-d);font-size:15px;margin-top:1px;}
+.clausetext{font-size:13px;line-height:1.65;color:#2A2A28;background:#fff;border:1px solid var(--hair);border-radius:9px;padding:13px 15px;}
+.clausetext b{color:var(--navy);}
+.subst{margin-top:10px;}
+.flow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:13px;background:#F7FAFE;border:1px solid #E1ECF8;border-radius:9px;padding:11px 13px;font-size:12px;color:var(--navy2);}
+.flow .step{display:inline-flex;align-items:center;gap:6px;font-weight:600;color:var(--navy);background:#fff;border:1px solid #D4E2F2;border-radius:999px;padding:4px 10px;}
+.flow .ar{color:var(--faint);}
+.foot-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;}
+.btn{font-size:14px;font-weight:600;color:#fff;background:var(--accent);border:none;border-radius:9px;padding:11px 18px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;}
+.btn.ghost{background:#fff;color:var(--navy);border:1px solid #CDDDF3;}
+.costnote{font-size:11.5px;color:var(--muted);margin-top:9px;display:flex;align-items:center;gap:6px;}
+.disc{margin-top:18px;padding-top:14px;border-top:1px solid var(--hair);font-size:12px;color:var(--muted);}.disc a{color:var(--navy2);}
+.backlink{font-size:12.5px;color:var(--accent-d);font-weight:700;background:none;border:none;cursor:pointer;padding:0;display:inline-flex;align-items:center;gap:5px;margin-bottom:6px;}
+@media(max-width:620px){.grid,.two{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="appbar">
+  <div class="brand"><img class="bmark" src="https://justicex.ai/assets/brand-mark.png" alt=""/><span class="wordmark">Justice<span class="x">X</span></span><span class="tagline">Objective comparison</span></div>
+  <a class="back" href="dashboard.html"><i class="ti ti-arrow-left"></i> Back to dashboard</a>
+</div>
+
+<div class="app">
+  <div class="flag"><i class="ti ti-flag"></i><div><b>Built behind a feature flag — OFF in production until counsel clears (Q36–Q38).</b> The dispute-resolution clause, and the organization-required version, are illustrative; final wording and how far the requirement can go await attorney review.</div></div>
+
+  <div class="ctxbar">
+    <span class="ctxlbl">Acting as</span>
+    <div class="ctxseg" id="ctxSeg">
+      <button data-c="individual" class="on" onclick="setCtx('individual')"><i class="ti ti-user"></i> Individual</button>
+      <button data-c="business" onclick="setCtx('business')"><i class="ti ti-briefcase"></i> Business</button>
+      <button data-c="hoa" onclick="setCtx('hoa')"><i class="ti ti-home"></i> HOA</button>
+      <button data-c="school" onclick="setCtx('school')"><i class="ti ti-school"></i> School</button>
+    </div>
+    <span class="ctxhint" id="ctxHint">You control the dispute clause.</span>
+  </div>
+
+  <div class="filterbar">
+    <div class="frow"><span class="ctxlbl">Litigation type</span><div class="chiprow" id="typeChips"></div></div>
+    <div class="frow"><span class="ctxlbl">State</span><div class="chiprow" id="stateChips"></div></div>
+    <div class="fhint"><i class="ti ti-filter"></i> <span id="scopeNote"></span> &nbsp;·&nbsp; <button class="fclear" onclick="saveDefault()">Save as my default</button> &nbsp;·&nbsp; <button class="fclear" onclick="resetToProfile()">Reset to profile</button> <span style="color:var(--faint)">— scope applies across contracts, documents &amp; resolutions</span></div>
+  </div>
+
+  <!-- STEP 1: catalog -->
+  <div id="catalog">
+    <div class="crumb"><i class="ti ti-file-text"></i> <b>Contracts</b></div>
+    <div class="panel">
+      <h1>Start a contract</h1>
+      <p class="lede" id="catLede">Common contracts to fill in, tailor, and store — provided through a forms partner, free to start. Each one can include a built-in step to resolve any future dispute on JusticeX, which you can keep, edit, or remove.</p>
+      <div class="sortbar">
+        <span class="ctxlbl">Sort</span>
+        <div class="ctxseg" id="sortSeg">
+          <button data-s="suggested" class="on" onclick="setSort('suggested')"><i class="ti ti-layout-list"></i> Suggested</button>
+          <button data-s="used" onclick="setSort('used')"><i class="ti ti-flame"></i> Most used</button>
+          <button data-s="az" onclick="setSort('az')"><i class="ti ti-sort-ascending-letters"></i> A–Z</button>
+        </div>
+      </div>
+      <div id="formGrid"></div>
+      <div class="disc"><b>How this works.</b> Forms are supplied by a third-party contracts partner through a JusticeX connector — JusticeX is a software layer, not the author of the forms, and provides no legal advice. You choose every term. Not legal advice. <a href="disclaimer.html">Full disclaimer</a>. Synthetic demo.</div>
+    </div>
+  </div>
+
+  <!-- STEP 2: draft -->
+  <div id="draft" class="hide">
+    <div class="crumb"><i class="ti ti-file-text"></i> Contracts › <b id="dTitle">—</b></div>
+    <div class="panel">
+      <button class="backlink" onclick="toCatalog()"><i class="ti ti-arrow-left" style="font-size:13px"></i> All contracts</button>
+      <h1 id="dHead">—</h1>
+      <p class="lede">Fill the core terms. JusticeX stores your draft in your profile; you finalize and e-sign when ready.</p>
+
+      <div class="sec"><span class="n">1</span> Parties</div>
+      <div class="two">
+        <div class="field"><label id="lblA">Party A — legal name &amp; address</label><input placeholder="Full legal name, address"/></div>
+        <div class="field"><label id="lblB">Party B — legal name &amp; address</label><input placeholder="Full legal name, address"/></div>
+      </div>
+
+      <div class="sec"><span class="n">2</span> Scope / recitals</div>
+      <div class="field"><label>What is being exchanged</label><textarea placeholder="Describe the money, services, goods, or property being exchanged."></textarea></div>
+
+      <div class="sec"><span class="n">3</span> Effective date &amp; term</div>
+      <div class="two">
+        <div class="field"><label>Effective date</label><input type="text" placeholder="MM/DD/YYYY"/></div>
+        <div class="field"><label>Term / duration</label><input placeholder="e.g., 12 months; until completion"/></div>
+      </div>
+
+      <div class="sec"><span class="n">4</span> Termination</div>
+      <div class="field"><label>How either party may exit / what counts as breach</label><textarea placeholder="Notice period, exit rights, breach definition."></textarea></div>
+
+      <div class="sec"><span class="n">5</span> Dispute resolution <span style="font-weight:600;color:var(--accent-d);font-size:11px;text-transform:none;letter-spacing:0">· the JusticeX step</span></div>
+      <div class="reqbanner hide" id="reqBanner"><i class="ti ti-lock"></i><span id="reqBannerTxt"></span></div>
+      <div class="orgnote" id="orgNote"><i class="ti ti-info-circle"></i><div id="orgNoteTxt">You can keep, change, or remove the JusticeX step below — it stays your choice.</div></div>
+      <div class="clausebox on" id="clauseBox">
+        <div class="seg" id="clauseSeg">
+          <button data-m="on" class="on" onclick="setClause('on')"><i class="ti ti-scale"></i> Use JusticeX (default)</button>
+          <button data-m="sub" onclick="setClause('sub')"><i class="ti ti-arrows-exchange"></i> Substitute another process</button>
+          <button data-m="off" onclick="setClause('off')"><i class="ti ti-x"></i> Leave it out</button>
+        </div>
+        <div class="clausetext" id="clauseText"></div>
+        <div class="subst hide" id="substWrap">
+          <div class="field" style="margin:0"><label>Name the process you'll use instead</label><input id="substInput" placeholder="e.g., AAA mediation; courts of Nassau County, NY" oninput="renderClause()"/></div>
+        </div>
+        <div class="flow" id="flow">
+          <span>If a dispute arises:</span>
+          <span class="step"><i class="ti ti-file-text" style="font-size:13px"></i> This clause</span>
+          <span class="ar">→</span>
+          <span class="step"><i class="ti ti-folder" style="font-size:13px"></i> opens a JusticeX matter</span>
+          <span class="ar">→</span>
+          <span class="step"><i class="ti ti-scale" style="font-size:13px"></i> objective comparison</span>
+          <span class="ar">→</span>
+          <span class="step"><i class="ti ti-circle-check" style="font-size:13px"></i> attempt to resolve</span>
+        </div>
+      </div>
+
+      <div class="foot-actions">
+        <button class="btn ghost" onclick="alert('Demo — saved to your JusticeX profile.')"><i class="ti ti-device-floppy"></i> Save to my profile</button>
+        <button class="btn" onclick="alert('Demo — would generate the contract and route to e-signature. Feature-flagged; OFF in production until counsel clears.')"><i class="ti ti-signature"></i> Finalize &amp; e-sign</button>
+      </div>
+      <div class="costnote" id="costNote"></div>
+
+      <div class="disc"><b>The JusticeX step is software, not a forum.</b> Where included or required, the clause means the parties agree to <b>use the JusticeX platform</b> to attempt resolution first — JusticeX is a software provider only, <b>not a mediator, arbitrator, forum, neutral, or party</b>, owes no duties, and bears no responsibility for the process or its outcome; that responsibility rests with the parties and any mediator or attorney they engage. A required version <b>does not waive</b> either party's ultimate right to a court, and does not apply to claims that by law can't be subject to a mandatory pre-dispute step. Nothing here is legal advice. <a href="disclaimer.html">Full disclaimer</a>. Feature-flagged, counsel-gated, OFF in production.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Forms grouped by context (who initiates) and sub-section.
+// req:true = an ADHESION relationship (employee / member / student) where the org can REQUIRE the JusticeX step (locked).
+// req:false = a peer / personal contract — the JusticeX step is default-on but editable.
+// pop = rough relative frequency / "most used" weight (illustrative, higher = more common).
+var FORMS=[
+ // Individual
+ {id:'lease',t:'Residential Lease',d:'Landlord–tenant: rent, deposit, term, rules.',ctx:['individual','business'],group:{individual:'Housing',business:'Real estate'},req:false,pop:98},
+ {id:'sublease',t:'Roommate / Sublease Agreement',d:'Share or sublet a residence.',ctx:'individual',group:'Housing',req:false,pop:55},
+ {id:'bos',t:'Bill of Sale',d:'Transfer ownership of a vehicle or asset.',ctx:'individual',group:'Personal transactions',req:false,pop:85},
+ {id:'note',t:'Promissory Note',d:'Personal loan repayment terms.',ctx:'individual',group:'Personal transactions',req:false,pop:75},
+ {id:'loan',t:'Loan Agreement',d:'Bilateral loan: amount, interest, schedule, default.',ctx:['individual','business'],group:{individual:'Personal transactions',business:'Formation & ownership'},req:false,pop:68},
+ {id:'waiver',t:'Liability Waiver & Release',d:'Release from liability for an activity, event, or service.',ctx:['individual','business'],group:{individual:'Personal transactions',business:'Vendors & services'},req:false,pop:82},
+ {id:'prenup',t:'Prenuptial / Postnuptial Agreement',d:'How a couple holds and divides property.',ctx:'individual',group:'Family',req:false,pop:40},
+ {id:'poa',t:'Power of Attorney',d:'Authorize someone to act on your behalf.',ctx:'individual',group:'Estate',req:false,pop:72},
+ {id:'hcproxy',t:'Healthcare Proxy',d:'Name who makes medical decisions for you.',ctx:'individual',group:'Estate',req:false,pop:66},
+ {id:'will',t:'Simple Will',d:'Direct how your estate is distributed.',ctx:'individual',group:'Estate',req:false,pop:74},
+ {id:'revtrust',t:'Revocable Living Trust',d:'Hold assets in a trust you can change.',ctx:'individual',group:'Estate',req:false,pop:45},
+ {id:'irrtrust',t:'Irrevocable Trust',d:'Transfer assets into a fixed trust.',ctx:'individual',group:'Estate',req:false,pop:30},
+ // Business — Employment (adhesion → required)
+ {id:'employment',t:'Employment Agreement',d:'Role, pay, benefits, policies.',ctx:'business',group:'Employment',req:true,pop:92},
+ {id:'offer',t:'Offer Letter',d:'Terms of a job offer.',ctx:'business',group:'Employment',req:true,pop:80},
+ {id:'noncompete',t:'Non-Compete Agreement',d:'Restrictive covenant — heavily regulated; enforceability varies by state.',ctx:'business',group:'Employment',req:true,pop:50},
+ {id:'nonsolicit',t:'Non-Solicitation Agreement',d:'Limits soliciting clients or staff after leaving.',ctx:'business',group:'Employment',req:true,pop:42},
+ {id:'severance',t:'Severance Agreement',d:'Separation terms and release.',ctx:'business',group:'Employment',req:true,pop:48},
+ // Business — Vendors & services (peer → editable)
+ {id:'contractor',t:'Independent Contractor Agreement',d:'Scope of work; a vendor, not an employee.',ctx:'business',group:'Vendors & services',req:false,pop:88},
+ {id:'msa',t:'Master Services Agreement',d:'Foundational terms for an ongoing relationship.',ctx:'business',group:'Vendors & services',req:false,pop:78},
+ {id:'sow',t:'Statement of Work',d:'Specific deliverables under an MSA.',ctx:'business',group:'Vendors & services',req:false,pop:56},
+ {id:'consulting',t:'Consulting Agreement',d:'Advisory services and terms.',ctx:'business',group:'Vendors & services',req:false,pop:58},
+ {id:'po',t:'Purchase Order',d:'Order goods or services under an MSA.',ctx:'business',group:'Vendors & services',req:false,pop:70},
+ // Business — Confidentiality & IP (peer → editable)
+ {id:'nda',t:'Non-Disclosure Agreement',d:'Keep shared information confidential.',ctx:'business',group:'Confidentiality & IP',req:false,pop:95},
+ {id:'license',t:'Licensing Agreement',d:'Use of IP, trademarks, or software.',ctx:'business',group:'Confidentiality & IP',req:false,pop:60},
+ // Business — Formation & ownership (peer → editable)
+ {id:'partnership',t:'Partnership Agreement',d:'Terms among business partners.',ctx:'business',group:'Formation & ownership',req:false,pop:52},
+ {id:'llc',t:'LLC Operating Agreement',d:'How an LLC is owned and run.',ctx:'business',group:'Formation & ownership',req:false,pop:62},
+ // Business — Premises (peer → editable)
+ {id:'commlease',t:'Commercial Lease',d:'Lease business premises.',ctx:'business',group:'Real estate',req:false,pop:54},
+ // HOA
+ {id:'hoa',t:'Member Agreement / Covenants',d:'Community rules members agree to.',ctx:'hoa',group:'Membership',req:true,pop:40},
+ {id:'rules',t:'Rules & Regulations Acknowledgment',d:'Member acknowledges community rules.',ctx:'hoa',group:'Membership',req:true,pop:38},
+ {id:'arc',t:'Architectural Change Request',d:'A member’s request to alter their property.',ctx:'hoa',group:'Requests',req:false,pop:30},
+ {id:'amenity',t:'Amenity Use & Liability Waiver',d:'Use of pool, gym, or shared facilities.',ctx:'hoa',group:'Requests',req:false,pop:36},
+ // School
+ {id:'enroll',t:'Enrollment Agreement',d:'Enrollment terms students and families accept.',ctx:'school',group:'Enrollment',req:true,pop:44},
+ {id:'conduct',t:'Student Code of Conduct',d:'Conduct terms students acknowledge.',ctx:'school',group:'Enrollment',req:true,pop:40},
+ {id:'tuition',t:'Tuition Payment Agreement',d:'Payment schedule and terms.',ctx:'school',group:'Enrollment',req:true,pop:42},
+ {id:'activity',t:'Field Trip / Activity Consent & Waiver',d:'Consent and liability waiver for an activity.',ctx:'school',group:'Enrollment',req:true,pop:38},
+ {id:'tech',t:'Technology Acceptable Use Policy',d:'Rules for using school technology.',ctx:'school',group:'Enrollment',req:true,pop:34}
+];
+// the imposing party, for req:true (adhesion) forms
+var REQ={business:{org:'Employer',who:'your employer',people:'employees',person:'Employee'},
+ hoa:{org:'HOA',who:'your HOA',people:'members',person:'Member'},
+ school:{org:'School',who:'your school',people:'students & families',person:'Student / family'}};
+var HINT={individual:'You control the dispute clause.',
+ business:'Employment agreements require the JusticeX step; vendor and commercial agreements are your choice.',
+ hoa:'Member agreements require the JusticeX step before other remedies.',
+ school:'Enrollment agreements require the JusticeX step before other remedies.'};
+var LEDE={individual:'Personal contracts to fill in, tailor, and store — free to start. Each can include a JusticeX dispute step you control.',
+ business:'Contracts your business issues. Employment agreements require the JusticeX dispute step for employees; vendor and commercial agreements include it by default, editable.',
+ hoa:'Agreements your HOA issues to members. The JusticeX dispute step is required before other remedies.',
+ school:'Agreements your school issues to students and families. The JusticeX dispute step is required before other remedies.'};
+// display order of sub-sections per context
+var GORDER={
+ individual:['Housing','Personal transactions','Family','Estate'],
+ business:['Employment','Vendors & services','Confidentiality & IP','Formation & ownership','Real estate'],
+ hoa:['Membership','Requests'],
+ school:['Enrollment']
+};
+// Litigation-type tags per form (what kind of dispute each contract helps prevent / route).
+var TYPEMAP={
+ lease:['Landlord–tenant'],sublease:['Landlord–tenant'],commlease:['Landlord–tenant'],
+ bos:['Consumer/Contract'],note:['Consumer/Contract'],loan:['Consumer/Contract'],waiver:['Consumer/Contract'],
+ prenup:['Divorce'],
+ poa:['Estate/Guardianship'],hcproxy:['Estate/Guardianship'],will:['Estate/Guardianship'],revtrust:['Estate/Guardianship'],irrtrust:['Estate/Guardianship'],
+ employment:['Employment'],offer:['Employment'],noncompete:['Employment'],nonsolicit:['Employment'],severance:['Employment'],
+ contractor:['Business/Partnership','Consumer/Contract'],msa:['Business/Partnership','Consumer/Contract'],sow:['Business/Partnership','Consumer/Contract'],consulting:['Business/Partnership','Consumer/Contract'],po:['Business/Partnership','Consumer/Contract'],
+ nda:['Business/Partnership'],license:['Business/Partnership'],
+ partnership:['Business/Partnership'],llc:['Business/Partnership'],
+ hoa:['HOA/Neighbor'],rules:['HOA/Neighbor'],arc:['HOA/Neighbor'],amenity:['HOA/Neighbor'],
+ enroll:['Education'],conduct:['Education'],tuition:['Education'],activity:['Education'],tech:['Education']
+};
+var TYPELIST=['Divorce','Custody','Landlord–tenant','Employment','Business/Partnership','HOA/Neighbor','Education','Estate/Guardianship','Consumer/Contract'];
+// Litigation types relevant to each context — the type filter defaults to the current "Acting as" context.
+var TYPES_BY_CTX={
+ individual:['Divorce','Custody','Landlord–tenant','Estate/Guardianship','Consumer/Contract'],
+ business:['Employment','Business/Partnership','Landlord–tenant','Consumer/Contract'],
+ hoa:['HOA/Neighbor'],
+ school:['Education']
+};
+// [code, name, live?] — NY is the live, profile-default state; others shown as "soon".
+var STATELIST=[['NY','New York',true],['NJ','New Jersey',false],['CT','Connecticut',false],['CA','California',false],['TX','Texas',false],['FL','Florida',false]];
+// Scope = a SAVED PREFERENCE distinct from the profile's home state.
+// Seeded from profile home state (NY); a regional pro can set NY+NJ+CT and "Save as my default" so it persists.
+var PROFILE_STATE='NY';
+var selTypes={}, selStates={};
+function loadScope(){
+  try{ var s=JSON.parse(localStorage.getItem('jx_scope')||'null');
+    if(s&&Array.isArray(s.states)){ selStates={}; s.states.forEach(function(c){selStates[c]=true;}); selTypes={}; (s.types||[]).forEach(function(t){selTypes[t]=true;}); return; }
+  }catch(e){}
+  selStates={}; selStates[PROFILE_STATE]=true; selTypes={};   // fall back to profile home state
+}
+var CTX='individual', SORT='suggested', clauseMode='on', currentForm=null;
+function ctxMatch(f){ return Array.isArray(f.ctx)?f.ctx.indexOf(CTX)>=0:f.ctx===CTX; }
+function formTypes(f){ return TYPEMAP[f.id]||[]; }
+function typeMatch(f){ var sel=Object.keys(selTypes).filter(function(k){return selTypes[k];}); if(!sel.length) return true; var ft=formTypes(f); return sel.some(function(t){return ft.indexOf(t)>=0;}); }
+function renderChips(){
+  document.getElementById('typeChips').innerHTML=(TYPES_BY_CTX[CTX]||TYPELIST).map(function(t){return '<button class="chip'+(selTypes[t]?' on':'')+'" onclick="toggleType(\''+t.replace(/'/g,"\\'")+'\')">'+t+'</button>';}).join('');
+  document.getElementById('stateChips').innerHTML=STATELIST.map(function(s){return '<button class="chip'+(selStates[s[0]]?' on':'')+(s[2]?'':' soon')+'" onclick="toggleState(\''+s[0]+'\')">'+s[0]+(s[2]?'':' · soon')+'</button>';}).join('')+'<button class="chip" onclick="allStates()">All states</button>';
+  updateScopeNote();
+}
+function toggleType(t){ if(selTypes[t]) delete selTypes[t]; else selTypes[t]=true; renderChips(); renderCatalog(); }
+function toggleState(s){ if(selStates[s]) delete selStates[s]; else selStates[s]=true; renderChips(); renderCatalog(); }
+function allStates(){ selStates={}; renderChips(); renderCatalog(); }
+function saveDefault(){
+  try{ localStorage.setItem('jx_scope', JSON.stringify({states:Object.keys(selStates).filter(function(k){return selStates[k];}), types:Object.keys(selTypes).filter(function(k){return selTypes[k];})})); }catch(e){}
+  updateScopeNote(true);
+}
+function resetToProfile(){ try{ localStorage.removeItem('jx_scope'); }catch(e){} selTypes={}; selStates={}; selStates[PROFILE_STATE]=true; renderChips(); renderCatalog(); }
+function updateScopeNote(justSaved){
+  var el=document.getElementById('scopeNote'); if(!el) return;
+  var saved=false; try{ saved=!!localStorage.getItem('jx_scope'); }catch(e){}
+  var st=Object.keys(selStates).filter(function(k){return selStates[k];});
+  var label=st.length?st.join(', '):'All states';
+  el.innerHTML=(justSaved?'<b style="color:var(--ok)">Saved. </b>':'')+(saved?'Your default scope':'From your profile (NY)')+': <b>'+label+'</b>';
+}
+function groupOf(f){ return (f.group && typeof f.group==='object')?f.group[CTX]:f.group; }
+function cardHtml(f){
+  var reqPill=f.req?' <span class="pill req"><i class="ti ti-lock" style="font-size:10px"></i> requires JusticeX</span>':'';
+  return '<div class="card" onclick="openForm(\''+f.id+'\')"><h3>'+f.t+'</h3><div class="d">'+f.d+'</div>'
+    +'<div class="prov"><span class="pill conn"><i class="ti ti-plug-connected" style="font-size:11px"></i> via connector</span> <span class="pill free">Free to start</span>'+reqPill+'</div></div>';
+}
+function renderCatalog(){
+  var list=FORMS.filter(ctxMatch).filter(typeMatch), grid=document.getElementById('formGrid');
+  if(!list.length){ grid.innerHTML='<div class="empty">No contracts match this filter in the current context. Try clearing a litigation type, or switch context above.</div>'; return; }
+  if(SORT!=='suggested'){
+    var arr=list.slice();
+    if(SORT==='az') arr.sort(function(a,b){return a.t.localeCompare(b.t);});
+    else arr.sort(function(a,b){return (b.pop||0)-(a.pop||0) || a.t.localeCompare(b.t);});
+    var hd=(SORT==='az')?'All contracts · A–Z':'All contracts · most used first';
+    grid.innerHTML='<div class="grpHd">'+hd+'</div><div class="grid">'+arr.map(cardHtml).join('')+'</div>';
+    return;
+  }
+  var groups={};
+  list.forEach(function(f){ var g=groupOf(f); (groups[g]=groups[g]||[]).push(f); });
+  var order=(GORDER[CTX]||[]).filter(function(g){return groups[g];});
+  Object.keys(groups).forEach(function(g){ if(order.indexOf(g)<0) order.push(g); });
+  grid.innerHTML = order.map(function(g){
+    return '<div class="grpHd">'+g+'</div><div class="grid">'+groups[g].map(cardHtml).join('')+'</div>';
+  }).join('');
+}
+function setSort(s){
+  SORT=s;
+  document.querySelectorAll('#sortSeg button').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-s')===s);});
+  renderCatalog();
+}
+function setCtx(c){
+  CTX=c;
+  var ok=(TYPES_BY_CTX[c]||TYPELIST);           // keep only litigation types relevant to the new context
+  Object.keys(selTypes).forEach(function(t){ if(ok.indexOf(t)<0) delete selTypes[t]; });
+  document.querySelectorAll('#ctxSeg button').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-c')===c);});
+  document.getElementById('ctxHint').textContent=HINT[c];
+  document.getElementById('catLede').textContent=LEDE[c];
+  renderChips(); renderCatalog();
+}
+function openForm(id){
+  currentForm=FORMS.find(function(x){return x.id===id;});
+  document.getElementById('dTitle').textContent=currentForm.t;
+  document.getElementById('dHead').textContent=currentForm.t;
+  document.getElementById('catalog').classList.add('hide');
+  document.getElementById('draft').classList.remove('hide');
+  document.getElementById('costNote').innerHTML='<i class="ti ti-info-circle" style="font-size:13px"></i> Provided via the contracts partner connector — free to draft; a small cost-plus fee at finalize / e-sign. JusticeX adds no markup to the JusticeX step.';
+  applyClauseMode(); window.scrollTo(0,0);
+}
+function toCatalog(){ document.getElementById('draft').classList.add('hide'); document.getElementById('catalog').classList.remove('hide'); window.scrollTo(0,0); }
+
+function applyClauseMode(){
+  var required = !!(currentForm && currentForm.req);
+  var seg=document.getElementById('clauseSeg'), req=document.getElementById('reqBanner'),
+      org=document.getElementById('orgNote'), lblA=document.getElementById('lblA'), lblB=document.getElementById('lblB');
+  if(!required){
+    seg.style.display='flex'; req.classList.add('hide');
+    org.querySelector('i').className='ti ti-info-circle';
+    document.getElementById('orgNoteTxt').innerHTML='You can keep, change, or remove the JusticeX step below — it stays your choice.';
+    lblA.textContent='Party A — legal name & address'; lblB.textContent='Party B — legal name & address';
+    if(clauseMode==='required') clauseMode='on';
+    setClause(clauseMode);
+  } else {
+    var L=REQ[CTX];
+    seg.style.display='none'; req.classList.remove('hide');
+    document.getElementById('reqBannerTxt').textContent='Required by '+L.who+' — '+L.people+' agree to this step.';
+    org.querySelector('i').className='ti ti-building-community';
+    document.getElementById('orgNoteTxt').innerHTML='<b>'+L.org+' set "resolve on JusticeX first" as a requirement</b> for its '+L.people+'. The '+L.person.toLowerCase()+' keeps any rights the law says can’t be waived, and the ultimate right to a court.';
+    lblA.textContent=L.org+' — legal name & address'; lblB.textContent=L.person+' — legal name & address';
+    clauseMode='required'; document.getElementById('clauseBox').classList.add('on');
+    document.getElementById('substWrap').classList.add('hide'); document.getElementById('flow').style.display='flex';
+    renderClause();
+  }
+}
+function setClause(m){
+  if(currentForm && currentForm.req) return; // adhesion form: required/locked
+  clauseMode=m;
+  document.querySelectorAll('#clauseSeg button').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-m')===m);});
+  document.getElementById('clauseBox').classList.toggle('on',m==='on');
+  document.getElementById('substWrap').classList.toggle('hide',m!=='sub');
+  document.getElementById('flow').style.display = (m==='on')?'flex':'none';
+  renderClause();
+}
+function renderClause(){
+  var el=document.getElementById('clauseText');
+  if(currentForm && currentForm.req){
+    el.innerHTML='As a condition of this agreement, the parties are <b>required</b> to use the <b>JusticeX platform</b> to attempt to resolve any dispute through mediation or structured negotiation <b>before</b> pursuing other remedies, and may engage a mediator of their choosing. '
+      +'<b>JusticeX, Inc. is a software provider only — not a mediator, arbitrator, forum, neutral, or party to this agreement; it owes no duties and bears no responsibility for the process or its outcome, which rest with the parties and any mediator or attorney they engage.</b> '
+      +'This requirement <b>does not waive</b> either party’s ultimate right to seek relief in a court of competent jurisdiction, and <b>does not apply</b> to any claim that by law cannot be subject to a mandatory pre-dispute resolution step.';
+    return;
+  }
+  var m=clauseMode;
+  if(m==='on'){
+    el.innerHTML='Before commencing litigation, the parties will use the <b>JusticeX platform</b> to prepare and exchange an objective comparison of their positions and attempt resolution, and may engage a mediator of their choosing. '
+      +'<b>JusticeX, Inc. is a software provider only — not a mediator, arbitrator, forum, neutral, or party to this agreement; it owes no duties and bears no responsibility for the process or its outcome, which rest with the parties and any mediator or attorney they engage.</b> '
+      +'Either party may opt out or substitute another process as set out in this agreement.';
+  } else if(m==='sub'){
+    var v=(document.getElementById('substInput')&&document.getElementById('substInput').value)||'';
+    el.innerHTML='The parties will resolve disputes through <b>'+(v?v.replace(/</g,'&lt;'):'[name the process above]')+'</b>. <span style="color:var(--muted)">JusticeX is not involved in this process and provides no service in connection with it.</span>';
+  } else {
+    el.innerHTML='<span style="color:var(--muted)">No JusticeX dispute-resolution clause will be included. Any dispute follows this contract’s existing governing-law and venue terms.</span>';
+  }
+}
+loadScope(); renderChips(); renderCatalog();
+</script>
+</body>
+</html>

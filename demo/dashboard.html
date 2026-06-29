@@ -134,12 +134,6 @@ body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',Calibr
 </head>
 <body>
 <div class="appbar"><div class="brand"><img class="bmark" src="https://justicex.ai/assets/brand-mark.png" alt=""/><span class="wordmark">Justice<span class="x">X</span></span><span class="tagline">Objective comparison</span></div>
-  <button class="userbtn" onclick="toggleMenu(event)"><span id="uname">Maren Cardillo · Mediator</span><span class="avatar" id="uav">MC</span><i class="ti ti-chevron-down chev"></i></button>
-  <div class="umenu" id="umenu"><div class="who"><b id="mwho">Maren Cardillo</b><span id="mrole">Mediator</span></div>
-    <a href="account.html"><i class="ti ti-user-cog"></i> Account &amp; profile</a>
-    <a href="trust.html"><i class="ti ti-shield-lock"></i> Privacy &amp; security</a>
-    <a class="danger" href="index.html"><i class="ti ti-logout"></i> Log out</a>
-  </div>
 </div>
 
 <div class="rolebar"><span class="lab">Viewing as</span>
@@ -148,6 +142,7 @@ body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',Calibr
     <button data-r="mediator" class="on" onclick="role('mediator')"><i class="ti ti-scale"></i> Mediator</button>
     <button data-r="attorney" onclick="role('attorney')"><i class="ti ti-briefcase"></i> Attorney</button>
   </div>
+  <button id="firmBtn" onclick="firmView(!window.__firmOn)" style="margin-left:14px;border:1px solid #1E3F61;background:#0C2A47;color:#9FB6D2;font-family:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:8px;cursor:pointer;display:inline-flex;align-items:center;gap:6px"><i class="ti ti-building-bank"></i> Firm Dashboard</button>
   <span class="lab" style="margin-left:auto">Your role is set at sign-up — shown here so you can preview each tailored view.</span>
 </div>
 
@@ -157,6 +152,8 @@ body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',Calibr
     <select id="leadScope" onchange="leadNote()"><option>In total</option><option>By matter</option><option>By step</option></select>
     <select id="leadRole" onchange="leadNote()"><option>Individual</option><option selected>Mediator</option><option>Attorney</option></select>
     <span id="leadMsg" class="obmsg"></span>
+    <a href="assignments.html" style="margin-left:12px;color:#9FC6E8;font-weight:700;font-size:12.5px;text-decoration:none;white-space:nowrap"><i class="ti ti-users-group"></i> Manage assignments →</a>
+    <a href="audit.html" style="margin-left:10px;color:#9FC6E8;font-weight:700;font-size:12.5px;text-decoration:none;white-space:nowrap"><i class="ti ti-history"></i> Audit log →</a>
   </div>
 </div>
 
@@ -173,6 +170,11 @@ body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',Calibr
       <div class="ctchips"><span class="ctchip lk">Westlaw <i class="ti ti-lock"></i></span><span class="ctchip lk">Harvey <i class="ti ti-lock"></i></span><span class="ctchip lk">Everlaw <i class="ti ti-lock"></i></span></div>
       <div class="ctnote">Licensed tools — available in the attorney path with your <b>own account</b>; never shown to self-represented users.</div></div>
   </div>
+</div>
+
+<div class="ctools" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:12px">
+  <div class="ctheadrow" style="margin:0"><i class="ti ti-file-text"></i><b>Contracts</b><span class="ctsub">Create common contracts — and, where you choose, build in a step to resolve future disputes on JusticeX. <span style="color:#7A5B12">Feature-flagged · off in production until counsel clears.</span></span></div>
+  <a href="contracts.html" style="font-size:13px;font-weight:700;color:#fff;background:#D85A30;border-radius:8px;padding:9px 14px;text-decoration:none;white-space:nowrap"><i class="ti ti-plus"></i> Start a contract</a>
 </div>
 
 <div class="app">
@@ -201,7 +203,7 @@ body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',Calibr
       <div class="mrow"><div class="r"><span class="matter">Bennett <span class="tchip">Custody</span> <small>Kings County, NY</small></span><span class="parties">Erin &amp; Cole<small>Custody</small></span><span class="stg"><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip"></i><i class="pip"></i><i class="pip"></i><i class="pip"></i><i class="pip"></i></span><span class="nm">2 of 7</span></span><span class="numcell">35%</span><span class="numcell">—</span><span><span class="chip new">Awaiting intake</span></span><a class="open" href="intake.html">Open <i class="ti ti-arrow-right"></i></a></div><div class="sub"><i class="ti ti-arrow-right-circle"></i> <b>Next:</b> nudge both parties to finish uploading documents.</div></div>
       <div class="mrow"><div class="r"><span class="matter">Reyes <span class="tchip">Custody</span> <small>Bronx County, NY</small></span><span class="parties">Sofia &amp; Diego<small>Custody</small></span><span class="stg"><span class="pips"><i class="pip on"></i><i class="pip"></i><i class="pip"></i><i class="pip"></i><i class="pip"></i><i class="pip"></i><i class="pip"></i></span><span class="nm">1 of 7</span></span><span class="numcell">12%</span><span class="numcell">—</span><span><span class="chip new">New</span></span><a class="open" href="plan.html">Open <i class="ti ti-arrow-right"></i></a></div><div class="sub"><i class="ti ti-arrow-right-circle"></i> <b>Next:</b> complete the matter plan and invite both parties.</div></div>
     </div>
-    <div class="refer"><i class="ti ti-gift"></i><div>Know another mediator or firm who'd value JusticeX? <a>Refer a colleague</a> — part of the vetted partner program (reviewed against ABA Model Rule 7.2 / NY fee-splitting rules).</div></div>
+    <div class="refer"><i class="ti ti-gift"></i><div>Know another mediator or firm who'd value JusticeX? <a href="connect.html?type=refer&amp;role=mediator">Refer a colleague</a> — no fee, neutral; JusticeX recommends no one. <a href="directory.html">Browse the directory</a>.</div></div>
   </div>
 
   <!-- ===================== ATTORNEY ===================== -->
@@ -224,16 +226,17 @@ body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',Calibr
     <div class="sec"><i class="ti ti-file-pencil"></i> Documentation preparation · drafts for attorney review</div>
     <div class="tbl">
       <div class="h" style="grid-template-columns:1.9fr 1.5fr 1fr 1.1fr 84px"><span>Matter</span><span>Type</span><span>Readiness</span><span>Access</span><span></span></div>
-      <div class="mrow"><div class="r" style="grid-template-columns:1.9fr 1.5fr 1fr 1.1fr 84px"><span class="matter">Hartley <small>Albany County, NY</small></span><span class="parties">Guardianship (Art. 81)<small>one-sided · high UPL</small></span><span class="numcell">78%</span><span><span class="chip att">Attorney required</span></span><a class="open" href="guardianship.html">Open <i class="ti ti-arrow-right"></i></a></div><div class="sub"><i class="ti ti-arrow-right-circle"></i> <b>Step 5 of 7 · 78%.</b> Next: obtain the current capacity statement, finish the Notice &amp; RJI, then attorney review before filing.</div></div>
+      <div class="mrow"><div class="r" style="grid-template-columns:1.9fr 1.5fr 1fr 1.1fr 84px"><span class="matter">Hartley <small>Albany County, NY</small></span><span class="parties">Guardianship (Art. 81)<small>one-sided · attorney-led</small></span><span class="numcell">78%</span><span><span class="chip att">Attorney required</span></span><a class="open" href="guardianship.html">Open <i class="ti ti-arrow-right"></i></a></div><div class="sub"><i class="ti ti-arrow-right-circle"></i> <b>Step 5 of 7 · 78%.</b> Next: obtain the current capacity statement, finish the Notice &amp; RJI, then attorney review before filing.</div></div>
       <div class="mrow"><div class="r" style="grid-template-columns:1.9fr 1.5fr 1fr 1.1fr 84px"><span class="matter">Park <small>NYS Grievance Committee</small></span><span class="parties">Attorney grievance<small>one-sided · open</small></span><span class="numcell">80%</span><span><span class="chip ok">Open to anyone</span></span><a class="open" href="grievance.html">Open <i class="ti ti-arrow-right"></i></a></div><div class="sub"><i class="ti ti-arrow-right-circle"></i> <b>Step 5 of 7 · 80%.</b> Next: close the account-records gap, then submit (optional attorney review).</div></div>
     </div>
-    <div class="refer"><i class="ti ti-gift"></i><div>Refer a client to a JusticeX mediator partner through the vetted <a>Referring Partner program</a> (ABA Model Rule 7.2 / NY-compliant attribution &amp; fee terms).</div></div>
+    <div class="refer"><i class="ti ti-gift"></i><div><b>Refer or connect — no fee, neutral.</b> <a href="connect.html?type=refer&amp;role=mediator">Refer a client to JusticeX</a> &middot; <a href="connect.html?type=request&amp;role=mediator">Request an attorney</a> for a matter that needs legal review, or <a href="directory.html">browse the directory</a>. JusticeX charges no referral fee and recommends no one.</div></div>
   </div>
 
   <!-- ===================== INDIVIDUAL ===================== -->
   <div id="vIndividual" class="hide">
     <div class="head"><div><h1>Your matter</h1><p>Everything for your case in one place. You enter your own information; JusticeX compares both sides objectively.</p></div>
       <button class="btn" onclick="newMatter()"><i class="ti ti-plus"></i> Start another matter</button></div>
+    <div class="refer"><i class="ti ti-user-search"></i><div><b>Need a professional?</b> <a href="connect.html?type=request&amp;role=individual">Request a mediator and/or attorney</a> — JusticeX connects you neutrally, with no fee, and you choose. You can also <a href="directory.html">browse the directory</a> or invite someone you already know. Already working with one? <a href="rate.html">Share your feedback</a>.</div></div>
     <div class="mcard">
       <div class="top"><div><h2>Whitfield — Divorce &amp; custody</h2><div class="meta">Nassau County, New York · Mediator: Maren Cardillo · You are Party A (Dana)</div></div>
         <a class="btn primary" href="resolution.html">Continue · step 6 of 7 <i class="ti ti-arrow-right"></i></a></div>
@@ -252,19 +255,90 @@ body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',Calibr
       </div>
       <div class="next"><i class="ti ti-arrow-right-circle"></i><div><b>Next step:</b> three topics remain open — religion in the parenting plan, the maintenance basis, and one asset value. Resolve them with the other party to complete Resolution.</div></div>
       <div class="contacts"><div><b>Your documents</b><br>14 uploaded · 2 flagged for redaction</div><div><b>Your mediator</b><br>Maren Cardillo</div><div><b>Opposing party</b><br>Samuel (Party B) · redacted view only</div></div>
-      <div class="refer"><i class="ti ti-gift"></i><div>Found JusticeX helpful? <a>Share it with someone</a> who could use an objective, lower-conflict process. No fees, no spam — we never sell your contacts.</div></div>
+      <div class="refer"><i class="ti ti-gift"></i><div><b>Refer a client — no fee, neutral.</b> <a href="connect.html?type=refer&amp;role=attorney">Refer a client to JusticeX</a> for an objective, lower-conflict process. No referral fee, no spam — we never sell your contacts, and JusticeX recommends no one.</div></div>
     </div>
     <div class="sec" style="margin-top:18px"><i class="ti ti-file-pencil"></i> Documentation preparation</div>
     <div class="tbl">
       <div class="h" style="grid-template-columns:1.9fr 1.5fr 1fr 1.1fr 84px"><span>Matter</span><span>Type</span><span>Readiness</span><span>Access</span><span></span></div>
       <div class="mrow"><div class="r" style="grid-template-columns:1.9fr 1.5fr 1fr 1.1fr 84px"><span class="matter">Park <small>NYS Grievance Committee</small></span><span class="parties">Attorney grievance<small>open to anyone</small></span><span class="numcell">80%</span><span><span class="chip ok">No attorney needed</span></span><a class="open" href="grievance.html">Open <i class="ti ti-arrow-right"></i></a></div><div class="sub"><i class="ti ti-arrow-right-circle"></i> <b>Step 5 of 7 · 80%.</b> Next: close the account-records gap, then submit (optional attorney review).</div></div>
-      <div class="mrow"><div class="r" style="grid-template-columns:1.9fr 1.5fr 1fr 1.1fr 84px"><span class="matter" style="opacity:.7">Guardianship (Art. 81)</span><span class="parties">High UPL<small>attorney sponsorship required</small></span><span class="numcell">—</span><span><span class="chip att">Ask an attorney</span></span><span class="open" style="color:var(--faint);cursor:default">Locked</span></div><div class="sub"><i class="ti ti-lock" style="color:var(--faint)"></i> Attorney sponsorship required — ask your attorney to start this matter.</div></div>
+      <div class="mrow"><div class="r" style="grid-template-columns:1.9fr 1.5fr 1fr 1.1fr 84px"><span class="matter" style="opacity:.7">Guardianship (Art. 81)</span><span class="parties">Attorney-led<small>attorney sponsorship required</small></span><span class="numcell">—</span><span><span class="chip att">Ask an attorney</span></span><span class="open" style="color:var(--faint);cursor:default">Locked</span></div><div class="sub"><i class="ti ti-lock" style="color:var(--faint)"></i> Attorney sponsorship required — ask your attorney to start this matter.</div></div>
     </div>
   </div>
 
 </div>
 
-<div class="disc"><div><b style="color:var(--navy)">JusticeX is a software platform — not a law firm or mediator.</b> Objective, mathematical comparison only; the parties reach their own agreed view. <a href="disclaimer.html">Full legal &amp; UPL disclaimer</a>. Synthetic demo — no real person.</div><div class="tfe"><b>Truth</b> · <b>Fairness</b> · <b>Efficiency</b></div></div>
+<div id="vFirm" class="hide">
+<style>
+.firmwrap{max-width:1180px;margin:0 auto;padding:8px 16px 0;}
+.fbk{font-size:12.5px;color:var(--accent-d);font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:5px;}
+.firmhdr{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:8px 0 14px;}
+.firmhdr .fn{font-family:'Source Serif 4',serif;font-weight:600;font-size:20px;color:var(--navy);}
+.firmhdr .fk{display:flex;gap:9px;flex-wrap:wrap;margin-left:auto;}
+.fkpi{background:#fff;border:1px solid var(--hair);border-radius:10px;padding:7px 14px;text-align:center;min-width:74px;}
+.fkpi b{display:block;font-size:18px;color:var(--navy);line-height:1.1;}.fkpi span{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.3px;}
+.fkpi.alert b{color:var(--accent-d);}
+.firmadmin{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:13px;}
+.fadm{border:1px solid var(--hair);background:#fff;border-radius:9px;padding:7px 12px;font-size:12.5px;font-weight:600;color:var(--navy2);cursor:pointer;display:inline-flex;align-items:center;gap:7px;}
+.fadm:hover{border-color:var(--navy3);}
+.wallbar{display:flex;align-items:center;gap:9px;background:#FBF6E8;border:1px solid #E3CF9A;border-radius:10px;padding:9px 14px;font-size:12.5px;color:#7A5B12;margin-bottom:16px;}
+.wallbar b{color:#5e470e;}
+.prof{background:#fff;border:1px solid var(--hair);border-radius:12px;padding:12px 16px;margin-bottom:11px;box-shadow:0 1px 2px rgba(20,30,46,.04);}
+.prof .ph{display:flex;align-items:center;gap:11px;margin-bottom:4px;}
+.pav{width:34px;height:34px;border-radius:50%;background:#2A6FB0;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;}
+.pav.att{background:#7A5BB0;}
+.prof .pn{font-weight:700;color:var(--navy);}.prof .pr{font-size:11.5px;color:var(--muted);}
+.prof .pcount{margin-left:auto;font-size:12px;color:var(--muted);text-align:right;}.prof .pcount b{color:var(--navy);font-size:15px;}
+.mitem{display:flex;align-items:center;gap:11px;padding:8px 0;border-top:1px solid #EEF3F8;font-size:12.5px;}
+.mitem .mn{font-weight:600;color:var(--navy);min-width:140px;}
+.mitem .nmlab{font-size:10.5px;color:var(--faint);font-weight:700;}
+.mitem .chip{margin-left:4px;}
+.mitem a.open2{margin-left:auto;color:var(--accent-d);font-weight:700;text-decoration:none;font-size:12px;white-space:nowrap;}
+.mitem.wall .mn{color:var(--faint);font-style:italic;}
+.mwall{margin-left:auto;font-size:11px;color:#8A7A55;background:#FBF6E8;border:1px solid #E9D9AE;border-radius:999px;padding:2px 10px;display:inline-flex;gap:5px;align-items:center;}
+</style>
+<div class="firmwrap">
+  <a class="fbk" href="#" onclick="firmView(false);return false;"><i class="ti ti-arrow-left"></i> Back to my matters</a>
+  <div class="firmhdr">
+    <div><div class="fn">Okonkwo &amp; Cardillo LLP — Firm Dashboard</div><div style="font-size:12px;color:var(--muted)">All professionals · all matters · fence-scoped</div></div>
+    <div class="fk">
+      <div class="fkpi"><b>6</b><span>People</span></div>
+      <div class="fkpi"><b>24</b><span>Active matters</span></div>
+      <div class="fkpi alert"><b>5</b><span>Need attention</span></div>
+      <div class="fkpi"><b>2</b><span>Open seats</span></div>
+    </div>
+  </div>
+  <div class="firmadmin">
+    <button class="fadm" onclick="alert('Demo — manage seats &amp; roles (Admin · Attorney/Mediator · Staff · Billing)')"><i class="ti ti-users"></i> Seats &amp; roles</button>
+    <button class="fadm" onclick="alert('Demo — firm billing &amp; invoices')"><i class="ti ti-receipt"></i> Billing</button>
+    <button class="fadm" onclick="location.href='marketplace.html'"><i class="ti ti-plug-connected"></i> Firm connectors</button>
+    <button class="fadm" onclick="alert('Demo — export firm report (CSV / PDF)')"><i class="ti ti-download"></i> Export</button>
+  </div>
+  <div class="wallbar"><i class="ti ti-lock"></i> <span><b>Ethical walls on.</b> You see every professional and each matter's status — but matter <b>contents</b> stay with the assigned team unless you're granted access (conflicts screening).</span></div>
+
+  <div class="prof">
+    <div class="ph"><span class="pav att">JO</span><div><div class="pn">Jordan Okonkwo</div><div class="pr">Attorney · Partner</div></div><div class="pcount"><b>9</b> active</div></div>
+    <div class="mitem"><span class="mn">Castellano</span><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip"></i><i class="pip"></i></span><span class="nmlab">5 of 7</span><span class="chip att">Privilege review</span><a class="open2" href="gap-analysis.html">Open ›</a></div>
+    <div class="mitem"><span class="mn">Whitfield</span><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip"></i></span><span class="nmlab">6 of 7</span><span class="chip ok">On track</span><a class="open2" href="attorney-workspace.html">Open ›</a></div>
+    <div class="mitem"><span class="mn">Delgado</span><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip"></i><i class="pip"></i><i class="pip"></i><i class="pip"></i></span><span class="nmlab">3 of 7</span><span class="chip new">In redaction</span><a class="open2" href="redact.html">Open ›</a></div>
+  </div>
+
+  <div class="prof">
+    <div class="ph"><span class="pav">MC</span><div><div class="pn">Maren Cardillo</div><div class="pr">Mediator · Partner</div></div><div class="pcount"><b>8</b> active</div></div>
+    <div class="mitem"><span class="mn">Whitfield</span><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip"></i></span><span class="nmlab">6 of 7</span><span class="chip att">3 topics open</span><a class="open2" href="resolution.html">Open ›</a></div>
+    <div class="mitem"><span class="mn">Okafor</span><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i></span><span class="nmlab">7 of 7</span><span class="chip ok">Ready to finalize</span><a class="open2" href="memorandum.html">Open ›</a></div>
+    <div class="mitem"><span class="mn">Harlow</span><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip"></i><i class="pip"></i><i class="pip"></i></span><span class="nmlab">4 of 7</span><span class="chip ok">On track</span><a class="open2" href="summarize.html">Open ›</a></div>
+  </div>
+
+  <div class="prof">
+    <div class="ph"><span class="pav att">RT</span><div><div class="pn">Rachel Tran</div><div class="pr">Attorney · Associate</div></div><div class="pcount"><b>7</b> active</div></div>
+    <div class="mitem wall"><span class="mn">Matter behind a wall</span><span class="mwall"><i class="ti ti-lock"></i> Restricted · ethical wall</span></div>
+    <div class="mitem wall"><span class="mn">Matter behind a wall</span><span class="mwall"><i class="ti ti-lock"></i> Restricted · ethical wall</span></div>
+    <div class="mitem"><span class="mn">Park <span class="nmlab">grievance</span></span><span class="nmlab">5 of 7</span><span class="chip ok">On track</span><a class="open2" href="grievance.html">Open ›</a></div>
+  </div>
+</div>
+</div>
+
+<div class="disc"><div><b style="color:var(--navy)">JusticeX is a software platform — not a law firm or mediator.</b> Not legal advice. <a href="disclaimer.html">Full legal disclaimer</a>. Synthetic demo — no real person.</div><div class="tfe"><b>Truth</b> · <b>Fairness</b> · <b>Efficiency</b></div></div>
 
 <!-- New matter modal -->
 <div class="overlay" id="nmOverlay">
@@ -338,7 +412,7 @@ function nmTypeChange(){
   var t=document.getElementById('nmType').value;
   document.getElementById('nmDivorce').classList.toggle('hide', t!=='divorce');
   var gate=document.getElementById('nmGate');
-  if(t==='article81'){ gate.innerHTML='<div class="nmgatebox req"><i class="ti ti-gavel"></i><div><b>Attorney required.</b> Article 81 is attorney-gated (high UPL exposure) — a named attorney must be added to proceed.</div></div>'; }
+  if(t==='article81'){ gate.innerHTML='<div class="nmgatebox req"><i class="ti ti-gavel"></i><div><b>Attorney required.</b> Article 81 is attorney-led — a named attorney must be added to proceed.</div></div>'; }
   else if(t==='grievance'){ gate.innerHTML='<div class="nmgatebox open"><i class="ti ti-user-check"></i><div><b>Open to anyone.</b> No attorney or special standing required; attorney review is optional.</div></div>'; }
   else { gate.innerHTML=''; }
   document.getElementById('nmGo').setAttribute('href', TYPE_ROUTE[t]||PLAN);
@@ -352,10 +426,8 @@ function role(r){
     document.getElementById('v'+x.charAt(0).toUpperCase()+x.slice(1)).classList.toggle('hide', x!==r);
   });
   document.querySelectorAll('.roleseg button').forEach(function(b){b.classList.toggle('on', b.getAttribute('data-r')===r);});
-  document.getElementById('uname').textContent=NAMES[r][0];
-  document.getElementById('uav').textContent=NAMES[r][1];
-  document.getElementById('mwho').textContent=NAMES[r][2];
-  document.getElementById('mrole').textContent=NAMES[r][3];
+  var _s=function(id,v){var e=document.getElementById(id);if(e)e.textContent=v;};
+  _s('uname',NAMES[r][0]);_s('uav',NAMES[r][1]);_s('mwho',NAMES[r][2]);_s('mrole',NAMES[r][3]);
 }
 function toggleMenu(e){e.stopPropagation();document.getElementById('umenu').classList.toggle('show');}
 document.addEventListener('click',function(){document.getElementById('umenu').classList.remove('show');});
@@ -396,6 +468,112 @@ function leadNote(){var m=document.getElementById('leadMsg');if(m){m.textContent
 function openFB(){document.getElementById('fbModal').classList.add('on');}
 function closeFB(){document.getElementById('fbModal').classList.remove('on');}
 function sendFB(){var t=document.getElementById('fbText');if(t.value.trim()){alert('Thanks — your feedback was recorded for the product team.');t.value='';}closeFB();}
+</script>
+
+<style data-motion>
+@media (prefers-reduced-motion: no-preference){
+ .js-anim .mreveal{opacity:0;transform:translateY(16px);transition:opacity .6s cubic-bezier(.2,.6,.2,1),transform .6s cubic-bezier(.2,.6,.2,1)}
+ .js-anim .mreveal.in{opacity:1;transform:none}
+}
+.card,.mcard,.acard,.pcard,.ovcard,.stat,.ctcell{transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.card:hover,.mcard:hover,.acard:hover,.pcard:hover,.ovcard:hover,.stat:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(8,20,40,.11)}
+</style>
+<script data-motion>
+(function(){
+ if(!('IntersectionObserver' in window))return;
+ if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ document.documentElement.classList.add('js-anim');
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+ var sel=['.card','.mcard','.acard','.pcard','.ovcard','.stat','.sec','.tbl'];
+ document.querySelectorAll(sel.join(',')).forEach(function(el){el.classList.add('mreveal');io.observe(el);});
+})();
+</script>
+
+<!-- jx-account-cluster (signed-in personalization: you + mediator + attorney, click to manage) -->
+<style id="jxac-css">
+.jxac{position:absolute;top:50%;right:24px;transform:translateY(-50%);display:flex;align-items:center;gap:11px;z-index:30;font-family:'Source Sans 3',system-ui,sans-serif;}
+.jxac .lbl{font-size:10.5px;letter-spacing:.6px;text-transform:uppercase;color:#9FB6D2;}
+.jxac .stack{display:flex;align-items:center;}
+.jxac .pav{margin-left:-9px;border:none;background:none;padding:0;cursor:pointer;position:relative;}
+.jxac .stack .pav:first-child{margin-left:0;}
+.jxac .av{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:700;color:#fff;background:#1B466F;border:2px solid #0a2c4e;box-shadow:0 0 0 1px rgba(255,255,255,.18);background-size:cover;background-position:center;transition:transform .12s;}
+.jxac .pav:hover .av{transform:translateY(-1px) scale(1.06);}
+.jxac .pav.me .av{border-color:#D85A30;}
+.jxac .av.med{background:#2A6FB0;} .jxac .av.att{background:#7A5BB0;}
+.jxac .pav .tip{position:absolute;top:40px;right:50%;transform:translateX(50%);white-space:nowrap;background:#0A2238;color:#fff;font-size:11px;font-weight:600;padding:4px 9px;border-radius:6px;opacity:0;pointer-events:none;transition:opacity .15s;box-shadow:0 4px 12px rgba(0,0,0,.28);}
+.jxac .pav:hover .tip{opacity:1;}
+.jxac .chev{background:none;border:none;color:#C9D8EA;cursor:pointer;font-size:16px;display:flex;align-items:center;padding:2px;}
+.jxac .chev:hover{color:#fff;}
+.jxacmenu{position:absolute;top:54px;right:22px;background:#fff;border:1px solid #D1DEEE;border-radius:11px;box-shadow:0 10px 26px rgba(8,20,40,.20);width:238px;padding:6px;z-index:60;display:none;}
+.jxacmenu.show{display:block;}
+.jxacmenu .hd{padding:9px 11px 9px;border-bottom:1px solid #eef3f8;margin-bottom:4px;}
+.jxacmenu .hd b{display:block;color:#042C53;font-size:13.5px;} .jxacmenu .hd span{font-size:11.5px;color:#5F5E5A;}
+.jxacmenu .mini{display:flex;align-items:center;gap:8px;padding:8px 11px;border-radius:8px;font-size:12.5px;color:#1A1A1A;text-decoration:none;}
+.jxacmenu .mini:hover{background:#F1F6FC;}
+.jxacmenu .mini .d{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9.5px;font-weight:700;color:#fff;background:#1B466F;}
+.jxacmenu .mini .d.med{background:#2A6FB0;} .jxacmenu .mini .d.att{background:#7A5BB0;}
+.jxacmenu .mini small{display:block;color:#9097a0;font-size:10.5px;}
+.jxacmenu .sep{height:1px;background:#eef3f8;margin:5px 0;}
+.jxacmenu a.row{display:flex;align-items:center;gap:9px;padding:8px 11px;border-radius:8px;font-size:12.5px;color:#1A1A1A;text-decoration:none;}
+.jxacmenu a.row:hover{background:#F1F6FC;} .jxacmenu a.row i{color:#2A5582;font-size:15px;} .jxacmenu a.row.danger{color:#B04722;} .jxacmenu a.row.danger i{color:#B04722;}
+@media(max-width:640px){.jxac .lbl{display:none;} .jxac{right:14px;}}
+</style>
+<script id="jxac-js">
+(function(){
+ if(window.__jxac) return; window.__jxac=1;
+ function init(){
+  var bar=document.querySelector('.appbar'); if(!bar) return;
+  if(getComputedStyle(bar).position==='static') bar.style.position='relative';
+  // Whitfield synthetic matter: the three people on it. Photos render when shared; initials until then.
+  var P=[
+   {init:'DW',name:'Dana Whitfield',role:'You',cls:'me',avcls:'',dcls:''},
+   {init:'MC',name:'Maren Cardillo',role:'Mediator',cls:'',avcls:'med',dcls:'med'},
+   {init:'JO',name:'Jordan Okonkwo',role:'Attorney',cls:'',avcls:'att',dcls:'att'}
+  ];
+  var stack=P.map(function(p){
+    return '<button class="pav '+p.cls+'" title="" onclick="location.href=\'account.html\'">'
+      +'<span class="av '+p.avcls+'">'+p.init+'</span>'
+      +'<span class="tip">'+p.name+' · '+p.role+' — manage</span></button>';
+  }).join('');
+  var el=document.createElement('div'); el.className='jxac';
+  el.innerHTML='<span class="lbl">Signed in</span><div class="stack">'+stack+'</div>'
+    +'<button class="chev" aria-label="Account menu" onclick="var m=document.getElementById(\'jxacmenu\');m.classList.toggle(\'show\');event.stopPropagation();"><i class="ti ti-chevron-down"></i></button>';
+  bar.appendChild(el);
+  var minis=P.map(function(p){
+    return '<a class="mini" href="account.html"><span class="d '+p.dcls+'">'+p.init+'</span><span>'+p.name+'<small>'+p.role+(p.cls==='me'?' · Individual':'')+'</small></span></a>';
+  }).join('');
+  var m=document.createElement('div'); m.id='jxacmenu'; m.className='jxacmenu';
+  m.innerHTML='<div class="hd"><b>On this matter</b><span>Whitfield — Divorce &amp; custody</span></div>'+minis
+    +'<div class="sep"></div>'
+    +'<a class="row" href="account.html"><i class="ti ti-user-cog"></i> Account &amp; profile</a>'
+    +'<a class="row" href="account.html"><i class="ti ti-users"></i> Manage participants</a>'
+    +'<a class="row" href="trust.html"><i class="ti ti-shield-lock"></i> Privacy &amp; security</a>'
+    +'<a class="row danger" href="index.html"><i class="ti ti-logout"></i> Log out</a>';
+  document.body.appendChild(m);
+  document.addEventListener('click',function(){m.classList.remove('show');});
+ }
+ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+})();
+</script>
+<!-- /jx-account-cluster -->
+<script>
+window.__firmOn=false;
+function firmView(on){
+  window.__firmOn=on;
+  var f=document.getElementById('vFirm'); if(!f) return;
+  var roles=['vIndividual','vMediator','vAttorney'];
+  var btn=document.getElementById('firmBtn');
+  if(on){
+    roles.forEach(function(id){var e=document.getElementById(id); if(e) e.classList.add('hide');});
+    f.classList.remove('hide');
+    if(btn){btn.style.background='var(--accent)';btn.style.color='#08213A';}
+    window.scrollTo({top:0,behavior:'smooth'});
+  } else {
+    f.classList.add('hide');
+    if(btn){btn.style.background='#0C2A47';btn.style.color='#9FB6D2';}
+    if(typeof role==='function' && typeof curRole!=='undefined'){ role(curRole); }
+  }
+}
 </script>
 </body>
 </html>

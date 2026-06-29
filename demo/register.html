@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JusticeX — List your practice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
+<style>
+:root{--navy:#042C53;--navy-deep:#021A33;--navy2:#154572;--paper:#E6F1FB;--surface:#FFFFFF;--ink:#1A1A1A;--muted:#5F5E5A;--faint:#9CA0A7;--hair:#D1DEEE;--accent:#D85A30;--accent-d:#B04722;--success:#1D9E75;--success-s:#E7F4EF;--radius:14px;--radius-sm:10px;}
+*{box-sizing:border-box} html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',Calibri,system-ui,sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.appbar{background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 26px;}
+.brand{display:flex;align-items:center;} .bmark{height:23px;width:23px;border-radius:5px;margin-right:9px;}
+.wordmark{font-family:'Source Serif 4',serif;font-weight:600;font-size:22px;} .wordmark .x{color:var(--accent);}
+.tagline{font-size:11.5px;letter-spacing:2.4px;text-transform:uppercase;color:#9FB6D2;margin-left:12px;}
+.back{font-size:12.5px;color:#C9D8EA;text-decoration:none;} .back:hover{color:#fff;}
+.app{max-width:720px;margin:0 auto;padding:0 22px 60px;}
+.crumb{font-size:12px;color:var(--muted);margin:18px 0 2px;display:flex;align-items:center;gap:7px;} .crumb b{color:var(--navy);}
+.panel{background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);padding:24px 26px 26px;margin-top:8px;box-shadow:0 1px 2px rgba(20,30,46,.04);}
+h1{font-family:'Source Serif 4',serif;font-weight:500;font-size:25px;margin:0 0 4px;}
+.lede{color:var(--muted);margin:0 0 16px;max-width:64ch;}
+.grp{border:1px solid var(--hair);border-radius:11px;padding:15px 16px;margin:0 0 13px;background:#FBFDFF;}
+.grp h2{font-family:'Source Serif 4',serif;font-weight:600;font-size:15px;color:var(--navy);margin:0 0 10px;display:flex;align-items:center;gap:8px;} .grp h2 i{color:var(--navy2);}
+.field{margin:0 0 11px;} .field label{display:block;font-size:12px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.field input,.field select,.field textarea{width:100%;border:1px solid #CDDDF3;border-radius:8px;padding:9px 11px;font-size:13.5px;font-family:inherit;background:#fff;}
+.field textarea{min-height:62px;resize:vertical;}
+.hint{font-size:11.5px;color:var(--faint);margin-top:3px;}
+.row{display:flex;gap:11px;flex-wrap:wrap;} .row .field{flex:1 1 200px;}
+.checks{display:flex;gap:8px;flex-wrap:wrap;} .check{display:flex;align-items:center;gap:6px;border:1px solid #CDDDF3;border-radius:8px;padding:7px 11px;font-size:12.5px;cursor:pointer;background:#fff;} .check input{accent-color:var(--accent);}
+.clist{list-style:none;margin:0;padding:0;} .clist li{display:flex;gap:8px;align-items:flex-start;padding:6px 0;font-size:13px;} .clist input{accent-color:var(--accent);margin-top:3px;}
+.dedupe{background:#F4F8FD;border:1px solid #D9E6F4;border-radius:11px;padding:15px 16px;margin-bottom:14px;}
+.dedupe h2{font-family:'Source Serif 4',serif;font-weight:600;font-size:15px;color:var(--navy);margin:0 0 4px;}
+.match{display:flex;align-items:center;gap:11px;border:1px solid var(--hair);border-radius:9px;padding:10px 12px;margin-top:8px;background:#fff;}
+.match .av{width:32px;height:32px;border-radius:8px;background:#EAF1FB;color:var(--navy2);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;flex:none;}
+.match .nm{font-weight:600;color:var(--navy);font-size:13.5px;} .match .mt{font-size:11.5px;color:var(--muted);}
+.btn{font-size:13.5px;font-weight:600;color:#fff;background:var(--navy);border:none;border-radius:9px;padding:10px 16px;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:7px;}
+.btn:hover{background:var(--navy2);} .btn:disabled{opacity:.5;cursor:default;}
+.btn.ghost{background:#fff;color:var(--navy);border:1px solid #CDDDF3;} .btn.sm{padding:7px 12px;font-size:12.5px;margin-left:auto;}
+.hide{display:none;}
+.disc{margin-top:14px;padding-top:13px;border-top:1px solid var(--hair);font-size:12px;color:var(--muted);} .disc a{color:var(--navy2);}
+.done{display:none;background:#F2FAF6;border:1px solid #BDE6D4;border-radius:12px;padding:20px;margin-top:8px;}
+.done h2{margin:0 0 6px;font-family:'Source Serif 4',serif;color:var(--navy);font-size:18px;}
+</style>
+</head>
+<body>
+<div class="appbar">
+  <div class="brand"><img class="bmark" src="https://justicex.ai/assets/brand-mark.png" alt=""/><span class="wordmark">Justice<span class="x">X</span></span><span class="tagline">Objective comparison</span></div>
+  <a class="back" href="directory.html"><i class="ti ti-arrow-left"></i> Back to directory</a>
+</div>
+
+<div class="app">
+  <div class="crumb"><i class="ti ti-id-badge-2"></i> <b>List your practice</b></div>
+  <div class="panel" id="form">
+    <h1>List your practice on JusticeX</h1>
+    <p class="lede">Create a profile so users — and other professionals — can find and connect with you. JusticeX is a neutral directory: it does not recommend or rank you, and charges no referral fee. Your profile goes live once your license is verified.</p>
+
+    <div style="display:flex;gap:0;border:1px solid #CDDDF3;border-radius:9px;overflow:hidden;max-width:max-content;margin:0 0 15px">
+      <button id="mInd" onclick="setMode('individual')" style="font-size:13px;font-weight:600;color:#fff;background:var(--navy);border:none;padding:9px 16px;cursor:pointer;font-family:inherit">Individual professional</button>
+      <button id="mFirm" onclick="setMode('firm')" style="font-size:13px;font-weight:600;color:var(--navy2);background:#fff;border:none;padding:9px 16px;cursor:pointer;font-family:inherit">Mediation or law firm</button>
+    </div>
+
+    <!-- DEDUPE: avoid duplicate listings -->
+    <div class="dedupe" id="dedupe">
+      <h2><i class="ti ti-search"></i> First — are you already listed?</h2>
+      <p class="hint" style="margin:0 0 9px">To avoid duplicate listings (a user may have already added you), we check before creating a new profile.</p>
+      <div class="row">
+        <div class="field" style="margin:0"><label>Your name</label><input id="dName" placeholder="e.g., A. Donnelly" oninput="findSimilar()"/></div>
+        <div class="field" style="margin:0"><label>NY bar / registration # (optional)</label><input id="dBar" placeholder="e.g., 4421887" oninput="findSimilar()"/></div>
+      </div>
+      <div id="matches"></div>
+      <div style="margin-top:11px"><button class="btn ghost" onclick="startNew()"><i class="ti ti-plus"></i> Not listed — create a new profile</button></div>
+    </div>
+
+    <!-- FULL FORM -->
+    <div id="full" class="hide">
+      <div class="grp hide" id="firmGrp"><h2><i class="ti ti-building"></i> Firm / organization (aggregate)</h2>
+        <div class="row">
+          <div class="field"><label>Organization name</label><input placeholder="Firm or practice name"/></div>
+          <div class="field"><label>Type</label><select><option>Law firm</option><option>Mediation practice</option></select></div>
+        </div>
+        <div class="row">
+          <div class="field"><label>Admin contact</label><input placeholder="Person managing the account"/></div>
+          <div class="field"><label>Admin email</label><input placeholder="admin@firm.com"/></div>
+        </div>
+        <div class="row">
+          <div class="field"><label>Jurisdictions</label><input placeholder="e.g., New York"/></div>
+          <div class="field"><label>How many professionals (seats)?</label><input placeholder="e.g., 6"/></div>
+        </div>
+        <p class="hint">After the firm account is created, you'll <b>add and verify each mediator/attorney</b> individually and set per-matter ethical walls. The firm manages everyone in one place and is billed by seat.</p>
+      </div>
+      <div class="grp"><h2><i class="ti ti-certificate"></i> Identity &amp; credentials</h2>
+        <div class="field"><label>Legal name</label><input placeholder="First Last"/></div>
+        <div class="row">
+          <div class="field"><label>Firm / practice name</label><input placeholder="Practice name"/></div>
+          <div class="field"><label>Role</label><select><option>Mediator</option><option>Attorney</option><option>Both</option></select></div>
+        </div>
+        <div class="row">
+          <div class="field"><label>NY bar # (attorneys) / mediator registration or training cert</label><input placeholder="Bar # or certification"/></div>
+          <div class="field"><label>Year admitted / practicing since</label><input placeholder="e.g., 2011"/></div>
+        </div>
+        <div class="field"><label>Jurisdictions admitted</label><input placeholder="e.g., New York; New Jersey"/></div>
+        <ul class="clist">
+          <li><input type="checkbox"/> I am in good standing and authorized to practice / mediate in the jurisdictions listed.</li>
+          <li><input type="checkbox"/> I maintain malpractice / professional liability coverage as required.</li>
+        </ul>
+        <p class="hint">JusticeX verifies your bar number against the public registry before your profile goes live (the "License verified" badge).</p>
+      </div>
+
+      <div class="grp"><h2><i class="ti ti-briefcase"></i> Practice profile</h2>
+        <div class="row">
+          <div class="field"><label>Primary focus area</label><select id="rMain" onchange="rSubs()"><option>Divorce &amp; custody</option><option>Guardianship (Article 81)</option><option>General civil</option></select></div>
+          <div class="field"><label>Counties / regions served</label><input placeholder="e.g., Nassau, Suffolk"/></div>
+        </div>
+        <div class="field"><label>Sub-focus</label><div class="checks" id="rSub"></div></div>
+        <div class="row">
+          <div class="field"><label>Languages</label><input placeholder="e.g., English, Spanish"/></div>
+          <div class="field"><label>Format</label><select><option>Remote &amp; in-person</option><option>Remote only</option><option>In-person only</option></select></div>
+        </div>
+        <div class="field"><label>Availability</label><input placeholder="e.g., new matters within 2 weeks"/></div>
+      </div>
+
+      <div class="grp"><h2><i class="ti ti-cash"></i> Fees &amp; typical cost</h2>
+        <p class="hint" style="margin:0 0 9px">You set and publish your own fees. JusticeX shows them to users up front as <b>your</b> figures — it never sets, negotiates, or takes a share. Mark anything firm as a fixed quote; otherwise it displays as an estimate.</p>
+        <div class="row">
+          <div class="field"><label>Fee model</label><select><option>Hourly</option><option>Flat fee</option><option>Flat, by phase</option><option>Sliding scale</option><option>Hourly + flat packages</option></select></div>
+          <div class="field"><label>Hourly rate (if hourly)</label><input placeholder="e.g., $425 / hr"/></div>
+        </div>
+        <div class="row">
+          <div class="field"><label>Typical total — for a matter like this</label><input placeholder="e.g., $6,000–$16,000"/><div class="hint">A range for the focus area above (e.g., NY divorce &amp; custody).</div></div>
+          <div class="field"><label>Estimate or fixed?</label><select><option>Estimate (not binding)</option><option>Fixed / flat quote</option></select></div>
+        </div>
+        <div class="field"><label>Free or reduced consult (optional)</label><input placeholder="e.g., free 20-min consult"/></div>
+        <div class="field"><label><input type="checkbox" id="rByStep" onchange="toggleStepFees()" style="margin-right:7px"/>I can quote by phase (Plan, Intake … Memorandum)</label>
+          <div id="rStepFees" style="display:none;margin-top:8px"><div class="hint" style="margin:0 0 6px">Optional — published per phase so users see where the cost goes.</div></div>
+        </div>
+        <div class="row">
+          <div class="field"><label>What's included</label><input placeholder="e.g., all sessions, drafting, one revision"/></div>
+          <div class="field"><label>Not included</label><input placeholder="e.g., court filing fees, expert reports"/></div>
+        </div>
+      </div>
+
+      <div class="grp"><h2><i class="ti ti-address-book"></i> Contact</h2>
+        <div class="row">
+          <div class="field"><label>Business email</label><input placeholder="name@firm.com"/></div>
+          <div class="field"><label>Phone</label><input placeholder="(516) 555-0100"/></div>
+        </div>
+        <div class="field"><label>Office address</label><input placeholder="Street, City, NY ZIP"/></div>
+        <div class="row">
+          <div class="field"><label>Website</label><input placeholder="firm.com"/><div class="hint">Shown on your profile so users can research you and confirm you're legitimate.</div></div>
+          <div class="field"><label>Scheduling link (optional)</label><input placeholder="calendly.com/…"/></div>
+        </div>
+      </div>
+
+      <div class="grp"><h2><i class="ti ti-message-2"></i> Profile &amp; approach</h2>
+        <div class="field"><label>Short bio</label><textarea placeholder="A few sentences about your background and practice."></textarea></div>
+        <div class="field"><label>Your approach</label><textarea placeholder="How you work with clients. Keep it factual — no claims about outcomes, win rates, or being the best."></textarea><div class="hint">Professional-conduct rules bar outcome / "win" claims and unverifiable superlatives.</div></div>
+        <div class="field"><label>Education &amp; certifications</label><input placeholder="e.g., J.D. Fordham 2010; NY mediation training (40-hr)"/></div>
+      </div>
+
+      <div class="grp"><h2><i class="ti ti-shield-check"></i> Consent</h2>
+        <ul class="clist">
+          <li><input type="checkbox"/> I confirm the information above is accurate and that I will keep it current.</li>
+          <li><input type="checkbox"/> I will use JusticeX in compliance with my profession's rules of conduct.</li>
+          <li><input type="checkbox"/> I understand I am an independent practitioner — JusticeX is not my agent, partner, or employer, and I am responsible for my own conflicts checks and engagement terms.</li>
+          <li><input type="checkbox"/> I consent to my profile being displayed in the JusticeX directory.</li>
+          <li><input type="checkbox"/> I agree to the Terms of Service and Privacy Policy.</li>
+        </ul>
+      </div>
+
+      <button class="btn" onclick="submitForm()"><i class="ti ti-send"></i> Submit for verification</button>
+      <div class="disc"><b>What happens next.</b> JusticeX verifies your license against the public registry, then your profile goes live with a <b>License verified</b> badge. JusticeX does not recommend or rank professionals; ordering is objective, and any user feedback is the users' own (shown only past a 5-review minimum). Not legal advice. <a href="disclaimer.html">Full legal disclaimer</a>. Synthetic demo.</div>
+    </div>
+  </div>
+
+  <div class="panel done" id="done">
+    <h2><i class="ti ti-circle-check" style="color:var(--success)"></i> Submitted — pending license verification</h2>
+    <p style="margin:0;color:var(--muted)">Thanks. We'll verify your credentials against the public registry and email you when your profile is live. You can edit it anytime from your dashboard. JusticeX lists you neutrally — it never recommends or ranks professionals.</p>
+    <a class="btn" href="directory.html" style="margin-top:14px"><i class="ti ti-arrow-left"></i> Back to directory</a>
+  </div>
+</div>
+
+<script>
+// existing profiles to check against (would be the live directory + public records)
+var POOL=[
+ {i:'AD',n:'A. Donnelly, Esq.',mt:'Attorney · Nassau · family law · already on JusticeX'},
+ {i:'MC',n:'Maren Cardillo',mt:'Mediator · Nassau · divorce & custody · already on JusticeX'},
+ {i:'PK',n:'P. Kapoor, Esq.',mt:'Attorney · Suffolk · from NY attorney registry (not yet claimed)'}
+];
+function findSimilar(){
+  var q=(document.getElementById('dName').value||'').toLowerCase().replace(/[^a-z]/g,'');
+  var box=document.getElementById('matches'); box.innerHTML='';
+  if(q.length<2) return;
+  var hits=POOL.filter(function(p){
+    var name=p.n.toLowerCase().replace(/[^a-z]/g,'');
+    // simple token/substring similarity
+    return name.indexOf(q.slice(0,Math.min(q.length,6)))>-1 || q.indexOf(name.slice(0,4))>-1;
+  });
+  if(!hits.length){ box.innerHTML='<p class="hint" style="margin:8px 0 0">No existing listing found — looks like you’re not listed yet.</p>'; return; }
+  box.innerHTML='<p class="hint" style="margin:9px 0 2px">Possible existing match'+(hits.length>1?'es':'')+' — is one of these you?</p>';
+  hits.forEach(function(p){
+    var d=document.createElement('div'); d.className='match';
+    d.innerHTML='<span class="av">'+p.i+'</span><div><div class="nm">'+p.n+'</div><div class="mt">'+p.mt+'</div></div><button class="btn sm" onclick="claim(this)">This is me — claim</button>';
+    box.appendChild(d);
+  });
+}
+function claim(b){ b.textContent='Claim request sent'; b.disabled=true; b.style.opacity=.6; }
+function startNew(){ document.getElementById('dedupe').classList.add('hide'); document.getElementById('full').classList.remove('hide'); rSubs(); }
+var SUBS={'Divorce &amp; custody':['Property &amp; finances','Custody &amp; parenting','Child support','Spousal maintenance'],'Guardianship (Article 81)':['Personal needs','Property management'],'General civil':['Contract','Other']};
+function rSubs(){
+  var m=document.getElementById('rMain').value, wrap=document.getElementById('rSub');
+  wrap.innerHTML=(SUBS[m]||[]).map(function(x){return '<label class="check"><input type="checkbox"> '+x+'</label>';}).join('');
+}
+function styleSeg(id,on){var b=document.getElementById(id); b.style.background=on?'var(--navy)':'#fff'; b.style.color=on?'#fff':'var(--navy2)';}
+function setMode(m){
+  styleSeg('mInd',m==='individual'); styleSeg('mFirm',m==='firm');
+  document.getElementById('firmGrp').classList.toggle('hide',m!=='firm');
+  document.querySelector('#form h1').textContent = (m==='firm') ? 'List your firm on JusticeX' : 'List your practice on JusticeX';
+  var d=document.querySelector('#dedupe h2');
+  if(d) d.innerHTML = (m==='firm') ? '<i class="ti ti-search"></i> First — is your firm already listed?' : '<i class="ti ti-search"></i> First — are you already listed?';
+}
+var PHASES=['Plan','Intake','Redact','Summarize','Gap Analysis','Resolution','Memorandum'];
+function toggleStepFees(){
+  var on=document.getElementById('rByStep').checked, box=document.getElementById('rStepFees');
+  box.style.display=on?'block':'none';
+  if(on && !box.dataset.built){
+    box.insertAdjacentHTML('beforeend', PHASES.map(function(p){return '<div class="field" style="margin-bottom:6px"><label>'+p+'</label><input placeholder="e.g., $500 flat, or 2–4 hrs"/></div>';}).join(''));
+    box.dataset.built='1';
+  }
+}
+function submitForm(){ document.getElementById('form').style.display='none'; document.getElementById('done').style.display='block'; window.scrollTo(0,0); }
+</script>
+</body>
+</html>

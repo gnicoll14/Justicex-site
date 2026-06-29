@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JusticeX — Detailed Report (Whitfield · Summarize)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
+<style>
+:root{--navy:#042C53;--navy-deep:#021A33;--navy2:#154572;--navy3:#2A5582;--paper:#E6F1FB;--surface:#FFFFFF;--ink:#1A1A1A;--muted:#5F5E5A;--faint:#9CA0A7;--hair:#D1DEEE;--accent:#D85A30;--accent-d:#B04722;--accent-soft:#FAECE7;--success:#1D9E75;--success-s:#E7F4EF;--a:#2A5582;--b:#B04722;--radius:14px;--radius-sm:10px;}
+*{box-sizing:border-box} html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',Calibri,system-ui,sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.appbar{background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 26px;}
+.brand{display:flex;align-items:center;} .bmark{height:23px;width:23px;border-radius:5px;margin-right:9px;}
+.wordmark{font-family:'Source Serif 4',serif;font-weight:600;font-size:22px;} .wordmark .x{color:var(--accent);}
+.tagline{font-size:11.5px;letter-spacing:2.4px;text-transform:uppercase;color:#9FB6D2;margin-left:12px;}
+.back{font-size:12.5px;color:#C9D8EA;text-decoration:none;} .back:hover{color:#fff;}
+.app{max-width:920px;margin:0 auto;padding:0 22px 60px;}
+.rhead{background:var(--navy-deep);color:#fff;padding:26px 0 24px;}
+.rhead .in{max-width:920px;margin:0 auto;padding:0 22px;}
+.rkind{display:inline-block;font-size:11px;letter-spacing:.6px;text-transform:uppercase;font-weight:700;color:#08213A;background:var(--accent);padding:3px 11px;border-radius:999px;}
+.rhead h1{font-family:'Source Serif 4',serif;font-weight:600;font-size:27px;margin:12px 0 5px;}
+.rhead .sub{color:#AFC3DC;font-size:13.5px;}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;}
+.tag{font-size:11.5px;border-radius:999px;padding:4px 10px;display:inline-flex;align-items:center;gap:6px;background:#10314F;color:#CFE0F4;border:1px solid #28486B;}
+.tag.neutral{background:var(--accent);color:#08213A;font-weight:600;border:none;}
+.aichip{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;color:#CFE0F4;background:#10314F;border:1px solid #28486B;border-radius:999px;padding:4px 11px 4px 6px;text-decoration:none;}
+.aichip .aidot{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:5px;background:var(--accent);color:#08213A;}
+/* contents rail */
+.toc{display:flex;gap:7px;flex-wrap:wrap;margin-top:16px;}
+.toc a{font-size:12px;color:var(--navy2);background:#fff;border:1px solid var(--hair);border-radius:999px;padding:5px 12px;text-decoration:none;font-weight:600;}
+.toc a:hover{background:#EAF1FB;}
+.sec{background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);padding:22px 24px;margin-top:16px;box-shadow:0 1px 2px rgba(20,30,46,.04);}
+.snum{font-size:11px;font-weight:800;color:#fff;background:var(--navy2);width:22px;height:22px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;}
+.sec h2{font-family:'Source Serif 4',serif;font-weight:600;font-size:18px;color:var(--navy);margin:0 0 4px;display:flex;align-items:center;gap:10px;}
+.sec .cap{color:var(--muted);font-size:13px;margin:0 0 14px 32px;}
+.sub3{font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:var(--faint);font-weight:700;margin:16px 0 7px;}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:4px;}
+th{background:#E2EAF4;color:var(--navy2);text-align:left;padding:7px 10px;font-size:10px;text-transform:uppercase;letter-spacing:.4px;font-weight:700;}
+th.r,td.r{text-align:right;font-variant-numeric:tabular-nums;}
+td{padding:8px 10px;border-bottom:1px solid #E8EEF6;vertical-align:top;} tbody tr:last-child td{border-bottom:none;}
+tr.grand td{background:var(--navy);color:#fff;font-weight:700;}
+.var{color:var(--accent-d);font-weight:700;} .ok{color:var(--success);font-weight:700;}
+.flow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:2px 0 4px;}
+.step{font-size:12.5px;font-weight:600;color:var(--navy2);background:#EAF1FB;border:1px solid #CFE0F4;border-radius:8px;padding:6px 11px;}
+.step.ai{background:var(--accent-soft);border-color:#F1CDBE;color:var(--accent-d);}
+.flow i{color:var(--faint);}
+.gates{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;}
+.gate{display:flex;align-items:center;gap:7px;font-size:12.5px;border:1px solid #BDE6D4;background:var(--success-s);color:#13694a;border-radius:8px;padding:7px 11px;}
+.ref{border-left:3px solid var(--navy3);background:#FBFDFF;padding:10px 14px;border-radius:0 8px 8px 0;margin:8px 0;font-size:13px;}
+.ref b{color:var(--navy);}
+.vchip{font-size:10px;font-weight:700;color:var(--accent-d);background:var(--accent-soft);border:1px solid #F1CDBE;border-radius:5px;padding:1px 6px;margin-left:4px;}
+.note{font-size:12.5px;color:var(--muted);background:#F4F8FD;border:1px solid #D9E6F4;border-radius:8px;padding:10px 13px;margin-top:10px;}
+.audit{font-size:12.5px;}
+.audit td{font-variant-numeric:tabular-nums;}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;color:var(--navy2);}
+.chainok{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#13694a;background:var(--success-s);border:1px solid #BDE6D4;border-radius:8px;padding:6px 11px;margin-top:10px;}
+.foot{max-width:920px;margin:18px auto 0;padding:16px 22px 0;border-top:1px solid var(--hair);color:var(--muted);font-size:12px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.foot a{color:var(--navy2);}
+</style>
+</head>
+<body>
+<div class="appbar">
+  <div class="brand"><img class="bmark" src="https://justicex.ai/assets/brand-mark.png" alt=""/><span class="wordmark">Justice<span class="x">X</span></span><span class="tagline">Objective comparison</span></div>
+  <a class="back" href="summarize.html"><i class="ti ti-arrow-left"></i> Back to Summarize</a>
+</div>
+
+<div class="rhead"><div class="in">
+  <span class="rkind">Detailed Report</span>
+  <h1>Summarize — full record</h1>
+  <div class="sub">Whitfield · Nassau County, New York · Divorce &amp; custody · Stage 4 of 7 · generated 27 Jun 2026</div>
+  <div class="tags">
+    <a class="aichip" href="disclaimer.html#ai-use"><span class="aidot"><i class="ti ti-sparkles"></i></span> AI-assisted · you and your counsel confirm</a>
+    <span class="tag"><i class="ti ti-pencil"></i> Draft for review</span>
+    <span class="tag neutral">Neutral · synthetic demo</span>
+  </div>
+  <div class="toc">
+    <a href="#inputs">1 · Inputs</a><a href="#process">2 · Process</a><a href="#refs">3 · Legal references</a><a href="#outputs">4 · Outputs</a><a href="#audit">5 · Audit chain</a>
+  </div>
+</div></div>
+
+<div class="app">
+
+  <!-- 1 INPUTS -->
+  <div class="sec" id="inputs">
+    <h2><span class="snum">1</span><i class="ti ti-database-import"></i> Inputs</h2>
+    <p class="cap">What each party submitted, as entered. Net-of-tax values are shown where an asset carries deferred tax.</p>
+    <div class="sub3">Finances &amp; property</div>
+    <table>
+      <thead><tr><th>Item</th><th class="r">Party A</th><th class="r">Party B</th><th class="r">After-tax view</th><th class="r">Difference</th></tr></thead>
+      <tbody>
+        <tr><td>Family home (value)</td><td class="r">$700,000</td><td class="r">$640,000</td><td class="r">same</td><td class="r var">$60,000</td></tr>
+        <tr><td>Mortgage</td><td class="r">–$400,000</td><td class="r">–$400,000</td><td class="r">same</td><td class="r ok">$0</td></tr>
+        <tr><td>401(k)</td><td class="r">$180,000</td><td class="r">$180,000</td><td class="r">≈$135,000 <span style="color:var(--faint)">(−25%)</span></td><td class="r ok">$0</td></tr>
+        <tr><td>IRA</td><td class="r">$90,000</td><td class="r">$90,000</td><td class="r">≈$67,500 <span style="color:var(--faint)">(−25%)</span></td><td class="r ok">$0</td></tr>
+        <tr><td>Bank &amp; cash</td><td class="r">$40,000</td><td class="r">$40,000</td><td class="r">same</td><td class="r ok">$0</td></tr>
+        <tr><td>Vehicles (2)</td><td class="r">$55,000</td><td class="r">$55,000</td><td class="r">same</td><td class="r ok">$0</td></tr>
+        <tr><td>Loans &amp; cards</td><td class="r">–$45,000</td><td class="r">–$45,000</td><td class="r">same</td><td class="r ok">$0</td></tr>
+      </tbody>
+      <tfoot>
+        <tr class="grand"><td>Net marital estate (gross)</td><td class="r">$620,000</td><td class="r">$560,000</td><td class="r">—</td><td class="r">$60,000</td></tr>
+        <tr class="grand"><td>Net marital estate (after-tax)</td><td class="r">$552,500</td><td class="r">$492,500</td><td class="r">—</td><td class="r">$60,000</td></tr>
+      </tfoot>
+    </table>
+    <div class="note">After-tax view discounts tax-deferred retirement accounts at an illustrative 25% effective rate. The value used in any split is the after-tax value — this is set per matter and confirmed by the parties.</div>
+
+    <div class="sub3">Spousal maintenance &amp; child support</div>
+    <table>
+      <thead><tr><th>Item</th><th class="r">Party A</th><th class="r">Party B</th><th>Status / basis</th></tr></thead>
+      <tbody>
+        <tr><td>Annual income</td><td class="r">$70,000</td><td class="r">$160,000</td><td>Confirmed by both</td></tr>
+        <tr><td>Annual bonus (B)</td><td class="r">—</td><td class="r">$24,000</td><td><span class="var">Open</span> — counts toward support?</td></tr>
+        <tr><td>Combined parental income</td><td colspan="2" class="r">$163,000</td><td>Below the $228,000 statutory cap</td></tr>
+        <tr><td>Spousal maintenance (guideline)</td><td colspan="2" class="r">≈ $1,208 / mo (~$14,500 / yr)</td><td>DRL §236(B)(6) guideline — advisory</td></tr>
+        <tr><td>Child support (CSSA guideline)</td><td colspan="2" class="r">≈ $2,148 / mo (~$25,779 / yr)</td><td>DRL §240(1-b) — maintenance computed first</td></tr>
+      </tbody>
+    </table>
+    <div class="note">Both support figures recompute if the bonus is included. Maintenance is calculated before child support so the two are consistent and income is never double-counted.</div>
+
+    <div class="sub3">Children — custody &amp; parenting</div>
+    <table>
+      <thead><tr><th>Topic</th><th>Proposed / agreed</th><th class="r">Status</th></tr></thead>
+      <tbody>
+        <tr><td>Overnight split</td><td>65% / 35%</td><td class="r ok">Agreed</td></tr>
+        <tr><td>Legal custody / decision-making</td><td>Joint</td><td class="r ok">Agreed</td></tr>
+        <tr><td>Religion / faith upbringing</td><td>Which faith(s) the children are raised in; who decides</td><td class="r var">Open</td></tr>
+        <tr><td>School-week schedule</td><td>Per the agreed calendar</td><td class="r ok">Agreed</td></tr>
+        <tr><td>Holidays &amp; birthdays</td><td>Alternate by year; birthdays shared</td><td class="r ok">Agreed</td></tr>
+        <tr><td>Relocation</td><td>Mutual written consent required</td><td class="r ok">Agreed</td></tr>
+      </tbody>
+    </table>
+
+    <div class="sub3">Completeness by party</div>
+    <table>
+      <thead><tr><th>Party</th><th class="r">Complete</th><th>Outstanding</th></tr></thead>
+      <tbody>
+        <tr><td>Party A</td><td class="r">86%</td><td>Home value support (appraisal or comp)</td></tr>
+        <tr><td>Party B</td><td class="r">81%</td><td>Home value support · bonus history (3 yrs)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 2 PROCESS -->
+  <div class="sec" id="process">
+    <h2><span class="snum">2</span><i class="ti ti-settings-cog"></i> Process</h2>
+    <p class="cap">What JusticeX did to produce this stage — the same operations, the same depth, for both parties.</p>
+    <div class="flow">
+      <span class="step">Parse &amp; index intake</span><i class="ti ti-chevron-right"></i>
+      <span class="step">Remove personal details (Redact)</span><i class="ti ti-chevron-right"></i>
+      <span class="step ai">Summarize each side <i class="ti ti-sparkles"></i></span><i class="ti ti-chevron-right"></i>
+      <span class="step ai">Compute net-of-tax &amp; variance</span><i class="ti ti-chevron-right"></i>
+      <span class="step ai">Score completeness &amp; strength (symmetric)</span>
+    </div>
+    <div class="note"><b>AI-assisted.</b> The summarize, compare, and scoring steps use AI (Anthropic's Claude) on the parties' own inputs. Figures are computed, not opinionated; nothing here interprets the law or predicts a result. Every output is a draft for you and your counsel to verify. <a href="disclaimer.html#ai-use" style="color:var(--accent-d);font-weight:600">How JusticeX uses AI ›</a></div>
+    <div class="sub3">Gates passed before this report</div>
+    <div class="gates">
+      <span class="gate"><i class="ti ti-checks"></i> G1 — Intake completeness met</span>
+      <span class="gate"><i class="ti ti-checks"></i> G2 — Redaction applied (Checkpoint 1)</span>
+    </div>
+  </div>
+
+  <!-- 3 LEGAL REFERENCES -->
+  <div class="sec" id="refs">
+    <h2><span class="snum">3</span><i class="ti ti-gavel"></i> Legal references</h2>
+    <p class="cap">The New York authorities this matter is organized against — surfaced for reference only, never interpreted. Each is yours to verify.</p>
+    <div class="ref"><b>Equitable distribution.</b> NY Domestic Relations Law §236(B)(5) — the marital estate is divided equitably (not necessarily equally) under the statutory factors. <span class="vchip">verify</span></div>
+    <div class="ref"><b>Child support.</b> Child Support Standards Act — DRL §240(1-b) / FCA §413 — the statutory percentage formula on combined parental income, with the statutory cap and add-ons. <span class="vchip">verify</span></div>
+    <div class="ref"><b>Spousal maintenance.</b> DRL §236(B)(6) — the statutory guideline formula and duration advisory schedule. <span class="vchip">verify</span></div>
+    <div class="ref"><b>Financial disclosure.</b> 22 NYCRR 202.16 — the matrimonial Statement of Net Worth and disclosure requirements. <span class="vchip">verify</span></div>
+    <div class="note">A <span class="vchip" style="margin:0">verify</span> tag means JusticeX has cited a source but not confirmed it for your facts — open the citation and check it before relying.</div>
+  </div>
+
+  <!-- 4 OUTPUTS -->
+  <div class="sec" id="outputs">
+    <h2><span class="snum">4</span><i class="ti ti-file-export"></i> Outputs</h2>
+    <p class="cap">The agreed starting point this stage produces, and what carries forward.</p>
+    <div class="sub3">Agreed — 5 topics carry to Gap Analysis as settled</div>
+    <table>
+      <thead><tr><th>Area</th><th>What's agreed</th></tr></thead>
+      <tbody>
+        <tr><td>Finances &amp; property</td><td>Mortgage, 401(k), IRA, bank &amp; cash, vehicles &amp; loans — $620,000 net basis</td></tr>
+        <tr><td>Child support</td><td>Add-ons split (childcare, health)</td></tr>
+        <tr><td>Custody</td><td>65/35 overnights &amp; joint legal custody</td></tr>
+        <tr><td>Parenting</td><td>School-week schedule &amp; holidays</td></tr>
+        <tr><td>Parenting</td><td>Relocation by mutual written consent</td></tr>
+      </tbody>
+    </table>
+    <div class="sub3">Open — 4 topics carried forward to resolve</div>
+    <table>
+      <thead><tr><th>Open topic</th><th>Area</th><th>Why it matters</th><th>Next</th></tr></thead>
+      <tbody>
+        <tr><td>Family-home value ($60,000 apart)</td><td>Finances</td><td>Largest single difference in the estate</td><td>Agree a value or order an appraisal</td></tr>
+        <tr><td>Spousal maintenance (amount &amp; duration)</td><td>Maintenance</td><td>Hinges on the bonus decision</td><td>Decide bonus inclusion at Resolution</td></tr>
+        <tr><td>Child support (amount)</td><td>Child support</td><td>Hinges on the same bonus decision</td><td>Decide bonus inclusion at Resolution</td></tr>
+        <tr><td>Religion / faith upbringing</td><td>Custody</td><td>A major decision-making point for the children</td><td>Parties agree the approach at Resolution</td></tr>
+      </tbody>
+    </table>
+    <div class="note">Maintenance and child support are two open topics driven by one decision — whether B's $24,000 bonus counts as income.</div>
+    <div class="note"><b>Sign-off.</b> Both parties confirm this starting point before Stage 5. Nothing here is binding — it is the agreed basis for the comparison that follows.</div>
+  </div>
+
+  <!-- 5 AUDIT -->
+  <div class="sec" id="audit">
+    <h2><span class="snum">5</span><i class="ti ti-history"></i> Audit chain</h2>
+    <p class="cap">Every state-changing action is recorded and hash-linked, so the record is tamper-evident end to end.</p>
+    <table class="audit">
+      <thead><tr><th>Time (ET)</th><th>Actor</th><th>Action</th><th>Entry hash</th></tr></thead>
+      <tbody>
+        <tr><td>26 Jun 14:02</td><td>Dana Whitfield · Individual</td><td>Submitted finances &amp; income intake</td><td class="mono">9f2a…c41d</td></tr>
+        <tr><td>26 Jun 14:05</td><td>System</td><td>Redaction applied · Checkpoint 1</td><td class="mono">3c71…88be</td></tr>
+        <tr><td>27 Jun 09:14</td><td>JusticeX · AI</td><td>Generated summary + variance</td><td class="mono">b8e0…1a07</td></tr>
+        <tr><td>27 Jun 09:14</td><td>System</td><td>Scored completeness + strength (symmetric)</td><td class="mono">1d44…f9c2</td></tr>
+        <tr><td>27 Jun 09:30</td><td>M. Cardillo · Mediator</td><td>Opened detailed report</td><td class="mono">77af…02d5</td></tr>
+      </tbody>
+    </table>
+    <div class="chainok"><i class="ti ti-shield-check"></i> Chain verified — each entry links to the one before it; no gaps.</div>
+  </div>
+
+  <div class="foot">
+    <div>JusticeX is a software platform — not a law firm or mediator. Not legal advice. <a href="disclaimer.html">Full legal disclaimer</a>. Synthetic demo — no real person.</div>
+    <div><b>Truth</b> · <b>Fairness</b> · <b>Efficiency</b></div>
+  </div>
+
+</div>
+</body>
+</html>

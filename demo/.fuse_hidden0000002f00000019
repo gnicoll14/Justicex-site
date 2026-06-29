@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JusticeX — Assignments &amp; Responsibilities</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
+<style>
+:root{--navy:#042C53;--navy-deep:#021A33;--navy2:#154572;--navy3:#2A5582;--paper:#E6F1FB;--surface:#fff;--ink:#1A1A1A;--muted:#5F5E5A;--faint:#9AA3B0;--hair:#D1DEEE;--accent:#D85A30;--accent-d:#B04722;--accent-soft:#FAECE7;--ok:#1D9E75;--okbg:#E7F4EF;--radius:13px;}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:'Source Sans 3',system-ui,sans-serif;font-size:14px;}
+.appbar{background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 26px;position:relative;}
+.brand{display:flex;align-items:center;}.bmark{height:23px;width:23px;border-radius:5px;margin-right:9px;}
+.wordmark{font-family:'Source Serif 4',serif;font-weight:600;font-size:22px;}.wordmark .x{color:var(--accent);}
+.matterchip{font-size:12px;background:#0C2A47;border:1px solid #1E3F61;color:#CFE0F1;padding:5px 11px;border-radius:999px;}
+.wrap{max-width:1040px;margin:22px auto;padding:0 20px;}
+h1{font-family:'Source Serif 4',serif;font-weight:600;font-size:23px;color:var(--navy);margin:0 0 3px;}
+.sub{color:var(--muted);font-size:13px;margin:0 0 16px;}
+.tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px;}
+.tab{border:1px solid var(--hair);background:#fff;color:var(--navy2);font-family:inherit;font-weight:600;font-size:12.5px;padding:7px 13px;border-radius:999px;cursor:pointer;}
+.tab.on{background:var(--navy);border-color:var(--navy);color:#fff;}
+/* default lead card */
+.leadcard{background:#fff;border:1px solid var(--hair);border-radius:var(--radius);padding:16px 18px;margin-bottom:14px;box-shadow:0 1px 2px rgba(20,30,46,.04);}
+.lc-q{font-family:'Source Serif 4',serif;font-weight:600;font-size:16px;color:var(--navy);margin-bottom:3px;}
+.lc-h{font-size:12.5px;color:var(--muted);margin-bottom:11px;}
+.lc-seg{display:flex;gap:8px;flex-wrap:wrap;}
+.lc-seg button{font-family:inherit;font-size:13px;font-weight:600;color:var(--navy2);background:#F4F8FD;border:1.5px solid var(--hair);border-radius:10px;padding:10px 15px;cursor:pointer;display:flex;align-items:center;gap:8px;}
+.lc-seg button .ti{font-size:16px;color:var(--navy3);}
+.lc-seg button.on{background:var(--navy);border-color:var(--navy);color:#fff;}
+.lc-seg button.on .ti{color:var(--accent);}
+.lc-exp{display:flex;gap:8px;align-items:flex-start;font-size:12.5px;color:var(--navy2);background:#EFF4FA;border:1px solid #D8E4F2;border-radius:9px;padding:10px 12px;margin-top:12px;}
+.lc-exp i{color:var(--accent-d);font-size:16px;margin-top:1px;}
+.scopenote{display:flex;gap:8px;align-items:flex-start;background:#FFF7EF;border:1px solid #F0DCC4;border-radius:9px;padding:9px 12px;font-size:12px;color:#7A5B12;margin-bottom:14px;}
+.summ{font-size:12.5px;color:var(--muted);margin:0 2px 8px;display:flex;align-items:center;gap:7px;}.summ b{color:var(--navy);}
+table{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden;}
+th{background:#F4F8FD;text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.4px;color:var(--faint);padding:9px 12px;border-bottom:1px solid var(--hair);}
+td{padding:11px 12px;border-bottom:1px solid #EEF3F8;font-size:12.5px;vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+tr.ovr td{background:#FFFCF8;}
+.stp{font-weight:700;color:var(--navy);white-space:nowrap;}.stp .n{display:inline-flex;width:19px;height:19px;border-radius:50%;background:#EAF1FB;color:var(--navy);font-size:10.5px;font-weight:800;align-items:center;justify-content:center;margin-right:6px;}
+.scopebadge{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.3px;color:var(--accent-d);background:var(--accent-soft);border-radius:5px;padding:1px 6px;margin-left:5px;}
+.scopebadge.joint{color:#155e45;background:var(--okbg);}
+.ownln{font-size:13px;color:var(--navy);font-weight:600;line-height:1.5;}
+.ownln .who{font-weight:700;}
+.tag{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:700;border-radius:5px;padding:1px 6px;margin-left:2px;white-space:nowrap;vertical-align:middle;}
+.tag.inh{color:var(--navy2);background:#EEF3F9;}
+.tag.ov{color:var(--accent-d);background:var(--accent-soft);}
+.lnk{font-size:11.5px;font-weight:700;color:var(--accent-d);background:none;border:none;cursor:pointer;padding:0;display:inline-flex;align-items:center;gap:4px;margin-top:6px;}
+.side{display:flex;align-items:center;gap:7px;margin:4px 0;}
+.side .lab{font-size:10.5px;color:var(--faint);font-weight:700;width:54px;}
+select{font-family:inherit;font-size:12px;border:1px solid var(--hair);border-radius:7px;padding:5px 7px;color:var(--navy);background:#fff;}
+.acc{font-size:11.5px;color:var(--muted);line-height:1.4;}.acc b{color:var(--navy2);}
+.noti{font-size:11.5px;color:var(--muted);line-height:1.4;}
+.foot{display:flex;gap:9px;align-items:flex-start;font-size:11.5px;color:var(--muted);margin-top:14px;background:#fff;border:1px solid var(--hair);border-radius:11px;padding:11px 14px;}
+.foot i{color:var(--navy3);font-size:17px;}.foot b{color:var(--navy);}
+.disc{background:var(--navy);color:#9FB6D2;margin-top:26px;padding:16px 26px;font-size:11.5px;}.disc a{color:#C9D8EA;}
+</style>
+</head>
+<body>
+<div class="appbar"><div class="brand"><img class="bmark" src="https://justicex.ai/assets/brand-mark.png" alt=""/><span class="wordmark">Justice<span class="x">X</span></span></div><span class="matterchip" id="matterchip"><b>Whitfield</b> · Divorce &amp; custody · Nassau County, NY</span></div>
+
+<div class="wrap">
+  <h1 id="aHead">Who leads this matter?</h1>
+  <p class="sub" id="aSub">Pick one default below — that's all most matters need. Every step follows it unless you choose to override that one step.</p>
+
+  <div class="tabs">
+    <button class="tab on" data-scope="matter" onclick="setScope('matter')">This matter</button>
+    <button class="tab" data-scope="all" onclick="setScope('all')">All my matters</button>
+    <button class="tab" data-scope="account" onclick="setScope('account')">Account default</button>
+    <button class="tab" data-scope="firm" onclick="setScope('firm')">Firm default</button>
+  </div>
+  <div class="scopenote" id="scopeNote" style="display:none"></div>
+
+  <!-- 1) the one decision most users make -->
+  <div class="leadcard">
+    <div class="lc-q">Default lead for this matter</div>
+    <div class="lc-h">Who is accountable for moving the matter forward, in general?</div>
+    <div class="lc-seg" id="seg">
+      <button data-d="med" class="on" onclick="setDef('med')"><i class="ti ti-users"></i> Mediator-led</button>
+      <button data-d="att" onclick="setDef('att')"><i class="ti ti-gavel"></i> Attorney-led</button>
+      <button data-d="self" onclick="setDef('self')"><i class="ti ti-user"></i> We lead it ourselves</button>
+    </div>
+    <div class="lc-exp"><i class="ti ti-info-circle"></i><div id="lcExp"></div></div>
+  </div>
+
+  <!-- 2) the steps — quiet unless overridden -->
+  <div class="summ" id="summ"></div>
+  <table id="atbl">
+    <thead><tr><th style="width:160px">Step</th><th style="width:300px">Who leads it</th><th>What that means (access)</th><th style="width:160px">Notifies</th></tr></thead>
+    <tbody><!-- rows injected --></tbody>
+  </table>
+
+  <div class="foot"><i class="ti ti-history"></i><div><b>One accountable owner per scope, and everything is audited.</b> The owner is accountable — everyone else still does their part, views, comments, and advises per role + the privilege fence. Changes notify the affected people and write to the audit chain. An account owner or firm admin can set this for others; a <b>delegate</b> can cover an owner while they're out. <a href="audit.html" style="color:var(--accent-d);font-weight:700;text-decoration:none;white-space:nowrap">View the audit log →</a></div></div>
+</div>
+
+<div class="disc"><b style="color:#fff">JusticeX is software — not a law firm or mediator.</b> Not legal advice. <a href="disclaimer.html">Full disclaimer</a>. Synthetic demo — no real person.</div>
+
+<script>
+var STEPS=[
+ {n:1,name:'Plan',scope:'each'},{n:2,name:'Intake',scope:'each'},{n:3,name:'Redact',scope:'each'},
+ {n:4,name:'Summarize',scope:'each'},{n:5,name:'Gap Analysis',scope:'joint'},{n:6,name:'Resolution',scope:'joint'},
+ {n:7,name:'Memorandum',scope:'joint'}
+];
+var SIDE_OPTS_A=[['ind','Dana (Individual · A)'],['med','Maren (Mediator)'],['att','Jordan (Attorney · A)']];
+var SIDE_OPTS_B=[['ind','Samuel (Individual · B)'],['med','Maren (Mediator)']];
+var JOINT_OPTS=[['med','Maren (Mediator)'],['indA','Dana (Party A)'],['indB','Samuel (Party B)']];
+// matter-default presets → per-step effective owners
+var PRESETS={
+ med:{exp:'<b>Maren (mediator)</b> owns the joint steps; each of you owns your own inputs. JusticeX stays neutral.', each:['ind','ind'], joint:'med'},
+ att:{exp:"<b>Each party's attorney</b> owns that party's side; the mediator owns the joint steps. Your counsel stays in the lead.", each:['att','ind'], joint:'med'},
+ self:{exp:'<b>You and the other party</b> own your own inputs and co-lead the joint steps. Bring in a mediator or attorney any time.', each:['ind','ind'], joint:'indA'}
+};
+var matterDefault='med';
+var overrides={};   // step -> {A,B} or {J}  (presence = overridden)
+
+function nameFor(scope, side, val){
+  if(scope==='each'){
+    if(side==='A') return {ind:'Dana (Individual)',med:'Maren (Mediator)',att:'Jordan (Attorney)'}[val];
+    return {ind:'Samuel (Individual)',med:'Maren (Mediator)'}[val];
+  }
+  return {med:'Maren (Mediator)',indA:'Dana (Party A)',indB:'Samuel (Party B)'}[val];
+}
+function eff(step){ // effective owner values for a step
+  var s=STEPS[step-1], p=PRESETS[matterDefault];
+  if(overrides[step]) return overrides[step];
+  return s.scope==='each' ? {A:p.each[0],B:p.each[1]} : {J:p.joint};
+}
+function accText(scope, role){
+  if(scope==='each'){
+    if(role==='ind') return 'that party edits their own side · the other party can’t see it (fence) · mediator/attorney advise';
+    if(role==='med') return '<b>Mediator</b> owns this side · that party views + comments · neutral to both';
+    if(role==='att') return '<b>Attorney</b> owns (own client only) · client views · opposing side fenced';
+  } else {
+    if(role==='med') return '<b>Mediator</b> edits · <b>both parties</b> view + comment · attorney advises (fenced)';
+    if(role==='indA') return '<b>Dana</b> drafts · Samuel views + comments';
+    if(role==='indB') return '<b>Samuel</b> drafts · Dana views + comments';
+  }
+  return '';
+}
+function opt(list,sel){return list.map(function(o){return '<option value="'+o[0]+'"'+(o[0]===sel?' selected':'')+'>'+o[1]+'</option>';}).join('');}
+
+function render(){
+  document.getElementById('lcExp').innerHTML=PRESETS[matterDefault].exp;
+  document.querySelectorAll('#seg button').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-d')===matterDefault);});
+  var tb=document.querySelector('#atbl tbody'); tb.innerHTML='';
+  var ovrCount=0;
+  STEPS.forEach(function(s){
+    var isOvr=!!overrides[s.n]; if(isOvr) ovrCount++;
+    var e=eff(s.n);
+    var tr=document.createElement('tr'); if(isOvr) tr.className='ovr';
+    var badge=s.scope==='each'?'<span class="scopebadge">each party</span>':'<span class="scopebadge joint">both parties</span>';
+    var ownerCell, accCell;
+    var tag = isOvr ? '<span class="tag ov"><i class="ti ti-adjustments" style="font-size:10px"></i> Set for this step</span>'
+                    : '<span class="tag inh"><i class="ti ti-arrow-down-right" style="font-size:10px"></i> Follows the default</span>';
+    if(!isOvr){
+      // quiet: show effective owner as text + tag + Override link
+      var who = s.scope==='each'
+        ? 'Party A: <span class="who">'+nameFor('each','A',e.A)+'</span> &nbsp;·&nbsp; Party B: <span class="who">'+nameFor('each','B',e.B)+'</span>'
+        : '<span class="who">'+nameFor('joint',null,e.J)+'</span>';
+      ownerCell='<div class="ownln">'+who+' '+tag+'</div><button class="lnk" onclick="over('+s.n+')"><i class="ti ti-pencil" style="font-size:12px"></i> Override this step</button>';
+    } else {
+      // expanded: dropdowns + Reset
+      if(s.scope==='each'){
+        ownerCell='<div>'+tag+'</div>'
+          +'<div class="side"><span class="lab">Party A</span><select data-step="'+s.n+'" data-side="A" onchange="chg('+s.n+')">'+opt(SIDE_OPTS_A,e.A)+'</select></div>'
+          +'<div class="side"><span class="lab">Party B</span><select data-step="'+s.n+'" data-side="B" onchange="chg('+s.n+')">'+opt(SIDE_OPTS_B,e.B)+'</select></div>'
+          +'<button class="lnk" onclick="reset('+s.n+')"><i class="ti ti-rotate" style="font-size:12px"></i> Reset to default</button>';
+      } else {
+        ownerCell='<div>'+tag+'</div>'
+          +'<div class="side"><select data-step="'+s.n+'" data-side="J" onchange="chg('+s.n+')">'+opt(JOINT_OPTS,e.J)+'</select></div>'
+          +'<button class="lnk" onclick="reset('+s.n+')"><i class="ti ti-rotate" style="font-size:12px"></i> Reset to default</button>';
+      }
+    }
+    if(s.scope==='each'){
+      accCell='<div class="acc"><b>A:</b> '+accText('each',e.A)+'</div><div class="acc" style="margin-top:5px"><b>B:</b> '+accText('each',e.B)+'</div>';
+    } else {
+      accCell='<div class="acc">'+accText('joint',e.J)+'</div>';
+    }
+    var noti = s.scope==='each' ? 'Owner: <b>your move</b> · matter owner: status' : 'Owner: <b>your move</b> · both parties: ready · matter owner: status';
+    tr.innerHTML='<td class="stp"><span class="n">'+s.n+'</span>'+s.name+'<br>'+badge+'</td><td>'+ownerCell+'</td><td>'+accCell+'</td><td class="noti">'+noti+'</td>';
+    tb.appendChild(tr);
+  });
+  var kept=7-ovrCount;
+  document.getElementById('summ').innerHTML='<i class="ti ti-circle-check" style="color:var(--ok)"></i> <b>'+kept+' of 7</b> steps follow the default'+(ovrCount?' · <b style="color:var(--accent-d)">'+ovrCount+'</b> overridden':' — nothing to set step-by-step');
+}
+// scope = which level you're editing (matter / all matters / account / firm)
+var SCOPES={
+ matter:{crumb:'Whitfield', chip:'<b>Whitfield</b> · Divorce &amp; custody · Nassau County, NY', head:'Who leads this matter?', sub:"Pick one default below — that's all most matters need. Every step follows it unless you override that one step.", note:''},
+ all:{crumb:'All matters', chip:'<b>All my matters</b> · your default', head:'Who leads, by default, across all your matters?', sub:'This default applies to every matter you own. Any single matter can override it from its own “This matter” tab.', note:'You’re editing your <b>account-wide default</b> — it sets the starting point for every matter, not just Whitfield.'},
+ account:{crumb:'Account', chip:'<b>Account default</b>', head:'Account default lead', sub:'The starting default for this client account. New matters inherit it unless changed.', note:'You’re editing the <b>account default</b> — broader than any single matter.'},
+ firm:{crumb:'Firm', chip:'<b>Firm default</b> · admin', head:'Firm default lead &amp; roles', sub:'Firm-wide default and roles (admin). Accounts and matters inherit it unless they override.', note:'You’re editing the <b>firm-wide default</b> (admin) — the broadest level; it cascades down to accounts and matters.'}
+};
+function setScope(s){
+  var c=SCOPES[s];
+  document.querySelectorAll('.tabs .tab').forEach(function(t){t.classList.toggle('on',t.getAttribute('data-scope')===s);});
+  document.getElementById('aHead').innerHTML=c.head;
+  document.getElementById('aSub').innerHTML=c.sub;
+  var chip=document.getElementById('matterchip'); if(chip) chip.innerHTML=c.chip;
+  var cr=document.getElementById('jxr-scope'); if(cr) cr.textContent=c.crumb;
+  var note=document.getElementById('scopeNote');
+  if(c.note){ note.style.display='flex'; note.innerHTML='<i class="ti ti-stack-2" style="font-size:15px;margin-top:1px"></i><div>'+c.note+'</div>'; }
+  else { note.style.display='none'; }
+}
+function setDef(d){ matterDefault=d; render(); }
+function over(n){ overrides[n]=eff(n); render(); }       // start override at current effective
+function reset(n){ delete overrides[n]; render(); }
+function chg(n){
+  var sels=document.querySelectorAll('#atbl select[data-step="'+n+'"]'); var o={};
+  sels.forEach(function(s){ o[s.getAttribute('data-side')]=s.value; });
+  overrides[n]=o; render();
+}
+render();
+</script>
+<!-- jx-progress-rail (simplified global wayfinding) -->
+<style id="jxr-css">
+.jxr{background:#fff;border-bottom:1px solid #E3EAF3;font-family:'Source Sans 3',system-ui,sans-serif;position:sticky;top:0;z-index:25;}
+.jxr-in{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:10px;padding:8px 22px;overflow-x:auto;}
+.jxr-bc{color:#154572;text-decoration:none;font-size:12.5px;font-weight:600;display:inline-flex;align-items:center;gap:5px;white-space:nowrap;}.jxr-bc:hover{color:#042C53;}
+.jxr-bcs{color:#B7C2D2;}.jxr-mt{font-size:12.5px;font-weight:700;color:#042C53;white-space:nowrap;}
+.jxr-steps{display:flex;align-items:center;margin-left:6px;}
+.jxr-s{display:inline-flex;align-items:center;gap:6px;text-decoration:none;padding:4px 9px;border-radius:999px;white-space:nowrap;}
+.jxr-s .jxr-n{width:18px;height:18px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:800;background:#F1F4F8;color:#9AA3B0;}
+.jxr-s .jxr-l{font-size:11.5px;font-weight:600;color:#9AA3B0;}
+.jxr-s:hover{background:#F1F6FC;}.jxr-sep{width:13px;height:2px;background:#E6ECF4;flex:none;}
+@media(max-width:880px){ .jxr-s .jxr-l{display:none;} }
+</style>
+<script id="jxr-js">
+(function(){
+ if(window.__jxrail) return; window.__jxrail=1;
+ var STEPS=[['plan.html','Plan'],['intake.html','Intake'],['redact.html','Redact'],['summarize.html','Summarize'],['gap-analysis.html','Gap Analysis'],['resolution.html','Resolution'],['memorandum.html','Memorandum']];
+ function init(){
+   var chips='';
+   STEPS.forEach(function(s,i){ var n=i+1;
+     chips+='<a class="jxr-s up" href="'+s[0]+'"><span class="jxr-n">'+n+'</span><span class="jxr-l">'+s[1]+'</span></a>'+(n<7?'<span class="jxr-sep"></span>':'');
+   });
+   var bar=document.createElement('div'); bar.className='jxr';
+   bar.innerHTML='<div class="jxr-in"><a class="jxr-bc" href="dashboard.html"><i class="ti ti-layout-grid"></i> Dashboard</a><span class="jxr-bcs">›</span><span class="jxr-mt" id="jxr-scope">Whitfield</span><span class="jxr-bcs">›</span><span class="jxr-mt" style="color:#B04722">Assignments</span><div class="jxr-steps">'+chips+'</div></div>';
+   var bar0=document.querySelector('.appbar');
+   if(bar0&&bar0.parentNode) bar0.parentNode.insertBefore(bar, bar0.nextSibling);
+ }
+ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+})();
+</script>
+</body>
+</html>

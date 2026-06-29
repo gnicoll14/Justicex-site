@@ -40,7 +40,7 @@ body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',Calibr
 .flowline{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;align-items:start;background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius) var(--radius) 0 0;padding:18px 24px 14px;}
 .flowline .s{text-align:center;font-size:11.5px;color:var(--navy2);font-weight:600;}
 .flowline .s .n{display:block;width:24px;height:24px;border-radius:50%;background:#EAF1FB;border:1px solid #CFE0F4;color:var(--navy);font-weight:700;line-height:22px;margin:0 auto 6px;font-size:12px;}
-.flowcap{display:grid;grid-template-columns:2fr 5fr;background:var(--surface);border:1px solid var(--hair);border-top:none;border-radius:0 0 var(--radius) var(--radius);overflow:hidden;}
+.flowcap{display:grid;grid-template-columns:4fr 3fr;background:var(--surface);border:1px solid var(--hair);border-top:none;border-radius:0 0 var(--radius) var(--radius);overflow:hidden;}
 .flowcap span{font-size:10.5px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;text-align:center;padding:7px 6px;border-top:2px solid;}
 .flowcap .c1{color:var(--accent-d);border-color:rgba(216,90,48,.5);background:var(--accent-soft);}
 .flowcap .c2{color:var(--navy2);border-color:rgba(42,85,130,.4);background:#EFF4FA;}
@@ -74,50 +74,93 @@ body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',Calibr
 .fbbox .row{display:flex;justify-content:flex-end;gap:9px;margin-top:12px;}
 .fbbox button{font-family:inherit;font-weight:700;font-size:13px;border-radius:9px;padding:9px 15px;cursor:pointer;border:1px solid var(--hair);background:#fff;color:var(--navy2);}
 .fbbox button.primary{background:var(--accent);color:#fff;border-color:var(--accent);}
+/* ---------- motion layer (subtle, professional) ---------- */
+/* always-on: gradient hero + interaction micro-lifts */
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#021A33 0%,#06294a 55%,#0a3a63 100%);}
+.hero .in{position:relative;z-index:1;}
+.acard,.pcard,.ovcard{transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;}
+.acard:hover,.pcard:hover,.ovcard:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(8,20,40,.13);border-color:#BFD3EA;}
+.cta{transition:transform .18s ease,background .18s ease,box-shadow .18s ease;}
+.cta:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(216,90,48,.30);}
+.cta i{transition:transform .18s ease;}.cta:hover i{transform:translateX(4px);}
+.nav a{position:relative;}
+.nav a::after{content:"";position:absolute;left:0;bottom:-5px;height:2px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .22s ease;}
+.nav a:hover::after{transform:scaleX(1);}
+.flowline .s .n{transition:transform .2s ease,background .2s ease,border-color .2s ease,color .2s ease;}
+.flowline .s:hover .n{background:var(--accent);border-color:var(--accent);color:#fff;transform:scale(1.12);}
+/* autonomous animation — only when motion is welcome */
+@media (prefers-reduced-motion: no-preference){
+  .hero::before{content:"";position:absolute;width:780px;height:780px;top:-360px;left:50%;background:radial-gradient(circle,rgba(216,90,48,.22),rgba(216,90,48,0) 62%);animation:heroGlow 9s ease-in-out infinite;pointer-events:none;}
+  @keyframes heroGlow{0%,100%{opacity:.5;transform:translateX(-52%) translateY(0)}50%{opacity:.95;transform:translateX(-47%) translateY(22px)}}
+  .hero h1 .x{position:relative;}
+  .hero h1 .x::after{content:"";position:absolute;left:2px;right:2px;bottom:1px;height:3px;background:var(--accent);border-radius:3px;transform:scaleX(0);transform-origin:left;animation:drawLine .9s cubic-bezier(.2,.6,.2,1) .55s forwards;}
+  @keyframes drawLine{to{transform:scaleX(1)}}
+  .js-anim .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.6,.2,1),transform .7s cubic-bezier(.2,.6,.2,1);}
+  .js-anim .reveal.in{opacity:1;transform:none;}
+  .js-anim .triad .t{opacity:0;animation:fadeUp .6s ease forwards;}
+  .js-anim .triad .t:nth-child(1){animation-delay:.7s}.js-anim .triad .t:nth-child(2){animation-delay:.85s}.js-anim .triad .t:nth-child(3){animation-delay:1s}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .js-anim .flowline.go .s .n{animation:nodePop .5s ease both;}
+  .js-anim .flowline.go .s:nth-child(1) .n{animation-delay:.05s}.js-anim .flowline.go .s:nth-child(2) .n{animation-delay:.13s}.js-anim .flowline.go .s:nth-child(3) .n{animation-delay:.21s}.js-anim .flowline.go .s:nth-child(4) .n{animation-delay:.29s}.js-anim .flowline.go .s:nth-child(5) .n{animation-delay:.37s}.js-anim .flowline.go .s:nth-child(6) .n{animation-delay:.45s}.js-anim .flowline.go .s:nth-child(7) .n{animation-delay:.53s}
+  @keyframes nodePop{0%{transform:scale(.4);opacity:0}60%{transform:scale(1.14)}100%{transform:scale(1);opacity:1}}
+  .fab{animation:fabPulse 2.8s ease-in-out infinite;}
+  @keyframes fabPulse{0%,100%{box-shadow:0 3px 10px rgba(20,30,46,.22)}50%{box-shadow:0 3px 10px rgba(20,30,46,.22),0 0 0 9px rgba(216,90,48,.10)}}
+}
 </style>
 </head>
 <body>
 <div style="background:#042C53;color:#fff;text-align:center;font:600 12px/1.4 'Source Sans 3',system-ui,sans-serif;padding:8px 14px"><a href="/" style="color:#F0997B;text-decoration:none">← Back to justicex.ai</a> · You’re viewing the JusticeX product demo (synthetic data — no real person)</div>
 <div class="appbar">
   <div class="brand"><img class="bmark" src="https://justicex.ai/assets/brand-mark.png" alt=""/><span class="wordmark">Justice<span class="x">X</span></span></div>
-  <div class="nav"><a href="#who">Who it's for</a><a href="#how">How it works</a><a href="disclaimer.html">Trust</a><a class="signin" href="account.html">Sign in</a></div>
+  <div class="nav"><a href="#overview">Overview</a><a href="#who">Who it helps</a><a href="#how">How it works</a><a href="#capabilities">Capabilities</a><a href="disclaimer.html">Trust</a><a class="signin" href="account.html">Sign in</a></div>
 </div>
 
 <div class="hero"><div class="in">
-  <div class="eyebrow">Truth · Fairness · Efficiency</div>
-  <h1>Resolve disputes on the <span class="x">facts</span>, not the fight.</h1>
-  <p>JusticeX runs the end-to-end process and brings individuals, mediators, and attorneys in wherever they're strongest — comparing each side's position on completeness, strength, and alignment so the parties reach their own agreed view. The JusticeX assistant (powered by Claude) coordinates the workflow and keeps everyone in sync. It's software, not a lawyer or mediator: it informs, it never recommends.</p>
-  <a class="cta" href="account.html">Get started <i class="ti ti-arrow-right"></i></a>
-  <a class="cta ghost" href="#who">See who it's for</a>
-  <div class="triad"><span class="t"><i class="ti ti-scale-outline"></i> <b>Symmetric</b> — same model for both sides</span><span class="t"><i class="ti ti-calculator"></i> <b>Objective</b> — quantitative, not opinion</span><span class="t"><i class="ti ti-lock"></i> <b>Private</b> — your data, your control</span></div>
+  <div class="eyebrow">Welcome to JusticeX</div>
+  <h1>A faster, fairer path to <span class="x">resolution</span>.</h1>
+  <p style="font-size:17px;color:#C9D8EA;max-width:58ch;margin:14px auto 4px">Look around the whole process first — no account needed. Create one whenever you're ready.</p>
+  <div class="triad"><span class="t"><i class="ti ti-scale-outline"></i> <b>Symmetric</b> — one model, both sides</span><span class="t"><i class="ti ti-calculator"></i> <b>Objective</b> — facts, not opinion</span><span class="t"><i class="ti ti-lock"></i> <b>Private</b> — your data, your control</span></div>
+  <div style="margin-top:30px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <a class="cta" href="account.html">Create your account <i class="ti ti-arrow-right"></i></a>
+    <a class="cta ghost" href="dashboard.html">Explore the process <i class="ti ti-eye"></i></a>
+  </div>
 </div></div>
 
 <div class="wrap">
-  <div id="who"><div class="h2">Who it's for</div>
-  <p class="lead">Built for everyone at the table — individuals, mediators, and attorneys — working one shared process, each with a view tailored to their role.</p>
+  <div id="overview" style="margin-top:30px">
+  <style>
+  .ovgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+  .ovcard{background:#fff;border:1px solid #D1DEEE;border-radius:14px;padding:15px 16px;box-shadow:0 1px 2px rgba(20,30,46,.04)}
+  .ovcard .oi{width:36px;height:36px;border-radius:10px;background:#E6F1FB;color:#042C53;display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:9px}
+  .ovcard.go .oi{background:#FAECE7;color:#B04722}
+  .ovcard h3{font-family:'Source Serif 4',serif;font-weight:600;font-size:15.5px;color:#042C53;margin:0 0 5px}
+  .ovcard p{font-size:13.3px;color:#3F4651;margin:0;line-height:1.5}
+  .ovcard .octa{display:inline-flex;align-items:center;gap:6px;margin-top:11px;color:#B04722;font-weight:700;font-size:13px;text-decoration:none}
+  .ovcard .octa:hover{text-decoration:underline}
+  .ovs{font-weight:700;color:#B04722}
+  .secblock{border-top:1px solid var(--hair);margin-top:44px;padding-top:36px}
+  @media(max-width:820px){.ovgrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.ovgrid{grid-template-columns:1fr}}
+  </style>
+  <div class="h2">Overview</div>
+  <div class="ovgrid">
+    <div class="ovcard"><div class="oi"><i class="ti ti-eye"></i></div><h3>JusticeX is…</h3><p>An objective, fact-based comparison of both sides — built to reach a resolution the easy way. Software that informs every party equally.</p></div>
+    <div class="ovcard"><div class="oi"><i class="ti ti-target-arrow"></i></div><h3>What you get</h3><p>A clear view of where each side stands, what's missing, and where you agree — and a written agreement at the end. Faster, lower cost, less stress.</p></div>
+    <div class="ovcard"><div class="oi"><i class="ti ti-clipboard-list"></i></div><h3>What to have ready</h3><p>Your <b>finances</b>, anything about <b>children or custody</b>, and key <b>documents</b>. Add what you have — JusticeX shows what's still needed.</p></div>
+    <div class="ovcard go"><div class="oi"><i class="ti ti-flag"></i></div><h3>How to start</h3><p><span class="ovs">1</span> Pick your role. &nbsp; <span class="ovs">2</span> Invite the other party — and a mediator or attorney if you want. &nbsp; <span class="ovs">3</span> Follow the guided steps. &nbsp; <span class="ovs">4</span> Reach a resolution.</p><a class="octa" href="account.html">Get started <i class="ti ti-arrow-right"></i></a></div>
+  </div>
+  </div>
+
+  <div id="who" class="secblock"><div class="h2">Who it helps</div>
   <div class="aud" style="margin-top:18px">
-    <div class="acard"><i class="ti ti-scale big"></i><h3>Mediators</h3><p>Run every matter across all your clients from one dashboard. Symmetric analysis and clear gates keep the process neutral and moving.</p><a href="account.html?role=mediator">Start as a mediator <i class="ti ti-arrow-right"></i></a></div>
-    <div class="acard"><i class="ti ti-briefcase big"></i><h3>Attorneys</h3><p>Represent your client's side with a full view of their position and an objective, redacted comparison to the other side. You keep every strategic decision.</p><a href="account.html?role=attorney">Start as an attorney <i class="ti ti-arrow-right"></i></a></div>
-    <div class="acard"><i class="ti ti-user big"></i><h3>Individuals</h3><p>See where you and the other party stand, what's still missing, and where you already agree — in plain language, at your own pace.</p><a href="account.html?role=individual">Start your matter <i class="ti ti-arrow-right"></i></a></div>
-  </div></div>
-
-  <div id="paths" class="paths"><div class="h2">One process, three flexible paths</div>
-  <p class="lead">Use JusticeX on your own, hand off between roles, or bring all three in where each is strongest — and change who leads at any time.</p>
-  <div class="pathgrid" style="margin-top:18px">
-    <div class="pcard"><span class="rl"><i class="ti ti-user"></i> Individual</span><div class="sweet">Sweet spot</div><p>Data gathering, interests, documents, and your own-side completeness.</p></div>
-    <div class="pcard"><span class="rl"><i class="ti ti-scale"></i> Mediator</span><div class="sweet">Sweet spot</div><p>Facilitation and reconciliation — moving both sides toward an agreed view.</p></div>
-    <div class="pcard"><span class="rl"><i class="ti ti-briefcase"></i> Attorney</span><div class="sweet">Sweet spot</div><p>Legal interpretation, guidance, and representation — owned by your licensed counsel.</p></div>
+    <div class="acard"><i class="ti ti-user big"></i><h3>Individuals</h3><p>See where you and the other party stand, what's missing, and where you agree — in plain language, at your pace.</p><a href="account.html?role=individual">Start your matter <i class="ti ti-arrow-right"></i></a></div>
+    <div class="acard"><i class="ti ti-scale big"></i><h3>Mediators</h3><p>Run every matter from one dashboard. Symmetric analysis and clear steps keep it neutral and moving.</p><a href="account.html?role=mediator">Start as a mediator <i class="ti ti-arrow-right"></i></a></div>
+    <div class="acard"><i class="ti ti-briefcase big"></i><h3>Attorneys</h3><p>Represent your client with a full view of their position and an objective comparison to the other side. You keep every decision.</p><a href="account.html?role=attorney">Start as an attorney <i class="ti ti-arrow-right"></i></a></div>
   </div>
-  <div class="orch"><i class="ti ti-route"></i><div class="tx"><b>The JusticeX assistant (powered by Claude)</b> orchestrates the workflow and keeps every party in sync — coordinating hand-offs and communications. It runs the process; it never interprets law or picks a side.</div></div>
-  <div class="leadpick">
-    <div class="lp"><b>Lead in total</b>One role carries the whole matter, end to end.</div>
-    <div class="lp"><b>Lead by matter</b>A different lead per matter, under one account.</div>
-    <div class="lp"><b>Lead by step</b>Hand the lead off at any step — everyone is notified.</div>
-  </div>
+  <div class="orch" style="margin-top:16px"><i class="ti ti-route"></i><div class="tx"><b>The JusticeX assistant (powered by Claude)</b> runs the workflow and keeps everyone in sync — coordinating hand-offs and updates. You choose who leads, and can change it anytime. Objective and fact-based throughout.</div></div>
   </div>
 
-  <div id="how" class="steps"><div class="h2">How it works — seven clear steps</div>
-  <p class="lead">By default you complete the first two steps on your own, and from step 3 the two parties work together — but any role can lead any step. You choose who leads and can change it at any time, with everyone kept in sync. Nothing is hidden from either side.</p>
+  <div id="how" class="steps secblock"><div class="h2">How it works</div>
   <div class="flowline" style="margin-top:18px">
     <div class="s"><span class="n">1</span>Plan</div>
     <div class="s"><span class="n">2</span>Intake</div>
@@ -127,27 +170,21 @@ body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',Calibr
     <div class="s"><span class="n">6</span>Resolution</div>
     <div class="s"><span class="n">7</span>Memorandum</div>
   </div>
-  <div class="flowcap"><span class="c1">Steps 1–2 · each Individual, on their own</span><span class="c2">Steps 3–7 · Both parties, together</span></div>
+  <div class="flowcap"><span class="c1">Steps 1–4 · each party, on their own</span><span class="c2">Steps 5–7 · both parties, together</span></div>
+  <div style="font-size:11px;color:var(--muted);text-align:center;margin-top:8px;">One-sided matters — guardianship, grievance — run with one applicant throughout (no opposing side).</div>
   </div>
 
-  <div id="capabilities" class="paths"><div class="h2">Connected capabilities</div>
-  <p class="lead">JusticeX plugs into the legal stack so a matter can move from intake to executed agreement in one place — gathering documents, verifying against public law, and signing — with attorney-grade tools reserved for the people licensed to use them.</p>
+  <div id="capabilities" class="paths secblock"><div class="h2">Capabilities</div>
   <div class="pathgrid" style="margin-top:18px">
-    <div class="pcard"><span class="rl"><i class="ti ti-scale-outline"></i> Public legal precedent</span><div class="sweet">For everyone</div><p>Cited public statutes &amp; case law, verified against the Free Law Project — reference only, never interpreted.</p></div>
-    <div class="pcard"><span class="rl"><i class="ti ti-files"></i> Intake &amp; e-signature</span><div class="sweet">For everyone</div><p>Bring documents in from where they already live, and sign the agreement when you're done — secure, redacted, and audited.</p></div>
-    <div class="pcard"><span class="rl"><i class="ti ti-briefcase"></i> Attorney-grade research</span><div class="sweet">Attorney path · your credentials</div><p>Licensed research and legal-AI tools, available in the attorney path through your own account — never exposed to self-represented users.</p></div>
+    <div class="pcard"><span class="rl"><i class="ti ti-files"></i> 1 · Intake &amp; e-signature</span><div class="sweet">For everyone</div><p>Bring documents in, and sign the agreement when you're done — secure and audited.</p></div>
+    <div class="pcard"><span class="rl"><i class="ti ti-scale-outline"></i> 2 · Public legal precedent</span><div class="sweet">For everyone</div><p>Cited public statutes &amp; case law, verified against the Free Law Project — reference only.</p></div>
+    <div class="pcard"><span class="rl"><i class="ti ti-briefcase"></i> 3 · Attorney-grade research</span><div class="sweet">Attorney path · your account</div><p>Licensed research and legal-AI tools in the attorney path, through your own account.</p></div>
   </div>
-  </div>
-
-  <div class="trust">
-    <span class="ti"><i class="ti ti-shield-check"></i> Symmetric, audited analysis</span>
-    <span class="ti"><i class="ti ti-eye-off"></i> Privilege &amp; redaction built in</span>
-    <span class="ti"><i class="ti ti-gavel"></i> Optional public legal precedent — for reference only</span>
   </div>
 </div>
 
 <div class="foot"><div class="in">
-  <div><b style="color:#fff">JusticeX is a software platform — not a law firm or mediator.</b><br>Objective comparison only; no legal advice. <a href="disclaimer.html">Full legal &amp; UPL disclaimer</a> · <a href="#" onclick="openFB();return false;">Share feedback</a> · Synthetic demo.</div>
+  <div><b style="color:#fff">JusticeX is a software platform — not a law firm or mediator.</b><br>Objective comparison only; no legal advice. <a href="disclaimer.html">Full legal disclaimer</a> · <a href="#" onclick="openFB();return false;">Share feedback</a> · Synthetic demo.</div>
   <div class="tfe"><b>Truth</b> · <b>Fairness</b> · <b>Efficiency</b></div>
 </div></div>
 
@@ -164,6 +201,22 @@ body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',Calibr
 function openFB(){document.getElementById('fbModal').classList.add('on');}
 function closeFB(){document.getElementById('fbModal').classList.remove('on');}
 function sendFB(){var t=document.getElementById('fbText');if(t.value.trim()){alert('Thanks — your feedback was recorded for the product team.');t.value='';}closeFB();}
+/* motion layer — scroll reveal (honors reduced-motion; no-JS stays fully visible) */
+(function(){
+  if(!('IntersectionObserver' in window)) return;
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.documentElement.classList.add('js-anim');
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('in'); if(e.target.classList.contains('flowline')) e.target.classList.add('go'); io.unobserve(e.target);}
+  });},{threshold:.14, rootMargin:'0px 0px -8% 0px'});
+  var sel=['.wrap .h2','.wrap .lead','#overview .ovcard','#who .acard','#paths .pcard','.orch','.leadpick .lp','#how .flowline','.flowcap','#capabilities .pcard','.trust .ti'];
+  document.querySelectorAll(sel.join(',')).forEach(function(el){
+    el.classList.add('reveal');
+    var p=el.parentElement, idx=p?Array.prototype.indexOf.call(p.children,el):0;
+    el.style.transitionDelay=((idx%4)*0.06)+'s';
+    io.observe(el);
+  });
+})();
 </script>
 </body>
 </html>

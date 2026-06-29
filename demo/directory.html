@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JusticeX — Find a professional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
+<style>
+:root{--navy:#042C53;--navy-deep:#021A33;--navy2:#154572;--navy3:#2A5582;--paper:#E6F1FB;--surface:#FFFFFF;--ink:#1A1A1A;--muted:#5F5E5A;--faint:#9CA0A7;--hair:#D1DEEE;--accent:#D85A30;--accent-d:#B04722;--accent-soft:#FAECE7;--success:#1D9E75;--success-s:#E7F4EF;--radius:14px;--radius-sm:10px;}
+*{box-sizing:border-box} html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',Calibri,system-ui,sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.appbar{background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 26px;}
+.brand{display:flex;align-items:center;} .bmark{height:23px;width:23px;border-radius:5px;margin-right:9px;}
+.wordmark{font-family:'Source Serif 4',serif;font-weight:600;font-size:22px;} .wordmark .x{color:var(--accent);}
+.tagline{font-size:11.5px;letter-spacing:2.4px;text-transform:uppercase;color:#9FB6D2;margin-left:12px;}
+.back{font-size:12.5px;color:#C9D8EA;text-decoration:none;} .back:hover{color:#fff;}
+.app{max-width:820px;margin:0 auto;padding:0 22px 60px;}
+.crumb{font-size:12px;color:var(--muted);margin:18px 0 2px;display:flex;align-items:center;gap:7px;} .crumb b{color:var(--navy);}
+.panel{background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);padding:24px 26px 26px;margin-top:8px;box-shadow:0 1px 2px rgba(20,30,46,.04);}
+h1{font-family:'Source Serif 4',serif;font-weight:500;font-size:26px;margin:0 0 4px;}
+.lede{color:var(--muted);margin:0 0 16px;max-width:66ch;}
+.filters{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end;background:#F7FAFE;border:1px solid var(--hair);border-radius:11px;padding:13px 14px;margin-bottom:8px;}
+.fg{display:flex;flex-direction:column;gap:4px;} .fg label{font-size:10.5px;letter-spacing:.3px;text-transform:uppercase;font-weight:700;color:var(--navy2);}
+.fg select{border:1px solid #CDDDF3;border-radius:8px;padding:8px 10px;font-size:13px;font-family:inherit;background:#fff;min-width:140px;}
+.scope{display:flex;gap:0;border:1px solid #CDDDF3;border-radius:8px;overflow:hidden;}
+.scope button{font-size:12px;font-weight:600;color:var(--navy2);background:#fff;border:none;padding:8px 11px;cursor:pointer;font-family:inherit;}
+.scope button.on{background:var(--navy);color:#fff;}
+.count{font-size:12px;color:var(--muted);margin:10px 2px 2px;}
+.neutralbar{display:flex;gap:10px;align-items:flex-start;background:var(--success-s);border:1px solid #BDE6D4;border-radius:10px;padding:11px 14px;margin:2px 0 8px;font-size:12.5px;color:#13694a;}
+.neutralbar i{font-size:18px;margin-top:1px;}
+.pro{display:flex;align-items:flex-start;gap:12px;border:1px solid var(--hair);border-radius:11px;padding:13px 15px;margin-top:9px;background:#FBFDFF;}
+.pro.spon{background:#FFFDF7;border-color:#EAD9AE;}
+.av{width:38px;height:38px;border-radius:9px;background:#EAF1FB;color:var(--navy2);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex:none;}
+.nm{font-weight:600;color:var(--navy);}
+.mt{font-size:12.5px;color:var(--muted);margin-top:1px;}
+.meta2{font-size:11.5px;color:var(--muted);margin-top:4px;display:flex;flex-wrap:wrap;gap:5px 9px;align-items:center;}
+.stars{color:#C77F1A;font-weight:700;}
+.collecting{color:#8a6516;font-weight:600;}
+.wsite{color:var(--navy2);text-decoration:none;} .wsite:hover{text-decoration:underline;}
+.badge{font-size:10px;font-weight:700;border-radius:5px;padding:1px 6px;white-space:nowrap;}
+.vbadge{color:#13694a;background:var(--success-s);border:1px solid #BDE6D4;}
+.onbadge{color:#0b4d8a;background:#E6F1FB;border:1px solid #BBD4EE;}
+.offbadge{color:#6b6a66;background:#F0F1F2;border:1px solid #DADCDF;}
+.sponsoredtag{color:#8a6516;background:#FBF3E6;border:1px solid #EAD9AE;}
+.act{margin-left:auto;display:flex;flex-direction:column;gap:6px;align-items:flex-end;}
+.pick{font-size:13px;font-weight:600;color:#fff;background:var(--accent);border:none;border-radius:7px;padding:8px 14px;cursor:pointer;text-decoration:none;display:inline-block;}
+.pick.ghost{background:#fff;color:var(--navy);border:1px solid #CDDDF3;}
+.src{font-size:10.5px;color:var(--faint);}
+.listcta{margin-top:16px;padding:14px 16px;background:#F4F8FD;border:1px solid #D9E6F4;border-radius:11px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13.5px;}
+.listcta b{color:var(--navy);}
+.disc{margin-top:16px;padding-top:14px;border-top:1px solid var(--hair);font-size:12px;color:var(--muted);} .disc a{color:var(--navy2);}
+.aggbar{display:flex;gap:10px;align-items:flex-start;background:#EFF4FA;border:1px solid #D8E4F2;border-radius:10px;padding:11px 14px;margin:2px 0 8px;font-size:12.5px;color:var(--navy2);}
+.aggbar i{font-size:18px;margin-top:1px;color:var(--accent-d);} .aggbar b{color:var(--navy);}
+.feeline{font-size:11.5px;color:var(--navy2);margin-top:4px;display:flex;flex-wrap:wrap;gap:5px 8px;align-items:center;}
+.feeline .amt{font-weight:700;color:var(--navy);}
+.feetag{font-size:9.5px;font-weight:700;border-radius:5px;padding:1px 5px;}
+.feetag.fix{color:#13694a;background:var(--success-s);border:1px solid #BDE6D4;}
+.feetag.est{color:#7A5B12;background:#FBF6E8;border:1px solid #E9D9AE;}
+.feeline .nofee{color:var(--faint);}
+</style>
+</head>
+<body>
+<div class="appbar">
+  <div class="brand"><img class="bmark" src="https://justicex.ai/assets/brand-mark.png" alt=""/><span class="wordmark">Justice<span class="x">X</span></span><span class="tagline">Objective comparison</span></div>
+  <a class="back" href="dashboard.html"><i class="ti ti-arrow-left"></i> Back to dashboard</a>
+</div>
+
+<div class="app">
+  <div class="crumb"><i class="ti ti-users-group"></i> <b>Find a professional</b></div>
+  <div class="panel">
+    <h1>Find a mediator or attorney</h1>
+    <p class="lede">Search professionals by role, focus area, and location. JusticeX shows the matches and what other users report — it never recommends or ranks anyone. Listings on JusticeX let you connect in one step; others are shown from public records so you can still reach them. Where a professional publishes their fees, you'll see them up front — their own figures, not JusticeX quotes.</p>
+
+    <div class="filters">
+      <div class="fg"><label>Role</label>
+        <select id="fRole" onchange="render()"><option value="">Any</option><option value="mediator">Mediator</option><option value="attorney">Attorney</option></select></div>
+      <div class="fg"><label>Focus area</label>
+        <select id="fMain" onchange="onMain()"><option value="">Any</option><option>Divorce &amp; custody</option><option>Guardianship (Article 81)</option><option>General civil</option></select></div>
+      <div class="fg"><label>Sub-focus</label>
+        <select id="fSub" onchange="render()"><option value="">Any</option></select></div>
+      <div class="fg"><label>County</label>
+        <select id="fCounty" onchange="render()"><option value="">Any</option><option>Nassau</option><option>Suffolk</option><option>New York City</option><option>Westchester</option></select></div>
+      <div class="fg"><label>Language</label>
+        <select id="fLang" onchange="render()"><option value="">Any</option><option>English</option><option>Spanish</option><option>Mandarin</option></select></div>
+      <div class="fg"><label>Show</label>
+        <div class="scope"><button id="sc-all" class="on" onclick="setScope('all')">All</button><button id="sc-on" onclick="setScope('on')">On JusticeX</button></div></div>
+      <div class="fg"><label>Sort</label>
+        <select id="fSort" onchange="render()"><option value="match">Best match</option><option value="az">Name: A–Z</option><option value="price-lo">Price: low to high</option><option value="price-hi">Price: high to low</option></select></div>
+    </div>
+    <div class="scopebar" id="scopeBar" style="display:none;font-size:12px;color:var(--navy2);background:#EFF4FA;border:1px solid #D8E4F2;border-radius:9px;padding:8px 12px;margin-bottom:8px;"></div>
+
+    <div class="neutralbar"><i class="ti ti-scale"></i><div>Two lanes, both disclosed: <b>Sponsored</b> entries are paid advertising — offered in labeled tiers (Spotlight, Featured, Premium), targeted to a focus area and location, grouped together, clearly labeled, never a JusticeX recommendation; everything else is ordered by <b>objective signals</b> — match, availability to connect, verified license, JusticeX activity, and user feedback (shown only past 5+ reviews). JusticeX states no merit opinion of its own. Off-platform entries come from public records. <b>Fees</b> are each professional's own published figures — estimates, not quotes; <b>sorting by price is your choice, never the default order</b>, and JusticeX never sets, negotiates, or marks up a fee.</div></div>
+
+    <div class="aggbar" id="aggbar" style="display:none"></div>
+    <div class="count" id="count"></div>
+    <div id="list"></div>
+
+    <div class="listcta"><div><b>Are you a mediator or attorney?</b> List your practice so users can find and connect with you.</div><a class="pick ghost" href="register.html"><i class="ti ti-id-badge-2"></i> List your practice</a></div>
+
+    <div class="disc"><b>How this works.</b> JusticeX does not recommend, rate, or rank professionals; it shows objective matches, <b>user feedback</b> submitted by verified users (not by JusticeX, and only past a 5-review minimum), and clearly-labeled <b>Sponsored</b> advertising. Off-platform professionals are drawn from public records (e.g., the NY attorney registry and court ADR rosters) and shown neutrally so you can research and contact them; the <b>On JusticeX</b> flag simply tells you who you can connect with in one step. <b>Fees</b> shown are published by each professional and are estimates, not binding quotes; JusticeX displays them and never sets, negotiates, or marks them up — confirm scope and price directly with the professional. Verify any professional's license and fit yourself. Not legal advice. <a href="disclaimer.html">Full legal disclaimer</a>. Synthetic demo.</div>
+  </div>
+</div>
+
+<script>
+var MIN_PUBLIC=5;
+// litigation taxonomy
+var SUBS={
+  'Divorce & custody':['Property &amp; finances','Custody &amp; parenting','Child support','Spousal maintenance'],
+  'Guardianship (Article 81)':['Personal needs','Property management'],
+  'General civil':['Contract','Other']
+};
+// professionals — on-platform (registered) + off-platform (public records)
+var PROS=[
+ {i:'MC',n:'Maren Cardillo',role:'mediator',cr:'NY-registered mediator · 12 yrs',main:'Divorce & custody',subs:['Property & finances','Custody & parenting','Spousal maintenance'],county:'Nassau',lang:['English'],web:'cardillomediation.com',r:4.9,c:38,v:true,on:true,s:false,cases:14,resp:5},
+ {i:'RM',n:'R. Mendez, Esq.',role:'attorney',cr:'Licensed NY · matrimonial',main:'Divorce & custody',subs:['Property & finances','Spousal maintenance','Child support'],county:'Nassau',lang:['English','Spanish'],web:'mendezfamilylaw.com',r:4.7,c:24,v:true,on:true,s:false,cases:9,resp:4},
+ {i:'JL',n:'J. Liang, Esq.',role:'attorney',cr:'Licensed NY · family law',main:'Divorce & custody',subs:['Custody & parenting','Child support'],county:'New York City',lang:['English','Mandarin'],web:'liang-law.com',r:4.6,c:15,v:true,on:true,s:false,cases:5,resp:4},
+ {i:'TN',n:'T. Nguyen, Esq.',role:'attorney',cr:'Licensed NY · family law',main:'Divorce & custody',subs:['Custody & parenting'],county:'Nassau',lang:['English'],web:'nguyenlegal.com',r:5.0,c:2,v:true,on:true,s:false,cases:0,resp:5},
+ {i:'AD',n:'A. Donnelly, Esq.',role:'attorney',cr:'Licensed NY · family law',main:'Divorce & custody',subs:['Property & finances','Custody & parenting'],county:'Nassau',lang:['English'],web:'donnellyfamily.com',r:4.8,c:9,v:true,on:true,s:true,tier:'Premium',cases:7,resp:4},
+ {i:'HP',n:'H. Park, Esq.',role:'attorney',cr:'Licensed NY · matrimonial',main:'Divorce & custody',subs:['Property & finances','Spousal maintenance'],county:'Nassau',lang:['English','Mandarin'],web:'parkmatrimonial.com',r:4.7,c:12,v:true,on:true,s:true,tier:'Featured',cases:8,resp:5},
+ {i:'GW',n:'G. Whitman, Esq.',role:'attorney',cr:'Licensed NY · guardianship',main:'Guardianship (Article 81)',subs:['Personal needs','Property management'],county:'Nassau',lang:['English'],web:'whitmanelderlaw.com',r:4.8,c:11,v:true,on:true,s:false,cases:6,resp:5},
+ // off-platform — from public records, no JusticeX feedback
+ {i:'PK',n:'P. Kapoor, Esq.',role:'attorney',cr:'NY attorney registry · family law',main:'Divorce & custody',subs:['Custody & parenting','Child support'],county:'Suffolk',lang:['English'],web:'kapoorlawny.com',on:false,src:'NY attorney registry',s:false},
+ {i:'SG',n:'S. Goldberg',role:'mediator',cr:'NY court ADR roster · divorce',main:'Divorce & custody',subs:['Property & finances','Spousal maintenance'],county:'Westchester',lang:['English'],web:'goldbergmediation.com',on:false,src:'NY court ADR roster',s:false}
+];
+// Fees PUBLISHED BY each professional (their own figures) — JusticeX only displays them.
+// rate = hourly; from/to = typical total for a matter like this; fixed = flat/firm vs estimate; byStep = quoted by phase.
+var FEES={
+ MC:{model:'Flat, by phase', from:1500, to:4500, fixed:true, byStep:true},
+ RM:{model:'Hourly', rate:425, from:6000, to:16000, fixed:false},
+ JL:{model:'Hourly', rate:375, from:5000, to:13000, fixed:false},
+ TN:{model:'Hourly', rate:400, from:6000, to:15000, fixed:false},
+ AD:{model:'Flat packages or hourly', rate:450, from:7000, to:18000, fixed:false},
+ HP:{model:'Hourly', rate:475, from:8000, to:20000, fixed:false},
+ GW:{model:'Hourly', rate:400, from:5000, to:12000, fixed:false}
+};
+function money(n){return '$'+Number(n).toLocaleString('en-US');}
+function feeMid(p){var f=FEES[p.i]; return f?((f.from+f.to)/2):null;}
+function onMain(){
+  var m=document.getElementById('fMain').value, sub=document.getElementById('fSub');
+  sub.innerHTML='<option value="">Any</option>'+((SUBS[m]||[]).map(function(x){return '<option>'+x+'</option>';}).join(''));
+  render();
+}
+var scope='all';
+function setScope(x){scope=x;document.getElementById('sc-all').classList.toggle('on',x==='all');document.getElementById('sc-on').classList.toggle('on',x==='on');render();}
+function deAmp(s){return s.replace(/&amp;/g,'&');}
+function render(){
+  var role=document.getElementById('fRole').value,
+      main=document.getElementById('fMain').value,
+      sub=deAmp(document.getElementById('fSub').value),
+      county=document.getElementById('fCounty').value,
+      lang=document.getElementById('fLang').value;
+  var out=PROS.filter(function(p){
+    if(role && p.role!==role) return false;
+    if(main && p.main!==main) return false;
+    if(sub && p.subs.indexOf(sub)<0) return false;
+    if(county && p.county!==county) return false;
+    if(lang && p.lang.indexOf(lang)<0) return false;
+    if(scope==='on' && !p.on) return false;
+    return true;
+  });
+  // disclosed ordering: paid (labeled Sponsored, by tier) grouped first; then earned/organic by objective signals
+  var TIER={Premium:3,Featured:2,Spotlight:1};
+  function score(p){ return (p.on?100:0)+(p.v?20:0)+((p.cases||0)*4)+((p.resp||0)*3)+((p.on&&p.c>=MIN_PUBLIC)?p.r*5:0); }
+  // price sort is a USER choice only — never the default order. Pros without a published fee sort last.
+  var sortMode=document.getElementById('fSort').value;
+  function bySort(a,b){
+    if(sortMode==='price-lo'){var ma=feeMid(a), mb=feeMid(b); if(ma==null&&mb==null) return score(b)-score(a); if(ma==null) return 1; if(mb==null) return -1; return ma-mb || score(b)-score(a);}
+    if(sortMode==='price-hi'){var xa=feeMid(a), xb=feeMid(b); if(xa==null&&xb==null) return score(b)-score(a); if(xa==null) return 1; if(xb==null) return -1; return xb-xa || score(b)-score(a);}
+    if(sortMode==='az') return a.n.localeCompare(b.n);
+    return score(b)-score(a);
+  }
+  var sponsored=out.filter(function(p){return p.s;}).sort(function(a,b){return (TIER[b.tier]||0)-(TIER[a.tier]||0) || bySort(a,b);});
+  var organic=out.filter(function(p){return !p.s;}).sort(bySort);
+  var total=sponsored.length+organic.length;
+  // aggregate "typical range for a matter like this" — from on-platform pros who publish fees; a range, not a quote.
+  var feed=out.filter(function(p){return p.on && FEES[p.i];});
+  var agg=document.getElementById('aggbar');
+  if(feed.length>=2){
+    var lo=Math.min.apply(null,feed.map(function(p){return FEES[p.i].from;}));
+    var hi=Math.max.apply(null,feed.map(function(p){return FEES[p.i].to;}));
+    agg.style.display='flex';
+    agg.innerHTML='<i class="ti ti-chart-histogram"></i><div><b>Typical published cost for a matter like this:</b> '+money(lo)+'–'+money(hi)+' <span style="color:var(--muted)">— drawn from '+feed.length+' professionals who list fees. A range of their own figures, not a quote; your matter may differ.</span></div>';
+  } else { agg.style.display='none'; }
+  document.getElementById('count').textContent=total+' professional'+(total===1?'':'s')+' · paid placements labeled by tier, then ordered by match, availability, verified status, JusticeX activity, and user feedback';
+  var el=document.getElementById('list'); el.innerHTML='';
+  if(!total){el.innerHTML='<div class="pro"><div class="mt">No matches with these filters. Try widening the focus area or county.</div></div>';return;}
+  function lane(txt){var h=document.createElement('div'); h.style.cssText='font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:var(--faint);margin:16px 2px 2px'; h.textContent=txt; el.appendChild(h);}
+  function renderOne(p){
+    var labels='';
+    labels+=p.on?'<span class="badge onbadge">On JusticeX</span>':'<span class="badge offbadge">Not yet on JusticeX</span>';
+    if(p.v) labels+=' <span class="badge vbadge"><i class="ti ti-rosette-discount-check" style="font-size:10px"></i> License verified</span>';
+    if(p.s) labels+=' <span class="badge sponsoredtag" title="Advertising — a paid placement, not a JusticeX recommendation">Sponsored · '+(p.tier||'Spotlight')+'</span>';
+    var fb='';
+    if(p.on){
+      fb=(p.c>=MIN_PUBLIC)
+        ? '<span class="stars">&#9733; '+p.r.toFixed(1)+'</span> · '+p.c+' verified user reviews'
+        : '<span class="collecting"><i class="ti ti-progress" style="font-size:12px"></i> Collecting feedback ('+p.c+') — shown at '+MIN_PUBLIC+'+</span>';
+      if(p.cases>0) fb+=' · '+p.cases+' JusticeX matters';
+    } else {
+      fb='<span class="src">From '+p.src+'</span>';
+    }
+    var feeHtml='';
+    if(p.on){
+      var f=FEES[p.i];
+      if(f){
+        var amt = f.rate ? (money(f.rate)+'/hr · est. '+money(f.from)+'–'+money(f.to)+' total') : (money(f.from)+'–'+money(f.to));
+        var tag = f.fixed ? '<span class="feetag fix">Fixed</span>' : '<span class="feetag est">Estimate</span>';
+        feeHtml='<div class="feeline"><i class="ti ti-cash" style="font-size:13px"></i> <span class="amt">'+f.model+'</span> · '+amt+' '+tag+(f.byStep?' <span style="color:var(--muted)">· quoted by phase</span>':'')+'</div>';
+      } else {
+        feeHtml='<div class="feeline"><span class="nofee"><i class="ti ti-cash-off" style="font-size:12px"></i> Fee not listed</span></div>';
+      }
+    }
+    var web=p.web?'<a class="wsite" href="https://'+p.web+'" target="_blank" rel="noopener"><i class="ti ti-world" style="font-size:12px"></i> '+p.web+'</a>':'';
+    var act=p.on
+      ? '<a class="pick" href="connect.html?type=request">Connect</a>'
+      : '<a class="pick ghost" href="connect.html?type=request">Invite to JusticeX</a>';
+    var role=p.role.charAt(0).toUpperCase()+p.role.slice(1);
+    var d=document.createElement('div'); d.className='pro'+(p.s?' spon':'');
+    d.innerHTML='<span class="av">'+p.i+'</span>'
+      +'<div style="flex:1"><div class="nm">'+p.n+'</div>'
+      +'<div class="mt">'+role+' · '+p.cr+' · '+p.county+'</div>'
+      +'<div class="meta2">'+labels+'</div>'
+      +'<div class="meta2">'+fb+(web?' · '+web:'')+'</div>'
+      +feeHtml+'</div>'
+      +'<div class="act">'+act+'</div>';
+    el.appendChild(d);
+  }
+  if(sponsored.length){ lane('Sponsored · paid advertising (labeled, not a JusticeX recommendation)'); sponsored.forEach(renderOne); }
+  if(organic.length){ lane('Professionals · ordered by objective signals'); organic.forEach(renderOne); }
+}
+function showScope(){ try{ var s=JSON.parse(localStorage.getItem('jx_scope')||'null'); var b=document.getElementById('scopeBar'); if(s&&s.states&&s.states.length){ b.style.display='block'; b.innerHTML='<i class="ti ti-map-pin" style="font-size:12px"></i> Your default jurisdictions: <b>'+s.states.join(', ')+'</b> — set in your account; the county filter applies within them.'; } }catch(e){} }
+showScope(); render();
+</script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JusticeX — Activity &amp; Audit log</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
+<style>
+:root{--navy:#042C53;--navy2:#154572;--navy3:#2A5582;--paper:#E6F1FB;--surface:#fff;--ink:#1A1A1A;--muted:#5F5E5A;--faint:#9AA3B0;--hair:#D1DEEE;--accent:#D85A30;--accent-d:#B04722;--ok:#1D9E75;--radius:13px;}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:'Source Sans 3',system-ui,sans-serif;font-size:14px;}
+.appbar{background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 26px;position:relative;}
+.brand{display:flex;align-items:center;}.bmark{height:23px;width:23px;border-radius:5px;margin-right:9px;}
+.wordmark{font-family:'Source Serif 4',serif;font-weight:600;font-size:22px;}.wordmark .x{color:var(--accent);}
+.matterchip{font-size:12px;background:#0C2A47;border:1px solid #1E3F61;color:#CFE0F1;padding:5px 11px;border-radius:999px;}
+.wrap{max-width:1040px;margin:22px auto;padding:0 20px;}
+.top{display:flex;align-items:center;gap:13px;flex-wrap:wrap;margin-bottom:6px;}
+h1{font-family:'Source Serif 4',serif;font-weight:600;font-size:23px;color:var(--navy);margin:0;}
+.verify{display:inline-flex;align-items:center;gap:6px;background:#E7F4EF;color:#155e45;border:1px solid #Bfe3d2;border:1px solid #BCE3D2;border-radius:999px;padding:4px 11px;font-size:11.5px;font-weight:700;}
+.exp{margin-left:auto;display:inline-flex;gap:7px;}
+.btn{border:1px solid var(--hair);background:#fff;color:var(--navy2);font-family:inherit;font-weight:600;font-size:12.5px;padding:7px 12px;border-radius:9px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;text-decoration:none;}
+.sub{color:var(--muted);font-size:12.5px;margin:0 0 14px;}
+.sub code{background:#EAF1FB;border-radius:4px;padding:1px 5px;font-size:11.5px;color:var(--navy2);}
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;}
+.fch{border:1px solid var(--hair);background:#fff;color:var(--navy2);font-family:inherit;font-weight:600;font-size:11.5px;padding:5px 11px;border-radius:999px;cursor:pointer;}
+.fch.on{background:var(--navy);border-color:var(--navy);color:#fff;}
+.log{background:#fff;border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden;}
+.ev{display:grid;grid-template-columns:128px 150px 1fr 132px;gap:12px;padding:11px 15px;border-bottom:1px solid #EEF3F8;align-items:start;}
+.ev:last-child{border-bottom:none;} .ev:hover{background:#FBFDFF;}
+.ev .when{font-size:11.5px;color:var(--faint);white-space:nowrap;} .ev .when b{display:block;color:var(--navy2);font-weight:700;font-size:12px;}
+.ev .who{font-size:12px;color:var(--navy);font-weight:600;} .ev .who small{display:block;color:var(--muted);font-weight:400;font-size:10.5px;}
+.ev .what{font-size:12.5px;color:var(--ink);} .ev .what .k{display:inline-block;font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.3px;border-radius:5px;padding:1px 7px;margin-right:7px;vertical-align:middle;}
+.k.stage{background:#EAF1FB;color:#154572;} .k.gate{background:#FBF3E0;color:#8a6516;} .k.control{background:#E7F4EF;color:#155e45;} .k.assign{background:#F2EEFA;color:#6A4B9C;} .k.delegate{background:#FBF6E8;color:#7A5B12;} .k.notify{background:#EAF2FB;color:#2A5582;} .k.redact{background:#FDEEE9;color:#B04722;} .k.connector{background:#EEF0FB;color:#3a449a;}
+.ev .what small{display:block;color:var(--muted);font-size:11px;margin-top:2px;}
+.ev .hash{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10.5px;color:var(--faint);white-space:nowrap;}
+.ev .hash b{color:var(--navy3);} .ev .hash i{color:#CBD3DD;}
+.foot{display:flex;gap:9px;align-items:flex-start;font-size:11.5px;color:var(--muted);margin-top:13px;background:#fff;border:1px solid var(--hair);border-radius:11px;padding:11px 14px;}
+.foot i{color:var(--navy3);font-size:17px;}.foot b{color:var(--navy);}
+.disc{background:var(--navy);color:#9FB6D2;margin-top:24px;padding:16px 26px;font-size:11.5px;}.disc a{color:#C9D8EA;}
+</style>
+</head>
+<body>
+<div class="appbar"><div class="brand"><img class="bmark" src="https://justicex.ai/assets/brand-mark.png" alt=""/><span class="wordmark">Justice<span class="x">X</span></span></div><span class="matterchip"><b>Whitfield</b> · Divorce &amp; custody · Nassau County, NY</span></div>
+
+<div class="wrap">
+  <div class="top">
+    <h1>Activity &amp; audit log</h1>
+    <span class="verify"><i class="ti ti-circle-check"></i> Chain verified · 19 events intact</span>
+    <span class="exp"><a class="btn" onclick="alert('Demo — export is itself an audited event')"><i class="ti ti-download"></i> Export</a></span>
+  </div>
+  <p class="sub">Tamper-evident <b>SHA-256 hash chain</b> — every event is hashed with the previous one (<code>prev → hash</code>), so nothing can be reordered or edited without breaking the chain. Production adds Ed25519 signatures + an append-only store. You see the events of this matter your access permits.</p>
+
+  <div class="filters">
+    <button class="fch on" data-f="all">All</button>
+    <button class="fch" data-f="stage">Stages</button>
+    <button class="fch" data-f="gate">Gates</button>
+    <button class="fch" data-f="control">Controls</button>
+    <button class="fch" data-f="assign">Ownership</button>
+    <button class="fch" data-f="delegate">Delegation</button>
+    <button class="fch" data-f="notify">Notifications</button>
+    <button class="fch" data-f="redact">Redaction</button>
+  </div>
+
+  <div class="log" id="log"></div>
+
+  <div class="foot"><i class="ti ti-shield-lock"></i><div><b>Who can read this.</b> A party sees their matter's permitted events (not the opposing side's private actions); a firm admin sees their firm's matters at status scope (ethical walls still hide contents). Export is owner/admin-gated and itself audited.</div></div>
+</div>
+
+<div class="disc"><b style="color:#fff">JusticeX is software — not a law firm or mediator.</b> Not legal advice. <a href="disclaimer.html">Full disclaimer</a>. Synthetic demo — no real person.</div>
+
+<script>
+function h(){var s='0123456789abcdef',o='';for(var i=0;i<12;i++)o+=s[Math.floor(Math.random()*16)];return o;}
+// newest first
+var EV=[
+ {t:'Jun 24 · 3:12p',d:'today',who:['JusticeX assistant','on behalf of Maren'],k:'notify',what:'Notified Samuel — “your move” on Resolution',sub:'email · consent on file · delivered'},
+ {t:'Jun 24 · 3:12p',d:'today',who:['Maren Cardillo','Mediator · owner'],k:'stage',what:'Resolution — opened; convergence view started',sub:'step 6 of 7'},
+ {t:'Jun 24 · 3:10p',d:'today',who:['Jordan Okonkwo','Attorney · A'],k:'delegate',what:'Delegated own-client review to R. Tran until Jun 28',sub:'time-boxed · acts for Jordan · tagged actor + owner-of-record'},
+ {t:'Jun 24 · 11:04a',d:'today',who:['Maren Cardillo','Mediator'],k:'gate',what:'Checkpoint 2 signed — Gap Analysis approved',sub:'gate G2 → signed'},
+ {t:'Jun 24 · 11:02a',d:'today',who:['System','consistency check'],k:'control',what:'Consistency flag — Party B entered home value ($640k) differs from own appraisal ($680k)',sub:'non-blocking · evidence-quality · flagged privately to Party B'},
+ {t:'Jun 24 · 11:01a',d:'today',who:['System','neutrality auditor'],k:'control',what:'Symmetry control PASS — identical method both sides',sub:'blocking control · passed'},
+ {t:'Jun 24 · 10:58a',d:'today',who:['System','engine'],k:'stage',what:'Gap Analysis — 4 contested issues laid out (A vs B)',sub:'step 5 of 7'},
+ {t:'Jun 23 · 4:40p',d:'yest',who:['Dana Whitfield','Individual · A'],k:'assign',what:'Reassigned Summarize (A side) to herself',sub:'override · was inherited from Mediator · parties notified'},
+ {t:'Jun 23 · 4:22p',d:'yest',who:['System','engine'],k:'stage',what:'Summarize — symmetric summaries, one identical template',sub:'step 4 of 7'},
+ {t:'Jun 23 · 2:15p',d:'yest',who:['Jordan Okonkwo','Attorney · A'],k:'gate',what:'Checkpoint 1 signed — redactions approved (A side)',sub:'gate G1 → signed'},
+ {t:'Jun 23 · 2:09p',d:'yest',who:['System','redaction service'],k:'redact',what:'Redact — CPI masked for the model/connectors; mutual transparency kept between spouses',sub:'residual scan: clean · matrimonial regime'},
+ {t:'Jun 23 · 1:30p',d:'yest',who:['Samuel Whitfield','Individual · B'],k:'stage',what:'Intake (B side) — submitted assets, income, positions',sub:'step 2 · owns his own side'},
+ {t:'Jun 23 · 11:50a',d:'yest',who:['Dana Whitfield','Individual · A'],k:'stage',what:'Intake (A side) — submitted assets, income, positions',sub:'step 2 · owns her own side'},
+ {t:'Jun 22 · 5:05p',d:'2d',who:['Maren Cardillo','Mediator'],k:'assign',what:'Set owners — Plan–Summarize per party (A=Dana, B=Samuel); joint steps = Maren',sub:'matter-level assignment · audited'},
+ {t:'Jun 22 · 4:58p',d:'2d',who:['Maren Cardillo','Mediator'],k:'stage',what:'Plan — scoped Divorce & custody in New York',sub:'step 1 of 7 · matter created'}
+];
+var filter='all';
+function render(){
+  var prev='genesis';
+  var rows=EV.filter(function(e){return filter==='all'||e.k===filter;}).map(function(e){
+    var hh=h();
+    var r='<div class="ev"><div class="when"><b>'+e.t.split(' · ')[0]+'</b>'+e.t.split(' · ')[1]+'</div>'
+     +'<div class="who">'+e.who[0]+'<small>'+e.who[1]+'</small></div>'
+     +'<div class="what"><span class="k '+e.k+'">'+e.k+'</span>'+e.what+'<small>'+e.sub+'</small></div>'
+     +'<div class="hash"><i>prev</i> '+h().slice(0,6)+'…<br><b>'+hh.slice(0,6)+'…'+hh.slice(6,10)+'</b></div></div>';
+    return r;
+  }).join('');
+  document.getElementById('log').innerHTML=rows || '<div class="ev"><div></div><div></div><div class="what" style="color:var(--muted)">No events of this kind.</div><div></div></div>';
+}
+document.querySelectorAll('.fch').forEach(function(b){b.onclick=function(){document.querySelectorAll('.fch').forEach(function(x){x.classList.remove('on');});b.classList.add('on');filter=b.getAttribute('data-f');render();};});
+render();
+</script>
+<!-- jx-progress-rail -->
+<style id="jxr-css">
+.jxr{background:#fff;border-bottom:1px solid #E3EAF3;font-family:'Source Sans 3',system-ui,sans-serif;position:sticky;top:0;z-index:25;}
+.jxr-in{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:10px;padding:8px 22px;overflow-x:auto;}
+.jxr-bc{color:#154572;text-decoration:none;font-size:12.5px;font-weight:600;display:inline-flex;align-items:center;gap:5px;white-space:nowrap;}.jxr-bc:hover{color:#042C53;}
+.jxr-bcs{color:#B7C2D2;}.jxr-mt{font-size:12.5px;font-weight:700;color:#042C53;white-space:nowrap;}
+.jxr-steps{display:flex;align-items:center;margin-left:6px;}
+.jxr-s{display:inline-flex;align-items:center;gap:6px;text-decoration:none;padding:4px 9px;border-radius:999px;white-space:nowrap;}
+.jxr-s .jxr-n{width:18px;height:18px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:800;background:#F1F4F8;color:#9AA3B0;}
+.jxr-s .jxr-l{font-size:11.5px;font-weight:600;color:#9AA3B0;}.jxr-s:hover{background:#F1F6FC;}.jxr-sep{width:13px;height:2px;background:#E6ECF4;flex:none;}
+@media(max-width:880px){ .jxr-s .jxr-l{display:none;} }
+</style>
+<script id="jxr-js">
+(function(){if(window.__jxrail)return;window.__jxrail=1;
+ var S=[['plan.html','Plan'],['intake.html','Intake'],['redact.html','Redact'],['summarize.html','Summarize'],['gap-analysis.html','Gap Analysis'],['resolution.html','Resolution'],['memorandum.html','Memorandum']];
+ function init(){var c='';S.forEach(function(s,i){var n=i+1;c+='<a class="jxr-s up" href="'+s[0]+'"><span class="jxr-n">'+n+'</span><span class="jxr-l">'+s[1]+'</span></a>'+(n<7?'<span class="jxr-sep"></span>':'');});
+  var b=document.createElement('div');b.className='jxr';
+  b.innerHTML='<div class="jxr-in"><a class="jxr-bc" href="dashboard.html"><i class="ti ti-layout-grid"></i> Dashboard</a><span class="jxr-bcs">›</span><span class="jxr-mt">Whitfield</span><span class="jxr-bcs">›</span><span class="jxr-mt" style="color:#B04722">Audit log</span><div class="jxr-steps">'+c+'</div></div>';
+  var a=document.querySelector('.appbar');if(a&&a.parentNode)a.parentNode.insertBefore(b,a.nextSibling);}
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();})();
+</script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JusticeX — Rate a professional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
+<style>
+:root{--navy:#042C53;--navy-deep:#021A33;--navy2:#154572;--paper:#E6F1FB;--surface:#FFFFFF;--ink:#1A1A1A;--muted:#5F5E5A;--faint:#9CA0A7;--hair:#D1DEEE;--accent:#D85A30;--accent-d:#B04722;--success:#1D9E75;--success-s:#E7F4EF;--radius:14px;}
+*{box-sizing:border-box} html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',Calibri,system-ui,sans-serif;font-size:15px;line-height:1.6;}
+.appbar{background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 26px;}
+.brand{display:flex;align-items:center;} .bmark{height:23px;width:23px;border-radius:5px;margin-right:9px;}
+.wordmark{font-family:'Source Serif 4',serif;font-weight:600;font-size:22px;} .wordmark .x{color:var(--accent);}
+.tagline{font-size:11.5px;letter-spacing:2.4px;text-transform:uppercase;color:#9FB6D2;margin-left:12px;}
+.back{font-size:12.5px;color:#C9D8EA;text-decoration:none;}
+.app{max-width:640px;margin:0 auto;padding:0 22px 60px;}
+.panel{background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);padding:24px 26px;margin-top:18px;box-shadow:0 1px 2px rgba(20,30,46,.04);}
+h1{font-family:'Source Serif 4',serif;font-weight:500;font-size:24px;margin:0 0 4px;}
+.lede{color:var(--muted);margin:0 0 14px;}
+.gate{display:flex;gap:9px;align-items:flex-start;background:var(--success-s);border:1px solid #BDE6D4;border-radius:10px;padding:11px 13px;font-size:12.5px;color:#13694a;margin-bottom:16px;}
+.gate i{font-size:17px;margin-top:1px;}
+.who{display:flex;align-items:center;gap:12px;border:1px solid var(--hair);border-radius:10px;padding:12px 14px;background:#FBFDFF;margin-bottom:8px;}
+.who .av{width:36px;height:36px;border-radius:8px;background:#EAF1FB;color:var(--navy2);display:flex;align-items:center;justify-content:center;font-weight:800;}
+.who .nm{font-weight:600;color:var(--navy);} .who .mt{font-size:12px;color:var(--muted);}
+.dim{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 2px;border-bottom:1px solid #EEF3F9;}
+.dim .lab{font-size:14px;font-weight:600;color:var(--navy);} .dim .sub{font-size:12px;color:var(--faint);}
+.stars{display:flex;gap:3px;} .stars i{font-size:22px;color:#D7DEE7;cursor:pointer;} .stars i.on{color:#C77F1A;}
+.field{margin:14px 0 4px;} .field label{display:block;font-size:12.5px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.field textarea{width:100%;border:1px solid #CDDDF3;border-radius:8px;padding:10px 12px;font-size:14px;font-family:inherit;background:#FBFDFF;min-height:70px;resize:vertical;}
+.btn{font-size:14px;font-weight:600;color:#fff;background:var(--navy);border:none;border-radius:9px;padding:11px 18px;cursor:pointer;font-family:inherit;display:inline-flex;gap:8px;align-items:center;margin-top:14px;}
+.btn:hover{background:var(--navy2);} .btn:disabled{opacity:.5;cursor:default;}
+.note{font-size:12px;color:var(--muted);margin-top:12px;}
+.disc{margin-top:16px;padding-top:13px;border-top:1px solid var(--hair);font-size:12px;color:var(--muted);} .disc a{color:var(--navy2);}
+.done{display:none;background:#F2FAF6;border:1px solid #BDE6D4;border-radius:12px;padding:18px 20px;margin-top:8px;}
+.done h2{margin:0 0 6px;font-family:'Source Serif 4',serif;color:var(--navy);font-size:18px;}
+</style>
+</head>
+<body>
+<div class="appbar">
+  <div class="brand"><img class="bmark" src="https://justicex.ai/assets/brand-mark.png" alt=""/><span class="wordmark">Justice<span class="x">X</span></span><span class="tagline">Objective comparison</span></div>
+  <a class="back" href="dashboard.html"><i class="ti ti-arrow-left"></i> Back to dashboard</a>
+</div>
+
+<div class="app">
+  <div class="panel" id="form">
+    <h1>Share feedback on your professional</h1>
+    <p class="lede">Your honest feedback helps others choose. Rate the experience of working together — not the outcome of your case.</p>
+    <div class="gate"><i class="ti ti-rosette-discount-check"></i><div><b>Verified feedback.</b> You can rate a professional you actually worked with on a matter on JusticeX. Your rating is tied to that engagement, so it carries a "Verified" badge.</div></div>
+
+    <div class="who"><span class="av">MC</span><div><div class="nm">Maren Cardillo</div><div class="mt">Mediator · Nassau County · Whitfield matter</div></div></div>
+
+    <div id="dims">
+      <div class="dim"><div><div class="lab">Responsiveness</div><div class="sub">Replied and kept things moving</div></div><div class="stars" data-k="resp"></div></div>
+      <div class="dim"><div><div class="lab">Communication &amp; clarity</div><div class="sub">Explained things clearly</div></div><div class="stars" data-k="comm"></div></div>
+      <div class="dim"><div><div class="lab">Professionalism</div><div class="sub">Respectful, organized, neutral</div></div><div class="stars" data-k="prof"></div></div>
+      <div class="dim" style="border-bottom:none"><div><div class="lab">Would work with again</div><div class="sub">Overall experience</div></div><div class="stars" data-k="again"></div></div>
+    </div>
+
+    <div class="field"><label>Anything you'd add? (optional)</label><textarea placeholder="A sentence about your experience. Please keep it about the service — not the legal outcome or other people."></textarea></div>
+
+    <button class="btn" id="submit" onclick="submit()" disabled><i class="ti ti-send"></i> Submit feedback</button>
+    <div class="note">Your feedback appears as a verified average only once a professional has at least 5 reviews, so no single review distorts the picture. The professional may post one response. JusticeX shows the aggregate — it does not rate anyone or add an opinion of its own.</div>
+
+    <div class="disc"><b>About feedback.</b> Feedback is submitted by verified users, not by JusticeX, and concerns the service experience — not legal merit or outcome. JusticeX does not rate or rank professionals itself; it shows verified user feedback, and only once a professional has enough reviews to be fair (5+). Off-topic, conflicted, or defamatory feedback is removed under the feedback policy, with an appeal. Not legal advice. <a href="disclaimer.html">Full legal disclaimer</a>. Synthetic demo.</div>
+  </div>
+
+  <div class="panel done" id="done">
+    <h2><i class="ti ti-circle-check" style="color:var(--success)"></i> Thanks — your feedback is recorded</h2>
+    <p style="margin:0;color:var(--muted)">It's logged as <b>Verified</b> feedback tied to your matter. It appears in the professional's aggregate once they have at least 5 reviews, and they can respond. You can edit it from your dashboard.</p>
+    <a class="btn" href="dashboard.html" style="margin-top:14px"><i class="ti ti-arrow-left"></i> Back to dashboard</a>
+  </div>
+</div>
+
+<script>
+var scores={};
+document.querySelectorAll('.stars').forEach(function(row){
+  var k=row.dataset.k;
+  for(var n=1;n<=5;n++){
+    var st=document.createElement('i'); st.className='ti ti-star-filled'; st.dataset.n=n;
+    st.onclick=(function(row,k,n){return function(){
+      scores[k]=n;
+      [].forEach.call(row.children,function(s){s.classList.toggle('on',+s.dataset.n<=n);});
+      document.getElementById('submit').disabled = Object.keys(scores).length<4;
+    };})(row,k,n);
+    row.appendChild(st);
+  }
+});
+function submit(){ document.getElementById('form').style.display='none'; document.getElementById('done').style.display='block'; }
+</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+  GATED DRAFT — DO NOT PUBLISH / DO NOT LINK FROM NAV.
+  Marketing landing for the Contracts feature (C.15). Built now so the copy + structure exist and won't need a rebuild,
+  but held dark until counsel clears Q36–Q38 and a go decision is made. To go live: adapt to the live site's component
+  system (tokens.css), link from nav, and confirm with counsel. Feature itself is behind flag `contracts_routing_clause` (OFF in prod).
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JusticeX — Contracts (draft, not published)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
+<style>
+:root{--navy:#042C53;--navy2:#154572;--paper:#E6F1FB;--surface:#fff;--ink:#1A1A1A;--muted:#5F5E5A;--hair:#D1DEEE;--accent:#D85A30;--accent-d:#B04722;--ok-s:#E7F4EF;}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--surface);color:var(--ink);font-family:'Source Sans 3',system-ui,sans-serif;font-size:16px;line-height:1.6;}
+.gate{background:#FBF6E8;border-bottom:1px solid #E9D9AE;color:#7A5B12;font-size:13px;padding:9px 22px;text-align:center;}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px;}
+.hero{background:var(--navy);color:#fff;padding:64px 0;}
+.hero .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center;}
+.hero h1{font-family:'Source Serif 4',serif;font-weight:500;font-size:40px;line-height:1.15;margin:0 0 14px;}
+.hero p{font-size:18px;color:#CFE0F1;margin:0 0 22px;max-width:48ch;}
+.cta{display:inline-flex;align-items:center;gap:8px;font-size:16px;font-weight:700;color:#fff;background:var(--accent);border-radius:10px;padding:13px 22px;text-decoration:none;}
+.cta.ghost{background:transparent;border:1.5px solid #2E4E70;color:#fff;margin-left:10px;}
+.herocard{background:#0C2A47;border:1px solid #1E3F61;border-radius:14px;padding:18px;}
+.herocard .row{display:flex;align-items:center;gap:9px;font-size:14px;color:#CFE0F1;padding:8px 0;border-bottom:1px solid #163A5B;}
+.herocard .row:last-child{border-bottom:none;}.herocard .row i{color:var(--accent);font-size:18px;}
+section{padding:54px 0;}
+h2{font-family:'Source Serif 4',serif;font-weight:600;font-size:28px;color:var(--navy);margin:0 0 8px;}
+.sub{color:var(--muted);font-size:17px;margin:0 0 26px;max-width:64ch;}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.card{border:1px solid var(--hair);border-radius:14px;padding:20px 22px;background:#FBFDFF;}
+.card i{font-size:24px;color:var(--accent-d);}
+.card h3{font-family:'Source Serif 4',serif;font-weight:600;font-size:18px;color:var(--navy);margin:10px 0 4px;}
+.card p{font-size:14.5px;color:var(--muted);margin:0;}
+.org{background:var(--paper);}
+.org .cards{grid-template-columns:repeat(3,1fr);}
+.trust{display:flex;gap:10px;align-items:flex-start;background:var(--ok-s);border:1px solid #BDE6D4;border-radius:12px;padding:16px 18px;color:#13694a;font-size:14.5px;margin-top:8px;}
+.trust i{font-size:22px;margin-top:1px;}
+.foot{background:var(--navy);color:#9FB6D2;padding:26px 0;font-size:13px;}
+@media(max-width:780px){.hero .wrap,.cards,.org .cards{grid-template-columns:1fr;}.hero h1{font-size:32px;}}
+</style>
+</head>
+<body>
+<div class="gate"><b>Draft — not published.</b> Gated until counsel clears (Q36–Q38). Not linked from the site.</div>
+
+<div class="hero"><div class="wrap">
+  <div>
+    <h1>Contracts that settle themselves — without a courtroom.</h1>
+    <p>Create the everyday contracts you need, free to start. Build in a step that resolves any future dispute objectively on JusticeX — so a disagreement becomes a structured comparison, not a lawsuit.</p>
+    <a class="cta" href="demo/contracts.html"><i class="ti ti-plus"></i> Start a contract</a>
+    <a class="cta ghost" href="demo/contracts-admin.html">For organizations</a>
+  </div>
+  <div class="herocard">
+    <div class="row"><i class="ti ti-file-text"></i> Common contracts, ready to fill</div>
+    <div class="row"><i class="ti ti-scale"></i> Built-in JusticeX resolution step</div>
+    <div class="row"><i class="ti ti-folder"></i> Stored in your profile</div>
+    <div class="row"><i class="ti ti-signature"></i> Sign and share</div>
+  </div>
+</div></div>
+
+<section><div class="wrap">
+  <h2>How it works</h2>
+  <p class="sub">The contract is the front door. If a dispute ever arises, the built-in step turns it into an objective comparison on JusticeX.</p>
+  <div class="cards">
+    <div class="card"><i class="ti ti-clipboard-text"></i><h3>Pick &amp; tailor</h3><p>Choose a common contract supplied by our forms partner, fill in the blanks, and adjust the terms.</p></div>
+    <div class="card"><i class="ti ti-scale"></i><h3>Add the JusticeX step</h3><p>Include a clause to resolve future disputes on JusticeX first — keep it, edit it, or leave it out. It's your choice.</p></div>
+    <div class="card"><i class="ti ti-arrow-guide"></i><h3>If a dispute arises</h3><p>The clause opens a JusticeX matter: both sides' positions, compared objectively, with a path to resolve.</p></div>
+  </div>
+</div></section>
+
+<section class="org"><div class="wrap">
+  <h2>For employers, HOAs &amp; schools</h2>
+  <p class="sub">Set one policy and every agreement you issue carries a structured, lower-conflict way to resolve disputes before they escalate.</p>
+  <div class="cards">
+    <div class="card"><i class="ti ti-briefcase"></i><h3>Employers</h3><p>Require the JusticeX step in employment agreements — a faster, cheaper first stop than litigation.</p></div>
+    <div class="card"><i class="ti ti-home"></i><h3>HOAs</h3><p>Member agreements that resolve neighbor and board disputes objectively, on the record.</p></div>
+    <div class="card"><i class="ti ti-school"></i><h3>Schools</h3><p>Enrollment terms with a clear, fair process for the disputes that come up.</p></div>
+  </div>
+  <div class="trust"><i class="ti ti-shield-check"></i><div><b>JusticeX is software — not a mediator, arbitrator, or forum.</b> The clause routes parties to use the JusticeX platform; the process and any duties rest with the parties, a mediator, or an attorney. Required versions preserve the right to a court and exclude any claim that by law can't be subject to a mandatory pre-dispute step.</div></div>
+</div></section>
+
+<div class="foot"><div class="wrap"><b style="color:#fff">JusticeX is software, not a law firm.</b> Not legal advice. Forms supplied by a third-party partner. Draft page — not for publication.</div></div>
+</body>
+</html>
