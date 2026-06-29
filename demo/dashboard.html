@@ -141,6 +141,7 @@ body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',Calibr
     <button data-r="individual" onclick="role('individual')"><i class="ti ti-user"></i> Individual</button>
     <button data-r="mediator" class="on" onclick="role('mediator')"><i class="ti ti-scale"></i> Mediator</button>
     <button data-r="attorney" onclick="role('attorney')"><i class="ti ti-briefcase"></i> Attorney</button>
+    <button data-r="financial" onclick="role('financial')"><i class="ti ti-calculator"></i> Financial/Tax</button>
   </div>
   <button id="firmBtn" onclick="firmView(!window.__firmOn)" style="margin-left:14px;border:1px solid #1E3F61;background:#0C2A47;color:#9FB6D2;font-family:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:8px;cursor:pointer;display:inline-flex;align-items:center;gap:6px"><i class="ti ti-building-bank"></i> Firm Dashboard</button>
   <span class="lab" style="margin-left:auto">Your role is set at sign-up — shown here so you can preview each tailored view.</span>
@@ -263,6 +264,31 @@ body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',Calibr
       <div class="mrow"><div class="r" style="grid-template-columns:1.9fr 1.5fr 1fr 1.1fr 84px"><span class="matter">Park <small>NYS Grievance Committee</small></span><span class="parties">Attorney grievance<small>open to anyone</small></span><span class="numcell">80%</span><span><span class="chip ok">No attorney needed</span></span><a class="open" href="grievance.html">Open <i class="ti ti-arrow-right"></i></a></div><div class="sub"><i class="ti ti-arrow-right-circle"></i> <b>Step 5 of 7 · 80%.</b> Next: close the account-records gap, then submit (optional attorney review).</div></div>
       <div class="mrow"><div class="r" style="grid-template-columns:1.9fr 1.5fr 1fr 1.1fr 84px"><span class="matter" style="opacity:.7">Guardianship (Art. 81)</span><span class="parties">Attorney-led<small>attorney sponsorship required</small></span><span class="numcell">—</span><span><span class="chip att">Ask an attorney</span></span><span class="open" style="color:var(--faint);cursor:default">Locked</span></div><div class="sub"><i class="ti ti-lock" style="color:var(--faint)"></i> Attorney sponsorship required — ask your attorney to start this matter.</div></div>
     </div>
+  </div>
+
+  <!-- ===================== FINANCIAL / TAX PROFESSIONAL ===================== -->
+  <div id="vFinancial" class="hide">
+    <div class="head"><div><h1>Your engagements &amp; referrals</h1><p>Matters where you're the financial/tax professional, plus clients you referred to JusticeX. You see only what your role and each client's consent allow.</p></div>
+      <button class="btn primary" onclick="newMatter()"><i class="ti ti-plus"></i> New matter</button></div>
+    <div class="stats">
+      <div class="stat"><div class="k">Engaged matters</div><div class="v">4</div><div class="s">neutral or per-party</div></div>
+      <div class="stat flag"><div class="k">Awaiting your review</div><div class="v">2</div><div class="s">financial-modeling step</div></div>
+      <div class="stat"><div class="k">Referred clients</div><div class="v">7</div><div class="s">3 active matters</div></div>
+      <div class="stat"><div class="k">Credential</div><div class="v">CPA</div><div class="s">verified · CPA not required</div></div>
+    </div>
+    <div class="sec"><i class="ti ti-alert-triangle" style="color:var(--accent-d)"></i> Awaiting your financial review</div>
+    <div class="tbl">
+      <div class="h"><span>Matter</span><span>Engaged as</span><span>Progress</span><span>Complete</span><span>Step</span><span>Status</span><span></span></div>
+      <div class="mrow"><div class="r"><span class="matter">Whitfield <span class="tchip">Divorce &amp; custody</span> <small>Nassau County, NY</small></span><span class="parties">Neutral financial expert<small>jointly retained</small></span><span class="stg"><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip"></i><i class="pip"></i><i class="pip"></i></span><span class="nm">4 of 7</span></span><span class="numcell">84%</span><span class="numcell">Summarize</span><span><span class="chip att">Modeling review</span></span><a class="open" href="finances.html">Open <i class="ti ti-arrow-right"></i></a></div><div class="sub"><i class="ti ti-arrow-right-circle"></i> <b>Next:</b> review net-of-tax and present-value modeling and the reconcile-to-net check, then sign off the financial step.</div></div>
+      <div class="mrow"><div class="r"><span class="matter">Castellano <span class="tchip">Divorce &amp; support</span> <small>Suffolk County, NY</small></span><span class="parties">Financial pro · Party A<small>per-party</small></span><span class="stg"><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip"></i><i class="pip"></i></span><span class="nm">5 of 7</span></span><span class="numcell">78%</span><span class="numcell">Gap analysis</span><span><span class="chip warn">Valuation input</span></span><a class="open" href="gap-analysis.html">Open <i class="ti ti-arrow-right"></i></a></div><div class="sub"><i class="ti ti-arrow-right-circle"></i> <b>Next:</b> confirm the business-valuation basis so the comparison reflects after-tax value.</div></div>
+    </div>
+    <div class="sec"><i class="ti ti-users"></i> Clients you referred · activity they've chosen to share</div>
+    <div class="tbl">
+      <div class="h" style="grid-template-columns:1.7fr 1.5fr 1.5fr 1fr 1.1fr 84px"><span>Client</span><span>Matter</span><span>Progress</span><span>Shared</span><span>Status</span><span></span></div>
+      <div class="mrow"><div class="r" style="grid-template-columns:1.7fr 1.5fr 1.5fr 1fr 1.1fr 84px"><span class="matter">R. Alvarez</span><span class="parties">Divorce<small>Nassau, NY</small></span><span class="stg"><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip"></i><i class="pip"></i><i class="pip"></i><i class="pip"></i></span><span class="nm">3 of 7</span></span><span><span class="chip new">Stage only</span></span><span><span class="chip ok">In progress</span></span><span class="open" style="color:var(--faint);cursor:default">Consent-gated</span></div><div class="sub"><i class="ti ti-shield-check" style="color:var(--success)"></i> You referred this client. You see only the stage they consented to share — not matter content — unless they assign you a role.</div></div>
+      <div class="mrow"><div class="r" style="grid-template-columns:1.7fr 1.5fr 1.5fr 1fr 1.1fr 84px"><span class="matter">T. &amp; M. Boyd</span><span class="parties">Divorce &amp; support<small>Suffolk, NY</small></span><span class="stg"><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip"></i></span><span class="nm">6 of 7</span></span><span><span class="chip new">Stage only</span></span><span><span class="chip ok">Near resolution</span></span><span class="open" style="color:var(--faint);cursor:default">Consent-gated</span></div><div class="sub"><i class="ti ti-shield-check" style="color:var(--success)"></i> Referred client · stage visibility only. The client can assign you as financial pro to contribute to the financial step.</div></div>
+    </div>
+    <div class="refer"><i class="ti ti-gift"></i><div><b>Refer a client or colleague — no fee, neutral.</b> Financial-professional referrals follow your profession's rules — disclosed, and unavailable where you provide attest services for that client (AICPA / state board of accountancy). <a href="directory.html">Browse the directory</a>.</div></div>
   </div>
 
 </div>
@@ -417,12 +443,12 @@ function nmTypeChange(){
   else { gate.innerHTML=''; }
   document.getElementById('nmGo').setAttribute('href', TYPE_ROUTE[t]||PLAN);
 }
-var NAMES={individual:["Dana Whitfield · Individual","DW","Dana Whitfield","Individual"],mediator:["Maren Cardillo · Mediator","MC","Maren Cardillo","Mediator"],attorney:["J. Okonkwo · Attorney","JO","Jordan Okonkwo","Attorney"]};
-var CLIENTS={mediator:["Whitfield (Dana &amp; Samuel)","Castellano (Lucia &amp; Tom)","Okafor (Ada &amp; Ben)","Harlow (Priya &amp; Marcus)"],attorney:["Castellano (Lucia)","Whitfield (Samuel)"]};
+var NAMES={individual:["Dana Whitfield · Individual","DW","Dana Whitfield","Individual"],mediator:["Maren Cardillo · Mediator","MC","Maren Cardillo","Mediator"],attorney:["J. Okonkwo · Attorney","JO","Jordan Okonkwo","Attorney"],financial:["A. Rivera · Financial/Tax","AR","Avery Rivera","Financial/Tax Professional · CPA"]};
+var CLIENTS={mediator:["Whitfield (Dana &amp; Samuel)","Castellano (Lucia &amp; Tom)","Okafor (Ada &amp; Ben)","Harlow (Priya &amp; Marcus)"],attorney:["Castellano (Lucia)","Whitfield (Samuel)"],financial:["Whitfield (neutral)","Castellano (Party A)","Okafor (neutral)"]};
 var curRole='mediator';
 function role(r){
   curRole=r;
-  ['individual','mediator','attorney'].forEach(function(x){
+  ['individual','mediator','attorney','financial'].forEach(function(x){
     document.getElementById('v'+x.charAt(0).toUpperCase()+x.slice(1)).classList.toggle('hide', x!==r);
   });
   document.querySelectorAll('.roleseg button').forEach(function(b){b.classList.toggle('on', b.getAttribute('data-r')===r);});
@@ -453,7 +479,7 @@ function newMatter(){
 function closeNM(){document.getElementById('nmOverlay').classList.remove('show');}
 document.getElementById('nmOverlay').addEventListener('click',function(e){if(e.target===this)closeNM();});
 // initialise from ?role=
-(function(){var m=(location.search.match(/role=(individual|mediator|attorney)/)||[])[1]||'mediator';role(m);})();
+(function(){var m=(location.search.match(/role=(individual|mediator|attorney|financial)/)||[])[1]||'mediator';role(m);})();
 </script>
 <button class="fab" onclick="openFB()"><i class="ti ti-message-2-plus"></i> Share feedback</button>
 <div class="fbmodal" id="fbModal" onclick="if(event.target===this)closeFB()">
@@ -561,7 +587,7 @@ window.__firmOn=false;
 function firmView(on){
   window.__firmOn=on;
   var f=document.getElementById('vFirm'); if(!f) return;
-  var roles=['vIndividual','vMediator','vAttorney'];
+  var roles=['vIndividual','vMediator','vAttorney','vFinancial'];
   var btn=document.getElementById('firmBtn');
   if(on){
     roles.forEach(function(id){var e=document.getElementById(id); if(e) e.classList.add('hide');});

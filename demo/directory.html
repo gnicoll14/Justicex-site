@@ -71,12 +71,12 @@ h1{font-family:'Source Serif 4',serif;font-weight:500;font-size:26px;margin:0 0 
 <div class="app">
   <div class="crumb"><i class="ti ti-users-group"></i> <b>Find a professional</b></div>
   <div class="panel">
-    <h1>Find a mediator or attorney</h1>
+    <h1>Find a mediator, attorney, or financial/tax professional</h1>
     <p class="lede">Search professionals by role, focus area, and location. JusticeX shows the matches and what other users report — it never recommends or ranks anyone. Listings on JusticeX let you connect in one step; others are shown from public records so you can still reach them. Where a professional publishes their fees, you'll see them up front — their own figures, not JusticeX quotes.</p>
 
     <div class="filters">
       <div class="fg"><label>Role</label>
-        <select id="fRole" onchange="render()"><option value="">Any</option><option value="mediator">Mediator</option><option value="attorney">Attorney</option></select></div>
+        <select id="fRole" onchange="render()"><option value="">Any</option><option value="mediator">Mediator</option><option value="attorney">Attorney</option><option value="financial">Financial/Tax professional</option></select></div>
       <div class="fg"><label>Focus area</label>
         <select id="fMain" onchange="onMain()"><option value="">Any</option><option>Divorce &amp; custody</option><option>Guardianship (Article 81)</option><option>General civil</option></select></div>
       <div class="fg"><label>Sub-focus</label>
@@ -98,7 +98,7 @@ h1{font-family:'Source Serif 4',serif;font-weight:500;font-size:26px;margin:0 0 
     <div class="count" id="count"></div>
     <div id="list"></div>
 
-    <div class="listcta"><div><b>Are you a mediator or attorney?</b> List your practice so users can find and connect with you.</div><a class="pick ghost" href="register.html"><i class="ti ti-id-badge-2"></i> List your practice</a></div>
+    <div class="listcta"><div><b>Are you a mediator, attorney, or financial/tax professional?</b> List your practice so users can find and connect with you.</div><a class="pick ghost" href="register.html"><i class="ti ti-id-badge-2"></i> List your practice</a></div>
 
     <div class="disc"><b>How this works.</b> JusticeX does not recommend, rate, or rank professionals; it shows objective matches, <b>user feedback</b> submitted by verified users (not by JusticeX, and only past a 5-review minimum), and clearly-labeled <b>Sponsored</b> advertising. Off-platform professionals are drawn from public records (e.g., the NY attorney registry and court ADR rosters) and shown neutrally so you can research and contact them; the <b>On JusticeX</b> flag simply tells you who you can connect with in one step. <b>Fees</b> shown are published by each professional and are estimates, not binding quotes; JusticeX displays them and never sets, negotiates, or marks them up — confirm scope and price directly with the professional. Verify any professional's license and fit yourself. Not legal advice. <a href="disclaimer.html">Full legal disclaimer</a>. Synthetic demo.</div>
   </div>
@@ -120,6 +120,8 @@ var PROS=[
  {i:'TN',n:'T. Nguyen, Esq.',role:'attorney',cr:'Licensed NY · family law',main:'Divorce & custody',subs:['Custody & parenting'],county:'Nassau',lang:['English'],web:'nguyenlegal.com',r:5.0,c:2,v:true,on:true,s:false,cases:0,resp:5},
  {i:'AD',n:'A. Donnelly, Esq.',role:'attorney',cr:'Licensed NY · family law',main:'Divorce & custody',subs:['Property & finances','Custody & parenting'],county:'Nassau',lang:['English'],web:'donnellyfamily.com',r:4.8,c:9,v:true,on:true,s:true,tier:'Premium',cases:7,resp:4},
  {i:'HP',n:'H. Park, Esq.',role:'attorney',cr:'Licensed NY · matrimonial',main:'Divorce & custody',subs:['Property & finances','Spousal maintenance'],county:'Nassau',lang:['English','Mandarin'],web:'parkmatrimonial.com',r:4.7,c:12,v:true,on:true,s:true,tier:'Featured',cases:8,resp:5},
+ {i:'AR',n:'A. Rivera, CPA',role:'financial',cr:'CPA · financial/tax · divorce finance (CPA not required for this role)',main:'Divorce & custody',subs:['Property & finances','Spousal maintenance'],county:'Nassau',lang:['English'],web:'riverafinancial.com',r:4.8,c:11,v:true,on:true,s:false,cases:8,resp:5},
+ {i:'DM',n:'D. Morales, CDFA',role:'financial',cr:'CDFA · financial/tax · valuation & net-of-tax',main:'Divorce & custody',subs:['Property & finances'],county:'Suffolk',lang:['English','Spanish'],web:'morales-cdfa.com',r:4.7,c:6,v:true,on:true,s:false,cases:5,resp:4},
  {i:'GW',n:'G. Whitman, Esq.',role:'attorney',cr:'Licensed NY · guardianship',main:'Guardianship (Article 81)',subs:['Personal needs','Property management'],county:'Nassau',lang:['English'],web:'whitmanelderlaw.com',r:4.8,c:11,v:true,on:true,s:false,cases:6,resp:5},
  // off-platform — from public records, no JusticeX feedback
  {i:'PK',n:'P. Kapoor, Esq.',role:'attorney',cr:'NY attorney registry · family law',main:'Divorce & custody',subs:['Custody & parenting','Child support'],county:'Suffolk',lang:['English'],web:'kapoorlawny.com',on:false,src:'NY attorney registry',s:false},
