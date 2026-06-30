@@ -43,7 +43,7 @@ h1{font-family:'Source Serif 4',serif;font-weight:500;font-size:26px;margin:0 0 
 .lede{color:var(--muted);margin:0 0 18px;max-width:68ch;}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
 .card{border:1px solid var(--hair);border-radius:11px;padding:13px 15px;background:#FBFDFF;cursor:pointer;transition:border-color .12s,box-shadow .12s;}
-.card:hover{border-color:#B9CFEA;box-shadow:0 2px 8px rgba(20,30,46,.06);}
+.card:hover{border-color:var(--accent);box-shadow:0 3px 12px rgba(20,30,46,.10);}
 .card h3{font-family:'Source Serif 4',serif;font-weight:600;font-size:15.5px;color:var(--navy);margin:0 0 2px;}
 .card .d{font-size:12.5px;color:var(--muted);}
 .card .prov{font-size:10.5px;color:var(--faint);margin-top:7px;display:flex;align-items:center;gap:5px;flex-wrap:wrap;}
@@ -51,9 +51,27 @@ h1{font-family:'Source Serif 4',serif;font-weight:500;font-size:26px;margin:0 0 
 .card .ctop h3{margin:0;}
 .card .cic{width:30px;height:30px;border-radius:8px;background:var(--accent-soft,#FAECE7);color:var(--accent,#D85A30);display:flex;align-items:center;justify-content:center;font-size:16px;flex:0 0 auto;}
 .card .sc{font-size:12px;color:var(--accent-d,#B04722);font-weight:600;margin:0 0 4px;}
-.pill{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:700;border-radius:5px;padding:1px 6px;}
-.pill.free{color:#13694a;background:var(--ok-s);border:1px solid #BDE6D4;}
-.pill.conn{color:#0b4d8a;background:#E6F1FB;border:1px solid #BBD4EE;}
+.ovrow{display:flex;gap:8px;margin-top:11px;}
+.ovbox{flex:1;min-width:0;display:flex;align-items:center;gap:9px;background:#0A2238;color:#fff;border:none;border-radius:10px;padding:9px 11px;cursor:pointer;font-family:inherit;text-align:left;transition:background .12s;}
+.ovbox:hover{background:#143655;}
+.ovbox .oi{font-size:17px;color:#F0997B;flex:0 0 auto;display:flex;}
+.ovbox .ol{font-size:11.5px;font-weight:700;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.ovbox .oc{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.13);display:flex;align-items:center;justify-content:center;font-size:13px;flex:0 0 auto;}
+.ovm{position:fixed;inset:0;background:rgba(4,26,51,.55);display:none;align-items:center;justify-content:center;z-index:200;padding:20px;}
+.ovm.show{display:flex;}
+.ovm-card{background:#fff;border-radius:16px;max-width:560px;width:100%;padding:26px 28px;position:relative;box-shadow:0 20px 60px rgba(8,20,40,.3);max-height:88vh;overflow:auto;}
+.ovm-x{position:absolute;top:14px;right:14px;width:30px;height:30px;border-radius:8px;border:1px solid var(--hair);background:#fff;color:var(--muted);cursor:pointer;}
+.ovm-tag{font-size:10.5px;letter-spacing:.5px;text-transform:uppercase;font-weight:700;color:var(--accent-d);}
+.ovm-h{font-family:'Source Serif 4',serif;font-weight:600;font-size:24px;color:var(--navy);margin:4px 0 0;}
+.ovm-scn{color:var(--accent-d);font-weight:600;font-size:13.5px;margin-top:3px;}
+.ovm-aud{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;font-weight:600;color:var(--navy2);background:#EAF1F9;border:1px solid var(--hair);border-radius:999px;padding:5px 11px;margin-top:14px;}
+.ovm-body{font-size:13.5px;line-height:1.55;color:var(--muted);margin-top:14px;}
+.ovm-sec{font-size:11px;letter-spacing:.5px;text-transform:uppercase;font-weight:700;color:var(--faint);margin:18px 0 9px;}
+.ovm-cta{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;border:none;font-weight:700;font-size:13.5px;padding:10px 18px;border-radius:9px;cursor:pointer;margin-top:20px;}
+.ovm-cta:hover{background:var(--accent-d);}
+.pill{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:700;border-radius:5px;padding:2px 7px;cursor:default;user-select:none;}
+.pill.free{color:#13694a;background:var(--ok-s);}
+.pill.conn{color:#0b4d8a;background:#E6F1FB;}
 .pill.req{color:#7A5B12;background:#FBF6E8;border:1px solid #E9D9AE;}
 .grpHd{font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--accent-d);margin:16px 2px 8px;}
 .grpHd:first-child{margin-top:2px;}
@@ -141,16 +159,6 @@ h1{font-family:'Source Serif 4',serif;font-weight:500;font-size:26px;margin:0 0 
       <button class="backlink" onclick="toCatalog()"><i class="ti ti-arrow-left" style="font-size:13px"></i> All contracts</button>
       <h1 id="dHead">—</h1>
 
-      <!-- AI overview player (Amazon-style 60-sec overview) -->
-      <div id="ovCard" style="display:flex;align-items:center;gap:14px;background:#0A2238;color:#fff;border-radius:12px;padding:14px 16px;margin:12px 0 6px">
-        <button id="ovBtn" onclick="ovToggle()" aria-label="Play overview" style="width:42px;height:42px;border-radius:50%;border:none;background:#D85A30;color:#fff;font-size:18px;cursor:pointer;flex:0 0 auto;display:flex;align-items:center;justify-content:center"><i class="ti ti-player-play-filled"></i></button>
-        <div style="flex:1;min-width:0">
-          <div style="font-size:13px;font-weight:700">60-second overview <span style="font-weight:600;color:#F0997B;font-size:10px;text-transform:uppercase;letter-spacing:.4px;margin-left:6px">AI-generated · demo</span></div>
-          <div style="height:6px;background:rgba(255,255,255,.18);border-radius:3px;margin-top:7px;overflow:hidden"><span id="ovBar" style="display:block;height:100%;width:0;background:#D85A30;transition:width .25s"></span></div>
-          <div id="ovStatus" style="font-size:11px;color:#9FB6D2;margin-top:5px">A short, plain-language overview — what this document covers and what to expect. <a onclick="ovTranscript()" style="color:#F0997B;cursor:pointer;font-weight:600">Transcript</a></div>
-        </div>
-      </div>
-      <div id="ovText" class="hide" style="font-size:12.5px;color:var(--muted);background:#F7FAFE;border:1px solid var(--hair);border-radius:10px;padding:12px 14px;margin-bottom:6px"></div>
 
       <p class="lede">Fill the core terms. JusticeX stores your draft in your profile; you finalize and e-sign when ready.</p>
 
@@ -364,6 +372,10 @@ function cardHtml(f){
     +'<div class="ctop"><span class="cic"><i class="ti ti-'+ic+'"></i></span><h3>'+f.t+'</h3></div>'
     +(sc?'<div class="sc">'+sc+'</div>':'')
     +'<div class="d">'+f.d+'</div>'
+    +'<div class="ovrow">'
+      +'<button class="ovbox" type="button" title="Narrated audio overview — coming soon" onclick="event.stopPropagation();overlay(\''+f.id+'\')"><span class="oi"><i class="ti ti-volume"></i></span><span class="ol">Audio overview</span><span class="oc"><i class="ti ti-chevron-right"></i></span></button>'
+      +'<button class="ovbox" type="button" title="1-page overview" onclick="event.stopPropagation();overlay(\''+f.id+'\')"><span class="oi"><i class="ti ti-chart-bar"></i></span><span class="ol">1-page overview</span><span class="oc"><i class="ti ti-chevron-right"></i></span></button>'
+    +'</div>'
     +'<div class="prov"><span class="pill conn"><i class="ti ti-plug-connected" style="font-size:11px"></i> via connector</span> <span class="pill free">Free to start</span>'+reqPill+'</div></div>';
 }
 function renderCatalog(){
@@ -405,32 +417,33 @@ function ovBuild(f){
   var m=(typeof META!=='undefined'&&META[f.id])||[]; var sc=m[1]?(' Common situation: '+m[1].toLowerCase()+'.'):'';
   return 'Here is a quick overview of the '+f.t+'. '+f.d+sc+' On JusticeX you fill in the core terms, and the agreement can include an optional step to resolve any future dispute through JusticeX’s objective, neutral process — a step you can keep, change, or remove. JusticeX is software, not a law firm or a mediator, and this overview is general information, not legal advice.';
 }
-function ovStop(){ try{window.speechSynthesis.cancel();}catch(e){} ovPlaying=false;
-  var b=document.getElementById('ovBtn'); if(b)b.innerHTML='<i class="ti ti-player-play-filled"></i>';
-  var bar=document.getElementById('ovBar'); if(bar)bar.style.width='0';
-  if(ovTimer){clearInterval(ovTimer);ovTimer=null;} }
-function ovToggle(){
-  if(ovPlaying){ ovStop(); return; }
-  if(!('speechSynthesis' in window)){ ovTranscript(true); document.getElementById('ovStatus').innerHTML='Audio isn’t supported in this browser — transcript shown below.'; return; }
-  var u=new SpeechSynthesisUtterance(ovScript); u.rate=1; u.pitch=1;
-  var bar=document.getElementById('ovBar'), start=Date.now(), est=Math.max(8000, ovScript.length*52);
-  u.onend=function(){ if(bar)bar.style.width='100%'; ovStop(); };
-  ovPlaying=true; document.getElementById('ovBtn').innerHTML='<i class="ti ti-player-pause-filled"></i>';
-  ovTimer=setInterval(function(){ if(bar)bar.style.width=Math.min(99,(Date.now()-start)/est*100)+'%'; },200);
-  try{window.speechSynthesis.cancel();window.speechSynthesis.speak(u);}catch(e){ ovStop(); ovTranscript(true); }
+function ovExpect(){ return '<ul style="list-style:none;padding:0;margin:0;display:grid;gap:8px;font-size:13px;color:var(--ink)">'
+  +'<li style="display:flex;gap:9px;align-items:flex-start"><i class="ti ti-lock" style="color:var(--navy3);margin-top:1px"></i><span>Each side shares information privately and securely — symmetric prompts.</span></li>'
+  +'<li style="display:flex;gap:9px;align-items:flex-start"><i class="ti ti-scale" style="color:var(--navy3);margin-top:1px"></i><span>JusticeX organizes and compares both sides objectively, on the same rules.</span></li>'
+  +'<li style="display:flex;gap:9px;align-items:flex-start"><i class="ti ti-circle-check" style="color:var(--navy3);margin-top:1px"></i><span>You review at human checkpoints and reach your own resolution, with an audit-traceable record.</span></li></ul>'; }
+function overlay(id){
+  var f=FORMS.find(function(x){return x.id===id;}); if(!f) return; var m=META[f.id]||[];
+  var el=document.getElementById('ovm'); if(!el){ el=document.createElement('div'); el.id='ovm'; el.className='ovm'; el.onclick=function(e){ if(e.target===el) closeOverlay(); }; document.body.appendChild(el); }
+  el.innerHTML='<div class="ovm-card"><button class="ovm-x" type="button" onclick="closeOverlay()" aria-label="Close"><i class="ti ti-x"></i></button>'
+    +'<div class="ovm-tag">1-page overview</div><h2 class="ovm-h">'+f.t+'</h2>'+(m[1]?'<div class="ovm-scn">'+m[1]+'</div>':'')
+    +'<div class="ovm-aud"><i class="ti ti-volume"></i> Narrated audio — coming soon</div>'
+    +'<p class="ovm-body">'+ovBuild(f)+'</p>'
+    +'<div class="ovm-sec">What to expect</div>'+ovExpect()
+    +'<button class="ovm-cta" type="button" onclick="closeOverlay();openForm(\''+id+'\')">Start this contract <i class="ti ti-arrow-right"></i></button></div>';
+  el.classList.add('show'); document.body.style.overflow='hidden';
 }
-function ovTranscript(force){ var t=document.getElementById('ovText'); if(!t)return; t.textContent=ovScript; if(force){t.classList.remove('hide');} else {t.classList.toggle('hide');} }
+function closeOverlay(){ var el=document.getElementById('ovm'); if(el) el.classList.remove('show'); document.body.style.overflow=''; }
+document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeOverlay(); });
 function openForm(id){
   currentForm=FORMS.find(function(x){return x.id===id;});
   document.getElementById('dTitle').textContent=currentForm.t;
   document.getElementById('dHead').textContent=currentForm.t;
-  ovStop(); ovScript=ovBuild(currentForm); var ot=document.getElementById('ovText'); if(ot)ot.classList.add('hide');
   document.getElementById('catalog').classList.add('hide');
   document.getElementById('draft').classList.remove('hide');
   document.getElementById('costNote').innerHTML='<i class="ti ti-info-circle" style="font-size:13px"></i> Provided via the contracts partner connector — free to draft; a small cost-plus fee at finalize / e-sign. JusticeX adds no markup to the JusticeX step.';
   applyClauseMode(); window.scrollTo(0,0);
 }
-function toCatalog(){ ovStop(); document.getElementById('draft').classList.add('hide'); document.getElementById('catalog').classList.remove('hide'); window.scrollTo(0,0); }
+function toCatalog(){ document.getElementById('draft').classList.add('hide'); document.getElementById('catalog').classList.remove('hide'); window.scrollTo(0,0); }
 
 function applyClauseMode(){
   var required = !!(currentForm && currentForm.req);
