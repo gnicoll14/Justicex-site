@@ -6,6 +6,7 @@
 <title>Solutions · JusticeX.ai</title>
 <meta name="description" content="The JusticeX.ai seven-stage pipeline — intake to agreement, symmetric and auditable, with three counsel checkpoints and a citation-grounded output package.">
 <link rel="stylesheet" href="css/site.css?v=2026-05-20b">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
 </head>
 <body>
 <div data-partial="nav"></div>
@@ -39,23 +40,74 @@
     <div class="section-head">
       <div class="eyebrow"><span class="num">01</span> <span class="rule"></span> The Pipeline</div>
       <h2 class="h1" style="margin-top:24px">Seven stages.<br>Three checkpoints.</h2>
-      <p class="lead" style="margin-top:20px;max-width:760px">The platform runs the matter end-to-end. You sign off at three points: redaction sets, position briefs, and the agreed resolution. Every other stage is deterministic, symmetric, and audit-logged.</p>
+      <p class="lead" style="margin-top:20px;max-width:760px">The platform runs the matter end-to-end. You sign off at three human-in-the-loop checkpoints — after redaction, after the strength rating, and before the joint session. Every other stage is deterministic, symmetric, and audit-logged.</p>
     </div>
 
-    <div class="pipeline-grid">
-      <div class="stage-card"><div class="stage-num">1</div><div class="stage-label">Plan</div><div class="stage-desc">Matter intake plan generated from dispute type, jurisdiction, and party metadata. Both parties get identical scope documents.</div><div class="stage-meta">Automated</div></div>
-      <div class="stage-card"><div class="stage-num">2</div><div class="stage-label">Intake</div><div class="stage-desc">Structured questionnaires + document upload. Symmetric prompts; no party sees the other's responses.</div><div class="stage-meta">Automated</div></div>
-      <div class="stage-card checkpoint"><div class="stage-num">3</div><div class="stage-label">Redact</div><div class="stage-desc">PII, privileged, and party-confidential content auto-redacted. Mediator reviews redaction sets before any cross-party sharing.</div><div class="stage-meta">Checkpoint 1</div><span class="cp-dot" aria-hidden="true"></span></div>
-      <div class="stage-card"><div class="stage-num">4</div><div class="stage-label">Summarize</div><div class="stage-desc">Position briefs generated from each party's intake. Citation-grounded to source documents; no paraphrase without anchor.</div><div class="stage-meta">Automated</div></div>
-      <div class="stage-card"><div class="stage-num">5</div><div class="stage-label">Gap Analysis</div><div class="stage-desc">Symmetric strength comparison and gap analysis. Both sides assessed on the same objective rubric; deltas and gaps surfaced.</div><div class="stage-meta">Automated</div></div>
-      <div class="stage-card checkpoint"><div class="stage-num">6</div><div class="stage-label">Resolution</div><div class="stage-desc">Objective option set and points of alignment. The neutral confirms the scope before the joint session.</div><div class="stage-meta">Checkpoint 2</div><span class="cp-dot" aria-hidden="true"></span></div>
-      <div class="stage-card checkpoint"><div class="stage-num">7</div><div class="stage-label">Memorandum</div><div class="stage-desc">Memorandum of Understanding drafted with citations to intake, statute, and prior matters. The neutral signs the final certificate.</div><div class="stage-meta">Checkpoint 3</div><span class="cp-dot" aria-hidden="true"></span></div>
+    <style>
+      .jxp{position:relative;margin-top:38px}
+      .jxp::before{content:"";position:absolute;left:31px;top:36px;bottom:46px;width:2px;background:var(--jx-stone-200);z-index:0}
+      .jxp-row,.jxp-cp{position:relative;display:grid;grid-template-columns:64px 1fr;gap:22px;align-items:center;z-index:1}
+      .jxp-row{margin-bottom:14px}.jxp-cp{margin:0 0 14px}
+      .jxp-hex{width:64px;height:64px;display:flex;align-items:center;justify-content:center;color:#fff;background:linear-gradient(150deg,#0a3b66,var(--jx-navy-800));clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+      .jxp-hex i{font-size:25px}
+      .jxp-cphex{width:50px;height:50px;margin:0 7px;display:flex;align-items:center;justify-content:center;color:#fff;background:var(--jx-gold-500);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+      .jxp-cphex i{font-size:19px}
+      .jxp-card{background:var(--jx-white);border:1px solid var(--jx-stone-200);border-radius:12px;padding:15px 18px;box-shadow:0 1px 2px rgba(20,30,46,.05);display:grid;grid-template-columns:auto 1fr;column-gap:18px}
+      .jxp-card .lab,.jxp-card .d,.jxp-card .jxp-tags{grid-column:2}
+      .jxp-thumb{grid-column:1;grid-row:1 / span 3;align-self:center;width:104px;height:80px;border-radius:10px;background:linear-gradient(150deg,#EAF1F9,#DCE8F5);border:1px solid var(--jx-stone-200);display:flex;align-items:center;justify-content:center;color:var(--jx-gold-600);flex:0 0 auto}
+      .jxp-thumb i{font-size:38px}
+      .jxp-card .lab{font-family:var(--font-display);font-size:18px;font-weight:600;color:var(--jx-navy-800);display:flex;align-items:center;gap:9px}
+      .jxp-card .lab .st{font-size:13px;font-weight:700;color:var(--jx-gold-600)}
+      .jxp-card .d{font-size:13.5px;line-height:1.5;color:var(--jx-ink-70,#5F5E5A);margin-top:5px}
+      .jxp-tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}
+      .jxp-tag{font-size:10.5px;font-weight:600;color:var(--jx-navy-700);background:var(--jx-navy-50,#EAF1F9);border:1px solid var(--jx-stone-200);border-radius:999px;padding:3px 9px;display:inline-flex;align-items:center;gap:4px}
+      .jxp-cpcard{background:var(--jx-coral-50,#FAECE7);border:1px solid #F1D3C8;border-radius:12px;padding:12px 18px}
+      .jxp-cpcard .cpl{font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:var(--jx-coral-700,#B04722);display:flex;align-items:center;gap:7px}
+      .jxp-cpcard .cpt{font-size:12.5px;line-height:1.45;color:#7A3B25;margin-top:4px}
+      .jxp-trust{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+      .jxp-trust > div{display:flex;gap:11px;align-items:flex-start;font-size:12.5px;color:var(--jx-ink-70,#5F5E5A)}
+      .jxp-trust i{font-size:20px;color:var(--jx-navy-700);flex:0 0 auto;margin-top:1px}
+      .jxp-trust b{color:var(--jx-navy-800)}
+      @media(max-width:600px){.jxp-row,.jxp-cp{grid-template-columns:52px 1fr;gap:15px}.jxp-hex{width:52px;height:52px}.jxp-hex i{font-size:21px}.jxp::before{left:25px}.jxp-trust{grid-template-columns:1fr}.jxp-card{grid-template-columns:1fr}.jxp-thumb{display:none}}
+    </style>
+    <div class="jxp">
+      <div class="jxp-row"><div class="jxp-hex"><i class="ti ti-target-arrow"></i></div>
+        <div class="jxp-card"><div class="jxp-thumb"><i class="ti ti-target-arrow"></i></div><div class="lab"><span class="st">01</span> Plan</div><div class="d">Define the matter scope, lock the specific issues to resolve, and select the resolution path. Both parties get identical scope documents.</div></div></div>
+
+      <div class="jxp-row"><div class="jxp-hex"><i class="ti ti-folder"></i></div>
+        <div class="jxp-card"><div class="jxp-thumb"><i class="ti ti-folder"></i></div><div class="lab"><span class="st">02</span> Intake</div><div class="d">Each party uploads evidence and artifacts; the system structures submissions and flags quality and completeness. Symmetric prompts — neither party sees the other's.</div>
+          <div class="jxp-tags"><span class="jxp-tag"><i class="ti ti-lock" style="font-size:12px"></i> AES-256 at rest</span><span class="jxp-tag"><i class="ti ti-shield" style="font-size:12px"></i> TLS 1.3 in transit</span></div></div></div>
+
+      <div class="jxp-row"><div class="jxp-hex"><i class="ti ti-shield-lock"></i></div>
+        <div class="jxp-card"><div class="jxp-thumb"><i class="ti ti-shield-lock"></i></div><div class="lab"><span class="st">03</span> Redact</div><div class="d">Automated identification and removal of PII and privileged content before any cross-party sharing — for privacy and compliance.</div></div></div>
+
+      <div class="jxp-cp"><div class="jxp-cphex"><i class="ti ti-gavel"></i></div>
+        <div class="jxp-cpcard"><div class="cpl"><i class="ti ti-user-check"></i> Checkpoint 1 · Post-redaction</div><div class="cpt">Human-in-the-loop: counsel reviews a side-by-side diff of removed content and signs off on the redaction certificate.</div></div></div>
+
+      <div class="jxp-row"><div class="jxp-hex"><i class="ti ti-file-text"></i></div>
+        <div class="jxp-card"><div class="jxp-thumb"><i class="ti ti-file-text"></i></div><div class="lab"><span class="st">04</span> Summarize</div><div class="d">Symmetric position briefs for both parties, generated with identical prompts and models to eliminate prep-quality advantages. Citation-grounded to source.</div></div></div>
+
+      <div class="jxp-row"><div class="jxp-hex"><i class="ti ti-git-compare"></i></div>
+        <div class="jxp-card"><div class="jxp-thumb"><i class="ti ti-git-compare"></i></div><div class="lab"><span class="st">05</span> Gap Analysis</div><div class="d">Objective strength comparison on a shared rubric; a matter-specific issue tree tags disputed vs. undisputed points and surfaces the gaps between the parties.</div></div></div>
+
+      <div class="jxp-cp"><div class="jxp-cphex"><i class="ti ti-gavel"></i></div>
+        <div class="jxp-cpcard"><div class="cpl"><i class="ti ti-user-check"></i> Checkpoint 2 · Post-rating</div><div class="cpt">Human-in-the-loop: the practitioner confirms the scoring rationale and can make claim-level overrides, with the rationale captured.</div></div></div>
+
+      <div class="jxp-cp"><div class="jxp-cphex"><i class="ti ti-gavel"></i></div>
+        <div class="jxp-cpcard"><div class="cpl"><i class="ti ti-user-check"></i> Checkpoint 3 · Pre-resolution</div><div class="cpt">Human-in-the-loop: a final review of the gap analysis and alignment before entering the joint session.</div></div></div>
+
+      <div class="jxp-row"><div class="jxp-hex"><i class="ti ti-heart-handshake"></i></div>
+        <div class="jxp-card"><div class="jxp-thumb"><i class="ti ti-heart-handshake"></i></div><div class="lab"><span class="st">06</span> Resolution</div><div class="d">An objective option set and points of alignment, based on the symmetric comparison and identified gaps. JusticeX informs; the parties decide.</div></div></div>
+
+      <div class="jxp-row"><div class="jxp-hex"><i class="ti ti-file-certificate"></i></div>
+        <div class="jxp-card"><div class="jxp-thumb"><i class="ti ti-file-certificate"></i></div><div class="lab"><span class="st">07</span> Memorandum</div><div class="d">Assembles a final, audit-traceable Memorandum of Understanding grounded in the parties' agreed facts.</div>
+          <div class="jxp-tags"><span class="jxp-tag"><i class="ti ti-history-toggle" style="font-size:12px"></i> Cryptographic audit ledger</span></div></div></div>
     </div>
 
-    <div class="pipeline-key">
-      <div><span class="key-dot key-auto"></span> Automated stage</div>
-      <div><span class="key-dot key-cp"></span> Human-in-the-loop checkpoint</div>
-      <div><span class="key-dot key-spoc"></span> All stages write to the SPOC — one canonical case record</div>
+    <div class="jxp-trust">
+      <div><i class="ti ti-lock"></i><div><b>Encrypted end-to-end.</b> AES-256 at rest, TLS 1.3 in transit.</div></div>
+      <div><i class="ti ti-file-certificate"></i><div><b>100% audit-traceable.</b> Every output traces to a verbatim source via a cryptographic audit ledger.</div></div>
+      <div><i class="ti ti-scale"></i><div><b>Symmetric processing.</b> Same prompts, same models, both sides — the prep-quality advantage engineered out.</div></div>
     </div>
   </div>
 </section>
