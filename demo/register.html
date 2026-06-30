@@ -92,6 +92,17 @@ h1{font-family:'Source Serif 4',serif;font-weight:500;font-size:25px;margin:0 0 
         <p class="hint">After the firm account is created, you'll <b>add and verify each mediator/attorney</b> individually and set per-matter ethical walls. The firm manages everyone in one place and is billed by seat.</p>
       </div>
       <div class="grp"><h2><i class="ti ti-certificate"></i> Identity &amp; credentials</h2>
+        <div class="field"><label>Headshot / photo <span style="font-weight:400;color:var(--muted)">— optional; appears on your directory listing</span></label>
+          <div style="display:flex;align-items:center;gap:14px;margin-top:4px">
+            <div id="hsAv" style="width:64px;height:64px;border-radius:50%;background:#EAF1F9;color:#2A5582;display:flex;align-items:center;justify-content:center;font-size:26px;background-size:cover;background-position:center;flex:0 0 auto;border:1px solid #D1DEEE"><i class="ti ti-user"></i></div>
+            <div>
+              <input id="hsFile" type="file" accept="image/*" hidden onchange="hsPick(this)">
+              <button type="button" onclick="document.getElementById('hsFile').click()" style="font-family:inherit;font-weight:600;font-size:13px;color:#042C53;background:#fff;border:1px solid #D1DEEE;border-radius:9px;padding:7px 13px;cursor:pointer;display:inline-flex;align-items:center;gap:6px"><i class="ti ti-camera"></i> <span id="hsBtnTxt">Add headshot</span></button>
+              <button type="button" id="hsRm" onclick="hsRemove()" style="display:none;font-family:inherit;font-weight:600;font-size:13px;color:#B04722;background:none;border:none;cursor:pointer;padding:7px 6px">Remove</button>
+              <div style="font-size:11.5px;color:var(--muted);margin-top:4px">A clear, professional photo helps clients choose you. JPG or PNG.</div>
+            </div>
+          </div>
+        </div>
         <div class="field"><label>Legal name</label><input placeholder="First Last"/></div>
         <div class="row">
           <div class="field"><label>Firm / practice name</label><input placeholder="Practice name"/></div>
@@ -183,6 +194,15 @@ h1{font-family:'Source Serif 4',serif;font-weight:500;font-size:25px;margin:0 0 
 </div>
 
 <script>
+// Headshot / photo for the professional's directory listing (demo: localStorage)
+function hsApply(d){var a=document.getElementById('hsAv');if(!a)return;
+  if(d){a.style.backgroundImage='url('+d+')';a.innerHTML='';document.getElementById('hsRm').style.display='';document.getElementById('hsBtnTxt').textContent='Change headshot';}
+  else{a.style.backgroundImage='';a.innerHTML='<i class="ti ti-user"></i>';document.getElementById('hsRm').style.display='none';document.getElementById('hsBtnTxt').textContent='Add headshot';}}
+function hsPick(inp){var f=inp.files&&inp.files[0];if(!f)return;
+  if(!/^image\//.test(f.type)){alert('Please choose an image file.');return;}
+  var r=new FileReader();r.onload=function(e){try{localStorage.setItem('jx_pro_photo',e.target.result);}catch(_){}hsApply(e.target.result);};r.readAsDataURL(f);}
+function hsRemove(){try{localStorage.removeItem('jx_pro_photo');}catch(_){}hsApply(null);}
+(function(){try{var d=localStorage.getItem('jx_pro_photo');if(d)hsApply(d);}catch(_){}})();
 // existing profiles to check against (would be the live directory + public records)
 var POOL=[
  {i:'AD',n:'A. Donnelly, Esq.',mt:'Attorney · Nassau · family law · already on JusticeX'},

@@ -47,6 +47,10 @@ h1{font-family:'Source Serif 4',serif;font-weight:500;font-size:26px;margin:0 0 
 .card h3{font-family:'Source Serif 4',serif;font-weight:600;font-size:15.5px;color:var(--navy);margin:0 0 2px;}
 .card .d{font-size:12.5px;color:var(--muted);}
 .card .prov{font-size:10.5px;color:var(--faint);margin-top:7px;display:flex;align-items:center;gap:5px;flex-wrap:wrap;}
+.card .ctop{display:flex;align-items:center;gap:10px;margin-bottom:4px;}
+.card .ctop h3{margin:0;}
+.card .cic{width:30px;height:30px;border-radius:8px;background:var(--accent-soft,#FAECE7);color:var(--accent,#D85A30);display:flex;align-items:center;justify-content:center;font-size:16px;flex:0 0 auto;}
+.card .sc{font-size:12px;color:var(--accent-d,#B04722);font-weight:600;margin:0 0 4px;}
 .pill{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:700;border-radius:5px;padding:1px 6px;}
 .pill.free{color:#13694a;background:var(--ok-s);border:1px solid #BDE6D4;}
 .pill.conn{color:#0b4d8a;background:#E6F1FB;border:1px solid #BBD4EE;}
@@ -320,9 +324,34 @@ function updateScopeNote(justSaved){
   el.innerHTML=(justSaved?'<b style="color:var(--ok)">Saved. </b>':'')+(saved?'Your default scope':'From your profile (NY)')+': <b>'+label+'</b>';
 }
 function groupOf(f){ return (f.group && typeof f.group==='object')?f.group[CTX]:f.group; }
+// Per-type icon + plain-language scenario ("what's actually happening") — makes the catalog self-select.
+var META={
+ lease:['building','Leasing an apartment or home'], sublease:['users','Renting a room to a friend, or subletting'],
+ bos:['car','Selling a car or a used item'], note:['cash','Lending money to family or a friend'],
+ loan:['currency-dollar','A loan with interest and a payback schedule'], waiver:['shield','Running an event, class, or activity'],
+ prenup:['heart-handshake','Marrying and aligning on property'], poa:['user-check','Letting someone act on your behalf'],
+ hcproxy:['stethoscope','Naming who decides your medical care'], will:['file-pencil','Directing where your estate goes'],
+ revtrust:['businessplan','Holding assets in a trust you can change'], irrtrust:['lock','Placing assets in a fixed trust'],
+ employment:['id-badge-2','Hiring an employee'], offer:['mail','Making a job offer'],
+ noncompete:['ban','Limiting where a departing employee competes'], nonsolicit:['user-off','Protecting clients and staff after an exit'],
+ severance:['door-exit','Parting ways with an employee'], contractor:['tool','Hiring a contractor for a project'],
+ msa:['files','Setting terms for an ongoing vendor'], sow:['list-check','Defining one project\'s deliverables'],
+ consulting:['presentation','Bringing on an advisor'], po:['shopping-cart','Ordering goods or services'],
+ nda:['eye-off','Protecting an idea before a conversation'], license:['copyright','Letting someone use your IP or software'],
+ partnership:['users-group','Going into business with a partner'], llc:['building-bank','Setting up how an LLC is run'],
+ commlease:['building-store','Leasing space for your business'], hoa:['home','Onboarding a community member'],
+ rules:['clipboard-check','Members acknowledging the rules'], arc:['ruler','A member altering their property'],
+ amenity:['pool','Using a shared pool, gym, or facility'], enroll:['school','Enrolling a student'],
+ conduct:['checklist','Students accepting conduct terms'], tuition:['receipt-2','Setting a tuition payment schedule'],
+ activity:['bus','A field trip or activity consent'], tech:['device-laptop','Rules for using school technology']
+};
 function cardHtml(f){
   var reqPill=f.req?' <span class="pill req"><i class="ti ti-lock" style="font-size:10px"></i> requires JusticeX</span>':'';
-  return '<div class="card" onclick="openForm(\''+f.id+'\')"><h3>'+f.t+'</h3><div class="d">'+f.d+'</div>'
+  var m=META[f.id]||[], ic=m[0]||'file-text', sc=m[1]||'';
+  return '<div class="card" onclick="openForm(\''+f.id+'\')">'
+    +'<div class="ctop"><span class="cic"><i class="ti ti-'+ic+'"></i></span><h3>'+f.t+'</h3></div>'
+    +(sc?'<div class="sc">'+sc+'</div>':'')
+    +'<div class="d">'+f.d+'</div>'
     +'<div class="prov"><span class="pill conn"><i class="ti ti-plug-connected" style="font-size:11px"></i> via connector</span> <span class="pill free">Free to start</span>'+reqPill+'</div></div>';
 }
 function renderCatalog(){

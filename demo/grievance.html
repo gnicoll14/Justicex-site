@@ -228,7 +228,7 @@ h1{font-family:'Source Serif 4',serif;font-weight:500;font-size:24px;margin:0 0 
   ];
   var stack=P.map(function(p){
     return '<button class="pav '+p.cls+'" title="" onclick="location.href=\'account.html\'">'
-      +'<span class="av '+p.avcls+'">'+p.init+'</span>'
+      +'<span class="av '+p.avcls+'"'+((p.cls==='me'&&localStorage.getItem('jx_photo_me'))?' style="background-image:url('+localStorage.getItem('jx_photo_me')+')"':'')+'>'+((p.cls==='me'&&localStorage.getItem('jx_photo_me'))?'':p.init)+'</span>'
       +'<span class="tip">'+p.name+' · '+p.role+' — manage</span></button>';
   }).join('');
   var el=document.createElement('div'); el.className='jxac';
