@@ -92,6 +92,10 @@ body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',Calibr
 
   <div class="filters" id="filters"></div>
 
+  <div class="sec"><i class="ti ti-chart-bar"></i> Activity at a glance <span class="tag" style="font-weight:600">your matters</span></div>
+  <div id="charts" style="margin-bottom:4px"></div>
+  <div style="font-size:11.5px;color:var(--faint,#9CA0A7);margin:2px 0 4px"><i class="ti ti-shield-lock" style="font-size:13px"></i> Your own activity, shown in full. Cross-organization and public market views are de-identified and suppress any group under 5.</div>
+
   <div class="sec"><i class="ti ti-sitemap"></i> <span id="rolluplabel">By line of business</span> — portfolio roll-up</div>
   <div class="tbl"><div class="h rollh"><div>Unit</div><div>Matters</div><div>Avg cycle</div><div>Stage completeness</div><div></div></div>
     <div id="rollup"></div>
@@ -193,6 +197,39 @@ function filteredBase(){ // matters at current PATH (org drill) — ignores sele
 }
 function applyFilters(arr){return arr.filter(x=> (F.state==='All'||x.state===F.state) && (F.status==='All'||x.status===F.status) && (F.type==='All'||x.l2===F.type));}
 
+function barBlock(title,counts,color){
+ const entries=Object.entries(counts).sort((a,b)=>b[1]-a[1]); const max=Math.max(1,...entries.map(e=>e[1]));
+ const rows=entries.map(([k,v])=>`<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+   <div style="width:128px;font-size:12px;color:var(--navy2,#154572);text-align:right;flex:0 0 auto;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${k}">${k}</div>
+   <div style="flex:1;background:#EAF1F9;border-radius:4px;height:14px;overflow:hidden"><span style="display:block;height:100%;width:${Math.round(v/max*100)}%;background:${color}"></span></div>
+   <div style="width:24px;font-size:12px;font-weight:700;color:var(--navy,#042C53);text-align:right">${v}</div></div>`).join('');
+ return `<div style="background:var(--surface,#fff);border:1px solid var(--hair,#D1DEEE);border-radius:14px;padding:16px 18px;box-shadow:0 1px 2px rgba(20,30,46,.04)"><div style="font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:var(--faint,#9CA0A7);font-weight:700;margin-bottom:8px">${title}</div>${rows||'<div style="color:var(--muted,#5F5E5A);font-size:12px">No data in this view.</div>'}</div>`;
+}
+function sparkCard(title,total){
+ // illustrative 6-month trend derived from the in-view total (gentle growth)
+ const months=['Jan','Feb','Mar','Apr','May','Jun'];
+ const w=[0.11,0.13,0.15,0.18,0.21,0.22]; const series=w.map(x=>Math.max(0,Math.round(total*x)));
+ const W=620,H=60,pad=6,max=Math.max(1,...series);
+ const pts=series.map((v,i)=>[pad+i*((W-2*pad)/(series.length-1)), H-pad-(v/max)*(H-2*pad)]);
+ const line=pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' ');
+ const area=line+` L ${pts[pts.length-1][0].toFixed(1)} ${H-pad} L ${pts[0][0].toFixed(1)} ${H-pad} Z`;
+ const dots=pts.map(p=>`<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="2.4" fill="var(--navy3,#2A5582)"/>`).join('');
+ const labels=months.map((mn,i)=>`<span style="flex:1;text-align:center">${mn}</span>`).join('');
+ return `<div style="background:var(--surface,#fff);border:1px solid var(--hair,#D1DEEE);border-radius:14px;padding:16px 18px;box-shadow:0 1px 2px rgba(20,30,46,.04);margin-bottom:16px">
+   <div style="font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:var(--faint,#9CA0A7);font-weight:700;margin-bottom:8px">${title}</div>
+   <svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="width:100%;height:60px;display:block">
+     <path d="${area}" fill="rgba(42,85,130,0.10)"/><path d="${line}" fill="none" stroke="var(--navy3,#2A5582)" stroke-width="2"/>${dots}</svg>
+   <div style="display:flex;font-size:10.5px;color:var(--faint,#9CA0A7);margin-top:4px">${labels}</div></div>`;
+}
+function renderCharts(shown){
+ const byType={},byState={};
+ shown.forEach(x=>{byType[x.l2]=(byType[x.l2]||0)+1;byState[x.state]=(byState[x.state]||0)+1;});
+ document.getElementById('charts').innerHTML=
+   sparkCard('Matters over time — last 6 months (illustrative)',shown.length)
+   +'<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">'
+   +barBlock('By litigation / matter type',byType,'var(--navy3,#2A5582)')
+   +barBlock('By state',byState,'var(--accent,#D85A30)')+'</div>';
+}
 function render(){
  const m=MARKETS[CUR]; document.getElementById('orgname').textContent=m.org;
  seg();
@@ -206,6 +243,7 @@ function render(){
  const resolved=shown.filter(x=>x.status==='Resolved').length;
  const kpis=[['Matters',shown.length,'in this view'],['Avg cycle',avg(shown.map(x=>x.cycle))+'d','time in process'],['Resolved',pct(resolved,shown.length),resolved+' of '+shown.length],['Avg completeness',Math.round(avg(shown.map(x=>x.stageIdx))/7*100)+'%','stages complete'],[m.extraKpi.k,m.extraKpi.calc(shown),'']];
  document.getElementById('stats').innerHTML=kpis.map(k=>`<div class="stat"><div class="k">${k[0]}</div><div class="v">${k[1]}</div><div class="s">${k[2]}</div></div>`).join('');
+ renderCharts(shown);
  // filters
  const states=['All',...new Set(m.matters.map(x=>x.state))]; const types=['All',...new Set(m.matters.map(x=>x.l2))]; const statuses=['All','Early','In progress','Resolved'];
  document.getElementById('filters').innerHTML=

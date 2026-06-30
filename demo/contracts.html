@@ -140,6 +140,18 @@ h1{font-family:'Source Serif 4',serif;font-weight:500;font-size:26px;margin:0 0 
     <div class="panel">
       <button class="backlink" onclick="toCatalog()"><i class="ti ti-arrow-left" style="font-size:13px"></i> All contracts</button>
       <h1 id="dHead">—</h1>
+
+      <!-- AI overview player (Amazon-style 60-sec overview) -->
+      <div id="ovCard" style="display:flex;align-items:center;gap:14px;background:#0A2238;color:#fff;border-radius:12px;padding:14px 16px;margin:12px 0 6px">
+        <button id="ovBtn" onclick="ovToggle()" aria-label="Play overview" style="width:42px;height:42px;border-radius:50%;border:none;background:#D85A30;color:#fff;font-size:18px;cursor:pointer;flex:0 0 auto;display:flex;align-items:center;justify-content:center"><i class="ti ti-player-play-filled"></i></button>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:13px;font-weight:700">60-second overview <span style="font-weight:600;color:#F0997B;font-size:10px;text-transform:uppercase;letter-spacing:.4px;margin-left:6px">AI-generated · demo</span></div>
+          <div style="height:6px;background:rgba(255,255,255,.18);border-radius:3px;margin-top:7px;overflow:hidden"><span id="ovBar" style="display:block;height:100%;width:0;background:#D85A30;transition:width .25s"></span></div>
+          <div id="ovStatus" style="font-size:11px;color:#9FB6D2;margin-top:5px">A short, plain-language overview — what this document covers and what to expect. <a onclick="ovTranscript()" style="color:#F0997B;cursor:pointer;font-weight:600">Transcript</a></div>
+        </div>
+      </div>
+      <div id="ovText" class="hide" style="font-size:12.5px;color:var(--muted);background:#F7FAFE;border:1px solid var(--hair);border-radius:10px;padding:12px 14px;margin-bottom:6px"></div>
+
       <p class="lede">Fill the core terms. JusticeX stores your draft in your profile; you finalize and e-sign when ready.</p>
 
       <div class="sec"><span class="n">1</span> Parties</div>
@@ -387,16 +399,38 @@ function setCtx(c){
   document.getElementById('catLede').textContent=LEDE[c];
   renderChips(); renderCatalog();
 }
+// --- AI overview player (objective, UPL-safe script; browser TTS for the demo) ---
+var ovScript='', ovPlaying=false, ovTimer=null;
+function ovBuild(f){
+  var m=(typeof META!=='undefined'&&META[f.id])||[]; var sc=m[1]?(' Common situation: '+m[1].toLowerCase()+'.'):'';
+  return 'Here is a quick overview of the '+f.t+'. '+f.d+sc+' On JusticeX you fill in the core terms, and the agreement can include an optional step to resolve any future dispute through JusticeX’s objective, neutral process — a step you can keep, change, or remove. JusticeX is software, not a law firm or a mediator, and this overview is general information, not legal advice.';
+}
+function ovStop(){ try{window.speechSynthesis.cancel();}catch(e){} ovPlaying=false;
+  var b=document.getElementById('ovBtn'); if(b)b.innerHTML='<i class="ti ti-player-play-filled"></i>';
+  var bar=document.getElementById('ovBar'); if(bar)bar.style.width='0';
+  if(ovTimer){clearInterval(ovTimer);ovTimer=null;} }
+function ovToggle(){
+  if(ovPlaying){ ovStop(); return; }
+  if(!('speechSynthesis' in window)){ ovTranscript(true); document.getElementById('ovStatus').innerHTML='Audio isn’t supported in this browser — transcript shown below.'; return; }
+  var u=new SpeechSynthesisUtterance(ovScript); u.rate=1; u.pitch=1;
+  var bar=document.getElementById('ovBar'), start=Date.now(), est=Math.max(8000, ovScript.length*52);
+  u.onend=function(){ if(bar)bar.style.width='100%'; ovStop(); };
+  ovPlaying=true; document.getElementById('ovBtn').innerHTML='<i class="ti ti-player-pause-filled"></i>';
+  ovTimer=setInterval(function(){ if(bar)bar.style.width=Math.min(99,(Date.now()-start)/est*100)+'%'; },200);
+  try{window.speechSynthesis.cancel();window.speechSynthesis.speak(u);}catch(e){ ovStop(); ovTranscript(true); }
+}
+function ovTranscript(force){ var t=document.getElementById('ovText'); if(!t)return; t.textContent=ovScript; if(force){t.classList.remove('hide');} else {t.classList.toggle('hide');} }
 function openForm(id){
   currentForm=FORMS.find(function(x){return x.id===id;});
   document.getElementById('dTitle').textContent=currentForm.t;
   document.getElementById('dHead').textContent=currentForm.t;
+  ovStop(); ovScript=ovBuild(currentForm); var ot=document.getElementById('ovText'); if(ot)ot.classList.add('hide');
   document.getElementById('catalog').classList.add('hide');
   document.getElementById('draft').classList.remove('hide');
   document.getElementById('costNote').innerHTML='<i class="ti ti-info-circle" style="font-size:13px"></i> Provided via the contracts partner connector — free to draft; a small cost-plus fee at finalize / e-sign. JusticeX adds no markup to the JusticeX step.';
   applyClauseMode(); window.scrollTo(0,0);
 }
-function toCatalog(){ document.getElementById('draft').classList.add('hide'); document.getElementById('catalog').classList.remove('hide'); window.scrollTo(0,0); }
+function toCatalog(){ ovStop(); document.getElementById('draft').classList.add('hide'); document.getElementById('catalog').classList.remove('hide'); window.scrollTo(0,0); }
 
 function applyClauseMode(){
   var required = !!(currentForm && currentForm.req);
