@@ -43,7 +43,7 @@ const CLAIMS = [
 const ZOPA_ISSUES = [
   { id: "Z1", name: "Marital home — buyout amount",  status: "zopa", aMin: 38, aMax: 62, bMin: 48, bMax: 76, zopaLo: 48, zopaHi: 62, scaleLo: "$240K", scaleHi: "$540K", note: "Overlapping band $360K–$415K — the objective option space where the parties' positions intersect. The parties decide." },
   { id: "Z2", name: "Spousal maintenance — monthly", status: "conv", aMin: 35, aMax: 55, bMin: 40, bMax: 60, zopaLo: 40, zopaHi: 55, scaleLo: "$2.5K", scaleHi: "$6.5K", note: "Bands materially overlap. Both parties open to a duration-capped schedule with step-down at 36 months." },
-  { id: "Z3", name: "Joint debt — assumption ratio",  status: "gap",  aMin: 20, aMax: 38, bMin: 60, bMax: 82, zopaLo: 0,  zopaHi: 0,  scaleLo: "0 / 100", scaleHi: "100 / 0", note: "No overlap. Worth revisiting after the Compare stage (claim C5) — the evidentiary delta on undisclosed obligations is the largest gap." },
+  { id: "Z3", name: "Joint debt — assumption ratio",  status: "gap",  aMin: 20, aMax: 38, bMin: 60, bMax: 82, zopaLo: 0,  zopaHi: 0,  scaleLo: "0 / 100", scaleHi: "100 / 0", note: "No overlap. Worth revisiting after the Gap Analysis stage (claim C5) — the evidentiary delta on undisclosed obligations is the largest gap." },
 ];
 
 const SOURCES = {
@@ -254,7 +254,7 @@ function RatePanel({ signed, onSign }) {
       <div className={"checkpoint-callout " + (signed ? "signed" : "")}>
         <span className="cp-icon">{signed ? "✓" : "2"}</span>
         <div className="cp-text">
-          <div className="cp-label">{signed ? "Checkpoint 2 · Signed" : "Checkpoint 2 · Post-rating"}</div>
+          <div className="cp-label">{signed ? "Checkpoint 2 · Signed" : "Checkpoint 2 · Post-comparison"}</div>
           <div className="cp-msg">{signed ? "Comparison rationale confirmed. Gap analysis may proceed." : "Confirm claim-level comparison or override with rationale capture."}</div>
           <div className="cp-meta">5 claims · symmetry assertion: PASS · neutrality auditor: PASS</div>
         </div>

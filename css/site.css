@@ -685,7 +685,9 @@ section.section.white { background: var(--jx-white); }
   [style*="grid-template-columns:repeat(4,1fr)"],
   [style*="grid-template-columns: repeat(4, 1fr)"],
   [style*="grid-template-columns:repeat(5,1fr)"],
-  [style*="grid-template-columns: repeat(5, 1fr)"] {
+  [style*="grid-template-columns: repeat(5, 1fr)"],
+  [style*="grid-template-columns:repeat(2,1fr)"],
+  [style*="grid-template-columns: repeat(2, 1fr)"] {
     grid-template-columns: 1fr !important;
     gap: 20px !important;
   }
@@ -800,6 +802,23 @@ body.jx-vmodal-lock { overflow: hidden; }
   outline-offset: 2px;
   border-radius: 4px;
 }
-/* Small coral text fails WCAG contrast on white — darken the eyebrow number on light surfaces
-   (large display numbers / on-dark eyebrows keep the brighter coral). */
+/* Small coral text fails WCAG contrast on white — darken the whole eyebrow on light surfaces
+   (on-dark eyebrows keep the brighter coral). */
+.eyebrow:not(.on-dark),
 .eyebrow:not(.on-dark) .num { color: var(--jx-coral-600); }
+
+/* Skip-to-content link (injected by partials.js; target #main) */
+.skip-link {
+  position: absolute; left: -9999px; top: 0; z-index: 100001;
+  background: var(--jx-navy-700, #042C53); color: #fff;
+  padding: 10px 16px; border-radius: 0 0 8px 0; font-weight: 600; text-decoration: none;
+}
+.skip-link:focus { left: 0; }
+
+/* Respect reduced-motion: neutralize animations/transitions (incl. the auto-cycling hero) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important; scroll-behavior: auto !important;
+  }
+}

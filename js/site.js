@@ -39,7 +39,10 @@
     // honor ?path= query
     const params = new URLSearchParams(window.location.search);
     const want = params.get('path');
-    const map = { 'mediator-pilot': 'mediator', 'demo': 'mediator', 'counsel': 'counsel', 'waitlist': 'consumer', 'consumer': 'consumer', 'pilot': 'pilot', 'financial': 'financial', 'cpa': 'financial' };
+    // Note: 'demo' (Request Early Access) intentionally NOT mapped — it leaves the
+    // role picker unselected so a general visitor self-identifies rather than
+    // landing on the mediator application.
+    const map = { 'mediator-pilot': 'mediator', 'counsel': 'counsel', 'waitlist': 'consumer', 'consumer': 'consumer', 'pilot': 'pilot', 'financial': 'financial', 'cpa': 'financial' };
     if (want && map[want]) {
       const target = router.querySelector(`[data-audience="${map[want]}"]`);
       if (target) target.click();
@@ -52,10 +55,15 @@
       e.preventDefault();
       const conf = f.querySelector('.confirmation');
       const showConfirm = () => { if (conf) { conf.style.display = 'block'; const ff = f.querySelector('.form-fields'); if (ff) ff.style.display = 'none'; } };
+      const showError = () => {
+        let er = f.querySelector('.form-error');
+        if (!er) { er = document.createElement('p'); er.className = 'form-error'; er.setAttribute('role', 'alert'); er.style.cssText = 'margin-top:14px;color:var(--jx-coral-600,#B04722);font-weight:600'; f.appendChild(er); }
+        er.textContent = 'Something went wrong sending your request. Please try again, or email hello@justicex.ai.';
+      };
       const body = new URLSearchParams(new FormData(f)).toString();
       fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body })
-        .then(showConfirm)
-        .catch(showConfirm); // local/offline preview: still confirm so the UX isn't blocked
+        .then(res => { (res && res.ok) ? showConfirm() : showError(); })
+        .catch(showError); // genuine network failure surfaces an error rather than a false success
     });
   });
 

@@ -40,7 +40,7 @@
         <li><a href="solutions.html">Pipeline</a></li>
         <li><a href="solutions.html#deliverables">Deliverables</a></li>
         <li><a href="about.html#roadmap">Roadmap</a></li>
-        <li><a href="solutions.html">Pricing · Phase 2</a></li>
+        <li><a href="about.html#roadmap">Pricing · Phase 2</a></li>
       </ul></div>
       <div><h5>Markets</h5><ul>
         <li><a href="markets.html#markets">Markets</a></li>
@@ -77,6 +77,17 @@
   if (navSlot) navSlot.outerHTML = navHTML;
   const footSlot = document.querySelector('[data-partial="footer"]');
   if (footSlot) footSlot.outerHTML = footerHTML;
+  // Skip-to-content link for keyboard/screen-reader users
+  (function(){
+    if (!document.querySelector('.skip-link')) {
+      const sl = document.createElement('a');
+      sl.className = 'skip-link'; sl.href = '#main'; sl.textContent = 'Skip to content';
+      document.body.insertBefore(sl, document.body.firstChild);
+    }
+    let main = document.querySelector('main, [role="main"], #main');
+    if (!main) main = document.querySelector('section');
+    if (main && !main.id) main.id = 'main';
+  })();
   // active link
   document.querySelectorAll('.nav-links a').forEach(a => {
     if ((a.getAttribute('href')||'').toLowerCase() === here) a.classList.add('active');
