@@ -23,7 +23,7 @@
     </div>
     <div class="nav-actions">
       <a href="contact.html?path=pilot" class="nav-cta-pilot">Start Pilot</a>
-      <a href="mediator-console.html" class="nav-secondary" style="display:inline-flex;align-items:center;gap:6px"><span style="color:var(--jx-gold-500);font-size:10px">▶</span> Live console</a>
+      <a href="demo/" class="nav-secondary" style="display:inline-flex;align-items:center;gap:6px"><span style="color:var(--jx-coral-500);font-size:10px">▶</span> Explore the process</a>
       <a href="contact.html?path=demo" class="nav-cta">Request Early Access</a>
     </div>
   </div>
