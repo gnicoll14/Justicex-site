@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>JusticeX — Strength &amp; Completeness Comparison (Whitfield)</title>
+<title>JusticeX — Evidence Quality &amp; Completeness Comparison (Whitfield)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
 <style>
-:root{--navy:#042C53;--navy-deep:#021A33;--navy2:#154572;--navy3:#2A5582;--paper:#E6F1FB;--surface:#FFFFFF;--ink:#1A1A1A;--muted:#5F5E5A;--faint:#9CA0A7;--hair:#D1DEEE;--accent:#D85A30;--accent-d:#B04722;--accent-soft:#FAECE7;--success:#1D9E75;--success-s:#E7F4EF;--warn:#C9962F;--warn-s:#FBF3E0;--a:#2A5582;--a-soft:#E6F1FB;--b:#D67E5F;--b-soft:#FAECE7;--radius:14px;--radius-sm:10px;}
+:root{--navy:#042C53;--navy-deep:#021A33;--navy2:#154572;--navy3:#2A5582;--paper:#E6F1FB;--surface:#FFFFFF;--ink:#1A1A1A;--muted:#5F5E5A;--faint:#9CA0A7;--hair:#D1DEEE;--accent:#D85A30;--accent-d:#B04722;--accent-soft:#FAECE7;--success:#1D9E75;--success-s:#E7F4EF;--warn:#D85A30;--warn-s:#FAECE7;--a:#2A5582;--a-soft:#E6F1FB;--b:#D67E5F;--b-soft:#FAECE7;--radius:14px;--radius-sm:10px;}
 *{box-sizing:border-box}html,body{margin:0}
 body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',Calibri,system-ui,sans-serif;font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;}
 .appbar{background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 26px;}
@@ -71,10 +71,10 @@ h1{font-family:'Source Serif 4',serif;font-weight:500;font-size:25px;margin:0 0 
 <div class="appbar"><div class="brand"><img class="bmark" src="https://justicex.ai/assets/brand-mark.png" alt=""/><span class="wordmark">Justice<span class="x">X</span></span><span class="tagline">Objective comparison</span></div><div><span class="neutralpill">Neutral · synthetic demo</span></div></div>
 
 <div class="app">
-  <div class="crumb"><a href="dashboard.html?role=mediator">Dashboard</a> › <b>Strength &amp; completeness comparison</b></div>
-  <div class="availbar"><i class="ti ti-eye"></i> This comparison updates live and is available at <b>every step</b> — open it any time from the <b>Matter strength</b> tile at the top of any screen, so there are no surprises.</div>
-  <h1>Strength &amp; completeness comparison</h1>
-<a class="aichip" href="disclaimer.html#ai-use" title="AI-assisted, from the inputs. You and your counsel verify and decide — JusticeX informs, it doesn't decide."><span class="aidot"><i class="ti ti-sparkles"></i></span><span><b>Strength scoring</b> &middot; AI-assisted <span class="aimut">&middot; you and your counsel confirm</span></span> <span class="aiarrow">&rsaquo;</span></a>
+  <div class="crumb"><a href="dashboard.html?role=mediator">Dashboard</a> › <b>Evidence quality &amp; completeness comparison</b></div>
+  <div class="availbar"><i class="ti ti-eye"></i> This comparison updates live and is available at <b>every step</b> — open it any time from the <b>Matter evidence quality</b> tile at the top of any screen, so there are no surprises.</div>
+  <h1>Evidence quality &amp; completeness comparison</h1>
+<a class="aichip" href="disclaimer.html#ai-use" title="AI-assisted, from the inputs. You and your counsel verify and decide — JusticeX informs, it doesn't decide."><span class="aidot"><i class="ti ti-sparkles"></i></span><span><b>Evidence-quality scoring</b> &middot; AI-assisted <span class="aimut">&middot; you and your counsel confirm</span></span> <span class="aiarrow">&rsaquo;</span></a>
   <p class="lede">Two objective measures, side by side, for each party — overall and by component. <b>Evidence quality</b> is how well-supported and internally consistent a position's figures are — not a judgment of legal merit or outcome; <b>completeness</b> is how much of the needed evidence is in. They are scored the same way for both sides.</p>
   <div class="framing"><i class="ti ti-info-circle"></i><p><b>This informs your decisions; it does not make them.</b> Feedback is about evidence completeness and quality — including whether figures reconcile and match your own documents. JusticeX flags objective inconsistencies only; it never judges truthfulness or intent.</p></div>
 
@@ -86,14 +86,14 @@ h1{font-family:'Source Serif 4',serif;font-weight:500;font-size:25px;margin:0 0 
       <div class="row"><span class="sl a">A</span><div class="bar"><i class="a" style="width:86%"></i></div><span class="vv">86%</span></div>
       <div class="row"><span class="sl b">B</span><div class="bar"><i class="b" style="width:81%"></i></div><span class="vv">81%</span></div></div>
   </div>
-  <div class="legend">Both metrics are shown for every component below. <b>Completeness</b> is what the evidence-quality notes explain — close those gaps and strength follows.</div>
+  <div class="legend">Both metrics are shown for every component below. <b>Completeness</b> is what the evidence-quality notes explain — close those gaps and evidence quality follows.</div>
 
   <div class="precbar"><i class="ti ti-gavel" style="color:var(--navy3)"></i> <div><b style="color:var(--navy)">Public legal precedent — optional reference.</b> Show cited statutes &amp; public case law alongside each component, for your consideration only. JusticeX never interprets it or suggests how a court would rule.</div>
     <button id="precToggle" class="toggle" onclick="togglePrec()"><span class="k"></span></button></div>
 
   <div class="sec"><i class="ti ti-list-details"></i> By component</div>
   <div class="comp">
-    <div class="chead"><span>Component</span><span class="sh">Strength (A / B)</span><span class="ch">Completeness (A / B)</span><span>Completeness &amp; quality notes</span></div>
+    <div class="chead"><span>Component</span><span class="sh">Evidence quality (A / B)</span><span class="ch">Completeness (A / B)</span><span>Completeness &amp; quality notes</span></div>
 
     <div class="crow">
       <div class="cname">Asset &amp; property disclosure<small>Marital estate, accounts, real property</small></div>
@@ -101,7 +101,7 @@ h1{font-family:'Source Serif 4',serif;font-weight:500;font-size:25px;margin:0 0 
       <div class="ab"><div class="r"><span class="sl a">A</span><div class="bar"><i class="a" style="width:95%"></i></div><span class="vv">95%</span></div><div class="r"><span class="sl b">B</span><div class="bar"><i class="b" style="width:60%"></i></div><span class="vv">60%</span></div></div>
       <div class="fb"><div class="ttl">Completeness &amp; quality</div>
         <div class="pt ok"><i class="ti ti-circle-check"></i><div><b>Party A:</b> all six accounts and both properties documented and reconciled.</div></div>
-        <div class="pt gap"><i class="ti ti-alert-circle"></i><div><b>Party B:</b> two brokerage accounts disclosed without statements — values unverified. Adding them lifts both completeness and strength.</div></div>
+        <div class="pt gap"><i class="ti ti-alert-circle"></i><div><b>Party B:</b> two brokerage accounts disclosed without statements — values unverified. Adding them lifts both completeness and evidence quality.</div></div>
         <div class="pt gap"><i class="ti ti-versions"></i><div><b>Consistency check — Party B:</b> the home value entered ($640,000) is below Party B's own uploaded appraisal ($680,000). Flagged privately to Party B to confirm or correct; until reconciled it lowers evidence quality. JusticeX flags the mismatch only — it does not decide which figure is right.</div></div>
         <div class="precedent"><i class="ti ti-gavel"></i> Reference: DRL §236(B)(4) requires full financial disclosure (Statement of Net Worth). Public source, for context only.</div>
       </div></div>

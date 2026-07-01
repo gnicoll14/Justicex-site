@@ -217,7 +217,7 @@
 .framework-band::before {
   content: ''; position: absolute; inset: 0; pointer-events: none;
   background:
-    radial-gradient(ellipse 50% 60% at 78% 50%, rgba(184,137,45,0.10), transparent 65%),
+    radial-gradient(ellipse 50% 60% at 78% 50%, rgba(216, 90, 48,0.10), transparent 65%),
     radial-gradient(ellipse 40% 50% at 20% 30%, rgba(240, 153, 123, 0.10), transparent 60%);
 }
 .framework-band .wrap { position: relative; }
@@ -225,7 +225,7 @@
 .fw-art { position: relative; padding: 0; margin: 0; }
 .fw-art::before {
   content: ''; position: absolute; inset: -24px;
-  background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(184,137,45,0.12), transparent 65%);
+  background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(216, 90, 48,0.12), transparent 65%);
   filter: blur(20px); z-index: 0;
 }
 .fw-art img {
@@ -233,7 +233,7 @@
   width: 100%; height: auto;
   border-radius: 8px;
   border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.45), 0 0 0 1px rgba(184,137,45,0.18);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.45), 0 0 0 1px rgba(216, 90, 48,0.18);
 }
 .fw-art figcaption {
   position: relative; z-index: 1;
@@ -300,7 +300,7 @@
           <div>
             <div class="eyebrow"><span class="num">Principle 02</span></div>
             <h3 class="h2" style="margin-top: 20px;">Every claim points to a verbatim source.</h3>
-            <p class="body-lg" style="margin-top: 18px;">Retrieval-augmented generation across the parties' own submissions means no claim, score, or recommendation can be made without a corresponding citation. Counsel reviews the output and the source in a side-by-side diff before it ever leaves the matter.</p>
+            <p class="body-lg" style="margin-top: 18px;">Retrieval-augmented generation across the parties' own submissions means no summary, comparison, or evidence-quality signal is produced without a corresponding citation. Counsel reviews the output and the source in a side-by-side diff before it ever leaves the matter.</p>
             <ul class="checklist" style="margin-top: 24px;">
               <li>≥95% of claims tied to a source citation across pilot matters.</li>
               <li>Inline citation IDs persist through summarization, rating, and resolution.</li>
@@ -437,7 +437,7 @@
       <div class="pipeline-stage" role="button" tabindex="0" data-jxstage="1" onclick="jxStage(1)" onkeypress="if(event.key==='Enter'||event.key===' ')jxStage(1)"><div class="n">02</div><div class="name">Intake</div><div class="desc">Evidence + quality flags</div></div>
       <div class="pipeline-stage" role="button" tabindex="0" data-jxstage="2" onclick="jxStage(2)" onkeypress="if(event.key==='Enter'||event.key===' ')jxStage(2)"><div class="n">03</div><div class="name">Redact</div><div class="desc">Privilege &amp; PII</div></div>
       <div class="pipeline-stage" role="button" tabindex="0" data-jxstage="3" onclick="jxStage(3)" onkeypress="if(event.key==='Enter'||event.key===' ')jxStage(3)"><div class="n">04</div><div class="name">Summarize</div><div class="desc">Symmetric briefs</div></div>
-      <div class="pipeline-stage" role="button" tabindex="0" data-jxstage="4" onclick="jxStage(4)" onkeypress="if(event.key==='Enter'||event.key===' ')jxStage(4)"><div class="n">05</div><div class="name">Gap Analysis</div><div class="desc">Alignment &amp; strength</div></div>
+      <div class="pipeline-stage" role="button" tabindex="0" data-jxstage="4" onclick="jxStage(4)" onkeypress="if(event.key==='Enter'||event.key===' ')jxStage(4)"><div class="n">05</div><div class="name">Gap Analysis</div><div class="desc">Alignment &amp; evidence quality</div></div>
       <div class="pipeline-stage" role="button" tabindex="0" data-jxstage="5" onclick="jxStage(5)" onkeypress="if(event.key==='Enter'||event.key===' ')jxStage(5)"><div class="n">06</div><div class="name">Resolution</div><div class="desc">Objective options</div></div>
       <div class="pipeline-stage" role="button" tabindex="0" data-jxstage="6" onclick="jxStage(6)" onkeypress="if(event.key==='Enter'||event.key===' ')jxStage(6)"><div class="n">07</div><div class="name">Memorandum</div><div class="desc">Of Understanding</div></div>
     </div>

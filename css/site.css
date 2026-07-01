@@ -106,7 +106,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 500; col
 }
 .hero::after {
   bottom: -100px; left: -100px; width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(184, 137, 45, 0.06), transparent 60%);
+  background: radial-gradient(circle, rgba(216, 90, 48, 0.06), transparent 60%);
 }
 .hero-inner { position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; padding: 0 32px; }
 .hero h1 { color: var(--jx-paper); }
@@ -114,7 +114,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 500; col
 
 .hero-status {
   display: inline-flex; align-items: center; gap: 14px;
-  padding: 6px 14px; border: 1px solid rgba(184, 137, 45, 0.4); border-radius: 999px;
+  padding: 6px 14px; border: 1px solid rgba(216, 90, 48, 0.4); border-radius: 999px;
   font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600;
   color: var(--jx-gold-400); margin-bottom: 28px;
 }
@@ -252,7 +252,7 @@ section.section.white { background: var(--jx-white); }
 .roadmap-row .window { font-size: 14px; color: var(--jx-slate-500); }
 .roadmap-row .status .chip { display: inline-flex; align-items: center; gap: 8px; padding: 4px 10px; border-radius: 999px; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; border: 1px solid transparent; }
 .chip-active { background: rgba(240, 153, 123, 0.12); color: var(--jx-teal-600); border-color: rgba(240, 153, 123, 0.3); }
-.chip-launching { background: rgba(184, 137, 45, 0.14); color: var(--jx-gold-600); border-color: rgba(184, 137, 45, 0.3); }
+.chip-launching { background: rgba(216, 90, 48, 0.14); color: var(--jx-gold-600); border-color: rgba(216, 90, 48, 0.3); }
 .chip-roadmap { background: var(--jx-stone-100); color: var(--jx-slate-500); border-color: var(--jx-stone-200); }
 .chip-onboarding { background: rgba(240, 153, 123, 0.08); color: var(--jx-teal-500); border-color: rgba(240, 153, 123, 0.2); }
 .roadmap-row .participate { font-size: 13px; color: var(--jx-slate-500); line-height: 1.5; }
@@ -321,7 +321,7 @@ section.section.white { background: var(--jx-white); }
   margin-bottom: 16px;
 }
 .icon-tile svg { width: 20px; height: 20px; stroke-width: 1.5; }
-.icon-tile.gold { background: rgba(184, 137, 45, 0.12); color: var(--jx-gold-600); }
+.icon-tile.gold { background: rgba(216, 90, 48, 0.12); color: var(--jx-gold-600); }
 .icon-tile.navy { background: var(--jx-navy-800); color: var(--jx-gold-500); }
 
 /* Bullet list */
@@ -352,7 +352,7 @@ section.section.white { background: var(--jx-white); }
 .stage-card .stage-label { font-family: var(--font-display); font-size: 19px; font-weight: 500; color: var(--jx-navy-800); margin-top: 12px; }
 .stage-card .stage-desc { font-size: 12px; line-height: 1.5; color: var(--jx-slate-500); margin-top: 10px; }
 .stage-card .stage-meta { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; color: var(--jx-slate-500); margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--jx-stone-200); }
-.stage-card.checkpoint { border-color: var(--jx-gold-500); background: linear-gradient(180deg, rgba(184,137,45,0.05), transparent 40%); }
+.stage-card.checkpoint { border-color: var(--jx-gold-500); background: linear-gradient(180deg, rgba(216, 90, 48,0.05), transparent 40%); }
 .stage-card.checkpoint .stage-meta { color: var(--jx-gold-600); }
 .stage-card .cp-dot { position: absolute; top: 16px; right: 16px; width: 8px; height: 8px; border-radius: 50%; background: var(--jx-teal-500); box-shadow: 0 0 0 4px rgba(240, 153, 123, 0.2); }
 .pipeline-key { display: flex; flex-wrap: wrap; gap: 24px 32px; margin-top: 32px; padding: 18px 24px; background: var(--jx-white); border: 1px solid var(--jx-stone-200); border-radius: 6px; font-size: 13px; color: var(--jx-slate-500); }
@@ -410,7 +410,7 @@ section.section.white { background: var(--jx-white); }
 .comp-row .comp-name { font-family: var(--font-display); font-size: 19px; color: var(--jx-paper); font-weight: 500; }
 .comp-row .comp-state { font-size: 12px; letter-spacing: 0.08em; padding: 6px 12px; border-radius: 999px; display: inline-block; width: fit-content; font-weight: 600; }
 .comp-row .state-now { background: rgba(240, 153, 123, 0.16); color: var(--jx-teal-400); border: 1px solid rgba(240, 153, 123, 0.4); }
-.comp-row .state-launch { background: rgba(184,137,45,0.16); color: var(--jx-gold-400); border: 1px solid rgba(184,137,45,0.4); }
+.comp-row .state-launch { background: rgba(216, 90, 48,0.16); color: var(--jx-gold-400); border: 1px solid rgba(216, 90, 48,0.4); }
 .comp-row .state-future { background: rgba(148,160,181,0.12); color: var(--jx-slate-300); border: 1px solid rgba(148,160,181,0.3); }
 .comp-row .comp-note { font-size: 13px; color: var(--jx-teal-100); line-height: 1.55; }
 
@@ -737,7 +737,7 @@ section.section.white { background: var(--jx-white); }
 .fw-play {
   position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
   z-index: 3; width: 76px; height: 76px; border-radius: 50%;
-  background: rgba(184, 137, 45, 0.92); color: #fff;
+  background: rgba(216, 90, 48, 0.92); color: #fff;
   display: flex; align-items: center; justify-content: center;
   padding-left: 4px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 0 6px rgba(255, 255, 255, 0.12);
@@ -745,9 +745,9 @@ section.section.white { background: var(--jx-white); }
 }
 .fw-play svg { display: block; }
 .fw-video-trigger:hover .fw-play,
-.fw-video-trigger:focus-visible .fw-play { transform: translate(-50%, -50%) scale(1.08); background: var(--jx-gold-500, #b8892d); }
+.fw-video-trigger:focus-visible .fw-play { transform: translate(-50%, -50%) scale(1.08); background: var(--jx-gold-500, #D85A30); }
 .fw-video-trigger:hover img { filter: brightness(1.04); }
-.fw-video-trigger:focus-visible { outline: 3px solid var(--jx-gold-500, #b8892d); outline-offset: 4px; border-radius: 8px; }
+.fw-video-trigger:focus-visible { outline: 3px solid var(--jx-gold-500, #D85A30); outline-offset: 4px; border-radius: 8px; }
 
 /* Video modal / lightbox */
 .jx-vmodal {
@@ -767,7 +767,7 @@ section.section.white { background: var(--jx-white); }
 .jx-vmodal-close {
   position: absolute; top: -16px; right: -16px;
   width: 42px; height: 42px; border-radius: 50%; border: none; cursor: pointer;
-  background: var(--jx-gold-500, #b8892d); color: #fff;
+  background: var(--jx-gold-500, #D85A30); color: #fff;
   font-size: 24px; line-height: 1;
   display: flex; align-items: center; justify-content: center;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
