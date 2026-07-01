@@ -792,3 +792,14 @@ body.jx-vmodal-lock { overflow: hidden; }
 .jx-vmodal--full .jx-vmodal-close {
   top: 16px; right: 16px;
 }
+
+/* ===== A11y quick wins (2026-07-01 website persona review · W4) ===== */
+/* Visible keyboard focus on all interactive elements */
+:where(a, button, [role="button"], [role="tab"], input, select, textarea, summary):focus-visible {
+  outline: 2px solid var(--jx-coral-600);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+/* Small coral text fails WCAG contrast on white — darken the eyebrow number on light surfaces
+   (large display numbers / on-dark eyebrows keep the brighter coral). */
+.eyebrow:not(.on-dark) .num { color: var(--jx-coral-600); }
