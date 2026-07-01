@@ -157,10 +157,9 @@
   var isHome = (splashPage === '' || splashPage === 'index.html');
   var seen = null;
   try { seen = sessionStorage.getItem(SEEN_KEY); } catch (e) {}
-  if (isHome && !seen) {
-    try { sessionStorage.setItem(SEEN_KEY, '1'); } catch (e) {}
-    showEntryGate();
-  }
+  // Entry splash removed (2026-07-01): no blocking interstitial. The framework
+  // video stays one click away via the in-hero play button (#frameworkVideoTrigger).
+  void isHome; void seen;
 
   function showEntryGate() {
     if (!document.getElementById('jxEntryStyle')) {
