@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact · JusticeX.ai</title>
 <meta name="description" content="Request early access, refer a client, or join the JusticeX.ai beta waitlist. Objective comparison for dispute resolution — coming Summer 2026.">
-<link rel="stylesheet" href="css/site.css?v=2026-07-01a">
+<link rel="stylesheet" href="css/site.css?v=2026-07-01b">
 </head>
 <body>
 <div data-partial="nav"></div>
@@ -51,6 +51,12 @@
         <div class="aud-pick-title">I'm a financial/tax pro</div>
         <div class="aud-pick-body">CPAs and financial/tax professionals own the financial and tax-modeling steps — neutral or per-party — and track the matters you refer or advise from a role dashboard.</div>
         <div class="aud-pick-cta">Join as a financial/tax pro <span style="color:var(--jx-gold-500)">→</span></div>
+      </button>
+      <button class="aud-pick" data-audience="security" type="button">
+        <div class="aud-pick-tag">Security &amp; Compliance</div>
+        <div class="aud-pick-title">I need the security packet</div>
+        <div class="aud-pick-body">Vendor-risk or procurement review? Request the DPA, subprocessor list, and security documentation, plus our current compliance status.</div>
+        <div class="aud-pick-cta">Request the packet <span style="color:var(--jx-gold-500)">→</span></div>
       </button>
     </div>
   </div>
@@ -293,6 +299,29 @@
           </div>
         </form>
 
+        <form class="form-card" data-form="security" name="jx-security" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="jx-security">
+          <p hidden aria-hidden="true"><label>Leave this blank: <input name="bot-field"></label></p>
+          <div class="form-fields">
+            <div class="eyebrow"><span class="num">Security</span> <span class="rule"></span> Security &amp; compliance packet</div>
+            <h2 class="h2" style="margin-top:18px;font-family:var(--font-display)">Request the DPA &amp; security documentation.</h2>
+            <p class="body" style="margin-top:12px">For vendor-risk and procurement reviews. We'll send the DPA, subprocessor list, data-handling summary, and current compliance status. Certifications are in development and labeled accordingly.</p>
+            <div class="field-row" style="margin-top:16px">
+              <div class="field"><label>Full name *</label><input type="text" required name="full-name" placeholder="Jane Doe"></div>
+              <div class="field"><label>Work email *</label><input type="email" required name="email" placeholder="you@company.com"></div>
+            </div>
+            <div class="field"><label>Company / organization <span style="text-transform:none;letter-spacing:0;font-weight:400;color:var(--jx-slate-500)">(optional)</span></label><input type="text" name="organization"></div>
+            <div class="field"><label>What do you need? <span style="text-transform:none;letter-spacing:0;font-weight:400;color:var(--jx-slate-500)">(optional)</span></label><textarea name="request" rows="2" placeholder="DPA, subprocessor list, security overview…"></textarea></div>
+            <div class="jx-privacy-badge"><span class="jx-lock">🔒</span><span>We'll only use your details to send the requested documentation.</span></div>
+            <div class="ms-nav" style="margin-top:16px"><span></span><button type="submit" class="btn btn-navy">Request the packet <span class="arrow">→</span></button></div>
+          </div>
+          <div class="confirmation">
+            <div class="confirm-tag">Request received</div>
+            <div class="confirm-title">We'll send the security packet within one business day.</div>
+            <div class="confirm-body">You'll receive the DPA, subprocessor list, data-handling summary, and current compliance status (certifications are in development and labeled as such).</div>
+          </div>
+        </form>
+
         <form class="form-card" data-form="financial" name="jx-financial" method="POST" data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="jx-financial">
           <p hidden aria-hidden="true"><label>Leave this blank: <input name="bot-field"></label></p>
@@ -409,7 +438,7 @@
   Cal("init", "discovery", { origin: "https://cal.com" });
   Cal.ns.discovery("ui", { hideEventTypeDetails: false, layout: "month_view" });
 </script>
-<script src="js/partials.js?v=2026-07-01a"></script>
-<script src="js/site.js?v=2026-07-01a"></script>
+<script src="js/partials.js?v=2026-07-01b"></script>
+<script src="js/site.js?v=2026-07-01b"></script>
 </body>
 </html>
