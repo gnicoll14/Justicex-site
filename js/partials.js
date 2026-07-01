@@ -49,6 +49,7 @@
         <li><a href="markets.html#catalog">Dispute Catalog</a></li>
       </ul></div>
       <div><h5>Trust</h5><ul>
+        <li><a href="trust.html">Trust Center</a></li>
         <li><a href="technology.html#security">Security</a></li>
         <li><a href="technology.html#compliance">Compliance</a></li>
         <li><a href="technology.html#ethics">Responsible AI</a></li>
