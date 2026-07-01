@@ -17,9 +17,9 @@ const STAGES = [
   { n: 2, name: "Intake",    desc: "Evidence collection + quality flags.",    cp: 0, blurb: "Schema-aware intake; OCR; chain-of-custody hash per file." },
   { n: 3, name: "Redact",    desc: "Privilege & PII redaction.",              cp: 1, blurb: "Multi-pass NER + privilege classifier. Counsel approves the diff." },
   { n: 4, name: "Summarize", desc: "Symmetric position briefs.",              cp: 0, blurb: "Same prompts, same models, both parties. Every claim cited." },
-  { n: 5, name: "Compare",      desc: "Objective claim-by-claim comparison.",      cp: 2, blurb: "Per-claim comparison with confidence band. Mediator can override." },
-  { n: 6, name: "Gap-analyze",  desc: "Symmetric gap analysis: convergence & divergence.",        cp: 0, blurb: "Issue-by-issue overlay. Deterministic symmetry assertion." },
-  { n: 7, name: "Package",   desc: "Comparison output package + default clauses.", cp: 3, blurb: "Audit-traceable draft. Mediator signs before parties see it." },
+  { n: 5, name: "Gap Analysis", desc: "Symmetric claim-by-claim comparison; gaps & overlaps.", cp: 2, blurb: "Per-claim comparison with confidence band. Mediator can override." },
+  { n: 6, name: "Resolution",   desc: "Convergence & divergence; options for the parties to resolve.", cp: 0, blurb: "Issue-by-issue overlay; the parties converge. Deterministic symmetry assertion." },
+  { n: 7, name: "Memorandum", desc: "Memorandum of agreed terms + default clauses.", cp: 3, blurb: "Audit-traceable draft. Reviewed and signed before the parties rely on it." },
 ];
 
 const FILES = [
@@ -32,6 +32,9 @@ const FILES = [
   { name: "Shared — SOW 2024-03-12.pdf",      party: "S", size: "112 KB", pages: 4,  ocr: 100, status: "Ingested" },
 ];
 
+// scoreA / scoreB below are per-claim EVIDENCE QUALITY / completeness, scored the
+// same way for both sides — NOT a legal-merit or "who's right" score. Label them
+// as "evidence quality" wherever surfaced.
 const CLAIMS = [
   { id: "C1", name: "Equitable distribution of marital home", scoreA: 78, scoreB: 64, band: "±6", cite: "Q3 financials Smith.pdf · p.4" },
   { id: "C2", name: "Spousal maintenance (length & amount)",  scoreA: 71, scoreB: 58, band: "±8", cite: "Statement of net worth · ¶3" },
@@ -321,10 +324,10 @@ function ResolvePanel({ signed, onSign }) {
         <span className="cp-icon">{signed ? "✓" : "3"}</span>
         <div className="cp-text">
           <div className="cp-label">{signed ? "Checkpoint 3 · Signed" : "Checkpoint 3 · Pre-resolution"}</div>
-          <div className="cp-msg">{signed ? "Package approved. Ready to release to parties." : "Review the comparison output package before the joint session."}</div>
+          <div className="cp-msg">{signed ? "Memorandum approved. Ready to release to the parties." : "Review the Memorandum before the joint session."}</div>
           <div className="cp-meta">3 default clauses inserted · agreement completeness 84/100 · provenance: court-vetted templates</div>
         </div>
-        {!signed && <button className="btn-mini primary" onClick={onSign}>Approve package →</button>}
+        {!signed && <button className="btn-mini primary" onClick={onSign}>Approve Memorandum →</button>}
         {signed && <button className="btn-mini">View certificate</button>}
       </div>
 
