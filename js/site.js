@@ -121,6 +121,8 @@
 
   function openModal(opts) {
     opts = opts || {};
+    var src = opts.src || VIDEO_SRC;
+    if (player.getAttribute('src') !== src) { player.setAttribute('src', src); try { player.load(); } catch (e) {} }
     modal.classList.add('open');
     modal.classList.toggle('jx-vmodal--full', !!opts.full);
     modal.setAttribute('aria-hidden', 'false');
@@ -162,7 +164,7 @@
   var trigger = document.getElementById('frameworkVideoTrigger');
   if (trigger) {
     trigger.addEventListener('click', function () {
-      openModal({ muted: false, full: true });
+      openModal({ muted: false, full: true, src: trigger.getAttribute('data-vsrc') || VIDEO_SRC });
     });
   }
 })();
