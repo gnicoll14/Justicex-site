@@ -41,25 +41,25 @@
       </div>
       <div class="jx-herofig">
         <style>
-          .jx-herofig{background:var(--jx-white);border-radius:18px;padding:26px 30px;box-shadow:0 24px 55px rgba(0,0,0,0.35)}
+          @media(min-width:1025px){.hero .hero-split{grid-template-columns:1.55fr 1fr;gap:52px}}
+          .jx-herofig{background:var(--jx-white);border-radius:18px;padding:22px 26px;box-shadow:0 24px 55px rgba(0,0,0,0.35)}
           .jx-herofig .hf-label{font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--jx-coral-600);font-weight:600}
-          .jx-herofig ol{list-style:none;margin:18px 0 0;padding:0}
-          .jx-herofig li{display:flex;align-items:center;gap:18px;padding:9px 0}
-          .jx-herofig .hf-hex{flex:0 0 auto;width:46px;height:51px;display:grid;place-items:center;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);background:var(--jx-coral-500)}
-          .jx-herofig .hf-n{width:40px;height:44px;display:grid;place-items:center;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);background:var(--jx-navy-800);color:var(--jx-paper);font-family:var(--font-display);font-weight:600;font-size:17px}
-          .jx-herofig li:nth-child(even) .hf-n{background:var(--jx-coral-500)}
+          .jx-herofig ol{list-style:none;margin:14px 0 0;padding:0}
+          .jx-herofig li{display:flex;align-items:center;gap:16px;padding:7px 0}
+          .jx-herofig .hf-hex{flex:0 0 auto;width:42px;height:47px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:600;font-size:17px;color:var(--jx-paper);background:var(--jx-navy-800);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+          .jx-herofig li:nth-child(even) .hf-hex{background:var(--jx-coral-500)}
           .jx-herofig .hf-nm{font-family:var(--font-display);font-weight:600;font-size:17px;color:var(--jx-navy-800)}
           @media(max-width:760px){.jx-herofig{display:none}}
         </style>
         <div class="hf-label">The seven-step process</div>
         <ol aria-label="The seven steps of the JusticeX.ai process">
-          <li><span class="hf-hex" aria-hidden="true"><span class="hf-n">1</span></span><span class="hf-nm">Plan</span></li>
-          <li><span class="hf-hex" aria-hidden="true"><span class="hf-n">2</span></span><span class="hf-nm">Intake</span></li>
-          <li><span class="hf-hex" aria-hidden="true"><span class="hf-n">3</span></span><span class="hf-nm">Redact</span></li>
-          <li><span class="hf-hex" aria-hidden="true"><span class="hf-n">4</span></span><span class="hf-nm">Summarize</span></li>
-          <li><span class="hf-hex" aria-hidden="true"><span class="hf-n">5</span></span><span class="hf-nm">Gap Analysis</span></li>
-          <li><span class="hf-hex" aria-hidden="true"><span class="hf-n">6</span></span><span class="hf-nm">Resolution</span></li>
-          <li><span class="hf-hex" aria-hidden="true"><span class="hf-n">7</span></span><span class="hf-nm">Memorandum</span></li>
+          <li><span class="hf-hex" aria-hidden="true">1</span><span class="hf-nm">Plan</span></li>
+          <li><span class="hf-hex" aria-hidden="true">2</span><span class="hf-nm">Intake</span></li>
+          <li><span class="hf-hex" aria-hidden="true">3</span><span class="hf-nm">Redact</span></li>
+          <li><span class="hf-hex" aria-hidden="true">4</span><span class="hf-nm">Summarize</span></li>
+          <li><span class="hf-hex" aria-hidden="true">5</span><span class="hf-nm">Gap Analysis</span></li>
+          <li><span class="hf-hex" aria-hidden="true">6</span><span class="hf-nm">Resolution</span></li>
+          <li><span class="hf-hex" aria-hidden="true">7</span><span class="hf-nm">Memorandum</span></li>
         </ol>
       </div>
     </div>
