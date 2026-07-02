@@ -3,6 +3,12 @@ Thumbs.db
 node_modules/
 *.zip
 _backups/
+assets/_pre_rebrand_backup/
 uploads/*.docx
 .fuse_hidden*
 _draft-contracts-marketing.html
+# non-runtime source / backups that must never deploy from the public root
+*(backup*.jsx
+assets/A.1 JusticeX.ai Framework - Short Video.mp4
+assets/logo-full-color.png
+assets/splash-logo.png

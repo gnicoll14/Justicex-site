@@ -1,0 +1,34 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Blocking: deterministic, no external deps beyond node + the repo.
+      - name: Routing self-test
+        run: node scripts/check-routes.mjs
+
+      # Advisory to start (|| true). Flip to blocking once the demo pages are cleaned up.
+      - name: HTML validation
+        run: npx --yes html-validate "*.html" "demo/*.html" || true
+
+      - name: Link check (internal)
+        run: npx --yes linkinator . --recurse --skip "^https?://" || true
+
+      - name: Accessibility smoke (marketing pages)
+        run: |
+          npx --yes http-server . -p 8080 &
+          sleep 3
+          npx --yes pa11y-ci --threshold 20 \
+            http://localhost:8080/index.html \
+            http://localhost:8080/families.html \
+            http://localhost:8080/contact.html || true

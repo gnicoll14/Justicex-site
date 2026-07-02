@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+# Interactive synthetic prototype — not indexable content
+Disallow: /demo/
+
+Sitemap: https://justicex.ai/sitemap.xml

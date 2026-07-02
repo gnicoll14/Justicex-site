@@ -63,9 +63,14 @@
         er.textContent = 'Something went wrong sending your request. Please try again, or email hello@justicex.ai.';
       };
       const body = new URLSearchParams(new FormData(f)).toString();
-      fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body })
+      const btn = f.querySelector('[type="submit"]');
+      if (btn) { btn.disabled = true; btn.dataset.busy = '1'; }               // prevent double-submit
+      const ctl = new AbortController();
+      const to = setTimeout(() => ctl.abort(), 15000);                        // don't spin forever on a hung POST
+      fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body, signal: ctl.signal })
         .then(res => { (res && res.ok) ? showConfirm() : showError(); })
-        .catch(showError); // genuine network failure surfaces an error rather than a false success
+        .catch(showError)                                                     // network failure / timeout surfaces an error, not a false success
+        .finally(() => { clearTimeout(to); if (btn) { btn.disabled = false; delete btn.dataset.busy; } });
     });
   });
 
@@ -92,7 +97,6 @@
 // ============================================================
 (function () {
   var VIDEO_SRC = 'assets/framework-video.mp4';
-  var SEEN_KEY = 'jx_splash_seen';
 
   // Build the modal once and attach it to the page.
   var modal = document.createElement('div');
@@ -150,53 +154,8 @@
   // Auto-close the splash/video screen once playback finishes.
   player.addEventListener('ended', closeModal);
 
-  // Show the click-to-enter splash only on the HOME page, once per browser
-  // session. Restricting to home means interior nav clicks (Markets, Solutions,
-  // etc.) can never re-trigger it. A user click lets the intro video play WITH
-  // SOUND (browsers block unmuted autoplay but allow audio after a gesture).
-  // sessionStorage makes it appear once per visit and reappear on a new visit.
-  var splashPage = (window.location.pathname.split('/').pop() || '').toLowerCase();
-  var isHome = (splashPage === '' || splashPage === 'index.html');
-  var seen = null;
-  try { seen = sessionStorage.getItem(SEEN_KEY); } catch (e) {}
-  // Entry splash removed (2026-07-01): no blocking interstitial. The framework
-  // video stays one click away via the in-hero play button (#frameworkVideoTrigger).
-  void isHome; void seen;
-
-  function showEntryGate() {
-    if (!document.getElementById('jxEntryStyle')) {
-      var st = document.createElement('style');
-      st.id = 'jxEntryStyle';
-      st.textContent =
-        '#jxEntry{position:fixed;inset:0;z-index:100000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;background:#101A3B;opacity:0;transition:opacity .4s ease;padding:24px;}' +
-        '#jxEntry.in{opacity:1;}#jxEntry.out{opacity:0;}' +
-        '#jxEntry img{width:auto;max-height:min(52vh,460px);max-width:min(900px,88vw);display:block;}' +
-        '#jxEntry .jx-enter{display:inline-flex;align-items:center;gap:10px;font:600 16px/1 system-ui,-apple-system,Segoe UI,sans-serif;color:#042C53;background:#F0997B;border:0;border-radius:999px;padding:15px 28px;cursor:pointer;transition:background .15s ease,transform .15s ease;box-shadow:0 6px 24px rgba(0,0,0,.25);}' +
-        '#jxEntry .jx-enter:hover{background:#F4B097;transform:translateY(-1px);}' +
-        '#jxEntry .jx-skip{background:transparent;border:0;cursor:pointer;font:600 12px/1 system-ui,-apple-system,Segoe UI,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#B6C0D0;padding:6px 10px;opacity:.85;transition:color .15s ease,opacity .15s ease;}' +
-        '#jxEntry .jx-skip:hover{color:#F0997B;opacity:1;}';
-      document.head.appendChild(st);
-    }
-    var gate = document.createElement('div');
-    gate.id = 'jxEntry';
-    gate.setAttribute('role', 'dialog');
-    gate.setAttribute('aria-label', 'Welcome to JusticeX.ai');
-    gate.innerHTML =
-      '<img src="assets/splash-logo.png" alt="JusticeX.ai">' +
-      '<button class="jx-enter" type="button">&#9658;&nbsp; Play intro with sound</button>' +
-      '<button class="jx-skip" type="button">Skip intro</button>';
-    document.body.appendChild(gate);
-    requestAnimationFrame(function () { requestAnimationFrame(function () { gate.classList.add('in'); }); });
-
-    function removeGate() {
-      gate.classList.add('out');
-      setTimeout(function () { if (gate.parentNode) gate.parentNode.removeChild(gate); }, 400);
-    }
-    var enterBtn = gate.querySelector('.jx-enter');
-    enterBtn.addEventListener('click', function () { removeGate(); openModal({ muted: false, full: true }); });
-    gate.querySelector('.jx-skip').addEventListener('click', removeGate);
-    try { enterBtn.focus(); } catch (e) {}
-  }
+  // Entry splash fully removed (2026-07-01) — no blocking interstitial. The framework
+  // video is available via the in-hero play button (#frameworkVideoTrigger) below.
 
   // Return visits: clicking the framework image on Home replays the video.
   // This is a user gesture, so it can play with sound.

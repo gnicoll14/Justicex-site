@@ -247,7 +247,7 @@ function cardHTML(c){
   var priceSub=c.modes.length>1?modeShort(m.kind):(m.kind==='byo'?'no resale':m.kind==='included'?'in your plan':m.kind==='cyo'?'your account':'metered');
   var priceHTML='<span class="'+priceCls+'">'+(m.kind==='included'?'Included':priceStr(m))+'<small>'+priceSub+'</small></span>';
   return '<div class="card '+(locked?'locked':'')+'">'+
-    '<div class="top"><div class="ic '+(c.logo?'logoic':c.gi)+'">'+(c.logo?'<img src="https://www.google.com/s2/favicons?domain='+c.logo+'&sz=64" alt="" onerror="this.style.display=\'none\'">':'<i class="ti '+c.icon+'"></i>')+'</div>'+
+    '<div class="top"><div class="ic '+(c.gi||'')+'"><i class="ti '+(c.icon||'ti-building')+'"></i></div>'+
     '<div><h3>'+c.name+(c.mcp?'<span class="mcp">MCP</span>':'')+'</h3><div class="grp">'+groupName(c.grp)+'</div></div></div>'+
     '<p class="desc">'+c.desc+'</p>'+
     '<div class="badges">'+badges+'</div>'+toggle+

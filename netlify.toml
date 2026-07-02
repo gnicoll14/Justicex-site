@@ -13,3 +13,23 @@
     X-Frame-Options = "SAMEORIGIN"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+    # Report-Only first (measure, don't break inline styles/scripts); tighten to enforced CSP after the demo inline blocks are externalized.
+    Content-Security-Policy-Report-Only = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; img-src 'self' data: https://justicex.ai; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
+
+# Long-cache fingerprinted static assets (HTML stays default short-TTL so content updates appear)
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
