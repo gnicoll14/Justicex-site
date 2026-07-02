@@ -1,0 +1,2 @@
+# Serve the brand mark as the site favicon (avoids a 404 on every page's /favicon.ico request)
+/favicon.ico   /assets/brand-mark.png   200

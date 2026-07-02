@@ -16,19 +16,28 @@
     Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
     # Report-Only first (measure, don't break inline styles/scripts); tighten to enforced CSP after the demo inline blocks are externalized.
-    Content-Security-Policy-Report-Only = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; img-src 'self' data: https://justicex.ai; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
+    # Cal.com scheduling embed (contact.html) allowlisted so enforcement won't break it later.
+    Content-Security-Policy-Report-Only = "default-src 'self'; script-src 'self' 'unsafe-inline' https://app.cal.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; img-src 'self' data: https://justicex.ai; connect-src 'self' https://api.cal.com; frame-src 'self' https://app.cal.com https://cal.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
 
-# Long-cache fingerprinted static assets (HTML stays default short-TTL so content updates appear)
+# Keep interactive prototype out of the index (belt-and-braces with robots.txt)
+[[headers]]
+  for = "/demo/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+# Static assets: 1-day cache. NOT immutable/1yr, because tokens.css is @imported unversioned
+# and the logo/images are referenced without a ?v — a year-long cache would stale brand changes.
 [[headers]]
   for = "/assets/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=86400"
 
 [[headers]]
   for = "/css/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000"
+    Cache-Control = "public, max-age=86400"
 
+# JS is referenced with ?v= cache-busting, so it can cache long.
 [[headers]]
   for = "/js/*"
   [headers.values]

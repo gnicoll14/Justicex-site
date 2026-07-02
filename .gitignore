@@ -4,7 +4,7 @@ node_modules/
 *.zip
 _backups/
 assets/_pre_rebrand_backup/
-uploads/*.docx
+uploads/
 .fuse_hidden*
 _draft-contracts-marketing.html
 # non-runtime source / backups that must never deploy from the public root
