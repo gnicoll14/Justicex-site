@@ -36,6 +36,7 @@
     +'<a class="row" href="account.html"><i class="ti ti-user-cog"></i> Account &amp; profile</a>'
     +'<a class="row" href="account.html"><i class="ti ti-users"></i> Manage participants</a>'
     +'<a class="row" href="trust.html"><i class="ti ti-shield-lock"></i> Privacy &amp; security</a>'
+    +'<a class="row" href="data-improvement.html"><i class="ti ti-chart-dots-3"></i> Data &amp; improvement</a>'
     +'<a class="row danger" href="index.html"><i class="ti ti-logout"></i> Log out</a>';
   document.body.appendChild(m);
   document.addEventListener('click',function(){m.classList.remove('show');});

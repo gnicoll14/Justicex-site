@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JusticeX — Data &amp; improvement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
+<style>
+:root{--navy:#042C53;--navy-deep:#021A33;--navy2:#154572;--navy3:#2A5582;--paper:#E6F1FB;--surface:#FFFFFF;--ink:#1A1A1A;--muted:#5F5E5A;--faint:#9CA0A7;--hair:#D1DEEE;--accent:#D85A30;--accent-d:#B04722;--accent-soft:#FAECE7;--success:#1D9E75;--success-s:#E7F4EF;--radius:14px;--radius-sm:10px;}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',Calibri,system-ui,sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.appbar{background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 26px;position:relative;}
+.brand{display:flex;align-items:center;}.bmark{height:23px;width:23px;border-radius:5px;margin-right:9px;}
+.wordmark{font-family:'Source Serif 4',serif;font-weight:600;font-size:22px;}.wordmark .x{color:var(--accent);}
+.cat{font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:#08213A;background:#9FC6E8;padding:3px 9px;border-radius:999px;margin-left:12px;font-weight:700;}
+.app{max-width:880px;margin:22px auto 60px;padding:0 22px;}
+.crumb{font-size:12px;color:var(--muted);margin:0 0 10px;}.crumb a{color:var(--navy2);text-decoration:none;font-weight:600;}
+h1{font-family:'Source Serif 4',serif;font-weight:500;font-size:25px;margin:0 0 4px;color:var(--navy);}
+.lede{color:var(--muted);margin:0 0 18px;max-width:80ch;}
+.tier{background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);padding:16px 18px;margin-bottom:12px;display:flex;gap:14px;align-items:flex-start;box-shadow:0 1px 2px rgba(20,30,46,.04);}
+.tier .ic{width:38px;height:38px;border-radius:10px;background:var(--paper);color:var(--navy2);display:flex;align-items:center;justify-content:center;font-size:19px;flex:none;}
+.tier.on .ic{background:var(--success-s);color:#1c7a55;}
+.tier .body{flex:1;}
+.tier h3{font-family:'Source Serif 4',serif;font-weight:600;font-size:15.5px;color:var(--navy);margin:0 0 3px;}
+.tier .d{font-size:13px;color:var(--muted);margin:0;}
+.tier .tag{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;padding:2px 8px;border-radius:999px;margin-left:8px;vertical-align:middle;}
+.tag.default{background:#EEF4FA;color:var(--navy2);} .tag.optin{background:var(--accent-soft);color:var(--accent-d);}
+/* switch */
+.sw{width:44px;height:26px;border-radius:999px;background:#CBD7E6;border:none;cursor:pointer;position:relative;flex:none;transition:background .15s;margin-top:2px;}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.25);transition:left .15s;}
+.sw.on{background:var(--success);}.sw.on::after{left:21px;}
+.sw.locked{background:var(--success);opacity:.55;cursor:not-allowed;}
+.never{background:#F4F8FD;border:1px solid #D6E3F0;border-radius:var(--radius-sm);padding:13px 16px;margin:6px 0 18px;font-size:13px;color:var(--navy2);}
+.never b{color:var(--navy);} .never ul{margin:8px 0 0;padding-left:18px;} .never li{margin:3px 0;}
+.note{display:flex;gap:9px;align-items:flex-start;background:var(--accent-soft);border:1px solid #F1CDBE;border-radius:var(--radius-sm);padding:11px 14px;margin:0 0 18px;font-size:12.5px;color:#7A3B25;}
+.note i{color:var(--accent-d);font-size:17px;margin-top:1px;}.note b{color:var(--accent-d);}
+.sec{font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:var(--faint);font-weight:700;margin:26px 0 10px;}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;}@media(max-width:640px){.two{grid-template-columns:1fr}}
+.mini{background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);padding:15px 17px;}
+.mini h4{margin:0 0 6px;font-family:'Source Serif 4',serif;font-size:14.5px;color:var(--navy);}
+.mini p{margin:0;font-size:12.5px;color:var(--muted);}
+.fb{background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);padding:15px 17px;margin-top:4px;}
+.fb .q{font-size:13px;color:var(--navy);font-weight:600;margin-bottom:9px;}
+.fb .btns{display:flex;gap:8px;flex-wrap:wrap;}
+.fbtn{border:1px solid var(--hair);background:#FBFDFF;color:var(--navy2);font-family:inherit;font-weight:600;font-size:12.5px;padding:7px 12px;border-radius:8px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;}
+.fbtn:hover{border-color:var(--navy3);} .fbtn i{font-size:15px;}
+.saved{font-size:12px;color:#1c7a55;font-weight:600;margin-left:6px;display:none;}
+.disc{margin-top:22px;color:var(--muted);font-size:11.5px;border-top:1px solid var(--hair);padding-top:12px;}.disc a{color:var(--accent-d);font-weight:700;}
+</style>
+</head>
+<body>
+<div class="appbar"><div class="brand"><img class="bmark" src="https://justicex.ai/assets/brand-mark.png" alt=""/><span class="wordmark">Justice<span class="x">X</span></span><span class="cat">Data &amp; improvement</span></div></div>
+<!-- jx-account-cluster -->
+<link rel="stylesheet" href="shared/account-cluster.css?v=2026-07-01d">
+<script src="shared/account-cluster.js?v=2026-07-01d" defer></script>
+<!-- /jx-account-cluster -->
+
+<main id="main" class="app">
+  <div class="crumb"><a href="account.html">Account</a> › <b>Data &amp; improvement</b></div>
+  <h1>How your matter helps JusticeX improve</h1>
+  <p class="lede">JusticeX gets better over time — but never by training AI on your documents. You control exactly what, if anything, is used beyond running your own matter. The conservative setting is on by default; the rest is opt-in and reversible anytime.</p>
+
+  <div class="tier on">
+    <div class="ic"><i class="ti ti-folder"></i></div>
+    <div class="body"><h3>Run my matter <span class="tag default">Default · always on</span></h3><p class="d">Your content is used only to run your matter. Never used to train AI models, never shared. This is the baseline and can't be turned off — it's just how the service works.</p></div>
+    <button class="sw locked on" aria-label="Always on" disabled></button>
+  </div>
+
+  <div class="tier" id="tierA">
+    <div class="ic"><i class="ti ti-chart-dots-3"></i></div>
+    <div class="body"><h3>Help improve the product <span class="tag optin">Opt-in</span></h3><p class="d">Share <b>de-identified quality signals</b> — where the process stalled, where a figure didn't reconcile, whether an AI output needed correction. Metadata only; <b>none of your documents or figures leave your matter.</b></p></div>
+    <button class="sw" data-tier="A" aria-label="Toggle product-improvement signals"></button>
+  </div>
+
+  <div class="tier" id="tierB">
+    <div class="ic"><i class="ti ti-books"></i></div>
+    <div class="body"><h3>Contribute a synthetic example <span class="tag optin">Opt-in</span></h3><p class="d">Allow JusticeX to create a <b>fully synthetic version</b> of your matter — realistic but about no real person — for its example library and quality tests. Your actual documents are never published or shared; only the synthetic derivative is kept, after a human privacy review. Reversible.</p></div>
+    <button class="sw" data-tier="B" aria-label="Toggle synthetic-example contribution"></button>
+  </div>
+  <span class="saved" id="saved"><i class="ti ti-check"></i> Preference saved</span>
+
+  <div class="note"><i class="ti ti-users"></i><p><b>Both parties decide together.</b> Anything drawn from the shared matter record (beyond your own private side) requires <b>every party on the matter to opt in</b>. One party can't contribute the shared record on the other's behalf. Declining never changes the service you get.</p></div>
+
+  <div class="sec">What JusticeX never does</div>
+  <div class="never"><b>Regardless of the settings above:</b>
+    <ul>
+      <li>Your content is <b>never</b> used to train public or third-party AI models.</li>
+      <li>Your actual documents are <b>never</b> shown to other users — examples in the library are synthetic.</li>
+      <li>Redaction isn't treated as anonymization; a real matter is never "just redacted and shared."</li>
+      <li>You can withdraw an opt-in at any time.</li>
+    </ul>
+  </div>
+
+  <div class="sec">How improvement actually works</div>
+  <div class="two">
+    <div class="mini"><h4>Human corrections teach the process</h4><p>When a professional edits or overrides an AI output, that judgment — de-identified — sharpens the checks and prompts. The model's weights are never trained on your content.</p></div>
+    <div class="mini"><h4>A synthetic example library</h4><p>Realistic examples for other users are generated as synthetic matters — no real person, ever — so you can learn from a comparable case without anyone's real file being exposed.</p></div>
+  </div>
+
+  <div class="sec">A quick signal (optional)</div>
+  <div class="fb">
+    <div class="q">Was this stage's output useful and accurate?</div>
+    <div class="btns">
+      <button class="fbtn" data-fb="up"><i class="ti ti-thumb-up"></i> Helpful</button>
+      <button class="fbtn" data-fb="fix"><i class="ti ti-edit"></i> Suggest a fix</button>
+      <button class="fbtn" data-fb="down"><i class="ti ti-thumb-down"></i> Not useful</button>
+      <span class="saved" id="fbsaved"><i class="ti ti-check"></i> Thanks — recorded</span>
+    </div>
+    <p style="margin:10px 0 0;font-size:11.5px;color:var(--faint)">Feedback is how JusticeX improves — it's optional, de-identified, and never changes your pricing or service. Contributors get access to the growing example library.</p>
+  </div>
+
+  <div class="disc">Synthetic demo · illustrative controls. JusticeX is not a law firm or mediator and does not give legal advice. Continual-improvement and data-contribution behavior is opt-in, reversible, and subject to counsel review before any live use. <a href="disclaimer.html">Full disclaimer</a>.</div>
+</main>
+
+<script>
+(function(){
+  function flash(el){ if(!el)return; el.style.display='inline-flex'; setTimeout(function(){el.style.display='none';},1800); }
+  document.querySelectorAll('.sw[data-tier]').forEach(function(b){
+    b.addEventListener('click',function(){ b.classList.toggle('on'); flash(document.getElementById('saved')); });
+  });
+  document.querySelectorAll('.fbtn[data-fb]').forEach(function(b){
+    b.addEventListener('click',function(){ flash(document.getElementById('fbsaved')); });
+  });
+})();
+</script>
+</body>
+</html>
