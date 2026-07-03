@@ -41,6 +41,38 @@
       <h2 class="h1" style="margin-top:24px">One process. Many markets.</h2>
       <p class="lead" style="margin-top:20px;max-width:820px">We start where the package is most complete — New York family matters — and extend the same engine into adjacent markets as each one's rules, documents, and outputs are built out. Availability is marked honestly below.</p>
     </div>
+
+    <div class="jx-media">
+      <style>
+        .jx-media{margin:22px 0 26px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px}
+        .jx-media-q{font-family:var(--font-display);font-weight:600;color:var(--jx-navy-800);font-size:16px;margin-right:6px}
+        .jx-media-btn{display:inline-flex;align-items:center;gap:9px;padding:11px 20px;border-radius:999px;font-weight:600;font-size:14px;text-decoration:none;cursor:pointer;border:none;transition:filter .15s ease,background .15s ease}
+        .jx-media-btn i{font-size:17px;line-height:1}
+        .jx-media-watch{background:var(--jx-navy-800);color:var(--jx-paper)}
+        .jx-media-watch:hover{background:var(--jx-navy-900,#021A33)}
+        .jx-media-hear{background:var(--jx-coral-500);color:var(--jx-paper)}
+        .jx-media-hear:hover{filter:brightness(0.94)}
+        .jx-media-see{background:var(--jx-white);color:var(--jx-navy-800);border:1.5px solid var(--jx-stone-300,#D9DCE1)}
+        .jx-media-see:hover{background:var(--jx-mist,#F4F6FA)}
+        .jx-media-audiowrap{flex-basis:100%;margin-top:4px}
+        .jx-media-audiowrap[hidden]{display:none}
+        .jx-media-audiowrap audio{width:100%;max-width:540px;height:40px}
+        .jx-media-note{flex-basis:100%;font-size:11.5px;color:var(--jx-slate-500);margin:6px 0 0}
+      </style>
+      <span class="jx-media-q">Prefer to watch or listen?</span>
+      <a class="jx-media-btn jx-media-watch" id="frameworkVideoTrigger" role="button" tabindex="0" data-vsrc="assets/overviews/justicex-markets-video-web.mp4"><i class="ti ti-player-play" aria-hidden="true"></i> Watch the overview</a>
+      <button class="jx-media-btn jx-media-hear" id="jxHearBtn" type="button"><i class="ti ti-headphones" aria-hidden="true"></i> Hear the overview</button>
+      <a class="jx-media-btn jx-media-see" href="assets/overviews/justicex-overview-deck.pdf?v=2" target="_blank" rel="noopener"><i class="ti ti-presentation" aria-hidden="true"></i> See the overview</a>
+      <div class="jx-media-audiowrap" id="jxAudioWrap" hidden>
+        <audio id="jxOverviewAudio" controls preload="none" aria-label="AI-assisted audio overview of JusticeX">
+          <source src="assets/overviews/justicex-overview-audio-web.mp3" type="audio/mpeg">
+          <source src="assets/overviews/justicex-overview-audio-web.m4a" type="audio/mp4">
+          Your browser doesn't support embedded audio.
+        </audio>
+      </div>
+      <p class="jx-media-note">AI-assisted overviews · figures illustrative · not legal advice.</p>
+      <script>(function(){var b=document.getElementById('jxHearBtn'),w=document.getElementById('jxAudioWrap'),a=document.getElementById('jxOverviewAudio');if(b&&w&&a){b.addEventListener('click',function(){if(w.hidden){w.hidden=false;a.play().catch(function(){});}else if(a.paused){a.play().catch(function(){});}else{a.pause();}});}})();</script>
+    </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:8px">
 
       <div class="card" style="padding:32px">
