@@ -185,8 +185,50 @@
             <svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
           </span>
         </button>
-        <figcaption><span class="mono">FIG. 01 ·</span> The JusticeX Framework · <span style="color:var(--jx-gold-500)">Watch the overview</span></figcaption>
+        <figcaption><span class="mono">FIG. 01 ·</span> The JusticeX Framework · <span style="color:var(--jx-gold-500)">Watch the Framework film</span></figcaption>
       </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 01b · OVERVIEW MEDIA (substantive: watch / hear / see) ===== -->
+<section class="section paper" data-screen-label="01b Home · Overview media">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="num">01b</span> <span class="rule"></span> The Overview</div>
+      <h2 class="h1" style="margin-top:20px">See the whole platform in about a minute.</h2>
+      <p class="lead" style="margin-top:16px;max-width:720px">A short, substantive walk through how JusticeX runs a matter end to end — the seven-stage pipeline, symmetric by design, with people in the loop at every checkpoint.</p>
+    </div>
+    <div class="jx-media">
+      <style>
+        .jx-media{margin:22px 0 26px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px}
+        .jx-media-q{font-family:var(--font-display);font-weight:600;color:var(--jx-navy-800);font-size:16px;margin-right:6px}
+        .jx-media-btn{display:inline-flex;align-items:center;gap:9px;padding:11px 20px;border-radius:999px;font-weight:600;font-size:14px;text-decoration:none;cursor:pointer;border:none;transition:filter .15s ease,background .15s ease}
+        .jx-media-btn i{font-size:17px;line-height:1}
+        .jx-media-watch{background:var(--jx-navy-800);color:var(--jx-paper)}
+        .jx-media-watch:hover{background:var(--jx-navy-900,#021A33)}
+        .jx-media-hear{background:var(--jx-coral-500);color:var(--jx-paper)}
+        .jx-media-hear:hover{filter:brightness(0.94)}
+        .jx-media-see{background:var(--jx-white);color:var(--jx-navy-800);border:1.5px solid var(--jx-stone-300,#D9DCE1)}
+        .jx-media-see:hover{background:var(--jx-mist,#F4F6FA)}
+        .jx-media-audiowrap{flex-basis:100%;margin-top:4px}
+        .jx-media-audiowrap[hidden]{display:none}
+        .jx-media-audiowrap audio{width:100%;max-width:540px;height:40px}
+        .jx-media-note{flex-basis:100%;font-size:11.5px;color:var(--jx-slate-500);margin:6px 0 0}
+      </style>
+      <span class="jx-media-q">Prefer to watch or listen?</span>
+      <a class="jx-media-btn jx-media-watch jx-vtrigger" role="button" tabindex="0" data-vsrc="assets/overviews/justicex-howitworks-video-web.mp4"><i class="ti ti-player-play" aria-hidden="true"></i> Watch the overview</a>
+      <button class="jx-media-btn jx-media-hear" id="jxHearBtn" type="button"><i class="ti ti-headphones" aria-hidden="true"></i> Hear the overview</button>
+      <a class="jx-media-btn jx-media-see" href="assets/overviews/justicex-overview-deck.pdf?v=2" target="_blank" rel="noopener"><i class="ti ti-presentation" aria-hidden="true"></i> See the overview</a>
+      <div class="jx-media-audiowrap" id="jxAudioWrap" hidden>
+        <audio id="jxOverviewAudio" controls preload="none" aria-label="AI-assisted audio overview of JusticeX">
+          <source src="assets/overviews/justicex-overview-audio-web.mp3" type="audio/mpeg">
+          <source src="assets/overviews/justicex-overview-audio-web.m4a" type="audio/mp4">
+          Your browser doesn't support embedded audio.
+        </audio>
+      </div>
+      <p class="jx-media-note">AI-assisted overviews · figures illustrative · not legal advice.</p>
+      <script>(function(){var b=document.getElementById('jxHearBtn'),w=document.getElementById('jxAudioWrap'),a=document.getElementById('jxOverviewAudio');if(b&&w&&a){b.addEventListener('click',function(){if(w.hidden){w.hidden=false;a.play().catch(function(){});}else if(a.paused){a.play().catch(function(){});}else{a.pause();}});}})();</script>
     </div>
   </div>
 </section>
@@ -746,6 +788,6 @@
 <div data-partial="footer"></div>
 
 <script src="js/partials.js?v=2026-07-02a"></script>
-<script src="js/site.js?v=2026-07-02a"></script>
+<script src="js/site.js?v=2026-07-03a"></script>
 </body>
 </html>

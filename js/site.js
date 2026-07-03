@@ -161,10 +161,12 @@
 
   // Return visits: clicking the framework image on Home replays the video.
   // This is a user gesture, so it can play with sound.
-  var trigger = document.getElementById('frameworkVideoTrigger');
-  if (trigger) {
+  // Wire every video trigger on the page: the hero one (#frameworkVideoTrigger) and any
+  // number of .jx-vtrigger buttons (e.g. an overview media hub). Each plays its own
+  // data-vsrc if set, else the default Framework clip — so multiple videos can coexist.
+  document.querySelectorAll('#frameworkVideoTrigger, .jx-vtrigger').forEach(function (trigger) {
     trigger.addEventListener('click', function () {
       openModal({ muted: false, full: true, src: trigger.getAttribute('data-vsrc') || VIDEO_SRC });
     });
-  }
+  });
 })();
