@@ -783,13 +783,15 @@ body.jx-vmodal-lock { overflow: hidden; }
 }
 
 /* Fullscreen splash variant: video fills the whole browser viewport */
-.jx-vmodal.jx-vmodal--full { padding: 0; }
+.jx-vmodal.jx-vmodal--full { padding: 24px; }
+/* Hug the video's own aspect ratio (centered by the flex parent) so a portrait
+   Short reads as an intentional vertical player and a landscape clip fills wide. */
 .jx-vmodal--full .jx-vmodal-frame {
-  width: 100vw; height: 100vh; max-height: 100vh;
+  width: auto; height: auto; max-width: 96vw; max-height: 96vh;
 }
 .jx-vmodal--full .jx-vmodal-video {
-  width: 100%; height: 100%; max-height: 100vh;
-  border-radius: 0; object-fit: contain;
+  width: auto; height: auto; max-width: 96vw; max-height: 96vh;
+  border-radius: 10px; object-fit: contain;
 }
 .jx-vmodal--full .jx-vmodal-close {
   top: 16px; right: 16px;
