@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JusticeX Solutions — overview deck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
+<style>
+  :root{--navy:#042C53;--navy9:#021A33;--navy6:#154572;--coral:#D85A30;--coral-on:#F0997B;--coral-soft:#FAECE7;--paper:#F4F6FA;--cream:#E6F1FB;--ink:#1A2433;--slate:#5F5E5A;--stone:#D1DEEE;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#e9edf3;font-family:'Source Sans 3',system-ui,sans-serif;color:var(--ink);padding:24px 0}
+  .deck{display:flex;flex-direction:column;align-items:center;gap:22px}
+  .slide{width:1280px;height:720px;background:var(--paper);position:relative;overflow:hidden;box-shadow:0 10px 34px rgba(20,30,46,.18);border-radius:6px}
+  .pad{position:absolute;inset:0;padding:64px 72px}
+  /* shared chrome */
+  .brand{display:flex;align-items:center;gap:11px;font-family:'Source Serif 4',serif;font-weight:700;font-size:22px;color:var(--navy)}
+  .brand .hex{width:28px;height:28px;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,#0a3b66,var(--navy));clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);color:var(--coral-on);font-size:14px}
+  .brand .x{color:var(--coral)}
+  .brand.on-dark{color:#fff}
+  .eyebrow{font-weight:700;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);display:flex;align-items:center;gap:12px}
+  .eyebrow .rule{height:1px;width:42px;background:var(--stone)}
+  .eyebrow.on-dark{color:var(--coral-on)} .eyebrow.on-dark .rule{background:rgba(240,153,123,.4)}
+  h2.title{font-family:'Source Serif 4',serif;font-weight:600;font-size:36px;line-height:1.1;color:var(--navy);margin-top:18px}
+  h2.title.on-dark{color:#fff}
+  .foot{position:absolute;left:72px;right:72px;bottom:34px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:var(--slate)}
+  .foot.on-dark{color:#9db4cc}
+  .pg{font-weight:700;color:var(--navy)} .foot.on-dark .pg{color:var(--coral-on)}
+  /* navy slide */
+  .slide.navy{background:radial-gradient(120% 130% at 12% 0,#0a3560,var(--navy) 55%,var(--navy9))}
+  .slide.navy .body{color:#dbe6f2}
+  /* cover */
+  .cover .kick{font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;color:var(--coral-on)}
+  .cover h1{font-family:'Source Serif 4',serif;font-weight:600;font-size:60px;line-height:1.04;color:#fff;margin-top:22px;max-width:900px}
+  .cover h1 em{font-style:normal;color:var(--coral-on)}
+  .cover .lead{font-size:20px;color:#c9d7e6;margin-top:24px;max-width:720px;line-height:1.5}
+  .cover .strip{display:flex;gap:10px;margin-top:34px}
+  .cover .chip{font-size:14px;font-weight:600;color:#dbe6f2;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:8px 16px}
+  /* generic body text */
+  .body{font-size:16px;line-height:1.55;color:var(--ink)}
+  .lead2{font-size:18px;line-height:1.5;color:var(--slate);margin-top:16px;max-width:900px}
+  /* three-up cards */
+  .three{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
+  .c{background:#fff;border:1px solid var(--stone);border-radius:14px;padding:24px;position:relative}
+  .slide.navy .c{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14)}
+  .c .ic{width:46px;height:46px;border-radius:12px;background:var(--coral-soft);color:var(--coral);display:flex;align-items:center;justify-content:center;font-size:23px}
+  .slide.navy .c .ic{background:rgba(240,153,123,.14);color:var(--coral-on)}
+  .c h3{font-family:'Source Serif 4',serif;font-weight:600;color:var(--navy);font-size:21px;margin:15px 0 0}
+  .slide.navy .c h3{color:#fff}
+  .c .tag{position:absolute;top:18px;right:18px;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#fff;background:var(--coral);border-radius:5px;padding:3px 8px}
+  .c p{font-size:14.5px;line-height:1.5;color:var(--ink);opacity:.85;margin-top:11px}
+  .slide.navy .c p{color:#c9d7e6;opacity:1}
+  /* two-col detail */
+  .split{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;margin-top:30px;align-items:start}
+  .split ul{list-style:none;margin-top:6px}
+  .split li{font-size:16px;color:var(--ink);padding:9px 0 9px 24px;position:relative;line-height:1.4}
+  .split li::before{content:"";position:absolute;left:0;top:15px;width:10px;height:10px;background:var(--coral);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+  .panel{background:#fff;border:1px solid var(--stone);border-radius:14px;padding:24px}
+  .panel .plab{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--slate)}
+  .panel .row{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--stone);font-size:15px}
+  .panel .row:last-child{border-bottom:0}
+  .panel .row b{color:var(--navy)}
+  /* pipeline */
+  .steps{display:flex;gap:0;margin-top:40px}
+  .step{flex:1;text-align:center;position:relative}
+  .step .hx{width:54px;height:54px;margin:0 auto;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,#0a3b66,var(--navy));clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);color:#fff;font-weight:700;font-size:19px}
+  .step .nm{font-size:14px;margin-top:11px;color:var(--navy);font-weight:600}
+  .step::after{content:"";position:absolute;top:26px;left:50%;width:100%;height:2px;background:var(--stone);z-index:-1}
+  .step:last-child::after{display:none}
+  .cps{display:flex;gap:26px;margin-top:34px}
+  .cp{flex:1;background:var(--coral-soft);border:1px solid #F1D3C8;border-radius:12px;padding:16px 18px}
+  .cp .l{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#B04722}
+  .cp .t{font-size:13.5px;color:#7A3B25;margin-top:5px;line-height:1.4}
+  /* matrix */
+  table.mx{width:100%;border-collapse:collapse;margin-top:30px;font-size:15px}
+  table.mx th,table.mx td{border:1px solid var(--stone);padding:14px 16px;text-align:left;vertical-align:top}
+  table.mx thead th{background:var(--navy);color:#fff;font-weight:600}
+  table.mx tbody th{background:#fff;color:var(--navy);font-weight:600;font-family:'Source Serif 4',serif}
+  table.mx td .y{color:var(--coral);font-weight:700;margin-right:6px}
+  table.mx td small{color:var(--slate);font-size:13px}
+  /* market cards */
+  .mkt{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:34px}
+  .mc{background:#fff;border:1px solid var(--stone);border-radius:14px;padding:24px 24px 10px}
+  .mc-hd{display:flex;align-items:center;gap:13px;padding-bottom:15px;border-bottom:1px solid var(--stone)}
+  .mc-ic{width:48px;height:48px;border-radius:12px;background:var(--navy);color:var(--coral-on);display:flex;align-items:center;justify-content:center;font-size:24px;flex:0 0 auto}
+  .mc-hd h4{font-family:'Source Serif 4',serif;color:var(--navy);font-size:20px;font-weight:600;margin:0;line-height:1.15}
+  .mr{display:flex;gap:13px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--paper)}
+  .mr:last-child{border-bottom:0}
+  .mr > i{color:var(--coral);font-size:22px;margin-top:1px;flex:0 0 auto}
+  .mr b{color:var(--navy);font-size:16px;font-weight:600;font-family:'Source Serif 4',serif;display:block;line-height:1.2}
+  .mr span{color:var(--slate);font-size:14px;display:block;margin-top:3px;line-height:1.4}
+  .mr .rm{color:var(--coral);font-size:11.5px;font-weight:700}
+  /* stats */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:40px}
+  .stat .n{font-family:'Source Serif 4',serif;font-size:64px;line-height:1;color:var(--coral);font-weight:600}
+  .stat .r{width:38px;height:2px;background:var(--coral);margin:16px 0}
+  .stat .l{font-size:15px;color:var(--ink);line-height:1.4}
+  .note{font-size:13px;color:var(--slate);font-style:italic;margin-top:26px}
+  /* close */
+  .close h2{font-family:'Source Serif 4',serif;font-weight:600;font-size:44px;color:#fff;margin-top:20px;max-width:820px;line-height:1.1}
+  .close .lead{font-size:19px;color:#c9d7e6;margin-top:20px;max-width:680px;line-height:1.5}
+  .close .cta{display:inline-flex;align-items:center;gap:9px;margin-top:30px;background:var(--coral);color:#fff;font-weight:600;font-size:16px;padding:13px 24px;border-radius:9px;text-decoration:none}
+  @media print{
+    body{background:#fff;padding:0}
+    .deck{gap:0}
+    .slide{box-shadow:none;border-radius:0;page-break-after:always;break-after:page}
+  }
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <!-- 1 · COVER -->
+  <div class="slide navy cover">
+    <div class="pad">
+      <div class="brand on-dark"><span class="hex">X</span>Justice<span class="x">X</span></div>
+      <div style="margin-top:96px">
+        <div class="kick">Solutions · One neutral platform</div>
+        <h1>Plan to resolution.<br><em>Symmetric and auditable.</em></h1>
+        <p class="lead">One neutral engine and one professional directory — objective, symmetric, and built around an amicable resolution.</p>
+        <div class="strip"><span class="chip">Two-Party Resolution</span><span class="chip">Documentation Preparation</span><span class="chip">Contracts</span></div>
+      </div>
+      <div class="foot on-dark"><span>AI-assisted overview · figures illustrative · not legal advice.</span><span class="pg">justicex.ai</span></div>
+    </div>
+  </div>
+
+  <!-- 2 · BY TYPE -->
+  <div class="slide">
+    <div class="pad">
+      <div class="eyebrow"><span class="rule"></span> Solutions</div>
+      <h2 class="title">Three core solutions. One neutral engine.</h2>
+      <div class="three">
+        <div class="c"><span class="tag">Flagship</span><div class="ic"><i class="ti ti-arrows-left-right"></i></div><h3>Two-Party Resolution</h3><p>Both sides compared objectively and symmetrically — points of alignment and convergence options, then an agreed memorandum.</p></div>
+        <div class="c"><div class="ic"><i class="ti ti-file-pencil"></i></div><h3>Documentation Preparation</h3><p>One-sided, attorney-in-the-loop preparation of filings and petitions — a starting point for counsel review, never a substitute.</p></div>
+        <div class="c"><div class="ic"><i class="ti ti-file-certificate"></i></div><h3>Contracts</h3><p>Agreements with an optional mediation-before-litigation clause that opens a JusticeX matter if a dispute arises.</p></div>
+      </div>
+      <p class="lead2">Two capabilities power every solution: <b style="color:var(--navy)">Objective Comparison &amp; Gap Analysis</b> and the <b style="color:var(--navy)">Professional Directory &amp; Referral</b>.</p>
+      <div class="foot"><span>AI-assisted overview · figures illustrative · not legal advice.</span><span class="pg">02</span></div>
+    </div>
+  </div>
+
+  <!-- 3 · TWO-PARTY -->
+  <div class="slide">
+    <div class="pad">
+      <div class="eyebrow"><span class="rule"></span> Flagship solution</div>
+      <h2 class="title">Two-Party Resolution</h2>
+      <div class="split">
+        <div>
+          <p class="body" style="margin-top:6px">Both parties run through an identical, citation-grounded process. JusticeX informs symmetrically — completeness, evidence quality, factual gaps, and convergence options — then the parties, with their own counsel or a neutral, decide.</p>
+          <ul>
+            <li>Symmetric summaries — same prompts, same models, both sides</li>
+            <li>Objective gap analysis, not a legal-merit or outcome score</li>
+            <li>Convergence options and points of alignment</li>
+            <li>An agreed Memorandum of Understanding</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <div class="plab">Where it applies</div>
+          <div class="row"><span>Divorce, custody &amp; support</span><b>Families</b></div>
+          <div class="row"><span>Commercial &amp; partner disputes</span><b>Business</b></div>
+          <div class="row"><span>Employment</span><b>Business</b></div>
+          <div class="row"><span>HOA &amp; insurance claims</span><b>Business</b></div>
+        </div>
+      </div>
+      <div class="foot"><span>Objective · symmetric · not legal advice.</span><span class="pg">03</span></div>
+    </div>
+  </div>
+
+  <!-- 4 · DOC PREP -->
+  <div class="slide">
+    <div class="pad">
+      <div class="eyebrow"><span class="rule"></span> Solution</div>
+      <h2 class="title">Documentation Preparation</h2>
+      <div class="split">
+        <div>
+          <p class="body" style="margin-top:6px">One-sided preparation of filings and petitions, with an attorney in the loop by design. JusticeX organizes, drafts, and cites — a starting point for counsel review, never a substitute for a lawyer.</p>
+          <ul>
+            <li>Attorney-in-the-loop from the start</li>
+            <li>Citation-grounded drafts with a source trail</li>
+            <li>A starting point for counsel review, never a substitute</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <div class="plab">First matter types</div>
+          <div class="row"><span>Article 81 guardianship</span><b>NY</b></div>
+          <div class="row"><span>Attorney-grievance</span><b>NY</b></div>
+          <div class="row"><span>Petitions &amp; agency filings</span><b>—</b></div>
+        </div>
+      </div>
+      <div class="foot"><span>Attorney-in-the-loop · not legal advice.</span><span class="pg">04</span></div>
+    </div>
+  </div>
+
+  <!-- 5 · CONTRACTS -->
+  <div class="slide">
+    <div class="pad">
+      <div class="eyebrow"><span class="rule"></span> Solution</div>
+      <h2 class="title">Contracts</h2>
+      <div class="split">
+        <div>
+          <p class="body" style="margin-top:6px">Assemble common agreements with an optional <b style="color:var(--navy)">mediation-before-litigation</b> clause. If a dispute later arises, the clause opens a JusticeX matter — feeding Two-Party Resolution. The clause is software, not a forum, and preserves access to the courts.</p>
+          <ul>
+            <li>Individual-editable, or organization-configured</li>
+            <li>Mediation-first — not binding arbitration</li>
+            <li>Preserves court access; law carve-outs respected</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <div class="plab">Examples</div>
+          <div class="row"><span>Prenup, cohabitation, separation</span><b>Individual</b></div>
+          <div class="row"><span>Employee, partner &amp; vendor terms</span><b>Business</b></div>
+          <div class="row"><span>Procurement &amp; program terms</span><b>Government</b></div>
+        </div>
+      </div>
+      <div class="foot"><span>Software, not a forum · not legal advice.</span><span class="pg">05</span></div>
+    </div>
+  </div>
+
+  <!-- 6 · CAPABILITIES -->
+  <div class="slide navy">
+    <div class="pad">
+      <div class="eyebrow on-dark"><span class="rule"></span> Platform capabilities</div>
+      <h2 class="title on-dark">The neutral engine underneath.</h2>
+      <div class="three" style="grid-template-columns:1fr 1fr">
+        <div class="c"><div class="ic"><i class="ti ti-chart-dots-3"></i></div><h3>Objective Comparison &amp; Gap Analysis</h3><p>Completeness and evidence-quality signals, factual gap maps, symmetric summaries, and optional public precedent — never a legal-merit score, ruling prediction, or legal advice.</p></div>
+        <div class="c"><div class="ic"><i class="ti ti-users-group"></i></div><h3>Professional Directory &amp; Referral</h3><p>Route to a neutral mediator, attorney, or financial/tax professional when a matter needs one — no-fee, symmetric, and consent-based.</p></div>
+      </div>
+      <p class="body" style="color:#c9d7e6;margin-top:30px;max-width:940px">Every output is citation-grounded, deterministically generated, and reconciled to one canonical record — with a cryptographic audit trail.</p>
+      <div class="foot on-dark"><span>Objective · symmetric · auditable · not legal advice.</span><span class="pg">06</span></div>
+    </div>
+  </div>
+
+  <!-- 7 · PIPELINE -->
+  <div class="slide">
+    <div class="pad">
+      <div class="eyebrow"><span class="rule"></span> How it works</div>
+      <h2 class="title">Seven stages. Three checkpoints.</h2>
+      <div class="steps">
+        <div class="step"><div class="hx">1</div><div class="nm">Plan</div></div>
+        <div class="step"><div class="hx">2</div><div class="nm">Intake</div></div>
+        <div class="step"><div class="hx">3</div><div class="nm">Redact</div></div>
+        <div class="step"><div class="hx">4</div><div class="nm">Summarize</div></div>
+        <div class="step"><div class="hx">5</div><div class="nm">Gap Analysis</div></div>
+        <div class="step"><div class="hx">6</div><div class="nm">Resolution</div></div>
+        <div class="step"><div class="hx">7</div><div class="nm">Memorandum</div></div>
+      </div>
+      <div class="cps">
+        <div class="cp"><div class="l">Checkpoint 1 · post-redaction</div><div class="t">Counsel reviews removed content and signs the redaction certificate.</div></div>
+        <div class="cp"><div class="l">Checkpoint 2 · post-comparison</div><div class="t">The practitioner confirms the comparison rationale; claim-level overrides captured.</div></div>
+        <div class="cp"><div class="l">Checkpoint 3 · pre-resolution</div><div class="t">A final review of the gap analysis before the joint session.</div></div>
+      </div>
+      <div class="foot"><span>JusticeX informs · the parties decide · not legal advice.</span><span class="pg">07</span></div>
+    </div>
+  </div>
+
+  <!-- 8 · MATRIX -->
+  <div class="slide">
+    <div class="pad">
+      <div class="eyebrow"><span class="rule"></span> Markets</div>
+      <h2 class="title">Matched to who you are.</h2>
+      <div class="mkt">
+        <div class="mc"><div class="mc-hd"><div class="mc-ic"><i class="ti ti-users"></i></div><h4>Families &amp; Individuals</h4></div>
+          <div class="mr"><i class="ti ti-arrows-left-right"></i><div><b>Two-Party Resolution</b><span>Divorce, custody, support</span></div></div>
+          <div class="mr"><i class="ti ti-file-pencil"></i><div><b>Documentation Preparation</b><span>Guardianship, grievance, petitions</span></div></div>
+          <div class="mr"><i class="ti ti-file-certificate"></i><div><b>Contracts</b><span>Prenup, cohabitation, separation</span></div></div>
+        </div>
+        <div class="mc"><div class="mc-hd"><div class="mc-ic"><i class="ti ti-building"></i></div><h4>Businesses</h4></div>
+          <div class="mr"><i class="ti ti-arrows-left-right"></i><div><b>Two-Party Resolution</b><span>Commercial, partner, employment, insurance</span></div></div>
+          <div class="mr"><i class="ti ti-file-pencil"></i><div><b>Documentation Preparation</b><span>Regulatory &amp; compliance filings <span class="rm">· roadmap</span></span></div></div>
+          <div class="mr"><i class="ti ti-file-certificate"></i><div><b>Contracts</b><span>Employee, partner, vendor terms</span></div></div>
+        </div>
+        <div class="mc"><div class="mc-hd"><div class="mc-ic"><i class="ti ti-building-bank"></i></div><h4>Government</h4></div>
+          <div class="mr"><i class="ti ti-arrows-left-right"></i><div><b>Two-Party Resolution</b><span>Constituent &amp; contractor disputes</span></div></div>
+          <div class="mr"><i class="ti ti-file-pencil"></i><div><b>Documentation Preparation</b><span>Program &amp; agency filings <span class="rm">· roadmap</span></span></div></div>
+          <div class="mr"><i class="ti ti-file-certificate"></i><div><b>Contracts</b><span>Procurement, program terms</span></div></div>
+        </div>
+      </div>
+      <p class="note">Objective Comparison and the Professional Directory apply across all markets and solutions. Documentation Preparation begins with NY guardianship and attorney-grievance matters.</p>
+      <div class="foot"><span>Not a law firm or mediator · not legal advice.</span><span class="pg">08</span></div>
+    </div>
+  </div>
+
+  <!-- 9 · OUTCOMES -->
+  <div class="slide">
+    <div class="pad">
+      <div class="eyebrow"><span class="rule"></span> Results</div>
+      <h2 class="title">Calibrated against today's baseline.</h2>
+      <div class="stats">
+        <div class="stat"><div class="n">60–80%</div><div class="r"></div><div class="l">Less prep time per matter.</div></div>
+        <div class="stat"><div class="n">3–5×</div><div class="r"></div><div class="l">More matters per mediator-month.</div></div>
+        <div class="stat"><div class="n">$8K+</div><div class="r"></div><div class="l">Preventable cost per matter (illustrative target).</div></div>
+        <div class="stat"><div class="n">3–6<span style="font-size:34px">wk</span></div><div class="r"></div><div class="l">Intake to first session.</div></div>
+      </div>
+      <p class="note">Design-partner target band, pre-validation, set against the practitioner's pre-platform baseline. Figures illustrative; refined against design-partner matters during Phase 1.</p>
+      <div class="foot"><span>AI-assisted overview · figures illustrative · not legal advice.</span><span class="pg">09</span></div>
+    </div>
+  </div>
+
+  <!-- 10 · CLOSE -->
+  <div class="slide navy close">
+    <div class="pad">
+      <div class="brand on-dark"><span class="hex">X</span>Justice<span class="x">X</span></div>
+      <div style="margin-top:80px">
+        <div class="eyebrow on-dark"><span class="rule"></span> Get started</div>
+        <h2>See the pipeline on your matters.</h2>
+        <p class="lead">A 30-minute walkthrough on a redacted matter you bring, in your jurisdiction and dispute type. No deck. No pitch.</p>
+        <a class="cta" href="https://justicex.ai/contact.html?path=demo">Book a walkthrough <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="foot on-dark"><span>Not a law firm or mediator · not legal advice.</span><span class="pg">justicex.ai</span></div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

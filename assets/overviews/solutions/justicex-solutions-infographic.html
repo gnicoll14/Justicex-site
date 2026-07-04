@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JusticeX Solutions — at a glance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
+<style>
+  :root{--navy:#042C53;--navy9:#021A33;--navy6:#154572;--coral:#D85A30;--coral-on:#F0997B;--coral-soft:#FAECE7;--paper:#F4F6FA;--cream:#E6F1FB;--ink:#1A2433;--slate:#5F5E5A;--stone:#D1DEEE;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#e9edf3;font-family:'Source Sans 3',system-ui,sans-serif;color:var(--ink);display:flex;justify-content:center;padding:24px}
+  /* fixed poster — export target ~1600x1000 (renders 1:1 for raster) */
+  .ig{width:1600px;background:var(--paper);position:relative;overflow:hidden}
+  .ig-inner{padding:56px 64px 40px}
+  /* header band */
+  .ig-head{display:flex;align-items:flex-end;justify-content:space-between;border-bottom:2px solid var(--stone);padding-bottom:22px}
+  .brand{display:flex;align-items:center;gap:13px;font-family:'Source Serif 4',serif;font-weight:700;font-size:30px;color:var(--navy)}
+  .brand .hex{width:34px;height:34px;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,#0a3b66,var(--navy));clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);color:var(--coral-on);font-size:17px}
+  .brand .x{color:var(--coral)}
+  .ig-head .kicker{text-align:right}
+  .ig-head .kicker .k1{font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);font-size:14px}
+  .ig-head .kicker .k2{font-family:'Source Serif 4',serif;font-size:34px;color:var(--navy);font-weight:600;margin-top:4px}
+  /* subtitle */
+  .ig-sub{margin:22px 0 4px;font-size:20px;color:var(--slate);max-width:1050px;line-height:1.45}
+  /* three solutions */
+  .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:30px}
+  .col{background:#fff;border:1px solid var(--stone);border-radius:16px;padding:26px 26px 24px;position:relative}
+  .col .tag{position:absolute;top:20px;right:20px;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#fff;background:var(--coral);border-radius:6px;padding:4px 9px}
+  .col .ic{width:52px;height:52px;border-radius:13px;background:var(--coral-soft);color:var(--coral);display:flex;align-items:center;justify-content:center;font-size:27px}
+  .col h3{font-family:'Source Serif 4',serif;font-weight:600;color:var(--navy);font-size:24px;margin:16px 0 0}
+  .col p{font-size:15px;line-height:1.5;color:var(--ink);opacity:.85;margin:10px 0 0}
+  .col ul{margin:14px 0 0;padding:0;list-style:none}
+  .col li{font-size:14px;color:var(--slate);padding:4px 0 4px 20px;position:relative}
+  .col li::before{content:"";position:absolute;left:0;top:11px;width:9px;height:9px;background:var(--coral);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+  /* capabilities strip */
+  .caps{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+  .cap{display:flex;gap:16px;align-items:flex-start;background:var(--cream);border:1px solid var(--stone);border-radius:14px;padding:20px 24px}
+  .cap .ic{width:44px;height:44px;border-radius:11px;background:var(--navy);color:var(--coral-on);display:flex;align-items:center;justify-content:center;font-size:22px;flex:0 0 auto}
+  .cap h4{font-family:'Source Serif 4',serif;color:var(--navy);font-size:18px;font-weight:600}
+  .cap p{font-size:13.5px;color:var(--slate);margin-top:4px;line-height:1.45}
+  /* pipeline strip */
+  .pipe{margin-top:30px;background:var(--navy);border-radius:16px;padding:26px 30px;color:#fff}
+  .pipe .plab{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral-on)}
+  .pipe .steps{display:flex;align-items:center;gap:0;margin-top:16px}
+  .pipe .step{flex:1;text-align:center;position:relative}
+  .pipe .step .hx{width:44px;height:44px;margin:0 auto;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,#0a3b66,#06325c);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);font-weight:700;font-size:16px;color:#fff;border:1px solid rgba(240,153,123,.4)}
+  .pipe .step .nm{font-size:13px;margin-top:9px;color:#dbe6f2}
+  .pipe .step::after{content:"";position:absolute;top:22px;right:-0;width:100%;height:2px;background:rgba(255,255,255,.14);z-index:-1}
+  .pipe .step:last-child::after{display:none}
+  .pipe .cps{display:flex;gap:22px;margin-top:18px;font-size:12.5px;color:#b7c6da}
+  .pipe .cps b{color:var(--coral-on);font-weight:700}
+  /* footer */
+  .ig-foot{display:flex;justify-content:space-between;align-items:center;margin-top:26px;padding-top:16px;border-top:1px solid var(--stone)}
+  .ig-foot .disc{font-size:13px;color:var(--slate)}
+  .ig-foot .site{font-size:14px;font-weight:700;color:var(--navy)}
+</style>
+</head>
+<body>
+  <div class="ig">
+    <div class="ig-inner">
+      <div class="ig-head">
+        <div class="brand"><span class="hex">X</span>Justice<span class="x">X</span></div>
+        <div class="kicker"><div class="k1">Solutions</div><div class="k2">One platform. Three ways to resolve.</div></div>
+      </div>
+      <p class="ig-sub">One neutral engine and one professional directory — whether both sides resolve together, one side prepares a filing, or a contract needs a fair path if a dispute arises. Objective, symmetric, and built around an amicable resolution.</p>
+
+      <div class="cols">
+        <div class="col">
+          <span class="tag">Flagship</span>
+          <div class="ic"><i class="ti ti-arrows-left-right"></i></div>
+          <h3>Two-Party Resolution</h3>
+          <p>Both sides compared objectively and symmetrically — points of alignment and convergence options, then an agreed memorandum.</p>
+          <ul><li>Divorce, custody &amp; support</li><li>Commercial &amp; partner disputes</li><li>Employment, HOA &amp; insurance</li></ul>
+        </div>
+        <div class="col">
+          <div class="ic"><i class="ti ti-file-pencil"></i></div>
+          <h3>Documentation Preparation</h3>
+          <p>One-sided, attorney-in-the-loop preparation of filings and petitions — a starting point for counsel review, never a substitute.</p>
+          <ul><li>Article&nbsp;81 guardianship</li><li>Attorney-grievance</li><li>Petitions &amp; agency filings</li></ul>
+        </div>
+        <div class="col">
+          <div class="ic"><i class="ti ti-file-certificate"></i></div>
+          <h3>Contracts</h3>
+          <p>Assemble agreements with an optional mediation-before-litigation clause that opens a JusticeX matter if a dispute arises.</p>
+          <ul><li>Prenup, cohabitation, separation</li><li>Employee, partner &amp; vendor terms</li><li>Individual-editable or org-configured</li></ul>
+        </div>
+      </div>
+
+      <div class="caps">
+        <div class="cap">
+          <div class="ic"><i class="ti ti-chart-dots-3"></i></div>
+          <div><h4>Objective Comparison &amp; Gap Analysis</h4><p>Completeness and evidence-quality signals, factual gap maps, and symmetric summaries — never a legal-merit score or legal advice.</p></div>
+        </div>
+        <div class="cap">
+          <div class="ic"><i class="ti ti-users-group"></i></div>
+          <div><h4>Professional Directory &amp; Referral</h4><p>Route to a neutral mediator, attorney, or financial/tax professional when a matter needs one — no-fee, symmetric, consent-based.</p></div>
+        </div>
+      </div>
+
+      <div class="pipe">
+        <div class="plab">How Two-Party Resolution works · seven stages, three checkpoints</div>
+        <div class="steps">
+          <div class="step"><div class="hx">1</div><div class="nm">Plan</div></div>
+          <div class="step"><div class="hx">2</div><div class="nm">Intake</div></div>
+          <div class="step"><div class="hx">3</div><div class="nm">Redact</div></div>
+          <div class="step"><div class="hx">4</div><div class="nm">Summarize</div></div>
+          <div class="step"><div class="hx">5</div><div class="nm">Gap Analysis</div></div>
+          <div class="step"><div class="hx">6</div><div class="nm">Resolution</div></div>
+          <div class="step"><div class="hx">7</div><div class="nm">Memorandum</div></div>
+        </div>
+        <div class="cps"><span><b>Checkpoint 1</b> · post-redaction</span><span><b>Checkpoint 2</b> · post-comparison</span><span><b>Checkpoint 3</b> · pre-resolution</span><span>JusticeX informs · the parties decide</span></div>
+      </div>
+
+      <div class="ig-foot">
+        <div class="disc">AI-assisted overview · figures illustrative · not legal advice. Not a law firm or mediator.</div>
+        <div class="site">justicex.ai</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

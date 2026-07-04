@@ -22,81 +22,240 @@
 <div data-partial="nav"></div>
 
 <section class="hero" data-screen-label="03 Solutions · Hero">
-  <div class="hero-inner">
-    <div class="eyebrow on-dark"><span class="num">Solutions</span> <span class="rule"></span> The seven-stage pipeline</div>
-    <h1 class="h-display" style="margin-top:24px;color:var(--jx-paper);max-width:1080px">Intake to resolution.<br>Symmetric. Auditable. All in one place.</h1>
-    <p class="lead on-dark" style="margin-top:28px;max-width:780px">Seven structured stages. Three human-in-the-loop checkpoints. One canonical record — the Single Point of Consistency — that every output reconciles to. AI proposes, you dispose.</p>
-    <div class="hero-ctas">
-      <a class="btn btn-gold" href="#pipeline">Walk the pipeline <span class="arrow">→</span></a>
-      <a class="btn btn-ghost-dark" href="contact.html?path=pilot">Start a parallel-test pilot</a>
+  <div class="hero-inner sol-hero">
+    <div class="sol-hero-copy">
+      <div class="eyebrow on-dark"><span class="num">Solutions</span> <span class="rule"></span> One neutral platform</div>
+      <h1 class="h-display" style="margin-top:22px;color:var(--jx-paper)">Plan to resolution.<br>Symmetric and auditable.</h1>
+      <p class="lead on-dark" style="margin-top:22px;max-width:540px">Seven structured stages, three human checkpoints, and one canonical record every output reconciles to. Objective, symmetric, and built around an amicable resolution.</p>
+      <div class="hero-ctas" style="margin-top:26px">
+        <a class="btn btn-gold" href="#bytype">Explore the solutions <span class="arrow">→</span></a>
+        <a class="btn btn-ghost-dark" href="contact.html?path=pilot">Start a parallel-test pilot</a>
+      </div>
+      <div class="hero-microbadges">
+        <a class="hmb" href="technology.html#compliance">AES-256 + TLS 1.3</a>
+        <a class="hmb" href="technology.html#compliance">Tenant-isolated &amp; sandboxed</a>
+        <a class="hmb" href="technology.html#compliance">Never used to train public AI models</a>
+      </div>
     </div>
-    <div class="hero-microbadges">
-      <a class="hmb" href="technology.html#compliance">AES-256 + TLS 1.3</a>
-      <a class="hmb" href="technology.html#compliance">Tenant-isolated &amp; sandboxed</a>
-      <a class="hmb" href="technology.html#compliance">Never used to train public AI models</a>
+
+    <div class="sol-hero-media">
+      <button class="sol-poster jx-vtrigger" data-vsrc="assets/overviews/solutions/justicex-solutions-video-web.mp4?v=1" aria-label="Watch the Solutions overview video">
+        <span class="sol-poster-grid" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        <span class="sol-poster-play"><i class="ti ti-player-play-filled" aria-hidden="true"></i></span>
+        <span class="sol-poster-cap"><b>The JusticeX platform</b><span>Objective overview · ~1 min</span></span>
+      </button>
+      <div class="sol-pills">
+        <button class="sol-pill p-watch jx-vtrigger" type="button" data-vsrc="assets/overviews/solutions/justicex-solutions-video-web.mp4?v=1"><i class="ti ti-player-play" aria-hidden="true"></i> Watch the overview</button>
+        <a class="sol-pill p-see" href="assets/overviews/solutions/justicex-solutions-deck.html?v=1" target="_blank" rel="noopener"><i class="ti ti-presentation" aria-hidden="true"></i> See the overview</a>
+      </div>
+      <!-- HEAR pill temporarily hidden: the bespoke Solutions audio isn't generated yet, and a live dead button is worse than a duo.
+           To re-enable when justicex-solutions-audio-web.mp3 lands in assets/overviews/solutions/: restore the Hear button + this audiowrap.
+      <button class="sol-pill p-hear" id="jxHearBtn" type="button"><i class="ti ti-headphones" aria-hidden="true"></i> Hear the overview</button>
+      <div class="jx-media-audiowrap" id="jxAudioWrap" hidden>
+        <audio id="jxOverviewAudio" controls preload="none" aria-label="AI-assisted audio overview of JusticeX Solutions">
+          <source src="assets/overviews/solutions/justicex-solutions-audio-web.mp3" type="audio/mpeg">
+          <source src="assets/overviews/solutions/justicex-solutions-audio-web.m4a" type="audio/mp4">
+        </audio>
+      </div>
+      -->
+      <p class="sol-medianote">AI-assisted overviews · figures illustrative · not legal advice.</p>
     </div>
   </div>
+  <script>(function(){var b=document.getElementById('jxHearBtn'),w=document.getElementById('jxAudioWrap'),a=document.getElementById('jxOverviewAudio');if(b&&w&&a){b.addEventListener('click',function(){if(w.hidden){w.hidden=false;a.play().catch(function(){});}else if(a.paused){a.play().catch(function(){});}else{a.pause();}});}})();</script>
+
   <style>
-  .hero-microbadges{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
-  .hero-microbadges .hmb{font-size:11px;letter-spacing:.04em;font-weight:600;color:var(--jx-teal-100);background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:999px;padding:5px 11px;text-decoration:none;transition:background .2s,border-color .2s,color .2s;}
-  .hero-microbadges .hmb:hover{background:rgba(255,255,255,0.12);border-color:var(--jx-gold-500);color:var(--jx-paper);}
+  /* Elevated-media hero + on-this-page index + by-type/by-market — Solutions (2026-07-03) */
+  .hero-microbadges{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .hero-microbadges .hmb{font-size:11px;letter-spacing:.04em;font-weight:600;color:var(--jx-teal-100);background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:999px;padding:5px 11px;text-decoration:none;transition:background .2s,border-color .2s,color .2s}
+  .hero-microbadges .hmb:hover{background:rgba(255,255,255,0.12);border-color:var(--jx-coral-500);color:var(--jx-paper)}
+  .sol-hero{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+  .sol-hero-media{display:flex;flex-direction:column;gap:14px}
+  .sol-poster{position:relative;width:100%;aspect-ratio:16/9;border:0;padding:0;border-radius:14px;overflow:hidden;cursor:pointer;box-shadow:0 16px 40px rgba(0,0,0,.4);background:radial-gradient(130% 130% at 50% 0,#0e3d6b,var(--jx-navy-800) 70%);display:flex;align-items:center;justify-content:center}
+  .sol-poster-grid{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:8px;opacity:.45}
+  .sol-poster-grid i{width:26px;height:26px;background:var(--jx-coral-500);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+  .sol-poster-grid i:nth-child(even){background:#2f5c88}
+  .sol-poster-play{position:relative;z-index:2;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.94);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(0,0,0,.35);transition:transform .15s ease}
+  .sol-poster:hover .sol-poster-play{transform:scale(1.06)}
+  .sol-poster-play i{font-size:30px;color:var(--jx-navy-800);margin-left:3px}
+  .sol-poster-cap{position:absolute;left:18px;bottom:16px;text-align:left}
+  .sol-poster-cap b{font-family:var(--font-display);font-size:18px;color:#fff;display:block;font-weight:600}
+  .sol-poster-cap span{font-size:12px;color:var(--jx-teal-100)}
+  .sol-pills{display:flex;gap:10px;flex-wrap:wrap}
+  .sol-pill{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;font-weight:600;font-size:13.5px;text-decoration:none;border:0;cursor:pointer;transition:filter .15s ease,background .15s ease}
+  .sol-pill i{font-size:16px;line-height:1}
+  .sol-pill.p-watch{background:#fff;color:var(--jx-navy-800)}
+  .sol-pill.p-hear{background:var(--jx-coral-500);color:#fff}
+  .sol-pill.p-hear:hover{filter:brightness(.94)}
+  .sol-pill.p-see{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+  .sol-pill.p-see:hover{background:rgba(255,255,255,.08)}
+  .jx-media-audiowrap[hidden]{display:none}
+  .jx-media-audiowrap audio{width:100%;max-width:540px;height:40px}
+  .sol-medianote{font-size:11px;color:#9db4cc;margin:2px 0 0}
+  /* on-this-page index */
+  .sol-idxbar{background:var(--jx-paper);border-bottom:1px solid var(--jx-stone-200)}
+  .sol-idxbar-inner{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
+  .sol-idxbar .lbl{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--jx-slate-500)}
+  .sol-idxbar a{font-size:13.5px;color:var(--jx-navy-800);text-decoration:none;font-weight:600;padding:4px 0;border-bottom:2px solid transparent}
+  .sol-idxbar a:hover{border-bottom-color:var(--jx-coral-500)}
+  /* by-type cards */
+  .sol-subhd{font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--jx-slate-500);margin:34px 0 14px}
+  .sol-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .sol-cards.two{grid-template-columns:repeat(2,1fr)}
+  .sol-card{border:1px solid var(--jx-stone-200);border-radius:14px;padding:26px;background:var(--jx-white);display:flex;flex-direction:column;box-shadow:0 1px 3px rgba(20,30,46,.05)}
+  .sol-card .ic{width:42px;height:42px;border-radius:11px;background:var(--jx-coral-100);color:var(--jx-coral-500);display:flex;align-items:center;justify-content:center;font-size:22px}
+  .sol-card h3{font-family:var(--font-display);font-weight:600;color:var(--jx-navy-800);font-size:20px;margin:16px 0 0;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .sol-flag{font-family:var(--font-body);font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--jx-coral-500);border-radius:5px;padding:3px 7px}
+  .sol-flag.cap{background:var(--jx-navy-600)}
+  .sol-card p{color:var(--jx-ink-700);opacity:.85;font-size:14.5px;line-height:1.5;margin:12px 0 0}
+  .sol-card .go{margin-top:auto;padding-top:16px;color:var(--jx-coral-500);font-weight:600;font-size:14px;text-decoration:none}
+  .sol-card .go:hover{color:var(--jx-coral-600)}
+  /* solution x market matrix */
+  table.sol-mx{width:100%;border-collapse:collapse;margin-top:8px;font-size:14.5px}
+  table.sol-mx th,table.sol-mx td{border:1px solid var(--jx-stone-200);padding:13px 16px;text-align:left;vertical-align:top}
+  table.sol-mx thead th{background:var(--jx-navy-800);color:#fff;font-weight:600}
+  table.sol-mx tbody th{background:var(--jx-paper);color:var(--jx-navy-800);font-weight:600;font-family:var(--font-display);font-size:15px;white-space:nowrap}
+  table.sol-mx td .yes{color:var(--jx-coral-500);font-weight:700}
+  table.sol-mx td small{display:block;color:var(--jx-slate-500);font-size:12.5px;margin-top:2px}
+  .sol-mxnote{color:var(--jx-slate-500);font-size:13.5px;margin-top:14px}
+  @media(max-width:860px){
+    .sol-hero{grid-template-columns:1fr;gap:30px}
+    .sol-cards,.sol-cards.two{grid-template-columns:1fr}
+    table.sol-mx{display:block;overflow-x:auto;white-space:nowrap}
+  }
   </style>
+</section>
+
+<!-- ON THIS PAGE index -->
+<nav class="sol-idxbar" aria-label="On this page">
+  <div class="wrap sol-idxbar-inner">
+    <span class="lbl">On this page</span>
+    <a href="#bytype">Solutions</a>
+    <a href="#bymarket">Markets</a>
+    <a href="#pipeline">How it works</a>
+    <a href="#deliverables">Outputs</a>
+    <a href="#outcomes">Results</a>
+    <a href="#start">Get started</a>
+  </div>
+</nav>
+
+<!-- SOLUTIONS BY TYPE -->
+<section class="section white" id="bytype">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="num">01</span> <span class="rule"></span> Solutions</div>
+      <h2 class="h1" style="margin-top:24px">What JusticeX does.</h2>
+      <p class="lead" style="margin-top:20px;max-width:760px">Three core solutions, powered by the same neutral engine and directory. Each has its own overview — watch, hear, see, or read.</p>
+    </div>
+
+    <div class="sol-subhd">Core solutions</div>
+    <div class="sol-cards">
+      <div class="sol-card">
+        <div class="ic"><i class="ti ti-arrows-left-right" aria-hidden="true"></i></div>
+        <h3>Two-Party Resolution <span class="sol-flag">Flagship</span></h3>
+        <p>Both sides compared objectively and symmetrically — points of alignment and convergence options, then an agreed memorandum. Divorce &amp; family, commercial and partner disputes, employment, HOA, and insurance claims.</p>
+        <a class="go" href="#pipeline">See how it works →</a>
+      </div>
+      <div class="sol-card">
+        <div class="ic"><i class="ti ti-file-pencil" aria-hidden="true"></i></div>
+        <h3>Documentation Preparation</h3>
+        <p>One-sided, attorney-in-the-loop preparation of filings and petitions — e.g., Article 81 guardianship or an attorney-grievance. A starting point for counsel review, never a substitute.</p>
+        <a class="go" href="markets.html#markets">Where it applies →</a>
+      </div>
+      <div class="sol-card">
+        <div class="ic"><i class="ti ti-file-certificate" aria-hidden="true"></i></div>
+        <h3>Contracts</h3>
+        <p>Assemble agreements with an optional mediation-before-litigation clause that opens a JusticeX matter if a dispute arises — feeding Two-Party Resolution. Individual-editable or organization-configured.</p>
+        <a class="go" href="markets.html#business">For organizations →</a>
+      </div>
+    </div>
+
+    <div class="sol-subhd">Platform capabilities · power every solution</div>
+    <div class="sol-cards two">
+      <div class="sol-card">
+        <div class="ic"><i class="ti ti-chart-dots-3" aria-hidden="true"></i></div>
+        <h3>Objective Comparison &amp; Gap Analysis <span class="sol-flag cap">Capability</span></h3>
+        <p>The neutral engine underneath: completeness and evidence-quality signals, factual gap maps, symmetric summaries, and optional public precedent — never a legal-merit score or legal advice.</p>
+        <a class="go" href="#pipeline">How the engine works →</a>
+      </div>
+      <div class="sol-card">
+        <div class="ic"><i class="ti ti-users-group" aria-hidden="true"></i></div>
+        <h3>Professional Directory &amp; Referral <span class="sol-flag cap">Capability</span></h3>
+        <p>Route to a neutral mediator, attorney, or financial/tax professional when a matter needs one — no-fee, symmetric, and consent-based.</p>
+        <a class="go" href="markets.html#channels">About the directory →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTIONS BY MARKET -->
+<section class="section paper" id="bymarket">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="num">02</span> <span class="rule"></span> Markets</div>
+      <h2 class="h1" style="margin-top:24px">Matched to who you are.</h2>
+      <p class="lead" style="margin-top:20px;max-width:760px">The same solutions, mapped to each market. Full detail lives on the <a href="markets.html" style="color:var(--jx-coral-500);font-weight:600;text-decoration:none">Markets page →</a></p>
+    </div>
+    <style>
+      .sol-mkt{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+      .sol-mkt .mkt{background:var(--jx-white);border:1px solid var(--jx-stone-200);border-radius:14px;padding:24px 24px 8px;box-shadow:0 1px 3px rgba(20,30,46,.05)}
+      .sol-mkt .mkt-hd{display:flex;align-items:center;gap:13px;padding-bottom:16px;border-bottom:1px solid var(--jx-stone-200)}
+      .sol-mkt .mkt-ic{width:46px;height:46px;border-radius:12px;background:var(--jx-navy-800);color:var(--jx-coralLt-500);display:flex;align-items:center;justify-content:center;font-size:23px;flex:0 0 auto}
+      .sol-mkt .mkt-hd h3{font-family:var(--font-display);color:var(--jx-navy-800);font-size:20px;font-weight:600;margin:0;line-height:1.15}
+      .sol-mkt .mkt-row{display:flex;gap:13px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--jx-paper)}
+      .sol-mkt .mkt-row:last-child{border-bottom:0}
+      .sol-mkt .mkt-row > i{color:var(--jx-coral-500);font-size:21px;margin-top:1px;flex:0 0 auto}
+      .sol-mkt .mkt-row b{color:var(--jx-navy-800);font-size:15.5px;font-weight:600;font-family:var(--font-display);display:block;line-height:1.2}
+      .sol-mkt .mkt-row span{color:var(--jx-slate-500);font-size:14px;display:block;margin-top:3px;line-height:1.4}
+      @media(max-width:860px){.sol-mkt{grid-template-columns:1fr}}
+    </style>
+    <div class="sol-mkt">
+      <div class="mkt">
+        <div class="mkt-hd"><div class="mkt-ic"><i class="ti ti-users" aria-hidden="true"></i></div><h3>Families &amp;<br>Individuals</h3></div>
+        <div class="mkt-row"><i class="ti ti-arrows-left-right" aria-hidden="true"></i><div><b>Two-Party Resolution</b><span>Divorce, custody, support</span></div></div>
+        <div class="mkt-row"><i class="ti ti-file-pencil" aria-hidden="true"></i><div><b>Documentation Preparation</b><span>Guardianship, grievance, petitions</span></div></div>
+        <div class="mkt-row"><i class="ti ti-file-certificate" aria-hidden="true"></i><div><b>Contracts</b><span>Prenup, cohabitation, separation</span></div></div>
+      </div>
+      <div class="mkt">
+        <div class="mkt-hd"><div class="mkt-ic"><i class="ti ti-building" aria-hidden="true"></i></div><h3>Businesses</h3></div>
+        <div class="mkt-row"><i class="ti ti-arrows-left-right" aria-hidden="true"></i><div><b>Two-Party Resolution</b><span>Commercial, partner, employment, insurance</span></div></div>
+        <div class="mkt-row"><i class="ti ti-file-pencil" aria-hidden="true"></i><div><b>Documentation Preparation</b><span>Regulatory &amp; compliance filings <em style="font-style:normal;color:var(--jx-coral-500);font-size:11px;font-weight:700">· roadmap</em></span></div></div>
+        <div class="mkt-row"><i class="ti ti-file-certificate" aria-hidden="true"></i><div><b>Contracts</b><span>Employee, partner, vendor terms</span></div></div>
+      </div>
+      <div class="mkt">
+        <div class="mkt-hd"><div class="mkt-ic"><i class="ti ti-building-bank" aria-hidden="true"></i></div><h3>Government</h3></div>
+        <div class="mkt-row"><i class="ti ti-arrows-left-right" aria-hidden="true"></i><div><b>Two-Party Resolution</b><span>Constituent &amp; contractor disputes</span></div></div>
+        <div class="mkt-row"><i class="ti ti-file-pencil" aria-hidden="true"></i><div><b>Documentation Preparation</b><span>Program &amp; agency filings <em style="font-style:normal;color:var(--jx-coral-500);font-size:11px;font-weight:700">· roadmap</em></span></div></div>
+        <div class="mkt-row"><i class="ti ti-file-certificate" aria-hidden="true"></i><div><b>Contracts</b><span>Procurement, program terms</span></div></div>
+      </div>
+    </div>
+    <p class="sol-mxnote" style="margin-top:18px">Objective Comparison and the Professional Directory apply across all markets and solutions. Documentation Preparation begins with NY guardianship and attorney-grievance matters.</p>
+  </div>
 </section>
 
 <!-- PIPELINE -->
 <section class="section paper" id="pipeline">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow"><span class="num">01</span> <span class="rule"></span> The Pipeline</div>
+      <div class="eyebrow"><span class="num">03</span> <span class="rule"></span> How it works</div>
       <h2 class="h1" style="margin-top:24px">Seven stages.<br>Three checkpoints.</h2>
       <p class="lead" style="margin-top:20px;max-width:760px">The platform runs the matter end-to-end. You sign off at three human-in-the-loop checkpoints — after redaction, after the evidence-quality review, and before the joint session. Every other stage is deterministic, symmetric, and audit-logged.</p>
-    </div>
-
-    <div class="jx-media">
-      <style>
-        .jx-media{margin:22px 0 26px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px}
-        .jx-media-q{font-family:var(--font-display);font-weight:600;color:var(--jx-navy-800);font-size:16px;margin-right:6px}
-        .jx-media-btn{display:inline-flex;align-items:center;gap:9px;padding:11px 20px;border-radius:999px;font-weight:600;font-size:14px;text-decoration:none;cursor:pointer;border:none;transition:filter .15s ease,background .15s ease}
-        .jx-media-btn i{font-size:17px;line-height:1}
-        .jx-media-watch{background:var(--jx-navy-800);color:var(--jx-paper)}
-        .jx-media-watch:hover{background:var(--jx-navy-900,#021A33)}
-        .jx-media-hear{background:var(--jx-coral-500);color:var(--jx-paper)}
-        .jx-media-hear:hover{filter:brightness(0.94)}
-        .jx-media-see{background:var(--jx-white);color:var(--jx-navy-800);border:1.5px solid var(--jx-stone-300,#D9DCE1)}
-        .jx-media-see:hover{background:var(--jx-mist,#F4F6FA)}
-        .jx-media-audiowrap{flex-basis:100%;margin-top:4px}
-        .jx-media-audiowrap[hidden]{display:none}
-        .jx-media-audiowrap audio{width:100%;max-width:540px;height:40px}
-        .jx-media-note{flex-basis:100%;font-size:11.5px;color:var(--jx-slate-500);margin:6px 0 0}
-      </style>
-      <span class="jx-media-q">Prefer to watch or listen?</span>
-      <a class="jx-media-btn jx-media-watch" id="frameworkVideoTrigger" role="button" tabindex="0" data-vsrc="assets/overviews/justicex-howitworks-video-web.mp4"><i class="ti ti-player-play" aria-hidden="true"></i> Watch the overview</a>
-      <button class="jx-media-btn jx-media-hear" id="jxHearBtn" type="button"><i class="ti ti-headphones" aria-hidden="true"></i> Hear the overview</button>
-      <a class="jx-media-btn jx-media-see" href="assets/overviews/justicex-overview-deck.pdf?v=2" target="_blank" rel="noopener"><i class="ti ti-presentation" aria-hidden="true"></i> See the overview</a>
-      <div class="jx-media-audiowrap" id="jxAudioWrap" hidden>
-        <audio id="jxOverviewAudio" controls preload="none" aria-label="AI-assisted audio overview of JusticeX">
-          <source src="assets/overviews/justicex-overview-audio-web.mp3" type="audio/mpeg">
-          <source src="assets/overviews/justicex-overview-audio-web.m4a" type="audio/mp4">
-          Your browser doesn't support embedded audio.
-        </audio>
-      </div>
-      <p class="jx-media-note">AI-assisted overviews · figures illustrative · not legal advice.</p>
-      <script>(function(){var b=document.getElementById('jxHearBtn'),w=document.getElementById('jxAudioWrap'),a=document.getElementById('jxOverviewAudio');if(b&&w&&a){b.addEventListener('click',function(){if(w.hidden){w.hidden=false;a.play().catch(function(){});}else if(a.paused){a.play().catch(function(){});}else{a.pause();}});}})();</script>
     </div>
 
     <!-- 1-slide overview infographic (glanceable) — detailed walk-through is the pipeline below -->
     <figure class="jx-ig-solo">
       <style>
         .jx-ig-solo{margin:6px 0 30px;max-width:1040px}
-        .jx-ig-solo picture{display:block}
-        .jx-ig-solo img{width:100%;height:auto;display:block;border:1px solid var(--jx-stone-200);border-radius:14px;box-shadow:0 2px 12px rgba(20,30,46,.07)}
         .jx-ig-solo figcaption{font-size:12px;color:var(--jx-slate-500);margin-top:9px}
+        /* Bespoke Solutions infographic embedded (removes the shared/general infographic — SC-6 no-duplication).
+           Scaled iframe of the self-contained HTML asset; height fitted by JS to the asset's own content. */
+        .sol-ig-frame{position:relative;width:100%;border:1px solid var(--jx-stone-200);border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(20,30,46,.07);background:var(--jx-paper)}
+        .sol-ig-frame iframe{position:absolute;top:0;left:0;width:1600px;border:0;transform-origin:top left}
       </style>
-      <picture>
-        <source type="image/webp" srcset="assets/overviews/how-justicex-works-1600.webp?v=2 1600w, assets/overviews/how-justicex-works-full.webp?v=2 2752w" sizes="(max-width:1100px) 92vw, 1040px">
-        <img src="assets/overviews/how-justicex-works-1600.png?v=2" width="1600" height="893" loading="lazy" decoding="async" alt="How JusticeX works — seven steps to an objective resolution: 1 Plan, 2 Intake, 3 Redact, 4 Summarize, 5 Gap Analysis, 6 Resolution, 7 Memorandum. Collaborative participation across four roles — individuals, mediators, attorneys, and financial or tax professionals. Symmetric analysis of Party A and Party B on evidence quality and completeness. Objective standards and safeguards. Not a law firm or mediator; not legal advice; figures illustrative.">
-      </picture>
-      <figcaption>The whole process at a glance — the detailed, stage-by-stage walk-through is below.</figcaption>
+      <div class="sol-ig-frame" id="solIgFrame">
+        <iframe src="assets/overviews/solutions/justicex-solutions-infographic.html?v=1" title="JusticeX Solutions at a glance — three solutions (Two-Party Resolution, Documentation Preparation, Contracts), two platform capabilities, and the seven-stage, three-checkpoint pipeline. AI-assisted; figures illustrative; not legal advice." loading="lazy" scrolling="no"></iframe>
+      </div>
+      <figcaption>The Solutions overview at a glance — the detailed, stage-by-stage walk-through is below.</figcaption>
+      <script>(function(){var f=document.getElementById('solIgFrame');if(!f)return;var i=f.querySelector('iframe');function fit(){var w=f.clientWidth,scale=w/1600,h=1015;try{var d=i.contentWindow&&i.contentWindow.document;if(d&&d.documentElement)h=d.documentElement.scrollHeight||1015;}catch(e){}i.style.height=h+'px';i.style.transform='scale('+scale+')';f.style.height=(h*scale)+'px';}i.addEventListener('load',fit);window.addEventListener('resize',fit);setTimeout(fit,400);setTimeout(fit,1200);})();</script>
     </figure>
 
     <style>
@@ -172,7 +331,7 @@
 <section class="section navy" id="deliverables">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow on-dark"><span class="num">02</span> <span class="rule"></span> Deliverables</div>
+      <div class="eyebrow on-dark"><span class="num">04</span> <span class="rule"></span> Outputs</div>
       <h2 class="h1 on-dark" style="margin-top:24px;color:var(--jx-paper)">What the platform produces.</h2>
       <p class="lead on-dark" style="margin-top:20px;max-width:760px">Every output is citation-grounded, deterministically generated, and reconciled to the SPOC. Nothing leaves the matter without a counsel-readable trail back to its source.</p>
     </div>
@@ -218,8 +377,8 @@
   <style>
   .del-card .del-thumb{width:42px;height:42px;border-radius:9px;background:var(--jx-navy-800);display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
   .del-card .del-thumb svg{width:22px;height:22px;stroke:var(--jx-gold-400);fill:none;stroke-width:1.6;}
-  .del-card .del-speed{list-style:none;display:inline-flex;align-items:center;gap:5px;background:rgba(28,107,74,0.12);color:#1c6b4a;border:1px solid rgba(28,107,74,0.28);border-radius:999px;padding:3px 11px;font-size:12px;font-weight:700;margin-bottom:8px;}
-  .del-card .del-speed strong{color:#1c6b4a;}
+  .del-card .del-speed{list-style:none;display:inline-flex;align-items:center;gap:5px;background:var(--jx-coral-100);color:var(--jx-coral-600);border:1px solid rgba(216,90,48,0.28);border-radius:999px;padding:3px 11px;font-size:12px;font-weight:700;margin-bottom:8px;}
+  .del-card .del-speed strong{color:var(--jx-coral-600);}
   </style>
   <script>
   (function(){
@@ -248,7 +407,7 @@
 <section class="section paper" id="outcomes">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow"><span class="num">03</span> <span class="rule"></span> Outcomes</div>
+      <div class="eyebrow"><span class="num">05</span> <span class="rule"></span> Results</div>
       <h2 class="h1" style="margin-top:24px">Calibrated against today's baseline.</h2>
       <p class="lead" style="margin-top:20px;max-width:760px">Numbers below are the design-partner program's target band (pre-validation), set against the mediator's pre-platform baseline. We intend to commission an independent neutrality review as the program matures.</p>
     </div>
@@ -266,7 +425,7 @@
 <section class="section navy">
   <div class="wrap">
     <div class="section-head" style="text-align:left">
-      <div class="eyebrow on-dark"><span class="num">04</span> <span class="rule"></span> The exchange</div>
+      <div class="eyebrow on-dark"><span class="num">06</span> <span class="rule"></span> The exchange</div>
       <h2 class="h1 on-dark" style="margin-top:24px;color:var(--jx-paper)">What you get. What we ask.</h2>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px">
@@ -283,7 +442,7 @@
         <div class="label" style="color:var(--jx-gold-500);margin-bottom:18px">▶ What we ask</div>
         <ul class="checklist on-dark">
           <li><strong style="color:var(--jx-paper)">200 matters across 12 months.</strong> Or whatever your roster supports — we'll co-design the volume.</li>
-          <li><strong style="color:var(--jx-paper)">Three checkpoints per matter.</strong> Redaction sets, position briefs, Memorandum of Understanding.</li>
+          <li><strong style="color:var(--jx-paper)">Sign-offs at the three checkpoints.</strong> Post-redaction, post-comparison, and pre-resolution.</li>
           <li><strong style="color:var(--jx-paper)">Anonymized telemetry.</strong> Used to improve the model; never resold, never used to train other vendors.</li>
           <li><strong style="color:var(--jx-paper)">Honest feedback.</strong> When the AI's wrong — and it will be wrong — flag it.</li>
         </ul>
@@ -293,9 +452,9 @@
 </section>
 
 <!-- CTA -->
-<section class="cta-block">
+<section class="cta-block" id="start">
   <div class="wrap">
-    <div class="eyebrow on-dark"><span class="num">05</span> <span class="rule"></span> Get started</div>
+    <div class="eyebrow on-dark"><span class="num">07</span> <span class="rule"></span> Get started</div>
     <h2 class="h1" style="color:var(--jx-paper);margin-top:24px">See the pipeline on your matters.</h2>
     <p class="lead on-dark" style="margin-top:18px;max-width:680px">A 30-minute walkthrough on a redacted matter you bring, on your jurisdiction, in your dispute type. No deck. No pitch.</p>
     <div class="ctas" style="margin-top:32px">
