@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JusticeX Markets — overview deck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
+<style>
+  :root{--navy:#042C53;--navy9:#021A33;--navy6:#154572;--coral:#D85A30;--coral-on:#F0997B;--soft:#FAECE7;--paper:#F4F6FA;--cream:#E6F1FB;--ink:#1A2433;--slate:#5F5E5A;--stone:#D1DEEE;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#e9edf3;font-family:'Source Sans 3',system-ui,sans-serif;color:var(--ink);padding:24px 0}
+  .deck{display:flex;flex-direction:column;align-items:center;gap:22px}
+  .slide{width:1280px;height:720px;background:var(--paper);position:relative;overflow:hidden;box-shadow:0 10px 34px rgba(20,30,46,.18);border-radius:6px}
+  .pad{position:absolute;inset:0;padding:60px 72px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:'Source Serif 4',serif;font-weight:700;font-size:22px;color:var(--navy)}
+  .brand .hex{width:28px;height:28px;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,#0a3b66,var(--navy));clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);color:var(--coral-on);font-size:14px}
+  .brand .x{color:var(--coral)}
+  .brand.on-dark{color:#fff}
+  .eyebrow{font-weight:700;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);display:flex;align-items:center;gap:12px}
+  .eyebrow .rule{height:1px;width:42px;background:var(--stone)}
+  .eyebrow.on-dark{color:var(--coral-on)} .eyebrow.on-dark .rule{background:rgba(240,153,123,.4)}
+  h2.title{font-family:'Source Serif 4',serif;font-weight:600;font-size:36px;line-height:1.1;color:var(--navy);margin-top:18px}
+  h2.title.on-dark{color:#fff}
+  .foot{position:absolute;left:72px;right:72px;bottom:34px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:var(--slate)}
+  .foot.on-dark{color:#9db4cc}
+  .pg{font-weight:700;color:var(--navy)} .foot.on-dark .pg{color:var(--coral-on)}
+  .slide.navy{background:radial-gradient(120% 130% at 12% 0,#0a3560,var(--navy) 55%,var(--navy9))}
+  .cover .kick{font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;color:var(--coral-on)}
+  .cover h1{font-family:'Source Serif 4',serif;font-weight:600;font-size:56px;line-height:1.05;color:#fff;margin-top:22px;max-width:920px}
+  .cover h1 em{font-style:normal;color:var(--coral-on)}
+  .cover .lead{font-size:20px;color:#c9d7e6;margin-top:24px;max-width:760px;line-height:1.5}
+  .cover .strip{display:flex;gap:10px;margin-top:34px}
+  .cover .chip{font-size:14px;font-weight:600;color:#dbe6f2;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:8px 16px}
+  .body{font-size:16px;line-height:1.55;color:var(--ink)}
+  .lead2{font-size:18px;line-height:1.5;color:var(--slate);margin-top:16px;max-width:940px}
+  .three{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:32px}
+  .c{background:#fff;border:1px solid var(--stone);border-radius:14px;padding:24px;position:relative}
+  .slide.navy .c{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14)}
+  .c .ic{width:46px;height:46px;border-radius:12px;background:var(--soft);color:var(--coral);display:flex;align-items:center;justify-content:center;font-size:23px}
+  .slide.navy .c .ic{background:rgba(240,153,123,.14);color:var(--coral-on)}
+  .c h3{font-family:'Source Serif 4',serif;font-weight:600;color:var(--navy);font-size:21px;margin:15px 0 0}
+  .slide.navy .c h3{color:#fff}
+  .c .tag{position:absolute;top:18px;right:18px;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#fff;border-radius:5px;padding:3px 8px}
+  .tag.now{background:var(--coral)}.tag.soon{background:var(--navy6)}
+  .c p{font-size:14.5px;line-height:1.5;color:var(--ink);opacity:.85;margin-top:11px}
+  .slide.navy .c p{color:#c9d7e6;opacity:1}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:32px}
+  .panel{background:#fff;border:1px solid var(--stone);border-radius:14px;padding:24px}
+  .panel .ic{width:44px;height:44px;border-radius:11px;background:var(--soft);color:var(--coral);display:flex;align-items:center;justify-content:center;font-size:22px}
+  .panel h3{font-family:'Source Serif 4',serif;font-weight:600;color:var(--navy);font-size:20px;margin:14px 0 0}
+  .panel p{font-size:14.5px;line-height:1.5;color:var(--ink);opacity:.85;margin-top:10px}
+  .panel .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+  .panel .chips span{font-size:12.5px;font-weight:500;color:var(--navy);background:var(--paper);border:1px solid var(--stone);border-radius:999px;padding:5px 11px}
+  .four{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:30px}
+  .row{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--stone);border-radius:12px;padding:18px 20px}
+  .row .ic{width:40px;height:40px;border-radius:10px;background:var(--soft);color:var(--coral);display:flex;align-items:center;justify-content:center;font-size:20px;flex:0 0 auto}
+  .row h4{font-family:'Source Serif 4',serif;color:var(--navy);font-size:17px;font-weight:600}
+  .row p{font-size:13.5px;color:var(--slate);margin-top:3px;line-height:1.4}
+  .steps{display:flex;margin-top:40px}.step{flex:1;text-align:center;position:relative}
+  .step .hx{width:54px;height:54px;margin:0 auto;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,#0a3b66,var(--navy));clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);color:#fff;font-weight:700;font-size:19px}
+  .step .nm{font-size:14px;margin-top:11px;color:var(--navy);font-weight:600}
+  .step::after{content:"";position:absolute;top:26px;left:50%;width:100%;height:2px;background:var(--stone);z-index:0}.step:last-child::after{display:none}
+  .juris{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:36px}
+  .jz{background:#fff;border:1px solid var(--stone);border-radius:12px;padding:22px 16px;text-align:center}
+  .jz .st{font-family:'Source Serif 4',serif;font-size:34px;font-weight:600;color:var(--navy)}
+  .jz.lead-z .st{color:var(--coral)}
+  .jz .lb{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--coral);margin-top:8px}
+  .jz .cap{font-size:12.5px;color:var(--slate);margin-top:8px;line-height:1.35}
+  .cat{width:100%;border-collapse:collapse;margin-top:26px;font-size:14.5px}
+  .cat th,.cat td{border:1px solid var(--stone);padding:11px 14px;text-align:left}
+  .cat thead th{background:var(--navy);color:#fff;font-weight:600}
+  .cat tbody td b{color:var(--navy)}
+  .cat .ph{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;border-radius:5px;padding:3px 8px;color:#fff}
+  .cat .ph.p1{background:var(--coral)}.cat .ph.p2{background:var(--navy6)}
+  .note{font-size:13px;color:var(--slate);font-style:italic;margin-top:22px}
+  .close h2{font-family:'Source Serif 4',serif;font-weight:600;font-size:44px;color:#fff;margin-top:20px;max-width:820px;line-height:1.1}
+  .close .lead{font-size:19px;color:#c9d7e6;margin-top:20px;max-width:700px;line-height:1.5}
+  .close .cta{display:inline-flex;align-items:center;gap:9px;margin-top:30px;background:var(--coral);color:#fff;font-weight:600;font-size:16px;padding:13px 24px;border-radius:9px;text-decoration:none}
+  @media print{body{background:#fff;padding:0}.deck{gap:0}.slide{box-shadow:none;border-radius:0;page-break-after:always;break-after:page}}
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <div class="slide navy cover">
+    <div class="pad">
+      <div class="brand on-dark"><span class="hex">X</span>Justice<span class="x">X</span></div>
+      <div style="margin-top:92px">
+        <div class="kick">Markets</div>
+        <h1>Built for the markets<br>where <em>disputes happen.</em></h1>
+        <p class="lead">One objective, symmetric process — run across families, businesses, and government, delivered through whichever professional fits the matter.</p>
+        <div class="strip"><span class="chip">Families &amp; individuals</span><span class="chip">Businesses</span><span class="chip">Government</span></div>
+      </div>
+      <div class="foot on-dark"><span>AI-assisted overview · figures illustrative · not legal advice.</span><span class="pg">justicex.ai</span></div>
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="pad">
+      <div class="eyebrow"><span class="rule"></span> Markets</div>
+      <h2 class="title">One process. Many markets.</h2>
+      <div class="three">
+        <div class="c"><span class="tag now">Design partners · NY</span><div class="ic"><i class="ti ti-users"></i></div><h3>Families &amp; individuals</h3><p>Divorce, custody, support — plus the guardianship and estate matters around them. The launch market: highest volume, clearest documents, most complete rule-set.</p></div>
+        <div class="c"><span class="tag soon">Expanding</span><div class="ic"><i class="ti ti-building-skyscraper"></i></div><h3>Businesses</h3><p>Any business with disputes to resolve — especially those whose contracts call for mediation before litigation, with insurance carriers a marquee example.</p></div>
+        <div class="c"><span class="tag soon">On the horizon</span><div class="ic"><i class="ti ti-building-bank"></i></div><h3>Government</h3><p>Public agencies serve constituents and employ people — the same need for a fair, efficient, documented process through contractor terms and program rules.</p></div>
+      </div>
+      <p class="lead2">We start where the package is most complete — New York family matters — and extend the same engine into adjacent markets as each one's rules, documents, and outputs are built out.</p>
+      <div class="foot"><span>Availability marked honestly · not legal advice.</span><span class="pg">02</span></div>
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="pad">
+      <div class="eyebrow"><span class="rule"></span> For business</div>
+      <h2 class="title">Two ways to put JusticeX to work.</h2>
+      <div class="split">
+        <div class="panel"><div class="ic"><i class="ti ti-file-certificate"></i></div><h3>Resolve disputes with your constituents</h3><p>Ask the external parties you contract with — contractors, clients, partners, policyholders — to try objective, mediated comparison before litigation. The clause is the on-ramp; court access stays open.</p><div class="chips"><span>Insurance carriers</span><span>Franchisors</span><span>Developers</span><span>Healthcare</span><span>HOAs</span><span>Universities</span></div></div>
+        <div class="panel"><div class="ic"><i class="ti ti-heart-handshake"></i></div><h3>Offer it to your people</h3><p>Give employees a calmer, lower-cost way through personal matters — divorce, custody, estate, everyday disputes. Fund it as a benefit, or offer it voluntarily.</p><div class="chips"><span>Employers of every size</span><span>Government employers</span><span>Unions &amp; associations</span></div></div>
+      </div>
+      <div class="foot"><span>Mediation-first · software, not a forum · not legal advice.</span><span class="pg">03</span></div>
+    </div>
+  </div>
+
+  <div class="slide navy">
+    <div class="pad">
+      <div class="eyebrow on-dark"><span class="rule"></span> Delivery paths</div>
+      <h2 class="title on-dark">One platform. Whoever fits the matter.</h2>
+      <div class="three" style="grid-template-columns:repeat(2,1fr);gap:18px">
+        <div class="c"><div class="ic"><i class="ti ti-user"></i></div><h3>Individuals</h3><p>Both parties walk the same structured process and reach their own resolution — days, not months — with a record ready for counsel review.</p></div>
+        <div class="c"><div class="ic"><i class="ti ti-users-group"></i></div><h3>Mediators</h3><p>Arrive at the first joint session with position briefs, a symmetric comparison, and a gap map already prepared.</p></div>
+        <div class="c"><div class="ic"><i class="ti ti-briefcase"></i></div><h3>Attorneys</h3><p>Privilege, redaction, citation-grounding, and audit logging are runtime components. Sign-off gates produce a counsel-signed certificate. No referral fees.</p></div>
+        <div class="c"><div class="ic"><i class="ti ti-calculator"></i></div><h3>Financial / tax pros</h3><p>CPAs and financial/tax professionals — neutral or per-party — own the money questions: net-of-tax, present value, reconcile-to-net-estate.</p></div>
+      </div>
+      <div class="foot on-dark"><span>The lead can change by matter or by step · not legal advice.</span><span class="pg">04</span></div>
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="pad">
+      <div class="eyebrow"><span class="rule"></span> Channels</div>
+      <h2 class="title">How the markets are reached.</h2>
+      <div class="four">
+        <div class="row"><div class="ic"><i class="ti ti-briefcase"></i></div><div><h4>Mediators &amp; attorneys</h4><p>The near-term engine, paired with the Families market — run matters and refer them, no referral fees.</p></div></div>
+        <div class="row"><div class="ic"><i class="ti ti-calculator"></i></div><div><h4>Financial &amp; tax professionals</h4><p>Own the financial and tax-modeling steps and refer the matters they advise, tracked from a role dashboard.</p></div></div>
+        <div class="row"><div class="ic"><i class="ti ti-plug-connected"></i></div><div><h4>Technology &amp; platform partners</h4><p>HR, claims, contracts, case-management, and e-signature systems integrate the objective-comparison layer. Not just legal-tech.</p></div></div>
+        <div class="row"><div class="ic"><i class="ti ti-building-community"></i></div><div><h4>Sponsoring organizations</h4><p>Employers, HOAs, and schools that fund JusticeX for their people, or offer it as a voluntary benefit.</p></div></div>
+      </div>
+      <div class="foot"><span>Several channels are forward-looking · not legal advice.</span><span class="pg">05</span></div>
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="pad">
+      <div class="eyebrow"><span class="rule"></span> Dispute catalog</div>
+      <h2 class="title">Where the process applies first.</h2>
+      <table class="cat">
+        <thead><tr><th>Dispute type</th><th style="width:150px">Phase</th><th>Why it fits</th></tr></thead>
+        <tbody>
+          <tr><td><b>Divorce &amp; marital dissolution</b></td><td><span class="ph p1">Phase 1 · Launch</span></td><td>Property, custody, support. Huge volume; clearest documents.</td></tr>
+          <tr><td><b>Child custody &amp; parenting plans</b></td><td><span class="ph p1">Phase 1 · Launch</span></td><td>Courts already encourage mediation; clear template fit.</td></tr>
+          <tr><td><b>Landlord–tenant</b></td><td><span class="ph p2">Phase 2 · Growth</span></td><td>Evictions, deposits, lease breaches. Local courts overwhelmed.</td></tr>
+          <tr><td><b>Small claims &amp; consumer</b></td><td><span class="ph p2">Phase 2 · Growth</span></td><td>Refunds, services, retail. Self-represented litigants need help.</td></tr>
+          <tr><td><b>Neighbor &amp; HOA</b></td><td><span class="ph p2">Phase 2 · Growth</span></td><td>Boundaries, noise, HOA. HOAs have budget.</td></tr>
+          <tr><td><b>Business partnership</b></td><td><span class="ph p2">Phase 2 · Growth</span></td><td>Equity splits, breach of duty. High willingness to pay to avoid litigation.</td></tr>
+        </tbody>
+      </table>
+      <p class="note">Phase 1 anchors the Families core and the top family-adjacent types; later phases expand into the workplace, community, and campus markets.</p>
+      <div class="foot"><span>Prioritized by traction · not legal advice.</span><span class="pg">06</span></div>
+    </div>
+  </div>
+
+  <div class="slide navy">
+    <div class="pad">
+      <div class="eyebrow on-dark"><span class="rule"></span> Jurisdictions</div>
+      <h2 class="title on-dark">New York first. Then California, Utah, Texas. Florida later.</h2>
+      <div class="juris">
+        <div class="jz lead-z"><div class="st">NY</div><div class="lb">Launch</div><div class="cap">Equitable distribution · AI-permissive</div></div>
+        <div class="jz"><div class="st">CA</div><div class="lb">Next</div><div class="cap">Active ODR pilots</div></div>
+        <div class="jz"><div class="st">UT</div><div class="lb">Next</div><div class="cap">ODR-friendly courts</div></div>
+        <div class="jz"><div class="st">TX</div><div class="lb">Next</div><div class="cap">Legislative recognition</div></div>
+        <div class="jz"><div class="st">FL</div><div class="lb">Later</div><div class="cap">Strict oversight</div></div>
+      </div>
+      <div class="foot on-dark"><span>State ruleset over one shared engine · not legal advice.</span><span class="pg">07</span></div>
+    </div>
+  </div>
+
+  <div class="slide navy close">
+    <div class="pad">
+      <div class="brand on-dark"><span class="hex">X</span>Justice<span class="x">X</span></div>
+      <div style="margin-top:84px">
+        <div class="eyebrow on-dark"><span class="rule"></span> Get started</div>
+        <h2>Four ways in. One platform.</h2>
+        <p class="lead">Whether you're an individual, a mediator, an attorney, a financial/tax professional, or an organization — start with a redacted matter on your own terms.</p>
+        <a class="cta" href="https://justicex.ai/contact.html">Pick your path <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="foot on-dark"><span>Not a law firm or mediator · not legal advice.</span><span class="pg">justicex.ai</span></div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

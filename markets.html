@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Markets · JusticeX</title>
-<meta name="description" content="JusticeX by market — families, workplaces, communities, and campuses — delivered through individuals, mediators, attorneys, and financial/tax professionals. Objective, symmetric dispute comparison.">
+<meta name="description" content="JusticeX by market — families, businesses, and government — delivered through individuals, mediators, attorneys, and financial/tax professionals. Objective, symmetric dispute comparison.">
 <link rel="canonical" href="https://justicex.ai/markets.html">
 <meta property="og:type" content="website"><meta property="og:site_name" content="JusticeX">
 <meta property="og:title" content="Markets · JusticeX">
-<meta property="og:description" content="JusticeX by market — families, workplaces, communities, and campuses. Objective, symmetric dispute comparison.">
+<meta property="og:description" content="JusticeX by market — families, businesses, and government. Objective, symmetric dispute comparison.">
 <meta property="og:url" content="https://justicex.ai/markets.html">
 <meta property="og:image" content="https://justicex.ai/assets/brand-mark.png">
 <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Markets · JusticeX"><meta name="twitter:description" content="Objective, symmetric dispute comparison, by market."><meta name="twitter:image" content="https://justicex.ai/assets/brand-mark.png">
@@ -22,16 +22,75 @@
 <div data-partial="nav"></div>
 
 <section class="hero" data-screen-label="02 Markets · Hero">
-  <div class="hero-inner">
-    <div class="eyebrow on-dark"><span class="num">Markets</span> <span class="rule"></span> Many markets · One platform</div>
-    <h1 class="h-display" style="margin-top:24px;color:var(--jx-paper);max-width:1020px">Built for the markets where disputes happen.</h1>
-    <p class="lead on-dark" style="margin-top:28px;max-width:820px">Disputes look different in a family, a workplace, a community, or a campus — but the work underneath is the same: organize each side's position, compare them objectively and symmetrically, and produce a record both can stand behind. JusticeX runs that one process across markets, delivered through whichever professional fits the matter.</p>
-    <div class="hero-ctas">
-      <a class="btn btn-gold" href="#markets">See the markets <span class="arrow">→</span></a>
-      <a class="btn btn-ghost-dark" href="#catalog">Browse the dispute catalog</a>
+  <div class="hero-inner sol-hero">
+    <div class="sol-hero-copy">
+      <div class="eyebrow on-dark"><span class="num">Markets</span> <span class="rule"></span> Many markets · One platform</div>
+      <h1 class="h-display" style="margin-top:22px;color:var(--jx-paper)">Built for the markets<br>where disputes happen.</h1>
+      <p class="lead on-dark" style="margin-top:22px;max-width:540px">One objective, symmetric process — run across families, businesses, and government, delivered through whichever professional fits the matter.</p>
+      <div class="hero-ctas" style="margin-top:26px">
+        <a class="btn btn-gold" href="#markets">See the markets <span class="arrow">→</span></a>
+        <a class="btn btn-ghost-dark" href="#catalog">Browse the dispute catalog</a>
+      </div>
+    </div>
+
+    <div class="sol-hero-media">
+      <button class="sol-poster jx-vtrigger" data-vsrc="assets/overviews/markets/justicex-markets-video-web.mp4?v=1" aria-label="Watch the Markets overview video">
+        <span class="sol-poster-grid" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        <span class="sol-poster-play"><i class="ti ti-player-play-filled" aria-hidden="true"></i></span>
+        <span class="sol-poster-cap"><b>JusticeX by market</b><span>Objective overview · ~1 min</span></span>
+      </button>
+      <div class="sol-pills">
+        <button class="sol-pill p-watch jx-vtrigger" type="button" data-vsrc="assets/overviews/markets/justicex-markets-video-web.mp4?v=1"><i class="ti ti-player-play" aria-hidden="true"></i> Watch the overview</button>
+        <a class="sol-pill p-see" href="assets/overviews/markets/justicex-markets-deck.html?v=1" target="_blank" rel="noopener"><i class="ti ti-presentation" aria-hidden="true"></i> See the overview</a>
+      </div>
+      <!-- HEAR pill hidden until the bespoke Markets audio is generated (a live dead button is worse than a duo). Re-enable with justicex-markets-audio-web.mp3 in assets/overviews/markets/. -->
+      <p class="sol-medianote">AI-assisted overviews · figures illustrative · not legal advice.</p>
     </div>
   </div>
+
+  <style>
+  /* Elevated-media hero + on-this-page index — Markets (2026-07-03), mirrors Solutions */
+  .sol-hero{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+  .sol-hero-media{display:flex;flex-direction:column;gap:14px}
+  .sol-poster{position:relative;width:100%;aspect-ratio:16/9;border:0;padding:0;border-radius:14px;overflow:hidden;cursor:pointer;box-shadow:0 16px 40px rgba(0,0,0,.4);background:radial-gradient(130% 130% at 50% 0,#0e3d6b,var(--jx-navy-800) 70%);display:flex;align-items:center;justify-content:center}
+  .sol-poster-grid{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:8px;opacity:.45}
+  .sol-poster-grid i{width:26px;height:26px;background:var(--jx-coral-500);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+  .sol-poster-grid i:nth-child(even){background:#2f5c88}
+  .sol-poster-play{position:relative;z-index:2;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.94);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(0,0,0,.35);transition:transform .15s ease}
+  .sol-poster:hover .sol-poster-play{transform:scale(1.06)}
+  .sol-poster-play i{font-size:30px;color:var(--jx-navy-800);margin-left:3px}
+  .sol-poster-cap{position:absolute;left:18px;bottom:16px;text-align:left}
+  .sol-poster-cap b{font-family:var(--font-display);font-size:18px;color:#fff;display:block;font-weight:600}
+  .sol-poster-cap span{font-size:12px;color:var(--jx-teal-100)}
+  .sol-pills{display:flex;gap:10px;flex-wrap:wrap}
+  .sol-pill{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;font-weight:600;font-size:13.5px;text-decoration:none;border:0;cursor:pointer;transition:filter .15s ease,background .15s ease}
+  .sol-pill i{font-size:16px;line-height:1}
+  .sol-pill.p-watch{background:#fff;color:var(--jx-navy-800)}
+  .sol-pill.p-see{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+  .sol-pill.p-see:hover{background:rgba(255,255,255,.08)}
+  .sol-medianote{font-size:11px;color:#9db4cc;margin:2px 0 0}
+  .sol-idxbar{background:var(--jx-paper);border-bottom:1px solid var(--jx-stone-200)}
+  .sol-idxbar-inner{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
+  .sol-idxbar .lbl{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--jx-slate-500)}
+  .sol-idxbar a{font-size:13.5px;color:var(--jx-navy-800);text-decoration:none;font-weight:600;padding:4px 0;border-bottom:2px solid transparent}
+  .sol-idxbar a:hover{border-bottom-color:var(--jx-coral-500)}
+  @media(max-width:860px){.sol-hero{grid-template-columns:1fr;gap:30px}}
+  </style>
 </section>
+
+<!-- ON THIS PAGE index -->
+<nav class="sol-idxbar" aria-label="On this page">
+  <div class="wrap sol-idxbar-inner">
+    <span class="lbl">On this page</span>
+    <a href="#markets">Markets</a>
+    <a href="#business">For business</a>
+    <a href="#paths">Delivery paths</a>
+    <a href="#channels">Channels</a>
+    <a href="#catalog">Dispute catalog</a>
+    <a href="#jurisdictions">Jurisdictions</a>
+    <a href="#start">Get started</a>
+  </div>
+</nav>
 
 <!-- MARKETS (end-client segments) -->
 <section class="section paper" id="markets">
@@ -42,50 +101,19 @@
       <p class="lead" style="margin-top:20px;max-width:820px">We start where the package is most complete — New York family matters — and extend the same engine into adjacent markets as each one's rules, documents, and outputs are built out. Availability is marked honestly below.</p>
     </div>
 
-    <div class="jx-media">
-      <style>
-        .jx-media{margin:22px 0 26px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px}
-        .jx-media-q{font-family:var(--font-display);font-weight:600;color:var(--jx-navy-800);font-size:16px;margin-right:6px}
-        .jx-media-btn{display:inline-flex;align-items:center;gap:9px;padding:11px 20px;border-radius:999px;font-weight:600;font-size:14px;text-decoration:none;cursor:pointer;border:none;transition:filter .15s ease,background .15s ease}
-        .jx-media-btn i{font-size:17px;line-height:1}
-        .jx-media-watch{background:var(--jx-navy-800);color:var(--jx-paper)}
-        .jx-media-watch:hover{background:var(--jx-navy-900,#021A33)}
-        .jx-media-hear{background:var(--jx-coral-500);color:var(--jx-paper)}
-        .jx-media-hear:hover{filter:brightness(0.94)}
-        .jx-media-see{background:var(--jx-white);color:var(--jx-navy-800);border:1.5px solid var(--jx-stone-300,#D9DCE1)}
-        .jx-media-see:hover{background:var(--jx-mist,#F4F6FA)}
-        .jx-media-audiowrap{flex-basis:100%;margin-top:4px}
-        .jx-media-audiowrap[hidden]{display:none}
-        .jx-media-audiowrap audio{width:100%;max-width:540px;height:40px}
-        .jx-media-note{flex-basis:100%;font-size:11.5px;color:var(--jx-slate-500);margin:6px 0 0}
-      </style>
-      <span class="jx-media-q">Prefer to watch or listen?</span>
-      <a class="jx-media-btn jx-media-watch" id="frameworkVideoTrigger" role="button" tabindex="0" data-vsrc="assets/overviews/justicex-markets-video-web.mp4"><i class="ti ti-player-play" aria-hidden="true"></i> Watch the overview</a>
-      <button class="jx-media-btn jx-media-hear" id="jxHearBtn" type="button"><i class="ti ti-headphones" aria-hidden="true"></i> Hear the overview</button>
-      <a class="jx-media-btn jx-media-see" href="assets/overviews/justicex-overview-deck.pdf?v=2" target="_blank" rel="noopener"><i class="ti ti-presentation" aria-hidden="true"></i> See the overview</a>
-      <div class="jx-media-audiowrap" id="jxAudioWrap" hidden>
-        <audio id="jxOverviewAudio" controls preload="none" aria-label="AI-assisted audio overview of JusticeX">
-          <source src="assets/overviews/justicex-overview-audio-web.mp3" type="audio/mpeg">
-          <source src="assets/overviews/justicex-overview-audio-web.m4a" type="audio/mp4">
-          Your browser doesn't support embedded audio.
-        </audio>
-      </div>
-      <p class="jx-media-note">AI-assisted overviews · figures illustrative · not legal advice.</p>
-      <script>(function(){var b=document.getElementById('jxHearBtn'),w=document.getElementById('jxAudioWrap'),a=document.getElementById('jxOverviewAudio');if(b&&w&&a){b.addEventListener('click',function(){if(w.hidden){w.hidden=false;a.play().catch(function(){});}else if(a.paused){a.play().catch(function(){});}else{a.pause();}});}})();</script>
-    </div>
-    <!-- 1-slide overview infographic (glanceable) — the same seven-stage process serves every market -->
+    <!-- bespoke Markets infographic embedded below (media hub moved to the hero) -->
     <figure class="jx-ig-solo">
       <style>
         .jx-ig-solo{margin:6px 0 34px;max-width:1040px}
-        .jx-ig-solo picture{display:block}
-        .jx-ig-solo img{width:100%;height:auto;display:block;border:1px solid var(--jx-stone-200);border-radius:14px;box-shadow:0 2px 12px rgba(20,30,46,.07)}
         .jx-ig-solo figcaption{font-size:12px;color:var(--jx-slate-500);margin-top:9px}
+        .sol-ig-frame{position:relative;width:100%;border:1px solid var(--jx-stone-200);border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(20,30,46,.07);background:var(--jx-paper)}
+        .sol-ig-frame iframe{position:absolute;top:0;left:0;width:1600px;border:0;transform-origin:top left}
       </style>
-      <picture>
-        <source type="image/webp" srcset="assets/overviews/how-justicex-works-1600.webp?v=2 1600w, assets/overviews/how-justicex-works-full.webp?v=2 2752w" sizes="(max-width:1100px) 92vw, 1040px">
-        <img src="assets/overviews/how-justicex-works-1600.png?v=2" width="1600" height="893" loading="lazy" decoding="async" alt="How JusticeX works — seven steps to an objective resolution: 1 Plan, 2 Intake, 3 Redact, 4 Summarize, 5 Gap Analysis, 6 Resolution, 7 Memorandum. Collaborative participation across four roles — individuals, mediators, attorneys, and financial or tax professionals. Symmetric analysis of Party A and Party B on evidence quality and completeness. Objective standards and safeguards. Not a law firm or mediator; not legal advice; figures illustrative.">
-      </picture>
+      <div class="sol-ig-frame" id="mktIgFrame">
+        <iframe src="assets/overviews/markets/justicex-markets-infographic.html?v=1" title="JusticeX Markets at a glance — three markets (Families and Individuals, Businesses, Government), four delivery paths (individuals, mediators, attorneys, financial and tax professionals), and the shared seven-stage pipeline. AI-assisted; figures illustrative; not legal advice." loading="lazy" scrolling="no"></iframe>
+      </div>
       <figcaption>One objective, seven-stage process — the same platform serves every market below.</figcaption>
+      <script>(function(){var f=document.getElementById('mktIgFrame');if(!f)return;var i=f.querySelector('iframe');function fit(){var w=f.clientWidth,scale=w/1600,h=1015;try{var d=i.contentWindow&&i.contentWindow.document;if(d&&d.documentElement)h=d.documentElement.scrollHeight||1015;}catch(e){}i.style.height=h+'px';i.style.transform='scale('+scale+')';f.style.height=(h*scale)+'px';}i.addEventListener('load',fit);window.addEventListener('resize',fit);setTimeout(fit,400);setTimeout(fit,1200);})();</script>
     </figure>
 
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:8px">
@@ -131,7 +159,7 @@
       #business .jx-ico{width:34px;height:34px;border-radius:9px;background:#FAECE7;color:#D85A30;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex:0 0 auto}
       @media(max-width:820px){#business .jx-biz-grid{grid-template-columns:1fr !important}}
     </style>
-    <div class="eyebrow"><span class="num">Businesses &amp; government</span> <span class="rule"></span> Two ways to put JusticeX to work</div>
+    <div class="eyebrow"><span class="num">02</span> <span class="rule"></span> For business</div>
     <h2 class="h1" style="margin-top:24px">Built for any organization with disputes to resolve.</h2>
     <p class="lead" style="margin-top:16px;max-width:800px">Businesses and government agencies put JusticeX to work two ways — resolve disputes with the outside parties you contract with, or offer it to your own team as a benefit. Same objective, symmetric process either way.</p>
 
@@ -178,7 +206,7 @@
 <section class="section navy" id="paths">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow on-dark"><span class="num">02</span> <span class="rule"></span> Delivery paths</div>
+      <div class="eyebrow on-dark"><span class="num">03</span> <span class="rule"></span> Delivery paths</div>
       <h2 class="h1 on-dark" style="margin-top:24px;color:var(--jx-paper)">One platform. Whoever fits the matter.</h2>
       <p class="lead on-dark" style="margin-top:20px;max-width:840px">The same matter can be run by the people themselves, by a neutral mediator, by attorneys on each side, or by a financial/tax professional on the money questions — and the lead can change by matter or by step. Everyone works from the same objective comparison.</p>
     </div>
@@ -223,7 +251,7 @@
 <section class="section paper" id="channels">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow"><span class="num">03</span> <span class="rule"></span> Channels &amp; partnerships</div>
+      <div class="eyebrow"><span class="num">04</span> <span class="rule"></span> Channels</div>
       <h2 class="h1" style="margin-top:24px">How the markets are reached.</h2>
       <p class="lead" style="margin-top:20px;max-width:820px">Markets are reached through the professionals and organizations already serving them. These distribution channels carry the platform into each market; several are forward-looking and noted as such.</p>
     </div>
@@ -272,7 +300,7 @@
 <section class="section white" id="catalog">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow"><span class="num">04</span> <span class="rule"></span> Dispute Catalog</div>
+      <div class="eyebrow"><span class="num">05</span> <span class="rule"></span> Dispute catalog</div>
       <h2 class="h1" style="margin-top:24px">Top 10 dispute types by traction score.</h2>
       <p class="lead" style="margin-top:20px">Prioritized by market volume, client accessibility, regulatory friction, AI fit, and competitive intensity. Phase 1 anchors the Families core and the top family-adjacent types; later phases expand into the workplace, community, and campus markets.</p>
     </div>
@@ -311,10 +339,10 @@
 </style>
 
 <!-- JURISDICTION -->
-<section class="section navy">
+<section class="section navy" id="jurisdictions">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow on-dark"><span class="num">05</span> <span class="rule"></span> Launch Jurisdictions</div>
+      <div class="eyebrow on-dark"><span class="num">06</span> <span class="rule"></span> Jurisdictions</div>
       <h2 class="h1 on-dark" style="margin-top:24px;color:var(--jx-paper)">New York first.<br>California, Utah, Texas next. Florida last.</h2>
       <p class="lead on-dark" style="margin-top:24px;max-width:820px">New York leads: equitable-distribution state, judicial AI integration in motion, permissive AI-disclosure rules, and rising consumer openness to AI for divorce. California and Utah follow on active ODR pilots; Texas through TRAIGA (HB 149) AI governance framework. Florida's stricter professional oversight makes it a later expansion.</p>
     </div>
@@ -329,9 +357,9 @@
 </section>
 
 <!-- CHANNEL CTA -->
-<section class="cta-block">
+<section class="cta-block" id="start">
   <div class="wrap">
-    <div class="eyebrow on-dark"><span class="num">06</span> <span class="rule"></span> Pick your path</div>
+    <div class="eyebrow on-dark"><span class="num">07</span> <span class="rule"></span> Get started</div>
     <h2 class="h1" style="color:var(--jx-paper);margin-top:24px">Four ways in. One platform.</h2>
     <div class="ctas" style="margin-top:40px">
       <a class="btn btn-gold" href="contact.html?path=mediator-pilot">I'm a Mediator <span class="arrow">→</span></a>
