@@ -11,7 +11,7 @@
 <style>
 :root{--navy:#042C53;--navy-deep:#021A33;--navy2:#154572;--navy3:#2A5582;--paper:#E6F1FB;--surface:#FFFFFF;--ink:#1A1A1A;--muted:#5F5E5A;--faint:#9CA0A7;--hair:#D1DEEE;--accent:#D85A30;--accent-d:#B04722;--accent-soft:#FAECE7;--success:#1D9E75;--success-s:#E7F4EF;--radius:14px;--radius-sm:10px;}
 *{box-sizing:border-box}html,body{margin:0}
-body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',Calibri,system-ui,sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',system-ui,sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;}
 .appbar{background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 26px;position:relative;}
 .brand{display:flex;align-items:center;}.bmark{height:23px;width:23px;border-radius:5px;margin-right:9px;}
 .wordmark{font-family:'Source Serif 4',serif;font-weight:600;font-size:22px;}.wordmark .x{color:var(--accent);}
@@ -96,7 +96,7 @@ h1{font-family:'Source Serif 4',serif;font-weight:500;font-size:25px;margin:0 0 
 
   <div class="sec">How improvement actually works</div>
   <div class="two">
-    <div class="mini"><h4>Human corrections teach the process</h4><p>When a professional edits or overrides an AI output, that judgment — de-identified — sharpens the checks and prompts. The model's weights are never trained on your content.</p></div>
+    <div class="mini"><h4>Human corrections teach the process</h4><p>When a professional edits or overrides an AI output, that judgment — de-identified, and only with your opt-in — sharpens the checks and prompts. The model's weights are never trained on your content.</p></div>
     <div class="mini"><h4>A synthetic example library</h4><p>Realistic examples for other users are generated as synthetic matters — no real person, ever — so you can learn from a comparable case without anyone's real file being exposed.</p></div>
   </div>
 
@@ -126,5 +126,6 @@ h1{font-family:'Source Serif 4',serif;font-weight:500;font-size:25px;margin:0 0 
   });
 })();
 </script>
+<script src="shared/prelaunch.js"></script>
 </body>
 </html>
