@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Step · Delgado (Sample) · JusticeX</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
+<style>
+  :root{--jx-navy-900:#021A33;--jx-navy-800:#042C53;--jx-navy-700:#0A3866;--jx-navy-600:#154572;--jx-navy-500:#2A5582;
+    --jx-coral-600:#B04722;--jx-coral-500:#D85A30;--jx-coral-400:#E27C58;--jx-coral-100:#FAECE7;--jx-coralLt-500:#F0997B;
+    --jx-slate-700:#3A3937;--jx-slate-500:#5F5E5A;--jx-slate-300:#9CA0A7;--jx-white:#FFFFFF;--jx-paper:#F4F6FA;
+    --jx-stone-100:#E6F1FB;--jx-stone-200:#D1DEEE;--jx-stone-300:#B5C5DC;--jx-ink-700:#1A1A1A;--jx-teal-100:#B6C0D0;--jx-success:#1D9E75;--jx-success-s:#E4F3EC;
+    --font-display:'Source Serif 4',Georgia,serif;--font-body:'Source Sans 3',system-ui,-apple-system,Segoe UI,sans-serif;--font-mono:'JetBrains Mono',monospace;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--jx-paper);color:var(--jx-navy-800);font-family:var(--font-body);font-size:15px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 26px}
+  a{color:inherit}
+  .flagbar{background:var(--jx-navy-700);color:#CFE0F2;font-size:11.5px;text-align:center;padding:8px 20px;border-bottom:1px solid #21405f}
+  .flagbar b{color:#fff}.flagbar code{background:var(--jx-navy-900);color:var(--jx-coralLt-500);padding:1px 6px;border-radius:5px;font-size:10.5px;font-family:monospace}
+  .mo-ribbon{background:var(--jx-coral-100);color:var(--jx-coral-600);font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;text-align:center;padding:8px 16px;border-bottom:1px solid var(--jx-stone-200)}
+  .nav{background:var(--jx-navy-800);color:#fff}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 0}
+  .brand{display:flex;align-items:center;gap:9px;font-family:var(--font-display);font-weight:600;font-size:22px;color:#fff;text-decoration:none}
+  .brand .x{color:var(--jx-coral-500)}
+  .navlinks{display:flex;gap:20px;font-size:13.5px;color:#C9D8EA}.navlinks a{text-decoration:none}.navlinks a:hover{color:#fff}
+  @media(max-width:760px){.navlinks{display:none}}
+  .mrail{background:var(--jx-navy-900);color:#fff;padding:14px 0}
+  .mrail-inner{display:flex;gap:4px;overflow-x:auto;align-items:center}
+  .mrail a{flex:1 0 auto;display:flex;flex-direction:column;align-items:center;gap:5px;min-width:88px;opacity:.5;text-decoration:none}
+  .mrail a.done{opacity:.85}.mrail a.active{opacity:1}
+  .mrail .hex{width:34px;height:38px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:600;font-size:14px;color:#fff;background:var(--jx-navy-500);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+  .mrail a.active .hex{background:var(--jx-coral-500);outline:2px solid #fff;outline-offset:2px}
+  .mrail a.done .hex .n{display:none}.mrail a.done .hex::after{content:"\2713"}
+  .mrail .rn{font-size:11px;font-weight:600;color:#DCE6F2;white-space:nowrap}
+  .shero{padding:26px 0 6px}
+  .shero .toprow{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .shero .ey{color:var(--jx-coral-600);font-weight:700;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase}
+  .shero h1{font-family:var(--font-display);font-weight:600;font-size:42px;color:var(--jx-navy-800);margin:8px 0 8px}
+  .shero .lead{font-size:17px;color:var(--jx-ink-700);max-width:720px;line-height:1.6}
+  .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
+  .chip{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:var(--jx-navy-800);background:var(--jx-stone-100);border:1px solid var(--jx-stone-200);border-radius:999px;padding:6px 13px}
+  .chip i{color:var(--jx-navy-600)}
+  .termsw{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+  .termsw .tlab{font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--jx-slate-500)}
+  .termsw .sw{display:inline-flex;align-items:center;background:var(--jx-stone-100);border:1px solid var(--jx-stone-200);border-radius:999px;padding:4px;font-size:12px}
+  .termsw .sw a{display:inline-flex;align-items:center;gap:6px;color:var(--jx-slate-500);text-decoration:none;font-weight:600;padding:5px 12px;border-radius:999px;white-space:nowrap}
+  .termsw .sw a.on{background:var(--jx-navy-800);color:#fff}
+  .sect{margin:20px 0;background:var(--jx-white);border:1px solid var(--jx-stone-200);border-radius:18px;overflow:hidden;box-shadow:0 1px 2px rgba(4,44,83,.04)}
+  .sect-h{display:flex;align-items:center;gap:14px;padding:18px 26px;border-bottom:1px solid var(--jx-stone-200)}
+  .sect-h .badge{width:34px;height:34px;flex:0 0 auto;border-radius:999px;background:var(--jx-navy-500);color:#fff;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;font-family:var(--font-body)}
+  .sect-h h2{font-family:var(--font-display);font-weight:600;font-size:22px;color:var(--jx-navy-800);margin:0}
+  .sect-h .sub{font-size:13px;color:var(--jx-slate-500);margin-top:2px}
+  .sect-b{padding:24px 26px}
+  .sect.work{border-color:var(--jx-coralLt-500);box-shadow:0 2px 10px rgba(216,90,48,.10);border-left:5px solid var(--jx-coral-500)}
+  .sect.work .sect-h{background:var(--jx-coral-100)}
+  .sect.work .sect-h .badge{background:var(--jx-coral-500)}
+  .meterwrap{margin:2px 0 18px}
+  .meterlab{display:flex;justify-content:space-between;font-size:13px;margin-bottom:5px}.meterlab b{color:var(--jx-navy-800)}
+  .meter{height:12px;background:var(--jx-stone-100);border:1px solid var(--jx-stone-200);border-radius:999px;overflow:hidden}
+  .meter .fill{height:100%;background:var(--jx-success);transition:width .3s}
+  .gaptbl{width:100%;border-collapse:collapse;font-size:13.5px}
+  .gaptbl th{background:var(--jx-stone-100);color:var(--jx-navy-700);text-align:left;padding:9px 12px;font-size:10.5px;text-transform:uppercase;letter-spacing:.4px;font-weight:700;border-bottom:1px solid var(--jx-stone-200)}
+  .gaptbl th.pa{color:var(--jx-navy-600)}.gaptbl th.pb{color:var(--jx-coral-600)}
+  .gaptbl td{padding:12px;border-bottom:1px solid var(--jx-stone-200);vertical-align:top}
+  .gaptbl tr:last-child td{border-bottom:none}
+  .gaptbl .iss{font-weight:700;color:var(--jx-navy-800)}
+  .gaptbl .cat{font-size:11px;color:var(--jx-slate-500);font-weight:600}
+  .gaptbl .pos{font-size:13px;color:var(--jx-ink-700);line-height:1.45}
+  .gaptbl td.pa{border-left:3px solid var(--jx-navy-500);background:#F7FAFD}
+  .gaptbl td.pb{border-left:3px solid var(--jx-coralLt-500);background:#FDF6F2}
+  .opts{list-style:none;margin:0;padding:0;display:grid;gap:5px}
+  .opts li{font-size:12.5px;color:var(--jx-ink-700);display:flex;gap:7px;align-items:flex-start}
+  .opts li .on{color:var(--jx-coral-600);font-weight:700;flex:0 0 auto}
+  .agreedin{width:100%;min-width:120px;padding:8px 10px;border:1.5px solid var(--jx-stone-300);border-radius:8px;font-size:13px;font-family:inherit;background:var(--jx-white)}
+  .agreedin:focus{outline:none;border-color:var(--jx-coral-500)}
+  .gstat{font-size:10.5px;font-weight:700;padding:4px 10px;border-radius:999px;white-space:nowrap;display:inline-flex;align-items:center;gap:5px}
+  .gstat.open{background:var(--jx-coral-100);color:var(--jx-coral-600)}
+  .gstat.aligned{background:var(--jx-success-s);color:var(--jx-success)}
+  .worknote{font-size:12.5px;color:var(--jx-ink-700);background:var(--jx-paper);border-left:3px solid var(--jx-navy-500);padding:10px 14px;border-radius:0 8px 8px 0;margin-top:12px}
+  .worknote b{color:var(--jx-navy-800)}
+  .locklab{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:16px;background:var(--jx-paper);border:1px solid var(--jx-stone-200);border-radius:12px;padding:13px 18px}
+  .locklab .s{font-size:13px;color:var(--jx-slate-500)}.locklab .s b{color:var(--jx-navy-800)}
+  .lockbtn{font-family:var(--font-body);font-size:13.5px;font-weight:600;border:none;border-radius:999px;padding:10px 18px;cursor:pointer;background:var(--jx-coral-500);color:#fff;display:inline-flex;align-items:center;gap:7px}
+  .lockbtn:disabled{background:var(--jx-stone-200);color:var(--jx-slate-500);cursor:not-allowed}
+  .framing{display:flex;gap:11px;align-items:flex-start;margin-top:16px;font-size:12.5px;color:var(--jx-slate-500);line-height:1.5}
+  .framing i{color:var(--jx-coral-500);font-size:20px;flex:0 0 auto}.framing b{color:var(--jx-navy-800)}
+  .docs{display:grid;grid-template-columns:1fr 1fr;gap:11px}@media(max-width:640px){.docs{grid-template-columns:1fr}}
+  .doc{display:flex;align-items:center;gap:12px;background:var(--jx-paper);border:1px solid var(--jx-stone-200);border-radius:12px;padding:13px 15px}
+  .doc .ic{width:32px;height:36px;flex:0 0 auto;background:var(--jx-navy-800);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;color:#fff}
+  .doc .nm{font-weight:600;color:var(--jx-navy-800);font-size:14px}.doc .dsub{font-size:12px;color:var(--jx-slate-500)}
+  .pill{margin-left:auto;font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px}
+  .pill.ok{background:var(--jx-success-s);color:var(--jx-success)}.pill.need{background:var(--jx-coral-100);color:var(--jx-coral-600)}
+  .worklead{font-size:15px;color:var(--jx-ink-700);line-height:1.6;margin:0 0 16px}
+  .worklist{display:grid;gap:11px}
+  .workrow{display:flex;gap:12px;background:var(--jx-paper);border:1px solid var(--jx-stone-200);border-radius:12px;padding:14px 16px}
+  .workrow .wknum{width:24px;height:24px;flex:0 0 auto;border-radius:999px;background:var(--jx-coral-500);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+  .workrow .wk{font-weight:700;color:var(--jx-navy-800);font-size:14px}.workrow .wv{font-size:13.5px;color:var(--jx-ink-700);line-height:1.5;margin-top:2px}
+  .encourage{margin-top:16px;background:var(--jx-success-s);border:1px solid #BfE3d0;border-radius:12px;padding:13px 16px;font-size:13.5px;color:#155e3f;display:flex;align-items:center;gap:10px}
+  /* interactive working controls — plan / redact / summarize / resolution */
+  .qrow{display:flex;align-items:center;gap:12px;background:var(--jx-paper);border:1px solid var(--jx-stone-200);border-radius:12px;padding:12px 15px}
+  .qrow.off{opacity:.5}
+  .qrow .ic{width:32px;height:36px;flex:0 0 auto;background:var(--jx-navy-800);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;color:#fff}
+  .qrow .qmain{flex:1;min-width:0}
+  .qrow .qk{font-weight:700;color:var(--jx-navy-800);font-size:14px}
+  .qrow .qc{font-size:10.5px;color:var(--jx-slate-500);text-transform:uppercase;letter-spacing:.3px;font-weight:700}
+  .qrow .qv{font-size:12.5px;color:var(--jx-ink-700);line-height:1.5;margin-top:2px;display:flex;align-items:center;gap:6px}
+  .qrow .qv i{color:var(--jx-navy-500)}
+  .seg{display:inline-flex;flex:0 0 auto;border:1px solid var(--jx-stone-200);border-radius:999px;overflow:hidden;background:var(--jx-white)}
+  .seg button{font-family:var(--font-body);font-size:12px;font-weight:600;color:var(--jx-slate-500);background:transparent;border:none;padding:7px 13px;cursor:pointer;display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+  .seg button.on.pos{background:var(--jx-success);color:#fff}
+  .seg button.on.neg{background:var(--jx-navy-700);color:#fff}
+  .seg button.on.warn{background:var(--jx-coral-500);color:#fff}
+  .confbasics{display:flex;flex-wrap:wrap;gap:10px;margin:2px 0 16px}
+  .confbasics .cb{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--jx-navy-800);background:var(--jx-success-s);border:1px solid #BfE3d0;border-radius:999px;padding:7px 14px}
+  .confbasics .cb i{color:var(--jx-success)}
+  .subhd{font-family:var(--font-display);font-weight:600;font-size:15px;color:var(--jx-navy-800);margin:20px 0 10px}
+  .qcard{border:1px solid var(--jx-stone-200);border-radius:12px;padding:14px 16px;background:var(--jx-white)}
+  .qcard + .qcard{margin-top:11px}
+  .qcard .qhead{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+  .qcard .qt{font-weight:700;color:var(--jx-navy-800);font-size:14.5px}
+  .qcard .qt .cat{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;color:var(--jx-navy-600);background:var(--jx-stone-100);border-radius:999px;padding:2px 8px;margin-left:8px}
+  .qcard .sumtxt{font-size:13px;color:var(--jx-ink-700);line-height:1.55;margin-top:7px}
+  .gstat.atty{background:var(--jx-stone-100);color:var(--jx-navy-600)}
+  .optchoice{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:7px}
+  .optchoice li{display:flex;align-items:flex-start;gap:10px;border:1px solid var(--jx-stone-200);border-radius:10px;padding:10px 13px;cursor:pointer;font-size:13px;color:var(--jx-ink-700);background:var(--jx-white)}
+  .optchoice li:hover{border-color:var(--jx-navy-500)}
+  .optchoice li.sel{border-color:var(--jx-coral-500);background:var(--jx-coral-100)}
+  .optchoice li .rmark{width:16px;height:16px;border-radius:999px;border:2px solid var(--jx-stone-300);flex:0 0 auto;margin-top:1px;display:flex;align-items:center;justify-content:center}
+  .optchoice li.sel .rmark{border-color:var(--jx-coral-500);background:var(--jx-coral-500)}
+  .optchoice li.sel .rmark::after{content:"";width:6px;height:6px;border-radius:999px;background:#fff}
+  .optchoice li.atty{font-style:italic;color:var(--jx-slate-500)}
+  .rpart + .rpart{margin-top:24px;padding-top:22px;border-top:1px solid var(--jx-stone-200)}
+  .rlbl{display:flex;align-items:center;gap:9px;margin-bottom:12px}
+  .rlbl .ric{width:30px;height:30px;border-radius:8px;background:var(--jx-stone-100);color:var(--jx-navy-700);display:flex;align-items:center;justify-content:center;font-size:16px}
+  .rlbl .rt{font-family:var(--font-display);font-weight:600;font-size:17px;color:var(--jx-navy-800)}
+  .rlbl .rd{font-size:12.5px;color:var(--jx-slate-500)}
+  .reports{display:flex;gap:12px;flex-wrap:wrap}
+  .rep{display:flex;align-items:center;gap:13px;border:1px solid var(--jx-stone-200);border-radius:12px;padding:14px 17px;min-width:265px;background:var(--jx-white);text-decoration:none;color:inherit;flex:1}
+  .rep:hover{border-color:var(--jx-navy-500);box-shadow:0 2px 8px rgba(4,44,83,.08)}
+  .rep .ri{width:42px;height:42px;border-radius:10px;background:var(--jx-stone-100);color:var(--jx-navy-700);display:flex;align-items:center;justify-content:center;font-size:21px;flex:0 0 auto}
+  .rep .rt{font-weight:700;font-size:14.5px;color:var(--jx-navy-800)}.rep .rs{font-size:12px;color:var(--jx-slate-500);line-height:1.4;margin-top:2px}
+  .flow{display:inline-flex;align-items:center;gap:7px;margin-top:16px;font-size:13px;color:var(--jx-coral-600);font-weight:600}
+  /* grouped outputs gallery — consistent with the Matter Workspace */
+  .ogroup{margin-top:24px}.ogroup:first-child{margin-top:0}
+  .ohead{font-size:13px;font-weight:700;color:var(--jx-navy-800);letter-spacing:.02em;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;padding-bottom:8px;border-bottom:1px solid var(--jx-stone-200)}
+  .ohead .osub{font-weight:400;color:var(--jx-slate-500);font-size:12.5px}
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:14px}
+  @media(max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.gallery{grid-template-columns:1fr}}
+  .ocard{display:flex;flex-direction:column;background:var(--jx-white);border:1px solid var(--jx-stone-200);border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;cursor:pointer;text-align:left;font-family:var(--font-body);padding:0;transition:box-shadow .15s,border-color .15s,transform .15s}
+  .ocard:hover{border-color:var(--jx-navy-500);box-shadow:0 6px 18px rgba(4,44,83,.10);transform:translateY(-2px)}
+  .ocard.on{border-color:var(--jx-coral-500)}
+  .ocard .thumb{background:var(--jx-stone-100);border-bottom:1px solid var(--jx-stone-200);padding:14px;display:flex;align-items:center;justify-content:center}
+  .ocard .thumb svg{display:block;width:100%;height:84px}
+  .ocard .ob{padding:13px 15px 15px}
+  .ocard .ot{font-family:var(--font-display);font-weight:600;font-size:15.5px;color:var(--jx-navy-800)}
+  .ocard .od{font-size:12px;color:var(--jx-slate-500);line-height:1.45;margin-top:3px}
+  .ocard .olink{font-size:11.5px;font-weight:700;color:var(--jx-coral-600);margin-top:9px;display:inline-flex;align-items:center;gap:5px}
+  .ovhint{margin-top:14px;background:var(--jx-stone-100);border:1px solid var(--jx-stone-200);border-radius:10px;padding:12px 14px;font-size:12.5px;color:var(--jx-ink-700);line-height:1.55;display:none}
+  .ovhint.on{display:block}.ovhint strong{color:var(--jx-navy-800)}
+  .ovhint code{font-family:var(--font-mono);font-size:11px;background:#021A33;color:#F0997B;padding:1px 6px;border-radius:5px}
+  .cont{display:flex;flex-wrap:wrap;align-items:center;gap:14px;background:var(--jx-navy-800);color:#fff;border-radius:16px;padding:20px 24px;margin-top:22px}
+  .cont .t{font-weight:600}.cont .t small{display:block;color:var(--jx-teal-100);font-weight:400;font-size:12.5px;margin-top:3px}
+  .cont .acts{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+  .cont .acts button,.cont .acts a{font-family:var(--font-body);background:var(--jx-coral-500);color:#fff;font-weight:600;font-size:14px;padding:12px 20px;border-radius:999px;text-decoration:none;border:none;cursor:pointer}
+  .cont .acts .mod{background:rgba(255,255,255,.12)}.cont .acts .rej{background:transparent;color:var(--jx-teal-100);border:1px solid rgba(255,255,255,.25)}
+  .stepnav{display:flex;justify-content:space-between;align-items:center;gap:14px;margin:18px 0 0;flex-wrap:wrap}
+  .stepnav a{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;color:var(--jx-navy-800);text-decoration:none;border:1px solid var(--jx-stone-200);border-radius:999px;padding:9px 16px;background:var(--jx-white)}
+  .stepnav a.disabled{opacity:.4;pointer-events:none}
+  .posture{font-size:12.5px;color:var(--jx-slate-500);line-height:1.55;margin:24px auto 4px;text-align:center;max-width:780px}
+  .foot{background:var(--jx-navy-800);color:#9FB6D2;padding:22px 0;border-top:1px solid var(--jx-navy-600);font-size:12.5px}
+  .foot .fin{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}.foot b{color:#fff}
+  @media(max-width:720px){.gaptbl,.gaptbl thead,.gaptbl tbody,.gaptbl tr,.gaptbl td,.gaptbl th{display:block}.gaptbl thead{display:none}.gaptbl td{border-bottom:none}.gaptbl tr{border:1px solid var(--jx-stone-200);border-radius:12px;margin-bottom:12px;padding:6px}}
+</style>
+</head>
+<body>
+<div class="flagbar">Mock for review — behind flag <code>matter_workspace_v1</code>, <b>OFF in production</b> until the Stage Media Model sign-off, counsel confirmation of the output naming, and the Fable QA pass (Ref&nbsp;92). Not linked from any navigation; synthetic Delgado data only.</div>
+<div class="mo-ribbon" id="moRibbon">Sample · Synthetic matter (“Delgado”) · Step experience</div>
+<nav class="nav"><div class="wrap"><div class="nav-in">
+  <a class="brand" href="/index.html">Justice<span class="x">X</span></a>
+  <div class="navlinks"><a href="/index.html">Home</a><a href="/markets.html">Markets</a><a href="/solutions.html">Solutions</a><a href="/technology.html">Technology</a><a href="/about.html">About</a></div>
+</div></div></nav>
+
+<nav class="mrail" aria-label="Matter steps"><div class="wrap"><div class="mrail-inner" id="mrail"></div></div></nav>
+
+<div class="wrap">
+  <div class="shero">
+    <div class="toprow">
+      <div><div class="ey" id="sEy">Step 5 of 7</div></div>
+      <span class="termsw" id="termsw"></span>
+    </div>
+    <h1 id="sName">Gap Analysis</h1>
+    <p class="lead" id="sLead"></p>
+    <div class="chips" id="sChips"></div>
+  </div>
+
+  <div class="sect">
+    <div class="sect-h"><div class="badge">1</div>
+      <div><h2>Get oriented</h2><div class="sub">An overview of this step — watch, listen, or read — before you begin.</div></div>
+    </div>
+    <div class="sect-b jx-lane-general">
+      <div class="mv" id="guide"></div>
+      <p class="mv-note" id="guideMark"></p>
+    </div>
+  </div>
+
+  <div class="sect work">
+    <div class="sect-h"><div class="badge">2</div>
+      <div><h2 id="workTitle">Settle each open point</h2><div class="sub" id="workDesc"></div></div>
+    </div>
+    <div class="sect-b" id="workBody"></div>
+  </div>
+
+  <div class="sect">
+    <div class="sect-h"><div class="badge">3</div>
+      <div><h2>Your results</h2><div class="sub">What this step produced — the easy read, quick overviews, and your reports.</div></div>
+    </div>
+    <div class="sect-b">
+      <div class="rpart jx-lane-client">
+        <div class="rlbl"><span class="ric"><i class="ti ti-messages"></i></span><div>
+          <div class="rt">The plain-language overview</div>
+          <div class="rd">The easy read of what this step produced — watch, listen, or read.</div></div></div>
+        <div class="mv" id="recap"></div>
+        <p class="mv-note" id="recapMark"></p>
+      </div>
+      <div class="rpart">
+        <div class="rlbl"><span class="ric"><i class="ti ti-stack-2"></i></span><div>
+          <div class="rt">Everything this step produced</div>
+          <div class="rd">Grouped the same way as your Matter Workspace — reports, quick overviews, and the supporting record.</div></div></div>
+        <div id="results"></div>
+        <span class="flow"><i class="ti ti-arrow-down-to-arc"></i> <span id="flowTxt"></span></span>
+      </div>
+      <div class="cont" id="contBar"></div>
+    </div>
+  </div>
+
+  <div class="stepnav" id="stepNav"></div>
+  <p class="posture" id="posture"></p>
+  <div style="height:22px"></div>
+</div>
+
+<footer class="foot"><div class="wrap"><div class="fin">
+  <div><b>JusticeX is a software platform — not a law firm or mediator.</b> Objective comparison only; not legal advice.</div>
+  <div><b>Truth · Fairness · Efficiency</b></div>
+</div></div></footer>
+
+<script>
+/* ===== Inlined model — self-contained (mirror of shared/matter-workspace.js) ===== */
+(function () {
+  'use strict';
+  var FLAG = 'matter_workspace_v1';
+  function flagOn() { try { var q = new URLSearchParams(location.search);
+    return q.get('flag') === FLAG || q.get(FLAG) === 'on'; } catch (e) { return false; } }
+  function viewMode() { try { var v = (new URLSearchParams(location.search)).get('view');
+    return (v === 'attorney' || v === 'legal') ? 'attorney' : 'consumer'; } catch (e) { return 'consumer'; } }
+  function isAttorneyView() { return viewMode() === 'attorney'; }
+  var GLOSSARY = {
+    'equitable distribution': 'New York’s approach to dividing what a couple built together during the marriage — fairly, though not always 50/50.',
+    'marital property': 'What the couple acquired during the marriage, which is divided between them.',
+    'separate property': 'What one spouse owned before the marriage, or received individually by gift or inheritance — generally kept by that spouse.',
+    'legal custody': 'Who makes the major decisions for the children — schooling, health, and religion.',
+    'physical custody': 'Where the children live and the day-to-day parenting schedule.',
+    'maintenance': 'Spousal support — payments from one spouse to the other after divorce. New York calls it “maintenance.”',
+    'Child Support Standards Act': 'New York’s standard formula for calculating child support, often called the CSSA.',
+    'grounds': 'The legal reason given for the divorce.'
+  };
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function render(str) {
+    var attorney = isAttorneyView();
+    return esc(str).replace(/\[\[([^\]]+)\]\]/g, function (m, term) {
+      var def = GLOSSARY[term] || '';
+      var span = '<span class="jx-term" tabindex="0" title="' + esc(def) + '">' + esc(term) + '</span>';
+      return attorney ? ' <strong class="jx-term-strong">' + span + '</strong>' : ' (' + span + ')';
+    }).replace(/\s+\(/g, ' (').trim();
+  }
+  function mediaRef(lane, stageId, format) {
+    var seed = (lane + ':' + stageId + ':' + format), h = 0;
+    for (var i = 0; i < seed.length; i++) { h = (h * 31 + seed.charCodeAt(i)) >>> 0; }
+    return { lane: lane, format: format, wired: false,
+      ref: 'jx-media://signed/' + ('00000000' + h.toString(16)).slice(-8) + '.preview-not-wired' };
+  }
+  var CHECKPOINTS = {
+    3: { id: 'CP1', label: 'Checkpoint 1', title: 'Sharing & hiding review', next: 'Summarize', owner: 'You (or your attorney, where one is on the matter)' },
+    5: { id: 'CP2', label: 'Checkpoint 2', title: 'Gap-analysis review', next: 'Resolution', owner: 'Each party' },
+    6: { id: 'CP3', label: 'Checkpoint 3', title: 'Resolution review', next: 'Memorandum', owner: 'Each party' },
+    7: { id: 'FIN', label: 'Finalize', title: 'Certify the record', next: null, owner: 'Both parties' }
+  };
+  var ACTIONS = {
+    add:      { title: 'Add your information',  verb: 'add your documents and details', icon: 'ti-upload' },
+    confirm:  { title: 'Confirm the scope',     verb: 'confirm the matter and its questions', icon: 'ti-checkbox' },
+    choose:   { title: 'Choose what to share',  verb: 'choose what is shared and what stays private', icon: 'ti-adjustments-check' },
+    review:   { title: 'Review the summaries',  verb: 'review each side’s summary and flag anything off', icon: 'ti-eye-check' },
+    settle:   { title: 'Settle each open point', verb: 'settle each open point, side by side', icon: 'ti-arrows-diff' },
+    decide:   { title: 'Make your decisions',   verb: 'choose the option you both accept, for each open question', icon: 'ti-hand-click' },
+    finalize: { title: 'Review and finalize',   verb: 'review the assembled agreement and finalize it', icon: 'ti-signature' }
+  };
+  function actMeta(stage) { return ACTIONS[stage.action] || ACTIONS.review; }
+  var MATTER = { id: 'DLG-2026-0417', title: 'Delgado', type: 'Divorce, children & property',
+    party_model: 'two', jurisdiction: 'Kings County, NY',
+    framework: 'Fair division of property [[equitable distribution]]',
+    you: 'Marisol', other: 'Andrés', current: 5, payment_state: 'preview' };
+  function outputName() { return isAttorneyView() ? 'Memorandum of Understanding' : 'Your Agreement'; }
+  var STAGES = [
+    { n: 1, id: 'plan', name: 'Plan', scope: 'each', status: 'done', action: 'confirm',
+      lead: 'Set what your matter is about — and the questions you will work through.', minutes: 'About 4 minutes',
+      guide: [
+        { k: 'What this step does', v: 'Sets what your matter is about and the questions you will work through, so every later step stays focused.', icon: 'ti-map-2' },
+        { k: 'What you will do', v: 'Confirm the matter type and location, and review the questions JusticeX lays out for a matter like yours.', icon: 'ti-checkbox' },
+        { k: 'What JusticeX does with it', v: 'Organizes the matter into clear questions and applies the right approach for its type and state. It does not judge or advise.', icon: 'ti-adjustments' },
+        { k: 'What you get, and what is next', v: 'A clear scope and question list. Next: Intake, where you each add your documents and details.', icon: 'ti-arrow-right' }],
+      input: { lead: 'Confirm the basics of your matter, and add anything missing.', items: [
+        { k: 'What it is about', v: 'Confirm this is a divorce with children and property, and the county it belongs in.' },
+        { k: 'Questions to work through', v: 'Review the questions for a matter like yours, and add anything missing.' },
+        { k: 'Already agreed', v: 'Note anything already settled — such as sharing the major decisions about the children — to carry forward.' }] },
+      recap: [
+        { k: 'What you set', v: 'That this is a divorce with children and property in Kings County, New York, and that you both agreed to share the major decisions about the children [[legal custody]].', icon: 'ti-file-text' },
+        { k: 'What it says, objectively', v: 'Six questions fall out of the scope you set: the home, the retirement account, the 2019 inheritance, spousal support [[maintenance]], the parenting schedule, and child support. Four base points are already aligned.', icon: 'ti-scale' },
+        { k: 'How it supports what is ahead', v: 'This list is the spine of every later step — Intake collects against it, and Gap Analysis and Resolution work through it one question at a time.', icon: 'ti-arrow-right' }],
+      report: { summary: 'Scope set — a divorce with children and property in Kings County, New York, dividing what the couple built together fairly [[equitable distribution]]. Six open questions were identified and both parties were onboarded. Sharing the major decisions about the children [[legal custody]] is noted as agreed in principle.',
+        facts: ['6 questions', 'Kings County, NY', 'Fair division of property', 'Shared decisions agreed'], detail: [] } },
+    { n: 2, id: 'intake', name: 'Intake', scope: 'each', status: 'done', action: 'add',
+      lead: 'Add the facts of your matter, at your pace.', minutes: 'About 5 minutes',
+      guide: [
+        { k: 'What this step does', v: 'Collects the facts of your matter — your documents and details — so the comparison is accurate and fair.', icon: 'ti-folders' },
+        { k: 'What you will do', v: 'Upload or enter each item, or skip and come back. A check shows what is still helpful to add.', icon: 'ti-upload' },
+        { k: 'What JusticeX does with it', v: 'Organizes and checks your inputs, for your eyes only. Nothing is shared yet.', icon: 'ti-adjustments' },
+        { k: 'What you get, and what is next', v: 'An organized picture of your facts, with anything missing flagged. Next: Redact, where personal details are hidden.', icon: 'ti-arrow-right' }],
+      input: { lead: '', items: [] },
+      recap: [
+        { k: 'What you shared', v: 'Your home appraisal, mortgage statement, retirement and bank statements, income documentation, and the 2019 inheritance records.', icon: 'ti-file-text' },
+        { k: 'What it says, objectively', v: 'A home appraised at about $960,000 (about $550,000 of value left after the mortgage), a retirement account of $280,000, and incomes of about $145,000 and $62,000. The older retirement records are still incomplete.', icon: 'ti-scale' },
+        { k: 'How it supports what is ahead', v: 'These become the objective facts both sides are written up against in Gap Analysis, and they anchor the options in Resolution.', icon: 'ti-arrow-right' }],
+      report: { summary: 'Seven of eight items received. Your property facts are captured: a home appraised at $960,000 (mortgage $410,000; $550,000 of value left after the mortgage), a retirement account of $280,000, an individual retirement account and joint accounts, incomes of $145,000 and $62,000, and 2019 inheritance records. One item — the older retirement records — is incomplete and flagged for follow-up.',
+        facts: ['7 of 8 received', 'Home value left $550,000', 'Retirement $280,000', 'Incomes $145k / $62k', '1 item flagged'], detail: [] } },
+    { n: 3, id: 'redact', name: 'Redact', scope: 'both', status: 'done', action: 'choose',
+      lead: 'Personal details are hidden before anything crosses between you.', minutes: 'About 3 minutes',
+      guide: [
+        { k: 'What this step does', v: 'Hides personal details before anything crosses between you, so the comparison rests on the facts and you control what is shared.', icon: 'ti-shield-lock' },
+        { k: 'What you will do', v: 'Review what was hidden, and choose what is shared versus kept private for each item.', icon: 'ti-eye-check' },
+        { k: 'What JusticeX does with it', v: 'Hides details by your sharing rules and logs every choice. It never shares more than you confirm.', icon: 'ti-adjustments' },
+        { k: 'What you get, and what is next', v: 'A cleaned, shareable version of each item. Next: Summarize, where each side is written up the same way.', icon: 'ti-arrow-right' }],
+      input: { lead: 'Two choices are yours here: check what was hidden, and set what is shared with the other party versus kept private.', items: [
+        { k: 'Review what is hidden', v: 'Check the personal details JusticeX found and hid on each item.' },
+        { k: 'Set what is shared', v: 'For each item, choose what is shared with the other party and what stays private.' }] },
+      recap: [
+        { k: 'What you shared', v: 'You confirmed the hiding on your items and set what is shared with Andrés versus kept private, item by item.', icon: 'ti-file-text' },
+        { k: 'What it says, objectively', v: 'Personal details were hidden on every item. The financial figures the comparison needs remain; names, account numbers, and addresses do not cross.', icon: 'ti-scale' },
+        { k: 'How it supports what is ahead', v: 'The hidden, shareable versions are what Summarize and Gap Analysis work from — so the comparison never turns on private details.', icon: 'ti-arrow-right' }],
+      report: { summary: 'Personal details were hidden (redacted) before anything crossed between the parties. Each side controls what is shared versus kept private — uploading a document does not share it. This is Checkpoint 1: the sharing and hiding are confirmed by the accountable owner before the matter advances.',
+        facts: ['Details hidden', 'You control sharing', 'Checkpoint 1', 'Every choice logged'], detail: [] } },
+    { n: 4, id: 'summarize', name: 'Summarize', scope: 'both', status: 'done', action: 'review',
+      lead: 'Each side is written up the same way, so the picture rests on the facts.', minutes: 'About 3 minutes',
+      guide: [
+        { k: 'What this step does', v: 'Writes up both sides the same way — the same questions, the same depth — so the picture rests on the facts, not on who prepared better.', icon: 'ti-file-description' },
+        { k: 'What you will do', v: 'This step works from what you already gave. You read each summary and flag anything off.', icon: 'ti-eye-check' },
+        { k: 'What JusticeX does with it', v: 'Produces one even summary per question. It does not weigh, rank, or recommend.', icon: 'ti-adjustments' },
+        { k: 'What you get, and what is next', v: 'An even, side-by-side summary of every question. Next: Gap Analysis, where agreement and difference are mapped.', icon: 'ti-arrow-right' }],
+      input: { lead: 'This step works from what you already provided. Look over the summaries and flag anything that does not match.', items: [
+        { k: 'Read each summary', v: 'Check the objective summary captured for each question.' },
+        { k: 'Flag anything off', v: 'Mark any summary that does not reflect what you provided, to revisit.' }] },
+      recap: [
+        { k: 'What was summarized', v: 'The confirmed, hidden items you and Andrés provided — nothing new to add.', icon: 'ti-file-text' },
+        { k: 'What it says, objectively', v: 'The objective facts are set for every question: home value left of $550,000, a retirement account of $280,000, incomes of $145,000 and $62,000, and a roughly 14-year marriage. Both summaries used the same questions and depth.', icon: 'ti-scale' },
+        { k: 'How it supports what is ahead', v: 'These even summaries are the common ground Gap Analysis compares — so differences show up as facts, not framing.', icon: 'ti-arrow-right' }],
+      report: { summary: 'Each side was written up identically — the same questions, the same depth. Objective facts were captured for every question, and an even-handedness check confirmed the two summaries are balanced.',
+        facts: ['Home value left $550,000', 'Retirement $280,000', 'Incomes $145k / $62k', '~14-yr marriage', 'Balance checked'], detail: [] } },
+    { n: 5, id: 'gap-analysis', name: 'Gap Analysis', scope: 'both', status: 'active', action: 'settle',
+      lead: 'See where you and Andrés agree and where you differ — then settle each open point, side by side.', minutes: 'About 6 minutes',
+      gaps: [
+        { issue: 'The home', cat: 'Property', you: 'Keep the home; buy out Andrés’s share', other: 'Sell the home and split what is left',
+          options: ['Independent appraisal, then you buy out at half the value left', 'Sell and split 50/50', 'Co-own for two years, then decide'],
+          note: 'Worked example — if the home is kept about six years then sold, Andrés’s $275,000 half is received later; at a 4% discount rate that is worth about $217,000 today. The value you agree here carries into your agreement and reconciles to the dollar.', agreed: '', status: 'open' },
+        { issue: 'The retirement account', cat: 'Property', you: 'All of it is shared (marital)', other: 'About $60,000 built up before the marriage is personal',
+          options: ['Produce the pre-2011 records', 'Treat as fully shared, pending records', 'Agreed carve-out of $60,000 as personal'], agreed: '', status: 'open' },
+        { issue: 'The 2019 inheritance', cat: 'Property', you: 'It was mixed into joint accounts — now shared', other: 'It is traceable and still personal',
+          options: ['Trace the deposits', 'Split the difference', 'Treat as personal, with an offset elsewhere'], agreed: '', status: 'open' },
+        { issue: 'Spousal support', cat: 'Support', you: 'Support for a set period', other: 'A lower amount, for a shorter time',
+          options: ['New York guideline amount and duration', 'An agreed flat amount', 'Step down over three years'], agreed: '', status: 'open' },
+        { issue: 'The parenting schedule', cat: 'Children', you: 'Alternating weeks', other: 'Every other weekend plus one weeknight',
+          options: ['Alternating weeks', 'A 5-2-2-5 schedule', 'Every other weekend plus shared holidays'], agreed: '', status: 'open' },
+        { issue: 'Child support', cat: 'Children', you: 'The standard formula', other: 'The standard formula',
+          options: ['New York’s standard formula [[Child Support Standards Act]], once the parenting schedule is set'], agreed: 'Standard formula', status: 'aligned' }],
+      guide: [
+        { k: 'What this step does', v: 'Maps where you already agree, where you differ, and what is still missing — then you settle each open point.', icon: 'ti-git-compare' },
+        { k: 'What you will do', v: 'Work each open point side by side, weigh the options to close the gap, and record what you agree.', icon: 'ti-arrows-diff' },
+        { k: 'What JusticeX does with it', v: 'Maps agreement and difference objectively and shows the math. It does not take a side or suggest a number.', icon: 'ti-adjustments' },
+        { k: 'What you get, and what is next', v: 'An agreed starting point for the open questions. Next: Resolution, where the remaining choices are made.', icon: 'ti-arrow-right' }],
+      input: { lead: '', items: [] },
+      recap: [
+        { k: 'Where you stand', v: 'Four base points are aligned: the divorce, sharing the major decisions about the children [[legal custody]], each parent fit, and keeping schooling stable.', icon: 'ti-file-text' },
+        { k: 'What it says, objectively', v: 'Six questions remain open: the home, the retirement account, the inheritance, spousal support [[maintenance]], the parenting schedule, and child support. No side is favored and no number is suggested.', icon: 'ti-scale' },
+        { k: 'How it supports what is ahead', v: 'The open list becomes the agenda for Resolution — each open question gets an even set of options next.', icon: 'ti-arrow-right' }],
+      report: { summary: 'Agreed, differing, and missing points were mapped across the six questions. Aligned base: the divorce itself, sharing the major decisions about the children [[legal custody]], each parent fit, and keeping the children’s schooling stable. Open: the home, the retirement account, the inheritance, spousal support, the parenting schedule, and child support. This is Checkpoint 2.',
+        facts: ['4 agreed', '6 open questions', 'Checkpoint 2', 'No recommendation'], detail: [] } },
+    { n: 6, id: 'resolution', name: 'Resolution', scope: 'both', status: 'upcoming', action: 'decide',
+      lead: 'Clear options are laid out for each open question — even, with no recommendation.', minutes: 'About 6 minutes',
+      guide: [
+        { k: 'What this step does', v: 'Lays out clear, even options for each open question, so you can see where you are close and where a choice is needed.', icon: 'ti-arrows-shuffle' },
+        { k: 'What you will do', v: 'Work through each open question and choose, together, the option you both accept.', icon: 'ti-hand-click' },
+        { k: 'What JusticeX does with it', v: 'Presents options evenly and records what you agree. It does not propose a figure, predict an outcome, or advise.', icon: 'ti-adjustments' },
+        { k: 'What you get, and what is next', v: 'An agreed position on each question. Next: your agreement is assembled.', icon: 'ti-arrow-right' }],
+      input: { lead: 'This is where you decide. Work through each open question and choose, together, the option you both accept — or leave it for an attorney.', items: [
+        { k: 'Work each open question', v: 'For each open question, review the even options and choose the one you both accept.' },
+        { k: 'Note anything for an attorney', v: 'Leave any question open if you would rather decide it with an attorney.' }] },
+      recap: [
+        { k: 'What you decided', v: 'Your choices on each open question, made together with Andrés, are gathered here as you work through Resolution.', icon: 'ti-file-text' },
+        { k: 'What it says, objectively', v: 'The options are even and no number is recommended. Agreement is noted where you are already close — for example, using New York’s standard child-support formula [[Child Support Standards Act]] once the parenting schedule is set.', icon: 'ti-scale' },
+        { k: 'How it supports what is ahead', v: 'Every agreed choice flows straight into your written agreement; anything left open is listed there for an attorney.', icon: 'ti-arrow-right' }],
+      report: { summary: 'Clear options were laid out for each open question — even, with no recommendation. Agreement was noted where the positions are already close, such as using New York’s standard child-support formula [[Child Support Standards Act]] once the parenting schedule is set. This is Checkpoint 3, before your agreement is assembled.',
+        facts: ['Even options', 'Agreement noted', 'Checkpoint 3', 'You decide'], detail: [] } },
+    { n: 7, id: 'memorandum', name: 'Memorandum', scope: 'both', status: 'upcoming', action: 'finalize',
+      lead: 'Everything you agreed is assembled into a written agreement.', minutes: 'About 4 minutes',
+      guide: [
+        { k: 'What this step does', v: 'Assembles everything you agreed into a single written agreement, with open points listed for an attorney.', icon: 'ti-file-certificate' },
+        { k: 'What you will do', v: 'Review the assembled agreement, jump back to change anything, then finalize and sign when you are both ready.', icon: 'ti-signature' },
+        { k: 'What JusticeX does with it', v: 'Assembles the certified, audit-tracked record. It generates the document; it does not give legal advice on it.', icon: 'ti-adjustments' },
+        { k: 'What you get, and what is next', v: 'Your written agreement — ready to sign and to take to an attorney.', icon: 'ti-arrow-right' }],
+      input: { lead: 'Review your agreement, section by section. If anything needs a change, jump back to the step where it was decided — nothing is locked until you finalize.', items: [] },
+      assembly: [
+        { title: 'Decision-making for the children', detail: 'Shared — you both make the major decisions together [[legal custody]].', from: 1, fromName: 'Plan', status: 'agreed' },
+        { title: 'Dividing what you own', detail: 'The home, the retirement account, and the 2019 inheritance.', from: 6, fromName: 'Resolution', status: 'agreed' },
+        { title: 'Spousal support', detail: 'The amount and how long it lasts [[maintenance]].', from: 6, fromName: 'Resolution', status: 'agreed' },
+        { title: 'The parenting schedule', detail: 'Where the children live and the day-to-day schedule.', from: 6, fromName: 'Resolution', status: 'agreed' },
+        { title: 'Child support', detail: 'New York’s standard formula [[Child Support Standards Act]], once the parenting schedule is set.', from: 6, fromName: 'Resolution', status: 'agreed' },
+        { title: 'Open point — older retirement records', detail: 'Still incomplete; it affects the personal-property portion of the retirement account. Add the records, or note it for an attorney.', from: 2, fromName: 'Intake', status: 'open' }],
+      recap: [
+        { k: 'What it is built from', v: 'Everything you confirmed at each step — nothing new is added here.', icon: 'ti-file-text' },
+        { k: 'What it says, objectively', v: 'The agreed terms are stated as you agreed them; open points are listed plainly for an attorney. The figures are your certified inputs, not an estimate or a recommendation.', icon: 'ti-scale' },
+        { k: 'How it supports what is ahead', v: 'This is your document to keep — ready to sign, and for your own attorney to review before anyone relies on it.', icon: 'ti-arrow-right' }],
+      report: { summary: 'The agreed terms were assembled into your written agreement, with any open points listed for an attorney. The Finalize gate certifies the record — audit-tracked — ready to sign and to take to an attorney. For an attorney, the same record is available as a Memorandum of Understanding for review and update.',
+        facts: ['Certified', 'Audit-tracked (SHA-256)', 'Attorney-ready', 'Finalize gate'], detail: [] } }
+  ];
+  var MARK = {
+    guide: 'AI-assisted overview · figures illustrative · not legal advice.',
+    recap: 'AI-generated · general information only · not a formal agreement, and not evidence or support of one · figures reflect your inputs.'
+  };
+  var POSTURE = 'JusticeX organizes and compares your information objectively. It is software — not a law firm or a lawyer — and it does not advise you or the other party. You decide, with your own attorney if you choose.';
+  function placeholderPanel(lane, stageId, format, label, icon) {
+    var m = mediaRef(lane, stageId, format);
+    return '<div class="mv-ph"><div class="mv-ph-ic"><i class="ti ' + icon + '"></i></div>' +
+      '<div class="mv-ph-t">' + esc(label) + '</div><div class="mv-ph-d">Served on demand from a signed, short-lived, ' +
+      '<strong>entitlement-scoped link</strong> (C-ENT-07) — not wired in this preview.</div>' +
+      '<code class="mv-ph-ref">' + esc(m.ref) + '</code></div>';
+  }
+  function renderViewer(el, cfg) {
+    var beats = cfg.beats;
+    var tabs = [['watch','Video','ti-player-play'],['listen','Audio','ti-headphones'],['ig','Infographic','ti-photo'],['slides','Slides','ti-presentation'],['read',cfg.readLabel||'Read','ti-list-details']];
+    var beatsHtml = beats.map(function (b) {
+      return '<li><span class="bx"><i class="ti ' + (b.icon || 'ti-point') + '"></i></span><span><span class="k">' + render(b.k) + '</span><span class="v">' + render(b.v) + '</span></span></li>';
+    }).join('');
+    el.innerHTML =
+      '<div class="mv-choose"><i class="ti ti-adjustments-horizontal"></i> Choose how to take it in:</div>' +
+      '<div class="mv-tabs" role="tablist">' + tabs.map(function (t) {
+        return '<button class="mv-tab" role="tab" data-k="' + t[0] + '"><i class="ti ' + t[2] + '"></i> ' + t[1] + '</button>'; }).join('') + '</div>' +
+      '<div class="mv-body">' +
+        '<div class="mv-panel" data-k="watch">' + placeholderPanel(cfg.lane, cfg.stageId, 'video', 'A short overview video', 'ti-player-play') + '</div>' +
+        '<div class="mv-panel" data-k="listen">' + placeholderPanel(cfg.lane, cfg.stageId, 'audio', 'An audio overview', 'ti-headphones') + '</div>' +
+        '<div class="mv-panel" data-k="ig">' + placeholderPanel(cfg.lane, cfg.stageId, 'infographic', 'A one-page infographic', 'ti-photo') + '</div>' +
+        '<div class="mv-panel" data-k="slides">' + placeholderPanel(cfg.lane, cfg.stageId, 'slides', 'A short slide overview', 'ti-presentation') + '</div>' +
+        '<div class="mv-panel on" data-k="read"><ul class="beats' + (cfg.linear ? ' linear' : '') + '">' + beatsHtml + '</ul></div>' +
+      '</div>';
+    var tabsEl = el.querySelectorAll('.mv-tab'), panels = el.querySelectorAll('.mv-panel');
+    function sel(k){ tabsEl.forEach(function(t){t.classList.toggle('on',t.dataset.k===k);}); panels.forEach(function(p){p.classList.toggle('on',p.dataset.k===k);}); }
+    tabsEl.forEach(function (t) { t.addEventListener('click', function () { sel(t.dataset.k); }); });
+    sel('read');
+  }
+  function viewToggleHref(target) {
+    var q = new URLSearchParams(location.search);
+    if (target === 'consumer') q.delete('view'); else q.set('view', target);
+    var t = q.toString(); return location.pathname + (t ? '?' + t : '');
+  }
+  function injectViewerCSS() {
+    if (document.getElementById('jx-mv-css')) return;
+    var st = document.createElement('style'); st.id = 'jx-mv-css';
+    st.textContent = [
+      '.mv-choose{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--jx-slate-500);display:flex;align-items:center;gap:7px;margin-bottom:9px}',
+      '.mv-choose i{color:var(--jx-navy-600);font-size:15px}',
+      '.mv-tabs{display:inline-flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:16px;background:var(--jx-stone-100);border:1px solid var(--jx-stone-200);border-radius:14px;padding:5px}',
+      '.mv-tab{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;padding:8px 15px;border-radius:999px;border:none;background:transparent;color:var(--jx-navy-800);cursor:pointer;font-family:var(--font-body)}',
+      '.mv-tab i{font-size:16px}.mv-tab:hover{background:var(--jx-white)}',
+      '.mv-tab.on{background:var(--jx-navy-800);color:#fff;box-shadow:0 1px 2px rgba(4,44,83,.2)}',
+      '.jx-lane-client .mv-tab.on{background:var(--jx-coral-500)}',
+      '.mv-panel{display:none}.mv-panel.on{display:block}',
+      '.mv-ph{display:flex;flex-direction:column;align-items:flex-start;gap:8px;background:var(--jx-paper);border:1px dashed var(--jx-stone-300);border-radius:12px;padding:22px}',
+      '.mv-ph-ic{width:44px;height:44px;border-radius:999px;background:var(--jx-navy-800);color:#fff;display:flex;align-items:center;justify-content:center;font-size:21px}',
+      '.jx-lane-client .mv-ph-ic{background:var(--jx-coral-500)}',
+      '.mv-ph-t{font-family:var(--font-display);font-weight:600;font-size:16px;color:var(--jx-navy-800)}',
+      '.mv-ph-d{font-size:13px;color:var(--jx-slate-500);line-height:1.5;max-width:60ch}',
+      '.mv-ph-ref{font-family:var(--font-mono);font-size:11px;color:var(--jx-slate-500);background:var(--jx-stone-100);border:1px solid var(--jx-stone-200);border-radius:6px;padding:3px 8px;word-break:break-all}',
+      '.beats{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px 26px}',
+      '.beats.linear{grid-template-columns:1fr;gap:13px;max-width:760px}',
+      '@media(max-width:720px){.beats{grid-template-columns:1fr}}',
+      '.beats li{display:flex;gap:12px}',
+      '.beats .bx{width:30px;height:33px;flex:0 0 auto;background:var(--jx-navy-500);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px}',
+      '.jx-lane-client .beats .bx{background:var(--jx-coral-500)}',
+      '.beats .k{display:block;font-weight:700;color:var(--jx-navy-800);font-size:14px;margin-bottom:2px}',
+      '.beats .v{font-size:14px;color:var(--jx-ink-700);line-height:1.5}',
+      '.mv-note{font-size:11.5px;color:var(--jx-slate-500);margin-top:14px;line-height:1.5}',
+      '.jx-term{border-bottom:1px dotted var(--jx-slate-300);cursor:help;color:var(--jx-slate-500);font-style:italic;white-space:nowrap}',
+      '.jx-term:hover,.jx-term:focus{color:var(--jx-coral-600);border-bottom-color:var(--jx-coral-500);outline:none}',
+      '.jx-term-strong .jx-term{font-style:normal;color:var(--jx-navy-800);border-bottom-color:var(--jx-navy-500)}'
+    ].join('\n');
+    document.head.appendChild(st);
+  }
+  window.JXMatter = {
+    flagOn: flagOn, isAttorneyView: isAttorneyView, viewToggleHref: viewToggleHref, outputName: outputName,
+    matter: MATTER, stages: STAGES, checkpoints: CHECKPOINTS, marks: MARK, posture: POSTURE,
+    actMeta: actMeta, renderViewer: renderViewer, injectViewerCSS: injectViewerCSS, esc: esc, render: render,
+    stage: function (n) { return STAGES.filter(function (s) { return s.n === n; })[0]; },
+    scopeLabel: function (s) { return s.scope === 'each' ? 'Each party · on their own' : 'Both parties · together'; }
+  };
+})();
+</script>
+<script>
+(function(){
+  var JX = window.JXMatter;
+  JX.injectViewerCSS();
+  if (JX.flagOn()) { var fb = document.querySelector('.flagbar'); if (fb) fb.style.display='none'; }
+  var M = JX.matter, CP = JX.checkpoints, legal = JX.isAttorneyView();
+  var outWord = legal ? 'the Memorandum' : 'your agreement';
+
+  var n = parseInt((new URLSearchParams(location.search)).get('step'), 10);
+  if (!(n >= 1 && n <= 7)) n = M.current;
+  var s = JX.stage(n), next = JX.stage(n + 1), meta = JX.actMeta(s), vq = legal ? '&view=attorney' : '';
+
+  document.title = 'Step ' + n + ' · ' + s.name + ' · Delgado (Sample) · JusticeX';
+  document.getElementById('moRibbon').textContent = 'Sample · Synthetic matter (“Delgado”) · Step ' + n + ' · ' + s.name;
+
+  document.getElementById('termsw').innerHTML =
+    '<span class="tlab">Terminology</span>'+
+    '<span class="sw" title="How much legal terminology to show. In production, an attorney or mediator on the matter also sees the legal-format output.">'+
+      '<a href="'+JX.viewToggleHref('consumer')+'" class="'+(legal?'':'on')+'"><i class="ti ti-message-circle"></i> Simple terms</a>'+
+      '<a href="'+JX.viewToggleHref('attorney')+'" class="'+(legal?'on':'')+'"><i class="ti ti-gavel"></i> Legal terms</a>'+
+    '</span>';
+
+  var mrail = document.getElementById('mrail');
+  JX.stages.forEach(function(st){
+    var a = document.createElement('a');
+    a.href = 'matter-step.html?step=' + st.n + vq;
+    a.className = (st.n < n ? 'done' : (st.n === n ? 'active' : ''));
+    if (st.n === n) a.setAttribute('aria-current','step');
+    a.innerHTML = '<span class="hex"><span class="n">'+st.n+'</span></span><span class="rn">'+JX.esc(st.name)+'</span>';
+    mrail.appendChild(a);
+  });
+
+  document.getElementById('sEy').textContent = 'Step ' + n + ' of 7 · ' + JX.scopeLabel(s);
+  document.getElementById('sName').textContent = s.name;
+  document.getElementById('sLead').innerHTML = JX.render(s.lead);
+  document.getElementById('sChips').innerHTML =
+    [['ti-clock', s.minutes], ['ti-lock', 'Nothing is shared without your say-so'], ['ti-device-floppy', 'Saves as you go']]
+    .map(function(x){ return '<span class="chip"><i class="ti '+x[0]+'"></i> '+JX.esc(x[1])+'</span>'; }).join('');
+
+  // 1 · Get oriented
+  JX.renderViewer(document.getElementById('guide'), { lane:'guide', stageId:s.id, beats:s.guide, readLabel:'The step overview', linear:true });
+  document.getElementById('guideMark').textContent = JX.marks.guide;
+
+  // 2 · The work
+  document.getElementById('workTitle').textContent = meta.title;
+  document.getElementById('workDesc').textContent = 'On this step, you ' + meta.verb + '.';
+  var workBody = document.getElementById('workBody');
+
+  if (s.id === 'gap-analysis' && s.gaps) {
+    var rows = s.gaps.map(function(g,i){
+      var opts = '<ul class="opts">'+g.options.map(function(o,j){
+        return '<li><span class="on">'+String.fromCharCode(9312+j)+'</span> '+JX.render(o)+'</li>'; }).join('')+'</ul>';
+      var aligned = g.status === 'aligned';
+      var input = aligned
+        ? '<div style="font-weight:600;color:var(--jx-success)">'+JX.esc(g.agreed)+'</div>'
+        : '<input class="agreedin" data-g="'+i+'" placeholder="enter what you agree">';
+      var stat = '<span class="gstat '+(aligned?'aligned':'open')+'"><i class="ti '+(aligned?'ti-check':'ti-dots')+'"></i> '+(aligned?'Aligned':'Open')+'</span>';
+      return '<tr data-row>'+
+        '<td><div class="iss">'+JX.render(g.issue)+'</div><div class="cat">'+JX.esc(g.cat)+'</div></td>'+
+        '<td class="pa"><div class="pos">'+JX.render(g.you)+'</div></td>'+
+        '<td class="pb"><div class="pos">'+JX.render(g.other)+'</div></td>'+
+        '<td>'+opts+(g.note?'<div class="worknote"><b>How the math works.</b> '+JX.render(g.note)+'</div>':'')+'</td>'+
+        '<td style="min-width:150px">'+input+'</td>'+
+        '<td>'+stat+'</td></tr>';
+    }).join('');
+    workBody.innerHTML =
+      '<div class="meterwrap"><div class="meterlab"><span>Settled so far</span><b id="alignLab"></b></div>'+
+        '<div class="meter"><div class="fill" id="alignFill"></div></div></div>'+
+      '<div style="overflow-x:auto"><table class="gaptbl"><thead><tr>'+
+        '<th>Open point</th><th class="pa">You ('+JX.esc(M.you)+')</th><th class="pb">'+JX.esc(M.other)+'</th>'+
+        '<th>Options to close the gap</th><th>What you agree</th><th>Status</th></tr></thead><tbody>'+rows+'</tbody></table></div>'+
+      '<div class="locklab"><div class="s" id="lockText"></div><button class="lockbtn" id="lockBtn" disabled><i class="ti ti-lock"></i> Lock the agreed starting point</button></div>'+
+      '<div class="framing"><i class="ti ti-info-circle"></i><p><b>JusticeX lays out the options and shows the math; it does not recommend which to pick, and it never predicts an outcome.</b> What you agree here carries into '+JX.esc(outWord)+' and reconciles to the dollar. You decide, with your own attorney if you choose.</p></div>';
+    var recompute = function(){
+      var rowsEl = workBody.querySelectorAll('tbody tr[data-row]'), total = rowsEl.length, al = 0;
+      rowsEl.forEach(function(tr){
+        var inp = tr.querySelector('.agreedin'), pill = tr.querySelector('.gstat');
+        if (!inp) { al++; return; }
+        var filled = inp.value.trim() !== '';
+        pill.className = 'gstat ' + (filled?'aligned':'open');
+        pill.innerHTML = '<i class="ti '+(filled?'ti-check':'ti-dots')+'"></i> ' + (filled?'Aligned':'Open');
+        if (filled) al++;
+      });
+      document.getElementById('alignLab').textContent = al + ' of ' + total + ' settled';
+      document.getElementById('alignFill').style.width = (al/total*100) + '%';
+      var open = total - al, btn = document.getElementById('lockBtn'), t = document.getElementById('lockText');
+      btn.disabled = open !== 0;
+      t.innerHTML = open===0 ? 'All points settled — ready to lock the agreed starting point.'
+        : '<b>'+open+' point'+(open>1?'s':'')+'</b> still open — enter what you agree for each.';
+    };
+    workBody.querySelectorAll('.agreedin').forEach(function(el){ el.addEventListener('input', recompute); });
+    recompute();
+  } else if (s.id === 'intake') {
+    var docs = [
+      ['ti-home','Home appraisal','Marital residence','ok','Added'],
+      ['ti-file-dollar','Mortgage statement','Current balance','ok','Added'],
+      ['ti-pig-money','Retirement account statement','401(k)','ok','Added'],
+      ['ti-report-money','Older retirement records','Pre-marriage contributions','need','Helpful to add'],
+      ['ti-building-bank','Bank & retirement accounts','IRA; joint accounts','ok','Added'],
+      ['ti-cash','Income documentation','Both parties','ok','Added'],
+      ['ti-gift','2019 inheritance records','Personal-property tracing','ok','Added']
+    ];
+    workBody.innerHTML =
+      '<p class="worklead">Add the documents and details you have not already shared. Upload or enter each item, or skip and come back — a check shows what is still helpful.</p>'+
+      '<div class="docs">'+docs.map(function(d){
+        return '<div class="doc"><span class="ic"><i class="ti '+d[0]+'"></i></span><div><div class="nm">'+JX.esc(d[1])+
+          '</div><div class="dsub">'+JX.esc(d[2])+'</div></div><span class="pill '+d[3]+'">'+JX.esc(d[4])+'</span></div>';
+      }).join('')+'</div>'+
+      '<div class="encourage"><i class="ti ti-circle-check" style="font-size:19px"></i> Nice — that is almost everything. One item is optional and can wait: the older retirement records.</div>';
+  } else if (s.id === 'memorandum' && s.assembly) {
+    var arows = s.assembly.map(function(a){
+      var open = a.status === 'open';
+      var link = '<a href="matter-step.html?step='+a.from+vq+'" style="display:inline-flex;align-items:center;gap:5px;margin-top:7px;font-size:12.5px;font-weight:600;text-decoration:none;color:'+(open?'var(--jx-coral-600)':'var(--jx-navy-600)')+'"><i class="ti ti-corner-up-left"></i> '+(open?'Resolve in '+JX.esc(a.fromName):'Review or change in '+JX.esc(a.fromName))+'</a>';
+      return '<div class="workrow" style="align-items:flex-start"><div style="flex:1"><span class="wk">'+JX.render(a.title)+
+        '</span><div class="wv">'+JX.render(a.detail)+'</div>'+link+'</div>'+
+        '<span class="pill '+(open?'need':'ok')+'">'+(open?'Open':'Agreed')+'</span></div>';
+    }).join('');
+    workBody.innerHTML =
+      '<p class="worklead">'+JX.render(s.input.lead)+'</p>'+
+      '<div class="worklist">'+arows+'</div>'+
+      '<div class="framing"><i class="ti ti-info-circle"></i><p><b>Nothing is locked until you finalize.</b> If you spot anything to change, use the link on that section to jump back to the step where it was decided. The open point can be resolved now or left for an attorney — your choice.</p></div>';
+  } else if (s.id === 'plan') {
+    // Working surface — scope builder: confirm basics, toggle the questions in/out of scope, carry agreed points forward
+    var pQ = [
+      { k:'The home', c:'Property' }, { k:'The retirement account', c:'Property' }, { k:'The 2019 inheritance', c:'Property' },
+      { k:'Spousal support [[maintenance]]', c:'Support' }, { k:'The parenting schedule', c:'Children' }, { k:'Child support', c:'Children' }
+    ];
+    var pAgreed = [
+      'The divorce itself', 'Sharing the major decisions about the children [[legal custody]]',
+      'Each parent is fit', 'Keeping the children’s schooling stable'
+    ];
+    workBody.innerHTML =
+      '<p class="worklead">Confirm what your matter is about, review the questions JusticeX laid out, and switch off anything that does not apply. This list becomes the spine of every later step — you can add or remove a question here.</p>'+
+      '<div class="confbasics"><span class="cb"><i class="ti ti-check"></i> Divorce with children &amp; property</span>'+
+        '<span class="cb"><i class="ti ti-check"></i> Kings County, New York</span>'+
+        '<span class="cb"><i class="ti ti-check"></i> Fair division of property [[equitable distribution]]</span></div>'.replace(/\[\[([^\]]+)\]\]/g, function(_,t){return '<span style="opacity:.7">('+t+')</span>';})+
+      '<div class="meterwrap"><div class="meterlab"><span>Questions in scope</span><b id="scopeLab"></b></div><div class="meter"><div class="fill" id="scopeFill"></div></div></div>'+
+      '<div class="worklist" id="qlist">'+pQ.map(function(q,i){
+        return '<div class="qrow" data-q="'+i+'"><div class="qmain"><span class="qc">'+JX.esc(q.c)+'</span><div class="qk">'+JX.render(q.k)+'</div></div>'+
+          '<span class="seg"><button class="pos on" data-v="in">In scope</button><button class="neg" data-v="out">Not now</button></span></div>';
+      }).join('')+'</div>'+
+      '<div class="subhd">Already agreed — carried forward</div>'+
+      '<div class="worklist">'+pAgreed.map(function(a){
+        return '<div class="qrow"><span class="gstat aligned"><i class="ti ti-check"></i> Agreed</span><div class="qmain"><div class="qv" style="font-size:13.5px;color:var(--jx-ink-700)">'+JX.render(a)+'</div></div></div>';
+      }).join('')+'</div>'+
+      '<div class="framing"><i class="ti ti-info-circle"></i><p><b>JusticeX organizes your matter into clear questions and applies the right approach for its type and state.</b> It does not judge, advise, or decide anything for you.</p></div>';
+    var scopeRecompute = function(){
+      var rows = workBody.querySelectorAll('#qlist .qrow'), total = rows.length, inn = 0;
+      rows.forEach(function(r){ if(!r.classList.contains('off')) inn++; });
+      document.getElementById('scopeLab').textContent = inn + ' of ' + total + ' in scope';
+      document.getElementById('scopeFill').style.width = (inn/total*100) + '%';
+    };
+    workBody.querySelectorAll('#qlist .qrow').forEach(function(row){
+      row.querySelectorAll('.seg button').forEach(function(b){ b.addEventListener('click', function(){
+        row.querySelectorAll('.seg button').forEach(function(x){ x.classList.remove('on'); });
+        b.classList.add('on');
+        row.classList.toggle('off', b.dataset.v === 'out');
+        scopeRecompute();
+      });});
+    });
+    scopeRecompute();
+  } else if (s.id === 'redact') {
+    // Working surface — sharing controls: per item, share the hidden version or keep it private (this is the crossing point)
+    var rItems = [
+      ['ti-home','Home appraisal','Names, address, and appraiser details hidden'],
+      ['ti-file-dollar','Mortgage statement','Account number and address hidden'],
+      ['ti-pig-money','Retirement account statement','Account number and SSN hidden'],
+      ['ti-building-bank','Bank &amp; retirement accounts','Account numbers hidden'],
+      ['ti-cash','Income documentation','Employer IDs and address hidden'],
+      ['ti-gift','2019 inheritance records','Names and account numbers hidden']
+    ];
+    workBody.innerHTML =
+      '<p class="worklead">Personal details were hidden on every item. For each one, choose what is shared with '+JX.esc(M.other)+' and what stays private. Uploading an item never shared it — this step is the point where information can cross between you.</p>'+
+      '<div class="meterwrap"><div class="meterlab"><span>Shared with '+JX.esc(M.other)+' (hidden version)</span><b id="shareLab"></b></div><div class="meter"><div class="fill" id="shareFill"></div></div></div>'+
+      '<div class="worklist" id="rlist">'+rItems.map(function(d,i){
+        return '<div class="qrow" data-r="'+i+'"><span class="ic"><i class="ti '+d[0]+'"></i></span><div class="qmain"><div class="qk">'+d[1]+'</div><div class="qv"><i class="ti ti-eye-off"></i> '+d[2]+'</div></div>'+
+          '<span class="seg"><button class="pos on" data-v="share">Share (hidden)</button><button class="neg" data-v="private">Keep private</button></span></div>';
+      }).join('')+'</div>'+
+      '<div class="locklab"><div class="s" id="shareText"></div><button class="lockbtn" id="shareBtn"><i class="ti ti-checks"></i> Confirm sharing choices</button></div>'+
+      '<div class="framing"><i class="ti ti-info-circle"></i><p><b>The figures the comparison needs remain; names, account numbers, and addresses do not cross.</b> Every choice here is logged, and you are the accountable owner of what is shared. You decide, with your own attorney if you choose.</p></div>';
+    var shareRecompute = function(){
+      var rows = workBody.querySelectorAll('#rlist .qrow'), total = rows.length, sh = 0;
+      rows.forEach(function(r){ if(r.querySelector('.seg button.on').dataset.v === 'share') sh++; });
+      document.getElementById('shareLab').textContent = sh + ' of ' + total + ' shared';
+      document.getElementById('shareFill').style.width = (sh/total*100) + '%';
+      document.getElementById('shareText').innerHTML = '<b>'+sh+' shared</b>, '+(total-sh)+' kept private — you can change any of these before you confirm.';
+    };
+    workBody.querySelectorAll('#rlist .qrow').forEach(function(row){
+      row.querySelectorAll('.seg button').forEach(function(b){ b.addEventListener('click', function(){
+        row.querySelectorAll('.seg button').forEach(function(x){ x.classList.remove('on'); });
+        b.classList.add('on'); shareRecompute();
+      });});
+    });
+    shareRecompute();
+  } else if (s.id === 'summarize') {
+    // Working surface — review-with-flag: read each even summary and flag anything that does not match
+    var sSum = [
+      { k:'The home', c:'Property', v:'Marital residence appraised at about $960,000, with about $550,000 of value left after the $410,000 mortgage.' },
+      { k:'The retirement account', c:'Property', v:'A retirement account [[401(k)]] of about $280,000; the pre-2011 portion is not yet documented.' },
+      { k:'The 2019 inheritance', c:'Property', v:'An inheritance received in 2019, later moved into joint accounts; whether it is still traceable is disputed.' },
+      { k:'Spousal support [[maintenance]]', c:'Support', v:'Incomes of about $145,000 and $62,000 across a roughly 14-year marriage.' },
+      { k:'The parenting schedule', c:'Children', v:'Two children; both parents seek substantial time. No day-to-day schedule is set yet.' },
+      { k:'Child support', c:'Children', v:'To follow New York’s standard formula [[Child Support Standards Act]] once the parenting schedule is set.' }
+    ];
+    workBody.innerHTML =
+      '<p class="worklead">Each side was written up the same way — the same questions, the same depth. Read each objective summary and flag anything that does not match what you provided. Flagging marks it to revisit; it does not change the facts.</p>'+
+      sSum.map(function(q,i){
+        return '<div class="qcard" data-s="'+i+'"><div class="qhead"><div class="qt">'+JX.render(q.k)+'<span class="cat">'+JX.esc(q.c)+'</span></div>'+
+          '<span class="seg"><button class="pos on" data-v="ok">Looks right</button><button class="warn" data-v="flag">Flag to revisit</button></span></div>'+
+          '<div class="sumtxt">'+JX.render(q.v)+'</div></div>';
+      }).join('')+
+      '<div class="locklab"><div class="s" id="revText"></div></div>'+
+      '<div class="framing"><i class="ti ti-info-circle"></i><p><b>JusticeX produces one even summary per question — same prompts, same model, same depth for both sides.</b> It does not weigh, rank, or recommend. Anything you flag is carried to revisit before Gap Analysis relies on it.</p></div>';
+    var revRecompute = function(){
+      var cards = workBody.querySelectorAll('.qcard[data-s]'), total = cards.length, fl = 0;
+      cards.forEach(function(c){ if(c.querySelector('.seg button.on').dataset.v === 'flag') fl++; });
+      document.getElementById('revText').innerHTML = fl === 0
+        ? 'All '+total+' summaries look right — nothing flagged.'
+        : '<b>'+fl+' flagged</b> to revisit — you can keep going and come back, or revisit now.';
+    };
+    workBody.querySelectorAll('.qcard[data-s]').forEach(function(card){
+      card.querySelectorAll('.seg button').forEach(function(b){ b.addEventListener('click', function(){
+        card.querySelectorAll('.seg button').forEach(function(x){ x.classList.remove('on'); });
+        b.classList.add('on'); revRecompute();
+      });});
+    });
+    revRecompute();
+  } else if (s.id === 'resolution') {
+    // Working surface — choose-options: for each open question pick the option you both accept, or leave it for an attorney
+    var rDec = [
+      { k:'The home', c:'Property', options:['Independent appraisal, then '+M.you+' buys out at half the value left','Sell and split 50/50','Co-own for two years, then decide'] },
+      { k:'The retirement account', c:'Property', options:['Produce the pre-2011 records','Treat as fully shared, pending records','Agreed carve-out of $60,000 as personal'] },
+      { k:'The 2019 inheritance', c:'Property', options:['Trace the deposits','Split the difference','Treat as personal, with an offset elsewhere'] },
+      { k:'Spousal support [[maintenance]]', c:'Support', options:['New York guideline amount and duration','An agreed flat amount','Step down over three years'] },
+      { k:'The parenting schedule', c:'Children', options:['Alternating weeks','A 5-2-2-5 schedule','Every other weekend plus shared holidays'] }
+    ];
+    workBody.innerHTML =
+      '<p class="worklead">For each open question, review the even options and choose the one you both accept — or leave it for an attorney. JusticeX presents the options evenly; it does not propose a figure, predict an outcome, or recommend one.</p>'+
+      '<div class="meterwrap"><div class="meterlab"><span>Decided</span><b id="decLab"></b></div><div class="meter"><div class="fill" id="decFill"></div></div></div>'+
+      rDec.map(function(q,i){
+        return '<div class="qcard" data-d="'+i+'"><div class="qhead"><div class="qt">'+JX.render(q.k)+'<span class="cat">'+JX.esc(q.c)+'</span></div><span class="gstat open" data-stat><i class="ti ti-dots"></i> Open</span></div>'+
+          '<ul class="optchoice">'+q.options.map(function(o,j){ return '<li data-opt="'+j+'"><span class="rmark"></span><span>'+JX.render(o)+'</span></li>'; }).join('')+
+          '<li class="atty" data-opt="atty"><span class="rmark"></span><span>Leave this one for an attorney</span></li></ul></div>';
+      }).join('')+
+      '<div class="qcard"><div class="qhead"><div class="qt">Child support<span class="cat">Children</span></div><span class="gstat aligned"><i class="ti ti-check"></i> Agreed</span></div>'+
+        '<div class="sumtxt">Already aligned — New York’s standard formula '+JX.render('[[Child Support Standards Act]]')+', once the parenting schedule is set.</div></div>'+
+      '<div class="locklab"><div class="s" id="decText"></div><button class="lockbtn" id="decBtn" disabled><i class="ti ti-lock"></i> Record your decisions</button></div>'+
+      '<div class="framing"><i class="ti ti-info-circle"></i><p><b>The options are laid out evenly, with no recommendation.</b> Every choice you record flows straight into '+JX.esc(outWord)+'; anything you leave for an attorney is listed there plainly. You decide, with your own attorney if you choose.</p></div>';
+    var decRecompute = function(){
+      var cards = workBody.querySelectorAll('.qcard[data-d]'), total = cards.length, dec = 0;
+      cards.forEach(function(c){
+        var sel = c.querySelector('.optchoice li.sel'), pill = c.querySelector('[data-stat]');
+        if (sel) {
+          dec++;
+          if (sel.dataset.opt === 'atty') { pill.className = 'gstat atty'; pill.innerHTML = '<i class="ti ti-user-check"></i> For an attorney'; }
+          else { pill.className = 'gstat aligned'; pill.innerHTML = '<i class="ti ti-check"></i> Decided'; }
+        } else { pill.className = 'gstat open'; pill.innerHTML = '<i class="ti ti-dots"></i> Open'; }
+      });
+      document.getElementById('decLab').textContent = dec + ' of ' + total + ' decided';
+      document.getElementById('decFill').style.width = (dec/total*100) + '%';
+      var open = total - dec, btn = document.getElementById('decBtn'), t = document.getElementById('decText');
+      btn.disabled = open !== 0;
+      t.innerHTML = open === 0 ? 'All questions decided — ready to record your decisions.'
+        : '<b>'+open+' question'+(open>1?'s':'')+'</b> still open — choose an option for each, or leave it for an attorney.';
+    };
+    workBody.querySelectorAll('.qcard[data-d] .optchoice').forEach(function(list){
+      list.querySelectorAll('li').forEach(function(li){ li.addEventListener('click', function(){
+        list.querySelectorAll('li').forEach(function(x){ x.classList.remove('sel'); });
+        li.classList.add('sel'); decRecompute();
+      });});
+    });
+    decRecompute();
+  } else {
+    var items = (s.input && s.input.items) || [];
+    workBody.innerHTML =
+      '<p class="worklead">'+JX.render(s.input ? s.input.lead : '') + '</p>'+
+      '<div class="worklist">'+items.map(function(d,i){
+        return '<div class="workrow"><span class="wknum">'+(i+1)+'</span><div><span class="wk">'+JX.render(d.k)+
+          '</span><div class="wv">'+JX.render(d.v)+'</div></div></div>'; }).join('')+'</div>';
+  }
+
+  // 3 · Your results — the easy read, then every output grouped exactly like the Matter Workspace
+  JX.renderViewer(document.getElementById('recap'), { lane:'client', stageId:s.id, beats:s.recap, readLabel:'The objective read', linear:true });
+  document.getElementById('recapMark').innerHTML =
+    '<strong>AI-generated · general information only · not a formal agreement,</strong> and not evidence or support of one · figures reflect your inputs.';
+  document.getElementById('flowTxt').textContent = 'These outputs flow into ' + outWord + '.';
+
+  // shared SVG thumbnails — same set and style as the Matter Workspace
+  var C={nv:'#042C53',n2:'#2A5582',co:'#D85A30',st:'#E6F1FB',hr:'#CFE0F4',gr:'#1D9E75',wh:'#fff'};
+  function doc(extra){return '<svg viewBox="0 0 120 96"><rect x="34" y="8" width="52" height="80" rx="4" fill="'+C.wh+'" stroke="'+C.hr+'"/>'+extra+'</svg>';}
+  var TH={
+    agreement:doc('<rect x="42" y="18" width="30" height="5" rx="1.5" fill="'+C.nv+'"/><rect x="42" y="30" width="36" height="2.5" fill="'+C.hr+'"/><rect x="42" y="37" width="36" height="2.5" fill="'+C.hr+'"/><rect x="42" y="44" width="26" height="2.5" fill="'+C.hr+'"/><circle cx="70" cy="70" r="9" fill="none" stroke="'+C.co+'" stroke-width="2"/><path d="M66 70l3 3 6-6" stroke="'+C.co+'" stroke-width="2" fill="none"/><rect x="42" y="66" width="18" height="3" rx="1.5" fill="'+C.n2+'"/>'),
+    summary:'<svg viewBox="0 0 120 96"><rect x="16" y="14" width="42" height="68" rx="4" fill="'+C.wh+'" stroke="'+C.hr+'"/><rect x="62" y="14" width="42" height="68" rx="4" fill="'+C.wh+'" stroke="'+C.hr+'"/><rect x="22" y="60" width="6" height="14" fill="'+C.n2+'"/><rect x="30" y="52" width="6" height="22" fill="'+C.n2+'"/><rect x="38" y="44" width="6" height="30" fill="'+C.co+'"/><rect x="46" y="56" width="6" height="18" fill="'+C.n2+'"/><circle cx="83" cy="42" r="15" fill="none" stroke="'+C.st+'" stroke-width="6"/><path d="M83 27a15 15 0 0 1 13 22" fill="none" stroke="'+C.co+'" stroke-width="6"/><rect x="70" y="66" width="28" height="4" rx="2" fill="'+C.gr+'"/></svg>',
+    detail:doc('<rect x="42" y="16" width="24" height="4" rx="1.5" fill="'+C.nv+'"/><rect x="42" y="26" width="36" height="2.4" fill="'+C.hr+'"/><rect x="42" y="32" width="36" height="2.4" fill="'+C.hr+'"/><rect x="42" y="38" width="36" height="2.4" fill="'+C.hr+'"/><rect x="42" y="44" width="28" height="2.4" fill="'+C.hr+'"/><rect x="42" y="54" width="36" height="18" rx="2" fill="'+C.st+'" stroke="'+C.hr+'"/><rect x="46" y="62" width="5" height="6" fill="'+C.co+'"/><rect x="53" y="58" width="5" height="10" fill="'+C.n2+'"/><rect x="60" y="60" width="5" height="8" fill="'+C.n2+'"/>'),
+    video:'<svg viewBox="0 0 120 96"><rect x="22" y="20" width="76" height="50" rx="6" fill="'+C.nv+'"/><rect x="27" y="25" width="66" height="40" rx="3" fill="'+C.st+'"/><circle cx="60" cy="45" r="13" fill="'+C.wh+'"/><path d="M56 39v12l10-6z" fill="'+C.co+'"/><rect x="40" y="78" width="40" height="4" rx="2" fill="'+C.hr+'"/><rect x="52" y="70" width="16" height="8" fill="'+C.n2+'"/></svg>',
+    audio:'<svg viewBox="0 0 120 96"><g fill="'+C.n2+'"><rect x="30" y="42" width="5" height="12" rx="2.5"/><rect x="40" y="34" width="5" height="28" rx="2.5"/><rect x="50" y="24" width="5" height="48" rx="2.5" fill="'+C.co+'"/><rect x="60" y="30" width="5" height="36" rx="2.5"/><rect x="70" y="38" width="5" height="20" rx="2.5"/><rect x="80" y="44" width="5" height="8" rx="2.5"/></g><circle cx="60" cy="48" r="40" fill="none" stroke="'+C.hr+'" stroke-width="2"/></svg>',
+    infographic:'<svg viewBox="0 0 120 96"><rect x="36" y="10" width="48" height="76" rx="5" fill="'+C.wh+'" stroke="'+C.hr+'"/><rect x="44" y="18" width="32" height="6" rx="2" fill="'+C.co+'"/><circle cx="52" cy="40" r="8" fill="'+C.st+'"/><path d="M52 32a8 8 0 0 1 7 12" fill="none" stroke="'+C.n2+'" stroke-width="3"/><rect x="66" y="34" width="12" height="4" rx="2" fill="'+C.hr+'"/><rect x="66" y="42" width="10" height="4" rx="2" fill="'+C.hr+'"/><rect x="44" y="58" width="6" height="14" fill="'+C.n2+'"/><rect x="53" y="52" width="6" height="20" fill="'+C.co+'"/><rect x="62" y="62" width="6" height="10" fill="'+C.n2+'"/><rect x="71" y="56" width="6" height="16" fill="'+C.n2+'"/></svg>',
+    slides:'<svg viewBox="0 0 120 96"><rect x="20" y="30" width="58" height="40" rx="4" fill="'+C.st+'" stroke="'+C.hr+'"/><rect x="32" y="22" width="58" height="40" rx="4" fill="'+C.wh+'" stroke="'+C.hr+'"/><rect x="40" y="30" width="24" height="4" rx="2" fill="'+C.nv+'"/><rect x="40" y="40" width="42" height="2.6" fill="'+C.hr+'"/><rect x="40" y="46" width="42" height="2.6" fill="'+C.hr+'"/><rect x="40" y="52" width="30" height="2.6" fill="'+C.hr+'"/><circle cx="83" cy="70" r="10" fill="'+C.co+'"/><path d="M80 66v8l6-4z" fill="'+C.wh+'"/></svg>',
+    audit:'<svg viewBox="0 0 120 96"><line x1="60" y1="14" x2="60" y2="82" stroke="'+C.hr+'" stroke-width="2"/><circle cx="60" cy="22" r="7" fill="'+C.gr+'"/><path d="M57 22l2 2 4-4" stroke="'+C.wh+'" stroke-width="2" fill="none"/><circle cx="60" cy="48" r="7" fill="'+C.gr+'"/><path d="M57 48l2 2 4-4" stroke="'+C.wh+'" stroke-width="2" fill="none"/><circle cx="60" cy="74" r="7" fill="'+C.co+'"/><rect x="70" y="17" width="30" height="4" rx="2" fill="'+C.hr+'"/><rect x="70" y="24" width="20" height="3" rx="1.5" fill="'+C.st+'"/><rect x="70" y="43" width="30" height="4" rx="2" fill="'+C.hr+'"/><rect x="70" y="50" width="20" height="3" rx="1.5" fill="'+C.st+'"/><rect x="20" y="43" width="30" height="4" rx="2" fill="'+C.hr+'"/></svg>',
+    documents:'<svg viewBox="0 0 120 96"><rect x="30" y="20" width="44" height="60" rx="4" fill="'+C.st+'" stroke="'+C.hr+'"/><rect x="38" y="14" width="44" height="60" rx="4" fill="'+C.wh+'" stroke="'+C.hr+'"/><rect x="46" y="24" width="28" height="3" rx="1.5" fill="'+C.nv+'"/><rect x="46" y="32" width="28" height="2.4" fill="'+C.hr+'"/><rect x="46" y="38" width="28" height="2.4" fill="'+C.hr+'"/><rect x="46" y="44" width="20" height="2.4" fill="'+C.hr+'"/></svg>'
+  };
+
+  // this step's outputs, grouped exactly like the Matter Workspace (Reports / Overviews / Supporting details)
+  var isLast = !next; // memorandum / final step
+  var OUTPUTS=[];
+  if(isLast) OUTPUTS.push({k:'agreement',g:'reports',t:(legal?'Memorandum of Understanding':'Your Agreement'),d:'The written agreement — every term you agreed, ready for an attorney.',href:'memorandum.html',cta:'View'});
+  OUTPUTS.push({k:'summary',g:'reports',t:'Summary Report',d:'A one-glance dashboard of this step.',href:'report.html?step='+n+'&type=summary'+vq,cta:'View'});
+  OUTPUTS.push({k:'detail',g:'reports',t:'Detailed Report',d:'Full inputs → process → references → outputs, with the audit chain.',href:'report.html?step='+n+'&type=detail'+vq,cta:'View'});
+  OUTPUTS.push({k:'video',g:'overviews',t:'Video Overview',d:'A short narrated walk-through of this step.',media:true,cta:'Preview'});
+  OUTPUTS.push({k:'audio',g:'overviews',t:'Audio Overview',d:'A spoken summary you can listen to.',media:true,cta:'Preview'});
+  OUTPUTS.push({k:'infographic',g:'overviews',t:'Infographic',d:'This step on one page, at a glance.',media:true,cta:'Preview'});
+  OUTPUTS.push({k:'slides',g:'overviews',t:'Slide Deck',d:'A few slides on this step, on brand.',media:true,cta:'Preview'});
+  OUTPUTS.push({k:'audit',g:'support',t:'Audit Trail',d:"This step's entries in the tamper-evident record.",href:'audit-trail.html?step='+encodeURIComponent(s.name),cta:'View'});
+  OUTPUTS.push({k:'documents',g:'support',t:'Your Documents',d:'The organized versions of what this step used.',cta:'Sample'});
+
+  var GROUPS=[
+    {g:'reports',t:'Reports',sub:'The written record — the certified reports that build toward '+outWord+'.'},
+    {g:'overviews',t:'Overviews',sub:'The same result, told quickly — generated for your matter.'},
+    {g:'support',t:'Supporting details',sub:'The evidence behind the record — the audit trail and your documents.'}
+  ];
+  function ovtok(k){var seed=s.id+':'+k,h=0;for(var i=0;i<seed.length;i++)h=(h*31+seed.charCodeAt(i))>>>0;return('00000000'+h.toString(16)).slice(-8);}
+  function cardInner(o){return '<div class="thumb">'+TH[o.k]+'</div><div class="ob"><div class="ot">'+JX.esc(o.t)+'</div><div class="od">'+JX.esc(o.d)+'</div><span class="olink">'+JX.esc(o.cta)+' <i class="ti ti-arrow-right"></i></span></div>';}
+  document.getElementById('results').innerHTML = GROUPS.map(function(grp){
+    var cards = OUTPUTS.filter(function(o){return o.g===grp.g;}).map(function(o){
+      if(o.href) return '<a class="ocard" href="'+o.href+'">'+cardInner(o)+'</a>';
+      if(o.media) return '<button class="ocard" data-media="'+o.k+'">'+cardInner(o)+'</button>';
+      return '<div class="ocard" style="cursor:default">'+cardInner(o)+'</div>';
+    }).join('');
+    var extra = grp.g==='overviews' ? '<div class="ovhint" id="ovhint"></div>' : '';
+    return '<div class="ogroup"><div class="ohead">'+JX.esc(grp.t)+' <span class="osub">'+JX.esc(grp.sub)+'</span></div><div class="gallery">'+cards+'</div>'+extra+'</div>';
+  }).join('');
+
+  // overview cards reveal an entitlement-scoped placeholder (the NotebookLM-style client media)
+  var ovhint=document.getElementById('ovhint'),ovcur=null;
+  document.querySelectorAll('#results .ocard[data-media]').forEach(function(b){b.addEventListener('click',function(){
+    var k=b.dataset.media, o=OUTPUTS.filter(function(x){return x.k===k;})[0], closing=(ovcur===k);
+    document.querySelectorAll('#results .ocard[data-media]').forEach(function(x){x.classList.toggle('on',x===b&&!closing);});
+    if(closing){ovhint.classList.remove('on');ovcur=null;return;}
+    ovcur=k;ovhint.classList.add('on');
+    ovhint.innerHTML='<strong>'+JX.esc(o.t)+' — '+JX.esc(s.name)+'.</strong> Generated for your matter and served on demand from a signed, short-lived, entitlement-scoped link (C-ENT-07) — not wired in this preview. <code>jx-media://signed/'+ovtok(k)+'.preview-not-wired</code><br><span style="font-size:11px">AI-generated · general information only · not a formal agreement.</span>';
+  });});
+
+  // confirm & continue — every step is a confirm gate (no CP1/2/3/Finalize flags)
+  var contBar = document.getElementById('contBar');
+  var confSub = {
+    redact: 'Confirm the sharing and what stays hidden — this is the point where information can cross between you.',
+    memorandum: 'Confirm to certify the record and sign. Nothing is locked until you finalize.'
+  };
+  if (!next) {
+    contBar.innerHTML = '<div class="t">Review &amp; finalize<small>'+JX.esc(confSub.memorandum)+'</small></div>'+
+      '<div class="acts"><button class="ok">Confirm &amp; finalize</button><button class="mod">Modify</button></div>';
+  } else {
+    var sub = confSub[s.id] || ('Review what this step recorded, then confirm to continue to '+JX.esc(next.name)+'. Nothing advances until you confirm — change anything now, or jump back later.');
+    contBar.innerHTML = '<div class="t">Confirm this step<small>'+sub+'</small></div>'+
+      '<div class="acts"><a class="ok" href="matter-step.html?step='+(n+1)+vq+'">Confirm &amp; continue</a><button class="mod">Modify</button><button class="rej">Reject</button></div>';
+  }
+
+  var prev = JX.stage(n - 1);
+  document.getElementById('stepNav').innerHTML =
+    (prev ? '<a href="matter-step.html?step='+(n-1)+vq+'"><i class="ti ti-arrow-left"></i> '+JX.esc(prev.name)+'</a>'
+          : '<a class="disabled" href="#"><i class="ti ti-arrow-left"></i> Start</a>')+
+    '<a href="matter-workspace.html'+(legal?'?view=attorney':'')+'"><i class="ti ti-layout-grid"></i> Matter Workspace</a>'+
+    (next ? '<a href="matter-step.html?step='+(n+1)+vq+'">'+JX.esc(next.name)+' <i class="ti ti-arrow-right"></i></a>'
+          : '<a class="disabled" href="#">Done <i class="ti ti-check"></i></a>');
+
+  document.getElementById('posture').textContent = JX.posture;
+})();
+</script>
+</body>
+</html>

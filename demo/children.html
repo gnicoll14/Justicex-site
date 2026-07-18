@@ -1,458 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>JusticeX — Children (Whitfield)</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Children · Delgado (Sample) · JusticeX</title>
+<meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
 <style>
-:root{
-  --navy:#042C53; --navy-deep:#021A33; --navy2:#154572; --navy3:#2A5582;
-  --paper:#E6F1FB; --surface:#FFFFFF; --ink:#1A1A1A; --muted:#5F5E5A; --faint:#9CA0A7; --hair:#D1DEEE;
-  --accent:#D85A30; --accent-d:#B04722; --accent-soft:#FAECE7; --success:#1D9E75; --success-s:#E7F4EF; --danger:#C73E3E;
-  --a:#2A5582; --a-soft:#E6F1FB; --a-ink:#154572; --b:#D67E5F; --b-soft:#FAECE7; --b-ink:#B04722;
-  --gray:#EEF1F5; --gray-bd:#DDE2EA; --blue-soft:#EAF1FB; --blue-soft2:#F1F6FC;
-  --radius:14px; --radius-sm:10px;
-}
-*{box-sizing:border-box} html,body{margin:0}
-body{background:var(--paper); color:var(--ink); font-family:'Source Sans 3',Calibri,system-ui,sans-serif; font-size:15px; line-height:1.6;-webkit-font-smoothing:antialiased;}
-.app{max-width:1240px; margin:0 auto; padding:0 22px 60px;}
-.appbar{background:var(--navy); color:#fff; display:flex; align-items:center; justify-content:space-between; padding:14px 26px;}
-.brand{display:flex; align-items:center;}
-.bmark{height:23px; width:23px; border-radius:5px; margin-right:9px;}
-.wordmark{font-family:'Source Serif 4',serif; font-weight:600; font-size:22px;} .wordmark .x{color:var(--accent);}
-.tagline{font-size:11.5px; letter-spacing:2.4px; text-transform:uppercase; color:#9FB6D2; margin-left:12px;}
-.matterchip{font-size:13px; color:#C9D8EA;} .matterchip b{color:#fff; font-weight:600;}
-.neutralpill{font-size:11px; color:#08213A; background:var(--accent); padding:4px 11px; border-radius:999px; font-weight:600; margin-left:10px;}
-.stages{background:var(--navy-deep); color:#fff; display:flex; align-items:center; padding:9px 26px; flex-wrap:wrap; gap:2px;}
-.stage{display:flex; align-items:center; gap:8px; font-size:12.5px; color:#7E9AB9; white-space:nowrap;}
-.stage .dot{width:7px;height:7px;border-radius:50%;background:#3C5775;}
-.stage.done{color:#B9CBDD;} .stage.done .dot{background:#5C7CA0;}
-.stage.active{color:#fff;font-weight:600;} .stage.active .dot{background:var(--accent);box-shadow:0 0 0 4px rgba(216,90,48,.22);}
-.stage .sep{width:20px;height:1px;background:#27486B;margin:0 9px;}
-.tabs{display:flex; gap:8px; margin:22px 0 4px; flex-wrap:wrap;}
-.tab{display:flex; align-items:center; gap:8px; font-size:14px; font-weight:500; padding:9px 16px; border:1px solid var(--hair); background:var(--surface); border-radius:999px; color:var(--muted); cursor:pointer;}
-.tab.active{background:var(--navy); color:#fff; border-color:var(--navy);}
-.panel{background:var(--surface); border:1px solid var(--hair); border-radius:var(--radius); padding:24px 26px 28px; margin-top:14px; box-shadow:0 1px 2px rgba(20,30,46,.04);}
-h1{font-family:'Source Serif 4',serif; font-weight:500; font-size:26px; margin:0 0 4px;}
-.lede{color:var(--muted); margin:0 0 18px; max-width:74ch;}
-.sec{font-size:12px; letter-spacing:.5px; text-transform:uppercase; color:var(--faint); font-weight:600; margin:24px 0 12px; display:flex; align-items:center; gap:8px;}
-.sec .add{margin-left:auto; font-size:12px; font-weight:600; color:var(--navy2); text-transform:none; letter-spacing:0; cursor:pointer; display:inline-flex; align-items:center; gap:5px; border:1px dashed #B9CBE2; border-radius:7px; padding:3px 10px;}
-.kids{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px;}
-.kid{display:flex; align-items:center; gap:8px; border:1px solid var(--hair); border-radius:999px; padding:6px 13px; font-size:13.5px; font-weight:600;}
-.kid i{color:var(--navy3);} .kid span{font-weight:400; color:var(--muted);}
-.grid2{display:grid; grid-template-columns:1fr 1fr; gap:18px;} @media(max-width:880px){.grid2{grid-template-columns:1fr}}
-.pos{border:1px solid var(--hair); border-radius:var(--radius-sm); padding:14px 16px;}
-.pos.a{background:var(--a-soft);} .pos.b{background:var(--b-soft);}
-.pos .nm{font-weight:600; font-size:13.5px; display:flex; align-items:center; gap:7px;} .pos.a .nm{color:var(--a-ink);} .pos.b .nm{color:var(--b-ink);}
-.pos .tx{font-size:13px; color:var(--ink); margin-top:5px;}
-/* split bar */
-.splitbar{display:flex; height:32px; border-radius:9px; overflow:hidden; border:1px solid var(--hair); margin:2px 0 4px;}
-.splitbar .pa{background:var(--a);} .splitbar .pb{background:var(--b);}
-.splitbar div{display:flex;align-items:center;justify-content:center;color:#fff;font-size:12.5px;font-weight:600; min-width:0; white-space:nowrap; transition:width .12s;}
-.barcap{display:flex; justify-content:space-between; font-size:12.5px; color:var(--muted); margin-bottom:4px;} .barcap b{color:var(--ink);}
-.xnote{font-size:12.5px; background:var(--accent-soft); border:1px solid #F1CDBE; border-radius:8px; padding:9px 13px; margin:12px 0 4px; display:flex; gap:9px; align-items:flex-start;} .xnote i{color:var(--accent-d); font-size:17px; margin-top:1px;} .xnote b{color:var(--accent-d);}
-/* allocation table */
-.tbl{border:1px solid var(--hair); border-radius:var(--radius-sm); overflow:hidden; margin-top:6px;}
-.tbl .h,.tbl .r{display:grid; gap:10px; align-items:center;}
-.sched .h,.sched .r{grid-template-columns:1.5fr 1.85fr 58px 64px 60px 92px 26px;}
-.dom .h,.dom .r{grid-template-columns:1.2fr .95fr 1.95fr 96px 28px;}
-.tbl .h{padding:9px 14px; background:#E2EAF4; font-size:10.5px; letter-spacing:.4px; text-transform:uppercase; color:var(--navy2); font-weight:700;}
-.tbl .h .cellnum{text-align:right;}
-.tbl .r{padding:11px 14px; border-top:1px solid var(--hair); font-size:13.5px;}
-.tbl .subhead{padding:8px 14px; border-top:1px solid var(--hair); font-size:10.5px; letter-spacing:.5px; text-transform:uppercase; font-weight:700;}
-.subhead.oneoff{background:#F4F8FD; color:var(--navy2);}
-.subhead.routine{background:#F1F0F4; color:#5A4B6B;}
-.tbl .r.topline{background:var(--blue-soft);} .tbl .r.topline .lab{color:var(--navy); font-weight:700;} .tbl .r.topline .cellnum{color:var(--navy); font-weight:700;}
-.tbl .r.sub{background:var(--blue-soft2); font-weight:600;}
-.tbl .r.net{background:var(--accent-soft);} .tbl .r.net .lab,.tbl .r.net .cellnum,.tbl .r.net .op{color:var(--accent-d); font-weight:700;}
-.tbl .r.driven{background:var(--gray);}
-.tbl .r.grand{background:var(--navy);} .tbl .r.grand .lab,.tbl .r.grand .cellnum{color:#fff; font-weight:700;}
-.tbl .addrow{padding:8px 14px; border-top:1px dashed var(--gray-bd); font-size:12.5px; color:var(--navy2); font-weight:600; cursor:pointer; display:flex; align-items:center; gap:6px;}
-.tbl .lab{font-weight:600; color:var(--navy2);}
-.tbl .lab small{display:block; font-weight:400; color:var(--muted); font-size:11.5px;}
-.op{font-size:11.5px; color:var(--muted); font-weight:600;}
-.cellnum{text-align:right; font-variant-numeric:tabular-nums; font-weight:600;}
-.cellnum.calc{color:var(--muted);}
-.cellnum input{width:50px; padding:4px 7px; border:1px solid #CDDDF3; border-radius:6px; font-size:13px; text-align:right; font-variant-numeric:tabular-nums; font-family:inherit;}
-.coltot{color:var(--navy2);}
-.rowslider{display:flex; align-items:center; gap:9px;}
-.rowslider input[type=range]{flex:1; accent-color:var(--a); min-width:90px;}
-.rowslider .pv{font-size:11.5px; font-weight:700; color:var(--a-ink); white-space:nowrap;}
-.note{font-size:12px; color:var(--muted);}
-.statepill{font-size:10.5px; padding:3px 9px; border-radius:999px; font-weight:600; white-space:nowrap; cursor:pointer; display:inline-flex; align-items:center; gap:4px;}
-.statepill.ok{background:var(--success-s); color:var(--success);} .statepill.cont{background:var(--accent-soft); color:var(--accent-d);}
-.edit{color:var(--faint); cursor:pointer; text-align:center;} .edit:hover{color:var(--navy2);}
-.arr{font-size:12.5px; font-weight:600; padding:3px 10px; border-radius:7px; display:inline-flex; align-items:center; gap:6px; cursor:pointer;}
-.arr.joint{background:#EAF1FB; color:var(--navy2);} .arr.a{background:var(--a-soft); color:var(--a-ink);} .arr.b{background:var(--b-soft); color:var(--b-ink);}
-.arr .ti{font-size:13px; opacity:.6;}
-.cap{font-size:11.5px; color:var(--faint); margin:8px 2px 0; display:flex; align-items:center; gap:6px;}
-/* law */
-.lawband{border:1px solid var(--hair); border-radius:var(--radius-sm); padding:14px 16px; background:#FBFDFF;}
-.lawpill{display:inline-flex; align-items:center; gap:8px; font-size:12.5px; color:var(--navy2); background:#EAF1FB; border:1px solid #CFE0F4; padding:6px 12px; border-radius:8px;}
-.quote{font-size:12.5px; color:var(--ink); font-style:italic; border-left:3px solid var(--navy3); padding:6px 12px; margin-top:10px; background:#fff;} .quote b{font-style:normal; color:var(--navy);}
-.plain{font-size:13px; color:var(--ink); margin-top:10px;} .plain b{color:var(--navy);}
-/* resolution approach */
-.dispute{border:1px solid var(--hair); border-radius:var(--radius-sm); padding:16px 18px; background:#FBFDFF;}
-.dispute .d-int{font-size:13px; color:var(--muted); margin:0 0 12px;}
-.ladder{display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:12px;}
-.step{display:flex; align-items:center; gap:7px; background:#EAF1FB; border:1px solid #CFE0F4; border-radius:8px; padding:7px 12px; font-size:12.5px; font-weight:600; color:var(--navy2);}
-.step .n{width:18px;height:18px;border-radius:50%;background:var(--navy);color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;}
-.step.last{background:var(--accent-soft); border-color:#F1CDBE; color:var(--accent-d);} .step.last .n{background:var(--accent-d);}
-.ladder .arw{color:var(--faint);}
-.dispute textarea{width:100%; min-height:78px; border:1px solid #CDDDF3; border-radius:8px; padding:10px 12px; font-family:inherit; font-size:13px; color:var(--ink); resize:vertical;}
-.dispute .who{font-size:11.5px; color:var(--faint); margin-top:8px; display:flex; align-items:center; gap:6px;}
-/* reports + resolve */
-.reports{display:flex; gap:12px; flex-wrap:wrap;}
-.rep{display:flex; align-items:center; gap:11px; border:1px solid var(--hair); border-radius:var(--radius-sm); padding:13px 16px; min-width:230px; cursor:pointer; background:var(--surface);}
-.rep i{font-size:22px; color:var(--navy);} .rep .rt{font-weight:600; font-size:14px;} .rep .rs{font-size:11.5px; color:var(--muted);}
-.resolvebar{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-top:18px; background:#F6F9FD; border:1px solid var(--hair); border-radius:var(--radius-sm); padding:13px 18px;}
-.resolvebar .rstat{font-size:13px; display:flex; align-items:center; gap:8px;}
-.resolvebar .rstat.open{color:var(--accent-d);} .resolvebar .rstat.done{color:var(--success); font-weight:600;}
-.btn{font-size:13px; font-weight:600; border:1px solid var(--hair); background:var(--surface); color:var(--ink); border-radius:9px; padding:10px 16px; cursor:pointer; display:inline-flex; align-items:center; gap:7px;}
-.btn.accent{background:var(--accent); color:#fff; border-color:var(--accent);}
-.btn:disabled{background:#E7EBF1; color:#9AA3B0; border-color:#DCE2EA; cursor:not-allowed;}
-.framing{display:flex; gap:11px; align-items:flex-start; max-width:84ch; margin-top:18px;}
-.framing i{color:var(--accent); font-size:22px;} .framing p{margin:0; font-size:13px; color:var(--muted);} .framing b{color:var(--navy); font-weight:600;}
-.disc{font-size:11.5px; color:var(--faint); margin-top:18px; line-height:1.7; border-top:1px solid var(--hair); padding-top:12px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;} .disc .tfe b{color:var(--navy);}
-
-/* JX-WAVE1-CSS */
-.metricwrap{background:#EEF3FA;border-bottom:1px solid #D1DEEE;}
-.metricbar{display:flex;gap:26px;align-items:center;flex-wrap:wrap;padding:9px 26px;}
-.metricbar .mtile{display:flex;flex-direction:column;gap:3px;min-width:118px;}
-.metricbar .mtile.sym{min-width:188px;}
-.metricbar .mlabel{font-size:9.5px;letter-spacing:.4px;text-transform:uppercase;font-weight:700;color:#5F5E5A;}
-.metricbar .symnote{color:#9CA0A7;font-weight:600;text-transform:none;letter-spacing:0;}
-.metricbar .mbarwrap{height:7px;border-radius:999px;background:#DCE6F2;overflow:hidden;width:150px;}
-.metricbar .mbarwrap.sm{width:92px;height:6px;display:inline-block;vertical-align:middle;}
-.metricbar .mbar{height:100%;background:#042C53;border-radius:999px;}
-.metricbar .mbar.a{background:#2A5582;} .metricbar .mbar.b{background:#D67E5F;}
-.metricbar .mval{font-size:12px;font-weight:700;color:#042C53;font-variant-numeric:tabular-nums;}
-.metricbar .mval.big{font-size:17px;} .metricbar .mval .of{color:#9CA0A7;font-size:12px;font-weight:600;}
-.metricbar .symrow{display:flex;align-items:center;gap:7px;}
-.metricbar .sl{font-size:9px;font-weight:800;width:13px;height:13px;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;color:#fff;}
-.metricbar .sl.a{background:#2A5582;} .metricbar .sl.b{background:#D67E5F;}
-.metricbar .sv{font-size:11px;font-weight:700;color:#1A1A1A;font-variant-numeric:tabular-nums;width:18px;}
-.stages .ptag{font-size:8px;letter-spacing:.4px;text-transform:uppercase;font-weight:800;margin-left:6px;padding:1px 5px;border-radius:999px;vertical-align:middle;}
-.stages .ptag.each{background:rgba(216,90,48,.22);color:#F0B49B;}
-.stages .ptag.both{background:rgba(122,160,200,.20);color:#B7CBE2;}
-.disc .disclink{color:#B04722;font-weight:700;text-decoration:underline;}
-
-/* JX-WAVE1B-CSS */
-.stages{align-items:flex-start !important; gap:24px !important;}
-.stages .stagegroup{display:flex; flex-direction:column; gap:5px;}
-.stages .stagegroup .sgrow{display:flex; align-items:center; gap:4px; flex-wrap:wrap;}
-.stages .stagegroup .glabel{font-size:8.5px; letter-spacing:.6px; text-transform:uppercase; font-weight:800; text-align:center; padding-top:4px; border-top:2px solid;}
-.stages .stagegroup.each .glabel{color:#F0B49B; border-color:rgba(216,90,48,.55);}
-.stages .stagegroup.both .glabel{color:#B7CBE2; border-color:rgba(122,160,200,.5);}
-.stages .stnum{opacity:.62; font-weight:700; margin-right:1px;}
-
-/* JX-WAVE1C-CSS — single-line stage strip */
-.stages{flex-wrap:nowrap !important; gap:20px !important; overflow-x:auto;}
-.stages .stagegroup .sgrow{flex-wrap:nowrap; gap:11px;}
-.stages .sep{display:none !important;}
-.stages .stage{font-size:11.5px !important; white-space:nowrap;}
-.stages .stagegroup .glabel{font-size:8px;}
-
-/* JX-WAVE1D-CSS — equal-spaced 7-column stage grid */
-.stages.stagesgrid{display:grid !important; grid-template-columns:repeat(7,1fr) !important;
-  align-items:center !important; row-gap:7px !important; column-gap:6px !important;
-  padding:11px 30px 9px !important; overflow:visible !important; flex-wrap:initial !important;}
-.stages.stagesgrid .stage{grid-row:1; justify-self:center; white-space:nowrap; font-size:11.5px !important;}
-.stages.stagesgrid .glabel{grid-row:2; padding-top:5px; border-top:2px solid; text-align:center;
-  font-size:8.5px; letter-spacing:.5px; text-transform:uppercase; font-weight:800;}
-.stages.stagesgrid .glabel.each{grid-column:1 / span 2; color:#F0B49B; border-color:rgba(216,90,48,.55);}
-.stages.stagesgrid .glabel.both{grid-column:3 / span 5; color:#B7CBE2; border-color:rgba(122,160,200,.5);}
-.stages.stagesgrid .sep{display:none;}
-
-/* JX-WAVE1E-CSS — grouped metric bar */
-.metricbar{gap:22px !important; align-items:center !important;}
-.metricbar .mgroup{display:flex; flex-direction:column; gap:5px;}
-.metricbar .mgcap{font-size:8.5px; letter-spacing:.5px; text-transform:uppercase; font-weight:800;}
-.metricbar .mgcap.each{color:#B04722;} .metricbar .mgcap.both{color:#2A5582;}
-.metricbar .mgrow{display:flex; gap:22px; align-items:center; flex-wrap:wrap;}
-.metricbar .mdiv{width:1px; align-self:stretch; background:#D1DEEE; margin:0 2px;}
-.metricbar .sv{width:auto !important; min-width:16px;}
-
-/* JX-WAVE1F-CSS — stacked A-over-B comparison */
-.metricbar .mtile.sym{min-width:158px;}
-.metricbar .mtile.sym .symrow{gap:8px;}
-.metricbar .mtile.sym .mbarwrap.sm{width:110px; height:7px;}
-.metricbar .mtile.sym .sv{min-width:30px; text-align:right;}
+  :root{--navy900:#021A33;--navy800:#042C53;--navy700:#0A3866;--navy600:#154572;--navy500:#2A5582;
+    --coral600:#B04722;--coral500:#D85A30;--coral100:#FAECE7;--coralLt500:#F0997B;
+    --slate500:#5F5E5A;--slate300:#9CA0A7;--white:#FFFFFF;--paper:#F4F6FA;--stone100:#E6F1FB;--stone200:#D1DEEE;--stone300:#B5C5DC;--ink700:#1A1A1A;--teal100:#B6C0D0;--success:#1D9E75;--successS:#E4F3EC;
+    --fdisp:'Source Serif 4',Georgia,serif;--fbody:'Source Sans 3',system-ui,-apple-system,Segoe UI,sans-serif;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--navy800);font-family:var(--fbody);font-size:15px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 26px}
+  a{color:inherit}
+  .flagbar{background:var(--navy700);color:#CFE0F2;font-size:11.5px;text-align:center;padding:8px 20px;border-bottom:1px solid #21405f}
+  .flagbar b{color:#fff}.flagbar code{background:var(--navy900);color:var(--coralLt500);padding:1px 6px;border-radius:5px;font-size:10.5px;font-family:monospace}
+  .mo-ribbon{background:var(--coral100);color:var(--coral600);font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;text-align:center;padding:8px 16px;border-bottom:1px solid var(--stone200)}
+  .nav{background:var(--navy800);color:#fff}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 0}
+  .brand{display:flex;align-items:center;gap:9px;font-family:var(--fdisp);font-weight:600;font-size:22px;color:#fff;text-decoration:none}
+  .brand .x{color:var(--coral500)}
+  .navright{display:flex;align-items:center;gap:20px}
+  .backlink{font-size:12.5px;color:var(--teal100);text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:5px}
+  .backlink:hover{color:#fff}
+  .termsw{display:inline-flex;flex-direction:column;align-items:flex-end;gap:3px}
+  .termsw .tlab{font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--slate300)}
+  .termsw .sw{display:inline-flex;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:4px}
+  .termsw .sw a{display:inline-flex;align-items:center;gap:6px;color:var(--teal100);text-decoration:none;font-weight:600;font-size:12px;padding:5px 12px;border-radius:999px;white-space:nowrap}
+  .termsw .sw a.on{background:var(--coral500);color:#fff}
+  @media(max-width:620px){.termsw .tlab{display:none}}
+  .jx-term{border-bottom:1px dotted var(--slate300);color:var(--slate500);font-style:italic;cursor:help}
+  .jx-term-strong .jx-term{font-style:normal;color:var(--navy800);border-bottom-color:var(--navy500)}
+  .head{background:var(--navy800);color:var(--paper);padding:28px 0 28px;border-top:1px solid var(--navy600)}
+  .head .ey{color:var(--coralLt500);font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+  .head h1{font-family:var(--fdisp);font-weight:600;font-size:32px;margin:12px 0 6px;color:var(--paper)}
+  .head .sub{color:var(--teal100);font-size:14.5px;max-width:720px;line-height:1.6}
+  /* by-topic nav */
+  .topicnav{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 2px}
+  .topicnav a{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--navy700);background:var(--white);border:1px solid var(--stone200);border-radius:999px;padding:8px 15px;text-decoration:none}
+  .topicnav a.on{background:var(--navy800);color:#fff;border-color:var(--navy800)}
+  .topicnav a:hover:not(.on){border-color:var(--navy500)}
+  .sec{padding:14px 0}
+  .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:8px}
+  @media(max-width:820px){.tiles{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:480px){.tiles{grid-template-columns:1fr}}
+  .tile{border:1px solid var(--stone200);border-radius:12px;padding:14px 15px;background:var(--white)}
+  .tile .l{font-size:10px;letter-spacing:.3px;text-transform:uppercase;color:var(--slate500);font-weight:700}
+  .tile .v{font-family:var(--fdisp);font-size:19px;font-weight:600;color:var(--navy800);margin-top:4px;line-height:1.15}
+  .tile .st{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;border-radius:999px;padding:3px 9px;margin-top:8px}
+  .st.ag{background:var(--successS);color:var(--success)}.st.op{background:var(--coral100);color:var(--coral600)}.st.pend{background:var(--stone100);color:var(--navy600)}
+  .card{background:var(--white);border:1px solid var(--stone200);border-radius:16px;padding:22px 24px;margin-top:16px}
+  .card h2{font-family:var(--fdisp);font-weight:600;font-size:19px;color:var(--navy800);margin:0 0 6px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .card h2 .pill{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;border-radius:999px;padding:3px 9px}
+  .card h2 .pill.ag{background:var(--successS);color:var(--success)}.card h2 .pill.op{background:var(--coral100);color:var(--coral600)}
+  .card .lead{font-size:14px;color:var(--ink700);line-height:1.6;margin-bottom:6px}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:12px}
+  th{background:var(--stone100);color:var(--navy700);text-align:left;padding:9px 12px;font-size:10.5px;text-transform:uppercase;letter-spacing:.4px;font-weight:700;border-bottom:1px solid var(--stone200)}
+  td{padding:10px 12px;border-bottom:1px solid var(--stone200);vertical-align:top}
+  tbody tr:last-child td{border-bottom:none}
+  .who{font-weight:700;color:var(--navy800)}
+  .opts{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:8px}
+  .opts li{display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:var(--ink700);border:1px solid var(--stone200);border-radius:10px;padding:10px 13px;background:var(--paper)}
+  .opts li .on{color:var(--coral600);font-weight:700;flex:0 0 auto}
+  .note{font-size:12.5px;color:var(--slate500);line-height:1.55;margin-top:12px;display:flex;gap:9px;align-items:flex-start}
+  .note i{color:var(--navy500);font-size:17px;flex:0 0 auto;margin-top:1px}
+  .from{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:12.5px;font-weight:600;color:var(--navy600);text-decoration:none}
+  .from:hover{color:var(--coral600)}
+  .support{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+  @media(max-width:560px){.support{grid-template-columns:1fr}}
+  .srep{display:flex;align-items:center;gap:12px;border:1px solid var(--stone200);border-radius:12px;padding:13px 16px;background:var(--white);text-decoration:none;color:inherit}
+  .srep:hover{border-color:var(--navy500);box-shadow:0 2px 8px rgba(4,44,83,.08)}
+  .srep .si{width:40px;height:40px;border-radius:10px;background:var(--stone100);color:var(--navy700);display:flex;align-items:center;justify-content:center;font-size:20px;flex:0 0 auto}
+  .srep .stt{font-weight:700;font-size:14px;color:var(--navy800)}.srep .ss{font-size:12px;color:var(--slate500);line-height:1.4;margin-top:2px}
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+  .btn{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;text-decoration:none;border-radius:999px;padding:10px 18px;border:1px solid var(--stone200);background:var(--white);color:var(--navy800)}
+  .btn.p{background:var(--navy800);color:#fff;border-color:var(--navy800)}
+  .posture{font-size:12.5px;color:var(--slate500);line-height:1.55;margin:26px auto 4px;text-align:center;max-width:800px}
+  .foot{background:var(--navy800);color:#9FB6D2;padding:22px 0;margin-top:20px;font-size:12.5px}
+  .foot .fin{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}.foot b{color:#fff}
 </style>
 </head>
 <body>
-<div class="appbar">
-  <div class="brand"><img class="bmark" src="https://justicex.ai/assets/brand-mark.png" alt=""/><span class="wordmark">Justice<span class="x">X</span></span><span class="tagline">Objective comparison</span></div>
-  <div><span class="neutralpill">Neutral · synthetic demo</span></div>
-</div>
-<div class="stages stagesgrid"><a class="stage done" href="plan.html"><span class="dot"></span> <span class="stnum">1.</span> Plan</a><a class="stage done" href="intake.html"><span class="dot"></span> <span class="stnum">2.</span> Intake</a><a class="stage done" href="redact.html"><span class="dot"></span> <span class="stnum">3.</span> Redact</a><a class="stage done" href="summarize.html"><span class="dot"></span> <span class="stnum">4.</span> Summarize</a><a class="stage done" href="gap-analysis.html"><span class="dot"></span> <span class="stnum">5.</span> Gap Analysis</a><span class="stage active"><span class="dot"></span> <span class="stnum">6.</span> Resolution</span><a class="stage" href="memorandum.html"><span class="dot"></span> <span class="stnum">7.</span> Memorandum</a><div class="glabel each">Each Party — Separate</div><div class="glabel both">Both Parties — Together</div></div><div class="metricwrap"><div class="metricbar"><div class="mgroup"><div class="mgcap each">Each party</div><div class="mgrow"><div class="mtile sym"><div class="mlabel">Matter completeness</div><div class="symrow"><span class="sl a">A</span><div class="mbarwrap sm"><div class="mbar a" style="width:86%"></div></div><span class="sv">86%</span></div><div class="symrow r2"><span class="sl b">B</span><div class="mbarwrap sm"><div class="mbar b" style="width:81%"></div></div><span class="sv">81%</span></div></div><div class="mtile sym"><div class="mlabel">Matter evidence quality <a href="strength-comparison.html" style="color:#B04722;font-weight:700;text-decoration:none;font-size:9px;text-transform:none;letter-spacing:0">compare ›</a></div><div class="symrow"><span class="sl a">A</span><div class="mbarwrap sm"><div class="mbar a" style="width:72%"></div></div><span class="sv">72</span></div><div class="symrow r2"><span class="sl b">B</span><div class="mbarwrap sm"><div class="mbar b" style="width:68%"></div></div><span class="sv">68</span></div></div></div></div><div class="mdiv"></div><div class="mgroup"><div class="mgcap both">Both parties</div><div class="mgrow"><div class="mtile"><div class="mlabel">Alignment</div><div style="display:flex;align-items:center;gap:8px"><div class="mbarwrap"><div class="mbar" style="width:64%"></div></div><div class="mval">64%</div></div></div><div class="mtile"><div class="mlabel">Topics resolved</div><div class="mval big">5<span class="of">/8</span></div></div></div></div></div></div>
+<div class="flagbar">Mock for review — behind flag <code>matter_workspace_v1</code>, <b>OFF in production</b> until sign-off. Synthetic Delgado data only — figures are illustrative.</div>
+<div class="mo-ribbon">Sample · Synthetic matter (“Delgado”) · Children — the decisions about your children</div>
+<nav class="nav"><div class="wrap"><div class="nav-in">
+  <a class="brand" href="/index.html">Justice<span class="x">X</span></a>
+  <div class="navright">
+    <a class="backlink" id="backLink" href="matter-workspace.html"><i class="ti ti-arrow-left"></i> Back to the Matter Workspace</a>
+    <span class="termsw" id="termsw"></span>
+  </div>
+</div></div></nav>
 
-<div class="app">
-  <div class="tabs">
-    <div class="tab active"><i class="ti ti-baby-carriage"></i> Children</div>
-    <div class="tab"><i class="ti ti-home-dollar"></i> Finances &amp; property</div>
-    <div class="tab"><i class="ti ti-cash"></i> Support</div>
+<header class="head"><div class="wrap">
+  <div class="ey"><i class="ti ti-users"></i> By topic · your matter at a glance</div>
+  <h1>Children</h1>
+  <div class="sub">Everything about the children in one place — the decisions you make together, the parenting schedule you are working through, and child support. Pulled from across your matter; you settle each part in its step.</div>
+</div></header>
+
+<div class="wrap">
+  <div class="topicnav" id="topicnav"></div>
+
+  <section class="sec">
+    <div class="tiles" id="tiles"></div>
+  </section>
+
+  <div id="cards"></div>
+
+  <div class="card">
+    <h2><i class="ti ti-report"></i> Supporting reports</h2>
+    <div class="support" id="support"></div>
   </div>
 
-  <div class="panel">
-    <h1>Children</h1>
-    <p class="lede">Two questions, kept separate from money: <b>where the children spend their time</b> (a transparent allocation of the year's overnights) and <b>who decides</b> the major questions — with the terms for how parents inform each other and resolve disagreements. JusticeX lays out the proposal objectively and never forces an outcome; you and your counsel decide.</p>
-
-    <div class="kids">
-      <div class="kid"><i class="ti ti-user-heart"></i> Emma <span>· age 9</span></div>
-      <div class="kid"><i class="ti ti-user-heart"></i> Mason <span>· age 6</span></div>
-    </div>
-
-    <div class="sec"><i class="ti ti-users"></i> Where the parties stand</div>
-    <div class="grid2">
-      <div class="pos a"><div class="nm"><i class="ti ti-user"></i> Dana — Party A</div><div class="tx">Seeks primary residence on the current schedule and primary say on religious upbringing, continuing the children's existing routine.</div></div>
-      <div class="pos b"><div class="nm"><i class="ti ti-user"></i> Samuel — Party B</div><div class="tx">Seeks expanded summer time and <b>joint</b> decision-making on religion; agrees to the school-week schedule and joint decisions elsewhere.</div></div>
-    </div>
-
-    <!-- PARENTING TIME: allocation table first -->
-    <div class="sec"><i class="ti ti-calendar-clock"></i> Parenting time — allocation of the year's overnights</div>
-    <div class="barcap"><span>Resulting share of the year</span><span>Dana <b id="nA">238</b> · Samuel <b id="nB">127</b> nights</span></div>
-    <div class="splitbar">
-      <div class="pa" id="barA" style="width:65%">Dana · <span id="pctAbar">65%</span></div>
-      <div class="pb" id="barB" style="width:35%">Samuel · <span id="pctBbar">35%</span></div>
-    </div>
-
-    <div class="tbl sched">
-      <div class="h"><span>Item</span><span>Arrangement &amp; terms</span><span class="cellnum">Dana</span><span class="cellnum">Samuel</span><span class="cellnum">Total</span><span>Status</span><span></span></div>
-
-      <div class="r topline">
-        <span class="lab">Total parenting nights / year</span>
-        <span class="note">the whole year to allocate</span>
-        <span class="cellnum calc">—</span><span class="cellnum calc">—</span><span class="cellnum">365</span><span></span><span></span>
-      </div>
-
-      <div class="subhead oneoff">▸ One-off / dedicated time — set aside first</div>
-      <div class="r">
-        <span class="lab">Holidays <small>odd / even rotation</small></span>
-        <span class="note">Major holidays alternate by year; birthdays shared</span>
-        <span class="cellnum"><input class="ded" id="holD" type="text" value="8"></span>
-        <span class="cellnum"><input class="ded" id="holS" type="text" value="8"></span>
-        <span class="cellnum coltot" id="holT">16</span>
-        <span><span class="statepill ok"><i class="ti ti-check"></i> Agreed</span></span>
-        <span class="edit"><i class="ti ti-pencil"></i></span>
-      </div>
-      <div class="r">
-        <span class="lab">Summer vacation <small>dedicated weeks each</small></span>
-        <span class="note">Two non-consecutive weeks each, by May 1 notice</span>
-        <span class="cellnum"><input class="ded" id="sumD" type="text" value="14"></span>
-        <span class="cellnum"><input class="ded" id="sumS" type="text" value="14"></span>
-        <span class="cellnum coltot" id="sumT">28</span>
-        <span><span class="statepill cont"><i class="ti ti-alert-triangle"></i> Open</span></span>
-        <span class="edit"><i class="ti ti-pencil"></i></span>
-      </div>
-      <div class="r">
-        <span class="lab">School breaks <small>winter / spring recess</small></span>
-        <span class="note">Recess weeks split or alternated</span>
-        <span class="cellnum"><input class="ded" id="brkD" type="text" value="6"></span>
-        <span class="cellnum"><input class="ded" id="brkS" type="text" value="6"></span>
-        <span class="cellnum coltot" id="brkT">12</span>
-        <span><span class="statepill ok"><i class="ti ti-check"></i> Agreed</span></span>
-        <span class="edit"><i class="ti ti-pencil"></i></span>
-      </div>
-      <div class="addrow"><i class="ti ti-plus"></i> Add a one-off block</div>
-      <div class="r sub">
-        <span class="lab">Subtotal — one-off time</span><span class="op">total set aside</span>
-        <span class="cellnum" id="dedD">28</span><span class="cellnum" id="dedS">28</span><span class="cellnum coltot" id="dedT">56</span><span></span><span></span>
-      </div>
-
-      <div class="r net">
-        <span class="lab">Net for the regular routine</span>
-        <span class="op">365 − <span id="dedTop">56</span> one-off =</span>
-        <span class="cellnum calc">&nbsp;</span><span class="cellnum calc">&nbsp;</span><span class="cellnum" id="netT">309</span><span></span><span></span>
-      </div>
-
-      <div class="subhead routine">▸ Regular routine — the net, spread by the slider</div>
-      <div class="r driven">
-        <span class="lab">Day-to-day routine</span>
-        <span class="rowslider"><span class="op" style="color:var(--a-ink)">Dana</span><input id="regA" type="range" min="0" max="100" step="1" value="68"><span class="pv" id="regAval">68%</span></span>
-        <span class="cellnum" id="rDana">210</span><span class="cellnum" id="rSam">99</span><span class="cellnum coltot" id="regT">309</span>
-        <span><span class="statepill ok"><i class="ti ti-check"></i> Agreed</span></span>
-        <span></span>
-      </div>
-
-      <div class="r grand">
-        <span class="lab">Total allocated</span><span class="op" style="color:#cdddf3">everything adds up</span>
-        <span class="cellnum" id="tDana">238</span><span class="cellnum" id="tSam">127</span><span class="cellnum" id="tTot">365</span><span></span><span></span>
-      </div>
-    </div>
-    <div class="cap"><i class="ti ti-info-circle"></i> The flow reads top to bottom: <b>365</b> total → minus <b>one-off</b> time → <b>net</b> for the routine → split by the slider → back to <b>365</b>. Editable cells are highlighted; either party or the mediator can edit a block, add one, or re-status — every change is logged.</div>
-
-    <div class="xnote"><i class="ti ti-arrows-exchange"></i><div>This overnight split sets the <b>primary residential parent</b> (currently <b id="primary">Dana</b>), which <b>informs</b> the suggested child-support payor. The payor is <b>chosen on the Support tab</b> and can be overridden there — the model never forces it.</div></div>
-
-    <!-- LAW -->
-    <div class="sec"><i class="ti ti-gavel"></i> The standard that applies</div>
-    <div class="lawband">
-      <span class="lawpill"><i class="ti ti-book"></i> NY DRL §240(1)(a)</span>
-      <div class="quote">Custody and parenting time are determined <b>“as ... the best interests of the child require.”</b> <span style="color:var(--faint)">— NY Domestic Relations Law §240(1)(a)</span></div>
-      <div class="plain">In practice, the children's <b>best interests</b> are what's typically considered when deciding time with each parent and how decisions get made — stability, each parent's involvement, the existing routine, and, as children get older, their own wishes. JusticeX lays out the proposal; it doesn't recommend an outcome.</div>
-    </div>
-
-    <!-- DECISIONS -->
-    <div class="sec"><i class="ti ti-users-group"></i> Decision-making — who decides, and on what terms<span class="add"><i class="ti ti-plus"></i> Add a decision area</span></div>
-    <div class="tbl dom">
-      <div class="h"><span>Decision area</span><span>Who decides</span><span>Notes &amp; terms — informing · input · disagreement</span><span>Status</span><span></span></div>
-      <div class="r"><span class="lab"><i class="ti ti-school" style="color:var(--navy3)"></i> Education</span><span><span class="arr joint">Joint <i class="ti ti-chevron-down"></i></span></span><span class="note">Decided together; both informed of school communications; if no agreement in 14 days, mediator consulted before any change.</span><span><span class="statepill ok"><i class="ti ti-check"></i> Agreed</span></span><span class="edit"><i class="ti ti-pencil"></i></span></div>
-      <div class="r"><span class="lab"><i class="ti ti-stethoscope" style="color:var(--navy3)"></i> Medical &amp; health</span><span><span class="arr joint">Joint <i class="ti ti-chevron-down"></i></span></span><span class="note">Either may authorize urgent care; the other informed within 24h; routine/elective decisions joint.</span><span><span class="statepill ok"><i class="ti ti-check"></i> Agreed</span></span><span class="edit"><i class="ti ti-pencil"></i></span></div>
-      <div class="r"><span class="lab"><i class="ti ti-building-church" style="color:var(--navy3)"></i> Religion &amp; upbringing</span><span><span class="arr a">Dana — primary <i class="ti ti-chevron-down"></i></span></span><span class="note">Dana decides; Samuel kept informed and may share input. <b>Open:</b> Samuel requests joint — process for disagreement still to be set.</span><span><span class="statepill cont"><i class="ti ti-alert-triangle"></i> Contested</span></span><span class="edit"><i class="ti ti-pencil"></i></span></div>
-      <div class="r"><span class="lab"><i class="ti ti-ball-football" style="color:var(--navy3)"></i> Activities</span><span><span class="arr joint">Joint <i class="ti ti-chevron-down"></i></span></span><span class="note">The enrolling parent gives notice; conflicts in a parent's time are that parent's call.</span><span><span class="statepill ok"><i class="ti ti-check"></i> Agreed</span></span><span class="edit"><i class="ti ti-pencil"></i></span></div>
-      <div class="r"><span class="lab"><i class="ti ti-plane" style="color:var(--navy3)"></i> Travel &amp; relocation</span><span><span class="arr joint">Mutual consent <i class="ti ti-chevron-down"></i></span></span><span class="note">Out-of-state travel: 30 days' written notice + itinerary; relocation requires mutual written consent.</span><span><span class="statepill ok"><i class="ti ti-check"></i> Agreed</span></span><span class="edit"><i class="ti ti-pencil"></i></span></div>
-    </div>
-    <div class="cap"><i class="ti ti-info-circle"></i> Click <i>who decides</i> to change it (Joint / Dana / Samuel), edit the terms, re-status, or add an area — humans author; JusticeX structures and logs.</div>
-
-    <!-- RESOLUTION APPROACH -->
-    <div class="sec"><i class="ti ti-route"></i> Resolution approach for future disagreements</div>
-    <div class="dispute">
-      <p class="d-int">How the parties agree to handle disagreements or situations that come up later — for example, if one parent is supposed to inform the other and doesn't. The aim is to resolve things directly and through mediation, <b>reducing the need to return to court</b>. Set with, and facilitated by, your mediator or attorney.</p>
-      <div class="ladder">
-        <span class="step"><span class="n">1</span> Talk directly + written notice within 7 days</span>
-        <span class="arw"><i class="ti ti-arrow-right"></i></span>
-        <span class="step"><span class="n">2</span> Return to the mediator within 14 days</span>
-        <span class="arw"><i class="ti ti-arrow-right"></i></span>
-        <span class="step last"><span class="n">3</span> Court — last resort only</span>
-      </div>
-      <textarea>If a parent does not provide a required notice or share information on time, the other sends a written reminder; the parties then schedule a mediation session within 14 days before either files anything in court. Repeated missed notices may be addressed by changing the method (e.g., a shared calendar). Emergencies are exempt from the waiting steps.</textarea>
-      <div class="who"><i class="ti ti-gavel"></i> Drafted for review and sign-off by the mediator and each party's attorney — not legal advice from JusticeX.</div>
-    </div>
-
-    <!-- REPORTS AVAILABLE -->
-    <div class="sec"><i class="ti ti-files"></i> Reports available</div>
-    <div class="reports">
-      <div class="rep"><i class="ti ti-file-text"></i><div><div class="rt">Summary Report</div><div class="rs">The headline result for this step</div></div></div>
-      <div class="rep"><i class="ti ti-file-description"></i><div><div class="rt">Detailed Report</div><div class="rs">Full inputs → logic → legal references → outputs</div></div></div>
-    </div>
-
-    <div class="framing"><i class="ti ti-info-circle"></i><p><b>JusticeX organizes the proposal and shows the standard that applies; it does not recommend a custody outcome.</b> Finalize the page once every topic is resolved; agreed items flow into the Memorandum of Understanding. JusticeX also flags entries that don't reconcile or contradict a party's own document — privately to that party — lowering that item's evidence quality until confirmed; never a judgment of who is right.</p></div>
-
-    <div class="resolvebar">
-      <div class="rstat open" id="rstat"><i class="ti ti-progress"></i> <span id="rstatText">2 topics still open — resolve all to finalize this page</span></div>
-      <button class="btn accent" id="resolveBtn" disabled><i class="ti ti-check"></i> Mark page agreed → Resolved</button>
-    </div>
-
-    <div class="disc" data-x="JX-disc-upl"><div><b>JusticeX is a software platform — not a law firm or mediator.</b> Not legal advice. <a class="disclink" href="disclaimer.html">Full legal disclaimer</a>. Synthetic demo — no real person, figure, or document.</div><div class="tfe"><b>Truth</b> · <b>Fairness</b> · <b>Efficiency</b></div></div>
-  </div>
+  <div class="actions" id="actions"></div>
 </div>
+
+<p class="posture">JusticeX organizes and compares your information objectively. It is software — not a law firm or a lawyer — and it does not advise you or the other party. Custody and parenting time are decided in the children’s best interests; you decide, with your own attorney if you choose.</p>
+<div style="height:16px"></div>
+<footer class="foot"><div class="wrap"><div class="fin">
+  <div><b>JusticeX is a software platform — not a law firm or mediator.</b> Objective comparison only; not legal advice. Synthetic demo — no real person, figure, or document.</div>
+  <div><b>Truth · Fairness · Efficiency</b></div>
+</div></div></footer>
 
 <script>
-const $=id=>document.getElementById(id);
-const num=s=>parseFloat(String(s).replace(/[^0-9.\-]/g,''))||0;
-const TOTAL=365;
-function recompute(){
-  const holD=Math.round(num($('holD').value)), holS=Math.round(num($('holS').value));
-  const sumD=Math.round(num($('sumD').value)), sumS=Math.round(num($('sumS').value));
-  const brkD=Math.round(num($('brkD').value)), brkS=Math.round(num($('brkS').value));
-  $('holT').textContent=holD+holS; $('sumT').textContent=sumD+sumS; $('brkT').textContent=brkD+brkS;
-  const dedD=holD+sumD+brkD, dedS=holS+sumS+brkS, ded=dedD+dedS;
-  const net=Math.max(0,TOTAL-ded);
-  const danaPct=Math.min(100,Math.max(0,num($('regA').value)));
-  const dReg=Math.round(net*danaPct/100), sReg=net-dReg;
-  const dana=dedD+dReg, sam=dedS+sReg;
-  const pctD=dana/TOTAL*100, pctS=sam/TOTAL*100;
-
-  $('dedD').textContent=dedD; $('dedS').textContent=dedS; $('dedT').textContent=ded; $('dedTop').textContent=ded;
-  $('netT').textContent=net;
-  $('rDana').textContent=dReg; $('rSam').textContent=sReg; $('regT').textContent=net;
-  $('regAval').textContent=danaPct+'%';
-  $('tDana').textContent=dana; $('tSam').textContent=sam; $('tTot').textContent=dana+sam;
-  $('barA').style.width=pctD+'%'; $('barB').style.width=pctS+'%';
-  $('pctAbar').textContent=Math.round(pctD)+'%'; $('pctBbar').textContent=Math.round(pctS)+'%';
-  $('nA').textContent=dana; $('nB').textContent=sam;
-  $('primary').textContent = pctD>pctS ? 'Dana' : (pctS>pctD ? 'Samuel' : 'shared near-equally');
-}
-function updateResolve(){
-  const open=document.querySelectorAll('.tbl .statepill.cont').length;
-  const btn=$('resolveBtn'), stat=$('rstat'), txt=$('rstatText');
-  if(open===0){ btn.disabled=false; stat.className='rstat done'; stat.innerHTML='<i class="ti ti-circle-check"></i> All topics resolved — ready to finalize'; }
-  else { btn.disabled=true; txt.textContent=open+' topic'+(open>1?'s':'')+' still open — resolve all to finalize this page'; }
-}
-['holD','holS','sumD','sumS','brkD','brkS'].forEach(id=>$(id).addEventListener('input',recompute));
-$('regA').addEventListener('input',recompute);
-recompute(); updateResolve();
-</script>
-
-<style data-motion>
-@media (prefers-reduced-motion: no-preference){
- .js-anim .mreveal{opacity:0;transform:translateY(16px);transition:opacity .6s cubic-bezier(.2,.6,.2,1),transform .6s cubic-bezier(.2,.6,.2,1)}
- .js-anim .mreveal.in{opacity:1;transform:none}
-}
-.card,.mcard,.acard,.pcard,.ovcard,.stat,.ctcell{transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
-.card:hover,.mcard:hover,.acard:hover,.pcard:hover,.ovcard:hover,.stat:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(8,20,40,.11)}
-</style>
-<script data-motion>
 (function(){
- if(!('IntersectionObserver' in window))return;
- if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
- document.documentElement.classList.add('js-anim');
- var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
- var sel=['.card','.mcard','.acard','.pcard','.ovcard','.stat','.sec','.tbl'];
- document.querySelectorAll(sel.join(',')).forEach(function(el){el.classList.add('mreveal');io.observe(el);});
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  var q=new URLSearchParams(location.search);
+  var legal = q.get('view')==='attorney' || q.get('view')==='legal';
+  var vq = legal ? '&view=attorney' : '';
+  function bridge(s){ return esc(s).replace(/\[\[([^\]]+)\]\]/g, function(_,t){ return '<span class="jx-term" title="'+t+'">('+t+')</span>'; }); }
+  if (legal) document.body.classList.add('jx-term-strong');
+  function toggleHref(v){ var p=new URLSearchParams(location.search); if(v==='consumer') p.delete('view'); else p.set('view',v); var t=p.toString(); return location.pathname+(t?'?'+t:''); }
+  function sv(u){ return u + (legal ? (u.indexOf('?')>-1?'&':'?')+'view=attorney' : ''); }
+
+  document.getElementById('termsw').innerHTML='<span class="tlab">Terminology</span><span class="sw">'+
+    '<a href="'+toggleHref('consumer')+'" class="'+(legal?'':'on')+'"><i class="ti ti-message-circle"></i> Simple terms</a>'+
+    '<a href="'+toggleHref('attorney')+'" class="'+(legal?'on':'')+'"><i class="ti ti-gavel"></i> Legal terms</a></span>';
+  document.getElementById('backLink').href=sv('matter-workspace.html');
+
+  // by-topic nav (cross-links the three issue-area pages)
+  var TOPICS=[['children.html','Children','ti-users'],['finances.html','Finances & property','ti-scale'],['support.html','Support','ti-cash']];
+  document.getElementById('topicnav').innerHTML=TOPICS.map(function(t){
+    var on = location.pathname.split('/').pop()===t[0];
+    return '<a class="'+(on?'on':'')+'" href="'+sv(t[0])+'"><i class="ti '+t[2]+'"></i> '+esc(t[1])+'</a>';
+  }).join('');
+
+  // overview tiles
+  var TILES=[
+    ['Decision-making','Shared','ag','Agreed in principle'],
+    ['Parenting schedule','Being weighed','op','Open · in Gap Analysis'],
+    ['Child support','Standard formula','pend','Pending the schedule'],
+    ['Aligned base','2 points','ag','Each parent fit · schooling stable']
+  ];
+  document.getElementById('tiles').innerHTML=TILES.map(function(t){
+    return '<div class="tile"><div class="l">'+esc(t[0])+'</div><div class="v">'+esc(t[1])+'</div><span class="st '+t[2]+'">'+esc(t[3])+'</span></div>';
+  }).join('');
+
+  var cards='';
+  // 1 — legal custody / decision-making
+  cards+='<div class="card"><h2>Decision-making for the children <span class="pill ag">Agreed in principle</span></h2>'+
+    '<p class="lead">'+bridge('You share the major decisions about the children and make them together [[legal custody]]. Day-to-day decisions rest with whichever parent the children are with.')+'</p>'+
+    '<table><thead><tr><th>Decision area</th><th>Who decides</th></tr></thead><tbody>'+
+    [['Schooling & education','Both parents, together'],['Health & medical care','Both parents, together'],['Religious upbringing','Both parents, together'],['Day-to-day routine','The parent the children are with']]
+      .map(function(r){return '<tr><td>'+esc(r[0])+'</td><td class="who">'+esc(r[1])+'</td></tr>';}).join('')+
+    '</tbody></table>'+
+    '<a class="from" href="'+sv('matter-step.html?step=1')+'"><i class="ti ti-corner-up-left"></i> Review or change in Plan</a></div>';
+
+  // 2 — parenting schedule (OPEN)
+  cards+='<div class="card"><h2>The parenting schedule <span class="pill op">Open</span></h2>'+
+    '<p class="lead">Where the children live and the day-to-day schedule are still being worked through, side by side. You (Marisol) lean toward alternating weeks; Andrés leans toward every other weekend plus a weeknight. JusticeX lays out even options — it does not recommend one.</p>'+
+    '<ul class="opts">'+
+    ['Alternating weeks','A 5-2-2-5 schedule','Every other weekend plus one weeknight, plus shared holidays']
+      .map(function(o,i){return '<li><span class="on">'+String.fromCharCode(9312+i)+'</span> '+esc(o)+'</li>';}).join('')+
+    '</ul>'+
+    '<div class="note"><i class="ti ti-info-circle"></i><div>The schedule you agree here sets the overnights each year, which in turn feeds the child-support calculation below. In the children’s best interests '+bridge('[[best interests]]')+' — you decide, with your own attorney if you choose.</div></div>'+
+    '<a class="from" href="'+sv('matter-step.html?step=5')+'"><i class="ti ti-corner-up-left"></i> Work this in Gap Analysis</a></div>';
+
+  // 3 — child support (pending)
+  cards+='<div class="card"><h2>Child support <span class="pill ag">Formula agreed</span></h2>'+
+    '<p class="lead">'+bridge('Child support follows New York’s standard formula [[Child Support Standards Act]]. The exact amount is calculated once the parenting schedule above is set, since the overnights and both incomes feed the formula.')+'</p>'+
+    '<div class="note"><i class="ti ti-calculator"></i><div>Inputs on file: incomes of about $145,000 (you) and $62,000 (Andrés). The amount updates automatically once the schedule is chosen.</div></div>'+
+    '<a class="from" href="'+sv('matter-step.html?step=6')+'"><i class="ti ti-corner-up-left"></i> Confirm in Resolution</a></div>';
+
+  document.getElementById('cards').innerHTML=cards;
+
+  document.getElementById('support').innerHTML=
+    '<a class="srep" href="'+sv('report.html?step=5&type=summary')+'"><span class="si"><i class="ti ti-layout-dashboard"></i></span><div><div class="stt">Summary Report</div><div class="ss">The headline result across the children’s questions.</div></div></a>'+
+    '<a class="srep" href="'+sv('report.html?step=5&type=detail')+'"><span class="si"><i class="ti ti-file-text"></i></span><div><div class="stt">Detailed Report</div><div class="ss">Full inputs → process → references, with the audit chain.</div></div></a>';
+
+  document.getElementById('actions').innerHTML=
+    '<a class="btn p" href="'+sv('matter-workspace.html')+'"><i class="ti ti-layout-grid"></i> Matter Workspace</a>'+
+    '<a class="btn" href="'+sv('matter-step.html?step=5')+'"><i class="ti ti-arrows-diff"></i> Continue Gap Analysis</a>'+
+    '<a class="btn" href="'+sv('memorandum.html')+'"><i class="ti ti-file-certificate"></i> '+(legal?'Memorandum':'Your Agreement')+'</a>';
 })();
 </script>
-
-<!-- jx-account-cluster (signed-in personalization: you + mediator + attorney, click to manage) -->
-<link rel="stylesheet" href="shared/account-cluster.css?v=2026-07-01d">
-<script src="shared/account-cluster.js?v=2026-07-01d" defer></script>
-<!-- /jx-account-cluster -->
-<!-- jx-progress-rail (simplified global wayfinding: where am I + click to jump; type-aware scope) -->
-<style id="jxr-css">
-.jxr{background:#fff;border-bottom:1px solid #E3EAF3;font-family:'Source Sans 3',system-ui,sans-serif;position:sticky;top:0;z-index:25;}
-.jxr-in{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:10px;padding:8px 22px;overflow-x:auto;}
-.jxr-bc{color:#154572;text-decoration:none;font-size:12.5px;font-weight:600;display:inline-flex;align-items:center;gap:5px;white-space:nowrap;}
-.jxr-bc:hover{color:#042C53;}
-.jxr-bcs{color:#B7C2D2;}
-.jxr-mt{font-size:12.5px;font-weight:700;color:#042C53;white-space:nowrap;}
-.jxr-steps{display:flex;align-items:center;margin-left:6px;}
-.jxr-s{display:inline-flex;align-items:center;gap:6px;text-decoration:none;padding:4px 9px;border-radius:999px;white-space:nowrap;}
-.jxr-s .jxr-n{width:18px;height:18px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:800;background:#EAF1FB;color:#154572;}
-.jxr-s .jxr-l{font-size:11.5px;font-weight:600;color:#5F5E5A;}
-.jxr-s.done .jxr-n{background:#1D9E75;color:#fff;} .jxr-s.done .jxr-l{color:#154572;}
-.jxr-s.cur{background:#FAECE7;} .jxr-s.cur .jxr-n{background:#D85A30;color:#fff;} .jxr-s.cur .jxr-l{color:#B04722;font-weight:800;}
-.jxr-s.up .jxr-n{background:#F1F4F8;color:#9AA3B0;} .jxr-s.up .jxr-l{color:#9AA3B0;}
-.jxr-s:hover{background:#F1F6FC;}
-.jxr-sep{width:13px;height:2px;background:#E6ECF4;flex:none;}
-.jxr-scope{margin-left:auto;font-size:10.5px;font-weight:700;color:#154572;background:#EAF1FB;border:1px solid #D8E4F2;border-radius:999px;padding:3px 10px;white-space:nowrap;display:inline-flex;align-items:center;gap:5px;}
-.jxr-scope i{font-size:13px;color:#2A5582;}
-.jxr-mini{display:none;font-size:12px;font-weight:800;color:#B04722;white-space:nowrap;}
-@media(max-width:880px){ .jxr-s .jxr-l{display:none;} .jxr-mini{display:inline-block;} }
-</style>
-<script id="jxr-js">
-(function(){
- if(window.__jxrail) return; window.__jxrail=1;
- var STEPS=[['plan.html','Plan'],['intake.html','Intake'],['redact.html','Redact'],['summarize.html','Summarize'],['gap-analysis.html','Gap Analysis'],['resolution.html','Resolution'],['memorandum.html','Memorandum']];
- var MAP={'plan.html':1,'intake.html':2,'redact.html':3,'summarize.html':4,'gap-analysis.html':5,'resolution.html':6,'memorandum.html':7,'strength-comparison.html':5,'children.html':5,'finances.html':5,'support.html':5};
- function init(){
-   var path=(location.pathname.split('/').pop()||'').toLowerCase(); var cur=MAP[path]||0;
-   var chips='';
-   STEPS.forEach(function(s,i){ var n=i+1; var cls=n<cur?'done':(n===cur?'cur':'up');
-     var inner=n<cur?'<i class="ti ti-check"></i>':n;
-     chips+='<a class="jxr-s '+cls+'" href="'+s[0]+'" title="Step '+n+' · '+s[1]+'"><span class="jxr-n">'+inner+'</span><span class="jxr-l">'+s[1]+'</span></a>';
-     if(n<7) chips+='<span class="jxr-sep"></span>';
-   });
-   // type-aware scope label: party_model = 'two' (default) | 'one'. Two-party: 1-4 each / 5-7 both. One-sided: applicant throughout.
-   var PARTY=(window.JX_PARTY||'two');
-   var scopeTxt = PARTY==='one' ? 'You — the applicant'
-       : (cur===0 ? '' : (cur<=4 ? 'Each party · on their own' : 'Both parties · together'));
-   var scopeHtml = scopeTxt ? '<span class="jxr-scope"><i class="ti ti-users"></i>'+scopeTxt+'</span>' : '<span style="margin-left:auto"></span>';
-   var curLabel = cur? ('Step '+cur+' of 7') : 'Overview';
-   var bar=document.createElement('div'); bar.className='jxr';
-   bar.innerHTML='<div class="jxr-in"><a class="jxr-bc" href="dashboard.html"><i class="ti ti-layout-grid"></i> Dashboard</a>'
-     +'<span class="jxr-bcs">›</span><span class="jxr-mt"><i class="ti ti-folder" style="font-size:11.5px;opacity:.65;margin-right:4px"></i>Whitfield</span>'
-     +'<div class="jxr-steps">'+chips+'</div>'+scopeHtml+'<span class="jxr-mini">'+curLabel+'</span></div>';
-   var anchor=document.querySelector('.rolebar')||document.querySelector('.appbar');
-   if(anchor&&anchor.parentNode){ anchor.parentNode.insertBefore(bar, anchor.nextSibling); }
-   else { document.body.insertBefore(bar, document.body.firstChild); }
- }
- if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
-})();
-</script>
-<!-- /jx-progress-rail -->
 </body>
 </html>

@@ -1,100 +1,11 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>JusticeX — Summary Report (Whitfield · Gap Analysis)</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
-<style>
-:root{--navy:#042C53;--navy-deep:#021A33;--navy2:#154572;--navy3:#2A5582;--paper:#E6F1FB;--surface:#FFFFFF;--ink:#1A1A1A;--muted:#5F5E5A;--faint:#9CA0A7;--hair:#D1DEEE;--accent:#D85A30;--accent-d:#B04722;--accent-soft:#FAECE7;--success:#1D9E75;--success-s:#E7F4EF;--a:#2A5582;--a-soft:#E6F1FB;--b:#B04722;--b-soft:#FAECE7;--radius:14px;--radius-sm:10px;}
-*{box-sizing:border-box} html,body{margin:0}
-body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',Calibri,system-ui,sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;}
-.appbar{background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 26px;}
-.brand{display:flex;align-items:center;} .bmark{height:23px;width:23px;border-radius:5px;margin-right:9px;}
-.wordmark{font-family:'Source Serif 4',serif;font-weight:600;font-size:22px;} .wordmark .x{color:var(--accent);}
-.tagline{font-size:11.5px;letter-spacing:2.4px;text-transform:uppercase;color:#9FB6D2;margin-left:12px;}
-.back{font-size:12.5px;color:#C9D8EA;text-decoration:none;} .back:hover{color:#fff;}
-.app{max-width:900px;margin:0 auto;padding:0 22px 60px;}
-.rhead{background:var(--navy-deep);color:#fff;padding:26px 0 24px;margin-bottom:8px;}
-.rhead .in{max-width:900px;margin:0 auto;padding:0 22px;}
-.rkind{display:inline-block;font-size:11px;letter-spacing:.6px;text-transform:uppercase;font-weight:700;color:#08213A;background:var(--accent);padding:3px 11px;border-radius:999px;}
-.rhead h1{font-family:'Source Serif 4',serif;font-weight:600;font-size:27px;margin:12px 0 5px;}
-.rhead .sub{color:#AFC3DC;font-size:13.5px;}
-.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;}
-.tag{font-size:11.5px;border-radius:999px;padding:4px 10px;display:inline-flex;align-items:center;gap:6px;background:#10314F;color:#CFE0F4;border:1px solid #28486B;}
-.tag.neutral{background:var(--accent);color:#08213A;font-weight:600;border:none;}
-.aichip{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;color:#CFE0F4;background:#10314F;border:1px solid #28486B;border-radius:999px;padding:4px 11px 4px 6px;text-decoration:none;}
-.aichip .aidot{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:5px;background:var(--accent);color:#08213A;}
-.card{background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);padding:22px 24px;margin-top:16px;box-shadow:0 1px 2px rgba(20,30,46,.04);}
-.card h2{font-family:'Source Serif 4',serif;font-weight:600;font-size:17px;color:var(--navy);margin:0 0 14px;display:flex;align-items:center;gap:8px;}
-.card h2 i{color:var(--navy2);}
-.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;} @media(max-width:680px){.tiles{grid-template-columns:repeat(2,1fr)}}
-.tile{border:1px solid var(--hair);border-radius:var(--radius-sm);padding:13px 15px;background:#FBFDFF;}
-.tile .l{font-size:10.5px;letter-spacing:.3px;text-transform:uppercase;color:var(--faint);font-weight:700;}
-.tile .v{font-size:22px;font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums;margin-top:2px;}
-.tile .s{font-size:12px;color:var(--muted);}
-.sym{display:flex;flex-direction:column;gap:5px;margin-top:4px;}
-.symrow{display:flex;align-items:center;gap:7px;font-size:12.5px;}
-.pl{width:15px;height:15px;border-radius:4px;color:#fff;font-size:9px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;flex:none;}
-.pl.a{background:var(--a);} .pl.b{background:var(--b);}
-.barw{flex:1;height:7px;background:#E6F1FB;border:1px solid var(--hair);border-radius:999px;overflow:hidden;}
-.bar{height:100%;} .bar.a{background:var(--a);} .bar.b{background:var(--b);}
-.sv{font-variant-numeric:tabular-nums;font-weight:700;color:var(--navy);width:34px;text-align:right;}
-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:4px;}
-th{background:#E2EAF4;color:var(--navy2);text-align:left;padding:7px 10px;font-size:10px;text-transform:uppercase;letter-spacing:.4px;font-weight:700;}
-th.r,td.r{text-align:right;font-variant-numeric:tabular-nums;}
-td{padding:8px 10px;border-bottom:1px solid #E8EEF6;vertical-align:top;} tbody tr:last-child td{border-bottom:none;}
-tr.grand td{background:var(--navy);color:#fff;font-weight:700;}
-.var{color:var(--accent-d);font-weight:700;} .ok{color:var(--success);font-weight:700;}
-.pillst{font-size:10.5px;font-weight:700;border-radius:999px;padding:3px 9px;white-space:nowrap;display:inline-flex;align-items:center;gap:5px;}
-.pillst.ag{background:var(--success-s);color:#13694a;} .pillst.op{background:var(--accent-soft);color:var(--accent-d);}
-.areah{font-family:'Source Serif 4',serif;font-weight:600;font-size:14.5px;color:var(--navy);margin:18px 0 6px;display:flex;align-items:center;gap:8px;} .areah i{color:var(--navy2);}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:14px;} @media(max-width:680px){.split{grid-template-columns:1fr}}
-.lst{list-style:none;margin:0;padding:0;font-size:13px;}
-.lst li{display:flex;gap:8px;align-items:flex-start;padding:5px 0;border-bottom:1px solid #EEF3F9;}
-.lst li:last-child{border-bottom:none;} .lst i{margin-top:2px;} .lst i.g{color:var(--success);} .lst i.d{color:var(--accent-d);}
-.next{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#F4F8FD;border:1px solid #D9E6F4;border-radius:var(--radius-sm);padding:14px 16px;margin-top:16px;flex-wrap:wrap;}
-.next b{color:var(--navy);}
-.btn{font-size:13px;font-weight:600;color:#fff;background:var(--navy);border:none;border-radius:8px;padding:9px 15px;text-decoration:none;display:inline-flex;align-items:center;gap:7px;}
-.btn:hover{background:var(--navy2);}
-.foot{max-width:900px;margin:18px auto 0;padding:16px 22px 0;border-top:1px solid var(--hair);color:var(--muted);font-size:12px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
-.foot a{color:var(--navy2);}
-</style></head><body>
-<div class="appbar">
-  <div class="brand"><img class="bmark" src="https://justicex.ai/assets/brand-mark.png" alt=""/><span class="wordmark">Justice<span class="x">X</span></span><span class="tagline">Objective comparison</span></div>
-  <a class="back" href="gap-analysis.html"><i class="ti ti-arrow-left"></i> Back to Gap Analysis</a>
-</div>
-<div class="rhead"><div class="in"><span class="rkind">Summary Report</span><h1>Gap Analysis — gaps to close</h1><div class="sub">Whitfield · Nassau County, New York · Divorce &amp; custody · Stage 5 of 7 · generated 27 Jun 2026</div><div class="tags"><a class="aichip" href="disclaimer.html#ai-use"><span class="aidot"><i class="ti ti-sparkles"></i></span> AI-assisted · you and your counsel confirm</a><span class="tag"><i class="ti ti-pencil"></i> Draft for review</span><span class="tag neutral">Neutral · synthetic demo</span></div></div></div>
-<div class="app">
-  <div class="card">
-    <h2><i class="ti ti-gauge"></i> At a glance — gaps to close</h2>
-    <div class="tiles">
-      <div class="tile"><div class="l">Open topics</div><div class="v" style="color:var(--accent-d)">4</div><div class="s">of 9 across the four areas</div></div>
-      <div class="tile"><div class="l">Largest gap</div><div class="v">$60,000</div><div class="s">family-home value</div></div>
-      <div class="tile"><div class="l">Option sets presented</div><div class="v">4</div><div class="s">objective — no recommendation</div></div>
-      <div class="tile"><div class="l">Alignment</div><div class="v">64%</div><div class="s">before closing the gaps</div></div>
-      <div class="tile"><div class="l">Position evidence quality</div>
-        <div class="sym"><div class="symrow"><span class="pl a">A</span><div class="barw"><div class="bar a" style="width:72%"></div></div><span class="sv">72</span></div>
-        <div class="symrow"><span class="pl b">B</span><div class="barw"><div class="bar b" style="width:68%"></div></div><span class="sv">68</span></div></div>
-      </div>
-      <div class="tile"><div class="l">Carried agreed</div><div class="v" style="color:var(--success)">5</div><div class="s">settled at Summarize</div></div>
-    </div>
-  </div>
-  <div class="card">
-    <h2><i class="ti ti-layout-grid"></i> By area — the gap and the options on the table</h2>
-    <table>
-      <thead><tr><th>Area · open topic</th><th>The gap</th><th>Objective options</th></tr></thead>
-      <tbody>
-        <tr><td><b>Finances</b> — home value</td><td>A $700k vs B $640k (<span class="var">$60k</span>)</td><td>1) Accept an independent appraisal · 2) Split the difference at $670k · 3) One keeps the home and buys out the other</td></tr>
-        <tr><td><b>Maintenance</b> — amount/duration</td><td>Turns on bonus inclusion</td><td>1) Include the $24k bonus · 2) Exclude it · 3) Average the last 3 years</td></tr>
-        <tr><td><b>Child support</b> — amount</td><td>Same bonus dependency</td><td>Recomputes automatically with the maintenance decision (CSSA)</td></tr>
-        <tr><td><b>Religion</b> — faith upbringing</td><td>Not yet decided</td><td>1) Raise in both parents' faiths · 2) One primary faith · 3) Defer to the child's choice at an agreed age</td></tr>
-      </tbody>
-    </table>
-    <div style="font-size:12px;color:var(--muted);margin-top:8px">Options are laid out objectively, with the math for each — JusticeX does not recommend which to pick. You and your counsel decide; the choices carry to Resolution.</div>
-  </div>
-  <div class="next"><div><b>Next step — Resolution.</b> Pick an option for each open topic; the math reconciles and the agreed terms assemble.</div><a class="btn" href="resolution.html">Open Resolution <i class="ti ti-arrow-right"></i></a></div>
-  <div class="foot">
-    <div>JusticeX is a software platform — not a law firm or mediator. Not legal advice. <a href="disclaimer.html">Full legal disclaimer</a>. Synthetic demo — no real person.</div>
-    <div><b>Truth</b> · <b>Fairness</b> · <b>Efficiency</b></div>
-  </div>
-</div></body></html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow"><title>Moved — Gap Analysis — Summary · JusticeX</title>
+<script>
+  (function(){var v=new URLSearchParams(location.search).get('view');var t="report.html?step=5&type=summary";
+   if(v)t+=(t.indexOf('?')>-1?'&':'?')+'view='+encodeURIComponent(v);location.replace(t);})();
+</script>
+<meta http-equiv="refresh" content="0;url=report.html?step=5&type=summary">
+<style>body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#F4F6FA;color:#042C53;display:flex;min-height:100vh;align-items:center;justify-content:center;margin:0;text-align:center;padding:24px}a{color:#B04722;font-weight:600}</style>
+</head><body><div><p><strong>This page has moved into the Matter Workspace.</strong></p>
+<p>Taking you to Gap Analysis — Summary… &nbsp;<a href="report.html?step=5&type=summary">Continue →</a></p></div></body></html>

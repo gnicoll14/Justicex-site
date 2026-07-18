@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JusticeX for Mediators &amp; Attorneys — overview deck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
+<style>
+  /* LOCKED type scale (Page Media Standard): title 38-44 · heading 22 · body 16 · supporting 14 · fine-print 12 floor · stats 60+ */
+  :root{--navy:#042C53;--navy9:#021A33;--navy6:#154572;--coral:#D85A30;--coral6:#B04722;--coral-on:#F0997B;--soft:#FAECE7;--paper:#F4F6FA;--cream:#E6F1FB;--ink:#1A2433;--slate:#5F5E5A;--stone:#D1DEEE;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#e9edf3;font-family:'Source Sans 3',system-ui,sans-serif;color:var(--ink);padding:24px 0}
+  .deck{display:flex;flex-direction:column;align-items:center;gap:22px}
+  .slide{width:1280px;height:720px;background:var(--paper);position:relative;overflow:hidden;box-shadow:0 10px 34px rgba(20,30,46,.18);border-radius:6px}
+  .pad{position:absolute;inset:0;padding:54px 64px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:'Source Serif 4',serif;font-weight:700;font-size:23px;color:var(--navy)}
+  .brand .hex{width:29px;height:29px;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,#0a3b66,var(--navy));clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);color:var(--coral-on);font-size:15px}
+  .brand .x{color:var(--coral)} .brand.on-dark{color:#fff}
+  .eyebrow{font-weight:700;font-size:15px;letter-spacing:.15em;text-transform:uppercase;color:var(--coral);display:flex;align-items:center;gap:12px}
+  .eyebrow .rule{height:1px;width:44px;background:var(--stone)}
+  .eyebrow.on-dark{color:var(--coral-on)} .eyebrow.on-dark .rule{background:rgba(240,153,123,.4)}
+  h2.title{font-family:'Source Serif 4',serif;font-weight:600;font-size:40px;line-height:1.08;color:var(--navy);margin-top:16px}
+  h2.title.on-dark{color:#fff}
+  .foot{position:absolute;left:64px;right:64px;bottom:30px;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--slate)}
+  .foot.on-dark{color:#9db4cc} .pg{font-weight:700;color:var(--navy)} .foot.on-dark .pg{color:var(--coral-on)}
+  .slide.navy{background:#042C53;background:radial-gradient(120% 130% at 12% 0,#0a3560,var(--navy) 55%,var(--navy9))}
+  /* cover */
+  .cover .kick{font-weight:700;font-size:16px;letter-spacing:.2em;text-transform:uppercase;color:var(--coral-on)}
+  .cover h1{font-family:'Source Serif 4',serif;font-weight:600;font-size:58px;line-height:1.04;color:#fff;margin-top:20px;max-width:960px}
+  .cover h1 em{font-style:normal;color:#fff}
+  .cover .lead{font-size:21px;color:#c9d7e6;margin-top:22px;max-width:800px;line-height:1.5}
+  .cover .strip{display:flex;gap:10px;margin-top:32px}
+  .cover .chip{font-size:15px;font-weight:500;color:#dbe6f2;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:9px 18px}
+  /* problem stats */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:34px}
+  .stat .n{font-family:'Source Serif 4',serif;font-size:60px;line-height:1;color:var(--coral);font-weight:600}
+  .stat .r{width:36px;height:2px;background:var(--coral);margin:14px 0}
+  .stat .l{font-size:16px;color:var(--ink);line-height:1.45;opacity:.9}
+  .sublede{font-size:19px;color:var(--slate);margin-top:22px;max-width:1000px;line-height:1.5}
+  /* value cards */
+  .three{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px}
+  .four{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:26px}
+  .c{background:#fff;border:1px solid var(--stone);border-radius:14px;padding:24px 26px}
+  .slide.navy .c{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14)}
+  .c .ic{width:46px;height:46px;border-radius:12px;background:var(--soft);color:var(--coral);display:flex;align-items:center;justify-content:center;font-size:23px}
+  .slide.navy .c .ic{background:rgba(240,153,123,.14);color:var(--coral-on)}
+  .c h3{font-family:'Source Serif 4',serif;font-weight:600;color:var(--navy);font-size:22px;margin:14px 0 0}
+  .slide.navy .c h3{color:#fff}
+  .c p{font-size:16px;line-height:1.5;color:var(--ink);opacity:.85;margin-top:10px}
+  .slide.navy .c p{color:#c9d7e6;opacity:1}
+  .band{margin-top:24px;display:flex;gap:26px;background:var(--navy);border-radius:14px;padding:22px 30px;color:#fff}
+  .band .bstat{flex:1}
+  .band .bn{font-family:'Source Serif 4',serif;font-size:36px;font-weight:600;color:var(--coral-on)}
+  .band .bl{font-size:15px;color:#c9d7e6;margin-top:4px;line-height:1.35}
+  .caveat{margin-top:20px;display:flex;gap:12px;align-items:flex-start;background:var(--soft);border:1px solid #F1D3C8;border-radius:12px;padding:14px 18px}
+  .caveat i{color:var(--coral6);font-size:20px;flex:0 0 auto;margin-top:1px}
+  .caveat p{font-size:15px;color:#7A3B25;line-height:1.45}
+  /* pipeline */
+  .steps{display:flex;margin-top:34px}.step{flex:1;text-align:center;position:relative}
+  .step .hx{width:54px;height:54px;margin:0 auto;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,#0a3b66,var(--navy));clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);color:#fff;font-weight:700;font-size:19px}
+  .step .nm{font-size:15px;margin-top:10px;color:var(--navy);font-weight:600}
+  .step::after{content:"";position:absolute;top:26px;left:50%;width:100%;height:2px;background:var(--stone);z-index:0}.step:last-child::after{display:none}
+  .cps{display:flex;gap:22px;margin-top:30px}.cp{flex:1;background:var(--soft);border:1px solid #F1D3C8;border-radius:12px;padding:16px 20px}
+  .cp .l{font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--coral6)}
+  .cp .t{font-size:14.5px;color:#7A3B25;margin-top:5px;line-height:1.4}
+  /* line-we-hold */
+  .hold{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:28px;align-items:start}
+  .hold .col h3{font-family:'Source Serif 4',serif;color:var(--navy);font-size:21px;font-weight:600;margin-bottom:12px}
+  .hold ul{list-style:none}
+  .hold li{font-size:17px;color:var(--ink);padding:9px 0 9px 26px;position:relative;line-height:1.4}
+  .hold li::before{content:"";position:absolute;left:0;top:15px;width:10px;height:10px;background:var(--coral);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+  .hold .never li::before{background:var(--slate);clip-path:none;border-radius:50%;width:7px;height:7px;top:16px;left:1px}
+  /* offer */
+  .offer{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:28px}
+  .ocard{background:#fff;border:1px solid var(--stone);border-radius:14px;padding:28px}
+  .ocard.get{border-top:3px solid var(--coral)}
+  .ocard .ol{font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  .ocard ul{list-style:none} .ocard li{font-size:16px;color:var(--ink);padding:9px 0 9px 24px;position:relative;line-height:1.42}
+  .ocard li::before{content:"";position:absolute;left:0;top:15px;width:9px;height:9px;background:var(--coral);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+  .ocard li b{color:var(--navy)}
+  /* close */
+  .close h2{font-family:'Source Serif 4',serif;font-weight:600;font-size:48px;color:#fff;margin-top:20px;max-width:860px;line-height:1.08}
+  .close .lead{font-size:20px;color:#c9d7e6;margin-top:20px;max-width:720px;line-height:1.5}
+  .close .ctas{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+  .close .cta{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:16px;padding:14px 26px;border-radius:9px;text-decoration:none}
+  .close .cta.p{background:var(--coral);color:#fff} .close .cta.g{border:1.5px solid rgba(255,255,255,.3);color:#fff}
+  .note{font-size:14px;color:var(--slate);font-style:italic;margin-top:20px}
+  @media print{body{background:#fff;padding:0}.deck{gap:0}.slide{box-shadow:none;border-radius:0;page-break-after:always;break-after:page}}
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <!-- 1 · COVER -->
+  <div class="slide navy cover">
+    <div class="pad">
+      <div class="brand on-dark"><span class="hex">X</span>Justice<span class="x">X</span></div>
+      <div style="margin-top:82px">
+        <div class="kick">For mediators &amp; attorneys</div>
+        <h1>Win the matters that matter.<br><em>Effortlessly serve</em> the rest.</h1>
+        <p class="lead">Focus your time and resources on the matters with the greatest value, run them with an efficient process — and still offer a fair, low-effort path for the matters that aren't a fit for you.</p>
+        <div class="strip"><span class="chip">Focus on your best matters</span><span class="chip">Efficient by design</span><span class="chip">Effortless support for the rest</span></div>
+      </div>
+      <div class="foot on-dark"><span>AI-assisted overview · figures illustrative · not legal advice.</span><span class="pg">justicex.ai</span></div>
+    </div>
+  </div>
+
+  <!-- 2 · THE PROBLEM -->
+  <div class="slide">
+    <div class="pad">
+      <div class="eyebrow"><span class="rule"></span> The problem</div>
+      <h2 class="title">You commit before you can see the whole picture — then most hours go to logistics.</h2>
+      <div class="stats">
+        <div class="stat"><div class="n">~65%</div><div class="r"></div><div class="l">Of pre-mediation hours go to document logistics, not analysis.</div></div>
+        <div class="stat"><div class="n">$8K+</div><div class="r"></div><div class="l">Average preventable cost per mid-size matter from rework.</div></div>
+        <div class="stat"><div class="n">3–6 wk</div><div class="r"></div><div class="l">Intake to first joint session — momentum decays.</div></div>
+        <div class="stat"><div class="n">Asymm.</div><div class="r"></div><div class="l">Prep quality between parties drives outcomes more than the facts.</div></div>
+      </div>
+      <p class="sublede">And the riskiest decision comes first: whether to take the matter at all — usually made on a thin intake, before you can see the documents, the support, or the effort it will really take.</p>
+      <div class="foot"><span>Estimates illustrative, to be validated with design partners · not legal advice.</span><span class="pg">02</span></div>
+    </div>
+  </div>
+
+  <!-- 3 · BEFORE YOU TAKE THE CASE (the centerpiece) -->
+  <div class="slide">
+    <div class="pad">
+      <div class="eyebrow"><span class="rule"></span> Choose the right matters</div>
+      <h2 class="title">See what a matter involves — and focus where the value is.</h2>
+      <div class="four">
+        <div class="c"><div class="ic"><i class="ti ti-zoom-scan"></i></div><h3>See the objective picture</h3><p>What documents and support — records, witnesses — actually exist, where the gaps are, and the effort it will take to develop the matter.</p></div>
+        <div class="c"><div class="ic"><i class="ti ti-chart-arrows-vertical"></i></div><h3>Focus your time where the value is</h3><p>A symmetric, factual completeness view of both sides feeds your call on which matters are worth your time and resources — an informed decision, not a guess.</p></div>
+        <div class="c"><div class="ic"><i class="ti ti-clipboard-check"></i></div><h3>Show your value from the first conversation</h3><p>Demonstrate that you already understand a prospective client's matter and what it will take — winning the engagement on value and credibility, up front.</p></div>
+        <div class="c"><div class="ic"><i class="ti ti-mood-heart"></i></div><h3>Serve the rest with almost no effort</h3><p>When a matter isn't a fit for you, offer a fair self-service path — JusticeX — instead of turning the client away. They stay supported; your reputation stays intact.</p></div>
+      </div>
+      <div class="caveat"><i class="ti ti-info-circle" aria-hidden="true"></i><p>JusticeX organizes the objective inputs; <b>you</b> apply the legal judgment. It never predicts an outcome, scores legal merit, or tells you whether to take a case.</p></div>
+      <div class="foot"><span>Objective inputs for your decision · not legal advice.</span><span class="pg">03</span></div>
+    </div>
+  </div>
+
+  <!-- 4 · FOR MEDIATORS -->
+  <div class="slide">
+    <div class="pad">
+      <div class="eyebrow"><span class="rule"></span> For mediators</div>
+      <h2 class="title">Same skills. More cases.</h2>
+      <div class="three">
+        <div class="c"><div class="ic"><i class="ti ti-file-text"></i></div><h3>Ready before session one</h3><p>Position briefs, a symmetric comparison, and a gap map are prepared before you sit down — so your hours close matters instead of handling documents.</p></div>
+        <div class="c"><div class="ic"><i class="ti ti-arrows-left-right"></i></div><h3>Both sides arrive equal</h3><p>Symmetric processing removes the prep-quality advantage — you start from a level field, which is easier to defend.</p></div>
+        <div class="c"><div class="ic"><i class="ti ti-user-check"></i></div><h3>You stay the neutral</h3><p>JusticeX prepares and compares; it never mediates or decides. You hold the final say at every checkpoint.</p></div>
+      </div>
+      <div class="band">
+        <div class="bstat"><div class="bn">60–80%</div><div class="bl">Less pre-mediation prep time per matter.</div></div>
+        <div class="bstat"><div class="bn">3–5×</div><div class="bl">More matters per mediator-month — same calendar.</div></div>
+        <div class="bstat"><div class="bn">Days</div><div class="bl">Intake to mediation-ready, not weeks.</div></div>
+      </div>
+      <div class="foot"><span>Design-partner target band · figures illustrative · not legal advice.</span><span class="pg">04</span></div>
+    </div>
+  </div>
+
+  <!-- 5 · FOR ATTORNEYS -->
+  <div class="slide navy">
+    <div class="pad">
+      <div class="eyebrow on-dark"><span class="rule"></span> For attorneys</div>
+      <h2 class="title on-dark">Counsel-grade by design.</h2>
+      <div class="four">
+        <div class="c"><div class="ic"><i class="ti ti-shield-lock"></i></div><h3>See it before it moves</h3><p>Review a side-by-side redaction diff and sign the certificate before anything crosses between parties. Your client's side stays in full; the other side stays fenced.</p></div>
+        <div class="c"><div class="ic"><i class="ti ti-quote"></i></div><h3>Every output traces to a source</h3><p>Outputs link to the records they were built from, with public precedent surfaced for you to locate — never interpreted or applied for you. Treat each as a draft; verify and decide.</p></div>
+        <div class="c"><div class="ic"><i class="ti ti-briefcase"></i></div><h3>Smaller matters, still profitable</h3><p>The preparation that used to make small matters uneconomic is done for you — so you can take them on at a standard you're comfortable putting your name to.</p></div>
+        <div class="c"><div class="ic"><i class="ti ti-arrows-exchange"></i></div><h3>Refer without a conflict</h3><p>JusticeX charges and pays no referral fees, and doesn't rate or rank. Referrals stay neutral by design — so they hold up under your ethics rules.</p></div>
+      </div>
+      <div class="foot on-dark"><span>Privilege · redaction · citation-grounding · audit trail — runtime, not policy · not legal advice.</span><span class="pg">05</span></div>
+    </div>
+  </div>
+
+  <!-- 6 · HOW IT WORKS -->
+  <div class="slide">
+    <div class="pad">
+      <div class="eyebrow"><span class="rule"></span> How it works</div>
+      <h2 class="title">Seven stages. Three checkpoints — all yours.</h2>
+      <div class="steps">
+        <div class="step"><div class="hx">1</div><div class="nm">Plan</div></div>
+        <div class="step"><div class="hx">2</div><div class="nm">Intake</div></div>
+        <div class="step"><div class="hx">3</div><div class="nm">Redact</div></div>
+        <div class="step"><div class="hx">4</div><div class="nm">Summarize</div></div>
+        <div class="step"><div class="hx">5</div><div class="nm">Gap Analysis</div></div>
+        <div class="step"><div class="hx">6</div><div class="nm">Resolution</div></div>
+        <div class="step"><div class="hx">7</div><div class="nm">Memorandum</div></div>
+      </div>
+      <div class="cps">
+        <div class="cp"><div class="l">Checkpoint 1 · post-redaction</div><div class="t">You review removed content and sign the redaction certificate before any analysis runs.</div></div>
+        <div class="cp"><div class="l">Checkpoint 2 · post-comparison</div><div class="t">You confirm the comparison rationale; claim-level overrides are captured with your reasons.</div></div>
+        <div class="cp"><div class="l">Checkpoint 3 · pre-resolution</div><div class="t">A final review of the gap analysis before the joint session. Nothing moves without you.</div></div>
+      </div>
+      <div class="foot"><span>AI proposes · you dispose · not legal advice.</span><span class="pg">06</span></div>
+    </div>
+  </div>
+
+  <!-- 7 · THE LINE WE HOLD -->
+  <div class="slide">
+    <div class="pad">
+      <div class="eyebrow"><span class="rule"></span> The line we hold</div>
+      <h2 class="title">The tool of record. You're the decision-maker.</h2>
+      <div class="hold">
+        <div class="col">
+          <h3>What JusticeX does</h3>
+          <ul>
+            <li>Organizes each side and redacts to a signed certificate</li>
+            <li>Compares completeness and evidence quality — symmetrically</li>
+            <li>Surfaces the documents, support, and effort a matter needs</li>
+            <li>Locates public precedent and assembles a citation-grounded record</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>What it never does</h3>
+          <ul class="never">
+            <li>Score legal merit or predict how a court will rule</li>
+            <li>Tell you whether to take a case, or interpret the law</li>
+            <li>Mediate, decide, or act as anyone's lawyer</li>
+            <li>Charge or pay a referral fee, or rate professionals</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note">JusticeX is not a law firm or mediator. Three human-in-the-loop checkpoints per matter; nothing is filed, sent, or relied on without your review.</p>
+      <div class="foot"><span>Objective · symmetric · not legal advice.</span><span class="pg">07</span></div>
+    </div>
+  </div>
+
+  <!-- 8 · THE OFFER -->
+  <div class="slide">
+    <div class="pad">
+      <div class="eyebrow"><span class="rule"></span> The design-partner offer</div>
+      <h2 class="title">Charter terms for the first cohort.</h2>
+      <div class="offer">
+        <div class="ocard get">
+          <div class="ol">▶ What you get</div>
+          <ul>
+            <li><b>Full platform access.</b> Every stage, every output, no feature gating.</li>
+            <li><b>Charter pricing locked.</b> Founding rates frozen through Phase 2.</li>
+            <li><b>A direct line to the roadmap.</b> Monthly co-design; your matters shape it.</li>
+            <li><b>Marketing &amp; CLE assets.</b> Co-branded explainers and session materials.</li>
+          </ul>
+        </div>
+        <div class="ocard">
+          <div class="ol">▶ What we ask</div>
+          <ul>
+            <li><b>Run real matters.</b> Whatever your roster supports — we co-design the volume.</li>
+            <li><b>Hold the three checkpoints.</b> Redaction, comparison, pre-resolution.</li>
+            <li><b>Optional matter contribution (opt-in).</b> With every party’s opt-in, synthetic, de-identified derivatives improve the Service; never resold, never trains public or third-party AI, never your raw content.</li>
+            <li><b>Honest feedback.</b> When the AI is wrong — and it will be — flag it.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot"><span>No referral fees, ever · neutral by design.</span><span class="pg">08</span></div>
+    </div>
+  </div>
+
+  <!-- 9 · CLOSE -->
+  <div class="slide navy close">
+    <div class="pad">
+      <div class="brand on-dark"><span class="hex">X</span>Justice<span class="x">X</span></div>
+      <div style="margin-top:72px">
+        <div class="eyebrow on-dark"><span class="rule"></span> Put your judgment where it counts</div>
+        <h2>Win the matters that matter.<br>Serve the rest effortlessly.</h2>
+        <p class="lead">A 30-minute walkthrough on a redacted matter you bring, in your jurisdiction and dispute type. No deck. No pitch.</p>
+        <div class="ctas">
+          <a class="cta p" href="https://justicex.ai/contact.html?path=mediator">Mediators: join the cohort <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+          <a class="cta g" href="https://justicex.ai/contact.html?path=counsel">Attorneys: Counsel Partner Program</a>
+        </div>
+      </div>
+      <div class="foot on-dark"><span>Not a law firm or mediator · not legal advice.</span><span class="pg">justicex.ai</span></div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

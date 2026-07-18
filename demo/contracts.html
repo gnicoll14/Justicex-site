@@ -411,7 +411,7 @@ function setCtx(c){
   document.getElementById('catLede').textContent=LEDE[c];
   renderChips(); renderCatalog();
 }
-// --- AI overview player (objective, UPL-safe script; browser TTS for the demo) ---
+// --- AI overview player (objective, compliance-safe script; browser TTS for the demo) ---
 var ovScript='', ovPlaying=false, ovTimer=null;
 function ovBuild(f){
   var m=(typeof META!=='undefined'&&META[f.id])||[]; var sc=m[1]?(' Common situation: '+m[1].toLowerCase()+'.'):'';
@@ -499,5 +499,6 @@ function renderClause(){
 }
 loadScope(); renderChips(); renderCatalog();
 </script>
+<script src="shared/prelaunch.js"></script>
 </body>
 </html>

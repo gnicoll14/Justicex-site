@@ -1,453 +1,871 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>JusticeX — Finances & property (Whitfield)</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finances & property · Delgado (Sample) · JusticeX</title>
+<meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
 <style>
-.bmark{height:22px;width:22px;border-radius:5px;vertical-align:-4px;margin-right:9px;}
-:root{
-  --navy:#042C53; --navy3:#2A5582; --paper:#E6F1FB; --surface:#FFFFFF; --ink:#1A1A1A;
-  --muted:#5F5E5A; --faint:#9CA0A7; --hair:#D1DEEE; --gold:#D85A30;
-  --a:#2A5582; --a-soft:#E6F1FB; --a-ink:#154572; --b:#D67E5F; --b-soft:#FAECE7; --b-ink:#B04722;
-  --realestate:#0A3866; --retire:#2A5582; --cash:#D85A30; --auto:#9CA0A7; --liab:#B04722;
-  --up:#1D9E75; --radius:14px; --radius-sm:10px;
-}
-*{box-sizing:border-box} html,body{margin:0}
-body{background:var(--paper); color:var(--ink); font-family:'Source Sans 3',system-ui,sans-serif; font-size:15px; line-height:1.6;-webkit-font-smoothing:antialiased;}
-.app{max-width:1240px; margin:0 auto; padding:0 22px 60px;}
-.appbar{background:var(--navy); color:#fff; display:flex; align-items:center; justify-content:space-between; padding:14px 26px;}
-.wordmark{font-family:'Source Serif 4',serif; font-weight:600; font-size:22px;} .wordmark .x{color:var(--gold);}
-.tagline{font-size:11.5px; letter-spacing:2.4px; text-transform:uppercase; color:#9FB6D2; margin-left:10px;}
-.matterchip{font-size:13px; color:#C9D8EA;} .matterchip b{color:#fff; font-weight:500;}
-.neutralpill{font-size:11px; color:#0A2138; background:var(--gold); padding:4px 11px; border-radius:999px; font-weight:600; margin-left:10px;}
-.stages{background:#021A33; color:#fff; display:flex; align-items:center; padding:9px 26px;}
-.stage{display:flex; align-items:center; gap:8px; font-size:12.5px; color:#7E9AB9; white-space:nowrap;}
-.stage .dot{width:7px;height:7px;border-radius:50%;background:#3C5775;}
-.stage.done{color:#B9CBDD;} .stage.done .dot{background:#5C7CA0;}
-.stage.active{color:#fff;font-weight:600;} .stage.active .dot{background:var(--gold);box-shadow:0 0 0 4px rgba(216,90,48,.22);}
-.stage .sep{width:22px;height:1px;background:#27486B;margin:0 10px;}
-.tabs{display:flex; gap:8px; margin:22px 0 4px;}
-.tab{display:flex; align-items:center; gap:8px; font-size:14px; font-weight:500; padding:9px 16px; border:1px solid var(--hair); background:var(--surface); border-radius:999px; color:var(--muted); cursor:pointer;}
-.tab.active{background:var(--navy); color:#fff; border-color:var(--navy);}
-.tab .c{width:9px;height:9px;border-radius:50%;}
-.panel{background:var(--surface); border:1px solid var(--hair); border-radius:var(--radius); padding:24px 26px 28px; margin-top:14px; box-shadow:0 1px 2px rgba(20,30,46,.04);}
-h1{font-family:'Source Serif 4',serif; font-weight:500; font-size:26px; margin:0 0 4px;}
-.lede{color:var(--muted); margin:0 0 20px; max-width:70ch;}
-.sec{font-size:12px; letter-spacing:.5px; text-transform:uppercase; color:var(--faint); font-weight:600; margin:6px 0 12px;}
-.grid2{display:grid; grid-template-columns:1.35fr 1fr; gap:24px;} @media(max-width:820px){.grid2{grid-template-columns:1fr}}
-.bar{display:flex; align-items:center; gap:12px; margin-bottom:10px;}
-.bar .nm{width:150px; font-size:13px; flex:none;} .bar .track{flex:1; height:22px; background:#E6F1FB; border-radius:6px; overflow:hidden;}
-.bar .fill{height:100%; border-radius:6px;} .bar .v{width:96px; text-align:right; font-size:13px; font-variant-numeric:tabular-nums; flex:none;}
-.tag{font-size:10px; padding:1px 6px; border-radius:5px; font-weight:500; margin-left:7px; vertical-align:1px;}
-.tag.c{background:#FAECE7;color:var(--liab);}
-.donutwrap{display:flex; align-items:center; gap:18px;}
-.donut{width:150px;height:150px;border-radius:50%; flex:none;
-  background:conic-gradient(var(--realestate) 0 65.7%, var(--retire) 65.7% 91.1%, var(--cash) 91.1% 94.9%, var(--auto) 94.9% 100%);
-  -webkit-mask:radial-gradient(circle 44px at center, transparent 98%, #000 100%); mask:radial-gradient(circle 44px at center, transparent 98%, #000 100%);}
-.leg{font-size:13px;} .leg div{display:flex; align-items:center; gap:8px; margin-bottom:7px;}
-.leg .sw{width:12px;height:12px;border-radius:3px;}
-.netbox{background:#F4F6FA; border:1px solid #D1DEEE; border-radius:var(--radius-sm); padding:16px 18px; margin-top:6px;}
-.netbox .big{font-size:26px; font-weight:600; color:var(--b-ink);} .netbox .sm{font-size:12.5px; color:var(--muted);}
-.flag{display:flex; gap:10px; align-items:flex-start; background:#FAECE7; border:1px solid #F1CDBE; border-radius:var(--radius-sm); padding:11px 14px; margin-bottom:10px;}
-.flag i{color:var(--liab); font-size:19px; margin-top:1px;} .flag .ft{font-weight:600; font-size:13.5px;} .flag .fd{font-size:12.5px; color:var(--muted);}
-/* assumptions */
-.assump{background:#F3F6FB; border:1px solid #D9E4F2; border-radius:var(--radius-sm); padding:16px 18px;}
-.assump h3{margin:0 0 3px; font-size:14px; font-weight:600; color:var(--navy2,#154572); display:flex; align-items:center; gap:8px;}
-.assump .hint{font-size:12.5px; color:var(--muted); margin:0 0 12px;}
-.arow{display:grid; grid-template-columns:1.4fr 90px 1fr; gap:12px; align-items:center; padding:7px 0; border-bottom:1px solid #E4ECF6;}
-.arow:last-child{border-bottom:none;}
-.arow .al{font-size:13px;} .arow input{width:80px; padding:5px 8px; border:1px solid #CDDDF3; border-radius:7px; font-size:13px; text-align:right; font-variant-numeric:tabular-nums;}
-.arow .ae{font-size:12px; color:var(--muted); text-align:right; font-variant-numeric:tabular-nums;}
-.controls{display:flex; gap:24px; flex-wrap:wrap; align-items:flex-end; margin-bottom:14px;}
-.ctl .clbl{font-size:11.5px; letter-spacing:.4px; text-transform:uppercase; color:var(--faint); font-weight:600; margin-bottom:7px;}
-.toggle{display:inline-flex; flex-wrap:wrap; border:1px solid var(--hair); border-radius:12px; overflow:hidden;}
-.toggle button{border:none; border-right:1px solid var(--hair); background:var(--surface); font-size:13px; font-weight:500; padding:9px 15px; cursor:pointer; color:var(--muted);}
-.toggle button:last-child{border-right:none;} .toggle button.on{background:var(--navy); color:#fff;}
-.slider{display:flex; align-items:center; gap:12px; min-width:300px;}
-.slider input[type=range]{flex:1; accent-color:var(--navy);}
-.slider .out{font-size:13.5px; font-weight:600; white-space:nowrap;} .slider .out .da{color:var(--a);} .slider .out .sa{color:var(--b);}
-.slnote{font-size:12.5px; color:var(--muted); margin:-4px 0 14px;}
-.alloc{display:grid; grid-template-columns:1fr 1fr; gap:16px;} @media(max-width:680px){.alloc{grid-template-columns:1fr}}
-.acol{border:1px solid var(--hair); border-radius:var(--radius-sm); padding:15px 17px;}
-.acol.a{background:var(--a-soft);border-color:#D9E4F0;} .acol.b{background:var(--b-soft);border-color:#D1DEEE;}
-.acol .ah{display:flex; align-items:center; justify-content:space-between; margin-bottom:4px;}
-.acol .anm{font-weight:600;} .acol .atot{font-weight:600; font-variant-numeric:tabular-nums;}
-.acol .ashare{font-size:12px; color:var(--muted); margin-bottom:9px;}
-.acol ul{margin:0; padding:0; list-style:none;}
-.acol li{display:flex; justify-content:space-between; gap:12px; font-size:13px; padding:4px 0; border-bottom:1px dashed #DFE6E2;}
-.acol li span:last-child{font-variant-numeric:tabular-nums; white-space:nowrap;} .acol li.eq{color:#8A5208; font-weight:500;}
-.recon{display:flex; align-items:center; gap:10px; background:#EEF4E2; border:1px solid #CFE0B0; border-radius:var(--radius-sm); padding:12px 16px; margin-top:14px; font-size:13.5px; color:var(--up);} .recon b{color:#2C500A;}
-.delaynote{background:#FAECE7; border:1px solid #F1CDBE; border-radius:var(--radius-sm); padding:13px 16px; margin-top:14px; font-size:13px; color:#7A5320;} .delaynote b{color:#5E3F18;}
-.splitbar{display:flex; height:30px; border-radius:8px; overflow:hidden; border:1px solid var(--hair); margin-top:14px;}
-.splitbar .pa{background:var(--a);} .splitbar .pb{background:var(--b);}
-.splitbar div{display:flex;align-items:center;justify-content:center;color:#fff;font-size:12.5px;font-weight:500;}
-.reportbar{display:flex; align-items:center; gap:12px; flex-wrap:wrap; background:#F7F5EF; border:1px solid var(--hair); border-radius:var(--radius-sm); padding:13px 16px; margin-top:22px;}
-.reportbar .rl{font-size:13px; color:var(--muted); flex:1; min-width:220px;}
-.rbtn{font-size:13px; font-weight:500; border:1px solid var(--navy); background:var(--navy); color:#fff; border-radius:8px; padding:8px 14px; cursor:pointer; display:inline-flex; align-items:center; gap:7px;}
-.rbtn.ghost{background:transparent; color:var(--navy);}
-.framing{display:flex; align-items:center; gap:13px; background:#FBF8F0; border:1px solid #ECE3CC; border-radius:var(--radius-sm); padding:13px 17px; margin-top:18px;}
-.framing i{color:var(--gold); font-size:22px;} .framing p{margin:0; font-size:13.5px; color:#4A4332;} .framing b{color:var(--navy);}
-.foot{display:flex; justify-content:space-between; gap:18px; margin-top:18px; padding-top:14px; border-top:1px solid var(--hair); flex-wrap:wrap;}
-.disc{font-size:11.5px; color:var(--faint); max-width:62ch;} .tfe{font-size:12px; color:var(--muted);} .tfe b{color:var(--navy);}
-:root{ --accent:#D85A30; --accent-d:#B04722; --accent-soft:#FAECE7; --success:#1D9E75; --navy2:#154572; }
-.pos{border:1px solid var(--hair); border-radius:var(--radius-sm); padding:14px 16px;}
-.pos.a{background:var(--a-soft);} .pos.b{background:var(--b-soft);}
-.pos .nm{font-weight:600; font-size:13.5px; display:flex; align-items:center; gap:7px;} .pos.a .nm{color:var(--a-ink);} .pos.b .nm{color:var(--b-ink);}
-.pos .tx{font-size:13px; color:var(--ink); margin-top:5px;}
-.statepill{font-size:10.5px; padding:2px 9px; border-radius:999px; font-weight:600; white-space:nowrap; display:inline-flex; align-items:center; gap:4px; margin-left:8px;}
-.statepill.ok{background:#E7F4EF; color:var(--success);} .statepill.cont{background:var(--accent-soft); color:var(--accent-d);}
-.dispute{border:1px solid var(--hair); border-radius:var(--radius-sm); padding:16px 18px; background:#FBFDFF;}
-.dispute .d-int{font-size:13px; color:var(--muted); margin:0 0 12px;}
-.ladder{display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:12px;}
-.step{display:flex; align-items:center; gap:7px; background:#EAF1FB; border:1px solid #CFE0F4; border-radius:8px; padding:7px 12px; font-size:12.5px; font-weight:600; color:var(--navy2);}
-.step .n{width:18px;height:18px;border-radius:50%;background:var(--navy);color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;}
-.step.last{background:var(--accent-soft); border-color:#F1CDBE; color:var(--accent-d);} .step.last .n{background:var(--accent-d);}
-.ladder .arw{color:var(--faint);}
-.dispute textarea{width:100%; min-height:70px; border:1px solid #CDDDF3; border-radius:8px; padding:10px 12px; font-family:inherit; font-size:13px; color:var(--ink); resize:vertical;}
-.dispute .who{font-size:11.5px; color:var(--faint); margin-top:8px; display:flex; align-items:center; gap:6px;}
-.reports{display:flex; gap:12px; flex-wrap:wrap;}
-.rep{display:flex; align-items:center; gap:11px; border:1px solid var(--hair); border-radius:var(--radius-sm); padding:13px 16px; min-width:230px; cursor:pointer; background:var(--surface);}
-.rep i{font-size:22px; color:var(--navy);} .rep .rt{font-weight:600; font-size:14px;} .rep .rs{font-size:11.5px; color:var(--muted);}
-.resolvebar{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-top:18px; background:#F6F9FD; border:1px solid var(--hair); border-radius:var(--radius-sm); padding:13px 18px;}
-.resolvebar .rstat{font-size:13px; display:flex; align-items:center; gap:8px;}
-.resolvebar .rstat.open{color:var(--accent-d);} .resolvebar .rstat.done{color:var(--success); font-weight:600;}
-.btn{font-size:13px; font-weight:600; border:1px solid var(--hair); background:var(--surface); color:var(--ink); border-radius:9px; padding:10px 16px; cursor:pointer; display:inline-flex; align-items:center; gap:7px;}
-.btn.accent{background:var(--accent); color:#fff; border-color:var(--accent);}
-.btn:disabled{background:#E7EBF1; color:#9AA3B0; border-color:#DCE2EA; cursor:not-allowed;}
-.framing{background:#FBFDFF; border-color:#D9E4F2;} .framing p{color:var(--muted);}
-
-/* JX-WAVE1-CSS */
-.metricwrap{background:#EEF3FA;border-bottom:1px solid #D1DEEE;}
-.metricbar{display:flex;gap:26px;align-items:center;flex-wrap:wrap;padding:9px 26px;}
-.metricbar .mtile{display:flex;flex-direction:column;gap:3px;min-width:118px;}
-.metricbar .mtile.sym{min-width:188px;}
-.metricbar .mlabel{font-size:9.5px;letter-spacing:.4px;text-transform:uppercase;font-weight:700;color:#5F5E5A;}
-.metricbar .symnote{color:#9CA0A7;font-weight:600;text-transform:none;letter-spacing:0;}
-.metricbar .mbarwrap{height:7px;border-radius:999px;background:#DCE6F2;overflow:hidden;width:150px;}
-.metricbar .mbarwrap.sm{width:92px;height:6px;display:inline-block;vertical-align:middle;}
-.metricbar .mbar{height:100%;background:#042C53;border-radius:999px;}
-.metricbar .mbar.a{background:#2A5582;} .metricbar .mbar.b{background:#D67E5F;}
-.metricbar .mval{font-size:12px;font-weight:700;color:#042C53;font-variant-numeric:tabular-nums;}
-.metricbar .mval.big{font-size:17px;} .metricbar .mval .of{color:#9CA0A7;font-size:12px;font-weight:600;}
-.metricbar .symrow{display:flex;align-items:center;gap:7px;}
-.metricbar .sl{font-size:9px;font-weight:800;width:13px;height:13px;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;color:#fff;}
-.metricbar .sl.a{background:#2A5582;} .metricbar .sl.b{background:#D67E5F;}
-.metricbar .sv{font-size:11px;font-weight:700;color:#1A1A1A;font-variant-numeric:tabular-nums;width:18px;}
-.stages .ptag{font-size:8px;letter-spacing:.4px;text-transform:uppercase;font-weight:800;margin-left:6px;padding:1px 5px;border-radius:999px;vertical-align:middle;}
-.stages .ptag.each{background:rgba(216,90,48,.22);color:#F0B49B;}
-.stages .ptag.both{background:rgba(122,160,200,.20);color:#B7CBE2;}
-.disc .disclink{color:#B04722;font-weight:700;text-decoration:underline;}
-
-/* JX-WAVE1B-CSS */
-.stages{align-items:flex-start !important; gap:24px !important;}
-.stages .stagegroup{display:flex; flex-direction:column; gap:5px;}
-.stages .stagegroup .sgrow{display:flex; align-items:center; gap:4px; flex-wrap:wrap;}
-.stages .stagegroup .glabel{font-size:8.5px; letter-spacing:.6px; text-transform:uppercase; font-weight:800; text-align:center; padding-top:4px; border-top:2px solid;}
-.stages .stagegroup.each .glabel{color:#F0B49B; border-color:rgba(216,90,48,.55);}
-.stages .stagegroup.both .glabel{color:#B7CBE2; border-color:rgba(122,160,200,.5);}
-.stages .stnum{opacity:.62; font-weight:700; margin-right:1px;}
-
-/* JX-WAVE1C-CSS — single-line stage strip */
-.stages{flex-wrap:nowrap !important; gap:20px !important; overflow-x:auto;}
-.stages .stagegroup .sgrow{flex-wrap:nowrap; gap:11px;}
-.stages .sep{display:none !important;}
-.stages .stage{font-size:11.5px !important; white-space:nowrap;}
-.stages .stagegroup .glabel{font-size:8px;}
-
-/* JX-WAVE1D-CSS — equal-spaced 7-column stage grid */
-.stages.stagesgrid{display:grid !important; grid-template-columns:repeat(7,1fr) !important;
-  align-items:center !important; row-gap:7px !important; column-gap:6px !important;
-  padding:11px 30px 9px !important; overflow:visible !important; flex-wrap:initial !important;}
-.stages.stagesgrid .stage{grid-row:1; justify-self:center; white-space:nowrap; font-size:11.5px !important;}
-.stages.stagesgrid .glabel{grid-row:2; padding-top:5px; border-top:2px solid; text-align:center;
-  font-size:8.5px; letter-spacing:.5px; text-transform:uppercase; font-weight:800;}
-.stages.stagesgrid .glabel.each{grid-column:1 / span 2; color:#F0B49B; border-color:rgba(216,90,48,.55);}
-.stages.stagesgrid .glabel.both{grid-column:3 / span 5; color:#B7CBE2; border-color:rgba(122,160,200,.5);}
-.stages.stagesgrid .sep{display:none;}
-
-/* JX-WAVE1E-CSS — grouped metric bar */
-.metricbar{gap:22px !important; align-items:center !important;}
-.metricbar .mgroup{display:flex; flex-direction:column; gap:5px;}
-.metricbar .mgcap{font-size:8.5px; letter-spacing:.5px; text-transform:uppercase; font-weight:800;}
-.metricbar .mgcap.each{color:#B04722;} .metricbar .mgcap.both{color:#2A5582;}
-.metricbar .mgrow{display:flex; gap:22px; align-items:center; flex-wrap:wrap;}
-.metricbar .mdiv{width:1px; align-self:stretch; background:#D1DEEE; margin:0 2px;}
-.metricbar .sv{width:auto !important; min-width:16px;}
-
-/* JX-WAVE1F-CSS — stacked A-over-B comparison */
-.metricbar .mtile.sym{min-width:158px;}
-.metricbar .mtile.sym .symrow{gap:8px;}
-.metricbar .mtile.sym .mbarwrap.sm{width:110px; height:7px;}
-.metricbar .mtile.sym .sv{min-width:30px; text-align:right;}
+  :root{--navy900:#021A33;--navy800:#042C53;--navy700:#0A3866;--navy600:#154572;--navy500:#2A5582;
+    --coral600:#B04722;--coral500:#D85A30;--coral100:#FAECE7;--coralLt500:#F0997B;
+    --slate500:#5F5E5A;--slate300:#9CA0A7;--white:#FFFFFF;--paper:#F4F6FA;--stone100:#E6F1FB;--stone200:#D1DEEE;--stone300:#B5C5DC;--ink700:#1A1A1A;--teal100:#B6C0D0;--success:#1D9E75;--successS:#E4F3EC;--amber:#B9770B;--amber100:#FBF0DA;--red:#b0361a;--red100:#FBE3DA;
+    --A:#2A5582;--Asoft:#E6F1FB;--B:#B04722;--Bsoft:#FAECE7;--childc:#6B4A9E;--childsoft:#F3ECFB;--sepc:#5F5E5A;
+    --calc:#EEF1F5;--input:#FFF6D6;--inputbd:#E7CE7A;
+    --fdisp:'Source Serif 4',Georgia,serif;--fbody:'Source Sans 3',system-ui,-apple-system,Segoe UI,sans-serif;--fmono:'JetBrains Mono','SF Mono',Menlo,monospace;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--navy800);font-family:var(--fbody);font-size:15px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+  a{color:inherit}
+  .flagbar{background:var(--navy700);color:#CFE0F2;font-size:11.5px;text-align:center;padding:8px 20px;border-bottom:1px solid #21405f}
+  .flagbar b{color:#fff}.flagbar code{background:var(--navy900);color:var(--coralLt500);padding:1px 6px;border-radius:5px;font-size:10.5px;font-family:var(--fmono)}
+  .mo-ribbon{background:var(--coral100);color:var(--coral600);font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;text-align:center;padding:8px 16px;border-bottom:1px solid var(--stone200)}
+  .nav{background:var(--navy800);color:#fff}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 0}
+  .brand{display:flex;align-items:center;gap:9px;font-family:var(--fdisp);font-weight:600;font-size:22px;color:#fff;text-decoration:none}
+  .brand .x{color:var(--coral500)}
+  .navright{display:flex;align-items:center;gap:20px}
+  .backlink{font-size:12.5px;color:var(--teal100);text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:5px}.backlink:hover{color:#fff}
+  .termsw{display:inline-flex;flex-direction:column;align-items:flex-end;gap:3px}
+  .termsw .tlab{font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--slate300)}
+  .termsw .sw{display:inline-flex;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:4px}
+  .termsw .sw a{display:inline-flex;align-items:center;gap:6px;color:var(--teal100);text-decoration:none;font-weight:600;font-size:12px;padding:5px 12px;border-radius:999px;white-space:nowrap;cursor:pointer}
+  .termsw .sw a.on{background:var(--coral500);color:#fff}
+  @media(max-width:620px){.termsw .tlab{display:none}}
+  .jx-term{border-bottom:1px dotted var(--slate300);color:var(--slate500);font-style:italic;cursor:help}
+  .jx-term-strong .jx-term{font-style:normal;color:var(--navy800);border-bottom-color:var(--navy500)}
+  .head{background:var(--navy800);color:var(--paper);padding:24px 0 24px;border-top:1px solid var(--navy600)}
+  .head .ey{color:var(--coralLt500);font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+  .head h1{font-family:var(--fdisp);font-weight:600;font-size:30px;margin:10px 0 6px;color:var(--paper)}
+  .head .sub{color:var(--teal100);font-size:13.5px;max-width:760px;line-height:1.6}
+  .topicnav{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 2px}
+  .topicnav a{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--navy700);background:var(--white);border:1px solid var(--stone200);border-radius:999px;padding:8px 15px;text-decoration:none}
+  .topicnav a.on{background:var(--navy800);color:#fff;border-color:var(--navy800)}.topicnav a:hover:not(.on){border-color:var(--navy500)}
+  .sect{margin:16px 0;background:var(--white);border:1px solid var(--stone200);border-radius:18px;overflow:hidden;box-shadow:0 1px 2px rgba(4,44,83,.04)}
+  .sect-h{display:flex;align-items:center;gap:14px;padding:16px 22px;border-bottom:1px solid var(--stone200)}
+  .sect-h .badge{width:34px;height:34px;flex:0 0 auto;border-radius:999px;background:var(--navy500);color:#fff;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center}
+  .sect-h h2{font-family:var(--fdisp);font-weight:600;font-size:21px;color:var(--navy800);margin:0}
+  .sect-h .ssub{font-size:13px;color:var(--slate500);margin-top:2px}
+  .sect-b{padding:20px 22px}
+  .sect.work{border-color:var(--coralLt500);box-shadow:0 2px 10px rgba(216,90,48,.10);border-left:5px solid var(--coral500)}
+  .sect.work .sect-h{background:var(--coral100)}.sect.work .sect-h .badge{background:var(--coral500)}
+  /* legend for cell states */
+  .stateleg{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--slate500);margin-bottom:12px}
+  .stateleg span{display:inline-flex;align-items:center;gap:6px}
+  .sw-box{width:13px;height:13px;border-radius:3px;border:1px solid var(--stone300)}
+  .sw-box.pre{background:var(--white)}.sw-box.calc{background:var(--calc)}.sw-box.inp{background:var(--input);border-color:var(--inputbd)}
+  /* KPI tiles */
+  .kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+  @media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}}
+  .kpi{border:1px solid var(--stone200);border-radius:12px;padding:13px 15px;background:var(--paper)}
+  .kpi .l{font-size:10px;letter-spacing:.3px;text-transform:uppercase;color:var(--slate500);font-weight:700}
+  .kpi .v{font-family:var(--fdisp);font-size:22px;font-weight:600;color:var(--navy800);margin-top:3px;font-variant-numeric:tabular-nums}
+  .kpi .s{font-size:11px;color:var(--slate500);margin-top:3px}
+  .kpi.warn .v{color:var(--coral600)}
+  /* net-worth statement */
+  .nwtbl{width:100%;border-collapse:collapse;font-size:12.5px}
+  .nwtbl th{background:var(--navy800);color:#fff;text-align:left;padding:8px 10px;font-size:9.5px;text-transform:uppercase;letter-spacing:.3px;font-weight:700;white-space:nowrap}
+  .nwtbl th.r{text-align:right}.nwtbl th.c{text-align:center}
+  .nwtbl td{padding:6px 10px;border-bottom:1px solid var(--stone200);vertical-align:middle}
+  .nwtbl td.r{text-align:right;font-variant-numeric:tabular-nums}
+  .nwtbl tr.cathead td{background:var(--stone100);font-weight:700;color:var(--navy700);text-transform:uppercase;font-size:10px;letter-spacing:.3px;padding-top:9px;padding-bottom:9px}
+  .nwtbl tr.subtot td{background:var(--paper);font-weight:700}
+  .nwtbl tr.networth td{background:var(--navy800);color:#fff;font-weight:700;font-size:13px}
+  .nwtbl tr.networth td .sub2{color:var(--teal100);font-weight:400;font-size:10.5px}
+  .anm{font-weight:600;color:var(--navy800)}.asb{font-size:10.5px;color:var(--slate500)}
+  .calc{background:var(--calc);color:var(--navy700)}
+  .inp{background:var(--input)}
+  .nwtbl input.bal{width:92px;font-family:var(--fmono);font-size:12px;text-align:right;border:1px solid var(--inputbd);background:var(--input);border-radius:5px;padding:3px 6px;color:var(--navy800)}
+  .nwtbl select{font-family:var(--fbody);font-size:11.5px;border:1px solid var(--inputbd);background:var(--input);border-radius:5px;padding:3px 5px;color:var(--navy800);cursor:pointer}
+  .taxpill{font-size:9px;font-weight:700;border-radius:999px;padding:1px 6px;text-transform:uppercase;letter-spacing:.2px}
+  .taxpill.pre{background:var(--coral100);color:var(--coral600)}.taxpill.post{background:var(--successS);color:var(--success)}.taxpill.cg{background:var(--amber100);color:var(--amber)}
+  .clspill{font-size:9.5px;font-weight:700;border-radius:999px;padding:2px 7px;cursor:pointer;border:1px solid transparent}
+  .clspill.marital{background:var(--stone100);color:var(--navy600)}.clspill.separate{background:#EDE7F6;color:var(--childc)}.clspill.disputed{background:var(--amber100);color:var(--amber)}
+  .nwtbl tr.disprow td{background:#FEFBF2}
+  .pctbar{display:inline-block;width:60px;height:7px;background:var(--stone100);border:1px solid var(--stone200);border-radius:999px;overflow:hidden;vertical-align:middle;margin-right:5px}
+  .pctbar i{display:block;height:100%;background:var(--navy500)}
+  .attr-A{color:var(--A);font-weight:700}.attr-B{color:var(--B);font-weight:700}.attr-joint{color:var(--navy600);font-weight:700}.attr-child{color:var(--childc);font-weight:700}
+  /* division panel */
+  .divwrap{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px}
+  @media(max-width:760px){.divwrap{grid-template-columns:1fr}}
+  .divcard{border:1px solid var(--stone200);border-radius:14px;overflow:hidden}
+  .divcard .dh{padding:12px 16px;font-weight:700;color:#fff;display:flex;justify-content:space-between;align-items:center}
+  .divcard.A .dh{background:var(--A)}.divcard.B .dh{background:var(--B)}
+  .divcard .db{padding:12px 16px;font-size:13px}
+  .divrow{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--stone200)}.divrow:last-child{border-bottom:none}
+  .divrow .n{color:var(--slate500)}.divrow .v{font-weight:700;font-variant-numeric:tabular-nums}
+  .split100{display:flex;height:30px;border-radius:8px;overflow:hidden;border:1px solid var(--stone200);margin-top:10px;font-size:12px;font-weight:700}
+  .split100 .sa{background:var(--Asoft);color:var(--A);display:flex;align-items:center;justify-content:center}.split100 .sb{background:var(--Bsoft);color:var(--B);display:flex;align-items:center;justify-content:center}
+  .reconcile{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px;border-radius:10px;padding:11px 15px;font-size:13px;border:1px solid}
+  .reconcile.ok{background:var(--successS);border-color:#Bfe3d0;color:#155e3f}.reconcile.off{background:var(--amber100);border-color:#E7D3A8;color:#7a5606}
+  .reconcile .eqp{margin-left:auto;font-family:var(--fmono);font-weight:700;font-size:12.5px}
+  .unassigned{font-size:12px;color:var(--coral600);font-weight:600;margin-top:8px}
+  /* affordability */
+  .scenrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:4px 0 8px}
+  .segsw{display:inline-flex;border:1px solid var(--stone200);border-radius:999px;overflow:hidden;background:var(--white)}
+  .segsw button{font-family:var(--fbody);font-size:12.5px;font-weight:600;color:var(--navy700);background:var(--white);border:none;padding:8px 15px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+  .segsw button.on{background:var(--navy800);color:#fff}
+  .scennote{font-size:12.5px;color:var(--slate500)}
+  .afford{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:820px){.afford{grid-template-columns:1fr}}
+  .pcard{background:var(--white);border:1px solid var(--stone200);border-radius:14px;overflow:hidden}
+  .pcard .ph{padding:12px 16px;border-bottom:1px solid var(--stone200);display:flex;align-items:center;justify-content:space-between}
+  .pcard.A .ph{background:var(--Asoft)}.pcard.B .ph{background:var(--Bsoft)}
+  .pcard .pn{font-family:var(--fdisp);font-weight:600;font-size:15px;color:var(--navy800)}.pcard .pinc{font-size:11.5px;color:var(--slate500)}
+  .pcard .flag{font-size:11.5px;font-weight:600;padding:8px 16px;line-height:1.45}.pcard .flag.warn{background:var(--red100);color:var(--red)}.pcard .flag.ok{background:var(--successS);color:#155e3f}
+  .ftbl{width:100%;border-collapse:collapse;font-size:11.5px}.ftbl th{padding:6px 9px;font-size:9px;background:var(--stone100);color:var(--navy700);text-align:right}.ftbl th:first-child{text-align:left}
+  .ftbl td{padding:6px 9px;border-bottom:1px solid var(--stone200);text-align:right;font-variant-numeric:tabular-nums}.ftbl td:first-child{text-align:left}
+  .ftbl td.neg{color:var(--red);font-weight:700}.ftbl tr.mile td{background:var(--amber100);color:#7a5606}.ftbl .yl{font-weight:700;color:var(--navy800)}
+  .assume{font-size:11.5px;color:var(--slate500);line-height:1.5;margin-top:12px;background:var(--stone100);border:1px solid var(--stone200);border-radius:10px;padding:11px 14px}.assume b{color:var(--navy700)}.assume code{font-family:var(--fmono);font-size:10.5px}
+  .rcap{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}@media(max-width:820px){.rcap{grid-template-columns:repeat(2,1fr)}}
+  .rcap .rc{border:1px solid var(--stone200);border-radius:12px;padding:13px 15px;background:var(--paper)}
+  .rcap .rc .l{font-size:10px;letter-spacing:.3px;text-transform:uppercase;color:var(--slate500);font-weight:700}.rcap .rc .v{font-family:var(--fdisp);font-size:18px;font-weight:600;color:var(--navy800);margin-top:3px}.rcap .rc .s{font-size:11px;color:var(--slate500);margin-top:2px}
+  .feeds{font-size:13.5px;color:var(--ink700);line-height:1.6;margin-top:14px}.feeds b{color:var(--navy800)}
+  .from{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:12.5px;font-weight:600;color:var(--navy600);text-decoration:none}.from:hover{color:var(--coral600)}
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+  .btn{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;text-decoration:none;border-radius:999px;padding:10px 18px;border:1px solid var(--stone200);background:var(--white);color:var(--navy800)}.btn.p{background:var(--navy800);color:#fff;border-color:var(--navy800)}
+  .posture{font-size:12.5px;color:var(--slate500);line-height:1.55;margin:24px auto 4px;text-align:center;max-width:820px}
+  .foot{background:var(--navy800);color:#9FB6D2;padding:22px 0;margin-top:20px;font-size:12.5px}.foot .fin{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}.foot b{color:#fff}
+  /* editable account name + comment */
+  .nwtbl input.nm{width:100%;min-width:150px;font-family:var(--fbody);font-size:12.5px;font-weight:600;color:var(--navy800);border:1px solid transparent;border-bottom:1px dashed var(--stone300);background:transparent;border-radius:5px 5px 0 0;padding:2px 5px}
+  .nwtbl input.nm:hover,.nwtbl input.nm:focus{border-color:var(--inputbd);background:var(--input);border-radius:5px;outline:none}
+  .nwtbl input.cmt{width:100%;min-width:150px;font-family:var(--fbody);font-size:10.5px;color:var(--slate500);border:1px solid transparent;background:transparent;border-radius:5px;padding:1px 5px;margin-top:1px}
+  .nwtbl input.cmt:hover,.nwtbl input.cmt:focus{border-color:var(--inputbd);background:var(--input);outline:none}
+  .nwtbl input.cmt::placeholder{color:var(--slate300);font-style:italic}
+  /* percent split inputs */
+  .nwtbl input.pct{width:50px;font-family:var(--fmono);font-size:11.5px;text-align:right;border:1px solid var(--inputbd);background:var(--input);border-radius:5px;padding:3px 5px;color:var(--navy800)}
+  .nwtbl input.pct:disabled{background:var(--calc);border-color:var(--stone200);color:var(--slate300)}
+  .nwtbl td.sig{font-family:var(--fmono);font-weight:700;font-size:11px;text-align:center}
+  .nwtbl td.sig.ok{color:var(--success)}.nwtbl td.sig.bad{color:var(--red)}
+  .nwtbl .rmv{border:none;background:transparent;color:var(--slate300);cursor:pointer;font-size:14px;line-height:1;padding:2px 4px;border-radius:5px}
+  .nwtbl .rmv:hover{color:var(--red);background:var(--red100)}
+  .nwtbl tr.addrow td{padding:5px 10px;background:var(--white)}
+  .addbtn{display:inline-flex;align-items:center;gap:5px;font-family:var(--fbody);font-size:11px;font-weight:600;color:var(--navy600);background:var(--white);border:1px dashed var(--stone300);border-radius:7px;padding:4px 10px;cursor:pointer}
+  .addbtn:hover{border-color:var(--navy500);color:var(--navy800);background:var(--stone100)}
+  .nwtbl tr.subtot td.r.a{color:var(--A)}.nwtbl tr.subtot td.r.b{color:var(--B)}.nwtbl tr.subtot td.r.c{color:var(--childc)}
+  .nwtbl th.a{color:var(--coralLt500)}.nwtbl th.bc{color:#F2C7B6}.nwtbl th.cc{color:#CDB6E8}
+  .taxpanel{display:flex;align-items:center;gap:18px;flex-wrap:wrap;background:var(--stone100);border:1px solid var(--stone200);border-radius:10px;padding:11px 15px;margin-bottom:14px}
+  .taxpanel .tpt{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;color:var(--navy700)}
+  .taxpanel label{font-size:12px;color:var(--slate500);display:inline-flex;align-items:center;gap:7px;font-weight:600}
+  .taxpanel input{width:58px;font-family:var(--fmono);font-size:12px;text-align:right;border:1px solid var(--inputbd);background:var(--input);border-radius:5px;padding:4px 6px;color:var(--navy800)}
+  .taxpanel .hint{font-size:11px;color:var(--slate500);margin-left:auto}
+  /* party totals */
+  .ptot{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:8px}
+  @media(max-width:760px){.ptot{grid-template-columns:1fr}}
+  .ptot .pt{border:1px solid var(--stone200);border-radius:12px;overflow:hidden}
+  .ptot .pt .h{padding:9px 14px;font-weight:700;color:#fff;display:flex;justify-content:space-between;align-items:center;font-size:13px}
+  .ptot .pt.A .h{background:var(--A)}.ptot .pt.B .h{background:var(--B)}.ptot .pt.C .h{background:var(--childc)}
+  .ptot .pt .b{padding:10px 14px}
+  .ptot .pt .amt{font-family:var(--fdisp);font-size:22px;font-weight:600;color:var(--navy800);font-variant-numeric:tabular-nums}
+  .ptot .pt .cap{font-size:11px;color:var(--slate500);margin-top:2px}
+  .split100 .sc{background:var(--childsoft);color:var(--childc);display:flex;align-items:center;justify-content:center}
+  .sepnote{font-size:11.5px;color:var(--slate500);background:var(--stone100);border:1px solid var(--stone200);border-radius:8px;padding:8px 12px;margin-top:10px;line-height:1.5}.sepnote b{color:var(--navy700)}
+  .detailwrap{margin-top:16px;border:1px solid var(--stone200);border-radius:12px;padding:12px 14px;background:var(--paper)}
+  .detailwrap>summary{font-family:var(--fdisp);font-weight:600;font-size:15px;color:var(--navy800);cursor:pointer;list-style:none}
+  .detailwrap>summary::-webkit-details-marker{display:none}
+  .detailwrap>summary::before{content:'▸';color:var(--coral500);margin-right:8px;font-size:12px}
+  .detailwrap[open]>summary::before{content:'▾'}
+  .detailwrap .dhint{font-family:var(--fbody);font-weight:400;font-size:12px;color:var(--slate500)}
+  .undobar{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--slate500);background:var(--amber100);border:1px solid #E7D3A8;border-radius:8px;padding:7px 12px;margin-top:10px}
+  .undobar button{font-family:var(--fbody);font-size:12px;font-weight:700;color:var(--coral600);background:var(--white);border:1px solid var(--stone300);border-radius:7px;padding:3px 10px;cursor:pointer;margin-left:auto}
+  .scenhead{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:24px 0 8px}
+  .scentbl{width:100%;border-collapse:collapse;font-size:12px;margin-top:4px}
+  .scentbl th,.scentbl td{border:1px solid var(--stone200);padding:8px 11px;text-align:right;font-variant-numeric:tabular-nums}
+  .scentbl th:first-child,.scentbl td:first-child{text-align:left}
+  .scentbl thead th{background:var(--navy800);color:#fff;font-size:10px;text-transform:uppercase;letter-spacing:.3px;font-weight:700}
+  .scentbl thead th.live{background:var(--coral500)}
+  .scentbl td.rl{font-weight:600;color:var(--navy700);background:var(--paper)}
+  .scentbl .actrow td{background:var(--paper);text-align:center}
+  .scentbl .mini{font-family:var(--fbody);font-size:10.5px;font-weight:700;border-radius:6px;padding:3px 8px;cursor:pointer;border:1px solid var(--stone300);background:var(--white);color:var(--navy700);margin:0 2px}
+  .scentbl .mini:hover{border-color:var(--navy500)}.scentbl .mini.del:hover{border-color:var(--red);color:var(--red)}
+  .scenempty{font-size:12px;color:var(--slate500);background:var(--stone100);border:1px dashed var(--stone300);border-radius:8px;padding:10px 14px}
+  /* class cell: pill + disputed flag */
+  .clscell{white-space:nowrap}
+  .dispflag{display:inline-flex;align-items:center;margin-left:5px;color:var(--stone300);cursor:pointer;font-size:12px;vertical-align:middle}
+  .dispflag:hover{color:var(--amber)}.dispflag.on{color:var(--amber)}
+  /* division slider */
+  .slwrap{min-width:150px}
+  .sllab{display:flex;justify-content:space-between;font-size:9.5px;font-weight:700;margin-bottom:2px}
+  .sllab .la{color:var(--A)}.sllab .lb{color:var(--B)}.sllab .lca{color:var(--childc)}.sllab .lcb{color:var(--coral600)}
+  input[type=range].divsl,input[type=range].childsl{width:100%;height:5px;-webkit-appearance:none;appearance:none;border-radius:999px;outline:none;margin:3px 0 1px;cursor:pointer;
+    background:linear-gradient(to right,var(--A),var(--B))}
+  input[type=range].childsl{background:linear-gradient(to right,var(--childc),var(--coral500))}
+  input[type=range].divsl::-webkit-slider-thumb,input[type=range].childsl::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:16px;height:16px;border-radius:50%;background:#fff;border:2px solid var(--navy700);cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,.25)}
+  input[type=range].divsl::-moz-range-thumb,input[type=range].childsl::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:#fff;border:2px solid var(--navy700);cursor:pointer}
+  .divc{padding-top:4px;padding-bottom:4px}
+  .xref{font-size:10.5px;font-weight:600;text-align:center;border-radius:6px;padding:5px 6px}
+  .xref.separate{background:#EDE7F6;color:var(--childc)}.xref.children{background:var(--childsoft);color:var(--childc)}
+  td.adol,td.bdol{font-weight:600}
+  /* separate owner toggle */
+  .ownsw{display:inline-flex;border:1px solid var(--stone200);border-radius:999px;overflow:hidden}
+  .ownsw .ownb{font-family:var(--fbody);font-size:11px;font-weight:600;color:var(--navy700);background:var(--white);border:none;padding:4px 12px;cursor:pointer}
+  .ownsw .ownb.on{background:var(--navy800);color:#fff}
+  .dispmini{font-size:9.5px;font-weight:700;color:var(--amber);background:var(--amber100);border-radius:5px;padding:1px 5px;white-space:nowrap}
+  .xreftop{font-weight:600;color:var(--navy800)}
+  .xrefempty{font-size:12px;color:var(--slate500);padding:12px 14px !important;background:var(--stone100)}
+  .ksa,.ksb{font-weight:600}
+  .pt.held .h{background:var(--slate500)!important}
+  /* sub-controls under the account name (pension coverture, dual position) */
+  .subctl{font-size:10px;color:var(--slate500);margin-top:3px;display:flex;align-items:center;gap:3px;flex-wrap:wrap;line-height:1.5}
+  .subctl.pen{color:var(--navy600)}.subctl.dis{color:var(--amber)}
+  .subctl b{color:var(--navy700)}
+  .mini2{width:52px;font-family:var(--fmono);font-size:10px;text-align:right;border:1px solid var(--inputbd);background:var(--input);border-radius:4px;padding:1px 4px;color:var(--navy800)}
+  .miniuse{font-family:var(--fbody);font-size:10px;border:1px solid var(--inputbd);background:var(--input);border-radius:4px;padding:1px 3px;color:var(--navy800)}
+  /* quick-assign chips + method */
+  .quickrow{display:flex;align-items:center;justify-content:space-between;gap:3px;margin-top:5px}
+  .qc{font-family:var(--fbody);font-size:9.5px;font-weight:700;color:var(--navy700);background:var(--white);border:1px solid var(--stone300);border-radius:5px;padding:2px 7px;cursor:pointer;line-height:1.3}
+  .qc:hover{border-color:var(--navy500);background:var(--stone100)}
+  .methrow{display:flex;align-items:center;gap:5px;margin-top:5px}
+  .methlab{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;color:var(--slate500)}
+  .methsel{flex:1;font-family:var(--fbody);font-size:10px;border:1px solid var(--stone300);border-radius:5px;padding:2px 4px;color:var(--navy700);background:var(--white);cursor:pointer}
+  .methnote{font-size:9px;color:var(--coral600);margin-top:3px;text-align:right}
+  .nwtbl td.neg,.nwtbl tr.subtot td.neg{color:var(--red)}
+  .qmark{display:inline-flex;align-items:center;justify-content:center;width:13px;height:13px;border-radius:50%;background:var(--stone200);color:var(--navy600);font-size:9px;font-weight:700;cursor:help;vertical-align:middle}
+  .qmark:hover{background:var(--navy500);color:#fff}
+  .addadv{font-family:var(--fbody);font-size:9.5px;font-weight:600;color:var(--navy500);background:none;border:none;border-bottom:1px dotted var(--stone300);cursor:pointer;padding:0 0 1px;display:inline-flex;align-items:center;gap:2px}
+  .addadv:hover{color:var(--coral600)}
+  .tinyx{border:none;background:none;color:var(--slate300);cursor:pointer;font-size:12px;line-height:1;padding:0 2px}.tinyx:hover{color:var(--red)}
+  .nwtbl input.dol{width:82px;font-family:var(--fmono);font-size:11.5px;text-align:right;border:1px solid var(--inputbd);background:var(--input);border-radius:5px;padding:3px 6px;color:var(--navy800)}
+  /* target-split control */
+  .targetctl{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:var(--stone100);border:1px solid var(--stone200);border-radius:10px;padding:10px 15px;margin:4px 0 10px}
+  .targetctl .tct-l{font-size:12px;font-weight:700;color:var(--navy700);display:inline-flex;align-items:center;gap:6px}
+  .targetctl .tgl{font-size:12px;font-weight:700;font-variant-numeric:tabular-nums}.targetctl .tgl.a{color:var(--A)}.targetctl .tgl.b{color:var(--B)}
+  .targetctl #tgtsl{flex:1;min-width:140px;height:6px;-webkit-appearance:none;appearance:none;border-radius:999px;background:linear-gradient(to right,var(--A),var(--B));cursor:pointer}
+  .targetctl #tgtsl::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:#fff;border:2px solid var(--navy700);cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,.25)}
+  .targetctl #tgtsl::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#fff;border:2px solid var(--navy700);cursor:pointer}
+  /* category collapse */
+  .nwtbl tr.cathead[data-cat]{cursor:pointer;user-select:none}
+  .nwtbl tr.cathead[data-cat]:hover td{background:var(--stone200)}
+  .cvchev{display:inline-block;width:12px;color:var(--coral500);font-size:10px}
+  .catn{background:var(--stone200);color:var(--navy600);border-radius:999px;padding:0 6px;font-size:9px;font-weight:700;margin-left:4px}
+  .collbar{font-size:11.5px;color:var(--slate500);display:inline-flex;align-items:center;gap:5px}
+  .lnkbtn{font-family:var(--fbody);font-size:11.5px;font-weight:600;color:var(--navy600);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline}
+  .lnkbtn:hover{color:var(--coral600)}
+  /* page-section collapse */
+  .sect-h.collapsible{cursor:pointer}
+  .sect-h.collapsible .cvchev2{margin-left:auto;color:var(--slate300);font-size:14px;transition:transform .15s}
+  .sect.sect-collapsed .sect-b{display:none}
+  .sect.sect-collapsed .sect-h.collapsible .cvchev2{transform:rotate(-90deg)}
+  .seccollbar{display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--slate500);margin:14px 0 0;justify-content:flex-end}
 </style>
 </head>
 <body>
-<header class="appbar">
-  <div style="display:flex;align-items:center;"><img class="bmark" src="https://justicex.ai/assets/brand-mark.png" alt=""/><span class="wordmark">Justice<span class="x">X</span></span><span class="tagline">Objective comparison</span></div>
-  <div class="matterchip"><span class="neutralpill">Neutral workspace</span></div>
-</header>
-<div class="stages stagesgrid"><a class="stage done" href="plan.html"><span class="dot"></span> <span class="stnum">1.</span> Plan</a><a class="stage done" href="intake.html"><span class="dot"></span> <span class="stnum">2.</span> Intake</a><a class="stage done" href="redact.html"><span class="dot"></span> <span class="stnum">3.</span> Redact</a><a class="stage done" href="summarize.html"><span class="dot"></span> <span class="stnum">4.</span> Summarize</a><a class="stage done" href="gap-analysis.html"><span class="dot"></span> <span class="stnum">5.</span> Gap Analysis</a><span class="stage active"><span class="dot"></span> <span class="stnum">6.</span> Resolution</span><a class="stage" href="memorandum.html"><span class="dot"></span> <span class="stnum">7.</span> Memorandum</a><div class="glabel each">Each Party — Separate</div><div class="glabel both">Both Parties — Together</div></div><div class="metricwrap"><div class="metricbar"><div class="mgroup"><div class="mgcap each">Each party</div><div class="mgrow"><div class="mtile sym"><div class="mlabel">Matter completeness</div><div class="symrow"><span class="sl a">A</span><div class="mbarwrap sm"><div class="mbar a" style="width:86%"></div></div><span class="sv">86%</span></div><div class="symrow r2"><span class="sl b">B</span><div class="mbarwrap sm"><div class="mbar b" style="width:81%"></div></div><span class="sv">81%</span></div></div><div class="mtile sym"><div class="mlabel">Matter evidence quality <a href="strength-comparison.html" style="color:#B04722;font-weight:700;text-decoration:none;font-size:9px;text-transform:none;letter-spacing:0">compare ›</a></div><div class="symrow"><span class="sl a">A</span><div class="mbarwrap sm"><div class="mbar a" style="width:72%"></div></div><span class="sv">72</span></div><div class="symrow r2"><span class="sl b">B</span><div class="mbarwrap sm"><div class="mbar b" style="width:68%"></div></div><span class="sv">68</span></div></div></div></div><div class="mdiv"></div><div class="mgroup"><div class="mgcap both">Both parties</div><div class="mgrow"><div class="mtile"><div class="mlabel">Alignment</div><div style="display:flex;align-items:center;gap:8px"><div class="mbarwrap"><div class="mbar" style="width:64%"></div></div><div class="mval">64%</div></div></div><div class="mtile"><div class="mlabel">Topics resolved</div><div class="mval big">5<span class="of">/8</span></div></div></div></div></div></div>
-<div class="app">
-  <div class="tabs">
-    <div class="tab"><span class="c" style="background:#6F5AA6"></span> Children</div>
-    <div class="tab active"><span class="c" style="background:var(--retire)"></span> Finances &amp; property</div>
-    <div class="tab"><span class="c" style="background:#B5832E"></span> Support</div>
+<div class="flagbar">Mock for review — behind flag <code>matter_workspace_v1</code>. A working net-worth &amp; division tool mirroring your model (2a. Financial - Assets) + affordability (B2). Edit any <b>pale-yellow</b> cell; gray cells calculate. Synthetic high-asset Delgado data, illustrative <code>[verify]</code>. Not legal/financial advice.</div>
+<div class="mo-ribbon">Sample · Synthetic matter (“Delgado”) · Finances &amp; property — net-worth statement, division &amp; affordability</div>
+<nav class="nav"><div class="wrap"><div class="nav-in">
+  <a class="brand" href="/index.html">Justice<span class="x">X</span></a>
+  <div class="navright"><a class="backlink" id="backLink" href="matter-workspace.html"><i class="ti ti-arrow-left"></i> Back to the Matter Workspace</a><span class="termsw" id="termsw"></span></div>
+</div></div></nav>
+
+<header class="head"><div class="wrap">
+  <div class="ey"><i class="ti ti-scale"></i> By topic · a working net-worth &amp; division tool</div>
+  <h1>Finances &amp; property</h1>
+  <div class="sub">Every asset and debt in one statement — tax-adjusted, split marital vs. separate, and divided any way across the two of you (and the children, if you choose). Change any figure or percentage and the net worth, each party’s share, the equalizing payment, and whether each of you can afford it all recompute — reconciled to the dollar.</div>
+</div></header>
+
+<div class="wrap">
+  <div class="topicnav" id="topicnav"></div>
+  <div class="seccollbar"><i class="ti ti-layout-list"></i> Sections: <button class="lnkbtn" id="secColl">Collapse all</button> · <button class="lnkbtn" id="secOpen">Expand all</button></div>
+
+  <div class="sect">
+    <div class="sect-h collapsible"><div class="badge">1</div><div><h2>Get oriented</h2><div class="ssub">Where the whole estate stands — net worth, each of your shares, and what’s still open.</div></div><i class="ti ti-chevron-down cvchev2"></i></div>
+    <div class="sect-b"><div class="kpis" id="kpis"></div></div>
   </div>
-  <div class="panel">
-    <h1>Finances &amp; property — the full picture</h1>
-    <p class="lede">Everything here is connected, and every number below comes from your inputs and the assumptions you set. Change an assumption and the whole picture — and any report you generate — recalculates.</p>
 
-    <div class="sec"><i class="ti ti-users"></i> Where the parties stand</div>
-    <div class="grid2" style="margin-bottom:6px">
-      <div class="pos a"><div class="nm"><i class="ti ti-user"></i> Dana — Party A</div><div class="tx">Wishes to keep the family home to stay with the children, and to treat the full 401(k) as shared absent records showing a separate portion.</div></div>
-      <div class="pos b"><div class="nm"><i class="ti ti-user"></i> Samuel — Party B</div><div class="tx">Open to a delayed sale; asks that a documented pre-marital part of the 401(k) be treated as separate, and that the cost of a delay be reflected.</div></div>
-    </div>
-
-    <div class="grid2">
-      <div>
-        <div class="sec">What the couple owns and owes (gross)</div>
-        <div class="bar"><span class="nm">Family home<span class="tag c">value contested</span></span><div class="track"><div class="fill" style="width:100%;background:var(--realestate)"></div></div><span class="v">$700,000</span></div>
-        <div class="bar"><span class="nm">Retirement<span class="tag c">split contested</span></span><div class="track"><div class="fill" style="width:38.6%;background:var(--retire)"></div></div><span class="v">$270,000</span></div>
-        <div class="bar"><span class="nm">Vehicles (2)</span><div class="track"><div class="fill" style="width:7.9%;background:var(--auto)"></div></div><span class="v">$55,000</span></div>
-        <div class="bar"><span class="nm">Bank &amp; cash</span><div class="track"><div class="fill" style="width:5.7%;background:var(--cash)"></div></div><span class="v">$40,000</span></div>
-        <div class="bar"><span class="nm">Mortgage</span><div class="track"><div class="fill" style="width:57.1%;background:var(--liab)"></div></div><span class="v">–$400,000</span></div>
-        <div class="bar"><span class="nm">Loans &amp; cards</span><div class="track"><div class="fill" style="width:6.4%;background:var(--liab)"></div></div><span class="v">–$45,000</span></div>
+  <div class="sect work">
+    <div class="sect-h collapsible"><div class="badge">2</div><div><h2>Work the estate to resolution</h2><div class="ssub">The net-worth statement, the division &amp; equalizing payment, and whether each of you can afford it — all live.</div></div><i class="ti ti-chevron-down cvchev2"></i></div>
+    <div class="sect-b">
+      <div class="taxpanel" id="taxpanel">
+        <span class="tpt"><i class="ti ti-adjustments"></i> Tax assumptions</span>
+        <label>Income tax (Pre-Tax accounts) <input id="txOrd" value="30" inputmode="decimal">%</label>
+        <label>Capital-gains tax <input id="txCg" value="28" inputmode="decimal">%</label>
+        <span class="hint">Every <b>Net of tax</b> figure = Balance minus tax: a <b>Pre-Tax</b> balance is haircut at the income rate, a <b>Capital-Gains</b> balance on its embedded gain, a <b>Post-Tax</b> balance unchanged. Computed per line, before any division. <code>[verify]</code></span>
       </div>
-      <div>
-        <div class="sec">Asset mix</div>
-        <div class="donutwrap">
-          <div class="donut"></div>
-          <div class="leg">
-            <div><span class="sw" style="background:var(--realestate)"></span> Home — 66%</div>
-            <div><span class="sw" style="background:var(--retire)"></span> Retirement — 25%</div>
-            <div><span class="sw" style="background:var(--auto)"></span> Vehicles — 5%</div>
-            <div><span class="sw" style="background:var(--cash)"></span> Bank &amp; cash — 4%</div>
-          </div>
-        </div>
-        <div class="netbox"><div class="big" id="net">$560,600</div><div class="sm" id="netsm">Net shared estate, after tax. Retirement is shown after the tax discount you set below.</div></div>
+      <div class="stateleg">
+        <span><span class="sw-box pre"></span> Pre-loaded / confirmed</span>
+        <span><span class="sw-box calc"></span> Calculated (read-only)</span>
+        <span><span class="sw-box inp"></span> Editable input</span>
+        <span style="margin-left:auto"><b style="color:var(--navy700)">Tax:</b> <span class="taxpill pre">Pre</span> = Pre-Tax · <span class="taxpill post">Post</span> = Post-Tax · <span class="taxpill cg">CG</span> = Capital Gains</span>
       </div>
-    </div>
-
-    <div class="sec" style="margin-top:26px">Still contested</div>
-    <div class="flag"><i class="ti ti-alert-triangle"></i><div><div class="ft">The family home's value <span class="statepill cont">Open</span></div><div class="fd">The two sides assume different values. An appraisal would settle it. → see the Home issue</div></div></div>
-    <div class="flag"><i class="ti ti-alert-triangle"></i><div><div class="ft">How much of the 401(k) is shared <span class="statepill cont">Open</span></div><div class="fd">Part may pre-date the marriage (records needed). Affects up to ~$180,000. → see the Retirement issue</div></div></div>
-    <div class="flag"><i class="ti ti-versions"></i><div><div class="ft">Consistency check — home value <span class="statepill cont">Private to Party B</span></div><div class="fd">Party B's entered home value ($640,000) is below Party B's own uploaded appraisal ($680,000). Flagged privately to confirm or correct; lowers evidence quality until reconciled. JusticeX flags the mismatch only — it doesn't decide which figure is right.</div></div></div>
-
-    <div class="grid2" style="margin-top:26px; align-items:start">
-      <div>
-        <div class="sec">A proposed split — and how it balances</div>
-        <div class="controls">
-          <div class="ctl"><div class="clbl">What happens to the home</div>
-            <div class="toggle">
-              <button class="on" data-s="keep" onclick="setScn('keep')">Dana keeps it</button>
-              <button data-s="delay" onclick="setScn('delay')">Delayed sale</button>
-              <button data-s="sell" onclick="setScn('sell')">Sell now</button>
-            </div>
-          </div>
-          <div class="ctl"><div class="clbl">Overall split of the estate</div>
-            <div class="slider"><input type="range" min="35" max="65" step="1" value="50" id="pcta" oninput="render()"><span class="out" id="pctout"></span></div>
-          </div>
-        </div>
-        <div class="slnote">“Equitable” doesn't mean equal — the split is often not 50/50. Drag the dial; the breakdown rebalances with an equalizing payment and still reconciles.</div>
-        <div class="alloc" id="alloc"></div>
-        <div class="splitbar" id="splitbar"></div>
-        <div class="recon"><i class="ti ti-circle-check" style="font-size:18px"></i><span id="recon"></span></div>
-        <div class="delaynote" id="delaynote" style="display:none"></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:6px 0 6px">
+        <span style="font-family:var(--fdisp);font-weight:600;font-size:16px;color:var(--navy800)">Marital estate — what divides between you</span>
+        <span class="collbar"><i class="ti ti-list-tree"></i> Categories: <button class="lnkbtn" id="collAll">Collapse all</button> · <button class="lnkbtn" id="openAll">Expand all</button></span>
       </div>
-      <div>
-        <div class="sec">Assumptions you can adjust</div>
-        <div class="assump">
-          <h3><i class="ti ti-adjustments"></i> These drive the math</h3>
-          <p class="hint">Set and review these together with your mediator or attorney. Every figure on this page — and in any report — uses exactly these.</p>
-          <div class="arow"><span class="al">Tax on retirement (effective)</span><span><input id="tax" type="number" value="22" min="0" max="50" step="1" oninput="render()">%</span><span class="ae" id="taxeff"></span></div>
-          <div class="arow"><span class="al">Discount rate (present value)</span><span><input id="disc" type="number" value="4" min="0" max="12" step="0.5" oninput="render()">%</span><span class="ae" id="disceff"></span></div>
-          <div class="arow"><span class="al">Hold the home for</span><span><input id="hold" type="number" value="6" min="0" max="18" step="1" oninput="render()"> yrs</span><span class="ae" id="holdeff"></span></div>
-          <div class="arow"><span class="al">Cost of a delay is</span><span style="font-size:12.5px;text-align:right">shared</span><span class="ae">reduces the present value of the estate</span></div>
-        </div>
-        <div style="font-size:12.5px;color:var(--muted);margin-top:18px;display:flex;gap:8px;align-items:flex-start"><i class="ti ti-info-circle" style="color:var(--navy3)"></i><span>Reports render exactly these assumptions and results — nothing new. See <b>Reports available</b> below.</span></div>
+      <div class="ssub" style="font-size:12px;color:var(--slate500);margin-bottom:8px">Every marital asset and debt, tax-adjusted, split across the two of you (and children, if you choose). <b>Edit any cell directly</b> — name, balance, tax, the slider or the $ boxes; the chips (Marisol / ½ / Andrés) assign a whole asset. <b>Click a category header</b> to collapse it (its subtotal stays). <b>×</b> removes; <b>Add account</b> adds.</div>
+      <div style="overflow-x:auto"><table class="nwtbl" id="nwtbl"></table></div>
+      <div id="undobar"></div>
+      <div class="sepnote" id="sepnote"></div>
+
+      <div style="font-family:var(--fdisp);font-weight:600;font-size:16px;color:var(--navy800);margin:24px 0 4px">Separate property — held out, kept by its owner</div>
+      <div class="ssub" style="font-size:12px;color:var(--slate500);margin-bottom:8px">Cross-referenced from the statement above — anything you set to <b>Separate</b> appears here. Assign whose it is; it doesn't divide.</div>
+      <div style="overflow-x:auto"><table class="nwtbl" id="septbl"></table></div>
+
+      <div style="font-family:var(--fdisp);font-weight:600;font-size:16px;color:var(--navy800);margin:24px 0 4px">Children's accounts — held for the children, allocated by child</div>
+      <div class="ssub" style="font-size:12px;color:var(--slate500);margin-bottom:8px">Cross-referenced from the statement above (plus 529s) — anything you set to <b>Children</b> appears here. Split each account between Sofía and Diego; it sits outside the parties' division.</div>
+      <div style="overflow-x:auto"><table class="nwtbl" id="ctbl"></table></div>
+
+      <div style="font-family:var(--fdisp);font-weight:600;font-size:16px;color:var(--navy800);margin:24px 0 4px">Division — total by party</div>
+      <div class="targetctl" id="targetctl">
+        <span class="tct-l"><i class="ti ti-target"></i> Target split <span style="font-weight:400;color:var(--slate500)">(equitable — needn't be 50/50)</span></span>
+        <span class="tgl a" id="tgtLabA">Marisol 50%</span>
+        <input type="range" id="tgtsl" min="0" max="100" step="1" value="50">
+        <span class="tgl b" id="tgtLabB">Andrés 50%</span>
+        <button class="qc" id="tgtReset">Reset 50 / 50</button>
       </div>
-    </div>
+      <div class="ptot" id="ptot"></div>
+      <div id="splitbar"></div>
+      <div id="reconcile"></div>
 
-    <!-- DISPUTE PROCESS -->
-    <div class="sec" style="margin-top:26px"><i class="ti ti-route"></i> Resolution approach if an agreed transfer is delayed</div>
-    <div class="dispute">
-      <p class="d-int">What the parties agree to do if an agreed payment or transfer isn't completed on time — designed to resolve it <b>without returning to court</b> and to reduce the risk of future legal action. Captured here, facilitated and agreed with your mediator or attorney.</p>
-      <div class="ladder">
-        <span class="step"><span class="n">1</span> Written notice + a cure period</span>
-        <span class="arw"><i class="ti ti-arrow-right"></i></span>
-        <span class="step"><span class="n">2</span> Return to the mediator within 14 days</span>
-        <span class="arw"><i class="ti ti-arrow-right"></i></span>
-        <span class="step last"><span class="n">3</span> Enforcement / court — last resort only</span>
+      <div class="scenhead">
+        <div><span style="font-family:var(--fdisp);font-weight:600;font-size:16px;color:var(--navy800)">Compare proposals</span>
+        <span style="font-size:12px;color:var(--slate500);margin-left:6px">Save a split, try another, and put them side by side.</span></div>
+        <button class="addbtn" id="saveScen"><i class="ti ti-bookmark-plus"></i> Save current as a proposal</button>
       </div>
-      <textarea>If an agreed step isn't completed on time — the equalizing payment, a buy-out, a refinance to remove a spouse from the mortgage, or a QDRO transfer — the other party gives written notice with a cure period; if unresolved, the parties return to mediation within 14 days before any enforcement. Transfers use traceable methods and written confirmations are exchanged.</textarea>
-      <div class="who"><i class="ti ti-gavel"></i> Drafted for review and sign-off by the mediator and each party's attorney — not legal advice from JusticeX.</div>
+      <div id="scenwrap"></div>
+
+      <div style="font-family:var(--fdisp);font-weight:600;font-size:16px;color:var(--navy800);margin:26px 0 4px">Can each of you afford the result?</div>
+      <div class="scenrow">
+        <div class="segsw" id="scensw"><button data-s="sell" class="on"><i class="ti ti-home-move"></i> Sell the home &amp; split</button><button data-s="keep"><i class="ti ti-home"></i> Marisol keeps the home</button></div>
+        <div class="scennote" id="scennote"></div>
+      </div>
+      <div class="afford" id="afford"></div>
+      <div class="assume" id="assume"></div>
     </div>
+  </div>
 
-    <!-- REPORTS AVAILABLE -->
-    <div class="sec"><i class="ti ti-files"></i> Reports available</div>
-    <div class="reports">
-      <div class="rep"><i class="ti ti-file-text"></i><div><div class="rt">Summary Report</div><div class="rs">The headline result for this step</div></div></div>
-      <div class="rep"><i class="ti ti-file-description"></i><div><div class="rt">Detailed Report</div><div class="rs">Full inputs → logic → legal references → outputs</div></div></div>
+  <div class="sect">
+    <div class="sect-h collapsible"><div class="badge">3</div><div><h2>Your results</h2><div class="ssub">Where the finances stand, and what happens next.</div></div><i class="ti ti-chevron-down cvchev2"></i></div>
+    <div class="sect-b">
+      <div class="rcap" id="rcap"></div>
+      <div class="feeds" id="feeds"></div>
+      <a class="from" id="resLink" href="matter-step.html?step=6"><i class="ti ti-corner-up-left"></i> Choose &amp; confirm the division in Resolution</a>
+      <div class="actions" id="actions"></div>
     </div>
-
-    <div class="framing" style="margin-top:18px"><i class="ti ti-scale"></i><p><b>JusticeX shows the picture and the math. You and your counsel decide.</b> The split is an example to compare against — not a recommendation; a page can be finalized once every topic on it is resolved. The dial, the options, and the assumptions are yours to set.</p></div>
-
-    <div class="resolvebar">
-      <div class="rstat open" id="rstat"><i class="ti ti-progress"></i> <span id="rstatText">2 topics still open — resolve all to finalize this page</span></div>
-      <button class="btn accent" id="resolveBtn" disabled><i class="ti ti-check"></i> Mark page agreed → Resolved</button>
-    </div>
-
-    <div class="foot"><div class="disc" data-x="JX-disc-upl"><div><b>JusticeX is a software platform — not a law firm or mediator.</b> Not legal advice. <a class="disclink" href="disclaimer.html">Full legal disclaimer</a>. Synthetic demo — no real person, figure, or document.</div><div class="tfe"><b>Truth</b> · <b>Fairness</b> · <b>Efficiency</b></div></div>
   </div>
 </div>
+
+<p class="posture">JusticeX computes and displays each party’s figures objectively and symmetrically — net worth, division, and affordability. It shows the math; it never recommends a division, tells you to take or reject a deal, or predicts an outcome. It is software — not a law firm, a lawyer, or a financial advisor. You decide, with your own professionals if you choose.</p>
+<div style="height:14px"></div>
+<footer class="foot"><div class="wrap"><div class="fin"><div><b>JusticeX is a software platform — not a law firm, mediator, or financial advisor.</b> Objective comparison only; not legal or financial advice. Synthetic demo — no real person, figure, or document.</div><div><b>Truth · Fairness · Efficiency</b></div></div></div></footer>
+
 <script>
-const RAW={home:700000, mortgage:-400000, k:180000, ira:90000, bank:40000, vehicles:55000, autoloan:-20000, cards:-25000};
-let scn='keep';
-function fmt(n){return (n<0?'–':'')+'$'+Math.abs(Math.round(n)).toLocaleString();}
-function derive(){
-  const t=(+document.getElementById('tax').value)/100;
-  const r=(+document.getElementById('disc').value)/100;
-  const n=+document.getElementById('hold').value;
-  const k_at=RAW.k*(1-t), ira_at=RAW.ira*(1-t);
-  const homeEq=RAW.home+RAW.mortgage;
-  const nonHome=k_at+ira_at+RAW.bank+(RAW.vehicles+RAW.autoloan)+RAW.cards;
-  const netAfterTax=homeEq+nonHome;
-  const factor=Math.pow(1+r,n), half=homeEq/2, pv=half/factor, discount=half-pv;
-  return {t,r,n,k_at,ira_at,homeEq,nonHome,netAfterTax,factor,half,pv,discount};
-}
-function scenario(d){
-  if(scn==='keep') return {estate:d.netAfterTax,
-    a:[['Family home (equity)',d.homeEq]],
-    b:[["Samuel's 401(k), after tax",d.k_at],["Dana's IRA, after tax",d.ira_at],['Bank & cash',RAW.bank],['Vehicles (2)',RAW.vehicles],['Auto loan',RAW.autoloan],['Credit cards',RAW.cards]]};
-  if(scn==='sell') return {estate:d.netAfterTax,
-    a:[['Half of the net estate (after sale)',d.netAfterTax/2]],
-    b:[['Half of the net estate (after sale)',d.netAfterTax/2]]};
-  return {estate:d.netAfterTax-d.discount,  // delayed, cost shared
-    a:[['Half the home equity (occupied)',d.half],["Dana's IRA, after tax",d.ira_at],['Bank & cash',RAW.bank]],
-    b:[['Half the home — at present value',d.pv],["Samuel's 401(k), after tax",d.k_at],['Vehicles (2)',RAW.vehicles],['Auto loan',RAW.autoloan],['Credit cards',RAW.cards]]};
-}
-function colHTML(rows,total,who,nm,today){
-  return `<div class="acol ${who}"><div class="ah"><span class="anm">${nm}</span><span class="atot">${fmt(total)}</span></div>
-    <div class="ashare">${Math.round(total/curEstate*100)}% of the estate${today?' · today’s dollars':''}</div>
-    <ul>${rows.map(r=>`<li class="${r[2]?'eq':''}"><span>${r[0]}</span><span>${fmt(r[1])}</span></li>`).join('')}</ul></div>`;
-}
-let curEstate=0;
-function render(){
-  const d=derive(); const sc=scenario(d); curEstate=sc.estate;
-  const pctA=+document.getElementById('pcta').value, pctB=100-pctA;
-  const targetA=Math.round(sc.estate*pctA/100), targetB=sc.estate-targetA;
-  const baseA=sc.a.reduce((s,r)=>s+r[1],0);
-  const eq=targetA-baseA;
-  const aRows=[...sc.a], bRows=[...sc.b];
-  if(Math.round(eq)!==0){ aRows.push(['Equalizing payment '+(eq>0?'received':'paid'),eq,true]); bRows.push(['Equalizing payment '+(eq>0?'paid':'received'),-eq,true]); }
-  const today=scn==='delay';
-  document.getElementById('alloc').innerHTML=colHTML(aRows,targetA,'a','Dana (Party A)',today)+colHTML(bRows,targetB,'b','Samuel (Party B)',today);
-  document.getElementById('splitbar').innerHTML=`<div class="pa" style="width:${pctA}%">Dana · ${pctA}%</div><div class="pb" style="width:${pctB}%">Samuel · ${pctB}%</div>`;
-  document.getElementById('pctout').innerHTML=`<span class="da">Dana ${pctA}%</span> · <span class="sa">Samuel ${pctB}%</span>`;
-  document.getElementById('recon').innerHTML=`<b>Reconciles:</b> ${fmt(targetA)} + ${fmt(targetB)} = ${fmt(sc.estate)} — the full estate${today?' (today’s dollars)':''}.`;
-  document.getElementById('net').textContent=fmt(d.netAfterTax);
-  document.querySelectorAll('.toggle button').forEach(b=>b.classList.toggle('on',b.dataset.s===scn));
-  // assumption effects
-  document.getElementById('taxeff').textContent=`401(k) → ${fmt(d.k_at)}`;
-  document.getElementById('disceff').textContent=`factor ${(d.factor).toFixed(3)}`;
-  document.getElementById('holdeff').textContent=`PV discount ${fmt(d.discount)}`;
-  const dn=document.getElementById('delaynote');
-  if(today){ dn.style.display='block';
-    dn.innerHTML=`<b>The value of the delay.</b> Samuel's half of the equity — ${fmt(d.half)} — is received in ~${d.n} years. At a ${(d.r*100).toFixed(1)}% discount rate that's worth <b>${fmt(d.pv)}</b> today, so the estate's present value is <b>${fmt(d.discount)}</b> lower. Dana covers the carrying costs while she occupies.`;
-  } else dn.style.display='none';
-}
-function setScn(s){scn=s; render();}
-render();
-
-// resolve gating: enabled only when no open/contested topics remain
 (function(){
-  const open=document.querySelectorAll('.statepill.cont').length;
-  const btn=document.getElementById('resolveBtn'), stat=document.getElementById('rstat'), txt=document.getElementById('rstatText');
-  if(open===0){ btn.disabled=false; stat.className='rstat done'; stat.innerHTML='<i class="ti ti-circle-check"></i> All topics resolved — ready to finalize'; }
-  else { btn.disabled=true; txt.textContent=open+' topic'+(open>1?'s':'')+' still open — resolve all to finalize this page'; }
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  var q=new URLSearchParams(location.search);
+  var legal=q.get('view')==='attorney'||q.get('view')==='legal'; if(legal)document.body.classList.add('jx-term-strong');
+  function bridge(s){return esc(s).replace(/\[\[([^\]]+)\]\]/g,function(_,t){return '<span class="jx-term" title="'+t+'">('+t+')</span>';});}
+  function toggleTerms(v){legal=(v==='legal');document.body.classList.toggle('jx-term-strong',legal);document.querySelectorAll('#termsw .sw a').forEach(function(a){a.classList.toggle('on',a.dataset.v===v);});}
+  document.getElementById('termsw').innerHTML='<span class="tlab">Terminology</span><span class="sw"><a data-v="simple" class="'+(legal?'':'on')+'"><i class="ti ti-message-circle"></i> Simple terms</a><a data-v="legal" class="'+(legal?'on':'')+'"><i class="ti ti-gavel"></i> Legal terms</a></span>';
+  document.querySelectorAll('#termsw .sw a').forEach(function(a){a.addEventListener('click',function(){toggleTerms(a.dataset.v);});});
+  function sv(u){return u+(legal?(u.indexOf('?')>-1?'&':'?')+'view=attorney':'');}
+  document.getElementById('backLink').href=sv('matter-workspace.html'); document.getElementById('resLink').href=sv('matter-step.html?step=6');
+  var TOPICS=[['children.html','Children','ti-users'],['finances.html','Finances & property','ti-scale'],['support.html','Support','ti-cash']];
+  document.getElementById('topicnav').innerHTML=TOPICS.map(function(t){var on=location.pathname.split('/').pop()===t[0];return '<a class="'+(on?'on':'')+'" href="'+sv(t[0])+'"><i class="ti '+t[2]+'"></i> '+esc(t[1])+'</a>';}).join('');
+  function usd(n){return (n<0?'-':'')+'$'+Math.abs(Math.round(n)).toLocaleString('en-US');}
+  function k(n){return (n<0?'-':'')+'$'+Math.round(Math.abs(n)/1000)+'k';}
+
+  // ===== tax + parties =====
+  // one income-tax rate (applies to Pre-Tax accounts) + one capital-gains rate — deterministic, not person-dependent
+  var RATE={ord:0.30, cg:0.28};
+  var SELLCOST=0.06;           // selling-cost haircut applied when division method = 'sell'
+  var targetB=50;              // target % of the parties' estate to Andrés (equitable, not necessarily 50/50)
+  var PARTY={A:'Marisol', B:'Andrés'};
+  var CHILD='Children';
+  var KID=['Sofía','Diego'];   // the two children (for by-child allocation)
+  // division methods — which apply depends on the asset KIND (per QDRO/tax rules)
+  var METHOD_LABEL={ split:'In-kind split', qdro:'QDRO transfer', transfer:'Transfer incident to divorce', sell:'Sell & split', offset:'One keeps + offset', assign:'One assumes it' };
+  var METHODS_BY_KIND={ emp:['qdro','offset'], ira:['transfer','offset'], cash:['split','offset'],
+    broker:['split','sell','offset'], realty:['sell','offset'], vehicle:['offset','sell'],
+    personal:['offset','sell','split'], liability:['assign','split'], business:['offset','sell'], other:['split','sell','offset'] };
+  function methodOpts(it){ return METHODS_BY_KIND[it.kind]||METHODS_BY_KIND.other; }
+  function methodOf(it){ var o=methodOpts(it); return (it.method&&o.indexOf(it.method)>-1)?it.method:o[0]; }
+  function methLabel(m){ return METHOD_LABEL[m]||m; }
+  var HELP={
+    coverture:'Coverture (NY “Majauskas” rule): the MARITAL share of an employer pension = the part earned during the marriage — months married-while-employed ÷ total months of service. The remainder is the employee spouse’s separate property. Pertinent only for employer defined-benefit pensions (occasionally a 401(k) with a pre-marital balance). Turn it off for everything else.',
+    valdispute:'Disputed value: use only when the two of you assert DIFFERENT dollar values for the same asset (e.g., competing home appraisals or a business valuation). Enter each position and pick which basis the statement uses — usually the midpoint until it’s resolved. Not needed when you agree on the number.',
+    method:'How the asset is actually divided. Employer retirement (401k/403b/pension) → QDRO. IRA/Roth → transfer incident to divorce (no QDRO). Real estate → sell & split, or one keeps and buys the other out. Cash/brokerage → split in kind. Anything indivisible → one keeps + an offsetting cash payment.'
+  };
+  function helpIcon(key){ return '<span class="qmark" title="'+esc(HELP[key])+'">?</span>'; }
+  // ===== THE NET-WORTH STATEMENT (mirrors 2a. Financial - Assets) =====
+  // per line: {n, bal, tax:'post'|'pre'|'cg', gain, cls:'marital'|'separate'|'children', disputed:bool,
+  //            pB (0..100 % of a MARITAL line to Andrés; Marisol = 100−pB),
+  //            owner:'A'|'B' (SEPARATE line — whose it is), childPct (0..100 % of a CHILDREN line to Diego; Sofía = 100−childPct), cmt}
+  var CATS=[
+    {key:'cash', name:'Bank & cash accounts', items:[
+      {n:'Joint checking & savings', bal:60000, tax:'post', kind:'cash', cls:'marital', pB:50},
+      {n:'Marisol — checking', bal:15000, tax:'post', kind:'cash', cls:'marital', pB:0},
+      {n:'Andrés — checking', bal:8000, tax:'post', kind:'cash', cls:'marital', pB:100},
+    ]},
+    {key:'invest', name:'Investment & retirement accounts', items:[
+      {n:'Marisol — 401(k) [Employer]', tax:'pre', bal:620000, kind:'emp', cls:'marital', pB:50, disputed:true, cmt:'~$80k pre-marriage portion may be separate (disputed)'},
+      {n:'Marisol — Roth 401(k)', bal:210000, tax:'post', kind:'emp', cls:'marital', pB:0},
+      {n:'Marisol — Rollover IRA', bal:155000, tax:'pre', kind:'ira', cls:'marital', pB:0},
+      {n:'Marisol — Pension (employer)', bal:145000, tax:'pre', kind:'emp', cls:'marital', pB:50, pension:{married:198,total:252,owner:'A'}, cmt:'defined-benefit — Majauskas coverture'},
+      {n:'Marisol — ESPP', bal:90000, tax:'cg', gain:0.6, kind:'broker', cls:'marital', pB:0},
+      {n:'Andrés — 401(k)', bal:180000, tax:'pre', kind:'emp', cls:'marital', pB:100},
+      {n:'Andrés — Roth IRA', bal:30000, tax:'post', kind:'ira', cls:'marital', pB:100},
+      {n:'Joint brokerage', bal:140000, tax:'cg', gain:0.5, kind:'broker', cls:'marital', pB:50},
+      {n:'Andrés — 2019 inheritance (in joint acct)', bal:120000, tax:'post', kind:'broker', cls:'separate', owner:'B', disputed:true, cmt:'claimed [[separate property]] — traceability disputed'},
+    ]},
+    {key:'home', name:'Real property', items:[
+      {n:'Marital home — market value', bal:960000, tax:'post', kind:'realty', cls:'marital', pB:50, method:'sell', disputed:true, valDispute:true, her:1000000, his:920000, use:'mid', cmt:'appraisals differ'},
+      {n:'Mortgage on marital home', bal:-410000, tax:'post', kind:'liability', cls:'marital', pB:50},
+    ]},
+    {key:'auto', name:'Vehicles', items:[
+      {n:'Marisol — vehicle (less $12k loan)', bal:22000, tax:'post', kind:'vehicle', cls:'marital', pB:0},
+      {n:'Andrés — vehicle', bal:22000, tax:'post', kind:'vehicle', cls:'marital', pB:100},
+    ]},
+    {key:'home2', name:'Household & personal property', items:[
+      {n:'Furniture, art & personal property', bal:40000, tax:'post', kind:'personal', cls:'marital', pB:50},
+    ]},
+    {key:'liab', name:'Liabilities (credit cards & loans)', items:[
+      {n:'Joint Visa', bal:-18000, tax:'post', kind:'liability', cls:'marital', pB:50},
+      {n:'Marisol — card', bal:-4000, tax:'post', kind:'liability', cls:'marital', pB:0},
+      {n:'Andrés — card', bal:-3000, tax:'post', kind:'liability', cls:'marital', pB:100},
+    ]},
+    {key:'kids529', name:"Children's 529 college accounts", items:[
+      {n:'529 college — Sofía', bal:85000, tax:'post', cls:'children', childPct:0},
+      {n:'529 college — Diego', bal:70000, tax:'post', cls:'children', childPct:100},
+    ]},
+  ];
+  // flat index of statement lines (rebuilt after add/remove)
+  var LINES=[];
+  function rebuildLines(){ LINES=[]; CATS.forEach(function(c){ c.items.forEach(function(it){ it.cat=c.key; LINES.push(it); }); }); }
+  rebuildLines();
+
+  function effBal(it){   // disputed items can carry each side's value; the statement uses the chosen basis
+    if(it.disputed && it.her!=null && it.his!=null){
+      var u=it.use||'mid', her=+it.her, his=+it.his;
+      return u==='her'?her:(u==='his'?his:(her+his)/2);
+    }
+    return it.bal;
+  }
+  function netOfTax(it){   // tax only, on the effective balance — deterministic, before any division
+    var b=effBal(it);
+    if(it.tax==='pre') return b*(1-RATE.ord);
+    if(it.tax==='cg') return b - (b>0? b*(it.gain||0.5)*RATE.cg : 0);
+    return b;
+  }
+  function sellCost(it){ return (methodOf(it)==='sell' && effBal(it)>0) ? effBal(it)*SELLCOST : 0; }
+  function coverture(it){ if(!it.pension) return 1; var t=+it.pension.total; return t>0?Math.max(0,Math.min(1,(+it.pension.married)/t)):1; }
+  function divValue(it){ return (netOfTax(it)-sellCost(it))*coverture(it); }   // what actually divides between the parties
+  function pensionSep(it){ return it.pension ? (netOfTax(it)-sellCost(it))*(1-coverture(it)) : 0; } // pre-marital service → employee
+  function isMar(it){ return (it.cls||'marital')==='marital'; }
+  function isSep(it){ return it.cls==='separate'; }
+  function isChild(it){ return it.cls==='children'; }
+  function pbOf(it){ var v=+it.pB; return isNaN(v)?50:Math.max(0,Math.min(100,v)); }
+  function dollarsTo(it){
+    if(!isMar(it)) return {A:0,B:0};
+    var net=divValue(it), pb=pbOf(it);
+    return {A:net*(100-pb)/100, B:net*pb/100};
+  }
+
+  function compute(){
+    var grossAssets=0, grossLiab=0, marital=0, sep=0, coll=0, disp=0, allocA=0, allocB=0;
+    var ownerA=0, ownerB=0, kidS=0, kidD=0;
+    var catAgg={};
+    CATS.forEach(function(c){
+      catAgg[c.key]={bal:0,net:0,mar:0,A:0,B:0};
+      c.items.forEach(function(it){
+        var eb=effBal(it), net=netOfTax(it)-sellCost(it);
+        if(eb>=0) grossAssets+=eb; else grossLiab+=eb;
+        catAgg[c.key].bal+=eb; catAgg[c.key].net+=net;
+        if(it.disputed) disp+=net;
+        if(isMar(it)){
+          var dv=divValue(it); marital+=dv; catAgg[c.key].mar+=dv;
+          var d=dollarsTo(it); allocA+=d.A; allocB+=d.B; catAgg[c.key].A+=d.A; catAgg[c.key].B+=d.B;
+          var ps=pensionSep(it);   // pension pre-marital remainder → employee spouse, held out
+          if(ps>0.5){ sep+=ps; if(((it.pension&&it.pension.owner)||'A')==='A') ownerA+=ps; else ownerB+=ps; }
+        } else if(isSep(it)){
+          sep+=net; if((it.owner||'A')==='A') ownerA+=net; else ownerB+=net;
+        } else {
+          coll+=net; var cp=+it.childPct; if(isNaN(cp)) cp=0;
+          kidS+=net*(100-cp)/100; kidD+=net*cp/100;
+        }
+      });
+    });
+    var networth=grossAssets+grossLiab, parties=allocA+allocB;
+    var tgtA=parties*(100-targetB)/100;   // target dollars to Marisol
+    return {networth:networth, grossAssets:grossAssets, grossLiab:grossLiab, marital:marital, sep:sep, coll:coll, disp:disp,
+      allocA:allocA, allocB:allocB, ownerA:ownerA, ownerB:ownerB, kidS:kidS, kidD:kidD, parties:parties,
+      pctA:marital?allocA/marital:0, pctB:marital?allocB/marital:0,
+      targetB:targetB, tgtA:tgtA, tgtB:parties-tgtA,
+      eqAmt:Math.abs(allocA-tgtA), eqFrom:allocA>tgtA?'A':'B', eqTo:allocA>tgtA?'B':'A',
+      reconcile:true, catAgg:catAgg};
+  }
+
+  var TAXOPT=[['post','Post'],['pre','Pre'],['cg','CG']];
+  function taxSel(it,da){ return '<select '+da+' data-f="tax">'+TAXOPT.map(function(o){return '<option value="'+o[0]+'"'+(it.tax===o[0]?' selected':'')+'>'+o[1]+'</option>';}).join('')+'</select>'; }
+  function shortName(n){ return n.split('(')[0].replace(/[—-]\s*$/,'').trim(); }
+  function fmt(n){ return Number(n||0).toLocaleString('en-US'); }
+  function catName(key){ var c=CATS.filter(function(x){return x.key===key;})[0]; return c?shortName(c.name):''; }
+  function tr_(n){ return '<td class="r'+(n<0?' neg':'')+'">'+usd(n)+'</td>'; }   // value cell: red only when negative
+
+  function renderStatement(){
+    rebuildLines();
+    var C=compute();
+    var h='<thead><tr><th>Account / component</th><th class="r">Balance</th><th class="c">Tax</th><th class="r">Net of tax</th><th class="c">Class</th><th class="c" style="min-width:158px">Division · '+esc(PARTY.A)+' ↔ '+esc(PARTY.B)+'</th><th class="r a">$ → '+esc(PARTY.A)+'</th><th class="r bc">$ → '+esc(PARTY.B)+'</th><th></th></tr></thead><tbody>';
+    CATS.forEach(function(c){
+      var agg=C.catAgg[c.key], col=collapsed[c.key];
+      h+='<tr class="cathead'+(col?' col':'')+'" data-cat="'+c.key+'"><td colspan="9"><span class="cvchev">'+(col?'▸':'▾')+'</span> '+esc(c.name)+' <span class="catn">'+c.items.length+'</span></td></tr>';
+      if(!col) c.items.forEach(function(it){ var i=LINES.indexOf(it);
+        var cl=it.cls||'marital', held=!isMar(it), d=dollarsTo(it), pb=pbOf(it), pa=100-pb;
+        var clLbl={marital:'Marital',separate:'Separate',children:'Children'}[cl];
+        // name cell + optional pension-coverture and disputed-value sub-controls (opt-in, with help)
+        var nameCell='<input class="nm" data-i="'+i+'" data-f="n" value="'+esc(it.n)+'"><input class="cmt" data-i="'+i+'" data-f="cmt" placeholder="add a note…" value="'+esc(it.cmt||'')+'">';
+        if(it.pension){ var cov=Math.round(coverture(it)*100);
+          nameCell+='<div class="subctl pen"><i class="ti ti-clock-hour-4"></i> Coverture '+helpIcon('coverture')+' <input class="mini2" data-i="'+i+'" data-f="penM" value="'+(+it.pension.married)+'">/<input class="mini2" data-i="'+i+'" data-f="penT" value="'+(+it.pension.total)+'"> mo = <b>'+cov+'% marital</b> · '+(100-cov)+'% separate ('+esc(PARTY[(it.pension.owner||'A')])+') <button class="tinyx" data-i="'+i+'" data-act="delpension" title="Remove coverture">×</button></div>'; }
+        else if(it.kind==='emp'){ nameCell+='<div class="subctl"><button class="addadv" data-i="'+i+'" data-act="addpension"><i class="ti ti-plus"></i> pension coverture</button> '+helpIcon('coverture')+'</div>'; }
+        if(it.valDispute){ var her=(it.her!=null?+it.her:effBal(it)), his=(it.his!=null?+it.his:effBal(it)), use=it.use||'mid';
+          nameCell+='<div class="subctl dis"><i class="ti ti-scale"></i> Disputed value '+helpIcon('valdispute')+' — '+esc(PARTY.A)+' <input class="mini2" data-i="'+i+'" data-f="her" value="'+fmt(her)+'"> · '+esc(PARTY.B)+' <input class="mini2" data-i="'+i+'" data-f="his" value="'+fmt(his)+'"> · use <select class="miniuse" data-i="'+i+'" data-f="use"><option value="mid"'+(use==='mid'?' selected':'')+'>midpoint</option><option value="her"'+(use==='her'?' selected':'')+'>'+esc(PARTY.A)+'’s</option><option value="his"'+(use==='his'?' selected':'')+'>'+esc(PARTY.B)+'’s</option></select> <button class="tinyx" data-i="'+i+'" data-act="delval" title="Values agree — remove">×</button></div>'; }
+        else if(it.disputed){ nameCell+='<div class="subctl"><button class="addadv" data-i="'+i+'" data-act="addval"><i class="ti ti-plus"></i> values differ?</button> '+helpIcon('valdispute')+'</div>'; }
+        var mo=methodOf(it), mopts=methodOpts(it);
+        var divCell = held
+          ? '<div class="xref '+cl+'">'+(isSep(it)?'Separate — see table below':'Children — see table below')+'</div>'
+          : '<div class="slwrap"><div class="sllab"><span class="la">'+esc(PARTY.A)+' '+pa+'%</span><span class="lb">'+esc(PARTY.B)+' '+pb+'%</span></div>'+
+            '<input type="range" class="divsl" min="0" max="100" step="1" value="'+pb+'" data-i="'+i+'">'+
+            '<div class="quickrow"><button class="qc" data-i="'+i+'" data-set="0" title="All to '+esc(PARTY.A)+'">'+esc(PARTY.A)+'</button><button class="qc" data-i="'+i+'" data-set="50" title="Even">½</button><button class="qc" data-i="'+i+'" data-set="100" title="All to '+esc(PARTY.B)+'">'+esc(PARTY.B)+'</button></div>'+
+            '<div class="methrow"><span class="methlab">Method '+helpIcon('method')+'</span><select class="methsel" data-i="'+i+'" data-f="method">'+mopts.map(function(m){return '<option value="'+m+'"'+(mo===m?' selected':'')+'>'+esc(methLabel(m))+'</option>';}).join('')+'</select></div>'+
+            (sellCost(it)>0?'<div class="methnote">− '+usd(sellCost(it))+' selling cost</div>':'')+'</div>';
+        var dolCell=function(side,val){ return held ? '<span style="color:var(--slate300)">—</span>' : '<input class="dol" data-i="'+i+'" data-side="'+side+'" value="'+fmt(Math.round(val))+'">'; };
+        h+='<tr'+(it.disputed?' class="disprow"':'')+'>'+
+          '<td>'+nameCell+'</td>'+
+          '<td class="r inp"><input class="bal" data-i="'+i+'" data-f="bal" value="'+fmt(it.bal)+'"></td>'+
+          '<td class="c">'+taxSel(it,'data-i="'+i+'"')+'</td>'+
+          '<td class="r calc">'+usd(netOfTax(it))+'</td>'+
+          '<td class="c clscell"><span class="clspill '+cl+'" data-i="'+i+'" data-f="cls" title="Click to cycle: Marital → Separate → Children">'+clLbl+'</span><span class="dispflag'+(it.disputed?' on':'')+'" data-i="'+i+'" title="Flag / unflag as disputed (contested)"><i class="ti ti-flag"></i></span></td>'+
+          '<td class="c divc">'+divCell+'</td>'+
+          '<td class="r '+(held?'calc':'inp')+' adol">'+dolCell('A',d.A)+'</td>'+
+          '<td class="r '+(held?'calc':'inp')+' bdol">'+dolCell('B',d.B)+'</td>'+
+          '<td class="c"><button class="rmv" data-i="'+i+'" title="Remove this account">&times;</button></td>'+
+          '</tr>';
+      });
+      h+='<tr class="subtot"><td>'+esc(shortName(c.name))+' — subtotal'+(col?' <span style="font-weight:400;color:var(--slate500)">('+c.items.length+' items hidden)</span>':'')+'</td>'+tr_(agg.bal)+'<td></td>'+tr_(agg.net)+'<td colspan="2"></td>'+tr_(agg.A)+tr_(agg.B)+'<td></td></tr>';
+      if(!col) h+='<tr class="addrow"><td colspan="9"><button class="addbtn" data-cat="'+c.key+'"><i class="ti ti-plus"></i> Add account to '+esc(shortName(c.name))+'</button></td></tr>';
+    });
+    var totNet=0; LINES.forEach(function(it){totNet+=(netOfTax(it)-sellCost(it));});
+    h+='<tr class="networth"><td>NET WORTH (net of tax)<div class="sub2">assets '+usd(C.grossAssets)+' + liabilities '+usd(C.grossLiab)+'</div></td>'+tr_(C.networth)+'<td></td>'+tr_(totNet)+'<td colspan="5"></td></tr>';
+    h+='<tr class="subtot"><td>MARITAL ESTATE (divides between you)<div class="asb" style="font-weight:400">excludes separate '+usd(C.sep)+' and children’s '+usd(C.coll)+'</div></td><td colspan="2"></td>'+tr_(C.marital)+'<td colspan="2"></td>'+tr_(C.allocA)+tr_(C.allocB)+'<td></td></tr>';
+    h+='</tbody>';
+    document.getElementById('nwtbl').innerHTML=h;
+    renderSep(C); renderKids(C); renderNotes(C);
+    return C;
+  }
+
+  // SEPARATE property — cross-referenced from the statement; held out, kept by its owner
+  function renderSep(C){
+    var el=document.getElementById('septbl'); if(!el) return;
+    var rows=LINES.filter(isSep);
+    if(!rows.length){ el.innerHTML='<tbody><tr><td class="xrefempty" colspan="6">No separate property. In the statement above, set an account’s <b>Class</b> to <b>Separate</b> to hold it out — it will appear here to assign an owner.</td></tr></tbody>'; return; }
+    var h='<thead><tr><th>Account / component</th><th class="r">Balance</th><th class="c">Tax</th><th class="r">Net of tax</th><th class="c" style="min-width:150px">Kept by</th><th class="r">Value</th></tr></thead><tbody>';
+    rows.forEach(function(it){ var i=LINES.indexOf(it), own=it.owner||'A';
+      h+='<tr'+(it.disputed?' class="disprow"':'')+'><td>'+esc(it.n)+(it.disputed?' <span class="dispmini"><i class="ti ti-flag"></i> disputed</span>':'')+'<div class="asb">from '+esc(catName(it.cat))+'</div></td>'+
+        '<td class="r calc">'+usd(it.bal)+'</td>'+
+        '<td class="c calc">'+it.tax.toUpperCase()+'</td>'+
+        '<td class="r calc">'+usd(netOfTax(it))+'</td>'+
+        '<td class="c"><div class="ownsw"><button class="ownb'+(own==='A'?' on':'')+'" data-i="'+i+'" data-own="A">'+esc(PARTY.A)+'</button><button class="ownb'+(own==='B'?' on':'')+'" data-i="'+i+'" data-own="B">'+esc(PARTY.B)+'</button></div></td>'+
+        '<td class="r calc" style="color:'+(own==='A'?'var(--A)':'var(--B)')+';font-weight:700">'+usd(netOfTax(it))+'</td></tr>';
+    });
+    h+='<tr class="subtot"><td>Separate property — subtotal</td><td class="r">'+usd(rows.reduce(function(s,it){return s+it.bal;},0))+'</td><td></td><td class="r">'+usd(C.sep)+'</td><td class="c" style="font-size:11px">'+esc(PARTY.A)+' '+usd(C.ownerA)+' · '+esc(PARTY.B)+' '+usd(C.ownerB)+'</td><td></td></tr>';
+    h+='</tbody>';
+    el.innerHTML=h;
+  }
+
+  // CHILDREN's accounts — cross-referenced; held for the children, allocated by child
+  function renderKids(C){
+    var el=document.getElementById('ctbl'); if(!el) return;
+    var rows=LINES.filter(isChild);
+    var addRow='<tr class="addrow"><td colspan="7"><button class="addbtn" data-cat="kids529"><i class="ti ti-plus"></i> Add a children’s account</button></td></tr>';
+    if(!rows.length){ el.innerHTML='<tbody><tr><td class="xrefempty" colspan="7">No children’s accounts. Set an account’s <b>Class</b> to <b>Children</b> above, or add one here.</td></tr>'+addRow+'</tbody>'; return; }
+    var h='<thead><tr><th>Account / component</th><th class="r">Balance</th><th class="c">Tax</th><th class="r">Net of tax</th><th class="c" style="min-width:150px">By child · '+esc(KID[0])+' ↔ '+esc(KID[1])+'</th><th class="r">→ '+esc(KID[0])+'</th><th class="r">→ '+esc(KID[1])+'</th></tr></thead><tbody>';
+    rows.forEach(function(it){ var i=LINES.indexOf(it), cp=+it.childPct; if(isNaN(cp))cp=0; var sp=100-cp, net=netOfTax(it);
+      h+='<tr><td>'+esc(it.n)+'<div class="asb">from '+esc(catName(it.cat))+'</div></td>'+
+        '<td class="r calc">'+usd(it.bal)+'</td>'+
+        '<td class="c calc">'+it.tax.toUpperCase()+'</td>'+
+        '<td class="r calc">'+usd(net)+'</td>'+
+        '<td class="c divc"><div class="slwrap"><div class="sllab"><span class="lca">'+esc(KID[0])+' '+sp+'%</span><span class="lcb">'+esc(KID[1])+' '+cp+'%</span></div><input type="range" class="childsl" min="0" max="100" step="1" value="'+cp+'" data-i="'+i+'"></div></td>'+
+        '<td class="r calc ksa">'+usd(net*sp/100)+'</td>'+
+        '<td class="r calc ksb">'+usd(net*cp/100)+'</td></tr>';
+    });
+    h+='<tr class="subtot"><td>Children’s accounts — subtotal</td><td class="r">'+usd(rows.reduce(function(s,it){return s+it.bal;},0))+'</td><td></td><td class="r">'+usd(C.coll)+'</td><td></td><td class="r">'+usd(C.kidS)+'</td><td class="r">'+usd(C.kidD)+'</td></tr>';
+    h+=addRow+'</tbody>';
+    el.innerHTML=h;
+  }
+
+  function renderNotes(C){
+    var dispItems=LINES.filter(function(it){return it.disputed;});
+    var msg='';
+    if(dispItems.length) msg+='<div><b><i class="ti ti-flag"></i> Contested ('+usd(C.disp)+'):</b> '+dispItems.map(function(it){return esc(shortName(it.n))+' '+usd(netOfTax(it))+' <span style="color:var(--slate500)">('+(isMar(it)?'marital':isSep(it)?'separate':'children')+' for now)</span>';}).join(' · ')+'. Flagged where you disagree — treated by its current Class until you resolve it in Gap Analysis.</div>';
+    if(C.sep>0.5||C.coll>0.5) msg+='<div style="margin-top:'+(dispItems.length?'6px':'0')+'">Held out of the parties’ division: <b>separate '+usd(C.sep)+'</b> (kept by its owner) · <b>children’s '+usd(C.coll)+'</b> (held for the kids) — detailed in the tables below.</div>';
+    if(!msg) msg='Everything is marital and being divided. Use the <b>Class</b> tag to mark a line Separate or Children, or the <i class="ti ti-flag"></i> to flag it disputed.';
+    document.getElementById('sepnote').innerHTML=msg;
+  }
+
+  function renderDivision(C){
+    var tgtPct=[100-C.targetB, C.targetB], tgt$=[C.tgtA,C.tgtB];
+    var cards=[['A',C.allocA,C.pctA,PARTY.A,0],['B',C.allocB,C.pctB,PARTY.B,1]];
+    document.getElementById('ptot').innerHTML=cards.map(function(s){
+      var delta=s[1]-tgt$[s[4]];
+      return '<div class="pt '+s[0]+'"><div class="h">'+esc(s[3])+' <span>'+(s[2]*100).toFixed(1)+'%</span></div><div class="b"><div class="amt">'+usd(s[1])+'</div>'+
+        '<div class="cap">vs target '+tgtPct[s[4]]+'% ('+usd(tgt$[s[4]])+') · <b style="color:'+(Math.abs(delta)<1?'var(--slate500)':(delta>0?'var(--success)':'var(--coral600)'))+'">'+(delta>=0?'+':'')+usd(delta)+'</b></div></div></div>';
+    }).join('')+'<div class="pt held"><div class="h">Held out <span></span></div><div class="b"><div class="amt">'+usd(C.sep+C.coll)+'</div><div class="cap">separate '+usd(C.sep)+' · children '+usd(C.coll)+'</div></div></div>';
+    var pa=C.pctA*100,pb=C.pctB*100;
+    document.getElementById('splitbar').innerHTML='<div class="split100" style="margin:12px 0 0"><div class="sa" style="flex:'+(C.allocA||0.001)+'">'+esc(PARTY.A)+' '+pa.toFixed(0)+'%</div><div class="sb" style="flex:'+(C.allocB||0.001)+'">'+esc(PARTY.B)+' '+pb.toFixed(0)+'%</div></div>';
+    var atTarget=C.eqAmt<1;
+    document.getElementById('reconcile').innerHTML='<div class="reconcile '+(atTarget?'ok':'off')+'"><i class="ti ti-'+(atTarget?'circle-check':'arrows-exchange')+'"></i> '+
+      (atTarget?'<b>At target.</b> The split matches your '+(100-C.targetB)+'/'+C.targetB+' target — no equalizing payment needed.':'<b>To hit the '+(100-C.targetB)+'/'+C.targetB+' target,</b> an equalizing payment trues up the difference.')+
+      '<span class="eqp">Equalize: '+PARTY[C.eqFrom]+' → '+PARTY[C.eqTo]+' '+usd(C.eqAmt)+'</span></div>';
+  }
+
+  // ===== AFFORDABILITY (integrated: post-division net worth → forward projection) =====
+  var HZ=10, growth=0.03, infl=0.03, ret=0.05, appr=0.03;
+  var INC={A:420000, B:95000}, taxRateInc={A:0.34, B:0.20};
+  var maint=70000, maintYrs=6, emanc=8;
+  var homeVal=960000, mortPmt=31000, ptax=0.017*homeVal, ins=0.005*homeVal, upkeep=0.01*homeVal, util=7200;
+  var carry=mortPmt+ptax+ins+upkeep+util;
+  var livRate=0.35, rentA=48000, rentB=36000;
+  function r100(n){return Math.round(n/100)*100;}
+  function forecast(scen, C){
+    // starting balance sheet per party from the division: split allocation into liquid vs retirement vs home
+    var out={A:[],B:[]};
+    ['A','B'].forEach(function(p){
+      var alloc = p==='A'?C.allocA:C.allocB;
+      // rough split of allocation into buckets (illustrative): 55% retirement, plus home for keeper
+      var keeper=(scen==='keep'&&p==='A');
+      var homeEq = keeper?550000:0;
+      var eqAdj = (C.eqFrom===p? -C.eqAmt : (C.eqTo===p? C.eqAmt : 0)); // equalizing cash flow
+      // keep scenario: Marisol also pays Andrés the home buyout (his half of equity)
+      var buyout = scen==='keep' ? (p==='A'? -275000 : 275000) : 0;
+      var retBal = alloc*0.55;
+      var liquid = Math.max(-50000, alloc*0.20 + eqAdj + buyout - (keeper?0:0));
+      var nw = alloc;
+      for(var y=1;y<=HZ;y++){
+        var income=r100(INC[p]*Math.pow(1+growth,y-1)*(1-taxRateInc[p]));
+        var support=r100((y<=maintYrs?maint:0)*(p==='A'?-1:1));
+        var housing=r100(keeper?carry*Math.pow(1+infl,y-1):(p==='A'?rentA:rentB)*Math.pow(1+infl,y-1));
+        var liv=r100(INC[p]*livRate*Math.pow(1+infl,y-1));
+        var net=income+support-housing-liv;
+        liquid=liquid+net; retBal=retBal*(1+ret); if(keeper) homeEq=homeEq*(1+appr)+mortPmt*0.35;
+        nw=nw+net+Math.round(retBal*ret+(keeper?homeEq*appr:0));
+        out[p].push({y:y,income:income,support:support,housing:housing,living:liv,net:net,liquid:liquid,nw:nw,
+          mile:(y===maintYrs||y===emanc),note:(y===maintYrs?'maintenance ends':'')+(y===emanc?(y===maintYrs?' · ':'')+'child emancipates':'')});
+      }
+    });
+    return out;
+  }
+  var curScen='sell';
+  var scenTxt={sell:'The home is sold and the net proceeds split. No one carries the house — the cleanest cash position for both.',
+    keep:'Marisol keeps the home and buys out Andrés’s $275,000 share, then carries the mortgage, tax, insurance and upkeep while also paying maintenance — the asset-rich / cash-poor test.'};
+  function renderAfford(C){
+    document.getElementById('scennote').textContent=scenTxt[curScen];
+    var fc=forecast(curScen,C);
+    document.getElementById('afford').innerHTML=['A','B'].map(function(p){
+      var yrs=fc[p].filter(function(r){return [1,3,6,8,10].indexOf(r.y)>-1;});
+      var worst=fc[p].reduce(function(m,r){return r.net<m.net?r:m;},fc[p][0]); var liqNeg=fc[p].some(function(r){return r.liquid<0;});
+      var material=(liqNeg||worst.net<-5000), fclass, flag;
+      if(material){fclass='warn';flag='Projected Year-'+worst.y+' net cash flow is '+usd(worst.net)+' — a shortfall'+(liqNeg?'; projected liquid reserves run out (a financing need) while net worth stays positive — asset-rich / cash-poor':'')+'. Objective observation, not a recommendation.';}
+      else if(worst.net<0){fclass='ok';flag='Cash flow stays funded; a small dip after support ends ('+usd(worst.net)+' in Year '+worst.y+') is covered by reserves.';}
+      else {fclass='ok';flag='Projected net cash flow stays positive every year under this scenario.';}
+      var rows=yrs.map(function(r){return '<tr'+(r.mile?' class="mile"':'')+'><td class="yl">Yr '+r.y+(r.note?'<div style="font-weight:400;font-size:9px;color:#7a5606">'+r.note+'</div>':'')+'</td>'+
+        '<td>'+k(r.income)+'</td><td style="color:'+(r.support<0?'var(--B)':'var(--success)')+'">'+(r.support>0?'+':'')+k(r.support)+'</td><td>'+k(-r.housing)+'</td><td>'+k(-r.living)+'</td><td class="'+(r.net<0?'neg':'')+'"><b>'+k(r.net)+'</b></td><td class="'+(r.liquid<0?'neg':'')+'">'+k(r.liquid)+'</td><td>'+k(r.nw)+'</td></tr>';}).join('');
+      return '<div class="pcard '+p+'"><div class="ph"><div class="pn">'+PARTY[p]+'</div><div class="pinc">gross '+k(INC[p])+'/yr · '+(p==='A'?'pays':'receives')+' maintenance</div></div>'+
+        '<div class="flag '+fclass+'"><i class="ti ti-'+(fclass==='warn'?'alert-triangle':'circle-check')+'"></i> '+esc(flag)+'</div>'+
+        '<div style="overflow-x:auto"><table class="ftbl"><thead><tr><th>Yr</th><th>Income</th><th>Support</th><th>Housing</th><th>Living</th><th>Net</th><th>Liquid</th><th>Net worth</th></tr></thead><tbody>'+rows+'</tbody></table></div></div>';
+    }).join('');
+  }
+  document.querySelectorAll('#scensw button').forEach(function(b){b.addEventListener('click',function(){curScen=b.dataset.s;document.querySelectorAll('#scensw button').forEach(function(x){x.classList.toggle('on',x===b);});renderAfford(compute());});});
+  document.getElementById('assume').innerHTML='<b>Read the forecast:</b> After-tax income + Support (−paid/+received) − Housing − Living = Net cash flow; Liquid carries forward; Net worth adds non-cash asset growth (so it can rise while liquid falls — the asset-rich/cash-poor signal). Starting balances come from the division above, so changing the split changes each person’s forecast. <b>Assumptions</b> (all <code>[verify]</code>): income growth 3% · inflation 3% · return 5% · maintenance ≈ $70k/yr for ~6 yrs (higher-asset case) · taxes at each party’s effective rate. Mirrors the JusticeX affordability amplifier (B2); illustrative, not a certified computation.';
+
+  // ===== KPIs + results =====
+  function renderKpis(C){
+    document.getElementById('kpis').innerHTML=[
+      ['Net worth (net of tax)', usd(C.networth), 'all assets − liabilities', ''],
+      ['Marital estate', usd(C.marital), 'what divides between you', ''],
+      [esc(PARTY.A)+'’s share', usd(C.allocA), (C.pctA*100).toFixed(0)+'% of the estate', ''],
+      [esc(PARTY.B)+'’s share', usd(C.allocB), (C.pctB*100).toFixed(0)+'% of the estate', ''],
+      ['Equalize '+esc(PARTY.A)+' ↔ '+esc(PARTY.B), PARTY[C.eqFrom]+' → '+PARTY[C.eqTo], usd(C.eqAmt), C.reconcile?'':'warn']
+    ].map(function(t){return '<div class="kpi '+t[3]+'"><div class="l">'+t[0]+'</div><div class="v">'+t[1]+'</div><div class="s">'+t[2]+'</div></div>';}).join('');
+  }
+  function renderResults(C){
+    document.getElementById('rcap').innerHTML=[
+      ['Marital estate', usd(C.marital), 'net of tax, divides between you'],
+      [esc(PARTY.A)+' / '+esc(PARTY.B), usd(C.allocA)+' / '+usd(C.allocB), (C.pctA*100).toFixed(0)+'% / '+(C.pctB*100).toFixed(0)+'%'],
+      ['Equalizing payment', PARTY[C.eqFrom]+' → '+PARTY[C.eqTo]+' '+usd(C.eqAmt), 'to divide the two shares equally'],
+      ['Separate · children', usd(C.sep)+' · '+usd(C.coll), 'held out of the split']
+    ].map(function(r){return '<div class="rc"><div class="l">'+r[0]+'</div><div class="v">'+r[1]+'</div><div class="s">'+esc(r[2])+'</div></div>';}).join('');
+    document.getElementById('feeds').innerHTML='<b>What this feeds:</b> the net-of-tax division, each party’s share and the equalizing payment flow into '+(legal?'the Memorandum of Understanding':'your written agreement')+', reconciled to the dollar, and populate the Summary &amp; Detailed step reports. The affordability view lets you weigh <b>keep vs. sell</b> before you decide. <b>Maintenance &amp; child support</b> are computed on the Support page and feed the forecast here — the finances and support tools are linked.';
+    document.getElementById('actions').innerHTML='<a class="btn p" href="'+sv('matter-step.html?step=5')+'"><i class="ti ti-arrows-diff"></i> Work the divisions in Gap Analysis</a>'+
+      '<a class="btn" href="'+sv('report.html?step=5&type=detail')+'"><i class="ti ti-file-text"></i> Detailed Report</a>'+
+      '<a class="btn" href="'+sv('support.html')+'"><i class="ti ti-cash"></i> Support</a>'+
+      '<a class="btn" href="'+sv('memorandum.html')+'"><i class="ti ti-file-certificate"></i> '+(legal?'Memorandum':'Your Agreement')+'</a>';
+  }
+
+  function refreshSummaries(){ var C=compute(); renderDivision(C); renderKpis(C); renderResults(C); renderAfford(C); renderScenarios(); renderNotes(C); }
+  function renderAll(){ var C=renderStatement(); renderDivision(C); renderAfford(C); renderKpis(C); renderResults(C); renderUndo(); renderScenarios(); wireEdits(); }
+
+  function num(v){ var n=parseFloat(String(v).replace(/[^0-9.-]/g,'')); return isNaN(n)?0:n; }
+  function setVal(it,f,v){
+    if(f==='bal'||f==='her'||f==='his'){ it[f]=num(v); }
+    else if(f==='penM'){ it.pension.married=num(v); }
+    else if(f==='penT'){ it.pension.total=num(v); }
+    else it[f]=v;
+  }
+  function wireEdits(){
+    // name / note / balance / pension / dual-position inputs — statement only
+    document.querySelectorAll('#nwtbl input.nm, #nwtbl input.cmt, #nwtbl input.bal, #nwtbl input.mini2').forEach(function(el){
+      el.addEventListener('change',function(){ setVal(LINES[+el.dataset.i], el.dataset.f, el.value); renderAll(); });
+    });
+    // selects in statement: tax / method / use (by data-f)
+    document.querySelectorAll('#nwtbl select[data-f]').forEach(function(el){
+      el.addEventListener('change',function(){ LINES[+el.dataset.i][el.dataset.f]=el.value; renderAll(); });
+    });
+    // dollar entry — type $ to a party, back-solve the slider
+    document.querySelectorAll('#nwtbl input.dol').forEach(function(el){
+      el.addEventListener('change',function(){ var it=LINES[+el.dataset.i], dv=divValue(it); if(Math.abs(dv)<1){ renderAll(); return; }
+        var want=num(el.value), pbNew = el.dataset.side==='B' ? want/dv*100 : 100-(want/dv*100);
+        it.pB=Math.max(0,Math.min(100,Math.round(pbNew))); renderAll(); });
+    });
+    // quick-assign chips
+    document.querySelectorAll('#nwtbl .qc').forEach(function(el){
+      el.addEventListener('click',function(){ LINES[+el.dataset.i].pB=+el.dataset.set; renderAll(); });
+    });
+    // division slider: live labels + $ inputs, full recompute on release
+    document.querySelectorAll('#nwtbl .divsl').forEach(function(el){
+      el.addEventListener('input',function(){ var it=LINES[+el.dataset.i]; it.pB=+el.value;
+        var row=el.closest('tr'), pb=+el.value, pa=100-pb, dv=divValue(it);
+        var la=row.querySelector('.la'), lb=row.querySelector('.lb'), ad=row.querySelector('.adol input'), bd=row.querySelector('.bdol input');
+        if(la)la.textContent=PARTY.A+' '+pa+'%'; if(lb)lb.textContent=PARTY.B+' '+pb+'%';
+        if(ad)ad.value=fmt(Math.round(dv*pa/100)); if(bd)bd.value=fmt(Math.round(dv*pb/100));
+        refreshSummaries();
+      });
+      el.addEventListener('change',function(){ LINES[+el.dataset.i].pB=+el.value; renderAll(); });
+    });
+    // by-child slider (Sofía ↔ Diego)
+    document.querySelectorAll('#ctbl .childsl').forEach(function(el){
+      el.addEventListener('input',function(){ var it=LINES[+el.dataset.i]; it.childPct=+el.value;
+        var row=el.closest('tr'), cp=+el.value, sp=100-cp, net=netOfTax(it);
+        var la=row.querySelector('.lca'), lb=row.querySelector('.lcb'), sa=row.querySelector('.ksa'), sb=row.querySelector('.ksb');
+        if(la)la.textContent=KID[0]+' '+sp+'%'; if(lb)lb.textContent=KID[1]+' '+cp+'%';
+        if(sa)sa.textContent=usd(net*sp/100); if(sb)sb.textContent=usd(net*cp/100);
+      });
+      el.addEventListener('change',function(){ LINES[+el.dataset.i].childPct=+el.value; renderAll(); });
+    });
+    // class cycle Marital → Separate → Children
+    var CYC={marital:'separate',separate:'children',children:'marital'};
+    document.querySelectorAll('#nwtbl .clspill[data-i]').forEach(function(el){
+      el.addEventListener('click',function(){ var it=LINES[+el.dataset.i]; it.cls=CYC[it.cls||'marital']; renderAll(); });
+    });
+    // disputed flag (orthogonal to class)
+    document.querySelectorAll('.dispflag[data-i]').forEach(function(el){
+      el.addEventListener('click',function(){ var it=LINES[+el.dataset.i]; it.disputed=!it.disputed; if(!it.disputed){ it.valDispute=false; } renderAll(); });
+    });
+    // advanced opt-ins: pension coverture, disputed-value
+    document.querySelectorAll('#nwtbl .addadv[data-act], #nwtbl .tinyx[data-act]').forEach(function(el){
+      el.addEventListener('click',function(){ var it=LINES[+el.dataset.i], a=el.dataset.act;
+        if(a==='addpension'){ it.pension={married:120,total:240,owner:(it.n.indexOf(PARTY.B)>-1?'B':'A')}; }
+        else if(a==='delpension'){ delete it.pension; }
+        else if(a==='addval'){ it.valDispute=true; var b=effBal(it); it.her=b; it.his=b; it.use='mid'; }
+        else if(a==='delval'){ it.valDispute=false; delete it.her; delete it.his; delete it.use; }
+        renderAll();
+      });
+    });
+    // separate-owner toggle
+    document.querySelectorAll('#septbl .ownb').forEach(function(el){
+      el.addEventListener('click',function(){ LINES[+el.dataset.i].owner=el.dataset.own; renderAll(); });
+    });
+    // remove
+    document.querySelectorAll('.rmv').forEach(function(el){
+      el.addEventListener('click',function(){ var it=LINES[+el.dataset.i];
+        CATS.forEach(function(c){ var j=c.items.indexOf(it); if(j>-1){ lastRemoved={catKey:c.key,pos:j,item:it}; c.items.splice(j,1); } });
+        renderAll();
+      });
+    });
+    // add account
+    document.querySelectorAll('#nwtbl .addbtn, #ctbl .addbtn').forEach(function(el){
+      el.addEventListener('click',function(){ var key=el.dataset.cat, c=CATS.filter(function(x){return x.key===key;})[0]; if(!c) return;
+        if(key==='kids529'){ c.items.push({n:'New children’s account',bal:0,tax:'post',cls:'children',childPct:0}); }
+        else { var neg=(key==='liab'); c.items.push({n:'New '+(neg?'liability':'account'),bal:0,tax:'post',cls:'marital',pB:50}); }
+        renderAll();
+      });
+    });
+  }
+  // ===== undo (last removed account) =====
+  var lastRemoved=null;
+  function renderUndo(){
+    var el=document.getElementById('undobar'); if(!el) return;
+    if(!lastRemoved){ el.innerHTML=''; return; }
+    el.innerHTML='<div class="undobar"><i class="ti ti-arrow-back-up"></i> Removed <b style="color:var(--navy700)">&nbsp;'+esc(lastRemoved.item.n||'account')+'&nbsp;</b>.<button id="undoBtn">Undo remove</button></div>';
+    document.getElementById('undoBtn').addEventListener('click',function(){
+      var c=CATS.filter(function(x){return x.key===lastRemoved.catKey;})[0]; if(c){ c.items.splice(Math.min(lastRemoved.pos,c.items.length),0,lastRemoved.item); }
+      lastRemoved=null; renderAll();
+    });
+  }
+
+  // ===== scenario save / compare / restore =====
+  var SCENARIOS=[], scenSeq=0;
+  function cloneState(){ return JSON.parse(JSON.stringify({CATS:CATS, RATE:RATE, targetB:targetB})); }
+  function saveScenario(){
+    var C=compute();
+    SCENARIOS.push({ name:'Proposal '+String.fromCharCode(65+(scenSeq++)), state:cloneState(),
+      allocA:C.allocA, allocB:C.allocB, pctA:C.pctA, pctB:C.pctB,
+      eqAmt:C.eqAmt, eqFrom:C.eqFrom, eqTo:C.eqTo, marital:C.marital, held:C.sep+C.coll });
+    renderScenarios();
+  }
+  function restoreScenario(idx){
+    var s=SCENARIOS[idx]; if(!s) return; var st=JSON.parse(JSON.stringify(s.state));
+    CATS=st.CATS; RATE=st.RATE; if(st.targetB!=null){ targetB=st.targetB; var tsl=document.getElementById('tgtsl'); if(tsl)tsl.value=targetB; } rebuildLines();
+    document.getElementById('txOrd').value=Math.round(RATE.ord*100);
+    document.getElementById('txCg').value=Math.round(RATE.cg*100);
+    renderAll();
+  }
+  function renderScenarios(){
+    var el=document.getElementById('scenwrap'); if(!el) return;
+    var C=compute();
+    if(!SCENARIOS.length){ el.innerHTML='<div class="scenempty">No saved proposals yet. Set a split above, then <b>Save current as a proposal</b> — save a second and they line up here for a side-by-side comparison.</div>'; return; }
+    var cols=SCENARIOS.map(function(s,i){return {s:s,i:i};});
+    function row(label,fn,cls){ return '<tr><td class="rl">'+label+'</td>'+cols.map(function(c){return '<td'+(cls?' class="'+cls+'"':'')+'>'+fn(c.s)+'</td>';}).join('')+'<td class="'+(cls||'')+'">'+fn(C)+'</td></tr>'; }
+    var h='<table class="scentbl"><thead><tr><th></th>'+cols.map(function(c){return '<th>'+esc(c.s.name)+'</th>';}).join('')+'<th class="live">Live (unsaved)</th></tr></thead><tbody>';
+    h+=row(esc(PARTY.A)+' — $', function(s){return usd(s.allocA);});
+    h+=row(esc(PARTY.A)+' — %', function(s){return (s.pctA*100).toFixed(1)+'%';});
+    h+=row(esc(PARTY.B)+' — $', function(s){return usd(s.allocB);});
+    h+=row(esc(PARTY.B)+' — %', function(s){return (s.pctB*100).toFixed(1)+'%';});
+    h+=row('Equalizing', function(s){return PARTY[s.eqFrom]+'→'+PARTY[s.eqTo]+' '+usd(s.eqAmt);});
+    h+=row('Marital estate', function(s){return usd(s.marital);});
+    h+=row('Held out (sep · kids)', function(s){return usd(s.held);});
+    h+='<tr class="actrow"><td class="rl"></td>'+cols.map(function(c){return '<td><button class="mini" data-restore="'+c.i+'">Restore</button><button class="mini del" data-del="'+c.i+'">Delete</button></td>';}).join('')+'<td>current</td></tr>';
+    h+='</tbody></table>';
+    el.innerHTML=h;
+    el.querySelectorAll('[data-restore]').forEach(function(b){b.addEventListener('click',function(){restoreScenario(+b.dataset.restore);});});
+    el.querySelectorAll('[data-del]').forEach(function(b){b.addEventListener('click',function(){SCENARIOS.splice(+b.dataset.del,1);renderScenarios();});});
+  }
+  document.getElementById('saveScen').addEventListener('click',saveScenario);
+
+  // tax-assumptions panel + target control (outside the tables — bound once, keep focus)
+  document.getElementById('txOrd').addEventListener('input',function(){ var v=parseFloat(this.value); RATE.ord=isNaN(v)?0:v/100; renderAll(); });
+  document.getElementById('txCg').addEventListener('input',function(){ var v=parseFloat(this.value); RATE.cg=isNaN(v)?0:v/100; renderAll(); });
+  var tsl=document.getElementById('tgtsl');
+  function updTgt(){ document.getElementById('tgtLabA').textContent=PARTY.A+' '+(100-targetB)+'%'; document.getElementById('tgtLabB').textContent=PARTY.B+' '+targetB+'%'; }
+  tsl.addEventListener('input',function(){ targetB=+this.value; updTgt(); refreshSummaries(); });
+  document.getElementById('tgtReset').addEventListener('click',function(){ targetB=50; tsl.value=50; updTgt(); refreshSummaries(); });
+
+  // ===== collapsing: statement categories (subtotal stays visible) + page sections =====
+  var collapsed={};
+  document.getElementById('nwtbl').addEventListener('click',function(e){
+    var h=e.target.closest('tr.cathead'); if(!h||!h.dataset.cat) return;
+    collapsed[h.dataset.cat]=!collapsed[h.dataset.cat]; renderAll();
+  });
+  document.getElementById('collAll').addEventListener('click',function(){ CATS.forEach(function(c){collapsed[c.key]=true;}); renderAll(); });
+  document.getElementById('openAll').addEventListener('click',function(){ collapsed={}; renderAll(); });
+  document.querySelectorAll('.sect .sect-h.collapsible').forEach(function(h){
+    h.addEventListener('click',function(e){ if(e.target.closest('a,button,select,input'))return; h.parentElement.classList.toggle('sect-collapsed'); });
+  });
+  document.getElementById('secColl').addEventListener('click',function(){ document.querySelectorAll('.sect').forEach(function(s){s.classList.add('sect-collapsed');}); });
+  document.getElementById('secOpen').addEventListener('click',function(){ document.querySelectorAll('.sect').forEach(function(s){s.classList.remove('sect-collapsed');}); });
+
+  updTgt(); renderAll();
 })();
 </script>
-
-<style data-motion>
-@media (prefers-reduced-motion: no-preference){
- .js-anim .mreveal{opacity:0;transform:translateY(16px);transition:opacity .6s cubic-bezier(.2,.6,.2,1),transform .6s cubic-bezier(.2,.6,.2,1)}
- .js-anim .mreveal.in{opacity:1;transform:none}
-}
-.card,.mcard,.acard,.pcard,.ovcard,.stat,.ctcell{transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
-.card:hover,.mcard:hover,.acard:hover,.pcard:hover,.ovcard:hover,.stat:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(8,20,40,.11)}
-</style>
-<script data-motion>
-(function(){
- if(!('IntersectionObserver' in window))return;
- if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
- document.documentElement.classList.add('js-anim');
- var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
- var sel=['.card','.mcard','.acard','.pcard','.ovcard','.stat','.sec','.tbl'];
- document.querySelectorAll(sel.join(',')).forEach(function(el){el.classList.add('mreveal');io.observe(el);});
-})();
-</script>
-
-<!-- jx-account-cluster (signed-in personalization: you + mediator + attorney, click to manage) -->
-<link rel="stylesheet" href="shared/account-cluster.css?v=2026-07-01d">
-<script src="shared/account-cluster.js?v=2026-07-01d" defer></script>
-<!-- /jx-account-cluster -->
-<!-- jx-progress-rail (simplified global wayfinding: where am I + click to jump; type-aware scope) -->
-<style id="jxr-css">
-.jxr{background:#fff;border-bottom:1px solid #E3EAF3;font-family:'Source Sans 3',system-ui,sans-serif;position:sticky;top:0;z-index:25;}
-.jxr-in{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:10px;padding:8px 22px;overflow-x:auto;}
-.jxr-bc{color:#154572;text-decoration:none;font-size:12.5px;font-weight:600;display:inline-flex;align-items:center;gap:5px;white-space:nowrap;}
-.jxr-bc:hover{color:#042C53;}
-.jxr-bcs{color:#B7C2D2;}
-.jxr-mt{font-size:12.5px;font-weight:700;color:#042C53;white-space:nowrap;}
-.jxr-steps{display:flex;align-items:center;margin-left:6px;}
-.jxr-s{display:inline-flex;align-items:center;gap:6px;text-decoration:none;padding:4px 9px;border-radius:999px;white-space:nowrap;}
-.jxr-s .jxr-n{width:18px;height:18px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:800;background:#EAF1FB;color:#154572;}
-.jxr-s .jxr-l{font-size:11.5px;font-weight:600;color:#5F5E5A;}
-.jxr-s.done .jxr-n{background:#1D9E75;color:#fff;} .jxr-s.done .jxr-l{color:#154572;}
-.jxr-s.cur{background:#FAECE7;} .jxr-s.cur .jxr-n{background:#D85A30;color:#fff;} .jxr-s.cur .jxr-l{color:#B04722;font-weight:800;}
-.jxr-s.up .jxr-n{background:#F1F4F8;color:#9AA3B0;} .jxr-s.up .jxr-l{color:#9AA3B0;}
-.jxr-s:hover{background:#F1F6FC;}
-.jxr-sep{width:13px;height:2px;background:#E6ECF4;flex:none;}
-.jxr-scope{margin-left:auto;font-size:10.5px;font-weight:700;color:#154572;background:#EAF1FB;border:1px solid #D8E4F2;border-radius:999px;padding:3px 10px;white-space:nowrap;display:inline-flex;align-items:center;gap:5px;}
-.jxr-scope i{font-size:13px;color:#2A5582;}
-.jxr-mini{display:none;font-size:12px;font-weight:800;color:#B04722;white-space:nowrap;}
-@media(max-width:880px){ .jxr-s .jxr-l{display:none;} .jxr-mini{display:inline-block;} }
-</style>
-<script id="jxr-js">
-(function(){
- if(window.__jxrail) return; window.__jxrail=1;
- var STEPS=[['plan.html','Plan'],['intake.html','Intake'],['redact.html','Redact'],['summarize.html','Summarize'],['gap-analysis.html','Gap Analysis'],['resolution.html','Resolution'],['memorandum.html','Memorandum']];
- var MAP={'plan.html':1,'intake.html':2,'redact.html':3,'summarize.html':4,'gap-analysis.html':5,'resolution.html':6,'memorandum.html':7,'strength-comparison.html':5,'children.html':5,'finances.html':5,'support.html':5};
- function init(){
-   var path=(location.pathname.split('/').pop()||'').toLowerCase(); var cur=MAP[path]||0;
-   var chips='';
-   STEPS.forEach(function(s,i){ var n=i+1; var cls=n<cur?'done':(n===cur?'cur':'up');
-     var inner=n<cur?'<i class="ti ti-check"></i>':n;
-     chips+='<a class="jxr-s '+cls+'" href="'+s[0]+'" title="Step '+n+' · '+s[1]+'"><span class="jxr-n">'+inner+'</span><span class="jxr-l">'+s[1]+'</span></a>';
-     if(n<7) chips+='<span class="jxr-sep"></span>';
-   });
-   // type-aware scope label: party_model = 'two' (default) | 'one'. Two-party: 1-4 each / 5-7 both. One-sided: applicant throughout.
-   var PARTY=(window.JX_PARTY||'two');
-   var scopeTxt = PARTY==='one' ? 'You — the applicant'
-       : (cur===0 ? '' : (cur<=4 ? 'Each party · on their own' : 'Both parties · together'));
-   var scopeHtml = scopeTxt ? '<span class="jxr-scope"><i class="ti ti-users"></i>'+scopeTxt+'</span>' : '<span style="margin-left:auto"></span>';
-   var curLabel = cur? ('Step '+cur+' of 7') : 'Overview';
-   var bar=document.createElement('div'); bar.className='jxr';
-   bar.innerHTML='<div class="jxr-in"><a class="jxr-bc" href="dashboard.html"><i class="ti ti-layout-grid"></i> Dashboard</a>'
-     +'<span class="jxr-bcs">›</span><span class="jxr-mt"><i class="ti ti-folder" style="font-size:11.5px;opacity:.65;margin-right:4px"></i>Whitfield</span>'
-     +'<div class="jxr-steps">'+chips+'</div>'+scopeHtml+'<span class="jxr-mini">'+curLabel+'</span></div>';
-   var anchor=document.querySelector('.rolebar')||document.querySelector('.appbar');
-   if(anchor&&anchor.parentNode){ anchor.parentNode.insertBefore(bar, anchor.nextSibling); }
-   else { document.body.insertBefore(bar, document.body.firstChild); }
- }
- if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
-})();
-</script>
-<!-- /jx-progress-rail -->
 </body>
 </html>

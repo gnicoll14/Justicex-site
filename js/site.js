@@ -105,7 +105,7 @@
   modal.setAttribute('aria-hidden', 'true');
   modal.setAttribute('role', 'dialog');
   modal.setAttribute('aria-modal', 'true');
-  modal.setAttribute('aria-label', 'JusticeX.ai Framework video');
+  modal.setAttribute('aria-label', 'JusticeX Framework video');
   modal.innerHTML =
     '<div class="jx-vmodal-backdrop" data-vclose></div>' +
     '<div class="jx-vmodal-frame">' +

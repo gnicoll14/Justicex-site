@@ -107,7 +107,7 @@
 
   /* ===== Type families ===== */
   --font-display:      'Source Serif 4', Georgia, 'Times New Roman', serif;
-  --font-body:         'Source Sans 3', 'Calibri', system-ui, -apple-system, Segoe UI, sans-serif;
+  --font-body:         'Source Sans 3', system-ui, -apple-system, Segoe UI, sans-serif;
   --font-mono:         'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
 
   /* ===== Type scale (modular, 1.25) ===== */

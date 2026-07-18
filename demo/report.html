@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Step Report · Delgado (Sample) · JusticeX</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
+<style>
+  :root{--navy900:#021A33;--navy800:#042C53;--navy700:#0A3866;--navy600:#154572;--navy500:#2A5582;
+    --coral600:#B04722;--coral500:#D85A30;--coral100:#FAECE7;--coralLt500:#F0997B;
+    --slate500:#5F5E5A;--slate300:#9CA0A7;--white:#FFFFFF;--paper:#F4F6FA;--stone100:#E6F1FB;--stone200:#D1DEEE;--stone300:#B5C5DC;--ink700:#1A1A1A;--teal100:#B6C0D0;--success:#1D9E75;--successS:#E4F3EC;
+    --fdisp:'Source Serif 4',Georgia,serif;--fbody:'Source Sans 3',system-ui,-apple-system,Segoe UI,sans-serif;--fmono:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--navy800);font-family:var(--fbody);font-size:15px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 26px}
+  a{color:inherit}
+  .flagbar{background:var(--navy700);color:#CFE0F2;font-size:11.5px;text-align:center;padding:8px 20px;border-bottom:1px solid #21405f}
+  .flagbar b{color:#fff}.flagbar code{background:var(--navy900);color:var(--coralLt500);padding:1px 6px;border-radius:5px;font-size:10.5px;font-family:var(--fmono)}
+  .mo-ribbon{background:var(--coral100);color:var(--coral600);font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;text-align:center;padding:8px 16px;border-bottom:1px solid var(--stone200)}
+  .nav{background:var(--navy800);color:#fff}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 0}
+  .brand{display:flex;align-items:center;gap:9px;font-family:var(--fdisp);font-weight:600;font-size:22px;color:#fff;text-decoration:none}
+  .brand .x{color:var(--coral500)}
+  .navright{display:flex;align-items:center;gap:20px}
+  .backlink{font-size:12.5px;color:var(--teal100);text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:5px}
+  .backlink:hover{color:#fff}
+  .termsw{display:inline-flex;flex-direction:column;align-items:flex-end;gap:3px}
+  .termsw .tlab{font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--slate300)}
+  .termsw .sw{display:inline-flex;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:4px}
+  .termsw .sw a{display:inline-flex;align-items:center;gap:6px;color:var(--teal100);text-decoration:none;font-weight:600;font-size:12px;padding:5px 12px;border-radius:999px;white-space:nowrap}
+  .termsw .sw a.on{background:var(--coral500);color:#fff}
+  @media(max-width:620px){.termsw .tlab{display:none}}
+  .jx-term{border-bottom:1px dotted var(--slate300);color:var(--slate500);font-style:italic;cursor:help}
+  .jx-term-strong .jx-term{font-style:normal;color:var(--navy800);border-bottom-color:var(--navy500)}
+  .head{background:var(--navy800);color:var(--paper);padding:28px 0 28px;border-top:1px solid var(--navy600)}
+  .rkind{display:inline-flex;align-items:center;gap:7px;background:var(--coral500);color:#08213A;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 12px;border-radius:999px}
+  .head h1{font-family:var(--fdisp);font-weight:600;font-size:32px;margin:12px 0 6px;color:var(--paper)}
+  .head .sub{color:var(--teal100);font-size:14px}
+  .rmeta{display:flex;flex-wrap:wrap;gap:9px;margin-top:15px}
+  .rmeta span{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:600;color:var(--paper);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:5px 12px}
+  .rmeta i{color:var(--coralLt500)}
+  /* report-type switch */
+  .typesw{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:22px 0 4px;justify-content:space-between}
+  .segsw{display:inline-flex;border:1px solid var(--stone200);border-radius:999px;overflow:hidden;background:var(--white)}
+  .segsw a{font-size:13px;font-weight:600;color:var(--navy700);background:var(--white);padding:8px 16px;text-decoration:none;display:inline-flex;align-items:center;gap:7px}
+  .segsw a.on{background:var(--navy800);color:#fff}
+  .stepnavtop{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--slate500)}
+  .stepnavtop a{color:var(--navy700);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:4px}
+  .stepnavtop a.dis{color:var(--slate300);pointer-events:none}
+  .sec{padding:20px 0}
+  .card{background:var(--white);border:1px solid var(--stone200);border-radius:16px;padding:22px 24px;margin-top:16px}
+  .card h2{font-family:var(--fdisp);font-weight:600;font-size:18px;color:var(--navy800);margin:0 0 14px;display:flex;align-items:center;gap:9px}
+  .card h2 i{color:var(--navy600)}
+  .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  @media(max-width:820px){.tiles{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:480px){.tiles{grid-template-columns:1fr}}
+  .tile{border:1px solid var(--stone200);border-radius:12px;padding:14px 15px;background:var(--paper)}
+  .tile .l{font-size:10px;letter-spacing:.3px;text-transform:uppercase;color:var(--slate500);font-weight:700}
+  .tile .v{font-family:var(--fdisp);font-size:22px;font-weight:600;color:var(--navy800);margin-top:3px;line-height:1.15}
+  .tile .s{font-size:12px;color:var(--slate500);margin-top:3px;line-height:1.4}
+  .objr{font-size:14.5px;color:var(--ink700);line-height:1.65}
+  .kv{list-style:none;margin:0;padding:0}
+  .kv li{display:flex;gap:14px;padding:10px 0;border-bottom:1px solid var(--stone200);font-size:14px}
+  .kv li:last-child{border-bottom:none}
+  .kv .k{flex:0 0 190px;font-weight:700;color:var(--navy800)}
+  @media(max-width:560px){.kv li{flex-direction:column;gap:3px}.kv .k{flex:none}}
+  .kv .v{color:var(--ink700);line-height:1.55}
+  .proc{font-size:14px;color:var(--ink700);line-height:1.65}
+  .reflist{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+  .reflist li{display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:var(--ink700)}
+  .reflist i{color:var(--navy500);margin-top:2px}
+  .flowline{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-size:13px;font-weight:600;color:var(--coral600)}
+  .chainref{display:flex;gap:12px;align-items:flex-start;background:var(--stone100);border:1px solid var(--stone200);border-radius:12px;padding:14px 16px;margin-top:16px;font-size:13px;color:var(--ink700);line-height:1.55}
+  .chainref i{font-size:20px;color:var(--navy600);flex:0 0 auto}
+  .chainref code{font-family:var(--fmono);font-size:11px;color:var(--navy600);background:var(--white);border:1px solid var(--stone200);border-radius:5px;padding:1px 6px;word-break:break-all}
+  .chainref a{color:var(--navy700);font-weight:600;text-decoration:none;white-space:nowrap}
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+  .btn{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;text-decoration:none;border-radius:999px;padding:10px 18px;border:1px solid var(--stone200);background:var(--white);color:var(--navy800)}
+  .btn.p{background:var(--navy800);color:#fff;border-color:var(--navy800)}
+  .mark{font-size:11.5px;color:var(--slate500);margin-top:16px;line-height:1.5}.mark b{color:var(--navy700)}
+  .posture{font-size:12.5px;color:var(--slate500);line-height:1.55;margin:26px auto 4px;text-align:center;max-width:800px}
+  .foot{background:var(--navy800);color:#9FB6D2;padding:22px 0;margin-top:20px;font-size:12.5px}
+  .foot .fin{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}.foot b{color:#fff}
+</style>
+</head>
+<body>
+<div class="flagbar">Mock for review — behind flag <code>matter_workspace_v1</code>, <b>OFF in production</b> until the Stage Media Model sign-off, counsel confirmation of the output naming, and the Fable QA pass (Ref&nbsp;92). Not linked from any navigation; synthetic Delgado data only — figures are illustrative.</div>
+<div class="mo-ribbon" id="moRibbon">Sample · Synthetic matter (“Delgado”) · Step Report</div>
+<nav class="nav"><div class="wrap"><div class="nav-in">
+  <a class="brand" href="/index.html">Justice<span class="x">X</span></a>
+  <div class="navright">
+    <a class="backlink" id="backLink" href="matter-step.html"><i class="ti ti-arrow-left"></i> Back to the step</a>
+    <span class="termsw" id="termsw"></span>
+  </div>
+</div></div></nav>
+
+<header class="head"><div class="wrap">
+  <span class="rkind" id="rkind"><i class="ti ti-file-text"></i> Report</span>
+  <h1 id="rTitle">Step Report</h1>
+  <div class="sub" id="rSub"></div>
+  <div class="rmeta" id="rMeta"></div>
+</div></header>
+
+<div class="wrap">
+  <div class="typesw">
+    <div class="segsw" id="typesw"></div>
+    <div class="stepnavtop" id="stepNav"></div>
+  </div>
+  <div id="body"></div>
+  <p class="mark" id="mark"></p>
+  <div class="actions" id="actions"></div>
+</div>
+
+<p class="posture">JusticeX organizes and compares your information objectively. It is software — not a law firm or a lawyer — and it does not advise you or the other party. A step report is the certified record of what happened; it is not legal advice. You decide, with your own attorney if you choose.</p>
+<div style="height:16px"></div>
+<footer class="foot"><div class="wrap"><div class="fin">
+  <div><b>JusticeX is a software platform — not a law firm or mediator.</b> Objective comparison only; not legal advice. Synthetic demo — no real person, figure, or document.</div>
+  <div><b>Truth · Fairness · Efficiency</b></div>
+</div></div></footer>
+
+<script>
+(function(){
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  var q=new URLSearchParams(location.search);
+  var legal = q.get('view')==='attorney' || q.get('view')==='legal';
+  var step = Math.max(1, Math.min(7, parseInt(q.get('step'),10)||5));
+  var type = (q.get('type')==='detail') ? 'detail' : 'summary';
+  var vq = legal ? '&view=attorney' : '';
+  function bridge(s){ return esc(s).replace(/\[\[([^\]]+)\]\]/g, function(_,t){ return '<span class="jx-term" title="'+t+'">('+t+')</span>'; }); }
+  if (legal) document.body.classList.add('jx-term-strong');
+  function toggleHref(v){ var p=new URLSearchParams(location.search); if(v==='consumer') p.delete('view'); else p.set('view',v); var t=p.toString(); return location.pathname+(t?'?'+t:''); }
+  function typeHref(t){ var p=new URLSearchParams(location.search); p.set('type',t); return location.pathname+'?'+p.toString(); }
+  function stepHref(n){ return 'report.html?step='+n+'&type='+type+vq; }
+  var outWord = legal ? 'the Memorandum of Understanding' : 'your agreement';
+
+  var MATTER = { title:'Delgado', county:'Kings County, NY', type:'Divorce, children & property',
+    framework:'Fair division of property [[equitable distribution]]', you:'Marisol', other:'Andrés' };
+
+  // Delgado per-step report model (consistent with matter-step.html). Figures illustrative.
+  var STEP = {
+    1:{ name:'Plan', head:'Scope & questions', gen:'2 Jun 2026',
+      tiles:[['Open questions','6','from the scope you set'],['Location','Kings County','New York'],['Approach','Fair division','of property [[equitable distribution]]'],['Agreed in principle','4','base points carried forward']],
+      summary:'Scope set — a divorce with children and property in Kings County, New York, dividing what you built together fairly [[equitable distribution]]. Six open questions were identified and both parties were onboarded. Sharing the major decisions about the children [[legal custody]] is noted as agreed in principle.',
+      inputs:[['Matter type','Divorce with children and property'],['Location','Kings County, New York'],['Parties','Marisol & Andrés Delgado (two-party)']],
+      process:'JusticeX organized the matter into six clear questions and applied the approach for a New York divorce — fair division of property [[equitable distribution]]. It did not judge, advise, or decide anything.',
+      outputs:[['The question list','The home · the retirement account · the 2019 inheritance · spousal support [[maintenance]] · the parenting schedule · child support'],['Agreed in principle','Sharing the major decisions about the children [[legal custody]]; each parent fit; keeping schooling stable']],
+      refs:['Your confirmed matter type and county','The questions JusticeX lays out for a New York divorce'] },
+    2:{ name:'Intake', head:'Documents & facts', gen:'8 Jun 2026',
+      tiles:[['Items received','7 of 8','one still helpful to add'],['Home value left','$550,000','after the $410,000 mortgage'],['Retirement','$280,000','401(k) balance'],['Incomes','$145k / $62k','you / the other party']],
+      summary:'Seven of eight items received. Your property facts are captured: a home appraised at $960,000 (mortgage $410,000; $550,000 of value left after the mortgage), a retirement account of $280,000, an individual retirement account and joint accounts, incomes of $145,000 and $62,000, and 2019 inheritance records. One item — the older retirement records — is incomplete and flagged for follow-up.',
+      inputs:[['Home appraisal','Marital residence — appraised $960,000'],['Mortgage statement','Balance $410,000'],['Retirement statement','401(k) — $280,000'],['Older retirement records','Pre-2011 contributions — incomplete (flagged)'],['Bank & retirement accounts','IRA; joint accounts'],['Income documentation','Both parties — $145,000 / $62,000'],['2019 inheritance records','For personal-property tracing']],
+      process:'JusticeX organized and checked your inputs for completeness, for your eyes only. Nothing was shared at this step. One gap — the pre-2011 retirement records — was flagged for follow-up.',
+      outputs:[['Organized facts','An even, itemized picture of what each side provided'],['Completeness flag','Older retirement records incomplete — affects the personal-property portion of the retirement account']],
+      refs:['Your uploaded documents and entered details','JusticeX completeness check (deterministic)'] },
+    3:{ name:'Redact', head:'Hiding & sharing', gen:'10 Jun 2026',
+      tiles:[['Personal details','Hidden','on every item'],['Sharing','You control','item by item'],['Every choice','Logged','to the audit trail'],['Figures','Retained','names & numbers do not cross']],
+      summary:'Personal details were hidden (redacted) before anything crossed between the parties. Each side controls what is shared versus kept private — uploading a document does not share it. The sharing and hiding are confirmed by the accountable owner before the matter advances; this is the point where information can cross between you.',
+      inputs:[['Items reviewed','All 7 intake items'],['Hidden on each','Names, account numbers, and addresses (deterministic)'],['Your choices','What is shared with '+MATTER.other+' vs. kept private, item by item']],
+      process:'JusticeX hid personal details by your sharing rules and logged every choice. It never shares more than you confirm. The financial figures the comparison needs remain; names, account numbers, and addresses do not cross.',
+      outputs:[['Shareable versions','A cleaned, hidden version of each item'],['Sharing sign-off','Confirmed by the accountable owner — the crossing point']],
+      refs:['Your organized intake items','Your per-item sharing choices'] },
+    4:{ name:'Summarize', head:'Even summaries', gen:'11 Jun 2026',
+      tiles:[['Home value left','$550,000','after the mortgage'],['Retirement','$280,000','401(k) balance'],['Incomes','$145k / $62k','~14-year marriage'],['Balance','Checked','even-handedness confirmed']],
+      summary:'Each side was written up identically — the same questions, the same depth. Objective facts were captured for every question, and an even-handedness check confirmed the two summaries are balanced.',
+      inputs:[['Source','The confirmed, hidden items from Redact — nothing new added'],['Questions','All six, plus the aligned base points']],
+      process:'JusticeX produced one even summary per question — the same prompts, model, and depth for both sides. It did not weigh, rank, or recommend. A deterministic even-handedness check found no asymmetry.',
+      outputs:[['Even summaries','A symmetric, side-by-side summary of every question'],['Neutrality check','Passed — no asymmetry between the two write-ups']],
+      refs:['The hidden, shareable items from Redact','JusticeX even-handedness check (deterministic)'] },
+    5:{ name:'Gap Analysis', head:'Agreement & differences', gen:'12 Jun 2026',
+      tiles:[['Aligned base','4','points already agreed'],['Open questions','6','worked side by side'],['Recommendation','None','options + the math only'],['Carries to','Resolution','the open list becomes the agenda']],
+      summary:'Agreed, differing, and missing points were mapped across the six questions. Aligned base: the divorce itself, sharing the major decisions about the children [[legal custody]], each parent fit, and keeping the children’s schooling stable. Open: the home, the retirement account, the inheritance, spousal support [[maintenance]], the parenting schedule, and child support. No side is favored and no number is suggested.',
+      inputs:[['Source','The even summaries from Summarize'],['Compared','Each side’s position on every open question']],
+      process:'JusticeX mapped agreement and difference objectively and showed the math for each open point. It did not take a side or suggest a number.',
+      outputs:[['Aligned base (4)','The divorce · shared major decisions [[legal custody]] · each parent fit · schooling stable'],['Open (6)','The home · the retirement account · the 2019 inheritance · spousal support [[maintenance]] · the parenting schedule · child support'],['Agreed so far','Child support — New York’s standard formula [[Child Support Standards Act]], once the parenting schedule is set']],
+      refs:['The even summaries from Summarize','The objective figures from Intake'] },
+    6:{ name:'Resolution', head:'Options & decisions', gen:'—',
+      tiles:[['Open questions','5','each with even options'],['Options','Even','no recommendation'],['Decision','Yours','choose, or leave for an attorney'],['Agreed','Child support','standard formula noted']],
+      summary:'Clear options were laid out for each open question — even, with no recommendation. Agreement is noted where the positions are already close, such as using New York’s standard child-support formula [[Child Support Standards Act]] once the parenting schedule is set. Every agreed choice flows into your written agreement; anything left open is listed for an attorney.',
+      inputs:[['Source','The open questions and options from Gap Analysis'],['Your role','Choose the option you both accept for each question']],
+      process:'JusticeX presented the options evenly and recorded what you agreed. It did not propose a figure, predict an outcome, or advise.',
+      outputs:[['Agreed positions','One agreed choice per resolved question'],['Left for an attorney','Any question you choose to decide with counsel']],
+      refs:['The open list from Gap Analysis','The even option sets for each question'] },
+    7:{ name:'Memorandum', head:'The assembled agreement', gen:'—',
+      tiles:[['Status','Certified','once you finalize'],['Record','Audit-tracked','SHA-256 hash chain'],['Open points','Listed','plainly, for an attorney'],['Ready for','An attorney','to review and update']],
+      summary:'The agreed terms were assembled into your written agreement, with any open points listed for an attorney. The Finalize gate certifies the record — audit-tracked — ready to sign and to take to an attorney. For an attorney, the same record is available as a Memorandum of Understanding [[memorandum of understanding]] for review and update.',
+      inputs:[['Source','Everything you confirmed at each step — nothing new is added'],['Assembled from','Plan, Resolution, and the certified step reports']],
+      process:'JusticeX assembled the certified, audit-tracked record. It generated the document; it did not give legal advice on it. Nothing is locked until you finalize.',
+      outputs:[['Decision-making for the children','Shared — you both make the major decisions together [[legal custody]]'],['Dividing what you own','The home, the retirement account, and the 2019 inheritance'],['Spousal support','The amount and how long it lasts [[maintenance]]'],['The parenting schedule','Where the children live and the day-to-day schedule'],['Child support','New York’s standard formula [[Child Support Standards Act]], once the parenting schedule is set'],['Open point','Older retirement records still incomplete — add them, or note for an attorney']],
+      refs:['Every confirmed step report','The Plan scope and the Resolution decisions'] }
+  };
+
+  var s = STEP[step];
+  var kindLabel = type==='detail' ? 'Detailed Report' : 'Summary Report';
+
+  // chrome
+  document.getElementById('moRibbon').textContent = 'Sample · Synthetic matter (“Delgado”) · Step '+step+' · '+kindLabel;
+  document.title = kindLabel+' · '+s.name+' · Delgado (Sample) · JusticeX';
+  document.getElementById('termsw').innerHTML='<span class="tlab">Terminology</span><span class="sw">'+
+    '<a href="'+toggleHref('consumer')+'" class="'+(legal?'':'on')+'"><i class="ti ti-message-circle"></i> Simple terms</a>'+
+    '<a href="'+toggleHref('attorney')+'" class="'+(legal?'on':'')+'"><i class="ti ti-gavel"></i> Legal terms</a></span>';
+  document.getElementById('backLink').href='matter-step.html?step='+step+(legal?'&view=attorney':'');
+  document.getElementById('rkind').innerHTML='<i class="ti '+(type==='detail'?'ti-file-text':'ti-layout-dashboard')+'"></i> '+kindLabel;
+  document.getElementById('rTitle').innerHTML=bridge(s.name+' — '+s.head);
+  document.getElementById('rSub').innerHTML='Delgado · '+esc(MATTER.county)+' · '+esc(MATTER.type)+' · Step '+step+' of 7'+(s.gen!=='—'?' · generated '+esc(s.gen):'');
+  document.getElementById('rMeta').innerHTML=[['ti-scale','Fair division of property'],['ti-users','Marisol & Andrés'],['ti-shield-check','Certified · audit-tracked']]
+    .map(function(x){return '<span><i class="ti '+x[0]+'"></i> '+esc(x[1])+'</span>';}).join('');
+
+  // type switch + step nav
+  document.getElementById('typesw').innerHTML=
+    '<a href="'+typeHref('summary')+'" class="'+(type==='summary'?'on':'')+'"><i class="ti ti-layout-dashboard"></i> Summary</a>'+
+    '<a href="'+typeHref('detail')+'" class="'+(type==='detail'?'on':'')+'"><i class="ti ti-file-text"></i> Detailed</a>';
+  document.getElementById('stepNav').innerHTML=
+    (step>1?'<a href="'+stepHref(step-1)+'"><i class="ti ti-chevron-left"></i> '+esc(STEP[step-1].name)+'</a>':'<a class="dis"><i class="ti ti-chevron-left"></i></a>')+
+    '<span>Step '+step+' of 7</span>'+
+    (step<7?'<a href="'+stepHref(step+1)+'">'+esc(STEP[step+1].name)+' <i class="ti ti-chevron-right"></i></a>':'<a class="dis"><i class="ti ti-chevron-right"></i></a>');
+
+  // body
+  var body=document.getElementById('body'), html='';
+  var tiles='<div class="tiles">'+s.tiles.map(function(t){
+    return '<div class="tile"><div class="l">'+bridge(t[0])+'</div><div class="v">'+bridge(t[1])+'</div><div class="s">'+bridge(t[2])+'</div></div>';
+  }).join('')+'</div>';
+
+  if (type==='summary') {
+    html+='<div class="card"><h2><i class="ti ti-gauge"></i> At a glance</h2>'+tiles+'</div>';
+    html+='<div class="card"><h2><i class="ti ti-scale"></i> What this step recorded, objectively</h2>'+
+      '<p class="objr">'+bridge(s.summary)+'</p>'+
+      '<span class="flowline"><i class="ti ti-arrow-down-to-arc"></i> This record flows into '+esc(outWord)+'.</span></div>';
+    html+='<div class="chainref"><i class="ti ti-shield-check"></i><div>The full inputs, process, and references behind this step are in the <b>Detailed Report</b>, and every action is in the tamper-evident record. '+
+      '<a href="'+typeHref('detail')+'">Open the Detailed Report →</a> &nbsp;·&nbsp; <a href="audit-trail.html?step='+encodeURIComponent(s.name)+(legal?'&view=attorney':'')+'">This step in the Audit Trail →</a></div></div>';
+  } else {
+    html+='<div class="card"><h2><i class="ti ti-file-import"></i> Inputs — what this step worked from</h2><ul class="kv">'+
+      s.inputs.map(function(r){return '<li><span class="k">'+bridge(r[0])+'</span><span class="v">'+bridge(r[1])+'</span></li>';}).join('')+'</ul></div>';
+    html+='<div class="card"><h2><i class="ti ti-adjustments"></i> What JusticeX did with it</h2><p class="proc">'+bridge(s.process)+'</p></div>';
+    html+='<div class="card"><h2><i class="ti ti-file-export"></i> Outputs — what this step produced</h2><ul class="kv">'+
+      s.outputs.map(function(r){return '<li><span class="k">'+bridge(r[0])+'</span><span class="v">'+bridge(r[1])+'</span></li>';}).join('')+'</ul>'+
+      '<span class="flowline"><i class="ti ti-arrow-down-to-arc"></i> These outputs flow into '+esc(outWord)+'.</span></div>';
+    html+='<div class="card"><h2><i class="ti ti-link"></i> References — what it relied on</h2><ul class="reflist">'+
+      s.refs.map(function(r){return '<li><i class="ti ti-point"></i> '+bridge(r)+'</li>';}).join('')+'</ul></div>';
+    html+='<div class="chainref"><i class="ti ti-shield-check"></i><div>Every action in this step is recorded in the matter’s tamper-evident record (SHA-256 hash chain + Ed25519 signatures) — <b>no state change without an audit event</b>. '+
+      '<a href="audit-trail.html?step='+encodeURIComponent(s.name)+(legal?'&view=attorney':'')+'">See this step’s entries in the Audit Trail →</a></div></div>';
+  }
+  body.innerHTML=html;
+
+  document.getElementById('mark').innerHTML = '<strong>AI-assisted · figures illustrative · general information only — not a formal agreement, and not evidence or support of one.</strong> The certified figures are your inputs; this report is the record of what happened, not legal advice.';
+  document.getElementById('actions').innerHTML=
+    '<a class="btn p" href="matter-step.html?step='+step+(legal?'&view=attorney':'')+'"><i class="ti ti-arrow-left"></i> Back to the step</a>'+
+    '<a class="btn" href="matter-workspace.html'+(legal?'?view=attorney':'')+'"><i class="ti ti-layout-grid"></i> Matter Workspace</a>'+
+    '<a class="btn" href="#" onclick="return false"><i class="ti ti-download"></i> Download (PDF)</a>';
+})();
+</script>
+</body>
+</html>

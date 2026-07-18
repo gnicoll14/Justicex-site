@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JusticeX — Article 81: Understanding the process (general information)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
+<style>
+:root{--navy:#042C53;--navy-deep:#021A33;--navy2:#154572;--navy3:#2A5582;--paper:#E6F1FB;--surface:#FFFFFF;--ink:#1A1A1A;--muted:#5F5E5A;--faint:#9CA0A7;--hair:#D1DEEE;--accent:#D85A30;--accent-d:#B04722;--accent-soft:#FAECE7;--success:#1D9E75;--success-s:#E7F4EF;--warn:#D85A30;--warn-s:#FAECE7;--blue-soft:#EFF4FA;--radius:14px;--radius-sm:10px;}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',system-ui,sans-serif;font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;}
+a{color:var(--navy2);}
+.appbar{background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 26px;flex-wrap:wrap;gap:8px;}
+.brand{display:flex;align-items:center;}.bmark{height:23px;width:23px;border-radius:5px;margin-right:9px;}
+.wordmark{font-family:'Source Serif 4',serif;font-weight:600;font-size:22px;}.wordmark .x{color:var(--accent);}
+.cat{font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:#08213A;background:#9FC6E8;padding:3px 9px;border-radius:999px;margin-left:12px;font-weight:700;}
+.viewpill{font-size:11px;color:#08213A;background:#BFE0C8;padding:4px 11px;border-radius:999px;font-weight:700;display:inline-flex;align-items:center;gap:5px;}
+.viewpill i{font-size:13px;}
+/* demo / flag banner */
+.flagbar{background:#0A3866;color:#CFE0F2;font-size:11.5px;text-align:center;padding:7px 20px;letter-spacing:.2px;border-bottom:1px solid #21405f;}
+.flagbar b{color:#fff;}
+.flagbar code{background:#021A33;color:#F0997B;padding:1px 6px;border-radius:5px;font-size:10.5px;}
+.app{max-width:1000px;margin:20px auto 60px;padding:0 22px;}
+/* heightened notice */
+.notice{display:flex;gap:13px;align-items:flex-start;background:#FFF4EF;border:1px solid #F1CDBE;border-left:4px solid var(--accent);border-radius:var(--radius-sm);padding:14px 17px;margin-bottom:16px;}
+.notice i{font-size:22px;color:var(--accent-d);margin-top:1px;}
+.notice .nt{font-family:'Source Serif 4',serif;font-weight:600;font-size:15px;color:var(--accent-d);margin-bottom:3px;}
+.notice .nb{font-size:13px;color:#7a4a36;}
+.notice .nb b{color:var(--accent-d);}
+.aps{font-size:12px;color:#7a4a36;margin-top:7px;padding-top:7px;border-top:1px dashed #F1CDBE;}
+.aps b{color:var(--accent-d);}
+h1{font-family:'Source Serif 4',serif;font-weight:500;font-size:27px;margin:6px 0 4px;color:var(--navy);}
+.lede{color:var(--muted);margin:0 0 8px;max-width:78ch;font-size:16px;}
+.infotag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--navy2);background:var(--blue-soft);border:1px solid var(--hair);padding:4px 10px;border-radius:999px;margin-bottom:16px;}
+.sec{font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:var(--faint);font-weight:700;margin:26px 0 11px;display:flex;align-items:center;gap:8px;}
+.sec::after{content:"";flex:1;height:1px;background:var(--hair);}
+.card{background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);box-shadow:0 1px 2px rgba(20,30,46,.04);padding:18px 20px;}
+.card + .card{margin-top:14px;}
+.card p{margin:0 0 10px;}.card p:last-child{margin-bottom:0;}
+.vref{font-size:10px;font-weight:700;color:var(--navy3);background:var(--blue-soft);border:1px solid var(--hair);border-radius:5px;padding:0 5px;margin-left:4px;vertical-align:1px;letter-spacing:.3px;}
+/* concept process strip (no filing mechanics) */
+.flow{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
+.flow .step{flex:1;min-width:130px;background:var(--blue-soft);border:1px solid var(--hair);border-radius:10px;padding:11px 13px;}
+.flow .step .n{font-size:10px;font-weight:800;color:var(--navy3);letter-spacing:.4px;}
+.flow .step .t{font-family:'Source Serif 4',serif;font-weight:600;font-size:14px;color:var(--navy);margin:2px 0 2px;}
+.flow .step .d{font-size:12px;color:var(--muted);}
+/* alternatives grid */
+.alts{display:grid;grid-template-columns:1fr 1fr;gap:12px;}@media(max-width:720px){.alts{grid-template-columns:1fr;}}
+.alt{background:var(--surface);border:1px solid var(--hair);border-radius:12px;padding:13px 15px;}
+.alt .h{display:flex;align-items:center;gap:8px;font-family:'Source Serif 4',serif;font-weight:600;color:var(--navy);font-size:14.5px;}
+.alt .h i{color:var(--accent-d);font-size:17px;}
+.alt .d{font-size:12.5px;color:var(--muted);margin-top:4px;}
+/* rights list */
+.rights{list-style:none;padding:0;margin:0;}
+.rights li{display:flex;gap:9px;align-items:flex-start;padding:8px 0;border-top:1px solid var(--hair);font-size:13.5px;}
+.rights li:first-child{border-top:none;}
+.rights li i{color:var(--success);font-size:17px;margin-top:1px;}
+.rights li b{color:var(--navy);}
+/* attorney connect */
+.connect{background:var(--navy);color:#fff;border-radius:var(--radius);padding:20px 22px;margin-top:16px;}
+.connect h2{font-family:'Source Serif 4',serif;font-weight:600;font-size:19px;margin:0 0 5px;}
+.connect .cl{color:#C9D8EA;font-size:13.5px;margin:0 0 14px;max-width:70ch;}
+.cbtn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;font-weight:700;font-size:14px;border:none;border-radius:10px;padding:11px 18px;cursor:pointer;text-decoration:none;}
+.cbtn:hover{background:var(--accent-d);}
+.cbtn i{font-size:18px;}
+.optional{font-size:11.5px;color:#9FB6D2;margin-top:9px;}
+.optional b{color:#F0997B;}
+/* directory panel (revealed) */
+.dir{margin-top:15px;background:#0A3866;border:1px solid #21405f;border-radius:12px;padding:15px 17px;display:none;}
+.dir.open{display:block;}
+.dirtop{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:11px;}
+.dirtop .ttl{font-family:'Source Serif 4',serif;font-weight:600;font-size:15px;color:#fff;}
+.filters{display:flex;gap:7px;flex-wrap:wrap;}
+.chip{font-size:11px;color:#CFE0F2;background:#154572;border:1px solid #2A5582;border-radius:999px;padding:4px 11px;cursor:pointer;user-select:none;}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700;}
+.chip.static{cursor:default;}
+.ord{font-size:11px;color:#9FB6D2;margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+.ord i{font-size:13px;color:#F0997B;}
+.att{display:flex;align-items:center;gap:12px;background:#0E2C4C;border:1px solid #21405f;border-radius:10px;padding:11px 14px;}
+.att + .att{margin-top:8px;}
+.avatar{height:38px;width:38px;border-radius:8px;background:#154572;color:#CFE0F2;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0;}
+.att .info{flex:1;min-width:0;}
+.att .nm{font-weight:700;color:#fff;font-size:14px;}
+.att .mt{font-size:12px;color:#9FB6D2;}
+.badge{font-size:10px;font-weight:700;letter-spacing:.2px;padding:3px 9px;border-radius:999px;white-space:nowrap;}
+.badge.reg{background:#123E28;color:#7BD3A2;border:1px solid #1D5E3B;}
+.badge.off{background:#33240F;color:#E7B473;border:1px solid #5E4420;}
+.att .view{font-size:12px;color:#CFE0F2;font-weight:600;white-space:nowrap;}
+.dirnote{font-size:11.5px;color:#9FB6D2;margin-top:12px;padding-top:11px;border-top:1px dashed #2A5582;}
+.dirnote b{color:#F0997B;}
+.altpath{font-size:12px;color:#CFE0F2;margin-top:10px;background:#0E2C4C;border:1px solid #21405f;border-radius:9px;padding:10px 13px;}
+.altpath a{color:#F0997B;}
+/* footer */
+footer{border-top:1px solid var(--hair);background:#fff;}
+.disc{max-width:1000px;margin:0 auto;padding:16px 22px;display:flex;justify-content:space-between;gap:18px;font-size:12px;color:var(--muted);flex-wrap:wrap;}
+.disc b{color:var(--navy);} .tfe b{color:var(--accent-d);}
+.rail{font-size:11.5px;color:var(--faint);margin-top:22px;text-align:center;}
+</style>
+</head>
+<body>
+
+<div class="appbar">
+  <div class="brand"><img class="bmark" src="https://justicex.ai/assets/brand-mark.png" alt=""/><span class="wordmark">Justice<span class="x">X</span></span><span class="cat">Documentation Preparation</span></div>
+  <div><span class="viewpill"><i class="ti ti-eye"></i> General information · view only</span></div>
+</div>
+
+<div class="flagbar">
+  Mock for review — behind flags <code>a81_walkthrough_readonly</code> + <code>a81_attorney_connect</code>, <b>OFF in production</b> until the ethics and conduct-of-practice counsel pass (C.21 · Q53–Q65). Non-interactive; the interactive Q&amp;A is a separate flag, not shown here.
+</div>
+
+<div class="app">
+
+  <div class="notice">
+    <i class="ti ti-alert-triangle"></i>
+    <div>
+      <div class="nt">Article 81 concerns another person's rights and autonomy.</div>
+      <div class="nb">The <b>New York State Unified Court System</b> describes asking a court to appoint an Article 81 guardian as <b>&ldquo;a serious matter,&rdquo;</b> decided only after a court hearing with testimony and evidence.<span class="vref">NY Courts · CourtHelp [verify]</span> The courts publish their guidance for people <b>&ldquo;when you don&rsquo;t have a lawyer&rdquo;</b> and offer free ways to <b>find one</b> (below). JusticeX is software — this page is <b>general information, not legal advice</b>, and does not tell you whether to file or what fits your situation.
+      <div class="aps"><b>If someone is in immediate danger or being financially exploited,</b> contact your local <b>Adult Protective Services</b> or emergency services — that comes before any paperwork.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="infotag"><i class="ti ti-book-2"></i> New York · Mental Hygiene Law Article 81 · general overview</div>
+  <h1>Understanding Article 81 guardianship</h1>
+  <p class="lede">A plain-language overview of what Article 81 is, how the process generally works, the alternatives that may accomplish the same goal, and everyone's rights in it. The same information is shown to every reader — nothing here is based on your own facts.</p>
+
+  <div class="sec">What Article 81 is</div>
+  <div class="card">
+    <p>Article 81 of New York's Mental Hygiene Law lets a court appoint a <b>guardian</b> to make decisions about the <b>personal needs</b> and/or <b>property and finances</b> of an adult the court finds cannot manage those things for themselves.<span class="vref">§81.01 [verify]</span> The person the case is about is called the <b>alleged incapacitated person</b>, or <b>"AIP."</b></p>
+    <p>New York law favors the <b>least-restrictive</b> approach — a guardianship is meant to be tailored only to the specific areas where help is genuinely needed, and only when a lesser alternative won't do.<span class="vref">§81.02 [verify]</span> Article 81 is a <b>court proceeding — not a do-it-yourself matter</b>; the sections below describe how it generally works so you can have an informed conversation with an attorney.</p>
+  </div>
+
+  <div class="sec">How the process generally works</div>
+  <div class="card">
+    <p style="margin-bottom:12px;font-size:13.5px;color:var(--muted)">A general picture of the shape of an Article 81 case. This is <b>not</b> a checklist of steps to take, and it deliberately omits court, form, fee, and filing specifics — those depend on the situation and belong with an attorney.</p>
+    <div class="flow">
+      <div class="step"><div class="n">GENERALLY</div><div class="t">A case is started</div><div class="d">Someone asks a court to consider whether a guardian is needed for the AIP.</div></div>
+      <div class="step"><div class="n">GENERALLY</div><div class="t">A court evaluator</div><div class="d">The court typically appoints a neutral evaluator to look into the situation and report back.<span class="vref">§81.09 [verify]</span></div></div>
+      <div class="step"><div class="n">GENERALLY</div><div class="t">A hearing</div><div class="d">The court holds a hearing where the AIP has rights and can take part.<span class="vref">§81.11 [verify]</span></div></div>
+      <div class="step"><div class="n">GENERALLY</div><div class="t">A decision</div><div class="d">The court decides whether a guardian is needed and, if so, exactly which powers are granted.<span class="vref">§81.15 [verify]</span></div></div>
+    </div>
+  </div>
+
+  <div class="sec">What a case involves — according to the New York courts</div>
+  <div class="card">
+    <p style="margin-bottom:11px;">The <b>New York State Unified Court System</b> sets out how a case starts. A petitioner generally files three court forms, then serves them:<span class="vref">NY Courts · How to Start an Article 81 Case [verify]</span></p>
+    <div class="flow" style="margin-bottom:15px;">
+      <div class="step"><div class="n">NY COURTS</div><div class="t">Petition</div><div class="d">A written request explaining why a guardian is believed necessary, who should serve, and for what.</div></div>
+      <div class="step"><div class="n">NY COURTS</div><div class="t">Order to show cause</div><div class="d">Notifies the AIP, states their legal rights, and sets the hearing date.</div></div>
+      <div class="step"><div class="n">NY COURTS</div><div class="t">Request for judicial intervention</div><div class="d">Asks that a judge be assigned to the case.</div></div>
+    </div>
+    <p style="margin-bottom:9px;">By statute, the petition must contain specific information — <b>New York Mental Hygiene Law §81.08</b> lists what it must include, sworn under oath:<span class="vref">MHL §81.08 [verify]</span></p>
+    <ul class="rights" style="margin-bottom:13px;">
+      <li><i class="ti ti-point" style="color:var(--navy3)"></i><div>the AIP&rsquo;s <b>functional level</b> — ability to manage daily living, and understanding of the consequences</div></li>
+      <li><i class="ti ti-point" style="color:var(--navy3)"></i><div>specific <b>facts</b> said to show the person is likely to suffer harm</div></li>
+      <li><i class="ti ti-point" style="color:var(--navy3)"></i><div>the particular <b>powers</b> sought and how they relate to the person&rsquo;s needs</div></li>
+      <li><i class="ti ti-point" style="color:var(--navy3)"></i><div>the person&rsquo;s approximate <b>financial resources</b> and any benefits</div></li>
+      <li><i class="ti ti-point" style="color:var(--navy3)"></i><div>the <b>people to be notified</b> (family / interested persons) and the proposed guardian</div></li>
+      <li><i class="ti ti-point" style="color:var(--navy3)"></i><div>the <b>less-restrictive alternatives</b> already considered, and whether they are sufficient</div></li>
+    </ul>
+    <p style="font-size:12.5px;color:var(--muted);margin:0;">You are <b>not legally required to have a lawyer</b> to file — the New York courts publish self-help materials and DIY resources — but the courts call it a serious matter and offer ways to find counsel. <b>JusticeX does not draft, complete, or assemble any of these documents on this page.</b> JusticeX&rsquo;s document-preparation tools for Article 81 are offered <b>through an attorney</b> — a JusticeX product choice, not a legal requirement.</p>
+  </div>
+
+  <div class="sec">Alternatives that may accomplish the same goal</div>
+  <div class="card" style="padding-bottom:16px;">
+    <p style="margin-bottom:13px;">Because guardianship is meant to be a last resort, it helps to know the common <b>less-restrictive alternatives</b>. Which (if any) fits a given person is a decision for that person, their family, and an attorney — not something this page decides.</p>
+    <div class="alts">
+      <div class="alt"><div class="h"><i class="ti ti-users-group"></i> Supported decision-making</div><div class="d">The person keeps legal authority and chooses trusted supporters to help them understand choices and communicate decisions.</div></div>
+      <div class="alt"><div class="h"><i class="ti ti-file-certificate"></i> Power of attorney</div><div class="d">A person who still has capacity authorizes someone to handle financial matters for them.</div></div>
+      <div class="alt"><div class="h"><i class="ti ti-heartbeat"></i> Health-care proxy</div><div class="d">Names someone to make health-care decisions if the person can't make them for themselves.</div></div>
+      <div class="alt"><div class="h"><i class="ti ti-building-bank"></i> Trusts &amp; representative payee</div><div class="d">Arrangements that let someone manage specific assets or benefit income without a full guardianship.</div></div>
+    </div>
+  </div>
+
+  <div class="sec">Everyone's rights in the process</div>
+  <div class="card">
+    <p style="margin-bottom:11px;font-size:13.5px;color:var(--muted)">Article 81 is about protecting a person — so the <b>AIP has strong rights</b>. Whether you are considering a petition <i>or</i> you are the person a petition concerns (or their family), these apply:</p>
+    <ul class="rights">
+      <li><i class="ti ti-scale"></i><div>The AIP has the <b>right to their own attorney</b>, and the court can appoint one (counsel or a court evaluator) to represent their interests.<span class="vref">§81.10 [verify]</span></div></li>
+      <li><i class="ti ti-user-check"></i><div>The AIP has the <b>right to be present</b> and to participate in the hearing.<span class="vref">§81.11 [verify]</span></div></li>
+      <li><i class="ti ti-hand-stop"></i><div>The AIP has the <b>right to object</b> and to contest whether a guardian is needed or which powers are granted.</div></li>
+      <li><i class="ti ti-adjustments"></i><div>Any guardianship the court grants is meant to be <b>limited to what's actually needed</b>, preserving the person's independence everywhere else.<span class="vref">§81.02 [verify]</span></div></li>
+    </ul>
+  </div>
+
+  <div class="connect">
+    <h2>Talk with an attorney</h2>
+    <p class="cl">Article 81 is complex and high-stakes, and this page is only general information. The best next step is almost always to speak with an attorney who handles Article 81 / elder-law matters. This is <b>optional</b>, and you are free to use <b>any attorney</b> — including your own.</p>
+    <a class="cbtn" id="connectBtn" href="#"><i class="ti ti-user-search"></i> Connect with an attorney</a>
+    <div class="optional">No cost to you, and <b>no fee to JusticeX</b> for connecting you. You are never required to use an attorney listed here.</div>
+
+    <div class="dir" id="dir">
+      <div class="dirtop">
+        <div class="ttl">Article 81 / elder-law attorneys</div>
+        <div class="filters">
+          <span class="chip on static">Article 81 / elder law</span>
+          <span class="chip" id="regFilter">Registered on JusticeX</span>
+        </div>
+      </div>
+      <div class="ord"><i class="ti ti-arrows-shuffle"></i> Listed in <b style="color:#CFE0F2">random order</b> — JusticeX does not rank or recommend attorneys. "Registered on JusticeX" is a filter, not a sort.</div>
+
+      <div class="att">
+        <div class="avatar">RM</div>
+        <div class="info"><div class="nm">R. Mercer</div><div class="mt">Elder law · Article 81 · Nassau County <span class="badge off">Independent listing</span></div></div>
+        <span class="view">View profile ›</span>
+      </div>
+      <div class="att">
+        <div class="avatar">JA</div>
+        <div class="info"><div class="nm">J. Alvarez</div><div class="mt">Guardianship · elder law · Suffolk County <span class="badge reg">Registered on JusticeX</span></div></div>
+        <span class="view">View profile ›</span>
+      </div>
+      <div class="att">
+        <div class="avatar">TO</div>
+        <div class="info"><div class="nm">T. Okonkwo</div><div class="mt">Article 81 · special needs · Kings County <span class="badge off">Independent listing</span></div></div>
+        <span class="view">View profile ›</span>
+      </div>
+      <div class="att">
+        <div class="avatar">SP</div>
+        <div class="info"><div class="nm">S. Park</div><div class="mt">Elder law · Article 81 · Queens County <span class="badge reg">Registered on JusticeX</span></div></div>
+        <span class="view">View profile ›</span>
+      </div>
+
+      <div class="altpath">
+        Prefer another route? Use <b>your own attorney</b>, the New York courts&rsquo; own <a href="https://www.nycourts.gov/help/representing-yourself-court/find-lawyer">Find a Lawyer</a> resource, <a href="https://www.lawhelpny.org/">LawHelpNY</a>, or your local/state bar association&rsquo;s lawyer referral service — all equally good ways to find Article 81 counsel.
+      </div>
+      <div class="dirnote">
+        <b>How this list works:</b> JusticeX <b>hosts</b> listings, it does not rate or rank them. "Registered on JusticeX" is a factual label — it does <b>not</b> mean better, recommended, or more available. What an attorney pays JusticeX for the platform <b>never</b> affects the label, the order, or whether they appear here. Practice areas are self-reported.
+      </div>
+    </div>
+  </div>
+
+  <div class="rail">JusticeX · Documentation Preparation · Article 81 general-information walk-through (mock, flags OFF) · C.21</div>
+</div>
+
+<footer>
+  <div class="disc">
+    <div><b>JusticeX is a software platform — not a law firm.</b> General legal information only; not legal advice; not a substitute for an attorney. <a href="disclaimer.html">Full legal disclaimer</a>. Mock screen — sample attorney listings are fictional.</div>
+    <div class="tfe"><b>Truth</b> · <b>Fairness</b> · <b>Efficiency</b></div>
+  </div>
+</footer>
+
+<script>
+  // Reveal the neutral directory (mock behavior only).
+  document.getElementById('connectBtn').addEventListener('click', function(e){
+    e.preventDefault();
+    document.getElementById('dir').classList.add('open');
+    document.getElementById('dir').scrollIntoView({behavior:'smooth', block:'nearest'});
+  });
+  // "Registered on JusticeX" is a FILTER, not a sort — toggling only filters, never reorders.
+  var reg = document.getElementById('regFilter');
+  reg.addEventListener('click', function(){
+    reg.classList.toggle('on');
+    var only = reg.classList.contains('on');
+    document.querySelectorAll('#dir .att').forEach(function(row){
+      var isReg = !!row.querySelector('.badge.reg');
+      row.style.display = (only && !isReg) ? 'none' : 'flex';
+    });
+  });
+</script>
+<script src="shared/prelaunch.js"></script>
+</body>
+</html>

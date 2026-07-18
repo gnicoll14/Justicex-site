@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matter Workspace · Delgado (Sample) · JusticeX</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
+<style>
+  :root{--navy900:#021A33;--navy800:#042C53;--navy700:#0A3866;--navy600:#154572;--navy500:#2A5582;
+    --coral600:#B04722;--coral500:#D85A30;--coral400:#E27C58;--coral100:#FAECE7;--coralLt500:#F0997B;
+    --slate500:#5F5E5A;--slate300:#9CA0A7;--white:#FFFFFF;--paper:#F4F6FA;--stone100:#E6F1FB;--stone200:#D1DEEE;--stone300:#B5C5DC;--ink700:#1A1A1A;--teal100:#B6C0D0;--success:#1D9E75;--successS:#E4F3EC;
+    --fdisp:'Source Serif 4',Georgia,serif;--fbody:'Source Sans 3',system-ui,-apple-system,Segoe UI,sans-serif;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--navy800);font-family:var(--fbody);font-size:15px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 26px}
+  a{color:inherit}
+  .flagbar{background:var(--navy700);color:#CFE0F2;font-size:11.5px;text-align:center;padding:8px 20px;border-bottom:1px solid #21405f}
+  .flagbar b{color:#fff}.flagbar code{background:var(--navy900);color:var(--coralLt500);padding:1px 6px;border-radius:5px;font-size:10.5px;font-family:monospace}
+  .mo-ribbon{background:var(--coral100);color:var(--coral600);font-weight:600;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;text-align:center;padding:8px 16px;border-bottom:1px solid var(--stone200)}
+  .nav{background:var(--navy800);color:#fff}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 0}
+  .brand{display:flex;align-items:center;gap:9px;font-family:var(--fdisp);font-weight:600;font-size:22px;color:#fff;text-decoration:none}
+  .brand .x{color:var(--coral500)}
+  .navlinks{display:flex;gap:20px;font-size:13.5px;color:#C9D8EA}.navlinks a{text-decoration:none}.navlinks a:hover{color:#fff}
+  @media(max-width:760px){.navlinks{display:none}}
+  .termsw{display:inline-flex;flex-direction:column;align-items:flex-end;gap:3px}
+  .termsw .tlab{font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--slate300)}
+  .termsw .sw{display:inline-flex;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:4px}
+  .termsw .sw a{display:inline-flex;align-items:center;gap:6px;color:var(--teal100);text-decoration:none;font-weight:600;font-size:12px;padding:5px 12px;border-radius:999px;white-space:nowrap}
+  .termsw .sw a.on{background:var(--coral500);color:#fff}
+  .mhead{background:var(--navy800);color:var(--paper);padding:30px 0 30px;border-top:1px solid var(--navy600)}
+  .mhead .status{display:inline-flex;align-items:center;gap:8px;background:rgba(240,153,123,.16);color:var(--coralLt500);font-size:12.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
+  .mhead h1{font-family:var(--fdisp);font-weight:600;font-size:38px;margin:14px 0 6px;color:var(--paper)}
+  .mhead p{color:var(--teal100);font-size:15.5px;max-width:730px}
+  .mmeta{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
+  .mmeta span{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:var(--paper);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:6px 13px}
+  .mmeta i{color:var(--coralLt500)}
+  .sec{padding:40px 0;border-bottom:1px solid var(--stone200)}
+  .sec .ey{color:var(--coral600);font-weight:700;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:9px}
+  .sec h2{font-family:var(--fdisp);font-weight:600;font-size:28px;color:var(--navy800);margin:10px 0 6px}
+  .sec .lead{font-size:16px;color:var(--slate500);max-width:770px;line-height:1.6}
+  /* whole-process overview media (compact) */
+  .ovline{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:20px}
+  .ovline .lbl{font-size:12.5px;font-weight:700;color:var(--navy800)}
+  .ovbtn{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;border:1.5px solid var(--stone200);background:var(--white);color:var(--navy800);border-radius:999px;padding:8px 15px;cursor:pointer;font-family:var(--fbody)}
+  .ovbtn:hover{border-color:var(--navy500)}
+  .ovph{margin-top:14px;display:none;background:var(--paper);border:1px dashed var(--stone300);border-radius:12px;padding:16px 18px;font-size:13px;color:var(--slate500);line-height:1.5}
+  .ovph.on{display:block}.ovph code{font-family:monospace;font-size:11px;color:var(--slate500);background:var(--stone100);border:1px solid var(--stone200);border-radius:6px;padding:2px 7px}
+  /* unified step cards (hexagon carries number + description + button) */
+  .steps{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+  @media(max-width:760px){.steps{grid-template-columns:1fr}}
+  .scard{display:flex;gap:16px;background:var(--white);border:1px solid var(--stone200);border-radius:14px;padding:18px 20px;align-items:flex-start}
+  .scard.active{border-color:var(--coralLt500);box-shadow:0 2px 12px rgba(216,90,48,.10)}
+  .scard .hexwrap{position:relative;flex:0 0 auto}
+  .scard .hex{width:46px;height:51px;display:flex;align-items:center;justify-content:center;font-family:var(--fdisp);font-weight:600;font-size:19px;color:#fff;background:var(--navy500);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+  .scard.active .hex{background:var(--coral500)}
+  .scard .body{flex:1;min-width:0}
+  .scard .top{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+  .scard h3{font-family:var(--fdisp);font-weight:600;font-size:18px;color:var(--navy800);margin:0}
+  .stbadge{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;padding:3px 9px;border-radius:999px}
+  .stbadge.done{background:var(--successS);color:var(--success)}
+  .stbadge.active{background:var(--coral100);color:var(--coral600)}
+  .stbadge.up{background:var(--stone100);color:var(--navy600)}
+  .scard .ln{font-size:13.5px;color:var(--slate500);line-height:1.5;margin:6px 0 12px}
+  .scard .open{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:#fff;background:var(--navy800);border-radius:999px;padding:8px 15px;text-decoration:none}
+  .scard.active .open{background:var(--coral500)}
+  /* sample outputs gallery */
+  .ogroup{margin-top:26px}.ogroup:first-child{margin-top:8px}
+  .ohead{font-size:13px;font-weight:700;color:var(--navy800);letter-spacing:.02em;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;padding-bottom:8px;border-bottom:1px solid var(--stone200)}
+  .ohead .osub{font-weight:400;color:var(--slate500);font-size:12.5px}
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:14px}
+  @media(max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.gallery{grid-template-columns:1fr}}
+  .ocard{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--stone200);border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;transition:box-shadow .15s,border-color .15s,transform .15s}
+  .ocard:hover{border-color:var(--navy500);box-shadow:0 6px 18px rgba(4,44,83,.10);transform:translateY(-2px)}
+  .ocard .thumb{background:var(--stone100);border-bottom:1px solid var(--stone200);padding:16px;display:flex;align-items:center;justify-content:center}
+  .ocard .thumb svg{display:block;width:100%;height:96px}
+  .ocard .ob{padding:14px 16px 16px}
+  .ocard .ot{font-family:var(--fdisp);font-weight:600;font-size:16px;color:var(--navy800)}
+  .ocard .od{font-size:12.5px;color:var(--slate500);line-height:1.45;margin-top:3px}
+  .ocard .olink{font-size:12px;font-weight:700;color:var(--coral600);margin-top:9px;display:inline-flex;align-items:center;gap:5px}
+  .posture{font-size:12.5px;color:var(--slate500);line-height:1.55;margin:26px auto 4px;text-align:center;max-width:790px}
+  .foot{background:var(--navy800);color:#9FB6D2;padding:22px 0;border-top:1px solid var(--navy600);font-size:12.5px}
+  .foot .fin{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}.foot b{color:#fff}
+  .jx-term{border-bottom:1px dotted var(--slate300);color:var(--slate500);font-style:italic;cursor:help}
+</style>
+</head>
+<body>
+<div class="flagbar">Mock for review — behind flag <code>matter_workspace_v1</code>, <b>OFF in production</b> until the Stage Media Model sign-off, counsel confirmation of the output naming, and the Fable QA pass (Ref&nbsp;92). Not linked from any navigation; synthetic Delgado data only.</div>
+<div class="mo-ribbon">Sample · Synthetic matter (“Delgado”) · Matter Workspace — the whole matter at a glance</div>
+<nav class="nav"><div class="wrap"><div class="nav-in">
+  <a class="brand" href="/index.html">Justice<span class="x">X</span></a>
+  <div class="navlinks"><a href="/index.html">Home</a><a href="/markets.html">Markets</a><a href="/solutions.html">Solutions</a><a href="/technology.html">Technology</a><a href="/about.html">About</a></div>
+  <span class="termsw" id="termsw"></span>
+</div></div></nav>
+
+<header class="mhead"><div class="wrap">
+  <span class="status"><i class="ti ti-progress"></i> In progress · <span id="curStep">Gap Analysis</span> · Step 5 of 7</span>
+  <h1>Delgado — Matter Workspace</h1>
+  <p>The overview of your whole matter — the seven steps at a glance, and where you are. Open any step to do the work; the certified step reports build toward <span id="outWordHdr">your agreement</span>.</p>
+  <div class="mmeta" id="mmeta"></div>
+</div></header>
+
+<!-- THE STEPS (unified: hexagon carries number + description + button) -->
+<section class="sec"><div class="wrap">
+  <div class="ey"><i class="ti ti-route"></i> The whole process</div>
+  <h2>How your matter works, start to finish.</h2>
+  <p class="lead">Seven simple steps take you from your first facts to a written agreement. Each step is its own working surface — open it to do the work.</p>
+  <div class="ovline">
+    <span class="lbl">Prefer an overview first?</span>
+    <button class="ovbtn" data-ov="watch"><i class="ti ti-player-play"></i> Video</button>
+    <button class="ovbtn" data-ov="listen"><i class="ti ti-headphones"></i> Audio</button>
+    <button class="ovbtn" data-ov="ig"><i class="ti ti-photo"></i> Infographic</button>
+    <button class="ovbtn" data-ov="slides"><i class="ti ti-presentation"></i> Slides</button>
+  </div>
+  <div class="ovph" id="ovph"></div>
+  <div class="steps" id="steps"></div>
+</div></section>
+
+<!-- SAMPLE OUTPUTS -->
+<section class="sec"><div class="wrap">
+  <div class="ey"><i class="ti ti-stack-2"></i> What you get</div>
+  <h2>Sample outputs.</h2>
+  <p class="lead">A preview of what the process produces — so you can see the value before you begin. These are sample graphics on the synthetic Delgado matter.</p>
+  <div id="gallery"></div>
+</div></section>
+
+<p class="posture" id="posture"></p>
+<div style="height:22px"></div>
+<footer class="foot"><div class="wrap"><div class="fin">
+  <div><b>JusticeX is a software platform — not a law firm or mediator.</b> Objective comparison only; not legal advice.</div>
+  <div><b>Truth · Fairness · Efficiency</b></div>
+</div></div></footer>
+
+<script>
+(function(){
+  var q = new URLSearchParams(location.search);
+  var legal = q.get('view')==='attorney' || q.get('view')==='legal';
+  var outWord = legal ? 'the Memorandum' : 'your agreement';
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function toggleHref(v){var p=new URLSearchParams(location.search);if(v==='consumer')p.delete('view');else p.set('view',v);var s=p.toString();return location.pathname+(s?'?'+s:'');}
+  function stepHref(n){return 'matter-step.html?step='+n+(legal?'&view=attorney':'');}
+
+  document.getElementById('termsw').innerHTML='<span class="tlab">Terminology</span><span class="sw">'+
+    '<a href="'+toggleHref('consumer')+'" class="'+(legal?'':'on')+'"><i class="ti ti-message-circle"></i> Simple terms</a>'+
+    '<a href="'+toggleHref('attorney')+'" class="'+(legal?'on':'')+'"><i class="ti ti-gavel"></i> Legal terms</a></span>';
+  document.getElementById('outWordHdr').textContent = outWord;
+  document.getElementById('mmeta').innerHTML =
+    [['ti-gavel','Divorce, children & property'],['ti-map-pin','Kings County, NY'],['ti-scale','Fair division of property'],['ti-users','Marisol & Andrés']]
+    .map(function(x){return '<span><i class="ti '+x[0]+'"></i> '+esc(x[1])+'</span>';}).join('');
+
+  // steps — number stays in the hexagon; status is a separate badge
+  var STEPS=[
+    {n:1,name:'Plan',status:'done',line:'Set what your matter is about and the questions to work through.'},
+    {n:2,name:'Intake',status:'done',line:'Add your documents and details, at your own pace. Nothing is shared yet.'},
+    {n:3,name:'Redact',status:'done',line:'Personal details are hidden before anything is shared. You decide what crosses.'},
+    {n:4,name:'Summarize',status:'done',line:'Each side is written up the same way, so the picture rests on the facts.'},
+    {n:5,name:'Gap Analysis',status:'active',line:'Settle each open point, side by side — where you agree and where you differ.'},
+    {n:6,name:'Resolution',status:'upcoming',line:'Weigh clear options for each open point and choose, together.'},
+    {n:7,name:'Memorandum',status:'upcoming',line:'Everything you agreed is assembled into a written agreement, ready for an attorney.'}
+  ];
+  var LBL={done:'Done',active:'In progress',up:'Up next'};
+  document.getElementById('curStep').textContent = STEPS[4].name;
+  document.getElementById('steps').innerHTML = STEPS.map(function(s){
+    var sc = s.status==='upcoming'?'up':s.status;
+    var badge = '<span class="stbadge '+sc+'">'+(sc==='done'?'<i class="ti ti-check"></i> ':'')+LBL[sc]+'</span>';
+    return '<div class="scard '+(s.status==='active'?'active':'')+'">'+
+      '<div class="hexwrap"><span class="hex">'+s.n+'</span></div>'+
+      '<div class="body"><div class="top"><h3>'+esc(s.name)+'</h3>'+badge+'</div>'+
+      '<div class="ln">'+esc(s.line)+'</div>'+
+      '<a class="open" href="'+stepHref(s.n)+'"><i class="ti ti-arrow-right"></i> Open this step</a></div></div>';
+  }).join('');
+
+  // whole-process overview media (compact placeholders — entitlement-scoped)
+  var OVL={watch:'a short overview video',listen:'an audio overview',ig:'a one-page infographic',slides:'a short slide overview'};
+  var ovph=document.getElementById('ovph'),ovcur=null;
+  function tok(k){var seed='overview:'+k,h=0;for(var i=0;i<seed.length;i++)h=(h*31+seed.charCodeAt(i))>>>0;return('00000000'+h.toString(16)).slice(-8);}
+  document.querySelectorAll('.ovbtn').forEach(function(b){b.addEventListener('click',function(){
+    var k=b.dataset.ov;
+    if(ovcur===k){ovph.classList.remove('on');ovcur=null;return;}
+    ovcur=k;ovph.classList.add('on');
+    ovph.innerHTML='<strong>'+OVL[k].charAt(0).toUpperCase()+OVL[k].slice(1)+' of the whole process.</strong> Served on demand from a signed, short-lived, entitlement-scoped link (C-ENT-07) — not wired in this preview. <code>jx-media://signed/'+tok(k)+'.preview-not-wired</code><br><span style="font-size:11.5px">AI-generated · general information only · not a formal agreement.</span>';
+  });});
+
+  // sample outputs — inline SVG thumbnails
+  var C={nv:'#042C53',n2:'#2A5582',co:'#D85A30',st:'#E6F1FB',hr:'#CFE0F4',gr:'#1D9E75',wh:'#fff'};
+  function doc(extra){return '<svg viewBox="0 0 120 96"><rect x="34" y="8" width="52" height="80" rx="4" fill="'+C.wh+'" stroke="'+C.hr+'"/>'+extra+'</svg>';}
+  var TH={
+    agreement:doc('<rect x="42" y="18" width="30" height="5" rx="1.5" fill="'+C.nv+'"/><rect x="42" y="30" width="36" height="2.5" fill="'+C.hr+'"/><rect x="42" y="37" width="36" height="2.5" fill="'+C.hr+'"/><rect x="42" y="44" width="26" height="2.5" fill="'+C.hr+'"/><circle cx="70" cy="70" r="9" fill="none" stroke="'+C.co+'" stroke-width="2"/><path d="M66 70l3 3 6-6" stroke="'+C.co+'" stroke-width="2" fill="none"/><rect x="42" y="66" width="18" height="3" rx="1.5" fill="'+C.n2+'"/>'),
+    summary:'<svg viewBox="0 0 120 96"><rect x="16" y="14" width="42" height="68" rx="4" fill="'+C.wh+'" stroke="'+C.hr+'"/><rect x="62" y="14" width="42" height="68" rx="4" fill="'+C.wh+'" stroke="'+C.hr+'"/><rect x="22" y="60" width="6" height="14" fill="'+C.n2+'"/><rect x="30" y="52" width="6" height="22" fill="'+C.n2+'"/><rect x="38" y="44" width="6" height="30" fill="'+C.co+'"/><rect x="46" y="56" width="6" height="18" fill="'+C.n2+'"/><circle cx="83" cy="42" r="15" fill="none" stroke="'+C.st+'" stroke-width="6"/><path d="M83 27a15 15 0 0 1 13 22" fill="none" stroke="'+C.co+'" stroke-width="6"/><rect x="70" y="66" width="28" height="4" rx="2" fill="'+C.gr+'"/></svg>',
+    detail:doc('<rect x="42" y="16" width="24" height="4" rx="1.5" fill="'+C.nv+'"/><rect x="42" y="26" width="36" height="2.4" fill="'+C.hr+'"/><rect x="42" y="32" width="36" height="2.4" fill="'+C.hr+'"/><rect x="42" y="38" width="36" height="2.4" fill="'+C.hr+'"/><rect x="42" y="44" width="28" height="2.4" fill="'+C.hr+'"/><rect x="42" y="54" width="36" height="18" rx="2" fill="'+C.st+'" stroke="'+C.hr+'"/><rect x="46" y="62" width="5" height="6" fill="'+C.co+'"/><rect x="53" y="58" width="5" height="10" fill="'+C.n2+'"/><rect x="60" y="60" width="5" height="8" fill="'+C.n2+'"/>'),
+    audit:'<svg viewBox="0 0 120 96"><line x1="60" y1="14" x2="60" y2="82" stroke="'+C.hr+'" stroke-width="2"/><circle cx="60" cy="22" r="7" fill="'+C.gr+'"/><path d="M57 22l2 2 4-4" stroke="'+C.wh+'" stroke-width="2" fill="none"/><circle cx="60" cy="48" r="7" fill="'+C.gr+'"/><path d="M57 48l2 2 4-4" stroke="'+C.wh+'" stroke-width="2" fill="none"/><circle cx="60" cy="74" r="7" fill="'+C.co+'"/><rect x="70" y="17" width="30" height="4" rx="2" fill="'+C.hr+'"/><rect x="70" y="24" width="20" height="3" rx="1.5" fill="'+C.st+'"/><rect x="70" y="43" width="30" height="4" rx="2" fill="'+C.hr+'"/><rect x="70" y="50" width="20" height="3" rx="1.5" fill="'+C.st+'"/><rect x="20" y="43" width="30" height="4" rx="2" fill="'+C.hr+'"/></svg>',
+    documents:'<svg viewBox="0 0 120 96"><rect x="30" y="20" width="44" height="60" rx="4" fill="'+C.st+'" stroke="'+C.hr+'"/><rect x="38" y="14" width="44" height="60" rx="4" fill="'+C.wh+'" stroke="'+C.hr+'"/><rect x="46" y="24" width="28" height="3" rx="1.5" fill="'+C.nv+'"/><rect x="46" y="32" width="28" height="2.4" fill="'+C.hr+'"/><rect x="46" y="38" width="28" height="2.4" fill="'+C.hr+'"/><rect x="46" y="44" width="20" height="2.4" fill="'+C.hr+'"/></svg>',
+    infographic:'<svg viewBox="0 0 120 96"><rect x="36" y="10" width="48" height="76" rx="5" fill="'+C.wh+'" stroke="'+C.hr+'"/><rect x="44" y="18" width="32" height="6" rx="2" fill="'+C.co+'"/><circle cx="52" cy="40" r="8" fill="'+C.st+'"/><path d="M52 32a8 8 0 0 1 7 12" fill="none" stroke="'+C.n2+'" stroke-width="3"/><rect x="66" y="34" width="12" height="4" rx="2" fill="'+C.hr+'"/><rect x="66" y="42" width="10" height="4" rx="2" fill="'+C.hr+'"/><rect x="44" y="58" width="6" height="14" fill="'+C.n2+'"/><rect x="53" y="52" width="6" height="20" fill="'+C.co+'"/><rect x="62" y="62" width="6" height="10" fill="'+C.n2+'"/><rect x="71" y="56" width="6" height="16" fill="'+C.n2+'"/></svg>',
+    slides:'<svg viewBox="0 0 120 96"><rect x="20" y="30" width="58" height="40" rx="4" fill="'+C.st+'" stroke="'+C.hr+'"/><rect x="32" y="22" width="58" height="40" rx="4" fill="'+C.wh+'" stroke="'+C.hr+'"/><rect x="40" y="30" width="24" height="4" rx="2" fill="'+C.nv+'"/><rect x="40" y="40" width="42" height="2.6" fill="'+C.hr+'"/><rect x="40" y="46" width="42" height="2.6" fill="'+C.hr+'"/><rect x="40" y="52" width="30" height="2.6" fill="'+C.hr+'"/><circle cx="83" cy="70" r="10" fill="'+C.co+'"/><path d="M80 66v8l6-4z" fill="'+C.wh+'"/></svg>',
+    video:'<svg viewBox="0 0 120 96"><rect x="22" y="20" width="76" height="50" rx="6" fill="'+C.nv+'"/><rect x="27" y="25" width="66" height="40" rx="3" fill="'+C.st+'"/><circle cx="60" cy="45" r="13" fill="'+C.wh+'"/><path d="M56 39v12l10-6z" fill="'+C.co+'"/><rect x="40" y="78" width="40" height="4" rx="2" fill="'+C.hr+'"/><rect x="52" y="70" width="16" height="8" fill="'+C.n2+'"/></svg>',
+    audio:'<svg viewBox="0 0 120 96"><g fill="'+C.n2+'"><rect x="30" y="42" width="5" height="12" rx="2.5"/><rect x="40" y="34" width="5" height="28" rx="2.5"/><rect x="50" y="24" width="5" height="48" rx="2.5" fill="'+C.co+'"/><rect x="60" y="30" width="5" height="36" rx="2.5"/><rect x="70" y="38" width="5" height="20" rx="2.5"/><rect x="80" y="44" width="5" height="8" rx="2.5"/></g><circle cx="60" cy="48" r="40" fill="none" stroke="'+C.hr+'" stroke-width="2"/></svg>'
+  };
+  var OUTPUTS=[
+    {k:'agreement',g:'reports',t:(legal?'Memorandum of Understanding':'Your Agreement'),d:'The written agreement — the terms you both agreed, ready for an attorney.',href:'memorandum.html',cta:'View sample'},
+    {k:'summary',g:'reports',t:'Summary Report',d:'A one-glance dashboard of a step — what happened, at a glance.',href:'report.html?step=5&type=summary'+(legal?'&view=attorney':''),cta:'View sample'},
+    {k:'detail',g:'reports',t:'Detailed Report',d:'Full inputs → process → references → outputs, with the audit chain.',href:'report.html?step=5&type=detail'+(legal?'&view=attorney':''),cta:'View sample'},
+    {k:'video',g:'overviews',t:'Video Overview',d:'A short narrated video that walks through your matter — watch on demand.',href:'',cta:'Sample'},
+    {k:'audio',g:'overviews',t:'Audio Overview',d:'A spoken summary of your matter you can listen to on the go.',href:'',cta:'Sample'},
+    {k:'infographic',g:'overviews',t:'Infographic',d:'A one-page visual overview of your matter, at a glance.',href:'',cta:'Sample'},
+    {k:'slides',g:'overviews',t:'Slide Deck',d:'A short slide overview of the matter, on brand.',href:'',cta:'Sample'},
+    {k:'audit',g:'support',t:'Audit Trail',d:'A tamper-evident history of every step and change (SHA-256 hash chain).',href:'audit-trail.html',cta:'View sample'},
+    {k:'documents',g:'support',t:'Your Documents',d:'The organized, shareable versions of everything you provided.',href:'',cta:'Sample'}
+  ];
+  var GROUPS=[
+    {g:'reports',t:'Reports',sub:'The written record — your agreement and the step-by-step reports.'},
+    {g:'overviews',t:'Overviews',sub:'The same matter, told quickly — watch, listen, or see it at a glance.'},
+    {g:'support',t:'Supporting details',sub:'The evidence behind the record — the audit trail and your documents.'}
+  ];
+  document.getElementById('gallery').innerHTML = GROUPS.map(function(grp){
+    var cards = OUTPUTS.filter(function(o){return o.g===grp.g;}).map(function(o){
+      var inner = '<div class="thumb">'+TH[o.k]+'</div><div class="ob"><div class="ot">'+esc(o.t)+'</div>'+
+        '<div class="od">'+esc(o.d)+'</div><span class="olink">'+esc(o.cta)+' <i class="ti ti-arrow-right"></i></span></div>';
+      return o.href ? '<a class="ocard" href="'+o.href+'">'+inner+'</a>' : '<div class="ocard" style="cursor:default">'+inner+'</div>';
+    }).join('');
+    return '<div class="ogroup"><div class="ohead">'+esc(grp.t)+' <span class="osub">'+esc(grp.sub)+'</span></div>'+
+      '<div class="gallery">'+cards+'</div></div>';
+  }).join('');
+
+  document.getElementById('posture').textContent = 'JusticeX organizes and compares your information objectively. It is software — not a law firm or a lawyer — and it does not advise you or the other party. You decide, with your own attorney if you choose.';
+})();
+</script>
+</body>
+</html>

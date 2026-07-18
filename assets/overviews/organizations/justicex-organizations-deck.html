@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JusticeX for Organizations — modular overview deck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
+<style>
+  /* LOCKED type scale (SC-9): title 40 · heading 22 · body 16 · supporting 14 · fine-print 12 floor · stats 60+ */
+  :root{--navy:#042C53;--navy9:#021A33;--navy6:#154572;--coral:#D85A30;--coral6:#B04722;--coral-on:#F0997B;--soft:#FAECE7;--paper:#F4F6FA;--cream:#E6F1FB;--ink:#1A2433;--slate:#5F5E5A;--stone:#D1DEEE;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#e9edf3;font-family:'Source Sans 3',system-ui,sans-serif;color:var(--ink);padding:24px 0}
+  .deck{display:flex;flex-direction:column;align-items:center;gap:22px}
+  .slide{width:1280px;height:720px;background:var(--paper);position:relative;overflow:hidden;box-shadow:0 10px 34px rgba(20,30,46,.18);border-radius:6px}
+  .pad{position:absolute;inset:0;padding:52px 62px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:'Source Serif 4',serif;font-weight:700;font-size:23px;color:var(--navy)}
+  .brand .hex{width:29px;height:29px;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,#0a3b66,var(--navy));clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);color:var(--coral-on);font-size:15px}
+  .brand .x{color:var(--coral)} .brand.on-dark{color:#fff}
+  .eyebrow{font-weight:700;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);display:flex;align-items:center;gap:12px}
+  .eyebrow .rule{height:1px;width:44px;background:var(--stone)}
+  .eyebrow.on-dark{color:var(--coral-on)} .eyebrow.on-dark .rule{background:rgba(240,153,123,.4)}
+  .seg{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--navy6);border-radius:6px;padding:4px 10px;margin-left:auto}
+  h2.title{font-family:'Source Serif 4',serif;font-weight:600;font-size:40px;line-height:1.08;color:var(--navy);margin-top:16px}
+  h2.title.on-dark{color:#fff}
+  .foot{position:absolute;left:62px;right:62px;bottom:28px;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--slate)}
+  .foot.on-dark{color:#9db4cc} .pg{font-weight:700;color:var(--navy)} .foot.on-dark .pg{color:var(--coral-on)}
+  .slide.navy{background:#042C53;background:radial-gradient(120% 130% at 12% 0,#0a3560,var(--navy) 55%,var(--navy9))}
+  .divlabel{position:absolute;top:52px;right:62px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral-on)}
+  /* cover / section dividers */
+  .cover .kick{font-weight:700;font-size:16px;letter-spacing:.2em;text-transform:uppercase;color:var(--coral-on)}
+  .cover h1{font-family:'Source Serif 4',serif;font-weight:600;font-size:54px;line-height:1.05;color:#fff;margin-top:20px;max-width:1000px}
+  .cover h1 em{font-style:normal;color:#fff}
+  .cover .lead{font-size:21px;color:#c9d7e6;margin-top:22px;max-width:840px;line-height:1.5}
+  .cover .strip{display:flex;gap:10px;margin-top:30px;flex-wrap:wrap}
+  .cover .chip{font-size:15px;font-weight:500;color:#dbe6f2;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:9px 18px}
+  /* layout helpers */
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:24px}
+  .three{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px}
+  .c{background:#fff;border:1px solid var(--stone);border-radius:14px;padding:24px 26px}
+  .slide.navy .c{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14)}
+  .c .ic{width:46px;height:46px;border-radius:12px;background:var(--soft);color:var(--coral);display:flex;align-items:center;justify-content:center;font-size:23px}
+  .slide.navy .c .ic{background:rgba(240,153,123,.14);color:var(--coral-on)}
+  .c h3{font-family:'Source Serif 4',serif;font-weight:600;color:var(--navy);font-size:22px;margin:13px 0 0}
+  .slide.navy .c h3{color:#fff}
+  .c p{font-size:16px;line-height:1.5;color:var(--ink);opacity:.85;margin-top:9px}
+  .slide.navy .c p{color:#c9d7e6;opacity:1}
+  .c .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}
+  .c .chips span{font-size:13.5px;font-weight:500;color:var(--navy);background:var(--paper);border:1px solid var(--stone);border-radius:999px;padding:5px 11px}
+  .slide.navy .c .chips span{color:#dbe6f2;background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14)}
+  ul.b{list-style:none;margin-top:8px}
+  ul.b li{font-size:16px;color:var(--ink);opacity:.9;padding:7px 0 7px 24px;position:relative;line-height:1.4}
+  ul.b li::before{content:"";position:absolute;left:0;top:13px;width:9px;height:9px;background:var(--coral);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+  ul.b li b{color:var(--navy)}
+  .lede{font-size:19px;color:var(--slate);margin-top:18px;max-width:1010px;line-height:1.5}.lede b{color:var(--navy)}
+  .addband{margin-top:22px;display:flex;gap:14px;align-items:flex-start;background:var(--cream);border:1px solid var(--stone);border-left:3px solid var(--coral);border-radius:12px;padding:16px 20px}
+  .addband i{color:var(--coral);font-size:22px;flex:0 0 auto;margin-top:1px}
+  .addband p{font-size:15.5px;color:var(--ink);line-height:1.45}.addband b{color:var(--navy)}
+  .split{display:grid;grid-template-columns:1.15fr .85fr;gap:34px;margin-top:22px;align-items:start}
+  .panel{background:#fff;border:1px solid var(--stone);border-radius:14px;padding:22px 24px}
+  .panel .pl{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--slate)}
+  .panel .row{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px solid var(--paper);font-size:15.5px}
+  .panel .row:last-child{border-bottom:0}.panel .row b{color:var(--navy)}
+  /* problem stats */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:26px}
+  .stat{background:#fff;border:1px solid var(--stone);border-radius:12px;padding:20px 22px}
+  .stat .n{font-family:'Source Serif 4',serif;font-size:24px;color:var(--navy);font-weight:600}
+  .stat .l{font-size:15.5px;color:var(--slate);line-height:1.45;margin-top:6px}
+  /* pipeline / flow */
+  .flow{display:flex;gap:16px;margin-top:26px}
+  .fstep{flex:1;background:#fff;border:1px solid var(--stone);border-radius:12px;padding:20px 22px}
+  .fstep .fn{font-family:'Source Serif 4',serif;font-size:15px;font-weight:700;color:var(--coral)}
+  .fstep h4{font-family:'Source Serif 4',serif;color:var(--navy);font-size:19px;font-weight:600;margin-top:6px}
+  .fstep p{font-size:15px;color:var(--slate);margin-top:6px;line-height:1.4}
+  .steps{display:flex;margin-top:26px}.step{flex:1;text-align:center;position:relative}
+  .step .hx{width:50px;height:50px;margin:0 auto;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,#0a3b66,var(--navy));clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);color:#fff;font-weight:700;font-size:18px}
+  .step .nm{font-size:14px;margin-top:9px;color:var(--navy);font-weight:600}
+  .step::after{content:"";position:absolute;top:24px;left:50%;width:100%;height:2px;background:var(--stone);z-index:0}.step:last-child::after{display:none}
+  /* hold */
+  .hold{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:24px;align-items:start}
+  .hold .col h3{font-family:'Source Serif 4',serif;color:var(--navy);font-size:21px;font-weight:600;margin-bottom:10px}
+  .hold ul{list-style:none}
+  .hold li{font-size:16.5px;color:var(--ink);padding:8px 0 8px 26px;position:relative;line-height:1.38}
+  .hold li::before{content:"";position:absolute;left:0;top:14px;width:10px;height:10px;background:var(--coral);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+  .hold .never li::before{background:var(--slate);clip-path:none;border-radius:50%;width:7px;height:7px;top:15px;left:1px}
+  /* packaging */
+  .pkg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px}
+  .pcard{background:#fff;border:1px solid var(--stone);border-radius:14px;padding:24px;border-top:3px solid var(--coral)}
+  .pcard .pt{font-family:'Source Serif 4',serif;color:var(--navy);font-size:21px;font-weight:600}
+  .pcard .pw{font-size:14px;color:var(--coral6);font-weight:600;margin-top:2px}
+  .pcard p{font-size:15px;color:var(--ink);opacity:.85;margin-top:10px;line-height:1.45}
+  .pcard .buyer{font-size:13.5px;color:var(--slate);margin-top:12px;padding-top:10px;border-top:1px solid var(--stone)}.pcard .buyer b{color:var(--navy)}
+  /* close */
+  .close h2{font-family:'Source Serif 4',serif;font-weight:600;font-size:46px;color:#fff;margin-top:20px;max-width:900px;line-height:1.08}
+  .close .lead{font-size:20px;color:#c9d7e6;margin-top:18px;max-width:740px;line-height:1.5}
+  .close .ctas{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+  .close .cta{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:16px;padding:14px 26px;border-radius:9px;text-decoration:none}
+  .close .cta.p{background:var(--coral);color:#fff} .close .cta.g{border:1.5px solid rgba(255,255,255,.3);color:#fff}
+  .note{font-size:14px;color:var(--slate);font-style:italic;margin-top:18px}
+  @media print{body{background:#fff;padding:0}.deck{gap:0}.slide{box-shadow:none;border-radius:0;page-break-after:always;break-after:page}}
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <!-- ============ COMMON OPENING ============ -->
+
+  <!-- 1 · COVER -->
+  <div class="slide navy cover">
+    <div class="pad">
+      <div class="brand on-dark"><span class="hex">X</span>Justice<span class="x">X</span></div>
+      <div style="margin-top:74px">
+        <div class="kick">For organizations</div>
+        <h1>Resolve disputes before<br>they become <em>claims.</em></h1>
+        <p class="lead">A fair, objective path to resolution for everyone your organization deals with — employees, members, students, customers, and the partners you contract with — at a lower cost and effort, and with almost no lift to run it.</p>
+        <div class="strip"><span class="chip">Internal &amp; external constituents</span><span class="chip">Built into your contracts</span><span class="chip">Lower cost, less contention</span></div>
+      </div>
+      <div class="foot on-dark"><span>AI-assisted overview · figures illustrative · not legal advice.</span><span class="pg">justicex.ai</span></div>
+    </div>
+  </div>
+
+  <!-- 2 · THE PROBLEM -->
+  <div class="slide">
+    <div class="pad">
+      <div class="eyebrow"><span class="rule"></span> The problem</div>
+      <h2 class="title">Disputes are costly and contentious — and your current tools don't resolve them.</h2>
+      <div class="stats">
+        <div class="stat"><div class="n">The legal hotline</div><div class="l">An EAP legal line triages and refers — a short phone consult, then a hand-off to an outside attorney who may not even take the case. It rarely resolves the matter.</div></div>
+        <div class="stat"><div class="n">The legal plan</div><div class="l">A group legal plan is a personal-legal benefit routed to outside attorneys — and it explicitly excludes employment and any dispute where the company is adverse.</div></div>
+        <div class="stat"><div class="n">The gap</div><div class="l">Neither actually resolves the dispute in front of you — so it escalates, drains time, spends legal budget, and strains the relationship and your reputation.</div></div>
+      </div>
+      <p class="lede">You want disputes to resolve — fairly, at lower cost and effort, with both sides more satisfied and far less contention — across everyone you serve, inside and out.</p>
+      <div class="foot"><span>Hotline / legal-plan mechanics per public plan descriptions · not legal advice.</span><span class="pg">02</span></div>
+    </div>
+  </div>
+
+  <!-- 3 · THE JUSTICEX VALUE (all plays up front) -->
+  <div class="slide">
+    <div class="pad">
+      <div class="eyebrow"><span class="rule"></span> What JusticeX does for your organization</div>
+      <h2 class="title">Three ways to resolve — plus one that prevents.</h2>
+      <div class="three">
+        <div class="c"><div class="ic"><i class="ti ti-users"></i></div><h3>With your internal constituents</h3><p>Employee, workplace, and partnership disputes get an objective, documented path — resolved in-house, before they harden into claims.</p></div>
+        <div class="c"><div class="ic"><i class="ti ti-building-store"></i></div><h3>With your external constituents</h3><p>Contractors, vendors, customers, members, and policyholders resolve disputes on a fair, symmetric basis that preserves the business relationship.</p></div>
+        <div class="c"><div class="ic"><i class="ti ti-file-certificate"></i></div><h3>Built into your contracts, up front</h3><p>A mediation-first clause in the agreements you already use routes disputes to JusticeX automatically — a controlled, lower-cost path that reduces a broad range of risk and legal exposure before it arises.</p></div>
+      </div>
+      <div class="addband"><i class="ti ti-plus" aria-hidden="true"></i><p><b>Additive, not a replacement.</b> JusticeX works alongside the mediators, counsel, EAP, and benefits you already have — making them faster and lower-cost. You decide what to keep; nothing has to go away to add JusticeX.</p></div>
+      <div class="foot"><span>Objective · symmetric · court access preserved · not legal advice.</span><span class="pg">03</span></div>
+    </div>
+  </div>
+
+  <!-- ============ PER-SEGMENT SECTIONS (pull what's relevant) ============ -->
+
+  <!-- 4 · INTERNAL — EMPLOYERS -->
+  <div class="slide navy">
+    <div class="pad">
+      <div class="eyebrow on-dark"><span class="rule"></span> Workforce Resolution <span class="seg">Internal · employees</span></div>
+      <h2 class="title on-dark">Contain it up front. Keep the working relationship.</h2>
+      <div class="three">
+        <div class="c"><div class="ic"><i class="ti ti-shield-check"></i></div><h3>Contain it up front</h3><p>An objective, documented process handles workplace disputes at the first sign — before they harden into EEOC charges, EPLI claims, or litigation.</p></div>
+        <div class="c"><div class="ic"><i class="ti ti-report-money"></i></div><h3>Lower cost, less contention</h3><p>Preparation, redaction, and symmetric comparison are automated — so matters resolve faster, at a fraction of outside-counsel cost, with both sides more satisfied.</p></div>
+        <div class="c"><div class="ic"><i class="ti ti-heart-handshake"></i></div><h3>A benefit your people value</h3><p>Offer it to employees for their personal matters too — divorce, custody, estate, everyday disputes — a tangible, low-cost benefit that complements your EAP and legal plan.</p></div>
+      </div>
+      <p class="lede" style="color:#c9d7e6"><b style="color:#fff">The economic buyers:</b> CHRO on culture and retention · GC on risk and defensibility · CFO on legal spend and EPLI exposure.</p>
+      <div class="foot on-dark"><span>Additive to your EAP, legal plan, and mediators · not a legal plan or insurance · not legal advice.</span><span class="pg">04</span></div>
+    </div>
+  </div>
+
+  <!-- 5 · EXTERNAL — CONSTITUENTS -->
+  <div class="slide">
+    <div class="pad">
+      <div class="eyebrow"><span class="rule"></span> For the parties you do business with <span class="seg" style="background:var(--coral)">External · partners</span></div>
+      <h2 class="title">Resolve it with contractors, vendors &amp; customers — and keep the relationship.</h2>
+      <div class="split">
+        <div>
+          <p class="lede" style="margin-top:2px">Ask the external parties you contract with to try objective, mediated comparison before litigation. The goal isn't just a faster close — it's both sides more satisfied with the process <b>and</b> the result, a far less contentious path, and lower cost and effort for everyone.</p>
+          <ul class="b">
+            <li><b>Both sides more satisfied</b> — a symmetric, fair process, not a fight</li>
+            <li><b>Far less contention</b> — resolve the issue, preserve the relationship</li>
+            <li><b>Lower cost and effort</b> — for you and for them</li>
+            <li><b>Court access preserved</b> — mediation-first, never binding arbitration</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <div class="pl">Who this fits</div>
+          <div class="row"><span>Contractors &amp; subcontractors</span><b>Commercial</b></div>
+          <div class="row"><span>Vendors &amp; suppliers</span><b>Commercial</b></div>
+          <div class="row"><span>Customers &amp; policyholders</span><b>Service</b></div>
+          <div class="row"><span>Members &amp; franchisees</span><b>Membership</b></div>
+          <div class="row"><span>Partners &amp; JV counterparties</span><b>Partnership</b></div>
+        </div>
+      </div>
+      <div class="foot"><span>Software and an objective process · court access preserved · not legal advice.</span><span class="pg">05</span></div>
+    </div>
+  </div>
+
+  <!-- 6 · BUILD IT IN UP FRONT (contracts / risk mitigation) -->
+  <div class="slide navy">
+    <div class="pad">
+      <div class="eyebrow on-dark"><span class="rule"></span> Build it into your contracts <span class="seg">Prevention · up front</span></div>
+      <h2 class="title on-dark">The strongest play is up front — before a dispute exists.</h2>
+      <div class="two" style="grid-template-columns:1.1fr .9fr">
+        <div>
+          <p class="lede" style="color:#c9d7e6;margin-top:2px">A mediation-first clause in the agreements you already use — with internal <b style="color:#fff">and</b> external parties — routes any future dispute to JusticeX automatically. More automated. More controlled. More likely to reach a good outcome. And at lower cost and effort.</p>
+          <ul class="b">
+            <li style="color:#c9d7e6"><b style="color:#fff">One consistent on-ramp</b> across every agreement you issue</li>
+            <li style="color:#c9d7e6"><b style="color:#fff">Reduces exposure</b> before it arises — a documented, even-handed default</li>
+            <li style="color:#c9d7e6"><b style="color:#fff">You configure it</b> — required or optional, with carve-outs and court access</li>
+          </ul>
+        </div>
+        <div class="c">
+          <h3 style="margin-top:0">Exposures it helps contain</h3>
+          <div class="chips" style="margin-top:14px"><span>Employment &amp; wage disputes</span><span>Vendor &amp; commercial breach</span><span>Consumer &amp; warranty complaints</span><span>Member &amp; HOA conflicts</span><span>Partnership &amp; equity disputes</span><span>Service-level &amp; SLA disputes</span></div>
+        </div>
+      </div>
+      <div class="foot on-dark"><span>Clause framing configured with your counsel; built behind a flag, off by default · not legal advice.</span><span class="pg">06</span></div>
+    </div>
+  </div>
+
+  <!-- 7 · HOAs & PROPERTY MANAGERS -->
+  <div class="slide">
+    <div class="pad">
+      <div class="eyebrow"><span class="rule"></span> Community Resolution <span class="seg" style="background:var(--coral)">HOAs &amp; property managers</span></div>
+      <h2 class="title">A fair, documented path that protects the board and the community.</h2>
+      <div class="three">
+        <div class="c"><div class="ic"><i class="ti ti-building-community"></i></div><h3>Even-handed by design</h3><p>Boundary, noise, architectural, and assessment disputes run one symmetric, documented process — so outcomes are consistent and defensible, and no one feels singled out.</p></div>
+        <div class="c"><div class="ic"><i class="ti ti-shield-half"></i></div><h3>Protects the board</h3><p>A neutral, auditable record reduces the personal and legal exposure that board volunteers carry — and keeps neighbor relationships intact.</p></div>
+        <div class="c"><div class="ic"><i class="ti ti-users-group"></i></div><h3>Manager-channel ready</h3><p>Property-management companies roll it across their communities as a standard, value-added service — lower cost and effort than the litigate-or-ignore status quo.</p></div>
+      </div>
+      <p class="lede">Both sides more satisfied, far less contention, at lower cost — with court access preserved and mandated processes carved out.</p>
+      <div class="foot"><span>Additive to your existing counsel and managers · not a law firm or mediator · not legal advice.</span><span class="pg">07</span></div>
+    </div>
+  </div>
+
+  <!-- 8 · SCHOOLS & CAMPUSES -->
+  <div class="slide">
+    <div class="pad">
+      <div class="eyebrow"><span class="rule"></span> Campus Resolution <span class="seg" style="background:var(--coral)">Schools &amp; campuses</span></div>
+      <h2 class="title">One consistent, neutral path — with the mandated processes preserved.</h2>
+      <div class="three">
+        <div class="c"><div class="ic"><i class="ti ti-school"></i></div><h3>Consistent &amp; fair</h3><p>Student, housing, roommate, and community disputes get one even-handed, documented process — consistent across cases and defensible for the institution.</p></div>
+        <div class="c"><div class="ic"><i class="ti ti-shield-lock"></i></div><h3>Carve-outs preserved</h3><p>Title IX, IDEA, and other mandated or legally required processes are carved out by design — JusticeX complements them, never replaces them.</p></div>
+        <div class="c"><div class="ic"><i class="ti ti-mood-heart"></i></div><h3>Goodwill for families</h3><p>Families get a fair experience and a real resolution — lower cost, less contention, and a process the institution can stand behind.</p></div>
+      </div>
+      <p class="lede">A neutral resolution path for the everyday disputes — freeing staff and counsel for the matters that truly need them.</p>
+      <div class="foot"><span>Complements mandated reporting and required processes · not legal advice.</span><span class="pg">08</span></div>
+    </div>
+  </div>
+
+  <!-- ============ COMMON CLOSE ============ -->
+
+  <!-- 9 · HOW IT WORKS -->
+  <div class="slide">
+    <div class="pad">
+      <div class="eyebrow"><span class="rule"></span> How it works · almost no lift for your team</div>
+      <h2 class="title">Configure once. Everyone you serve resolves. You oversee.</h2>
+      <div class="flow">
+        <div class="fstep"><div class="fn">Step 1</div><h4>Set your policy once</h4><p>Choose which agreements — internal and external — route to JusticeX, which capabilities are free, and the carve-outs, in one admin console.</p></div>
+        <div class="fstep"><div class="fn">Step 2</div><h4>Constituents resolve</h4><p>When a dispute arises, the parties run the objective seven-stage process themselves — with a mediator or counsel where it's needed. JusticeX makes them faster, not redundant.</p></div>
+        <div class="fstep"><div class="fn">Step 3</div><h4>You oversee</h4><p>Track volume, status, and outcomes on an audit-logged, access-controlled dashboard. You oversee; you don't operate.</p></div>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="hx">1</div><div class="nm">Plan</div></div>
+        <div class="step"><div class="hx">2</div><div class="nm">Intake</div></div>
+        <div class="step"><div class="hx">3</div><div class="nm">Redact</div></div>
+        <div class="step"><div class="hx">4</div><div class="nm">Summarize</div></div>
+        <div class="step"><div class="hx">5</div><div class="nm">Gap Analysis</div></div>
+        <div class="step"><div class="hx">6</div><div class="nm">Resolution</div></div>
+        <div class="step"><div class="hx">7</div><div class="nm">Memorandum</div></div>
+      </div>
+      <div class="foot"><span>Three human checkpoints per matter · AI proposes, people decide · not legal advice.</span><span class="pg">09</span></div>
+    </div>
+  </div>
+
+  <!-- 10 · THE LINE WE HOLD -->
+  <div class="slide">
+    <div class="pad">
+      <div class="eyebrow"><span class="rule"></span> The line we hold</div>
+      <h2 class="title">An objective resolution platform — not a court, and not a lawyer.</h2>
+      <div class="hold">
+        <div class="col">
+          <h3>What JusticeX is</h3>
+          <ul>
+            <li>A neutral platform that runs an objective, symmetric resolution process</li>
+            <li>A mediation-first on-ramp your agreements can point to</li>
+            <li>Additive to your mediators, counsel, EAP, and benefits — not a replacement</li>
+            <li>Configurable, with carve-outs and court access preserved</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>What it is not</h3>
+          <ul class="never">
+            <li>A court, arbitrator, or binding forum</li>
+            <li>Legal advice, or a substitute for a lawyer</li>
+            <li>An insurance, prepaid-legal, or ERISA benefit plan</li>
+            <li>A replacement for mandated or required processes</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note">Framing and packaging are drafts pending counsel review; carve-outs and clause language are configured with your counsel. Not legal advice.</p>
+      <div class="foot"><span>Objective · symmetric · court access preserved.</span><span class="pg">10</span></div>
+    </div>
+  </div>
+
+  <!-- 11 · PACKAGING + ASK -->
+  <div class="slide navy close">
+    <div class="pad">
+      <div class="brand on-dark"><span class="hex">X</span>Justice<span class="x">X</span></div>
+      <div style="margin-top:36px">
+        <div class="eyebrow on-dark"><span class="rule"></span> Packaged by segment</div>
+        <h2 style="font-size:36px;max-width:940px">Contain the dispute. Keep the relationship. Add it without removing anything you have.</h2>
+      </div>
+      <div class="pkg" style="margin-top:26px">
+        <div class="pcard"><div class="pt">Workforce Resolution</div><div class="pw">Employers · internal &amp; external</div><p>Resolve employee and commercial disputes before they become claims; offer it to your people as a benefit.</p><div class="buyer"><b>Buyer:</b> CHRO · GC · CFO</div></div>
+        <div class="pcard"><div class="pt">Community Resolution</div><div class="pw">HOAs &amp; property managers</div><p>An even-handed, documented path for member disputes — protecting the board and the community.</p><div class="buyer"><b>Buyer:</b> Board · property manager</div></div>
+        <div class="pcard"><div class="pt">Campus Resolution</div><div class="pw">Schools &amp; campuses</div><p>A consistent, neutral process for student and community disputes, with mandated processes carved out.</p><div class="buyer"><b>Buyer:</b> Administration · general counsel</div></div>
+      </div>
+      <div class="close" style="position:static"><div class="ctas" style="margin-top:26px"><a class="cta p" href="https://justicex.ai/contact.html?path=employer">Talk to us about your organization <i class="ti ti-arrow-right" aria-hidden="true"></i></a><a class="cta g" href="https://justicex.ai/markets.html#business">See the market opportunity</a></div></div>
+      <div class="foot on-dark"><span>Land with the free path, expand to policy-wide · Starter · Pro · Enterprise · not legal advice.</span><span class="pg">justicex.ai</span></div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
