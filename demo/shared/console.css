@@ -44,7 +44,6 @@
      palette. They encode distinct role meaning (mediator vs attorney),
      so they are named rather than forced onto brand colors. Approve, or
      fold to navy/coral. */
-  --jx-role-mediator: #2A6FB0;
   --jx-role-attorney: #6B4A9E;
   --jx-role-attorney-100: #EDE7F6;
 }
@@ -353,7 +352,7 @@
 .ptot .pt { border: 1px solid var(--jx-stone-200); border-radius: var(--r-lg); overflow: hidden; }
 .ptot .pt .h { padding: 9px var(--space-4); font-weight: 700; color: var(--jx-white); display: flex; justify-content: space-between; align-items: center; font-size: var(--fs-caption); }
 .ptot .pt.A .h { background: var(--jx-navy-500); }
-.ptot .pt.B .h { background: var(--jx-coralLt-500); }
+.ptot .pt.B .h { background: var(--jx-coralLt-500); color: var(--jx-navy-900); }
 @media (max-width: 640px) { .ptot { grid-template-columns: 1fr; } }
 
 /* ============================================================
@@ -509,8 +508,8 @@
 .tag.sent { color: var(--jx-slate-500); background: var(--jx-paper); border: 1px solid var(--jx-stone-200); }
 .dot { width: 7px; height: 7px; border-radius: var(--r-pill); background: var(--jx-navy-500); }
 .dot.off { background: var(--jx-slate-300); }
-.dot.on, .stage.active .dot { background: var(--jx-success); }
-.stage.active .dot { box-shadow: 0 0 0 4px rgba(216,90,48,.22); }
+.dot.on { background: var(--jx-success); }
+.stage.active .dot { background: var(--jx-coral-500); box-shadow: 0 0 0 4px rgba(216,90,48,.22); }
 .stage.done .dot { background: var(--jx-navy-500); }
 .k { display: inline-block; font-size: 9.5px; font-weight: 800; text-transform: uppercase; letter-spacing: .3px; border-radius: var(--r-sm); padding: 1px 7px; margin-right: 7px; vertical-align: middle; }
 .k.stage { background: var(--jx-stone-100); color: var(--jx-navy-600); }
@@ -531,12 +530,12 @@
 .btn.p, .btn.primary, button.primary, .adminbtn, .addbtn { background: var(--jx-coral-500); color: var(--jx-white); border-color: transparent; }
 .btn.p:hover, .btn.primary:hover, .adminbtn:hover, .addbtn:hover { background: var(--jx-coral-400); }
 .btn.accent { background: var(--jx-coral-500); color: var(--jx-white); }
-.btn.ghost, .cbtn, .chbtn, .ovbtn, .lockbtn, .lnkbtn, .fbtn, .btns, .privbtn { background: transparent; color: var(--jx-navy-800);
+.btn.ghost, .cbtn, .chbtn, .ovbtn, .lockbtn, .lnkbtn, .fbtn, .privbtn { background: transparent; color: var(--jx-navy-800);
   border: 1px solid var(--jx-stone-200); border-radius: var(--r-sm); padding: 8px 14px; font: 600 13px/1 var(--font-body); cursor: pointer; text-decoration: none; }
 .btn.ghost:hover, .cbtn:hover, .chbtn:hover, .ovbtn:hover, .lnkbtn:hover, .privbtn:hover { border-color: var(--jx-coral-500); color: var(--jx-coral-600); }
 .clawbtn { background: var(--jx-verify-500); color: var(--jx-white); border-radius: var(--r-sm); padding: 8px 14px; border: 0; cursor: pointer; }
 .btn.sm { padding: 8px 14px; font-size: 13px; }
 
 /* Accessibility helpers (injected by app-partials.js) */
-.skip-link { position: absolute; left: -9999px; top: 0; background: var(--jx-coral-500); color: #fff; padding: 8px 14px; z-index: 100; }
+.skip-link { position: absolute; left: -9999px; top: 0; background: var(--jx-coral-500); color: var(--jx-white); padding: 8px 14px; z-index: 100; }
 .skip-link:focus { left: 8px; top: 8px; }
