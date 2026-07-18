@@ -1,0 +1,128 @@
+/* ============================================================
+   JusticeX — Console (app) shared shell
+   Added 2026-07-18 (design-system-consistency branch).
+   ONE design system for the console, built on the marketing
+   source of truth. Import order: tokens.css first, then this.
+
+   This file does three things:
+     1) Consumes the design SoT (tokens.css) so the console stops
+        re-inventing colors, type, spacing, and radius per page.
+     2) Defines the canonical app shell + button + card contract.
+     3) COMPAT SHIM: maps the legacy console classes and bespoke
+        one-off buttons onto the token-based styles, so pages
+        harmonize the moment they load this file — before the
+        per-page hardcoded-hex cleanup lands.
+   ============================================================ */
+
+@import url('../../css/tokens.css');
+
+/* ---- Proposed semantic tokens the console legitimately needs ----
+   PROPOSED: promote these to css/tokens.css on approval. Defined here
+   (not in tokens.css) to avoid touching the WIP tree. The console had
+   invented 7+ greens and an off-brand amber; these name the real needs
+   once, so no page hardcodes a hex again. Amber is DEFERRED pending
+   Gregg's call (fold-to-coral vs admit-an-amber). */
+:root {
+  --jx-verify-700: #13402A;   /* deepest verify/attorney green */
+  --jx-verify-600: #155E3F;
+  --jx-verify-500: #1C6B4A;   /* VERIFY GREEN — attorney/verified/settled (single source) */
+  --jx-verify-100: #E4F3EC;   /* verify tint background */
+  --jx-caution-500: var(--jx-warning);  /* caution == coral warning, per brand (gold retired) */
+  --jx-caution-100: var(--jx-coral-100);
+}
+
+/* ===== App shell: nav ===== */
+.app-nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(15, 42, 74, 0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  color: var(--jx-paper);
+}
+.app-nav-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 var(--space-6);
+  height: 60px; display: flex; align-items: center; gap: var(--space-6);
+}
+.app-nav .app-brand {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-display); font-weight: 600; font-size: 20px;
+  color: var(--jx-paper); text-decoration: none; letter-spacing: var(--ls-tight);
+}
+.app-nav .app-brand .x { color: var(--jx-coralLt-500); }
+.app-nav .app-brand img { height: 26px; width: auto; display: block; }
+.app-nav-links { display: flex; gap: var(--space-5); margin-left: var(--space-4); }
+.app-nav-links a {
+  color: var(--jx-slate-100); text-decoration: none; font: 500 14px/1 var(--font-body);
+  padding: 6px 2px; border-bottom: 2px solid transparent; transition: color var(--dur-fast) var(--ease-standard);
+}
+.app-nav-links a:hover { color: var(--jx-white); }
+.app-nav-links a.active { color: var(--jx-white); border-bottom-color: var(--jx-coralLt-500); }
+.app-nav-actions { margin-left: auto; display: flex; align-items: center; gap: var(--space-4); }
+
+/* ===== App shell: footer ===== */
+.app-foot {
+  background: var(--jx-navy-900); color: var(--jx-teal-100);
+  padding: var(--space-10) 0 var(--space-8); font-size: var(--fs-caption);
+}
+.app-foot-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 var(--space-6);
+  display: flex; justify-content: space-between; gap: var(--space-6); flex-wrap: wrap;
+}
+.app-foot b { color: var(--jx-white); }
+
+/* ===== Canonical button contract (matches marketing .btn family) ===== */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 12px 20px; border-radius: var(--r-sm); border: 1px solid transparent;
+  font: 600 14px/1 var(--font-body); letter-spacing: 0.02em; cursor: pointer;
+  text-decoration: none; white-space: nowrap;
+  transition: all var(--dur-base) var(--ease-standard);
+}
+.btn--primary   { background: var(--jx-coral-500); color: var(--jx-white); }
+.btn--primary:hover   { background: var(--jx-coral-400); }
+.btn--secondary { background: var(--jx-navy-800); color: var(--jx-paper); }
+.btn--secondary:hover { background: var(--jx-navy-700); }
+.btn--ghost     { background: transparent; color: var(--jx-navy-800); border-color: var(--jx-stone-200); }
+.btn--ghost:hover     { border-color: var(--jx-coral-500); color: var(--jx-coral-600); }
+.btn--danger    { background: var(--jx-danger); color: var(--jx-white); }
+.btn--sm        { padding: 8px 14px; font-size: 13px; }
+
+/* ===== Card ===== */
+.card {
+  background: var(--jx-white); border-radius: var(--r-lg);
+  padding: var(--space-8); box-shadow: var(--shadow-1);
+  border: 1px solid var(--jx-stone-200);
+  transition: all var(--dur-base) var(--ease-standard);
+}
+.card:hover { box-shadow: var(--shadow-2); transform: translateY(-1px); }
+
+/* ============================================================
+   COMPAT SHIM — legacy console classes → token-based styles.
+   Lets every page harmonize on load, before per-page cleanup.
+   Remove a mapping once its pages have migrated to the canonical
+   classes above.
+   ============================================================ */
+
+/* legacy chrome */
+nav.nav { position: sticky; top: 0; z-index: 50; background: rgba(15,42,74,.96); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,.08); color: var(--jx-paper); }
+nav.nav .brand { color: var(--jx-paper); font-family: var(--font-display); text-decoration: none; }
+nav.nav .brand .x, .app-brand .x { color: var(--jx-coralLt-500); }
+footer.foot { background: var(--jx-navy-900); color: var(--jx-teal-100); font-size: var(--fs-caption); }
+footer.foot b { color: var(--jx-white); }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-6); }
+
+/* legacy buttons → canonical look (bespoke one-offs retired visually) */
+.btn.p, .btn.primary, button.primary, .adminbtn, .addbtn { background: var(--jx-coral-500); color: var(--jx-white); border-color: transparent; }
+.btn.p:hover, .btn.primary:hover, .adminbtn:hover, .addbtn:hover { background: var(--jx-coral-400); }
+.btn.accent { background: var(--jx-coral-500); color: var(--jx-white); }
+.btn.ghost, .cbtn, .chbtn, .ovbtn, .lockbtn, .lnkbtn, .fbtn, .btns, .privbtn {
+  background: transparent; color: var(--jx-navy-800); border: 1px solid var(--jx-stone-200);
+  border-radius: var(--r-sm); padding: 8px 14px; font: 600 13px/1 var(--font-body); cursor: pointer; text-decoration: none;
+}
+.btn.ghost:hover, .cbtn:hover, .chbtn:hover, .ovbtn:hover, .lnkbtn:hover, .privbtn:hover { border-color: var(--jx-coral-500); color: var(--jx-coral-600); }
+.clawbtn { background: var(--jx-verify-500); color: var(--jx-white); border-radius: var(--r-sm); padding: 8px 14px; border: 0; cursor: pointer; } /* attorney action = verify green */
+.btn.sm { padding: 8px 14px; font-size: 13px; }
+
+/* skip-link + prelaunch ribbon (injected by app-partials.js) */
+.skip-link { position: absolute; left: -9999px; top: 0; background: var(--jx-coral-500); color:#fff; padding: 8px 14px; z-index: 100; }
+.skip-link:focus { left: 8px; top: 8px; }
