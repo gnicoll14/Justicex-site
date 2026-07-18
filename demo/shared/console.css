@@ -109,7 +109,7 @@ nav.nav .brand { color: var(--jx-paper); font-family: var(--font-display); text-
 nav.nav .brand .x, .app-brand .x { color: var(--jx-coralLt-500); }
 footer.foot { background: var(--jx-navy-900); color: var(--jx-teal-100); font-size: var(--fs-caption); }
 footer.foot b { color: var(--jx-white); }
-.wrap { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-6); }
+/* .wrap left to each page to avoid layout shift in blanket rollout */
 
 /* legacy buttons → canonical look (bespoke one-offs retired visually) */
 .btn.p, .btn.primary, button.primary, .adminbtn, .addbtn { background: var(--jx-coral-500); color: var(--jx-white); border-color: transparent; }
