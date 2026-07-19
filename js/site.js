@@ -44,7 +44,7 @@
     // Note: 'demo' (Request Early Access) intentionally NOT mapped — it leaves the
     // role picker unselected so a general visitor self-identifies rather than
     // landing on the mediator application.
-    const map = { 'mediator-pilot': 'mediator', 'mediator': 'mediator', 'counsel': 'counsel', 'waitlist': 'consumer', 'consumer': 'consumer', 'pilot': 'pilot', 'financial': 'financial', 'insurer': 'financial', 'cpa': 'financial', 'security': 'security' };
+    const map = { 'mediator-pilot': 'mediator', 'mediator': 'mediator', 'counsel': 'counsel', 'waitlist': 'consumer', 'consumer': 'consumer', 'pilot': 'pilot', 'financial': 'financial', 'insurer': 'financial', 'cpa': 'financial', 'security': 'security', 'employer': 'employer', 'organization': 'employer', 'org': 'employer' };
     if (want && map[want]) {
       const target = router.querySelector(`[data-audience="${map[want]}"]`);
       if (target) target.click();

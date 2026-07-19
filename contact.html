@@ -68,6 +68,12 @@
         <div class="aud-pick-body">Vendor-risk or procurement review? Request the DPA, subprocessor list, and security documentation, plus our current compliance status.</div>
         <div class="aud-pick-cta">Request the packet <span style="color:var(--jx-gold-500)">→</span></div>
       </button>
+      <button class="aud-pick" data-audience="employer" type="button">
+        <div class="aud-pick-tag">Employers &amp; Organizations</div>
+        <div class="aud-pick-title">I represent an organization</div>
+        <div class="aud-pick-body">Offer JusticeX to your people as an employee or member benefit &#8212; with a pilot to start. For employers, HOAs and community associations, schools, and public agencies.</div>
+        <div class="aud-pick-cta">Talk to us <span style="color:var(--jx-gold-500)">&#8594;</span></div>
+      </button>
     </div>
   </div>
 </section>
@@ -375,6 +381,50 @@
             <div class="confirm-tag">Received</div>
             <div class="confirm-title">Welcome — we'll be in touch.</div>
             <div class="confirm-body">A member of the team will follow up about the financial/tax steps, the role dashboard, and how referrals and matter assignment work.</div>
+          </div>
+        </form>
+        <!-- EMPLOYER / ORGANIZATION FORM -->
+        <form class="form-card" data-form="employer" name="jx-employer" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="jx-employer">
+          <p hidden aria-hidden="true"><label>Leave this blank: <input name="bot-field"></label></p>
+          <div class="form-fields">
+            <div class="eyebrow"><span class="num">Employers &amp; Organizations</span> <span class="rule"></span> Offer JusticeX to your people</div>
+            <h2 class="h2" style="margin-top:18px;font-family:var(--font-display)">Bring JusticeX to your organization.</h2>
+            <p class="body" style="margin-top:12px">Offer JusticeX as an employee or member benefit &#8212; an objective, structured way for people in a dispute to organize and compare information, for both sides. It is software &#8212; not a law firm or mediator &#8212; and it does not provide legal advice. JusticeX never takes a side &#8212; including your organization&#8217;s &#8212; and your people keep their own counsel at any time. Embedding JusticeX in organizational agreements is a planned capability currently under legal review; you can register interest below.</p>
+            <div style="margin-top:32px">
+              <div class="field-row">
+                <div class="field"><label>Full name *</label><input type="text" required placeholder="Jordan Rivera" name="full-name"></div>
+                <div class="field"><label>Your role</label><select name="role"><option>HR / Benefits</option><option>Legal / General counsel</option><option>Operations</option><option>Executive / Leadership</option><option>Board / Community leadership</option><option>Other</option></select></div>
+              </div>
+              <div class="field-row">
+                <div class="field"><label>Organization name *</label><input type="text" required name="organization"></div>
+                <div class="field"><label>Organization type</label><select name="org-type"><option>Employer / Company</option><option>HOA / Community association</option><option>School / Campus</option><option>Government / Public agency</option><option>Union / Membership org</option><option>Other</option></select></div>
+              </div>
+              <div class="field-row">
+                <div class="field"><label>Approx. size (people)</label><select name="size"><option>Under 50</option><option>50&#8211;250</option><option>251&#8211;1,000</option><option>1,001&#8211;5,000</option><option>5,000+</option></select></div>
+                <div class="field"><label>Primary location(s)</label><input type="text" placeholder="NY, NJ, CT" name="locations"></div>
+              </div>
+              <div class="field"><label>What you&#8217;re interested in *</label>
+                <div class="chip-group">
+                  <label class="chip-check"><input type="checkbox" name="interest" value="Employee/member benefit">Offer as an employee / member benefit</label>
+                  <label class="chip-check"><input type="checkbox" name="interest" value="Embedded in agreements">Embedding in our agreements (dispute-routing &#8212; planned capability; register interest)</label>
+                  <label class="chip-check"><input type="checkbox" name="interest" value="Pilot">Run a pilot</label>
+                  <label class="chip-check"><input type="checkbox" name="interest" value="Exploring">Just exploring</label>
+                </div>
+                <div class="microcopy">Tap all that apply.</div>
+              </div>
+              <div class="field-row">
+                <div class="field"><label>Work email *</label><input type="email" required name="email"></div>
+                <div class="field"><label>Direct phone</label><input type="tel" name="phone"></div>
+              </div>
+              <button class="btn btn-navy" type="submit" style="width:100%;justify-content:center;margin-top:8px">Talk to us <span class="arrow">&#8594;</span></button>
+              <p class="microcopy" style="margin-top:14px">No cost to explore. We will follow up about benefit and pilot options for your organization.</p>
+            </div>
+          </div>
+          <div class="confirmation">
+            <div class="confirm-tag">Received</div>
+            <div class="confirm-title">Thanks &#8212; we&#8217;ll be in touch.</div>
+            <div class="confirm-body">A member of the team will follow up about offering JusticeX to your organization &#8212; benefit options, how a pilot works, and &#8212; if you flagged it &#8212; the planned agreements capability.</div>
           </div>
         </form>
       </div>

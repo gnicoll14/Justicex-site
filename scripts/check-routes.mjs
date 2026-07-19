@@ -11,7 +11,7 @@ if (!mapBlock) { console.error('FAIL: could not find router map in js/site.js');
 const mapKeys = new Set([...mapBlock[1].matchAll(/'([a-z-]+)'\s*:/g)].map(m => m[1]));
 
 // Paths intentionally left unmapped (documented behaviour).
-const allowedUnmapped = new Set(['demo', 'early', 'employer']); // generic "Get early access" -> picker unselected (visitor self-selects)
+const allowedUnmapped = new Set(['demo', 'early']); // generic "Get early access" -> picker unselected (visitor self-selects)
 
 function htmlFiles(dir) {
   let out = [];
