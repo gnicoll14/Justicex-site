@@ -32,5 +32,5 @@ pre-existing uncommitted WIP tree, which was left untouched.
 | 5 | 2026-07-18 | Fable fixes (contrast/semantic) then softer fixes (a11y, party-neutrality, attorney->navy, reduced-motion) | `demo/shared/console.css` | — | `79f8434`,`86e2fcf` |
 | 6 | 2026-07-18 | Palette migration: ~1,100 hex->token swaps on all 44 pages; matter-step circular-var fix | 44 `demo/*.html` | — | `edbff6e` |
 
-_Verified by headless render (cloud harness): dashboard, matter-step (7-stage rail), grievance, finances — all on-brand + consistent._
-_Remaining: ~80 stray hexes (per-page polish); app nav/footer injector on chrome-less pages; matter-type config + generalized rail; two governance skills._
+| 7 | 2026-07-18 | Matter-type registry SSOT (divorce/guardianship/grievance/estate) | `demo/shared/matter-types.js` | — | `31af1bf` |
+| 8 | 2026-07-18 | Drive guardianship + grievance rails from the registry (one engine); add renderRail + .mrail-band | `matter-types.js`,`console.css`,`guardianship.html`,`grievance.html` | — | `db1ed90` |
