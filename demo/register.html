@@ -10,39 +10,39 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
 <style>
-:root{--navy:#042C53;--navy-deep:#021A33;--navy2:#154572;--paper:#E6F1FB;--surface:#FFFFFF;--ink:#1A1A1A;--muted:#5F5E5A;--faint:#9CA0A7;--hair:#D1DEEE;--accent:#D85A30;--accent-d:#B04722;--success:#1D9E75;--success-s:#E7F4EF;--radius:14px;--radius-sm:10px;}
+:root{--navy:var(--jx-navy-800);--navy-deep:var(--jx-navy-900);--navy2:var(--jx-navy-600);--paper:var(--jx-stone-100);--surface:#FFFFFF;--ink:var(--jx-ink-700);--muted:var(--jx-slate-500);--faint:var(--jx-slate-300);--hair:var(--jx-stone-200);--accent:var(--jx-coral-500);--accent-d:var(--jx-coral-600);--success:var(--jx-success);--success-s:var(--jx-verify-100);--radius:14px;--radius-sm:10px;}
 *{box-sizing:border-box} html,body{margin:0}
 body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',system-ui,sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;}
 .appbar{background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 26px;}
 .brand{display:flex;align-items:center;} .bmark{height:23px;width:23px;border-radius:5px;margin-right:9px;}
 .wordmark{font-family:'Source Serif 4',serif;font-weight:600;font-size:22px;} .wordmark .x{color:var(--accent);}
-.tagline{font-size:11.5px;letter-spacing:2.4px;text-transform:uppercase;color:#9FB6D2;margin-left:12px;}
-.back{font-size:12.5px;color:#C9D8EA;text-decoration:none;} .back:hover{color:#fff;}
+.tagline{font-size:11.5px;letter-spacing:2.4px;text-transform:uppercase;color:var(--jx-teal-100);margin-left:12px;}
+.back{font-size:12.5px;color:var(--jx-slate-100);text-decoration:none;} .back:hover{color:#fff;}
 .app{max-width:720px;margin:0 auto;padding:0 22px 60px;}
 .crumb{font-size:12px;color:var(--muted);margin:18px 0 2px;display:flex;align-items:center;gap:7px;} .crumb b{color:var(--navy);}
 .panel{background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);padding:24px 26px 26px;margin-top:8px;box-shadow:0 1px 2px rgba(20,30,46,.04);}
 h1{font-family:'Source Serif 4',serif;font-weight:500;font-size:25px;margin:0 0 4px;}
 .lede{color:var(--muted);margin:0 0 16px;max-width:64ch;}
-.grp{border:1px solid var(--hair);border-radius:11px;padding:15px 16px;margin:0 0 13px;background:#FBFDFF;}
+.grp{border:1px solid var(--hair);border-radius:11px;padding:15px 16px;margin:0 0 13px;background:var(--jx-white);}
 .grp h2{font-family:'Source Serif 4',serif;font-weight:600;font-size:15px;color:var(--navy);margin:0 0 10px;display:flex;align-items:center;gap:8px;} .grp h2 i{color:var(--navy2);}
 .field{margin:0 0 11px;} .field label{display:block;font-size:12px;font-weight:700;color:var(--navy);margin-bottom:4px;}
-.field input,.field select,.field textarea{width:100%;border:1px solid #CDDDF3;border-radius:8px;padding:9px 11px;font-size:13.5px;font-family:inherit;background:#fff;}
+.field input,.field select,.field textarea{width:100%;border:1px solid var(--jx-stone-100);border-radius:8px;padding:9px 11px;font-size:13.5px;font-family:inherit;background:#fff;}
 .field textarea{min-height:62px;resize:vertical;}
 .hint{font-size:11.5px;color:var(--faint);margin-top:3px;}
 .row{display:flex;gap:11px;flex-wrap:wrap;} .row .field{flex:1 1 200px;}
-.checks{display:flex;gap:8px;flex-wrap:wrap;} .check{display:flex;align-items:center;gap:6px;border:1px solid #CDDDF3;border-radius:8px;padding:7px 11px;font-size:12.5px;cursor:pointer;background:#fff;} .check input{accent-color:var(--accent);}
+.checks{display:flex;gap:8px;flex-wrap:wrap;} .check{display:flex;align-items:center;gap:6px;border:1px solid var(--jx-stone-100);border-radius:8px;padding:7px 11px;font-size:12.5px;cursor:pointer;background:#fff;} .check input{accent-color:var(--accent);}
 .clist{list-style:none;margin:0;padding:0;} .clist li{display:flex;gap:8px;align-items:flex-start;padding:6px 0;font-size:13px;} .clist input{accent-color:var(--accent);margin-top:3px;}
-.dedupe{background:#F4F8FD;border:1px solid #D9E6F4;border-radius:11px;padding:15px 16px;margin-bottom:14px;}
+.dedupe{background:var(--jx-stone-100);border:1px solid var(--jx-stone-200);border-radius:11px;padding:15px 16px;margin-bottom:14px;}
 .dedupe h2{font-family:'Source Serif 4',serif;font-weight:600;font-size:15px;color:var(--navy);margin:0 0 4px;}
 .match{display:flex;align-items:center;gap:11px;border:1px solid var(--hair);border-radius:9px;padding:10px 12px;margin-top:8px;background:#fff;}
-.match .av{width:32px;height:32px;border-radius:8px;background:#EAF1FB;color:var(--navy2);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;flex:none;}
+.match .av{width:32px;height:32px;border-radius:8px;background:var(--jx-stone-100);color:var(--navy2);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;flex:none;}
 .match .nm{font-weight:600;color:var(--navy);font-size:13.5px;} .match .mt{font-size:11.5px;color:var(--muted);}
 .btn{font-size:13.5px;font-weight:600;color:#fff;background:var(--navy);border:none;border-radius:9px;padding:10px 16px;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:7px;}
 .btn:hover{background:var(--navy2);} .btn:disabled{opacity:.5;cursor:default;}
-.btn.ghost{background:#fff;color:var(--navy);border:1px solid #CDDDF3;} .btn.sm{padding:7px 12px;font-size:12.5px;margin-left:auto;}
+.btn.ghost{background:#fff;color:var(--navy);border:1px solid var(--jx-stone-100);} .btn.sm{padding:7px 12px;font-size:12.5px;margin-left:auto;}
 .hide{display:none;}
 .disc{margin-top:14px;padding-top:13px;border-top:1px solid var(--hair);font-size:12px;color:var(--muted);} .disc a{color:var(--navy2);}
-.done{display:none;background:#F2FAF6;border:1px solid #BDE6D4;border-radius:12px;padding:20px;margin-top:8px;}
+.done{display:none;background:var(--jx-verify-100);border:1px solid var(--jx-verify-100);border-radius:12px;padding:20px;margin-top:8px;}
 .done h2{margin:0 0 6px;font-family:'Source Serif 4',serif;color:var(--navy);font-size:18px;}
 </style>
 </head>
@@ -58,7 +58,7 @@ h1{font-family:'Source Serif 4',serif;font-weight:500;font-size:25px;margin:0 0 
     <h1>List your practice on JusticeX</h1>
     <p class="lede">Create a profile so users — and other professionals — can find and connect with you. JusticeX is a neutral directory: it does not recommend or rank you, and charges no referral fee. Your profile goes live once your license is verified.</p>
 
-    <div style="display:flex;gap:0;border:1px solid #CDDDF3;border-radius:9px;overflow:hidden;max-width:max-content;margin:0 0 15px">
+    <div style="display:flex;gap:0;border:1px solid var(--jx-stone-100);border-radius:9px;overflow:hidden;max-width:max-content;margin:0 0 15px">
       <button id="mInd" onclick="setMode('individual')" style="font-size:13px;font-weight:600;color:#fff;background:var(--navy);border:none;padding:9px 16px;cursor:pointer;font-family:inherit">Individual professional</button>
       <button id="mFirm" onclick="setMode('firm')" style="font-size:13px;font-weight:600;color:var(--navy2);background:#fff;border:none;padding:9px 16px;cursor:pointer;font-family:inherit">Mediation or law firm</button>
     </div>
@@ -95,11 +95,11 @@ h1{font-family:'Source Serif 4',serif;font-weight:500;font-size:25px;margin:0 0 
       <div class="grp"><h2><i class="ti ti-certificate"></i> Identity &amp; credentials</h2>
         <div class="field"><label>Headshot / photo <span style="font-weight:400;color:var(--muted)">— optional; appears on your directory listing</span></label>
           <div style="display:flex;align-items:center;gap:14px;margin-top:4px">
-            <div id="hsAv" style="width:64px;height:64px;border-radius:50%;background:#EAF1F9;color:#2A5582;display:flex;align-items:center;justify-content:center;font-size:26px;background-size:cover;background-position:center;flex:0 0 auto;border:1px solid #D1DEEE"><i class="ti ti-user"></i></div>
+            <div id="hsAv" style="width:64px;height:64px;border-radius:50%;background:#EAF1F9;color:var(--jx-navy-500);display:flex;align-items:center;justify-content:center;font-size:26px;background-size:cover;background-position:center;flex:0 0 auto;border:1px solid var(--jx-stone-200)"><i class="ti ti-user"></i></div>
             <div>
               <input id="hsFile" type="file" accept="image/*" hidden onchange="hsPick(this)">
-              <button type="button" onclick="document.getElementById('hsFile').click()" style="font-family:inherit;font-weight:600;font-size:13px;color:#042C53;background:#fff;border:1px solid #D1DEEE;border-radius:9px;padding:7px 13px;cursor:pointer;display:inline-flex;align-items:center;gap:6px"><i class="ti ti-camera"></i> <span id="hsBtnTxt">Add headshot</span></button>
-              <button type="button" id="hsRm" onclick="hsRemove()" style="display:none;font-family:inherit;font-weight:600;font-size:13px;color:#B04722;background:none;border:none;cursor:pointer;padding:7px 6px">Remove</button>
+              <button type="button" onclick="document.getElementById('hsFile').click()" style="font-family:inherit;font-weight:600;font-size:13px;color:var(--jx-navy-800);background:#fff;border:1px solid var(--jx-stone-200);border-radius:9px;padding:7px 13px;cursor:pointer;display:inline-flex;align-items:center;gap:6px"><i class="ti ti-camera"></i> <span id="hsBtnTxt">Add headshot</span></button>
+              <button type="button" id="hsRm" onclick="hsRemove()" style="display:none;font-family:inherit;font-weight:600;font-size:13px;color:var(--jx-coral-600);background:none;border:none;cursor:pointer;padding:7px 6px">Remove</button>
               <div style="font-size:11.5px;color:var(--muted);margin-top:4px">A clear, professional photo helps clients choose you. JPG or PNG.</div>
             </div>
           </div>

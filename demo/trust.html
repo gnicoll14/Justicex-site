@@ -10,19 +10,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
 <style>
-:root{--navy:#042C53;--navy-deep:#021A33;--navy2:#154572;--paper:#E6F1FB;--surface:#FFFFFF;--ink:#1A1A1A;--muted:#5F5E5A;--faint:#9CA0A7;--hair:#D1DEEE;--accent:#D85A30;--accent-d:#B04722;--success:#1D9E75;--success-s:#E7F4EF;--radius:14px;}
+:root{--navy:var(--jx-navy-800);--navy-deep:var(--jx-navy-900);--navy2:var(--jx-navy-600);--paper:var(--jx-stone-100);--surface:#FFFFFF;--ink:var(--jx-ink-700);--muted:var(--jx-slate-500);--faint:var(--jx-slate-300);--hair:var(--jx-stone-200);--accent:var(--jx-coral-500);--accent-d:var(--jx-coral-600);--success:var(--jx-success);--success-s:var(--jx-verify-100);--radius:14px;}
 *{box-sizing:border-box}html,body{margin:0}
 body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',system-ui,sans-serif;font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
 .appbar{background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 26px;}
 .brand{display:flex;align-items:center;}.bmark{height:23px;width:23px;border-radius:5px;margin-right:9px;}
 .wordmark{font-family:'Source Serif 4',serif;font-weight:600;font-size:22px;}.wordmark .x{color:var(--accent);}
-.tagline{font-size:11.5px;letter-spacing:2.4px;text-transform:uppercase;color:#9FB6D2;margin-left:12px;}
-.back{font-size:12.5px;color:#C9D8EA;text-decoration:none;}.back:hover{color:#fff;}
+.tagline{font-size:11.5px;letter-spacing:2.4px;text-transform:uppercase;color:var(--jx-teal-100);margin-left:12px;}
+.back{font-size:12.5px;color:var(--jx-slate-100);text-decoration:none;}.back:hover{color:#fff;}
 .band{background:var(--navy-deep);color:#fff;padding:32px 26px;}
 .band .in{max-width:860px;margin:0 auto;}
-.pill{display:inline-block;font-size:11px;letter-spacing:.5px;text-transform:uppercase;font-weight:700;color:#08213A;background:var(--accent);padding:3px 11px;border-radius:999px;margin-bottom:13px;}
+.pill{display:inline-block;font-size:11px;letter-spacing:.5px;text-transform:uppercase;font-weight:700;color:var(--jx-navy-900);background:var(--accent);padding:3px 11px;border-radius:999px;margin-bottom:13px;}
 .band h1{font-family:'Source Serif 4',serif;font-weight:600;font-size:29px;margin:0 0 6px;}
-.band p{margin:0;color:#AFC3DC;font-size:13.5px;max-width:70ch;}
+.band p{margin:0;color:var(--jx-teal-100);font-size:13.5px;max-width:70ch;}
 .app{max-width:860px;margin:0 auto;padding:0 26px 60px;}
 .toc{display:flex;gap:10px;margin:20px 0 6px;flex-wrap:wrap;}
 .toc a{font-size:12.5px;font-weight:700;color:var(--navy2);text-decoration:none;border:1px solid var(--hair);background:var(--surface);border-radius:999px;padding:6px 13px;}
@@ -35,7 +35,7 @@ ul{margin:0 0 12px;padding-left:20px;}li{margin-bottom:5px;}
 .kv{display:grid;grid-template-columns:180px 1fr;gap:6px 14px;font-size:13.5px;margin:8px 0 12px;}
 .kv .k{color:var(--navy2);font-weight:700;}
 .note{font-size:12.5px;color:var(--muted);margin-top:16px;padding-top:13px;border-top:1px solid var(--hair);}
-.draft{display:flex;gap:9px;align-items:flex-start;background:var(--success-s);border:1px solid #C6E0CF;border-radius:10px;padding:11px 15px;margin:18px 0 0;font-size:12.5px;color:#1E5A3C;}.draft i{color:var(--success);font-size:17px;margin-top:1px;}.draft b{color:#13402A;}
+.draft{display:flex;gap:9px;align-items:flex-start;background:var(--success-s);border:1px solid var(--jx-verify-100);border-radius:10px;padding:11px 15px;margin:18px 0 0;font-size:12.5px;color:var(--jx-verify-600);}.draft i{color:var(--success);font-size:17px;margin-top:1px;}.draft b{color:var(--jx-verify-700);}
 .foot{max-width:860px;margin:18px auto 0;padding:0 26px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:12px;}.foot a{color:var(--accent-d);font-weight:700;}.foot .tfe b{color:var(--navy);}
 </style>
 </head>

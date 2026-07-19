@@ -11,15 +11,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
 <style>
-  :root{--navy900:#021A33;--navy800:#042C53;--navy700:#0A3866;--navy600:#154572;--navy500:#2A5582;
-    --coral600:#B04722;--coral500:#D85A30;--coral100:#FAECE7;--coralLt500:#F0997B;
-    --slate500:#5F5E5A;--slate300:#9CA0A7;--white:#FFFFFF;--paper:#F4F6FA;--stone100:#E6F1FB;--stone200:#D1DEEE;--stone300:#B5C5DC;--ink700:#1A1A1A;--teal100:#B6C0D0;--success:#1D9E75;--successS:#E4F3EC;
+  :root{--navy900:var(--jx-navy-900);--navy800:var(--jx-navy-800);--navy700:var(--jx-navy-700);--navy600:var(--jx-navy-600);--navy500:var(--jx-navy-500);
+    --coral600:var(--jx-coral-600);--coral500:var(--jx-coral-500);--coral100:var(--jx-coral-100);--coralLt500:var(--jx-coralLt-500);
+    --slate500:var(--jx-slate-500);--slate300:var(--jx-slate-300);--white:#FFFFFF;--paper:var(--jx-paper);--stone100:var(--jx-stone-100);--stone200:var(--jx-stone-200);--stone300:var(--jx-stone-300);--ink700:var(--jx-ink-700);--teal100:var(--jx-teal-100);--success:var(--jx-success);--successS:var(--jx-verify-100);
     --fdisp:'Source Serif 4',Georgia,serif;--fbody:'Source Sans 3',system-ui,-apple-system,Segoe UI,sans-serif;--fmono:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;}
   *{box-sizing:border-box;margin:0;padding:0}
   body{background:var(--paper);color:var(--navy800);font-family:var(--fbody);font-size:15px;-webkit-font-smoothing:antialiased}
   .wrap{max-width:940px;margin:0 auto;padding:0 26px}
   a{color:inherit}
-  .flagbar{background:var(--navy700);color:#CFE0F2;font-size:11.5px;text-align:center;padding:8px 20px;border-bottom:1px solid #21405f}
+  .flagbar{background:var(--navy700);color:var(--jx-stone-200);font-size:11.5px;text-align:center;padding:8px 20px;border-bottom:1px solid var(--jx-navy-600)}
   .flagbar b{color:#fff}.flagbar code{background:var(--navy900);color:var(--coralLt500);padding:1px 6px;border-radius:5px;font-size:10.5px;font-family:var(--fmono)}
   .mo-ribbon{background:var(--coral100);color:var(--coral600);font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;text-align:center;padding:8px 16px;border-bottom:1px solid var(--stone200)}
   .nav{background:var(--navy800);color:#fff}
@@ -72,7 +72,7 @@
   .basis i{color:var(--navy500)}
   .art .from{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:12.5px;font-weight:600;color:var(--navy600);text-decoration:none}
   .art .from:hover{color:var(--coral600)}
-  .openbox{background:var(--coral100);border:1px solid #E7C9BC;border-radius:12px;padding:16px 18px;margin-top:20px}
+  .openbox{background:var(--coral100);border:1px solid var(--jx-coralLt-100);border-radius:12px;padding:16px 18px;margin-top:20px}
   .openbox h4{font-family:var(--fdisp);font-weight:600;font-size:15px;color:var(--coral600);margin-bottom:6px;display:flex;align-items:center;gap:8px}
   .openbox p{font-size:13.5px;color:var(--ink700);line-height:1.6}
   .openbox a{color:var(--navy700);font-weight:600;text-decoration:none}
@@ -99,7 +99,7 @@
   .btn{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;text-decoration:none;border-radius:999px;padding:10px 18px;border:1px solid var(--stone200);background:var(--white);color:var(--navy800)}
   .btn.p{background:var(--navy800);color:#fff;border-color:var(--navy800)}
   .posture{font-size:12.5px;color:var(--slate500);line-height:1.55;margin:26px auto 4px;text-align:center;max-width:800px}
-  .foot{background:var(--navy800);color:#9FB6D2;padding:22px 0;margin-top:20px;font-size:12.5px}
+  .foot{background:var(--navy800);color:var(--jx-teal-100);padding:22px 0;margin-top:20px;font-size:12.5px}
   .foot .fin{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}.foot b{color:#fff}
 </style>
 </head>
