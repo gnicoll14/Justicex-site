@@ -113,5 +113,24 @@
     attorneyGate: function (key) { return (TYPES[key] || {}).attorney || 'none'; }
   };
 
+
+  // Render the canonical hexagon rail from a type's stages into #containerId.
+  // DOM matches console.css .mrail (a.done/.active + .hex .n + .rn).
+  API.renderRail = function (containerId, typeKey, currentN) {
+    var el = (typeof document !== 'undefined') && document.getElementById(containerId);
+    if (!el) return;
+    var stages = API.stages(typeKey), html = '';
+    stages.forEach(function (st) {
+      var cls = st.n < currentN ? 'done' : (st.n === currentN ? 'active' : '');
+      html += '<a class="' + cls + '"' + (st.n === currentN ? ' aria-current="step"' : '') + '>'
+            + '<span class="hex"><span class="n">' + st.n + '</span></span>'
+            + '<span class="rn">' + st.name + '</span></a>';
+    });
+    el.innerHTML = html;
+    var band = (API.get(typeKey) || {}).band;
+    var bandEl = document.getElementById(containerId + '-band');
+    if (bandEl && band) bandEl.textContent = band;
+  };
+
   global.JX_MATTER_TYPES = API;
 })(window);
