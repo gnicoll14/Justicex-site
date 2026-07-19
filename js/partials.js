@@ -17,7 +17,7 @@
       bar.innerHTML = '<span aria-hidden="true" style="flex:none;display:inline-flex;width:16px;height:16px;'
         + 'border-radius:50%;background:#D85A30;color:#fff;align-items:center;justify-content:center;'
         + 'font-size:11px;font-weight:800;">!</span><span><b>Pre-launch preview</b> — JusticeX isn’t live yet '
-        + '(coming Summer 2026). Please don’t submit real personal or case information.</span>';
+        + '(coming Summer 2026). Please don’t enter real case or matter details in the demo.</span>';
       document.body.insertBefore(bar, document.body.firstChild);
     }
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mount);
