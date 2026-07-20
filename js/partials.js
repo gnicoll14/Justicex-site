@@ -41,6 +41,7 @@
       <a href="solutions.html">Solutions</a>
       <a href="technology.html">Technology</a>
       <a href="about.html">About</a>
+      <a href="partners.html">Partners</a>
       <a href="contact.html">Contact</a>
     </div>
     <div class="nav-actions">

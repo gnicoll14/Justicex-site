@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; connect-src 'none'">
+<title>JusticeX.ai &middot; Sales Partner Portal</title>
+<meta name="description" content="Sell the solution that sells itself. JusticeX gives sales partners warm accounts from their own network, the tools to win, and an uncapped share of every sale.">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/site.css?v=2026-07-20b">
+
+<style>
+/* ===== Sales Partner Portal — additions, on brand ===== */
+.pp-hero{background:linear-gradient(160deg,var(--jx-navy-900),var(--jx-navy-800) 60%);color:var(--jx-paper);padding:120px 0 96px;position:relative;overflow:hidden}
+.pp-hero .wrap{position:relative;z-index:2}
+.pp-hero .lead{max-width:640px}
+.pp-hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.pp-hero-metrics{display:flex;gap:40px;flex-wrap:wrap;margin-top:52px;border-top:1px solid var(--jx-navy-500);padding-top:28px}
+.pp-metric .n{font-family:var(--font-display);font-size:40px;line-height:1;color:var(--jx-coralLt-500);font-weight:500}
+.pp-metric .l{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--jx-slate-300);margin-top:8px}
+.pp-grid{display:grid;gap:22px}
+.pp-grid.c4{grid-template-columns:repeat(4,1fr)}
+.pp-grid.c3{grid-template-columns:repeat(3,1fr)}
+.pp-grid.c2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:900px){.pp-grid.c4,.pp-grid.c3,.pp-grid.c2{grid-template-columns:1fr}}
+.pp-card{background:var(--jx-white);border:1px solid var(--jx-stone-200);border-radius:12px;padding:28px;box-shadow:0 1px 2px rgba(4,44,83,.04)}
+.pp-card .ico{width:44px;height:44px;border-radius:10px;background:var(--jx-coral-100);color:var(--jx-coral-500);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;margin-bottom:16px}
+.pp-card h3{font-family:var(--font-display);font-size:21px;color:var(--jx-navy-800);margin:0 0 8px}
+.pp-card p{font-size:15px;line-height:1.6;color:var(--jx-slate-500);margin:0}
+.pp-card.on-navy{background:var(--jx-navy-700);border-color:var(--jx-navy-500)}
+.pp-card.on-navy h3{color:#fff}.pp-card.on-navy p{color:var(--jx-slate-100)}
+.pp-card.on-navy .ico{background:rgba(240,153,123,.16);color:var(--jx-coralLt-500)}
+/* calculator */
+.calc{display:grid;grid-template-columns:1.1fr 1fr;gap:32px;align-items:stretch}
+@media(max-width:900px){.calc{grid-template-columns:1fr}}
+.calc-panel{background:var(--jx-navy-700);border:1px solid var(--jx-navy-500);border-radius:14px;padding:30px}
+.calc-panel h3{font-family:var(--font-display);color:#fff;font-size:22px;margin:0 0 22px}
+.ctrl{margin-bottom:24px}
+.ctrl label{display:flex;justify-content:space-between;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--jx-slate-100);font-weight:600;margin-bottom:10px}
+.ctrl label b{color:var(--jx-coralLt-500);font-size:16px;letter-spacing:0}
+.ctrl input[type=range]{width:100%;accent-color:var(--jx-coral-500);height:6px}
+.ctrl .seg{display:flex;gap:8px;flex-wrap:wrap}
+.ctrl .seg button{flex:1;min-width:90px;background:var(--jx-navy-800);border:1px solid var(--jx-navy-500);color:var(--jx-slate-100);border-radius:8px;padding:9px 8px;font-size:12px;font-weight:600;cursor:pointer;font-family:var(--font-body)}
+.ctrl .seg button.on{background:var(--jx-coral-500);border-color:var(--jx-coral-500);color:#fff}
+.calc-out{background:linear-gradient(160deg,var(--jx-coral-500),var(--jx-coral-600));border-radius:14px;padding:30px;color:#fff;display:flex;flex-direction:column;justify-content:center}
+.calc-out .lbl{font-size:12px;letter-spacing:.16em;text-transform:uppercase;opacity:.9}
+.calc-out .big{font-family:var(--font-display);font-size:clamp(44px,6vw,68px);line-height:1;font-weight:600;margin:10px 0 4px}
+.calc-out .sub{font-size:15px;opacity:.95;margin-bottom:22px}
+.calc-out .rows{border-top:1px solid rgba(255,255,255,.28);padding-top:16px}
+.calc-out .rw{display:flex;justify-content:space-between;font-size:14px;padding:6px 0}
+.calc-out .rw b{font-weight:700}
+.scen{margin-top:26px}
+.scen-bar{display:flex;align-items:center;gap:14px;margin:10px 0}
+.scen-bar .k{width:120px;font-size:13px;color:var(--jx-slate-500);font-weight:600}
+.scen-bar .track{flex:1;background:var(--jx-stone-100);border-radius:6px;height:26px;overflow:hidden}
+.scen-bar .fill{height:100%;background:linear-gradient(90deg,var(--jx-coralLt-500),var(--jx-coral-500));border-radius:6px;transition:width .4s}
+.scen-bar .v{width:110px;text-align:right;font-weight:700;color:var(--jx-navy-800);font-variant-numeric:tabular-nums}
+/* funnel */
+.funnel{max-width:620px;margin:0 auto}
+.fn-row{display:flex;align-items:center;gap:16px;margin:7px 0}
+.fn-row .bar{height:38px;border-radius:6px;background:linear-gradient(90deg,var(--jx-navy-800),var(--jx-navy-600));display:flex;align-items:center;padding:0 16px;color:#fff;font-size:14px;font-weight:600;white-space:nowrap}
+.fn-row .pct{width:56px;text-align:right;color:var(--jx-slate-500);font-weight:700;font-size:14px}
+/* pricing + steps */
+.tbl{width:100%;border-collapse:collapse;font-size:15px}
+.tbl th{background:var(--jx-navy-800);color:#fff;text-align:left;padding:12px 14px;font-size:13px;letter-spacing:.04em}
+.tbl td{padding:12px 14px;border-bottom:1px solid var(--jx-stone-200);color:var(--jx-slate-500)}
+.tbl tr:nth-child(even) td{background:var(--jx-paper)}
+.tbl td b{color:var(--jx-navy-800)}
+.steps{counter-reset:s;display:grid;gap:14px}
+.step{display:flex;gap:18px;align-items:flex-start}
+.step .num{counter-increment:s;flex:0 0 auto;width:38px;height:38px;border-radius:50%;background:var(--jx-coral-500);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-family:var(--font-display)}
+.step .num::before{content:counter(s)}
+.step h4{margin:6px 0 4px;color:var(--jx-navy-800);font-size:17px}
+.step p{margin:0;color:var(--jx-slate-500);font-size:15px}
+.ctaband{background:linear-gradient(160deg,var(--jx-navy-800),var(--jx-navy-900));color:#fff;border-radius:16px;padding:56px 48px;text-align:center}
+.ctaband h2{font-family:var(--font-display);font-size:clamp(30px,4vw,44px);margin:0 0 14px}
+.ctaband p{color:var(--jx-slate-100);max-width:640px;margin:0 auto 28px;font-size:17px}
+.note{font-size:12.5px;color:var(--jx-slate-500);font-style:italic}
+.badge{display:inline-block;background:var(--jx-coral-100);color:var(--jx-coral-600);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:18px}
+
+.pp-hero .h-display{color:var(--jx-paper);max-width:900px}
+.res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:900px){.res-grid{grid-template-columns:1fr}}
+.res-tile{display:flex;gap:14px;align-items:flex-start;background:var(--jx-white);border:1px solid var(--jx-stone-200);border-radius:10px;padding:18px;transition:box-shadow .2s}
+.res-tile:hover{box-shadow:0 10px 26px rgba(4,44,83,.09)}
+.res-tile .ri{flex:0 0 auto;width:38px;height:38px;border-radius:8px;background:var(--jx-navy-800);color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px}
+.res-tile h4{margin:0 0 3px;color:var(--jx-navy-800);font-size:15px}
+.res-tile p{margin:0;color:var(--jx-slate-500);font-size:13px;line-height:1.5}
+.res-tile .tagx{font-size:10.5px;color:var(--jx-coral-500);font-weight:700;letter-spacing:.08em;text-transform:uppercase;display:block;margin-top:6px}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:900px){.tiers{grid-template-columns:1fr}}
+.tier{border:1px solid var(--jx-navy-500);border-radius:12px;padding:26px;background:var(--jx-navy-700)}
+.tier .tn{font-family:var(--font-display);font-size:22px;color:#fff}
+.tier .tt{font-size:12px;color:var(--jx-coralLt-500);font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:4px 0 14px}
+.tier ul{list-style:none;padding:0;margin:0}
+.tier li{color:var(--jx-slate-100);font-size:14px;padding:6px 0 6px 24px;position:relative;line-height:1.45}
+.tier li::before{content:"✓";position:absolute;left:0;color:var(--jx-coralLt-500);font-weight:700}
+.tier.feature{background:linear-gradient(160deg,var(--jx-coral-500),var(--jx-coral-600));border-color:var(--jx-coral-500)}
+.tier.feature .tt{color:#fff}.tier.feature li{color:#fff}.tier.feature li::before{color:#fff}
+.regwrap{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center}
+@media(max-width:900px){.regwrap{grid-template-columns:1fr}}
+.reg-list{list-style:none;padding:0;margin:18px 0 0}
+.reg-list li{position:relative;padding:8px 0 8px 30px;color:var(--jx-slate-100);font-size:15px}
+.reg-list li b{color:#fff}
+.reg-list li::before{content:"";position:absolute;left:0;top:12px;width:14px;height:14px;border-radius:50%;background:var(--jx-coralLt-500)}
+.mini-tracker{background:var(--jx-navy-800);border:1px solid var(--jx-navy-500);border-radius:12px;padding:8px;overflow:hidden}
+.mt-row{display:grid;grid-template-columns:1.4fr .8fr .7fr .8fr;gap:1px}
+.mt-row>div{background:var(--jx-navy-700);padding:9px 12px;font-size:12.5px;color:var(--jx-slate-100)}
+.mt-row.h>div{background:var(--jx-navy-900);color:#fff;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.mt-row .g{color:var(--jx-coralLt-500);font-weight:700}
+
+
+/* ===== LinkedIn import engine (client-side) ===== */
+.li-wrap{background:var(--jx-white);border:1px solid var(--jx-stone-200);border-radius:14px;padding:30px}
+.li-drop{display:block;border:2px dashed var(--jx-coral-400);border-radius:12px;background:var(--jx-coral-100);padding:32px;text-align:center;cursor:pointer;transition:background .2s}
+.li-drop:hover{background:#fff}
+.li-drop .di{font-size:30px}
+.li-drop .big{font-size:18px;color:var(--jx-navy-800);font-weight:700;margin:8px 0 4px}
+.li-drop .sm{font-size:13px;color:var(--jx-slate-500)}
+.li-priv{display:flex;gap:12px;align-items:flex-start;background:var(--jx-stone-100);border-left:4px solid var(--jx-success);border-radius:8px;padding:14px 16px;margin-top:18px}
+.li-priv .lock{color:var(--jx-success);font-size:20px;line-height:1}
+.li-priv p{margin:0;font-size:13px;color:var(--jx-slate-700);line-height:1.55}
+.li-priv b{color:var(--jx-navy-800)}
+.li-steps{font-size:13.5px;color:var(--jx-slate-500);line-height:1.6;margin:16px 0 0;padding-left:18px}
+.li-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:6px 0 20px}
+@media(max-width:700px){.li-kpis{grid-template-columns:repeat(2,1fr)}}
+.li-kpi{background:var(--jx-paper);border:1px solid var(--jx-stone-200);border-radius:10px;padding:16px;text-align:center}
+.li-kpi .n{font-family:var(--font-display);font-size:30px;color:var(--jx-navy-800);line-height:1}
+.li-kpi.c .n{color:var(--jx-coral-500)}
+.li-kpi .l{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--jx-slate-500);margin-top:6px}
+.li-tblwrap{max-height:440px;overflow:auto;border:1px solid var(--jx-stone-200);border-radius:10px}
+.li-tbl{width:100%;border-collapse:collapse;font-size:13.5px}
+.li-tbl th{position:sticky;top:0;background:var(--jx-navy-800);color:#fff;text-align:left;padding:10px 12px;font-size:11.5px;letter-spacing:.03em}
+.li-tbl td{padding:9px 12px;border-bottom:1px solid var(--jx-stone-200);color:var(--jx-slate-700);vertical-align:top}
+.li-tbl tr:nth-child(even) td{background:var(--jx-paper)}
+.li-tier{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;font-weight:700;white-space:nowrap}
+.li-t1{background:var(--jx-coral-500);color:#fff}.li-t2{background:var(--jx-coralLt-500);color:var(--jx-navy-900)}.li-t3{background:var(--jx-stone-200);color:var(--jx-navy-800)}
+.li-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.li-you{display:inline-flex;align-items:center;gap:8px;background:var(--jx-stone-100);color:var(--jx-navy-800);font-size:12px;font-weight:700;padding:6px 14px;border-radius:999px;margin-bottom:14px}
+.li-you .dot{width:8px;height:8px;border-radius:50%;background:var(--jx-success)}
+.hidden{display:none}
+.li-help{margin-top:20px;border-top:1px solid var(--jx-stone-200);padding-top:18px}
+.li-help h4{margin:0 0 8px;color:var(--jx-navy-800);font-size:16px}
+.li-help p{font-size:14px;color:var(--jx-slate-500);line-height:1.6;margin:0 0 10px}
+.li-q{background:var(--jx-coral-100);border-radius:8px;padding:14px 16px;font-size:13.5px;color:var(--jx-slate-700);line-height:1.55;margin-top:12px}
+.li-q b{color:var(--jx-navy-800)}
+
+</style><style>
+section[id],div[id]{scroll-margin-top:70px}
+.pp-subnav{position:sticky;top:56px;z-index:49;background:rgba(4,44,83,.97);backdrop-filter:blur(6px);border-bottom:1px solid var(--jx-navy-500)}
+.pp-subnav .inner{max-width:1280px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:4px;overflow-x:auto;height:50px}
+.pp-subnav a{color:var(--jx-slate-100);font-size:13px;font-weight:600;text-decoration:none;padding:7px 11px;border-radius:6px;white-space:nowrap}
+.pp-subnav a:hover{color:#fff;background:var(--jx-navy-700)}
+.pp-subnav .sep{width:1px;height:20px;background:var(--jx-navy-500);margin:0 6px;flex:0 0 auto}
+.pp-subnav .grp{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--jx-coralLt-500);font-weight:700;padding:0 6px;white-space:nowrap}
+.pp-subnav .sncta{margin-left:auto;background:var(--jx-coral-500);color:#fff;padding:7px 15px;border-radius:8px;flex:0 0 auto}
+.pp-subnav .sncta:hover{background:var(--jx-coral-600);color:#fff}
+.zone{background:linear-gradient(160deg,var(--jx-navy-900),var(--jx-navy-800));color:#fff;padding:34px 0}
+.zone .wrap{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.zone .zt{font-family:var(--font-display);font-size:26px;color:#fff;margin:0}
+.zone .zd{color:var(--jx-slate-100);font-size:15px;margin:4px 0 0;max-width:640px}
+.zone .zbadge{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--jx-coralLt-500);border:1px solid var(--jx-navy-500);border-radius:999px;padding:6px 13px;white-space:nowrap}
+.tools{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media(max-width:900px){.tools{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.tools{grid-template-columns:1fr}}
+.tool{display:flex;flex-direction:column;background:#fff;border:1px solid var(--jx-stone-200);border-radius:12px;padding:22px;text-decoration:none;transition:box-shadow .2s,transform .2s}
+.tool:hover{box-shadow:0 12px 28px rgba(4,44,83,.10);transform:translateY(-2px)}
+.tool .ti{width:42px;height:42px;border-radius:10px;background:var(--jx-navy-800);color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:14px}
+.tool h3{font-family:var(--font-display);color:var(--jx-navy-800);font-size:18px;margin:0 0 6px}
+.tool p{color:var(--jx-slate-500);font-size:13.5px;line-height:1.5;margin:0 0 14px;flex:1}
+.tool .go{color:var(--jx-coral-500);font-weight:700;font-size:13px}
+.scen-bar .k{width:150px;font-size:14px;color:#fff;font-weight:700}
+.scen-bar .v{color:#fff}
+</style>
+<link rel="stylesheet" href="css/jxhelp.css?v=2026-07-20b">
+</head>
+<body>
+<div data-partial="nav"></div>
+
+<section class="pp-hero" data-screen-label="Partner Portal Hero">
+  <div class="wrap">
+    <div class="hero-status"><span class="pulse"></span>JusticeX &middot; Sales Partner Portal</div>
+    <h1 class="h-display">Sell the solution that <em style="font-style:normal;color:var(--jx-coralLt-500)">sells itself</em>.</h1>
+    <p class="lead on-dark">Most sales jobs hand you a quota and a cold list. JusticeX hands you warm accounts pulled from your own network, a proven play for each one, and a product people already need &mdash; then pays you an uncapped share of every sale. You bring the relationships. We do the rest.</p>
+    <div class="pp-hero-ctas">
+      <a class="btn btn-gold" href="https://justicex.ai/contact.html?path=partner">Become a partner <span class="arrow">&rarr;</span></a>
+      <a class="btn btn-ghost-dark" href="#earn">See what you&#39;ll earn</a>
+      <a class="btn btn-ghost-dark" href="https://justicex.ai/partner-console.html">Open the Console</a>
+    </div>
+    <div class="pp-hero-metrics">
+      <div class="pp-metric"><div class="n" id="m1">15%</div><div class="l">Your share of sales &mdash; adjustable</div></div>
+      <div class="pp-metric"><div class="n">Warm</div><div class="l">Accounts from your own network</div></div>
+      <div class="pp-metric"><div class="n">Live</div><div class="l">NY divorce &amp; custody, today</div></div>
+    </div>
+  </div>
+</section>
+<div class="pp-subnav"><div class="inner">
+  <a href="#overview">Overview</a><a href="#why">Why sell</a><a href="#how">How it works</a><a href="#earn">What you&#39;ll earn</a><a href="#pricing">Pricing</a><a href="#tiers">Recognition</a><a href="#console">Your console</a>
+  <a class="sncta" href="https://justicex.ai/partner-console.html">Open the Console &rarr;</a>
+</div></div>
+<section class="section white" id="overview" style="padding:38px 0 10px"><div class="wrap">
+  <div class="jx-media" data-pending="1">
+    <span class="jx-media-q">New here? Get the 2-minute overview</span>
+    <a class="jx-media-btn jx-media-watch" role="button" tabindex="0" data-vsrc="assets/overviews/partners/partners-video-web.mp4"><span aria-hidden="true">&#9654;</span> Watch the overview <span class="dur">90s</span></a>
+    <button class="jx-media-btn jx-media-hear" type="button"><span aria-hidden="true">&#127911;</span> Hear the overview <span class="dur">2 min</span></button>
+    <a class="jx-media-btn jx-media-see" href="assets/overviews/partners/partners-deck.pdf" target="_blank" rel="noopener"><span aria-hidden="true">&#128196;</span> See the overview</a>
+    <div class="jx-media-audiowrap" hidden><audio controls preload="none" aria-label="AI-assisted audio overview"><source src="assets/overviews/partners/partners-audio-web.mp3" type="audio/mpeg"><source src="assets/overviews/partners/partners-audio-web.m4a" type="audio/mp4"></audio></div>
+    <p class="jx-media-note">AI-assisted overviews &middot; figures illustrative &middot; not legal advice. Overview media is generating &mdash; links activate when published.</p>
+  </div>
+</div></section>
+<section class="zone"><div class="wrap">
+  <div class="zbadge">Part 1 &middot; Why JusticeX</div>
+  <div><div class="zt">Why this is the best seat in sales.</div><div class="zd">The pitch, what you&#39;ll earn, and how you grow &mdash; the case for selling JusticeX.</div></div>
+</div></section>
+
+<section class="section paper">
+  <div class="wrap">
+    <div id="why" class="eyebrow"><span class="rule"></span>Why sell for JusticeX</div>
+    <h2 class="h2" style="margin:12px 0 10px;color:var(--jx-navy-800)">Four reasons this beats every other sales seat.</h2>
+    <p class="body-lg" style="max-width:760px;margin-bottom:38px">You are set up to win before you make a single call. Here is the deal.</p>
+    <div class="pp-grid c4">
+      <div class="pp-card"><div class="ico">1</div><h3>We do the groundwork</h3><p>Your target list is built for you from your own network &mdash; ranked by warmth, fit, and time-to-first-dollar. No cold lists, no guessing who to call.</p></div>
+      <div class="pp-card"><div class="ico">2</div><h3>We give you the tools</h3><p>This portal, a ready pipeline tracker, the qualification play, the cadence, and on-brand collateral. A complete kit &mdash; you just run it.</p></div>
+      <div class="pp-card"><div class="ico">3</div><h3>The solution sells itself</h3><p>Objective, neutral dispute resolution people already want &mdash; 92% of low-income civil legal needs go unmet. Live today for NY divorce and custody. You are offering relief, not pushing product.</p></div>
+      <div class="pp-card"><div class="ico">4</div><h3>You make real money</h3><p>An uncapped share of every sale you generate, on transparent draft pricing. Set your rate below and see exactly what your network is worth.</p></div>
+    </div>
+  </div>
+</section>
+<section class="section paper" id="how"><div class="wrap">
+  <div class="eyebrow"><span class="rule"></span>How it works</div>
+  <h2 class="h2" style="margin:12px 0 10px;color:var(--jx-navy-800)">Your network to your first commission &mdash; in three steps.</h2>
+  <p class="body-lg" style="max-width:720px;margin-bottom:34px">The same three steps you&#39;ll follow inside your Partner Console. Self-serve, at your pace, starting this week.</p>
+  <div class="steps" style="max-width:900px">
+    <div class="step"><div class="num"></div><div><h4>Get your call list</h4><p>Import your LinkedIn network in the Console and it ranks your warmest, best-fit accounts into tiers &mdash; scored on your own device, never uploaded. You start with the best calls already picked.</p></div></div>
+    <div class="step"><div class="num"></div><div><h4>Work the play</h4><p>Run the five-touch cadence on your Tier-1 accounts. Move the ones you decide to pursue into your pipeline &mdash; those become shared with your JusticeX manager for credit; everyone else stays yours alone.</p></div></div>
+    <div class="step"><div class="num"></div><div><h4>Watch your earnings grow</h4><p>Your dashboard turns that pipeline into a weighted forecast and commission that update live as deals move &mdash; and drafts your 1:1 talking points for you.</p></div></div>
+  </div>
+  <div style="margin-top:28px"><a class="btn btn-gold" href="https://justicex.ai/partner-console.html">Open the Partner Console <span class="arrow">&rarr;</span></a></div>
+</div></section>
+
+<section class="section navy" id="earn">
+  <div class="wrap">
+    <div class="eyebrow on-dark"><span class="rule"></span>What you&#39;ll earn</div>
+    <h2 class="h2" style="margin:12px 0 10px;color:#fff">Your network, turned into income.</h2>
+    <p class="lead on-dark" style="margin-bottom:34px;max-width:720px">Move the sliders. Everything recalculates live on JusticeX&#39;s draft pricing.</p>
+    <div class="calc">
+      <div class="calc-panel">
+        <h3>Set your assumptions</h3>
+        <div class="ctrl">
+          <label>Your commission rate <span class="jxh" data-h="comm_rate" role="button" tabindex="0">?</span> <b><span id="commV">15</span>%</b></label>
+          <input type="range" id="comm" min="5" max="30" step="1" value="15">
+        </div>
+        <div class="ctrl">
+          <label>Accounts you open in a year <span class="jxh" data-h="accounts" role="button" tabindex="0">?</span> <b><span id="acctV">10</span></b></label>
+          <input type="range" id="acct" min="1" max="40" step="1" value="10">
+        </div>
+        <div class="ctrl">
+          <label>Deals you close per account <span class="jxh" data-h="dpa" role="button" tabindex="0">?</span> <b><span id="dpaV">3</span></b></label>
+          <input type="range" id="dpa" min="1" max="12" step="1" value="3">
+        </div>
+        <div class="ctrl">
+          <label>Account type &mdash; sets a starting deal value</label>
+          <div class="seg" id="seg">
+            <button data-v="2400" class="on">Employer benefit</button>
+            <button data-v="25000">Employer-funded (whole company)</button>
+            <button data-v="1500">Mediator</button>
+            <button data-v="2000">Law firm</button>
+          </div>
+        </div>
+        <div class="ctrl">
+          <label>Avg JusticeX value per deal / yr <span class="jxh" data-h="dealval" role="button" tabindex="0">?</span> <b>$<span id="dvV">2,400</span></b></label>
+          <input type="range" id="dv" min="500" max="100000" step="500" value="2400">
+        </div>
+        <p class="note" style="color:var(--jx-slate-100)">Draft pricing: Individual $249&ndash;699/matter &middot; Mediator ~$999&ndash;2,388/yr &middot; Firm ~$1,788&ndash;2,988/seat/yr. A large employer funding the benefit across its whole workforce is a much bigger deal &mdash; slide the value up. Illustrative &mdash; validate before quoting.</p>
+      </div>
+      <div class="calc-out">
+        <div class="lbl">Your annual income from JusticeX</div>
+        <div class="big" id="earnBig">$10,800</div>
+        <div class="sub" id="earnSub">30 deals &times; $2,400 &times; 15%</div>
+        <div class="rows">
+          <div class="rw"><span>Deals you close <span id="dealsNote">(10 accounts &times; 3)</span></span><b id="dealsV">30</b></div>
+          <div class="rw"><span>Sales you generate for JusticeX</span><b id="salesV">$72,000</b></div>
+          <div class="rw"><span>Your commission</span><b id="commOut">$10,800</b></div>
+        </div>
+      </div>
+    </div>
+    <div class="scen">
+      <h3 style="color:#fff;font-family:var(--font-display);font-size:20px;margin:0 0 6px">If you open more accounts</h3>
+      <p class="note" style="color:var(--jx-slate-100);margin-bottom:14px">Each bar is your projected <b style="color:#fff">annual income</b> at that many accounts &mdash; at your current deals-per-account, deal value, and rate:</p>
+      <div id="scenBars"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section white">
+  <div class="wrap">
+    <div id="pricing" class="eyebrow"><span class="rule"></span>What a sale is worth</div>
+    <h2 class="h2" style="margin:12px 0 10px;color:var(--jx-navy-800)">JusticeX&#39;s draft pricing.</h2>
+    <p class="body-lg" style="max-width:720px;margin-bottom:28px">Your commission is a share of this. The numbers are illustrative &mdash; validate with the team before quoting a customer.</p>
+    <table class="tbl">
+      <thead><tr><th>Offering</th><th>Buyer</th><th>Price (illustrative)</th><th>How it&#39;s sold</th></tr></thead>
+      <tbody>
+        <tr><td><b>Individual &mdash; per matter</b></td><td>Self-represented individual</td><td>$249 &middot; $399 &middot; $699</td><td>Per matter (Essentials / Plus / Premium)</td></tr>
+        <tr><td><b>Employer benefit</b></td><td>Mid-market employer</td><td>~$2,400 / yr / account*</td><td>Sponsored resolution benefit (per-matter usage)</td></tr>
+        <tr><td><b>Mediator</b></td><td>Solo / small mediator</td><td>$99&ndash;$199 / mo</td><td>Subscription (Solo / Pro)</td></tr>
+        <tr><td><b>Firm / Attorney</b></td><td>Family-law firm</td><td>$149&ndash;$249 / seat / mo</td><td>Per seat + volume</td></tr>
+        <tr><td><b>Directory sponsorship</b></td><td>Professionals</td><td>$99&ndash;$349 / scope / mo</td><td>Labeled advertising placement</td></tr>
+      </tbody>
+    </table>
+    <p class="note" style="margin-top:12px">*Employer value modeled as ~200 employees &times; ~3% annual benefit usage &times; ~$399/matter. Adjust in the calculator above. Source: JusticeX Pricing &amp; Packaging Model (illustrative).</p>
+  </div>
+</section>
+
+<section class="section stone" id="tiers">
+  <div class="wrap">
+    <div class="eyebrow"><span class="rule"></span>Recognition</div>
+    <h2 class="h2" style="margin:12px 0 10px;color:var(--jx-navy-800)">The more you sell, the more you get.</h2>
+    <p class="body-lg" style="max-width:720px;margin-bottom:34px">Partners advance as they close. Higher tiers earn a higher share and real recognition &mdash; you grow with JusticeX from day one.</p>
+    <div class="tiers">
+      <div class="tier"><div class="tn">Partner</div><div class="tt">Start here</div><ul>
+        <li>Your warm target list + full toolkit</li><li>Base commission share</li><li>Deal registration &amp; account protection</li></ul></div>
+      <div class="tier feature"><div class="tn">Pro Partner</div><div class="tt">Most partners</div><ul>
+        <li>Everything in Partner</li><li>Higher commission share</li><li>Priority support &amp; co-selling help</li><li>Directory spotlight</li></ul></div>
+      <div class="tier"><div class="tn">Founding Partner</div><div class="tt">Top tier &middot; limited</div><ul>
+        <li>Everything in Pro</li><li>Top commission share</li><li>Early access to new markets</li><li>Named recognition on JusticeX</li></ul></div>
+    </div>
+    <div class="pp-card" style="margin-top:22px;background:var(--jx-navy-800);border-color:var(--jx-navy-500)">
+      <div class="badge" style="background:rgba(240,153,123,.16);color:var(--jx-coralLt-500)">Refer a colleague</div>
+      <h3 style="color:#fff">Know a great salesperson? Earn when they win.</h3>
+      <p style="color:var(--jx-slate-100)">Refer another rep to JusticeX. Once they close their first deals, you earn a referral fee &mdash; a simple thank-you for growing the team. Paid on their real, closed business (never just for referring), one level, on transparent terms.</p>
+      <div style="margin-top:16px"><a class="btn btn-gold" href="https://justicex.ai/contact.html?path=refer-rep">Refer a colleague <span class="arrow">&rarr;</span></a></div>
+    </div>
+    <p class="note" style="margin-top:14px">Tier names, thresholds, and commission shares are illustrative for planning &mdash; not an offer of compensation. The team confirms your program terms.</p>
+  </div>
+</section>
+<section class="section paper"><div class="wrap"><div class="ctaband" style="padding:40px 40px">
+  <h2 style="font-size:clamp(26px,3vw,34px)">Like what you see? Claim your seat.</h2>
+  <p>Become a partner, get your warm list and the tools, and start working the play this week.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn btn-gold" href="https://justicex.ai/contact.html?path=partner">Become a partner <span class="arrow">&rarr;</span></a></div>
+</div></div></section>
+<section class="section navy" id="console"><div class="wrap">
+  <div class="eyebrow on-dark"><span class="rule"></span>Where you actually work</div>
+  <h2 class="h2" style="color:#fff;margin:12px 0 10px">Your Partner Console.</h2>
+  <p class="lead on-dark" style="max-width:720px;margin-bottom:28px">Everything above is the pitch. The Console is where you sell &mdash; your dashboard, your pipeline, the plan builder that ranks your network privately, the play, and every resource, in one working app kept separate from the marketing.</p>
+  <div class="pp-grid c4" style="margin-bottom:30px">
+    <div class="pp-card on-navy"><div class="ico">&#128202;</div><h3>Your dashboard</h3><p>Attainment vs target, pipeline, forecast, and your 1:1 talking points.</p></div>
+    <div class="pp-card on-navy"><div class="ico">&#128228;</div><h3>Build your plan</h3><p>Rank your LinkedIn network into a tiered call list &mdash; privately, on your device.</p></div>
+    <div class="pp-card on-navy"><div class="ico">&#128203;</div><h3>Your pipeline</h3><p>Track deals, weighted forecast, coverage, and commission.</p></div>
+    <div class="pp-card on-navy"><div class="ico">&#127919;</div><h3>The play &amp; resources</h3><p>The five-touch cadence and on-brand collateral to send.</p></div>
+  </div>
+  <a class="btn btn-gold" href="https://justicex.ai/partner-console.html">Open the Partner Console <span class="arrow">&rarr;</span></a>
+</div></section>
+
+<section class="section paper">
+  <div class="wrap">
+    <div class="ctaband">
+      <h2>Ready to turn your network into income?</h2>
+      <p>Become a JusticeX sales partner, get your warm target list and the tracker, and start working the play this week.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+        <a class="btn btn-gold" href="https://justicex.ai/contact.html?path=partner">Become a partner <span class="arrow">&rarr;</span></a>
+        <a class="btn btn-ghost-dark" href="https://justicex.ai/index.html">Explore JusticeX</a>
+      </div>
+      <p class="note" style="color:var(--jx-slate-300);margin-top:22px">Sales enablement only. You make every contact; your list stays yours. Commission and pricing figures are illustrative and not an offer of employment or compensation.</p>
+    </div>
+  </div>
+</section>
+<div data-partial="footer"></div>
+
+<script>
+// mobile nav
+(function(){var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+ if(t&&l){t.addEventListener('click',function(){var o=l.classList.toggle('open');t.classList.toggle('active',o);t.setAttribute('aria-expanded',o?'true':'false');});}})();
+// earnings calculator
+(function(){
+ var comm=document.getElementById('comm'),acct=document.getElementById('acct'),dpa=document.getElementById('dpa'),dv=document.getElementById('dv');
+ var fmt=function(n){return '$'+Math.round(n).toLocaleString('en-US');};
+ function calc(){
+   var c=+comm.value, a=+acct.value, dp=+dpa.value, v=+dv.value;
+   document.getElementById('commV').textContent=c;
+   document.getElementById('acctV').textContent=a;
+   document.getElementById('dpaV').textContent=dp;
+   document.getElementById('dvV').textContent=(+v).toLocaleString('en-US');
+   document.getElementById('m1').textContent=c+'%';
+   var deals=a*dp, sales=deals*v, earn=sales*c/100;
+   document.getElementById('dealsV').textContent=deals;
+   document.getElementById('dealsNote').textContent='('+a+' accounts × '+dp+')';
+   document.getElementById('salesV').textContent=fmt(sales);
+   document.getElementById('commOut').textContent=fmt(earn);
+   document.getElementById('earnBig').textContent=fmt(earn);
+   document.getElementById('earnSub').textContent=deals+' deals × '+fmt(v)+' × '+c+'%';
+   var scen=[5,10,20,40], max=40*dp*v*c/100, host=document.getElementById('scenBars'), h='';
+   scen.forEach(function(n){var e=n*dp*v*c/100, w=Math.max(4,e/max*100);
+     h+='<div class="scen-bar"><div class="k">'+n+' accounts</div><div class="track"><div class="fill" style="width:'+w+'%"></div></div><div class="v">'+fmt(e)+'</div></div>';});
+   host.innerHTML=h;
+ }
+ [comm,acct,dpa,dv].forEach(function(el){el.addEventListener('input',calc);});
+ document.querySelectorAll('#seg button').forEach(function(b){b.addEventListener('click',function(){
+   document.querySelectorAll('#seg button').forEach(function(x){x.classList.remove('on');});
+   b.classList.add('on'); dv.value=b.getAttribute('data-v'); calc();});});
+ calc();
+})();
+
+/* ===== LinkedIn CSV -> ranked plan, 100% client-side ===== */
+(function(){
+ var fileEl=document.getElementById('liFile');
+ if(!fileEl) return;
+ var rowsData=[];
+ function parseCSV(text){
+   // find header line (LinkedIn prepends a Notes: preamble)
+   var lines=text.split(/\r\n|\n|\r/);
+   var start=0;
+   for(var i=0;i<lines.length;i++){ if(/^"?First Name"?,/i.test(lines[i])){ start=i; break; } }
+   var out=[]; 
+   for(var j=start;j<lines.length;j++){ if(lines[j].trim()==='') continue; out.push(splitLine(lines[j])); }
+   return out;
+ }
+ function splitLine(line){
+   var res=[],cur='',q=false;
+   for(var i=0;i<line.length;i++){var c=line[i];
+     if(c==='"'){ if(q&&line[i+1]==='"'){cur+='"';i++;} else q=!q; }
+     else if(c===','&&!q){res.push(cur);cur='';}
+     else cur+=c;}
+   res.push(cur); return res;
+ }
+ var SENIOR=/(chief|\bcfo\b|\bceo\b|\bcoo\b|\bcto\b|\bcmo\b|founder|owner|president|partner|principal|managing director|\bvp\b|vice president|head of|\bdirector\b|executive)/i;
+ var ICPTITLE=/(\bcfo\b|chief financial|\bceo\b|founder|owner|president|controller|finance|human resources|\bhr\b|people officer|benefits|talent|treasur)/i;
+ var ICPCO=/(insurance|financial|advisor|consult|benefits|brokerage|capital|bank|wealth|retirement|accounting)/i;
+ function scoreRow(fn,ln,title,co){
+   var t=(title||''),c=(co||''),s=0,senior=SENIOR.test(t);
+   if(senior)s+=2; if(ICPTITLE.test(t))s+=2; if(ICPCO.test(c))s+=1;
+   var tier= s>=4?1 : s===3?2 : s===2?3 : 0;
+   return {senior:senior,score:s,tier:tier};
+ }
+ function move(title,co){
+   var t=(title||'').toLowerCase();
+   if(/cpa|accounting|tax|controller/.test(t)) return 'CPA-to-CPA referral-partner intro';
+   if(/hr|human resources|people|benefits|talent/.test(t)) return 'Employer benefit — warm intro to the resolution benefit';
+   if(/mediator|adr|dispute/.test(t)) return 'Mediator channel — founding-partner conversation';
+   if(/attorney|lawyer|counsel|esq|law/.test(t)) return 'Counsel Partner Program (no-fee) intro';
+   return 'Warm intro → Families resolution benefit / design-partner pilot';
+ }
+ function fmt(n){return (+n).toLocaleString('en-US');}
+ function handle(text){
+   var rows=parseCSV(text);
+   if(!rows.length){alert('Could not read that file. Make sure it is the LinkedIn Connections.csv export.');return;}
+   var head=rows[0].map(function(h){return (h||'').replace(/"/g,'').trim().toLowerCase();});
+   var iFn=head.indexOf('first name'),iLn=head.indexOf('last name'),iCo=head.indexOf('company'),iPo=head.indexOf('position');
+   if(iPo<0)iPo=head.indexOf('title');
+   var data=[],senior=0;
+   for(var r=1;r<rows.length;r++){var row=rows[r];
+     var fn=(row[iFn]||'').trim(),ln=(row[iLn]||'').trim(),co=(row[iCo]||'').trim(),po=(row[iPo]||'').trim();
+     if(!fn&&!ln&&!co) continue;
+     var sc=scoreRow(fn,ln,po,co); if(sc.senior)senior++;
+     data.push({name:(fn+' '+ln).trim(),title:po,company:co,tier:sc.tier,score:sc.score});
+   }
+   var pursue=data.filter(function(d){return d.tier>0;});
+   pursue.sort(function(a,b){return b.score-a.score || a.company.localeCompare(b.company);});
+   rowsData=pursue;
+   var t1=pursue.filter(function(d){return d.tier===1;}).length;
+   document.getElementById('liTot').textContent=fmt(data.length);
+   document.getElementById('liSenior').textContent=fmt(senior);
+   document.getElementById('liICP').textContent=fmt(pursue.length);
+   document.getElementById('liT1').textContent=fmt(t1);
+   var body=document.getElementById('liBody'),h='';
+   var cap=Math.min(pursue.length,250);
+   for(var k=0;k<cap;k++){var d=pursue[k];
+     var cls=d.tier===1?'li-t1':d.tier===2?'li-t2':'li-t3',tl='Tier '+d.tier;
+     h+='<tr><td><span class="li-tier '+cls+'">'+tl+'</span></td><td>'+esc(d.name)+'</td><td>'+esc(d.title)+'</td><td>'+esc(d.company)+'</td><td>'+esc(move(d.title,d.company))+'</td></tr>';
+   }
+   if(pursue.length>cap) h+='<tr><td></td><td colspan="4" style="color:var(--jx-slate-500);font-style:italic">'+(pursue.length-cap)+' more in your downloaded list.</td></tr>';
+   body.innerHTML=h;
+   document.getElementById('liIntake').classList.add('hidden');
+   document.getElementById('liResults').classList.remove('hidden');
+   document.getElementById('mylist').scrollIntoView({behavior:'smooth'});
+ }
+ function esc(s){return (s||'').replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+ function download(){
+   var lines=[['Tier','Name','Title','Company','Suggested first move']];
+   rowsData.forEach(function(d){lines.push(['Tier '+d.tier,d.name,d.title,d.company,move(d.title,d.company)]);});
+   var csv=lines.map(function(r){return r.map(function(v){return '"'+String(v).replace(/"/g,'""')+'"';}).join(',');}).join('\n');
+   var blob=new Blob([csv],{type:'text/csv'}),a=document.createElement('a');
+   a.href=URL.createObjectURL(blob);a.download='my-justicex-target-list.csv';a.click();URL.revokeObjectURL(a.href);
+ }
+ fileEl.addEventListener('change',function(e){var f=e.target.files[0];if(!f)return;var rd=new FileReader();rd.onload=function(ev){handle(ev.target.result);};rd.readAsText(f);});
+ var dz=document.querySelector('.li-drop');
+ ['dragover','dragenter'].forEach(function(ev){dz.addEventListener(ev,function(e){e.preventDefault();dz.style.background='#fff';});});
+ dz.addEventListener('dragleave',function(){dz.style.background='';});
+ dz.addEventListener('drop',function(e){e.preventDefault();dz.style.background='';var f=e.dataTransfer.files[0];if(f){var rd=new FileReader();rd.onload=function(ev){handle(ev.target.result);};rd.readAsText(f);}});
+ document.getElementById('liDownload').addEventListener('click',download);
+ document.getElementById('liReset').addEventListener('click',function(){rowsData=[];fileEl.value='';document.getElementById('liResults').classList.add('hidden');document.getElementById('liIntake').classList.remove('hidden');});
+})();
+
+</script>
+<script src="js/partials.js"></script>
+<script src="js/jxhelp.js?v=2026-07-20b"></script>
+</body>
+</html>

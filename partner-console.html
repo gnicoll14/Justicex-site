@@ -1,0 +1,582 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; connect-src 'none'"><title>JusticeX &middot; Partner Console</title><link rel="stylesheet" href="css/tokens.css"><link rel="stylesheet" href="css/site.css?v=2026-07-20b"><style>
+.rd-hero{background:linear-gradient(160deg,var(--jx-navy-900),var(--jx-navy-800));color:var(--jx-paper);padding:40px 0 34px}
+.rd-top{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.rd-sel{display:flex;align-items:center;gap:12px}
+.rd-sel label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--jx-slate-300)}
+.rd-sel select{background:var(--jx-navy-700);color:#fff;border:1px solid var(--jx-navy-500);border-radius:8px;padding:9px 14px;font-family:var(--font-body);font-size:15px;font-weight:600}
+.rd-att{margin-top:24px}
+.rd-att .row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.rd-att .big{font-family:var(--font-display);font-size:34px;color:#fff}
+.rd-att .sub{font-size:14px;color:var(--jx-slate-100)}
+.rd-bar{height:16px;background:var(--jx-navy-700);border-radius:999px;overflow:hidden;position:relative;border:1px solid var(--jx-navy-500)}
+.rd-bar .fill{height:100%;background:linear-gradient(90deg,var(--jx-coralLt-500),var(--jx-coral-500));border-radius:999px;transition:width .5s}
+.rd-bar .pace{position:absolute;top:-4px;bottom:-4px;width:2px;background:#fff}
+.rd-kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:26px}
+@media(max-width:960px){.rd-kpis{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.rd-kpis{grid-template-columns:repeat(2,1fr)}}
+.rd-kpi{background:var(--jx-navy-700);border:1px solid var(--jx-navy-500);border-radius:10px;padding:14px}
+.rd-kpi .n{font-family:var(--font-display);font-size:24px;color:#fff;line-height:1}
+.rd-kpi.c .n{color:var(--jx-coralLt-500)}
+.rd-kpi .l{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--jx-slate-300);margin-top:6px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.grid3{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:22px}
+@media(max-width:960px){.grid2,.grid3{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--jx-stone-200);border-radius:12px;padding:22px}
+.card h3{font-family:var(--font-display);color:var(--jx-navy-800);font-size:19px;margin:0 0 14px}
+.fn-row{display:flex;align-items:center;gap:12px;margin:6px 0}
+.fn-row .k{width:90px;font-size:13px;color:var(--jx-slate-500);font-weight:600}
+.fn-row .bar{height:26px;border-radius:5px;background:linear-gradient(90deg,var(--jx-navy-800),var(--jx-navy-600));display:flex;align-items:center;padding:0 10px;color:#fff;font-size:12px;font-weight:700;min-width:44px}
+.fn-row .v{width:66px;text-align:right;font-size:12px;color:var(--jx-navy-800);font-weight:700}
+.actrow{margin:12px 0}
+.actrow .lab{display:flex;justify-content:space-between;font-size:13px;color:var(--jx-slate-700);margin-bottom:5px}
+.actrow .lab b{color:var(--jx-navy-800)}
+.track{height:10px;background:var(--jx-stone-100);border-radius:999px;overflow:hidden}
+.track .fl{height:100%;border-radius:999px;background:var(--jx-navy-600)}
+.track .fl.ok{background:var(--jx-success)}.track .fl.low{background:var(--jx-coral-500)}
+.dl{list-style:none;padding:0;margin:0}
+.dl li{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid var(--jx-stone-200);font-size:13.5px}
+.dl li .nm{color:var(--jx-navy-800);font-weight:600}.dl li .co{color:var(--jx-slate-500);font-size:12px}
+.dl li .rt{text-align:right;white-space:nowrap}
+.pill{display:inline-block;padding:1px 8px;border-radius:999px;font-size:10.5px;font-weight:700;background:var(--jx-stone-200);color:var(--jx-navy-800)}
+.pill.hot{background:var(--jx-coral-500);color:#fff}.pill.won{background:var(--jx-success);color:#fff}.pill.warn{background:#F6C445;color:#5b4a00}
+.ltf{display:flex;align-items:flex-end;gap:16px;height:190px;padding-top:26px}
+.ltf .col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:6px;position:relative}
+.ltf .stack{width:64%;display:flex;flex-direction:column;justify-content:flex-end}
+.ltf .b1{background:linear-gradient(180deg,var(--jx-navy-600),var(--jx-navy-800));border-radius:5px 5px 0 0}
+.ltf .cm{width:64%;background:linear-gradient(180deg,var(--jx-coralLt-500),var(--jx-coral-500));border-radius:5px 5px 0 0;margin-top:2px}
+.ltf .lbl{font-size:12px;color:var(--jx-slate-500)}
+.ltf .val{font-size:11.5px;font-weight:700;color:var(--jx-navy-800)}
+.leg{display:flex;gap:18px;font-size:12px;color:var(--jx-slate-500);margin-top:8px}
+.leg span{display:inline-flex;align-items:center;gap:6px}.leg i{width:12px;height:12px;border-radius:3px;display:inline-block}
+.oneone{background:var(--jx-navy-800);color:#fff;border-radius:14px;padding:26px 28px}
+.oneone h3{font-family:var(--font-display);color:#fff;margin:0 0 6px;font-size:22px}
+.oneone .sub{color:var(--jx-slate-100);font-size:14px;margin-bottom:16px}
+.oneone ul{list-style:none;padding:0;margin:0}
+.oneone li{position:relative;padding:9px 0 9px 26px;border-bottom:1px solid var(--jx-navy-600);font-size:14.5px;color:#eef2f8}
+.oneone li::before{content:"\25B8";position:absolute;left:0;color:var(--jx-coralLt-500);font-weight:700}
+.oneone li b{color:#fff}
+.tag{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px;margin-left:8px}
+.tag.g{background:rgba(29,158,117,.2);color:#7fe0be}.tag.r{background:rgba(216,90,48,.22);color:var(--jx-coralLt-500)}
+</style><style>
+/* ===== LinkedIn import engine (client-side) ===== */
+.li-wrap{background:var(--jx-white);border:1px solid var(--jx-stone-200);border-radius:14px;padding:30px}
+.li-drop{display:block;border:2px dashed var(--jx-coral-400);border-radius:12px;background:var(--jx-coral-100);padding:32px;text-align:center;cursor:pointer;transition:background .2s}
+.li-drop:hover{background:#fff}
+.li-drop .di{font-size:30px}
+.li-drop .big{font-size:18px;color:var(--jx-navy-800);font-weight:700;margin:8px 0 4px}
+.li-drop .sm{font-size:13px;color:var(--jx-slate-500)}
+.li-priv{display:flex;gap:12px;align-items:flex-start;background:var(--jx-stone-100);border-left:4px solid var(--jx-success);border-radius:8px;padding:14px 16px;margin-top:18px}
+.li-priv .lock{color:var(--jx-success);font-size:20px;line-height:1}
+.li-priv p{margin:0;font-size:13px;color:var(--jx-slate-700);line-height:1.55}
+.li-priv b{color:var(--jx-navy-800)}
+.li-steps{font-size:13.5px;color:var(--jx-slate-500);line-height:1.6;margin:16px 0 0;padding-left:18px}
+.li-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:6px 0 20px}
+@media(max-width:700px){.li-kpis{grid-template-columns:repeat(2,1fr)}}
+.li-kpi{background:var(--jx-paper);border:1px solid var(--jx-stone-200);border-radius:10px;padding:16px;text-align:center}
+.li-kpi .n{font-family:var(--font-display);font-size:30px;color:var(--jx-navy-800);line-height:1}
+.li-kpi.c .n{color:var(--jx-coral-500)}
+.li-kpi .l{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--jx-slate-500);margin-top:6px}
+.li-tblwrap{max-height:440px;overflow:auto;border:1px solid var(--jx-stone-200);border-radius:10px}
+.li-tbl{width:100%;border-collapse:collapse;font-size:13.5px}
+.li-tbl th{position:sticky;top:0;background:var(--jx-navy-800);color:#fff;text-align:left;padding:10px 12px;font-size:11.5px;letter-spacing:.03em}
+.li-tbl td{padding:9px 12px;border-bottom:1px solid var(--jx-stone-200);color:var(--jx-slate-700);vertical-align:top}
+.li-tbl tr:nth-child(even) td{background:var(--jx-paper)}
+.li-tier{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;font-weight:700;white-space:nowrap}
+.li-t1{background:var(--jx-coral-500);color:#fff}.li-t2{background:var(--jx-coralLt-500);color:var(--jx-navy-900)}.li-t3{background:var(--jx-stone-200);color:var(--jx-navy-800)}
+.li-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.li-you{display:inline-flex;align-items:center;gap:8px;background:var(--jx-stone-100);color:var(--jx-navy-800);font-size:12px;font-weight:700;padding:6px 14px;border-radius:999px;margin-bottom:14px}
+.li-you .dot{width:8px;height:8px;border-radius:50%;background:var(--jx-success)}
+.hidden{display:none}
+.li-help{margin-top:20px;border-top:1px solid var(--jx-stone-200);padding-top:18px}
+.li-help h4{margin:0 0 8px;color:var(--jx-navy-800);font-size:16px}
+.li-help p{font-size:14px;color:var(--jx-slate-500);line-height:1.6;margin:0 0 10px}
+.li-q{background:var(--jx-coral-100);border-radius:8px;padding:14px 16px;font-size:13.5px;color:var(--jx-slate-700);line-height:1.55;margin-top:12px}
+.li-q b{color:var(--jx-navy-800)}
+</style><style>
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:var(--font-body);background:var(--jx-paper);color:var(--jx-navy-800)}
+.pc-banner{background:var(--jx-navy-900);color:var(--jx-slate-100);font-size:12.5px;padding:8px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.pc-banner a{color:var(--jx-coralLt-500);text-decoration:none;font-weight:600}
+.pc-app{display:grid;grid-template-columns:248px 1fr;min-height:calc(100vh - 34px)}
+.pc-side{background:var(--jx-navy-800);color:#fff;padding:22px 16px;position:sticky;top:0;align-self:start;height:100vh;overflow:auto}
+.pc-brand{font-weight:700;font-size:20px;color:#fff;margin-bottom:2px}
+.pc-brand .x{color:var(--jx-coralLt-500)}.pc-brand .ai{color:rgba(255,255,255,.55);font-size:.6em;font-weight:400}
+.pc-role{font-size:12px;color:var(--jx-slate-300);margin-bottom:22px}
+.pc-who{display:flex;align-items:center;gap:10px;background:var(--jx-navy-700);border-radius:10px;padding:10px 12px;margin-bottom:18px}
+.pc-who .av{width:32px;height:32px;border-radius:50%;background:var(--jx-coral-500);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}
+.pc-who .nm{font-size:13px;font-weight:600;color:#fff}.pc-who .rl{font-size:11px;color:var(--jx-slate-300)}
+.pc-nav{display:flex;flex-direction:column;gap:3px}
+.pc-nav button{display:flex;align-items:center;gap:11px;background:none;border:none;color:var(--jx-slate-100);font-family:var(--font-body);font-size:14px;font-weight:600;text-align:left;padding:11px 12px;border-radius:8px;cursor:pointer;width:100%}
+.pc-nav button:hover{background:var(--jx-navy-700);color:#fff}
+.pc-nav button.on{background:var(--jx-coral-500);color:#fff}
+.pc-nav .ic{width:20px;text-align:center;font-size:15px}
+.pc-side-foot{margin-top:26px;border-top:1px solid var(--jx-navy-600);padding-top:16px}
+.pc-side-foot .lbl{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--jx-slate-300);margin-bottom:8px}
+.pc-side-foot a{display:block;color:var(--jx-slate-100);font-size:13px;text-decoration:none;padding:5px 0}
+.pc-side-foot a:hover{color:var(--jx-coralLt-500)}
+.pc-main{overflow:auto;min-width:0}
+.pc-topbar{background:#fff;border-bottom:1px solid var(--jx-stone-200);padding:16px 28px;position:sticky;top:0;z-index:6;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.pc-topbar h1{font-family:var(--font-display);font-size:22px;color:var(--jx-navy-800);margin:0}
+.pc-topbar .sub{font-size:13px;color:var(--jx-slate-500);margin-top:2px}
+.panel{display:none}
+.panel.on{display:block}
+.panel .section{padding:26px 0}
+.panel .section:first-child{padding-top:20px}
+.pc-tabs{display:none}
+.pc-pad{padding:24px 28px}
+.rescard{display:flex;flex-direction:column;background:#fff;border:1px solid var(--jx-stone-200);border-radius:12px;padding:22px;text-decoration:none}
+.rescard:hover{box-shadow:0 10px 24px rgba(4,44,83,.09)}
+.rescard .ti{width:40px;height:40px;border-radius:9px;background:var(--jx-navy-800);color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:12px}
+.rescard h3{font-family:var(--font-display);color:var(--jx-navy-800);font-size:17px;margin:0 0 5px}
+.rescard p{color:var(--jx-slate-500);font-size:13px;line-height:1.5;margin:0 0 12px;flex:1}
+.rescard .go{color:var(--jx-coral-500);font-weight:700;font-size:13px}
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:1000px){.rgrid{grid-template-columns:1fr 1fr}}
+.ptbl{width:100%;border-collapse:collapse;font-size:13.5px;background:#fff;border:1px solid var(--jx-stone-200);border-radius:10px;overflow:hidden}
+.ptbl th{background:var(--jx-navy-800);color:#fff;text-align:left;padding:10px 12px;font-size:12px}
+.ptbl th.r,.ptbl td.r{text-align:right}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--jx-stone-200);color:var(--jx-slate-700)}
+.ptbl tr:nth-child(even) td{background:var(--jx-paper)}
+.stepc{counter-reset:s;display:grid;gap:14px;max-width:820px}
+.stepc .step{display:flex;gap:16px}.stepc .num{counter-increment:s;flex:0 0 auto;width:36px;height:36px;border-radius:50%;background:var(--jx-coral-500);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+.stepc .num::before{content:counter(s)}.stepc h4{margin:5px 0 3px;color:var(--jx-navy-800);font-size:16px}.stepc p{margin:0;color:var(--jx-slate-500);font-size:14px}
+@media(max-width:820px){.pc-app{grid-template-columns:1fr}.pc-side{display:none}
+ .pc-tabs{display:flex;overflow-x:auto;background:var(--jx-navy-800);gap:4px;padding:8px;position:sticky;top:0;z-index:7}
+ .pc-tabs button{background:none;border:none;color:var(--jx-slate-100);font-weight:600;font-size:13px;padding:8px 12px;border-radius:6px;white-space:nowrap;font-family:var(--font-body)}
+ .pc-tabs button.on{background:var(--jx-coral-500);color:#fff}}
+</style><link rel="stylesheet" href="css/jxhelp.css?v=2026-07-20b"></head><body><div class="pc-banner"><span>&#9654; Partner Console &middot; prototype &middot; sample data &mdash; your contacts stay private to you</span><a href="https://justicex.ai/partners.html">Why JusticeX (partner home) &rarr;</a></div><div class="pc-tabs"><button data-t="start" class="on">Start here</button><button data-t="plan">1. Build your network</button><button data-t="play">2. Engage your network</button><button data-t="pipeline">3. Convert your network</button><button data-t="dash">4. Track your progress</button><button data-t="resources">Resources</button></div><div class="pc-app"><aside class="pc-side"><div class="pc-brand">Justice<span class="x">X</span><span class="ai">.ai</span></div><div class="pc-role">Partner Console</div><div class="pc-who"><div class="av">Y</div><div><div class="nm">You</div><div class="rl">Sales Partner</div></div></div><div class="pc-nav"><button data-t="start" class="on"><span class="ic">&#128075;</span><span class="nt">Start here</span></button><button data-t="plan"><span class="stepnum">1</span><span class="nt">Build your network</span></button><button data-t="play"><span class="stepnum">2</span><span class="nt">Engage your network</span></button><button data-t="pipeline"><span class="stepnum">3</span><span class="nt">Convert your network</span></button><button data-t="dash"><span class="stepnum">4</span><span class="nt">Track your progress</span></button><button data-t="resources"><span class="ic">&#128218;</span><span class="nt">Resources</span></button></div><div class="pc-side-foot"><div class="lbl">JusticeX</div><a href="https://justicex.ai/partners.html">&larr; Partner home (why JusticeX)</a><a href="https://justicex.ai/index.html">JusticeX.ai site</a><a href="https://justicex.ai/contact.html?path=partner">Talk to us</a></div></aside><div class="pc-main"><div class="pc-topbar"><div><h1 id="pcTitle">Start here</h1><div class="sub" id="pcSub">Your four-step selling journey</div></div><div style="display:flex;gap:10px;align-items:center;flex:0 0 auto"><button class="jx-help-btn" data-help-open type="button"><span aria-hidden="true">&#9432;</span> Help</button><a class="btn btn-gold" href="https://justicex.ai/contact.html?path=partner">Register a deal</a></div></div><div class="panel on" id="p-start"><div class="pc-pad">
+  <div style="max-width:960px">
+    <div id="jxJourneyFull">
+    <h2 class="h2" style="margin:0 0 8px;color:var(--jx-navy-800);font-size:25px">Your Console walks you through selling, step by step.</h2>
+    <p class="body-lg" style="max-width:820px;margin:0 0 22px;color:var(--jx-slate-600);font-size:16px">Four simple steps: <b>build your network into a call list, engage them, convert them into deals, and track your progress.</b> Each step is a page in the left rail — work them in order. Start with step&nbsp;1.</p>
+
+    <div class="jx-progress"><div class="track"><div class="fill"></div></div><div class="lbl">0 of 4 done</div></div>
+    <div class="jx-flow">
+      <a class="fl" data-ck="1" href="#" onclick="jxCheckDone('1');window.__pcgo&amp;&amp;window.__pcgo('plan');return false;">
+        <span class="fn"><span>1</span></span><h4>Build your network</h4><p>Import and rank your LinkedIn network into a call list.</p><span class="fgo">Go &rarr;</span></a>
+      <a class="fl" data-ck="2" href="#" onclick="jxCheckDone('2');window.__pcgo&amp;&amp;window.__pcgo('play');return false;">
+        <span class="fn"><span>2</span></span><h4>Engage your network</h4><p>Spark interest with the warm, proven five-touch play.</p><span class="fgo">Go &rarr;</span></a>
+      <a class="fl" data-ck="3" href="#" onclick="jxCheckDone('3');window.__pcgo&amp;&amp;window.__pcgo('pipeline');return false;">
+        <span class="fn"><span>3</span></span><h4>Convert your network</h4><p>Turn interested contacts into tracked, weighted deals.</p><span class="fgo">Go &rarr;</span></a>
+      <a class="fl" data-ck="4" href="#" onclick="jxCheckDone('4');window.__pcgo&amp;&amp;window.__pcgo('dash');return false;">
+        <span class="fn"><span>4</span></span><h4>Track your progress</h4><p>See your attainment, forecast, and commission &mdash; and grow.</p><span class="fgo">Go &rarr;</span></a>
+    </div>
+    </div>
+
+    <div id="jxJourneyDone" class="jx-done" hidden>
+      <span class="chk" aria-hidden="true">&#10003;</span>
+      <div class="jd-txt"><b>You&#39;re all set.</b> You&#39;ve been through all four steps &mdash; jump into any step from the menu on the left.</div>
+      <button type="button" class="jd-again" onclick="window.jxJourneyReset&amp;&amp;window.jxJourneyReset()">Show the walkthrough again</button>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0 4px;font-size:13px;color:var(--jx-slate-600)">
+      <span style="display:inline-flex;align-items:center;gap:7px;background:var(--jx-stone-100);border:1px solid var(--jx-stone-200);border-radius:999px;padding:6px 13px"><span aria-hidden="true">&#128274;</span> Your network is scored on your own device &mdash; nothing is uploaded until <b>you</b> move a contact into your pipeline.<span class="jxh" data-h="privacy" role="button" tabindex="0" style="color:var(--jx-navy-800)">?</span></span>
+    </div>
+
+    <div style="margin:26px 0 0">
+      <div class="jx-media" data-pending="1">
+        <span class="jx-media-q">Prefer to watch or listen?</span>
+        <a class="jx-media-btn jx-media-watch" role="button" tabindex="0" data-vsrc="assets/overviews/partner-console/partner-console-video-web.mp4"><span aria-hidden="true">&#9654;</span> Watch the overview <span class="dur">90s</span></a>
+        <button class="jx-media-btn jx-media-hear" type="button"><span aria-hidden="true">&#127911;</span> Hear the overview <span class="dur">2 min</span></button>
+        <a class="jx-media-btn jx-media-see" href="assets/overviews/partner-console/partner-console-deck.pdf" target="_blank" rel="noopener"><span aria-hidden="true">&#128196;</span> See the overview</a>
+        <div class="jx-media-audiowrap" hidden><audio controls preload="none" aria-label="AI-assisted audio overview"><source src="assets/overviews/partner-console/partner-console-audio-web.mp3" type="audio/mpeg"><source src="assets/overviews/partner-console/partner-console-audio-web.m4a" type="audio/mp4"></audio></div>
+        <p class="jx-media-note">AI-assisted overviews &middot; figures illustrative &middot; not legal advice. Overview media is generating &mdash; links activate when published.</p>
+      </div>
+    </div>
+  </div>
+</div></div><div class="panel" id="p-plan"><div class="pc-pad" style="padding-bottom:0"><div class="pc-guide">
+  <div class="pc-guide-h"><span class="ph">Step 1 · Build your network</span><h3>How to use this page</h3></div>
+  <ol>
+    <li><b>Import your connections.</b> Drop your LinkedIn <span class="k">Connections.csv</span> below — it's read and scored on your own device, never uploaded.<span class="jxh" data-h="privacy" role="button" tabindex="0">?</span></li>
+    <li><b>Review your ranked list.</b> Your contacts sort into tiers — <b>Tier 1 = call first</b> (senior + best fit).<span class="jxh" data-h="tier" role="button" tabindex="0">?</span></li>
+    <li><b>Pick who to pursue.</b> Decide which contacts are worth a real conversation. Only these move forward — everyone else stays private to you.</li>
+    <li><b>Move them to your pipeline.</b> Add each chosen contact to <b>Step 3 · Convert your network</b>, then run the play on them.</li>
+  </ol>
+</div></div><section class="section white" id="plan">
+  <div class="wrap">
+    <div class="eyebrow"><span class="rule"></span>Working tool &middot; Build your plan</div>
+    <h2 class="h2" style="margin:12px 0 10px;color:var(--jx-navy-800)">Turn your network into a ranked call list &mdash; privately.</h2>
+    <p class="body-lg" style="max-width:760px;margin-bottom:24px">Load your LinkedIn connections and this tool profiles, scores, and tiers them, so your warmest, best-fit accounts rise to the top &mdash; the same method that turns a whole network into a focused pursue list.</p>
+    <div class="li-wrap">
+      <div id="liIntake">
+        <div class="li-priv">
+          <span class="lock">&#128274;</span>
+          <p><b>Your contacts are never shared with JusticeX.</b> The file is read and scored entirely on your own device &mdash; nothing is uploaded. A person becomes visible to JusticeX only if <b>you</b> move that specific contact into a real pipeline opportunity. Everyone you don&#39;t pursue stays yours alone.</p>
+        </div>
+        <label class="li-drop" for="liFile">
+          <div class="di">&#128228;</div>
+          <div class="big">Drop your LinkedIn connections file here</div>
+          <div class="sm">or click to choose it &mdash; it never leaves your device</div>
+          <input type="file" id="liFile" accept=".csv,text/csv" class="hidden">
+        </label>
+        <div class="li-help">
+          <h4>What file &mdash; and how to get it</h4>
+          <p>A <b>.csv</b> is a plain spreadsheet file (it opens in Excel or Google Sheets). LinkedIn gives you one that simply lists your connections&#39; names, companies, and titles.</p>
+          <ol class="li-steps">
+            <li>On LinkedIn: <b>Settings &amp; Privacy &rarr; Data Privacy &rarr; Get a copy of your data &rarr; Connections</b>.</li>
+            <li>Download the file (it&#39;s usually named <span class="mono">Connections.csv</span>).</li>
+            <li>Drop it above. Your ranked plan appears instantly &mdash; only on your screen.</li>
+          </ol>
+          <div class="li-q"><b>&ldquo;If I drop my real connections here, are they still private?&rdquo;</b> Yes. The file is processed in your browser and is never sent anywhere &mdash; not to JusticeX, not to your team, not to anyone. Close the tab and it&#39;s gone. You choose, one at a time, which contacts ever become opportunities.</div>
+        </div>
+      </div>
+      <div id="liResults" class="hidden">
+        <div class="li-you"><span class="dot"></span> Your private network &middot; only you see this until you add someone to your pipeline</div>
+        <div class="li-kpis">
+          <div class="li-kpi"><div class="n" id="liTot">0</div><div class="l">Connections read</div></div>
+          <div class="li-kpi"><div class="n" id="liSenior">0</div><div class="l">Senior contacts</div></div>
+          <div class="li-kpi c"><div class="n" id="liICP">0</div><div class="l">ICP-fit to pursue</div></div>
+          <div class="li-kpi c"><div class="n" id="liT1">0</div><div class="l">Tier 1 (call first)</div></div>
+        </div>
+        <div class="li-tblwrap">
+          <table class="li-tbl">
+            <thead><tr><th>Tier</th><th>Name</th><th>Title</th><th>Company</th><th>Suggested first move</th></tr></thead>
+            <tbody id="liBody"></tbody>
+          </table>
+        </div>
+        <p class="note" style="margin-top:12px">Honest limit: LinkedIn gives title and company only &mdash; not company size, location, or how warm the relationship is. Those are yours to judge; the tool ranks on fit and seniority and leaves the final call to you.</p>
+        <div class="li-actions">
+          <button class="btn btn-gold" id="liDownload">Download my target list (CSV) <span class="arrow">&rarr;</span></button>
+          <button class="btn btn-ghost-dark" id="liReset" style="color:var(--jx-navy-800);border-color:var(--jx-navy-800)">Start over</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div><div class="panel" id="p-play"><div class="pc-pad">
+  <div class="pc-guide">
+  <div class="pc-guide-h"><span class="ph">Step 2 · Engage your network</span><h3>How to use this page</h3></div>
+  <ol>
+    <li><b>Start with your Tier-1 accounts.</b> Work the five touches below in order, one account at a time.</li>
+    <li><b>Reconnect first — don't pitch.</b> Touch 1 is a short personal note that re-opens the relationship.</li>
+    <li><b>Earn the conversation, then share.</b> Touches 2&ndash;3: listen for the gap, then send the offering.</li>
+    <li><b>Log every touch as you go.</b> Update the deal's stage in <b>Step 3 · Convert your network</b> so your forecast stays live.</li>
+  </ol>
+</div>
+  <h2 class="h2" style="margin:0 0 6px;color:var(--jx-navy-800)">Five touches, warm intro to signed.</h2>
+  <p class="body-lg" style="max-width:720px;margin:0 0 22px;color:var(--jx-slate-500)">A warm sale is a few high-quality touches, not a drip. Run this for each Tier-1 account.</p>
+  <div class="stepc">
+    <div class="step"><div class="num"></div><div><h4>Reconnect &mdash; don&#39;t pitch</h4><p>A short personal note that re-opens the relationship. Aim for a yes to a quick call.</p></div></div>
+    <div class="step"><div class="num"></div><div><h4>Earn a 20-minute conversation</h4><p>Listen for the dispute-cost or benefit gap &mdash; that&#39;s the qualification, not a demo.</p></div></div>
+    <div class="step"><div class="num"></div><div><h4>Share the offering</h4><p>Send the one-pager and a short overview once you understand their world.</p></div></div>
+    <div class="step"><div class="num"></div><div><h4>Scope a design-partner pilot</h4><p>Name the champion, map the approval step, agree the pilot shape.</p></div></div>
+    <div class="step"><div class="num"></div><div><h4>Propose &amp; close</h4><p>Founding-partner terms out, verbal commit, then signed &mdash; and your commission lands.</p></div></div>
+  </div>
+</div></div><div class="panel" id="p-pipeline"><div class="pc-pad">
+  <div class="pc-guide">
+  <div class="pc-guide-h"><span class="ph">Step 3 · Convert your network</span><h3>How to use this page</h3></div>
+  <ol>
+    <li><b>Add the people you're pursuing first.</b> Click <span class="k">+ Add from my network</span> to pull a ranked contact from your plan into the table below. <span class="opt">This is what fills your pipeline &mdash; do it before anything else.</span></li>
+    <li><b>Advance each deal.</b> As a conversation moves forward, update its stage — your weighted value and commission recalculate automatically.<span class="jxh" data-h="weighted" role="button" tabindex="0">?</span></li>
+    <li><b>Register to protect the account.</b> Use <span class="k">Register a deal</span> (top right) so the account is credited to you.<span class="jxh" data-h="pipeline_shared" role="button" tabindex="0">?</span></li>
+    <li><b>Work offline if you like.</b> <span class="k">Download the pipeline &amp; earnings tracker</span> gives you the full forecast math in Excel. <span class="opt">Optional &mdash; the page already tracks everything for you.</span></li>
+  </ol>
+</div>
+  <div id="pipeEmpty" class="jx-empty" hidden><div class="ic">&#128203;</div><h4>No deals yet</h4><p>When you move a contact from your call list into the pipeline, it shows up here with its stage, weighted value, and your commission.</p><button class="btn btn-gold" data-t="plan" onclick="window.__pcgo&amp;&amp;window.__pcgo('plan')">Build your call list <span class="arrow">&rarr;</span></button></div>
+  <table class="ptbl" id="pipeTbl"><thead><tr><th>Account</th><th>Contact</th><th>Stage</th><th class="r">Value $/yr</th><th class="r">Weighted $ <span class="jxh" data-h="weighted" role="button" tabindex="0">?</span></th><th class="r">Your comm. <span class="jxh" data-h="commission" role="button" tabindex="0">?</span></th></tr></thead><tbody id="pipeBody"></tbody></table>
+  <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+    <a class="btn btn-gold" href="#" onclick="return false">Download the pipeline &amp; earnings tracker <span class="arrow">&rarr;</span></a>
+    <button class="btn btn-ghost-dark" style="color:var(--jx-navy-800);border-color:var(--jx-navy-800)" data-t="plan" onclick="window.__pcgo&&window.__pcgo(\'plan\')">+ Add from my network</button>
+  </div>
+</div></div><div class="panel" id="p-dash"><div class="pc-pad" style="padding-bottom:0"><div class="pc-guide">
+  <div class="pc-guide-h"><span class="ph">Step 4 · Track your progress</span><h3>How to read this page</h3></div>
+  <ol>
+    <li><b>Start at attainment.</b> The top bar shows how close you are to your annual target and whether you're on pace.<span class="jxh" data-h="attainment" role="button" tabindex="0">?</span></li>
+    <li><b>Check your coverage.</b> Aim for ~3&times; open pipeline vs target — below that, go add more from your plan.<span class="jxh" data-h="coverage" role="button" tabindex="0">?</span></li>
+    <li><b>Use your 1:1 talking points.</b> Scroll to the auto-drafted points and walk them top-to-bottom in your manager check-in.<span class="jxh" data-h="oneonone" role="button" tabindex="0">?</span></li>
+    <li><b>Grow the team.</b> Refer another rep — once they close, you earn a referral thank-you.</li>
+  </ol>
+</div></div><section class="rd-hero"><div class="wrap">
+  <div class="rd-top">
+    <div><div class="eyebrow on-dark"><span class="rule"></span>My sales dashboard</div>
+      <h1 class="h2" style="color:#fff;margin:8px 0 0" id="rdName">Rep</h1></div>
+    <div class="rd-sel"><label for="repSel">View</label>
+      <select id="repSel"></select></div>
+  </div>
+  <div class="rd-att">
+    <div class="row"><div class="big"><span id="attPct">0%</span> to annual target</div><div class="sub" id="attSub"></div></div>
+    <div class="rd-bar"><div class="fill" id="attFill" style="width:0%"></div><div class="pace" id="pace" style="left:50%"></div></div>
+  </div>
+  <div class="rd-kpis" id="kpis"></div>
+</div></section>
+
+<section class="section white"><div class="wrap">
+  <div class="grid3">
+    <div class="card"><h3>My pipeline funnel <span class="jxh" data-h="funnel" role="button" tabindex="0">?</span></h3><div id="funnel"></div></div>
+    <div class="card"><h3>Activity vs target (this week) <span class="jxh" data-h="activity" role="button" tabindex="0">?</span></h3><div id="activity"></div>
+      <p class="caption" style="margin-top:10px">Leading indicators &mdash; these move before pipeline does.</p></div>
+    <div class="card"><h3>Deals needing attention</h3><ul class="dl" id="atrisk"></ul></div>
+  </div>
+</div></section>
+
+<section class="section paper"><div class="wrap">
+  <div class="grid2">
+    <div class="card"><h3>Top deals</h3><ul class="dl" id="topdeals"></ul></div>
+    <div class="card"><h3>Long-term sales &amp; commission forecast <span class="jxh" data-h="ltforecast" role="button" tabindex="0">?</span></h3>
+      <div class="ltf" id="ltf"></div>
+      <div class="leg"><span><i style="background:var(--jx-navy-700)"></i> Bookings</span><span><i style="background:var(--jx-coral-500)"></i> Your commission</span></div>
+      <p class="caption" style="margin-top:8px">Projected bookings and commission by quarter &mdash; current pipeline plus expected new business. Illustrative.</p></div>
+  </div>
+</div></section>
+
+<section class="section white"><div class="wrap">
+  <div class="oneone">
+    <h3>For your 1:1 review <span class="jxh" data-h="oneonone" role="button" tabindex="0">?</span></h3>
+    <div class="sub">Auto-generated talking points from your numbers &mdash; walk these top to bottom.</div>
+    <ul id="oneone"></ul>
+  </div>
+</div></section>
+
+</div><div class="panel" id="p-resources"><div class="pc-pad">
+  <div class="pc-guide">
+  <div class="pc-guide-h"><span class="ph">Support</span><h3>How to use this page</h3></div>
+  <ol>
+    <li><b>Grab what you need before a call.</b> The tracker, battle card, and invite copy are on-brand and kept current.</li>
+    <li><b>Quote from the pricing sheet.</b> Always use the same draft numbers so your figures stay consistent.</li>
+    <li><b>Stuck? Talk to your JusticeX contact.</b> For a co-sell, a question, or a deal to register.</li>
+  </ol>
+</div>
+  <h2 class="h2" style="margin:0 0 6px;color:var(--jx-navy-800)">Your resource library.</h2>
+  <p class="body-lg" style="max-width:720px;margin:0 0 22px;color:var(--jx-slate-500)">On-brand and kept current. Grab what you need before every call.</p>
+  <div class="rgrid">
+    <a class="rescard" href="#" onclick="return false"><div class="ti">&#128203;</div><h3>Pipeline &amp; earnings tracker</h3><p>The workbook that runs your funnel, forecast, coverage, and commission.</p><span class="go">Download &rarr;</span></a>
+    <a class="rescard" href="#" onclick="return false"><div class="ti">&#128737;</div><h3>Objection-handling battle card</h3><p>The questions you&#39;ll get, and the honest answers.</p><span class="go">Open &rarr;</span></a>
+    <a class="rescard" href="#" onclick="return false"><div class="ti">&#9993;</div><h3>Warm-intro &amp; invite copy</h3><p>Reconnect notes and invite templates, ready to personalize.</p><span class="go">Open &rarr;</span></a>
+    <a class="rescard" href="#" onclick="return false"><div class="ti">&#128196;</div><h3>One-page solution offering</h3><p>The single page you send after a good discovery call.</p><span class="go">In development</span></a>
+    <a class="rescard" href="#" onclick="return false"><div class="ti">&#128200;</div><h3>Sales deck</h3><p>The walkthrough for a scoping conversation.</p><span class="go">In development</span></a>
+    <a class="rescard" href="https://justicex.ai/contact.html?path=partner" ><div class="ti">&#128172;</div><h3>Talk to your JusticeX contact</h3><p>Questions, a co-sell, or a deal to register.</p><span class="go">Contact &rarr;</span></a>
+  </div>
+</div></div></div></div><div class="jx-drawer-scrim" id="jxDrawerScrim"></div>
+<aside class="jx-drawer" id="jxDrawer" role="dialog" aria-modal="true" aria-label="Partner Console help">
+  <div class="jx-drawer-head"><h3>Quick help</h3><button class="x" aria-label="Close help">&times;</button></div>
+  <div class="jx-drawer-body">
+    <h4>The four steps</h4>
+    <p><b>1 · Build your network</b> — import your LinkedIn network, get a ranked call list.<br>
+    <b>2 · Engage your network</b> — the warm five-touch cadence.<br>
+    <b>3 · Convert your network</b> — move interested contacts to deals and advance them.<br>
+    <b>4 · Track your progress</b> — attainment, forecast, commission, referrals.</p>
+    <p style="color:var(--jx-slate-500)">Each page has its own step-by-step guide at the top — this drawer is just the map.</p>
+    <h4>Where your data lives</h4>
+    <div class="prov">Your LinkedIn file is read and scored <b>entirely in your browser</b> — never uploaded. A contact becomes visible to your JusticeX manager <b>only when you move that one person into your pipeline</b>. Everyone you don't pursue stays yours alone, and closing the tab clears the file.</div>
+    <h4>Need a person?</h4>
+    <p><a href="https://justicex.ai/contact.html?path=partner">Talk to your JusticeX contact &rarr;</a></p>
+  </div>
+</aside><script>window.__pcTitles={"start": ["Start here", "Your four-step selling journey"], "plan": ["<span style='color:var(--jx-coral-500);font-weight:700'>1.</span> Build your network", "Import and rank your LinkedIn network into a call list &mdash; privately"], "play": ["<span style='color:var(--jx-coral-500);font-weight:700'>2.</span> Engage your network", "Spark interest with the warm five-touch play"], "pipeline": ["<span style='color:var(--jx-coral-500);font-weight:700'>3.</span> Convert your network", "Turn interested contacts into tracked, weighted deals"], "dash": ["<span style='color:var(--jx-coral-500);font-weight:700'>4.</span> Track your progress", "Where you stand vs target &mdash; and your 1:1 talking points"], "resources": ["Resources", "Everything you need to sell"]};</script><script>
+var STAGES={Connected:.10,Discovery:.20,Qualified:.30,Offering:.50,Pilot:.70,Signed:.90,Won:1.00};
+var ORDER=["Connected","Discovery","Qualified","Offering","Pilot","Signed","Won"];
+var COMM=0.15;
+var DEALS=[
+ {rep:"Sam Carter",c:"D. Whitfield",co:"Northgate Employer Group",st:"Offering",v:2400},
+ {rep:"Sam Carter",c:"S. Rivera",co:"Harborview Insurance",st:"Pilot",v:4800},
+ {rep:"Sam Carter",c:"A. Okafor",co:"Meridian Benefits",st:"Signed",v:3600},
+ {rep:"Sam Carter",c:"M. Delgado",co:"Summit Manufacturing",st:"Discovery",v:2400},
+ {rep:"Ava Bennett",c:"R. Cole",co:"Lakeside Advisory",st:"Qualified",v:2000},
+ {rep:"Ava Bennett",c:"T. Nguyen",co:"Cedar HR Partners",st:"Offering",v:3000},
+ {rep:"Ava Bennett",c:"L. Park",co:"Ironwood Capital",st:"Connected",v:2400},
+ {rep:"Marcus Chen",c:"J. Feldman",co:"Copperline Mediation",st:"Pilot",v:1500},
+ {rep:"Marcus Chen",c:"K. Ross",co:"Blue Harbor CPA",st:"Qualified",v:1800},
+ {rep:"Marcus Chen",c:"P. Shah",co:"Vantage Employer",st:"Won",v:2400},
+ {rep:"Priya Ramanathan",c:"G. Alvarez",co:"Fairfield Law",st:"Discovery",v:2000},
+ {rep:"Priya Ramanathan",c:"H. Wu",co:"Anchor Benefits",st:"Offering",v:3600}
+];
+var META={
+ "Sam Carter":{quota:15000,wonYTD:6000,winRate:.34,cycle:38,act:{"Warm intros":[5,6],"Discovery mtgs":[3,4],"New qualified":[2,2],"Proposals out":[1,1]},ltf:[3900,9200,13500,17000]},
+ "Ava Bennett":{quota:10000,wonYTD:2500,winRate:.28,cycle:44,act:{"Warm intros":[3,6],"Discovery mtgs":[2,4],"New qualified":[1,2],"Proposals out":[1,1]},ltf:[1800,5200,8600,11500]},
+ "Marcus Chen":{quota:12000,wonYTD:4800,winRate:.31,cycle:40,act:{"Warm intros":[6,6],"Discovery mtgs":[4,4],"New qualified":[3,2],"Proposals out":[2,1]},ltf:[3200,7400,11000,14200]},
+ "Priya Ramanathan":{quota:8000,wonYTD:1500,winRate:.25,cycle:47,act:{"Warm intros":[2,5],"Discovery mtgs":[1,3],"New qualified":[1,2],"Proposals out":[0,1]},ltf:[1400,3800,6400,9000]}
+};
+var QTRS=["Q3 26","Q4 26","Q1 27","Q2 27"];
+var COVTGT=3;
+// quarter pace: assume ~55% through the fiscal year (illustrative)
+var PACE=0.55;
+function money(n){return "$"+Math.round(n).toLocaleString("en-US");}
+function agg(){ // "All team"
+ var m={quota:0,wonYTD:0,winRate:0,cycle:0,act:{"Warm intros":[0,0],"Discovery mtgs":[0,0],"New qualified":[0,0],"Proposals out":[0,0]},ltf:[0,0,0,0]},n=0,wr=0,cy=0;
+ for(var k in META){var x=META[k];m.quota+=x.quota;m.wonYTD+=x.wonYTD;wr+=x.winRate;cy+=x.cycle;n++;
+   for(var a in x.act){m.act[a][0]+=x.act[a][0];m.act[a][1]+=x.act[a][1];}
+   for(var q=0;q<4;q++)m.ltf[q]+=x.ltf[q];}
+ m.winRate=wr/n;m.cycle=Math.round(cy/n);return m;
+}
+function calc(rep){
+ var meta= rep==="All team"?agg():META[rep];
+ var deals= rep==="All team"?DEALS:DEALS.filter(function(d){return d.rep===rep;});
+ var weighted=0,openVal=0,funnel={};ORDER.forEach(function(s){funnel[s]=0;});
+ deals.forEach(function(d){var p=STAGES[d.st];d.w=d.v*p;weighted+=d.w;if(p>0&&p<1)openVal+=d.v;funnel[d.st]++;});
+ var forecast=meta.wonYTD+weighted;
+ var attain=meta.wonYTD/meta.quota;
+ var coverage=openVal/meta.quota;
+ var avg=deals.length?deals.reduce(function(a,d){return a+d.v;},0)/deals.length:0;
+ var commEarned=meta.wonYTD*COMM,commPipe=weighted*COMM;
+ var top=deals.slice().sort(function(a,b){return b.w-a.w;}).slice(0,5);
+ var risk=deals.filter(function(d){return STAGES[d.st]<=0.2;}).sort(function(a,b){return b.v-a.v;});
+ return {meta:meta,deals:deals,weighted:weighted,openVal:openVal,forecast:forecast,attain:attain,coverage:coverage,avg:avg,commEarned:commEarned,commPipe:commPipe,funnel:funnel,top:top,risk:risk};
+}
+function esc(s){return (s||"").replace(/[&<>]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;"}[c];});}
+function pillFor(st){var p=STAGES[st];return st==="Won"?"won":p>=0.7?"hot":p<=0.2?"warn":"";}
+function render(rep){
+ var r=calc(rep),m=r.meta;
+ document.getElementById("rdName").textContent=rep;
+ document.getElementById("attPct").textContent=Math.round(r.attain*100)+"%";
+ document.getElementById("attFill").style.width=Math.min(100,r.attain*100)+"%";
+ document.getElementById("pace").style.left=(PACE*100)+"%";
+ var gap=m.quota-m.wonYTD, onPace=r.attain>=PACE;
+ document.getElementById("attSub").innerHTML=money(m.wonYTD)+" won of "+money(m.quota)+" &middot; "+money(gap)+" to go &middot; forecast "+money(r.forecast)+" &middot; <b style=\"color:"+(onPace?"#7fe0be":"var(--jx-coralLt-500)")+"\">"+(onPace?"on/ahead of pace":"behind pace")+"</b>";
+ var kpis=[["Attainment",Math.round(r.attain*100)+"%","c"],["Weighted forecast",money(r.weighted),""],
+   ["Coverage",r.coverage.toFixed(1)+"x",r.coverage>=COVTGT?"c":""],["Win rate",Math.round(m.winRate*100)+"%",""],
+   ["Avg deal",money(r.avg),""],["Commission (earned+pipe)",money(r.commEarned+r.commPipe),"c"]];
+ document.getElementById("kpis").innerHTML=kpis.map(function(k){return '<div class="rd-kpi '+k[2]+'"><div class="n">'+k[1]+'</div><div class="l">'+k[0]+(({"Attainment":"attainment","Weighted forecast":"weighted","Coverage":"coverage","Commission (earned+pipe)":"commission"})[k[0]]?' <span class="jxh" data-h="'+({"Attainment":"attainment","Weighted forecast":"weighted","Coverage":"coverage","Commission (earned+pipe)":"commission"})[k[0]]+'" role="button" tabindex="0" style="color:var(--jx-slate-300)">?</span>':'')+'</div></div>';}).join("");
+ // funnel
+ var maxf=Math.max.apply(null,ORDER.map(function(s){return r.funnel[s];}))||1;
+ document.getElementById("funnel").innerHTML=ORDER.map(function(s){var c=r.funnel[s],w=30+(c/maxf)*200;
+   return '<div class="fn-row"><div class="k">'+s+'</div><div class="bar" style="width:'+w+'px">'+(c||"")+'</div><div class="v">'+c+' deal'+(c===1?"":"s")+'</div></div>';}).join("");
+ // activity
+ document.getElementById("activity").innerHTML=Object.keys(m.act).map(function(a){var v=m.act[a],pct=v[1]?Math.min(100,v[0]/v[1]*100):0,cls=v[0]>=v[1]?"ok":(v[0]<v[1]*0.6?"low":"");
+   return '<div class="actrow"><div class="lab"><span>'+a+'</span><b>'+v[0]+' / '+v[1]+'</b></div><div class="track"><div class="fl '+cls+'" style="width:'+pct+'%"></div></div></div>';}).join("");
+ // at-risk
+ document.getElementById("atrisk").innerHTML=r.risk.length?r.risk.map(function(d){return '<li><span><span class="nm">'+esc(d.c)+'</span><br><span class="co">'+esc(d.co)+'</span></span><span class="rt"><span class="pill warn">'+d.st+'</span><br><span class="co">advance this week</span></span></li>';}).join(""):'<li style="color:var(--jx-slate-500)">Nothing stalled &mdash; nice.</li>';
+ // top deals
+ document.getElementById("topdeals").innerHTML=r.top.length?r.top.map(function(d){var pc=pillFor(d.st);return '<li><span><span class="nm">'+esc(d.c)+'</span><br><span class="co">'+esc(d.co)+'</span></span><span class="rt"><span class="pill '+pc+'">'+d.st+'</span><br><b>'+money(d.v)+'</b> &middot; <span class="co">wtd '+money(d.w)+'</span></span></li>';}).join(""):'<li style="color:var(--jx-slate-500)">No deals yet.</li>';
+ // long-term forecast
+ var maxb=Math.max.apply(null,m.ltf)||1;
+ document.getElementById("ltf").innerHTML=m.ltf.map(function(b,i){var bh=20+(b/maxb)*120,cm=b*COMM,ch=6+(cm/maxb)*120;
+   return '<div class="col"><div class="val">'+money(b)+'</div><div class="stack"><div class="b1" style="height:'+bh+'px"></div></div><div class="cm" style="height:'+ch+'px" title="commission"></div><div class="lbl">'+QTRS[i]+'</div></div>';}).join("");
+ // 1:1 talking points
+ var tp=[];
+ tp.push('<b>Attainment:</b> '+Math.round(r.attain*100)+'% of '+money(m.quota)+' ('+money(m.wonYTD)+' won). '+(onPace?'<span class="tag g">on pace</span>':'<span class="tag r">behind pace</span> &mdash; '+money(m.quota*PACE-m.wonYTD)+' behind where I should be.'));
+ tp.push('<b>Coverage:</b> '+r.coverage.toFixed(1)+'x vs the 3.0x target. '+(r.coverage>=COVTGT?'Healthy.':'Light &mdash; I need ~'+money(Math.max(0,m.quota*COVTGT-r.openVal))+' more open pipeline. Where can you open doors?'));
+ tp.push('<b>Forecast:</b> '+money(r.forecast)+' (won + weighted). Gap to target: '+money(Math.max(0,m.quota-r.forecast))+'.');
+ if(r.risk.length) tp.push('<b>Needs a push ('+r.risk.length+'):</b> '+r.risk.map(function(d){return esc(d.c);}).join(", ")+' &mdash; early-stage, help me advance them.');
+ var wk=Object.keys(m.act).filter(function(a){return m.act[a][0]<m.act[a][1];});
+ if(wk.length) tp.push('<b>Activity behind target:</b> '+wk.join(", ")+'. That is why pipeline is thin &mdash; I will lift these.');
+ else tp.push('<b>Activity:</b> at or above target across the board.');
+ if(r.top[0]) tp.push('<b>Best opportunity:</b> '+esc(r.top[0].c)+' at '+esc(r.top[0].co)+' ('+r.top[0].st+', '+money(r.top[0].v)+'). Ask: what will get it to signed?');
+ document.getElementById("oneone").innerHTML=tp.map(function(t){return '<li>'+t+'</li>';}).join("");
+}
+(function(){
+ var sel=document.getElementById("repSel");
+ var names=Object.keys(META); names.push("All team");
+ sel.innerHTML=names.map(function(n){return '<option>'+n+'</option>';}).join("");
+ // preselect from ?rep=
+ var q=new URLSearchParams(location.search).get("rep");
+ if(q&&names.indexOf(q)>=0)sel.value=q;
+ sel.addEventListener("change",function(){render(sel.value);});
+ render(sel.value);
+})();
+
+;(function(){var s=document.getElementById("repSel");if(s)s.addEventListener("change",function(){setTimeout(function(){window.jxHelpScan&&window.jxHelpScan();},0);});})();
+</script><script>
+/* ===== LinkedIn CSV -> ranked plan, 100% client-side ===== */
+(function(){
+ var fileEl=document.getElementById('liFile');
+ if(!fileEl) return;
+ var rowsData=[];
+ function parseCSV(text){
+   // find header line (LinkedIn prepends a Notes: preamble)
+   var lines=text.split(/\r\n|\n|\r/);
+   var start=0;
+   for(var i=0;i<lines.length;i++){ if(/^"?First Name"?,/i.test(lines[i])){ start=i; break; } }
+   var out=[]; 
+   for(var j=start;j<lines.length;j++){ if(lines[j].trim()==='') continue; out.push(splitLine(lines[j])); }
+   return out;
+ }
+ function splitLine(line){
+   var res=[],cur='',q=false;
+   for(var i=0;i<line.length;i++){var c=line[i];
+     if(c==='"'){ if(q&&line[i+1]==='"'){cur+='"';i++;} else q=!q; }
+     else if(c===','&&!q){res.push(cur);cur='';}
+     else cur+=c;}
+   res.push(cur); return res;
+ }
+ var SENIOR=/(chief|\bcfo\b|\bceo\b|\bcoo\b|\bcto\b|\bcmo\b|founder|owner|president|partner|principal|managing director|\bvp\b|vice president|head of|\bdirector\b|executive)/i;
+ var ICPTITLE=/(\bcfo\b|chief financial|\bceo\b|founder|owner|president|controller|finance|human resources|\bhr\b|people officer|benefits|talent|treasur)/i;
+ var ICPCO=/(insurance|financial|advisor|consult|benefits|brokerage|capital|bank|wealth|retirement|accounting)/i;
+ function scoreRow(fn,ln,title,co){
+   var t=(title||''),c=(co||''),s=0,senior=SENIOR.test(t);
+   if(senior)s+=2; if(ICPTITLE.test(t))s+=2; if(ICPCO.test(c))s+=1;
+   var tier= s>=4?1 : s===3?2 : s===2?3 : 0;
+   return {senior:senior,score:s,tier:tier};
+ }
+ function move(title,co){
+   var t=(title||'').toLowerCase();
+   if(/cpa|accounting|tax|controller/.test(t)) return 'CPA-to-CPA referral-partner intro';
+   if(/hr|human resources|people|benefits|talent/.test(t)) return 'Employer benefit — warm intro to the resolution benefit';
+   if(/mediator|adr|dispute/.test(t)) return 'Mediator channel — founding-partner conversation';
+   if(/attorney|lawyer|counsel|esq|law/.test(t)) return 'Counsel Partner Program (no-fee) intro';
+   return 'Warm intro → Families resolution benefit / design-partner pilot';
+ }
+ function fmt(n){return (+n).toLocaleString('en-US');}
+ function handle(text){
+   var rows=parseCSV(text);
+   if(!rows.length){alert('Could not read that file. Make sure it is the LinkedIn Connections.csv export.');return;}
+   var head=rows[0].map(function(h){return (h||'').replace(/"/g,'').trim().toLowerCase();});
+   var iFn=head.indexOf('first name'),iLn=head.indexOf('last name'),iCo=head.indexOf('company'),iPo=head.indexOf('position');
+   if(iPo<0)iPo=head.indexOf('title');
+   var data=[],senior=0;
+   for(var r=1;r<rows.length;r++){var row=rows[r];
+     var fn=(row[iFn]||'').trim(),ln=(row[iLn]||'').trim(),co=(row[iCo]||'').trim(),po=(row[iPo]||'').trim();
+     if(!fn&&!ln&&!co) continue;
+     var sc=scoreRow(fn,ln,po,co); if(sc.senior)senior++;
+     data.push({name:(fn+' '+ln).trim(),title:po,company:co,tier:sc.tier,score:sc.score});
+   }
+   var pursue=data.filter(function(d){return d.tier>0;});
+   pursue.sort(function(a,b){return b.score-a.score || a.company.localeCompare(b.company);});
+   rowsData=pursue;
+   var t1=pursue.filter(function(d){return d.tier===1;}).length;
+   document.getElementById('liTot').textContent=fmt(data.length);
+   document.getElementById('liSenior').textContent=fmt(senior);
+   document.getElementById('liICP').textContent=fmt(pursue.length);
+   document.getElementById('liT1').textContent=fmt(t1);
+   var body=document.getElementById('liBody'),h='';
+   var cap=Math.min(pursue.length,250);
+   for(var k=0;k<cap;k++){var d=pursue[k];
+     var cls=d.tier===1?'li-t1':d.tier===2?'li-t2':'li-t3',tl='Tier '+d.tier;
+     h+='<tr><td><span class="li-tier '+cls+'">'+tl+'</span></td><td>'+esc(d.name)+'</td><td>'+esc(d.title)+'</td><td>'+esc(d.company)+'</td><td>'+esc(move(d.title,d.company))+'</td></tr>';
+   }
+   if(pursue.length>cap) h+='<tr><td></td><td colspan="4" style="color:var(--jx-slate-500);font-style:italic">'+(pursue.length-cap)+' more in your downloaded list.</td></tr>';
+   body.innerHTML=h;
+   document.getElementById('liIntake').classList.add('hidden');
+   document.getElementById('liResults').classList.remove('hidden');
+   document.getElementById('mylist').scrollIntoView({behavior:'smooth'});
+ }
+ function esc(s){return (s||'').replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+ function download(){
+   var lines=[['Tier','Name','Title','Company','Suggested first move']];
+   rowsData.forEach(function(d){lines.push(['Tier '+d.tier,d.name,d.title,d.company,move(d.title,d.company)]);});
+   var csv=lines.map(function(r){return r.map(function(v){return '"'+String(v).replace(/"/g,'""')+'"';}).join(',');}).join('\n');
+   var blob=new Blob([csv],{type:'text/csv'}),a=document.createElement('a');
+   a.href=URL.createObjectURL(blob);a.download='my-justicex-target-list.csv';a.click();URL.revokeObjectURL(a.href);
+ }
+ fileEl.addEventListener('change',function(e){var f=e.target.files[0];if(!f)return;var rd=new FileReader();rd.onload=function(ev){handle(ev.target.result);};rd.readAsText(f);});
+ var dz=document.querySelector('.li-drop');
+ ['dragover','dragenter'].forEach(function(ev){dz.addEventListener(ev,function(e){e.preventDefault();dz.style.background='#fff';});});
+ dz.addEventListener('dragleave',function(){dz.style.background='';});
+ dz.addEventListener('drop',function(e){e.preventDefault();dz.style.background='';var f=e.dataTransfer.files[0];if(f){var rd=new FileReader();rd.onload=function(ev){handle(ev.target.result);};rd.readAsText(f);}});
+ document.getElementById('liDownload').addEventListener('click',download);
+ document.getElementById('liReset').addEventListener('click',function(){rowsData=[];fileEl.value='';document.getElementById('liResults').classList.add('hidden');document.getElementById('liIntake').classList.remove('hidden');});
+})();
+</script><script>
+(function(){
+ function go(t){
+   document.querySelectorAll('.panel').forEach(function(p){p.classList.toggle('on',p.id==='p-'+t);});
+   document.querySelectorAll('.pc-nav button,.pc-tabs button').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-t')===t);});
+   var tt=window.__pcTitles[t]||['',''];
+   document.getElementById('pcTitle').innerHTML=tt[0];document.getElementById('pcSub').innerHTML=tt[1];
+   document.querySelector('.pc-main').scrollTo(0,0);
+   window.jxHelpScan&&window.jxHelpScan();
+ }
+ window.__pcgo=go;
+ document.querySelectorAll('[data-t]').forEach(function(b){b.addEventListener('click',function(){go(b.getAttribute('data-t'));});});
+ // pipeline table from the dashboard data (Sam Carter sample)
+ try{
+   var STG={Connected:.1,Discovery:.2,Qualified:.3,Offering:.5,Pilot:.7,Signed:.9,Won:1},CM=.15;
+   var mine=DEALS.filter(function(d){return d.rep==='Sam Carter';});
+   var h=mine.map(function(d){var w=d.v*STG[d.st];return '<tr><td>'+d.co+'</td><td><b>'+d.c+'</b></td><td>'+d.st+'</td><td class="r">$'+d.v.toLocaleString()+'</td><td class="r">$'+Math.round(w).toLocaleString()+'</td><td class="r">$'+Math.round(w*CM).toLocaleString()+'</td></tr>';}).join('');
+   document.getElementById('pipeBody').innerHTML=h;
+   var empty=!mine.length,et=document.getElementById('pipeEmpty'),tb=document.getElementById('pipeTbl');
+   if(et)et.hidden=!empty; if(tb)tb.style.display=empty?'none':'';
+ }catch(e){}
+ // wire any help triggers added after initial scan
+ setTimeout(function(){window.jxHelpScan&&window.jxHelpScan();},0);
+})();
+</script><script src="js/jxhelp.js?v=2026-07-20b"></script></body></html>
