@@ -137,3 +137,5 @@
 .jx-done .jd-txt b{color:var(--jx-navy-800)}
 .jx-done .jd-again{background:none;border:1px solid var(--jx-navy-800);color:var(--jx-navy-800);border-radius:8px;padding:8px 13px;font-size:13px;font-weight:700;cursor:pointer;font-family:var(--font-body)}
 .jx-done .jd-again:hover{background:var(--jx-navy-800);color:#fff}
+
+.jx-done[hidden]{display:none}
