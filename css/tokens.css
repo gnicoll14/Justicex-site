@@ -170,6 +170,12 @@
   --shadow-coral-soft: 0 0 0 1px rgba(240, 153, 123, 0.4), 0 6px 24px rgba(240, 153, 123, 0.22);
   --inset-hairline:    inset 0 0 0 1px rgba(255, 255, 255, 0.06);
 
+
+  /* ===== Hero media overlays =====
+     Scrims for the optional Higgsfield hero background / motion layer. */
+  --jx-hero-scrim-navy: linear-gradient(180deg,rgba(4,44,83,.78),rgba(2,26,51,.86));
+  --jx-hero-scrim-light: linear-gradient(180deg,rgba(255,255,255,.82),rgba(255,255,255,.88));
+
   /* ===== Motion ===== */
   --ease-standard:     cubic-bezier(0.2, 0.6, 0.2, 1);
   --ease-emphasis:     cubic-bezier(0.16, 1, 0.3, 1);

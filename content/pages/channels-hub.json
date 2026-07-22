@@ -1,0 +1,143 @@
+{
+  "surface_id": "channels-hub",
+  "url_path": "/channels",
+  "value_prop_ref": "3.2 Channels context",
+  "tier": "2 hub",
+  "effort_tier": "1:many",
+  "coverage": [
+    "Live"
+  ],
+  "fan_out_wave": "hubs-first",
+  "taxonomy": {
+    "door": "Channels",
+    "context_tier2": "Channels",
+    "market": "n/a",
+    "channel": "n/a",
+    "solution": {
+      "litigation_type": "Divorce & custody",
+      "jurisdiction": "New York"
+    },
+    "org_lifecycle": false,
+    "account": {},
+    "presenter": {
+      "name": "Gregg Nicoll",
+      "initials": "GN",
+      "title": "JusticeX"
+    }
+  },
+  "locked": {
+    "tokens_version": "tokens.css@v2",
+    "skeleton_version": "families-skeleton@v1",
+    "shell": "shared",
+    "voice": "objective-evidence-led",
+    "posture": "objective-symmetric-amicable",
+    "master_promise_source": "Value Props v2 Part 2 — say it once, everywhere"
+  },
+  "copy": {
+    "hero_eyebrow": "Channels",
+    "hero_title": "JusticeX prepares. You decide.",
+    "lead": "Mediators, attorneys, finance and tax professionals, technology partners, and sponsoring organizations — professionals whose capacity is capped by preparation, not by judgment.",
+    "substance": "The neutral engine handles the symmetric intake, the citation-grounded comparison, and the organized record, so you do your own work faster and at greater scale — without lowering your standard of care. JusticeX does not become a competing forum and does not make a decision. You keep your judgment; JusticeX does the preparation and holds the record. Who leads is yours to set, by matter or by step.",
+    "tier2_frame": "JusticeX prepares; the professional decides. Objective comparison, not a competing forum.",
+    "master_promise": "Both parties reach you on the same honest picture, so the session starts where judgment matters. Truth · Fairness · Efficiency.",
+    "the_ask": "Choose your channel.",
+    "cta_href": "contact.html?path=early",
+    "proof_points": [
+      "Five channels, one engine: mediators, attorneys, finance & tax professionals, technology partners, sponsoring organizations.",
+      "The professional sets who leads — by matter or by step. The platform prepares; it never decides.",
+      "A defensible record: identical process for both parties, citation-grounded, with a cryptographic audit trail."
+    ],
+    "coverage_tags": [
+      "Live: NY divorce & custody",
+      "Gated: technology partner integrations",
+      "Roadmap: family & commercial breadth"
+    ],
+    "example_matter": {
+      "matter_ref": "Whitfield",
+      "case_name": "Whitfield v. Whitfield · Nassau, NY (synthetic)",
+      "body": "One matter, seen through whichever channel you occupy. The mediator arrives with an even-handed picture; the attorney sees the same record without doing the intake twice; the financial professional works from figures that already reconcile. The preparation is shared; the judgment stays with each professional.",
+      "rows": [
+        {
+          "label": "Channels served",
+          "value": "5"
+        },
+        {
+          "label": "Process",
+          "value": "Identical for both parties"
+        },
+        {
+          "label": "Who leads",
+          "value": "Set by the professional"
+        },
+        {
+          "label": "Record",
+          "value": "Citation-grounded, audited"
+        }
+      ]
+    }
+  },
+  "disclosure_block": {
+    "standing_line": "AI-assisted overviews · figures illustrative · not legal advice.",
+    "keeps_this_honest": "JusticeX is software for the objective comparison of legal disputes — not a law firm, lawyer, mediator, or arbitrator. It does not give legal advice, interpret the law, recommend a settlement, or predict an outcome. It does not refer, rate, or rank professionals. The people, with the professionals they choose, decide; court access is preserved.",
+    "coverage_statement": "Live today: two-party objective comparison for NY divorce & custody. Technology-partner integrations are gated. Family and commercial breadth is roadmap."
+  },
+  "media": {
+    "video_owner": "gemini_notebook",
+    "gemini_notebook_brief": {
+      "assets": [
+        "audio",
+        "video",
+        "infographic",
+        "deck"
+      ],
+      "subject": "How the same neutral preparation serves five different professional channels without any of them ceding judgment — and why JusticeX is not a competing forum.",
+      "source_docs": [
+        "value-props-v2:3.2 Channels context (inherited)",
+        "value-props-v2:2.4.1–2.4.5 the five channel propositions (Appendix D, 20260716)",
+        "value-props-v2:part2 master promise",
+        "sales-strategy-jxlse:§4 persona ladder — all four persona entry lines (Appendix K, 20260720, Fable-verified)",
+        "gtm-battlecard:objection 5 'does it replace our mediators/attorneys' (Appendix H, 20260629)",
+        "surface:channels-hub:copy"
+      ],
+      "key_points": [
+        "Five channels, one engine: mediators, attorneys, finance & tax professionals, technology partners, sponsoring organizations.",
+        "JusticeX prepares and holds the record; the professional keeps judgment and sets who leads.",
+        "Not a competing forum, and no referral, rating, or ranking of professionals."
+      ],
+      "studio_defaults": "Audio=Brief/Shorter · Video=Brief ~60–90s/Classic+custom palette · Infographic=orientation+Standard · Deck=Presenter ~8 slides PDF+PPTX",
+      "palette_ban": "reject teal/mint/green/cyan/yellow/gold/magenta/pink/purple; navy+coral only",
+      "disclosure_line": "AI-assisted overviews · figures illustrative · not legal advice."
+    },
+    "higgsfield_brief": {
+      "assets": [
+        "hero_image",
+        "motion_bg",
+        "animated_process"
+      ],
+      "style_kit_id": "jx-soulkit@v1",
+      "art_direction": "Documentary, monochrome-leaning, calm; hexagon motif; five empty professional workspaces sharing one consistent raking light — the shared preparation, the separate judgments. No faces, no gavel. No professional credentials, diplomas, or bar insignia on walls.",
+      "palette": "navy #042C53 + coral #D85A30 on white/light",
+      "negative_constraints": "no fabricated human faces; no scales/gavel/courtroom; no stock handshakes; no off-palette",
+      "seed_image": ""
+    },
+    "avatar": {
+      "enabled": true,
+      "modality": "voice_only",
+      "tool": "none",
+      "presenter_identity": "",
+      "consent_ref": "",
+      "script_ref": "script:channels-hub:walkthrough (neutral, in-scope; advice-drift + Fable pending)",
+      "disclosure": "AI-assisted presenter — shown at first exposure (EU AI Act Art. 50)."
+    }
+  },
+  "governance": {
+    "status": "draft",
+    "design_lint": "pending",
+    "brand_legal_qa": "pending",
+    "fable_review": "pending",
+    "counsel_gate": "pending",
+    "propagate_dod": "pending",
+    "checkpoint_refs": [],
+    "notes": "P2 fan-out, hubs-first (Inventory Ref 13). Copy DRAFTED by Claude from Value Props v2 §3.2 + the Positioning Canon — §3.2 defines inherited context, not hub page copy. The 'no referral, rating, or ranking' line is load-bearing for RPC 7.2/5.4 and the no-fee Counsel Partner Program; do not soften it. Technology-partner coverage is Gated — confirm the hub does not imply an available integration before publish."
+  }
+}

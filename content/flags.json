@@ -1,0 +1,15 @@
+{
+  "_comment": "B2 (Fable): the global kill-switch. Action Plan \u00a76 promised counsel a red button; it did not exist - visual_personalization was per-record, so turning everything off meant 37 file edits under pressure. This file is the button. generate.js reads it at render; global:false suppresses the Higgsfield visual layer on EVERY surface regardless of per-record flags, falling back to the locked navy gradient hero. Per-surface entries can force a single surface off without touching the rest.",
+  "visual_personalization": {
+    "global": true,
+    "fallback": "token_background",
+    "surfaces": {},
+    "_surfaces_note": "Add \"surface-id\": false to disable one surface. Absent = follow the record's own media.visual_personalization value. Present and false = forced off regardless of the record.",
+    "_review_checkpoints": [
+      "pilot",
+      "hub_batch"
+    ],
+    "_last_verified": "2026-07-22 (fallback tested 4 scenarios: global-on, global-off, per-surface-off, file-missing)",
+    "_verified_by": "Opus 4.8 remediation pass; pending Fable delta re-check"
+  }
+}

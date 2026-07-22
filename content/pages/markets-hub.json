@@ -1,0 +1,143 @@
+{
+  "surface_id": "markets-hub",
+  "url_path": "/markets",
+  "value_prop_ref": "3.1 Markets context",
+  "tier": "2 hub",
+  "effort_tier": "1:many",
+  "coverage": [
+    "Live",
+    "Roadmap"
+  ],
+  "fan_out_wave": "hubs-first",
+  "taxonomy": {
+    "door": "Markets",
+    "context_tier2": "Markets",
+    "market": "n/a",
+    "channel": "n/a",
+    "solution": {
+      "litigation_type": "All matter types",
+      "jurisdiction": "New York first"
+    },
+    "org_lifecycle": false,
+    "account": {},
+    "presenter": {
+      "name": "Gregg Nicoll",
+      "initials": "GN",
+      "title": "JusticeX"
+    }
+  },
+  "locked": {
+    "tokens_version": "tokens.css@v2",
+    "skeleton_version": "families-skeleton@v1",
+    "shell": "shared",
+    "voice": "objective-evidence-led",
+    "posture": "objective-symmetric-amicable",
+    "master_promise_source": "Value Props v2 Part 2 — say it once, everywhere"
+  },
+  "copy": {
+    "hero_eyebrow": "Markets",
+    "hero_title": "One neutral engine. The disputes of a defined population.",
+    "lead": "Families, workplaces, community associations, campuses, and the people a public body serves — each with its own disputes, all served by the same identical, citation-grounded comparison.",
+    "substance": "What changes across markets is the population and the dispute type. What never changes is the process: symmetric intake, the same analysis run for each side to the same depth, a citation-grounded comparison, and a verifiable record. Families is live today on NY divorce and custody; the other markets are staged behind their own readiness and counsel gates. Every market inherits the same rule — the people, with the professionals they choose, decide.",
+    "tier2_frame": "One neutral engine, applied to the disputes of a defined population.",
+    "master_promise": "Both sides reach the table on the same honest picture, so the conversation starts where judgment matters. Truth · Fairness · Efficiency.",
+    "the_ask": "Find your market.",
+    "cta_href": "contact.html?path=organization",
+    "proof_points": [
+      "The same seven stages run identically for every party, in every market — the process does not bend to the population.",
+      "Families is live on NY divorce and custody; Businesses, Communities & HOAs, Campuses, and Government are staged behind readiness and counsel gates.",
+      "Organization markets carry a Prevent → Resolve → Improve lifecycle, not just a dispute event."
+    ],
+    "coverage_tags": [
+      "Live: Families — NY divorce & custody",
+      "Roadmap: Businesses, Communities & HOAs, Campuses, Government"
+    ],
+    "example_matter": {
+      "matter_ref": "Whitfield",
+      "case_name": "Whitfield v. Whitfield · Nassau, NY (synthetic)",
+      "body": "The Families market, worked end to end. Two parties, one identical process — each side summarized to the same depth, then convergence and divergence laid side by side, objectively and with citations. The same engine runs a workplace or HOA dispute; only the population and the matter type change.",
+      "rows": [
+        {
+          "label": "Market",
+          "value": "Families"
+        },
+        {
+          "label": "Matter type",
+          "value": "Divorce & custody · NY"
+        },
+        {
+          "label": "Process",
+          "value": "Identical for both parties"
+        },
+        {
+          "label": "Decision",
+          "value": "Stays with the people"
+        }
+      ]
+    }
+  },
+  "disclosure_block": {
+    "standing_line": "AI-assisted overviews · figures illustrative · not legal advice.",
+    "keeps_this_honest": "JusticeX is software for the objective comparison of legal disputes — not a law firm, lawyer, mediator, or arbitrator. It does not give legal advice, interpret the law, recommend a settlement, or predict an outcome. The people, with the professionals they choose, decide; court access is preserved.",
+    "coverage_statement": "Live today: two-party objective comparison for NY divorce & custody, in the Families market. Businesses, Communities & HOAs, Campuses & schools, and Government are roadmap and are not offered today."
+  },
+  "media": {
+    "video_owner": "gemini_notebook",
+    "gemini_notebook_brief": {
+      "assets": [
+        "audio",
+        "video",
+        "infographic",
+        "deck"
+      ],
+      "subject": "How one neutral engine serves the disputes of five different populations without changing the process — and what is live today versus roadmap.",
+      "source_docs": [
+        "value-props-v2:3.1 Markets context (inherited)",
+        "value-props-v2:2.1 Families · 2.2 Businesses · 2.3 Government (Appendix D, 20260716)",
+        "value-props-v2:part2 master promise",
+        "sales-materials-overview:the 4 market 1-pagers — Families · Business · Communities & HOAs · Campuses & Schools (Appendix H, 20260628) — the ONLY authored source for the Communities and Campuses markets",
+        "gtm-battlecard:objections 1–6 (Appendix H, 20260629)",
+        "surface:markets-hub:copy"
+      ],
+      "key_points": [
+        "One engine, five populations: Families, Businesses, Communities & HOAs, Campuses, Government.",
+        "The population and dispute type change; the symmetric, citation-grounded process does not.",
+        "Families/NY divorce & custody is live; the rest are staged behind readiness and counsel gates."
+      ],
+      "studio_defaults": "Audio=Brief/Shorter · Video=Brief ~60–90s/Classic+custom palette · Infographic=orientation+Standard · Deck=Presenter ~8 slides PDF+PPTX",
+      "palette_ban": "reject teal/mint/green/cyan/yellow/gold/magenta/pink/purple; navy+coral only",
+      "disclosure_line": "AI-assisted overviews · figures illustrative · not legal advice."
+    },
+    "higgsfield_brief": {
+      "assets": [
+        "hero_image",
+        "motion_bg",
+        "animated_process"
+      ],
+      "style_kit_id": "jx-soulkit@v1",
+      "art_direction": "Documentary, monochrome-leaning, calm; hexagon motif; five distinct empty rooms — a kitchen table, a workplace meeting room, a community hall, a campus office, a civic waiting area — rendered abstractly in one consistent light. No faces, no gavel. No flags or institutional insignia.",
+      "palette": "navy #042C53 + coral #D85A30 on white/light",
+      "negative_constraints": "no fabricated human faces; no scales/gavel/courtroom; no stock handshakes; no off-palette",
+      "seed_image": ""
+    },
+    "avatar": {
+      "enabled": true,
+      "modality": "voice_only",
+      "tool": "none",
+      "presenter_identity": "",
+      "consent_ref": "",
+      "script_ref": "script:markets-hub:walkthrough (neutral, in-scope; advice-drift + Fable pending)",
+      "disclosure": "AI-assisted presenter — shown at first exposure (EU AI Act Art. 50)."
+    }
+  },
+  "governance": {
+    "status": "draft",
+    "design_lint": "pending",
+    "brand_legal_qa": "pending",
+    "fable_review": "pending",
+    "counsel_gate": "pending",
+    "propagate_dod": "pending",
+    "checkpoint_refs": [],
+    "notes": "P2 fan-out, hubs-first (Inventory Ref 3). Copy DRAFTED by Claude from Value Props v2 §3.1 + the Positioning Canon — NOT lifted verbatim from a §3.1 hub block, because §3.1 defines inherited context, not hub page copy. VERIFY against the live markets.html before publish, per the reconcile-to-live rule. Coverage is Live/Roadmap, so counsel_gate must be cleared before public wiring."
+  }
+}

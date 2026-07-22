@@ -1,0 +1,102 @@
+{
+  "page_id": "professional-families-ny",
+  "url_path": "/for/professional/families",
+  "tier": "1:few",
+
+  "axes": {
+    "market": "Professional practices",
+    "role": "Mediator",
+    "channel": "Direct",
+    "solution": { "litigation_type": "Divorce & custody", "jurisdiction": "New York" },
+    "account": {},
+    "presenter": { "name": "Gregg Nicoll", "initials": "GN", "title": "JusticeX" }
+  },
+
+  "locked": {
+    "tokens_version": "tokens.css@v2",
+    "skeleton_version": "families-skeleton@v1",
+    "shell": "shared",
+    "voice": "objective-evidence-led",
+    "disclaimers": "inherited",
+    "posture": "objective-symmetric-amicable"
+  },
+
+  "copy": {
+    "hero_eyebrow": "For mediators",
+    "hero_title": "One objective process, every matter you run.",
+    "hero_sub": "JusticeX runs each party's claims through an identical, citation-grounded comparison — so your table starts from a shared, neutral picture.",
+    "cta_label": "Book a design-partner walkthrough",
+    "cta_href": "/contact?intent=mediator-pilot",
+    "how_lede": "Inputs → identical process → cited legal references → symmetric outputs. A neutrality auditor halts the process on any asymmetry.",
+    "pain_points": [
+      "Sessions stall because the parties arrive disagreeing on the facts, not just the terms.",
+      "Preparing an even-handed picture of both sides is slow and manual.",
+      "You need to stay visibly neutral while still moving the matter forward."
+    ],
+    "proof_points": [
+      { "title": "Neutral by design", "body": "Identical prompts, models, and depth per party. You stay the neutral — the software never takes a side." },
+      { "title": "Faster to a shared picture", "body": "Parties arrive aligned on facts, so sessions start on the differences that matter." },
+      { "title": "Your brand, your table", "body": "Reports are on-brand and audit-trailed; you decide what is shared and when." }
+    ],
+    "value_title": "Built around the way you already work.",
+    "cta_title": "Bring an objective process to your table.",
+    "cta_sub": "Start with a walkthrough on a synthetic matter — see the full seven stages end to end.",
+    "example_matter": {
+      "matter_ref": "Whitfield",
+      "case_name": "Whitfield v. Whitfield · Nassau, NY (synthetic)",
+      "body": "Two parties, one identical process. JusticeX summarizes each side to the same depth, then lays convergence and divergence side by side — objectively, with citations — for your session.",
+      "rows": [
+        { "label": "Net marital estate", "value": "$555.2k net-of-tax" },
+        { "label": "Contested", "value": "401(k): marital vs. separate" },
+        { "label": "Children", "value": "Emma 9 · Mason 6" },
+        { "label": "Convergence", "value": "4 of 6 issues aligned" }
+      ]
+    }
+  },
+
+  "media": {
+    "video_owner": "notebooklm",
+
+    "notebooklm_brief": {
+      "assets": ["audio", "infographic", "deck", "video"],
+      "subject": "How an objective, citation-grounded comparison changes a mediator's first session (NY divorce & custody).",
+      "source_docs": ["positioning-canon@ssot", "page:professional-families-ny:copy"],
+      "key_points": [
+        "The identical seven-stage process, per party.",
+        "Where the neutrality auditor halts on asymmetry.",
+        "What the mediator controls: sharing, checkpoints, brand."
+      ],
+      "palette_ban": "reject teal/mint/green/cyan/yellow/gold/magenta/pink/purple; navy+coral only",
+      "disclosure_line": "AI-assisted overviews · figures illustrative · not legal advice."
+    },
+
+    "higgsfield_brief": {
+      "assets": ["hero_image", "motion_bg", "animated_process"],
+      "style_kit_id": "jx-soulkit@v1",
+      "art_direction": "Documentary, monochrome-leaning, calm; hexagon motif; a neutral mediation table rendered abstractly — no faces, no gavel.",
+      "palette": "navy #042C53 + coral #D85A30 on white/light",
+      "negative_constraints": "no fabricated human faces; no scales/gavel/courtroom; no stock handshakes; no off-palette",
+      "seed_image": ""
+    },
+
+    "avatar": {
+      "enabled": true,
+      "modality": "voice_only",
+      "tool": "none",
+      "presenter_identity": "",
+      "consent_ref": "",
+      "script_ref": "script:professional-families-ny:walkthrough (neutral, in-scope; passes advice-drift + Fable)",
+      "disclosure": "AI-assisted presenter — shown at first exposure (EU AI Act Art. 50)."
+    }
+  },
+
+  "governance": {
+    "status": "draft",
+    "design_lint": "pending",
+    "brand_legal_qa": "pending",
+    "fable_review": "pending",
+    "propagate_dod": "pending",
+    "checkpoint_refs": [],
+    "notes": "Pilot page — proves the recipe before fan-out. Summary scope (if in-product) limited to summary/status/gaps; options menu held for counsel."
+  }
+}

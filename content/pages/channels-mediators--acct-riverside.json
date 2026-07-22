@@ -1,0 +1,148 @@
+{
+  "surface_id": "channels-mediators--acct-riverside",
+  "url_path": "/channels/mediators/riverside",
+  "value_prop_ref": "2.4.1 Channels · Mediators",
+  "tier": "3 leaf",
+  "effort_tier": "1:1",
+  "coverage": [
+    "Live"
+  ],
+  "fan_out_wave": "wave-2",
+  "taxonomy": {
+    "door": "Channels",
+    "context_tier2": "Channels",
+    "market": "n/a",
+    "channel": "Mediators",
+    "solution": {
+      "litigation_type": "Divorce & custody",
+      "jurisdiction": "New York"
+    },
+    "org_lifecycle": false,
+    "account": {
+      "name": "Riverside Family Mediation",
+      "logo_asset": ""
+    },
+    "presenter": {
+      "name": "Gregg Nicoll",
+      "initials": "GN",
+      "title": "JusticeX"
+    }
+  },
+  "locked": {
+    "tokens_version": "tokens.css@v2",
+    "skeleton_version": "families-skeleton@v1",
+    "shell": "shared",
+    "voice": "objective-evidence-led",
+    "posture": "objective-symmetric-amicable",
+    "master_promise_source": "Value Props v2 Part 2 — say it once, everywhere"
+  },
+  "copy": {
+    "hero_eyebrow": "For Riverside Family Mediation · a JusticeX founding partner",
+    "hero_title": "Take more matters. Keep your judgment at the center.",
+    "lead": "An objective, symmetric intake and comparison behind every Riverside matter — so your table starts from a shared, neutral picture, and your neutral judgment goes where it counts.",
+    "substance": "JusticeX handles the symmetric intake, the citation-grounded financial comparison, and the gap analysis, so you arrive with an organized, even-handed picture and spend time where a neutral is irreplaceable — more matters per neutral, faster intake-to-comparison, a defensible record. You stay in control of who leads, by matter or by step; the platform never decides — it prepares.",
+    "tier2_frame": "JusticeX prepares; the professional decides. Objective comparison, not a competing forum.",
+    "master_promise": "Both parties reach Riverside on the same honest picture, so the session starts where judgment matters. Truth · Fairness · Efficiency.",
+    "the_ask": "Start your founding-partner pilot",
+    "cta_href": "contact.html?path=mediator-pilot",
+    "proof_points": [
+      "A founding-partner hybrid: revenue at signing, decoupled from real-matter readiness.",
+      "A retrospective parallel-test pilot on your own closed, de-identified matters.",
+      "New York's Community Dispute Resolution Centers help 75,000+ New Yorkers a year, with 70% of mediations held reaching a mutual agreement (NY Courts, CDRCP)."
+    ],
+    "coverage_tags": [
+      "Live: NY divorce & custody",
+      "Roadmap: family & commercial breadth"
+    ],
+    "example_matter": {
+      "matter_ref": "Whitfield",
+      "case_name": "Whitfield v. Whitfield · Nassau, NY (synthetic)",
+      "body": "Two parties, one identical process. JusticeX summarizes each side to the same depth, then lays convergence and divergence side by side — objectively, with citations — for your session.",
+      "rows": [
+        {
+          "label": "Net marital estate",
+          "value": "$555.2k net-of-tax"
+        },
+        {
+          "label": "Contested",
+          "value": "401(k): marital vs. separate"
+        },
+        {
+          "label": "Children",
+          "value": "Emma 9 · Mason 6"
+        },
+        {
+          "label": "Convergence",
+          "value": "4 of 6 issues aligned"
+        }
+      ]
+    }
+  },
+  "disclosure_block": {
+    "standing_line": "AI-assisted overviews · figures illustrative · not legal advice.",
+    "keeps_this_honest": "JusticeX is software for the objective comparison of legal disputes — not a law firm, lawyer, mediator, or arbitrator. It does not give legal advice, interpret the law, recommend a settlement, or predict an outcome. The people, with the professionals they choose, decide; court access is preserved.",
+    "coverage_statement": "Live today: two-party objective comparison for NY divorce & custody. Family and commercial breadth is roadmap."
+  },
+  "media": {
+    "video_owner": "gemini_notebook",
+    "gemini_notebook_brief": {
+      "assets": [
+        "audio",
+        "video",
+        "infographic",
+        "deck"
+      ],
+      "subject": "How an objective, citation-grounded comparison lets a mediator take more matters without lowering their standard of care (NY divorce & custody).",
+      "source_docs": [
+        "value-props-v2:2.4.1 Channels · Mediators (Appendix D, 20260716)",
+        "value-props-v2:3.2 Channels context (inherited)",
+        "value-props-v2:part2 master promise",
+        "sales-strategy-jxlse:§4 persona ladder — Mediator entry line (Appendix K, 20260720, Fable-verified)",
+        "sales-strategy-jxlse:§5 solution offering — founding-partner hybrid + retrospective parallel-test pilot",
+        "sales-materials-overview:mediator channel deck substance (Appendix H, 20260628)",
+        "gtm-battlecard:objections 1–6 + UPL line (Appendix H, 20260629)",
+        "pipeline-tracker:Opportunity column — the per-account offer for this account (Appendix K, 20260720)",
+        "surface:channels-mediators--acct-riverside:copy"
+      ],
+      "key_points": [
+        "Symmetric intake + citation-grounded comparison + gap analysis, done before the session.",
+        "The mediator controls who leads; the platform prepares, never decides.",
+        "Founding-partner hybrid + retrospective parallel-test pilot."
+      ],
+      "studio_defaults": "Audio=Brief/Shorter · Video=Brief ~60–90s/Classic+custom palette · Infographic=orientation+Standard · Deck=Presenter ~8 slides PDF+PPTX",
+      "palette_ban": "reject teal/mint/green/cyan/yellow/gold/magenta/pink/purple; navy+coral only",
+      "disclosure_line": "AI-assisted overviews · figures illustrative · not legal advice."
+    },
+    "higgsfield_brief": {
+      "assets": [
+        "hero_image",
+        "motion_bg",
+        "animated_process"
+      ],
+      "style_kit_id": "jx-soulkit@v1",
+      "art_direction": "Documentary, monochrome-leaning, calm; hexagon motif; a neutral mediation table rendered abstractly — no faces, no gavel.",
+      "palette": "navy #042C53 + coral #D85A30 on white/light",
+      "negative_constraints": "no fabricated human faces; no scales/gavel/courtroom; no stock handshakes; no off-palette",
+      "seed_image": ""
+    },
+    "avatar": {
+      "enabled": true,
+      "modality": "voice_only",
+      "tool": "none",
+      "presenter_identity": "",
+      "consent_ref": "",
+      "script_ref": "script:channels-mediators:walkthrough (neutral, in-scope; passes advice-drift + Fable)",
+      "disclosure": "AI-assisted presenter — shown at first exposure (EU AI Act Art. 50)."
+    }
+  },
+  "governance": {
+    "status": "draft",
+    "design_lint": "pending",
+    "brand_legal_qa": "pending",
+    "fable_review": "pass",
+    "counsel_gate": "pending",
+    "propagate_dod": "pending",
+    "checkpoint_refs": [],
+    "notes": "Pilot surface (wave-2 design-partner). Proves the recipe. Note: employer/Sponsoring-Org benefit is the primary near-term GTM spine per Value Props v2 §2.4.5; mediators are the Tier-1 design-partner path."
+  }
+}
